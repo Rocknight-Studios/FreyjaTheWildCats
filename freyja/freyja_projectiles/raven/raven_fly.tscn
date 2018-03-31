@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://freyja/freyja_projectiles/raven/raven_fly.gd" type="Script" id=1]
+[ext_resource path="res://freyja/freyja_projectiles/raven/raven.tscn" type="PackedScene" id=2]
+[ext_resource path="res://freyja/freyja_projectiles/spirit/spirit.tscn" type="PackedScene" id=3]
+
+
+
+
+
+
+
+
+
+
+
+
+[sub_resource type="Curve2D" id=1]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, -69.9811, -265.191, -495.603, 198.458, -115.097, 51.8746, 136.171, -85.3769, -432.705, -310.638, -144.705, -3.01468, 358.747, 15.0734, 88.0778, -408.998, -86.7409, -116.145, 118.35, 150.694, 684.14, -228.902, 29.4037, -127.906, -89.6094, 388.322, 521.468, 87.7284, 179.25, 17.1883, -347.45, -46.654, -3.47223, 444.523, 44.1986, 103.13, 0, 0, -485.351, 218.963, 0, 0, 0, 0, -495.603, 198.458 )
+}
+
+[node name="RavenFly" type="Node2D"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Path2D" type="Path2D" parent="." index="0"]
+
+position = Vector2( 756.851, 476.789 )
+curve = SubResource( 1 )
+
+[node name="Raven" parent="Path2D" index="0" instance=ExtResource( 2 )]
+
+modulate = Color( 0.746094, 0.746094, 0.746094, 1 )
+position = Vector2( -580.067, 251.75 )
+scale = Vector2( 0.5, 0.5 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Spirit" parent="Path2D" index="1" instance=ExtResource( 3 )]
+
+position = Vector2( -296.047, -489.744 )
+scale = Vector2( 0.5, 0.5 )
+spirit_node_names = [  ]
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" index="2"]
+
+position = Vector2( -495.603, 198.458 )
+rotation = -1.82756
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 4.0
+_sections_unfolded = [ "Transform" ]
+
+

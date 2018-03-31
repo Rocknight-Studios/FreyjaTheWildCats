@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/freyja- valkyrie's justice_1-converted-ogg-coverted.ogg-01933406803c7a3a03796e4e97f3469f.oggstr"
+
+[deps]
+
+source_file="res://unsorted/freyja- valkyrie's justice_1-converted-ogg-coverted.ogg"
+source_md5="699f8ec7c83b95cba81d02f248eacf0d"
+
+dest_files=[ "res://.import/freyja- valkyrie's justice_1-converted-ogg-coverted.ogg-01933406803c7a3a03796e4e97f3469f.oggstr" ]
+dest_md5="af0219a4629dfb19e7f725e99551338e"
+
+[params]
+
+loop=true
+loop_offset=0

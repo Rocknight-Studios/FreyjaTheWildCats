@@ -1,0 +1,126 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://level_1/LevelBackground/BackgroundImage11/ice_level_11.png" type="Texture" id=1]
+[ext_resource path="res://level_1/enemies/ice_giant/ice_giant.tscn" type="PackedScene" id=2]
+[ext_resource path="res://level_1/environment_effects/waves.tscn" type="PackedScene" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 187.2
+height = 683.725
+
+[node name="BackgroundImage11" type="Sprite" index="0"]
+
+position = Vector2( 960, -11340 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="RockWall" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+position = Vector2( -947.805, 30.1523 )
+input_pickable = false
+collision_layer = 16
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RockWall" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Water" type="StaticBody2D" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( 845.519, -153.822 )
+rotation = 0.158394
+input_pickable = false
+collision_layer = 64
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Water" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -335.612, -353.228, -402.265, -107.892, -151.273, -49.0449, -169.219, 285.147, 149.986, 310.09, 51.0095, -410.382 )
+
+[node name="Forest" type="StaticBody2D" parent="." index="2"]
+
+editor/display_folded = true
+position = Vector2( 902.321, 239.248 )
+rotation = 0.158394
+input_pickable = false
+collision_layer = 16
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Forest" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -117.393, -67.6943, -176.339, 325.66, 102.056, 289.647, 41.923, -76.2285 )
+
+[node name="Ice_giant" parent="." index="3" instance=ExtResource( 2 )]
+
+position = Vector2( -278.679, -244.649 )
+
+[node name="Ice_giant2" parent="." index="4" instance=ExtResource( 2 )]
+
+position = Vector2( 202.738, -245.726 )
+
+[node name="Ice_giant3" parent="." index="5" instance=ExtResource( 2 )]
+
+position = Vector2( -477.508, 240.443 )
+
+[node name="Ice_giant4" parent="." index="6" instance=ExtResource( 2 )]
+
+position = Vector2( -37.81, 243.845 )
+
+[node name="Ice_giant5" parent="." index="7" instance=ExtResource( 2 )]
+
+position = Vector2( 405.867, 239.753 )
+
+[node name="wave_wrapper" type="Node2D" parent="." index="8"]
+
+editor/display_folded = true
+position = Vector2( 661.623, -465.675 )
+
+[node name="waves" parent="wave_wrapper" index="0" instance=ExtResource( 3 )]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="waves2" parent="wave_wrapper" index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 106.813, 79.8037 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="waves3" parent="wave_wrapper" index="2" instance=ExtResource( 3 )]
+
+position = Vector2( -42.9708, 139.963 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="waves4" parent="wave_wrapper" index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 176.795, 191.528 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="waves5" parent="wave_wrapper" index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 143.646, 320.44 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="waves6" parent="wave_wrapper" index="5" instance=ExtResource( 3 )]
+
+position = Vector2( 178.022, 482.502 )
+_sections_unfolded = [ "Transform" ]
+
+

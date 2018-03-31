@@ -1,0 +1,344 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://freyja/chariot/wild_cats/wild_cat.gd" type="Script" id=1]
+[ext_resource path="res://freyja/chariot/chariot_particles/snow.tscn" type="PackedScene" id=2]
+[ext_resource path="res://freyja/chariot/wild_cats/wild_cat.png" type="Texture" id=3]
+[ext_resource path="res://freyja/chariot/wild_cats/paw.png" type="Texture" id=4]
+[ext_resource path="res://freyja/chariot/wild_cats/big_fluff.png" type="Texture" id=5]
+[ext_resource path="res://freyja/chariot/wild_cats/fluff_1.png" type="Texture" id=6]
+[ext_resource path="res://freyja/chariot/wild_cats/fluff_2.png" type="Texture" id=7]
+[ext_resource path="res://freyja/chariot/wild_cats/fluff_3.png" type="Texture" id=8]
+[ext_resource path="res://freyja/chariot/wild_cats/ear.png" type="Texture" id=9]
+[ext_resource path="res://freyja/chariot/wild_cats/whiskers.png" type="Texture" id=10]
+[ext_resource path="res://freyja/chariot/wild_cats/tail.png" type="Texture" id=11]
+
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "Idle"
+length = 8.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Head:rotation_degrees")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 2.5, 4.5, 6.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -13.4313, -20.8348, -20.8348, -1.35664, -1.35664 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Tail:rotation_degrees")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1.5, 2.5, 3.5, 4.5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 4.17817, -9.5791, 12.1524, -9.5791, 12.1524, -9.5791, 12.1524 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Fluff2:rotation_degrees")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 2.5, 4.5, 6.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -1.94327, 3.0, 6.54249, 2.38131, 5.93407 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("BigFluff:rotation_degrees")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5, 2.5, 4.5, 6.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.2845, -0.118051, 0.702321, -1.34941 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Fluff1:rotation_degrees")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1.3, 2.9, 4.7, 6.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 2.37695, 9.24094, 1.32579, 4.66149, 0.662402 ]
+}
+
+[sub_resource type="Animation" id=2]
+
+length = 1.0
+loop = false
+step = 0.1
+
+[sub_resource type="Animation" id=3]
+
+length = 1.0
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Fluff1:rotation_degrees")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 8.84629, 0.0, -7.84681 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Fluff1:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.933878, 1 ), Vector2( 1, 1 ), Vector2( 0.947485, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Fluff2:rotation_degrees")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -7.23227, 0.0, 20.9129 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Fluff2:scale")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.876468, 1 ), Vector2( 1, 1 ), Vector2( 0.912421, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("BigFluff:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.25, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -3.77064, 53.8881 ), Vector2( -4.27628, 54.8479 ), Vector2( 1.19501, 52.9918 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Paw_front_right:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.25, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 49.1784, -14.1229 ), Vector2( 49.1708, -53.7606 ), Vector2( 47.2267, -10.1701 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Paw_back_right:position")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.25, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 37.1394, 123.538 ), Vector2( 34.4509, 145.818 ), Vector2( 41.4959, 87.0044 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Paw_back_left:position")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.25, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -49.2986, 126.873 ), Vector2( -45.4177, 105.041 ), Vector2( -39.5003, 139.176 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Paw_front_left:position")
+tracks/8/interp = 2
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.25, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -49.4286, -20.5929 ), Vector2( -46.9816, -7.87485 ), Vector2( -52.5586, -56.6559 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Tail:rotation_degrees")
+tracks/9/interp = 2
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 15.5499, 0.0, -12.0734 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Head:rotation_degrees")
+tracks/10/interp = 2
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -11.2302, -19.422, -11.2302, -1.59597 ]
+}
+
+[node name="WildCat" type="Node2D"]
+
+position = Vector2( 370.802, 277.348 )
+rotation = 0.00105062
+script = ExtResource( 1 )
+
+[node name="Snow" parent="." index="0" instance=ExtResource( 2 )]
+
+[node name="WildCat" type="Sprite" parent="." index="1"]
+
+visible = false
+position = Vector2( 867.924, 452.139 )
+texture = ExtResource( 3 )
+
+[node name="Paw_front_right" type="Sprite" parent="." index="2"]
+
+show_behind_parent = true
+position = Vector2( 49.2326, -24.8874 )
+texture = ExtResource( 4 )
+
+[node name="Paw_front_left" type="Sprite" parent="." index="3"]
+
+show_behind_parent = true
+position = Vector2( -48.6808, -16.1355 )
+texture = ExtResource( 4 )
+flip_v = true
+_sections_unfolded = [ "Offset" ]
+
+[node name="Paw_back_right" type="Sprite" parent="." index="4"]
+
+show_behind_parent = true
+position = Vector2( 36.2914, 130.578 )
+texture = ExtResource( 4 )
+
+[node name="Paw_back_left" type="Sprite" parent="." index="5"]
+
+show_behind_parent = true
+position = Vector2( -48.5385, 120.652 )
+texture = ExtResource( 4 )
+flip_h = true
+_sections_unfolded = [ "Offset", "Visibility" ]
+
+[node name="BigFluff" type="Sprite" parent="." index="6"]
+
+position = Vector2( -4.04972, 54.1718 )
+rotation = 0.0105457
+texture = ExtResource( 5 )
+
+[node name="Fluff1" type="Sprite" parent="." index="7"]
+
+position = Vector2( -3.59558, 36.3235 )
+rotation = 0.0573426
+scale = Vector2( 0.982233, 1 )
+texture = ExtResource( 6 )
+offset = Vector2( -6.94122, -5.67776 )
+
+[node name="Fluff2" type="Sprite" parent="." index="8"]
+
+position = Vector2( 0.799377, -17.4031 )
+rotation = -0.00155497
+scale = Vector2( 0.966808, 1 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Head" type="Sprite" parent="." index="9"]
+
+editor/display_folded = true
+position = Vector2( 2.57249, -55.0463 )
+rotation = -0.287768
+texture = ExtResource( 8 )
+offset = Vector2( 2.72764, -17.9592 )
+
+[node name="Ear_right" type="Sprite" parent="Head" index="0"]
+
+position = Vector2( 43.1522, -47.2433 )
+texture = ExtResource( 9 )
+
+[node name="Ear_left" type="Sprite" parent="Head" index="1"]
+
+position = Vector2( -20.8026, -61.9845 )
+rotation = 0.382303
+texture = ExtResource( 9 )
+flip_h = true
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="Whiskers_right" type="Sprite" parent="Head" index="2"]
+
+position = Vector2( 35.8013, -69.2959 )
+texture = ExtResource( 10 )
+
+[node name="Whiskers_left" type="Sprite" parent="Head" index="3"]
+
+position = Vector2( 0.884033, -73.3957 )
+rotation = 0.304126
+texture = ExtResource( 10 )
+flip_h = true
+_sections_unfolded = [ "Offset" ]
+
+[node name="Tail" type="Sprite" parent="." index="10"]
+
+position = Vector2( 0.0775757, 156.863 )
+rotation = -0.0461956
+texture = ExtResource( 11 )
+offset = Vector2( 3.10876, 82.3962 )
+
+[node name="CatAnimation" type="AnimationPlayer" parent="." index="11"]
+
+root_node = NodePath("..")
+autoplay = "running"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Idle = SubResource( 1 )
+anims/default = SubResource( 2 )
+anims/running = SubResource( 3 )
+blend_times = [  ]
+
+

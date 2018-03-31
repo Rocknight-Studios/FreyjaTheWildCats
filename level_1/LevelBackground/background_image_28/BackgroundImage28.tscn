@@ -1,0 +1,100 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://level_1/LevelBackground/background_image_28/ice_level_28.png" type="Texture" id=1]
+[ext_resource path="res://level_1/enemies/trolls/archer/archer_heavy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://level_1/enemies/trolls/berserker/berserker.tscn" type="PackedScene" id=3]
+[ext_resource path="res://level_1/enemies/ice_giant/ice_giant.tscn" type="PackedScene" id=4]
+[ext_resource path="res://level_1/enemies/mini_serpent/mini_serpent.tscn" type="PackedScene" id=5]
+
+[node name="BackgroundImage28" type="Sprite"]
+
+position = Vector2( 960, -29700 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="WaterLeft" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WaterLeft" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -144.096, 536.545, -18.2191, 327.59, -73.6047, 174.02, -237.244, 277.238, -715.575, 277.238, -959.776, 282.273, -964.811, 541.58 )
+
+[node name="Towers" type="StaticBody2D" parent="." index="1"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Towers" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -957.258, 80.8711, -813.759, 186.607, -556.971, 179.055, -504.103, -432.705, -579.629, -545.994, -959.776, -543.477 )
+
+[node name="RightWater" type="StaticBody2D" parent="." index="2"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RightWater" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 450.042, 544.098, 349.341, 5.3457, 450.042, -120.531, 762.216, -180.951, 777.321, -548.512, 958.583, -543.477, 966.135, 536.545 )
+
+[node name="Archer_heavy" parent="." index="3" instance=ExtResource( 2 )]
+
+position = Vector2( -760.294, 62.9375 )
+
+[node name="Berserker" parent="." index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 119.454, 66.0117 )
+
+[node name="Berserker2" parent="." index="5" instance=ExtResource( 3 )]
+
+position = Vector2( 30.6571, -88.7207 )
+
+[node name="Berserker3" parent="." index="6" instance=ExtResource( 3 )]
+
+position = Vector2( 83.9049, 260.818 )
+
+[node name="Berserker4" parent="." index="7" instance=ExtResource( 3 )]
+
+position = Vector2( 158.019, 435.656 )
+
+[node name="Berserker5" parent="." index="8" instance=ExtResource( 3 )]
+
+position = Vector2( 206.389, -78.3223 )
+
+[node name="Ice_giant" parent="." index="9" instance=ExtResource( 4 )]
+
+position = Vector2( -253.534, -109.186 )
+
+[node name="Ice_giant2" parent="." index="10" instance=ExtResource( 4 )]
+
+position = Vector2( 540.379, -379.375 )
+
+[node name="Serpent" parent="." index="11" instance=ExtResource( 5 )]
+
+position = Vector2( 714.837, 156.996 )
+rotation = 4.6866
+
+

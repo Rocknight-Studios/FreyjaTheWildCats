@@ -1,0 +1,641 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://level_1/enemies/EnemyBehaviour.gd" type="Script" id=1]
+[ext_resource path="res://level_1/enemies/trolls/shield/foot.png" type="Texture" id=2]
+[ext_resource path="res://level_1/enemies/trolls/shield/skirt.png" type="Texture" id=3]
+[ext_resource path="res://level_1/enemies/trolls/shield/arm.png" type="Texture" id=4]
+[ext_resource path="res://level_1/enemies/trolls/shield/lower_arm.png" type="Texture" id=5]
+[ext_resource path="res://level_1/enemies/trolls/shield/armor_piece.png" type="Texture" id=6]
+[ext_resource path="res://level_1/enemies/trolls/spear/Spear.png" type="Texture" id=7]
+[ext_resource path="res://level_1/enemies/trolls/shield/torso.png" type="Texture" id=8]
+[ext_resource path="res://level_1/enemies/trolls/shield/shield.png" type="Texture" id=9]
+[ext_resource path="res://level_1/enemies/trolls/shield/helmet.png" type="Texture" id=10]
+[ext_resource path="res://level_1/enemies/trolls/shield/hair.png" type="Texture" id=11]
+[ext_resource path="res://level_1/enemies/trolls/shield/feather.png" type="Texture" id=12]
+[ext_resource path="res://level_1/enemies/DeathParticles.tscn" type="PackedScene" id=13]
+[ext_resource path="res://level_1/enemies/DeathSoulParticles.tscn" type="PackedScene" id=14]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "Attack"
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Helmet/Hair4/Hair_left:rotation_degrees")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 9.19887 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body/Helmet/Hair4/Hair_right:rotation_degrees")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -17.6415 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body/Helmet/Hair4/Hair_centre:rotation_degrees")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 11.0074, 19.6652, -2.20327 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Body/Helmet/Feathers/Feather_left:rotation_degrees")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -14.0496 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Body/Helmet/Feathers/Feather_right:rotation_degrees")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 13.0596 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Body/Right_arm/Lower_right_arm:rotation_degrees")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -91.7064, 23.7199 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Body/Right_arm:rotation_degrees")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 91.2262, -25.7922 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Body/Torso:rotation_degrees")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 18.8626, -32.3482 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Body/Right_arm:position")
+tracks/8/interp = 2
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -104.493, -50.7837 ), Vector2( -94.4857, -72.3907 ), Vector2( -100.843, 4.98369 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Body/Torso/Shield:position")
+tracks/9/interp = 2
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 57.5343, 55.0754 ), Vector2( 47.8418, 18.331 ), Vector2( 66.368, 49.4918 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Body/Torso/Shield:rotation_degrees")
+tracks/10/interp = 2
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -53.7424, -34.0279, -56.441 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Body/Skirt:rotation_degrees")
+tracks/11/interp = 2
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 11.9256, -31.3066 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Body/Helmet:position")
+tracks/12/interp = 2
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1.99103, -39.805 ), Vector2( -1.08801, -54.245 ), Vector2( 3.16596, 14.86 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Body/Helmet:rotation_degrees")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -3.44544 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Body/Right_arm/Lower_right_arm/Hand:rotation_degrees")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.453644 ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "Default"
+length = 1.0
+loop = false
+step = 0.1
+
+[sub_resource type="Animation" id=3]
+
+length = 10.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Right_arm:rotation_degrees")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -31.8201 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body/Helmet:rotation_degrees")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2, 3.5, 4.5, 6, 7.5, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 40.7831, 40.7831, 0.0, 0.0, -28.2446, -28.2446 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body/Right_arm/Lower_right_arm/Hand:rotation_degrees")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2, 3.5, 4.5, 6, 7.5, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.453644, 14.3448, -19.9845, 4.12046, 8.78837, -6.44323, 4.11457 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Body/Torso/Shield:rotation_degrees")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2, 3.5, 4.5, 6, 7.5, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -53.7424, -69.2521, -88.839, -77.2493, -63.2339, -77.2068, -68.6062 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Body/Torso:rotation_degrees")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 3.5, 7.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 7.62939e-06, 7.35886, -4.11214 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Body/Helmet/Hair4:rotation_degrees")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 2.1, 4.5, 6.2, 7.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -28.5731, 0.0, 0.0, 21.703 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Body/Skirt:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Body/Right_arm:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -104.493, -50.7837 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Body/Helmet:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1.99103, -39.805 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Body/Right_arm/Lower_right_arm:rotation_degrees")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Body/Torso/Shield:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 57.5343, 55.0754 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Body/Helmet/Hair4/Hair_centre:rotation_degrees")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 11.0074 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Body/Helmet/Hair4/Hair_left:rotation_degrees")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Body/Helmet/Hair4/Hair_right:rotation_degrees")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Body/Helmet/Feathers/Feather_right:rotation_degrees")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Body/Helmet/Feathers/Feather_left:rotation_degrees")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=4]
+
+resource_name = "Shield_wall"
+length = 1.0
+loop = false
+step = 0.1
+
+[sub_resource type="CapsuleShape2D" id=5]
+
+custom_solver_bias = 0.0
+radius = 175.276
+height = 58.0022
+
+[node name="Shield_troll" type="Node2D"]
+
+scale = Vector2( 0.3, 0.3 )
+z_index = 2
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+total_health = 15
+fade_out_speed = 5
+projectile_launch_frequency = 2000
+projectile_offset = Vector2( -50, 0 )
+projectile_template = null
+attack_animation_speed = 0.25
+idle_animation_speed = 1
+animation_blend_speed = 1
+
+[node name="Body" type="Node2D" parent="." index="0"]
+
+editor/display_folded = true
+
+[node name="Left_leg" type="Sprite" parent="Body" index="0"]
+
+position = Vector2( 49.3227, 10.6942 )
+texture = ExtResource( 2 )
+flip_h = true
+_sections_unfolded = [ "Offset" ]
+
+[node name="Right_leg" type="Sprite" parent="Body" index="1"]
+
+position = Vector2( -76.9253, 18.8392 )
+texture = ExtResource( 2 )
+
+[node name="Skirt" type="Sprite" parent="Body" index="2"]
+
+position = Vector2( -1.99103, -39.805 )
+texture = ExtResource( 3 )
+
+[node name="Right_arm" type="Sprite" parent="Body" index="3"]
+
+editor/display_folded = true
+position = Vector2( -104.493, -50.7837 )
+rotation = -0.530106
+z_index = 1
+texture = ExtResource( 4 )
+offset = Vector2( -25.9167, 34.195 )
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+
+[node name="Lower_right_arm" type="Sprite" parent="Body/Right_arm" index="0"]
+
+position = Vector2( -34.2947, 42.4172 )
+texture = ExtResource( 5 )
+offset = Vector2( -4.79413, 81.5877 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Hand" type="Sprite" parent="Body/Right_arm/Lower_right_arm" index="0"]
+
+position = Vector2( -11.1638, 105.034 )
+rotation = -0.294104
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="Spear" type="Sprite" parent="Body/Right_arm/Lower_right_arm/Hand" index="0"]
+
+z_index = -1
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="Torso" type="Sprite" parent="Body" index="4"]
+
+position = Vector2( -1.99103, -39.805 )
+rotation = 0.129015
+z_index = 1
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Shield" type="Sprite" parent="Body/Torso" index="0"]
+
+position = Vector2( 57.5343, 55.0754 )
+rotation = -1.52224
+texture = ExtResource( 9 )
+offset = Vector2( -16.7739, 64.5913 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Helmet" type="Sprite" parent="Body" index="5"]
+
+editor/display_folded = true
+position = Vector2( -1.99103, -39.805 )
+rotation = 0.763157
+z_index = 1
+texture = ExtResource( 10 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Hair4" type="Node2D" parent="Body/Helmet" index="0"]
+
+show_behind_parent = true
+rotation = -0.298229
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Hair_centre" type="Sprite" parent="Body/Helmet/Hair4" index="0"]
+
+position = Vector2( 2.00171, -15.1813 )
+rotation = 0.192115
+texture = ExtResource( 11 )
+offset = Vector2( -4.60369, -27.7462 )
+
+[node name="Hair_right" type="Sprite" parent="Body/Helmet/Hair4" index="1"]
+
+position = Vector2( -48.4268, 10.0865 )
+texture = ExtResource( 11 )
+offset = Vector2( -4.26172, -46.6093 )
+
+[node name="Hair_left" type="Sprite" parent="Body/Helmet/Hair4" index="2"]
+
+position = Vector2( 47.2163, 5.22333 )
+texture = ExtResource( 11 )
+offset = Vector2( 13.5571, -38.9863 )
+flip_h = true
+_sections_unfolded = [ "Offset" ]
+
+[node name="Feathers" type="Node2D" parent="Body/Helmet" index="1"]
+
+editor/display_folded = true
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Feather_right" type="Sprite" parent="Body/Helmet/Feathers" index="0"]
+
+position = Vector2( -18.045, 11.6996 )
+texture = ExtResource( 12 )
+offset = Vector2( -18.0154, -61.1125 )
+
+[node name="Feather_left" type="Sprite" parent="Body/Helmet/Feathers" index="1"]
+
+position = Vector2( 29.0575, 12.363 )
+texture = ExtResource( 12 )
+offset = Vector2( 14.8821, -61.776 )
+flip_h = true
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+
+root_node = NodePath("..")
+autoplay = "Attack"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Attack = SubResource( 1 )
+anims/Default = SubResource( 2 )
+anims/Idle = SubResource( 3 )
+anims/Shield_wall = SubResource( 4 )
+blend_times = [  ]
+
+[node name="EnemyCollider" type="StaticBody2D" parent="." index="2"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 32
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision", "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyCollider" index="0"]
+
+position = Vector2( 0, 12 )
+shape = SubResource( 5 )
+
+[node name="DeathParticles" parent="." index="3" instance=ExtResource( 13 )]
+
+[node name="DeathSoulParticles" parent="." index="4" instance=ExtResource( 14 )]
+
+[node name="DeathTimer" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[node name="AnimationTreePlayer" type="AnimationTreePlayer" parent="." index="6"]
+
+playback_process_mode = 1
+master_player = NodePath("../AnimationPlayer")
+base_path = NodePath("..")
+active = true
+data = {
+"active": true,
+"connections": [ "blend2", "out", 0, "anim", "blend2", 0, "anim 2", "blend2", 1 ],
+"master": NodePath("../AnimationPlayer"),
+"nodes": [ {
+"filter": [  ],
+"from": "Idle",
+"id": "anim",
+"position": Vector2( 130, 148 ),
+"type": "animation"
+}, {
+"id": "out",
+"position": Vector2( 546, 196 ),
+"type": "output"
+}, {
+"filter": [  ],
+"from": "Attack",
+"id": "anim 2",
+"position": Vector2( 130, 290 ),
+"type": "animation"
+}, {
+"blend": 0.0,
+"filter": [  ],
+"id": "blend2",
+"position": Vector2( 323, 196 ),
+"type": "blend2"
+} ]
+}
+
+[connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
+
+

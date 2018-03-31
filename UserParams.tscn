@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UserParams.gd" type="Script" id=1]
+
+[node name="UserParams" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+ice_giant_projectile_max_distance_from_parent = 700.0
+game_over_scene_path = NodePath("res://GameOver/GameOver.tscn")
+level_won_scene_path = NodePath("res://LevelComplete/LevelComplete.tscn")
+new_game_scene_path = NodePath("res://Level1.tscn")
+menu_screen_scene_path = NodePath("res://MenuScreen/MenuScreen.tscn")
+
+

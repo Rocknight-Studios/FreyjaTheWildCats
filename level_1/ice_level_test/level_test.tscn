@@ -1,0 +1,178 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://level_1/ice_level_test/Ice_nine.png" type="Texture" id=1]
+[ext_resource path="res://level_1/ice_level_test/Background.png" type="Texture" id=2]
+[ext_resource path="res://level_1/ice_level_test/Huge_rocks.png" type="Texture" id=3]
+[ext_resource path="res://level_1/rocks/guard_tower.png" type="Texture" id=4]
+[ext_resource path="res://level_1/ice_level_test/Spikey_wall.png" type="Texture" id=5]
+[ext_resource path="res://level_1/ice_level_test/Spikey_rocks.png" type="Texture" id=6]
+[ext_resource path="res://freyja/chariot/chariot.tscn" type="PackedScene" id=7]
+[ext_resource path="res://freyja/chariot/chariot_particles/snow.tscn" type="PackedScene" id=8]
+[ext_resource path="res://freyja/freyja_body/freyja.tscn" type="PackedScene" id=9]
+[ext_resource path="res://level_1/enemies/ice_giant/ice_giant.tscn" type="PackedScene" id=10]
+[ext_resource path="res://level_1/enemies/trolls/archer/troll_archer.tscn" type="PackedScene" id=11]
+[ext_resource path="res://level_1/enemies/trolls/shield/shield_troll.tscn" type="PackedScene" id=12]
+[ext_resource path="res://freyja/freyja_projectiles/spirit/spirit.tscn" type="PackedScene" id=13]
+[ext_resource path="res://level_1/enemies/trolls/archer/archer_heavy.tscn" type="PackedScene" id=14]
+[ext_resource path="res://level_1/enemies/mini_serpent/mini_serpent.tscn" type="PackedScene" id=15]
+[ext_resource path="res://level_1/enemies/DeathSoulParticles.tscn" type="PackedScene" id=16]
+[ext_resource path="res://level_1/enemies/trolls/berserker/berserker.tscn" type="PackedScene" id=17]
+[ext_resource path="res://freyja/freyja_projectiles/valkyrie/valkyrie.tscn" type="PackedScene" id=18]
+
+
+
+
+[node name="Level_test" type="Node2D" index="0"]
+
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Background2" type="Sprite" parent="." index="0"]
+
+position = Vector2( 959.653, 539.65 )
+scale = Vector2( 0.693892, 0.700844 )
+z_index = -1
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+
+[node name="Background" type="Sprite" parent="." index="1"]
+
+self_modulate = Color( 1, 1, 1, 0.806667 )
+position = Vector2( 963, 538.433 )
+scale = Vector2( 1.79213, 1.79214 )
+z_index = -2
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="Huge_rocks" type="Sprite" parent="." index="2"]
+
+position = Vector2( 20, 320 )
+texture = ExtResource( 3 )
+flip_h = true
+_sections_unfolded = [ "Offset", "Visibility" ]
+
+[node name="Guard_tower" type="Sprite" parent="." index="3"]
+
+position = Vector2( 1280, 240 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+flip_h = true
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="Guard_tower2" type="Sprite" parent="." index="4"]
+
+position = Vector2( 553.471, 248.351 )
+rotation = -4.60932
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+flip_h = true
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="Spikey_wall" type="Sprite" parent="." index="5"]
+
+position = Vector2( 1640, 800 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Spikey_rocks" type="Sprite" parent="." index="6"]
+
+position = Vector2( 1760, 140 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Chariot" parent="." index="7" instance=ExtResource( 7 )]
+
+position = Vector2( 1020, 740 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Snow" parent="Chariot" index="5" instance=ExtResource( 8 )]
+
+show_behind_parent = true
+position = Vector2( -240, 160 )
+scale = Vector2( 2, 2 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Snow2" parent="Chariot" index="6" instance=ExtResource( 8 )]
+
+show_behind_parent = true
+position = Vector2( 240, 160 )
+scale = Vector2( 2, 2 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Freyja" parent="." index="8" instance=ExtResource( 9 )]
+
+position = Vector2( 1011.04, 706.342 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Ice_giant" parent="." index="9" instance=ExtResource( 10 )]
+
+position = Vector2( 880, 260 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="Troll_archer" parent="." index="10" instance=ExtResource( 11 )]
+
+position = Vector2( 1233.12, 269.177 )
+rotation = 0.467346
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Troll_archer2" parent="." index="11" instance=ExtResource( 11 )]
+
+position = Vector2( 1378.81, 275.075 )
+rotation = -0.286211
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Shield_troll" parent="." index="12" instance=ExtResource( 12 )]
+
+position = Vector2( 709.592, 545.565 )
+rotation = -0.332933
+scale = Vector2( 0.4, 0.4 )
+
+[node name="Shield_troll2" parent="." index="13" instance=ExtResource( 12 )]
+
+position = Vector2( 1243.88, 543.55 )
+rotation = 0.591119
+scale = Vector2( -0.4, 0.4 )
+
+[node name="Spirit" parent="." index="14" instance=ExtResource( 13 )]
+
+visible = false
+position = Vector2( 655.106, 639.227 )
+scale = Vector2( 0.5, 0.5 )
+movement_speed = 1000
+
+[node name="Spirit2" parent="." index="15" instance=ExtResource( 13 )]
+
+visible = false
+position = Vector2( 1389.27, 1063.89 )
+rotation = -3.22392
+scale = Vector2( 0.5, 0.5 )
+movement_speed = 1000
+
+[node name="Archer_heavy" parent="." index="16" instance=ExtResource( 14 )]
+
+position = Vector2( 560, 240 )
+rotation = -0.51735
+scale = Vector2( 0.7, 0.7 )
+
+[node name="Serpent" parent="." index="17" instance=ExtResource( 15 )]
+
+visible = false
+position = Vector2( 1609.77, 590.231 )
+rotation = 1.60148
+scale = Vector2( 0.05, 0.05 )
+
+[node name="Death_particles" parent="." index="18" instance=ExtResource( 16 )]
+
+visible = false
+position = Vector2( 560, 240 )
+
+[node name="berserker" parent="." index="19" instance=ExtResource( 17 )]
+
+position = Vector2( 460, 700 )
+
+[node name="Valkyrie" parent="." index="20" instance=ExtResource( 18 )]
+
+position = Vector2( 1580, 580 )
+scale = Vector2( 0.5, 0.5 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+

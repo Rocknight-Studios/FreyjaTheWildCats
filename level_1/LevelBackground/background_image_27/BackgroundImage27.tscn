@@ -1,0 +1,124 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://level_1/LevelBackground/background_image_27/ice_level_27.png" type="Texture" id=1]
+[ext_resource path="res://level_1/enemies/trolls/archer/archer_heavy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://level_1/enemies/ice_giant/ice_giant.tscn" type="PackedScene" id=3]
+[ext_resource path="res://level_1/enemies/trolls/berserker/berserker.tscn" type="PackedScene" id=4]
+[ext_resource path="res://level_1/enemies/trolls/shield/shield_troll.tscn" type="PackedScene" id=5]
+[ext_resource path="res://level_1/enemies/mini_serpent/mini_serpent.tscn" type="PackedScene" id=6]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 128.561
+height = 20.0
+
+[node name="BackgroundImage27" type="Sprite"]
+
+position = Vector2( 960, -28620 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="WaterLeft" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WaterLeft" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -964.712, 114.246, -442.135, -110.688, -235.377, -199.299, -162.67, -392.426, -142.222, -540.109, -957.896, -546.926 )
+
+[node name="WaterLeft2" type="StaticBody2D" parent="." index="1"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WaterLeft2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 441.701, -535.566, 382.627, -265.189, 407.62, -65.248, 496.23, 50.627, 637.099, 130.15, 716.621, 332.365, 952.917, 552.756, 959.733, -537.838 )
+
+[node name="WaterLeft3" type="StaticBody2D" parent="." index="2"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterLeft3" index="0"]
+
+position = Vector2( -788.338, 259.262 )
+shape = SubResource( 1 )
+
+[node name="Archer_heavy" parent="." index="3" instance=ExtResource( 2 )]
+
+position = Vector2( -783.852, 265.002 )
+
+[node name="Ice_giant" parent="." index="4" instance=ExtResource( 3 )]
+
+position = Vector2( -307.203, 46.2637 )
+
+[node name="Ice_giant2" parent="." index="5" instance=ExtResource( 3 )]
+
+position = Vector2( 198.016, 46.2637 )
+
+[node name="Berserker" parent="." index="6" instance=ExtResource( 4 )]
+
+position = Vector2( -316.456, 490.412 )
+
+[node name="Berserker2" parent="." index="7" instance=ExtResource( 4 )]
+
+position = Vector2( 188.763, 490.412 )
+
+[node name="Shield_troll" parent="." index="8" instance=ExtResource( 5 )]
+
+position = Vector2( -420.09, 309.053 )
+
+[node name="Shield_troll5" parent="." index="9" instance=ExtResource( 5 )]
+
+position = Vector2( 85.1284, 309.053 )
+
+[node name="Shield_troll2" parent="." index="10" instance=ExtResource( 5 )]
+
+position = Vector2( -309.053, 309.053 )
+
+[node name="Shield_troll4" parent="." index="11" instance=ExtResource( 5 )]
+
+position = Vector2( 196.166, 309.053 )
+
+[node name="Shield_troll3" parent="." index="12" instance=ExtResource( 5 )]
+
+position = Vector2( -199.867, 309.053 )
+
+[node name="Shield_troll6" parent="." index="13" instance=ExtResource( 5 )]
+
+position = Vector2( 305.352, 309.053 )
+
+[node name="Serpent" parent="." index="14" instance=ExtResource( 6 )]
+
+position = Vector2( -479.334, -232.131 )
+rotation = 1.55509
+
+[node name="Serpent2" parent="." index="15" instance=ExtResource( 6 )]
+
+position = Vector2( 634.59, -382.865 )
+rotation = -1.57296
+
+
