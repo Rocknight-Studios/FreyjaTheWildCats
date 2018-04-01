@@ -18,22 +18,6 @@
 [ext_resource path="res://Level1/Enemies/DeathParticles.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Level1/Enemies/DeathSoulParticles.tscn" type="PackedScene" id=17]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [sub_resource type="Animation" id=1]
 
 resource_name = "Attack"
@@ -53,7 +37,7 @@ tracks/0/keys = {
 "values": [ -103.973, -43.2215, -103.973, -80.8874 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Body/Torso/Shoulder/Right_arm:rotation_degrees")
+tracks/1/path = NodePath("Body/Torso/Shoulder/RightArm:rotation_degrees")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -65,7 +49,7 @@ tracks/1/keys = {
 "values": [ 128.335, 165.075, 128.335, 169.785 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body/Torso/Shoulder/Right_arm/Lower_arm_right:rotation_degrees")
+tracks/2/path = NodePath("Body/Torso/Shoulder/RightArm/LowerArmRight:rotation_degrees")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -77,7 +61,7 @@ tracks/2/keys = {
 "values": [ -87.5989, 116.0, -87.5989, -148.721 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Body/Torso/Shoulder/Right_arm/Lower_arm_right/Right_hand:rotation_degrees")
+tracks/3/path = NodePath("Body/Torso/Shoulder/RightArm/LowerArmRight/RightHand:rotation_degrees")
 tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -89,7 +73,7 @@ tracks/3/keys = {
 "values": [ 1.70755e-06, 32.2272, 1.70755e-06 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body/Torso/Armor_piece:rotation_degrees")
+tracks/4/path = NodePath("Body/Torso/ArmorPiece:rotation_degrees")
 tracks/4/interp = 2
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -101,7 +85,7 @@ tracks/4/keys = {
 "values": [ 146.418, 104.574, 146.418, 146.418 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body/Torso/Armor_piece/Left_arm/Lower_arm_left:rotation_degrees")
+tracks/5/path = NodePath("Body/Torso/ArmorPiece/LeftArm/LowerArmLeft:rotation_degrees")
 tracks/5/interp = 2
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -113,7 +97,7 @@ tracks/5/keys = {
 "values": [ 55.13, 9.73295, 9.73295 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Body/Torso/Armor_piece:position")
+tracks/6/path = NodePath("Body/Torso/ArmorPiece:position")
 tracks/6/interp = 2
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -125,7 +109,7 @@ tracks/6/keys = {
 "values": [ Vector2( 69.4844, 13.0109 ), Vector2( 69.4844, 13.0109 ), Vector2( 76.3148, 15.9022 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Body/Torso/Armor_piece/Left_arm:rotation_degrees")
+tracks/7/path = NodePath("Body/Torso/ArmorPiece/LeftArm:rotation_degrees")
 tracks/7/interp = 2
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -306,7 +290,7 @@ tracks/1/keys = {
 "values": [ 40.4926, 43.5899, 43.5899, 40.0, 40.0, 32.9832, 32.9832 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body/Torso/Armor_piece:rotation_degrees")
+tracks/2/path = NodePath("Body/Torso/ArmorPiece:rotation_degrees")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -318,7 +302,7 @@ tracks/2/keys = {
 "values": [ 149.518, 125.336, 125.336, 112.882, 101.374, 101.374 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Body/Torso/Armor_piece/Left_arm/Lower_arm_left:rotation_degrees")
+tracks/3/path = NodePath("Body/Torso/ArmorPiece/LeftArm/LowerArmLeft:rotation_degrees")
 tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -330,7 +314,7 @@ tracks/3/keys = {
 "values": [ 22.0418, 22.0418, 52.1892 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body/Torso/Shoulder/Right_arm:rotation_degrees")
+tracks/4/path = NodePath("Body/Torso/Shoulder/RightArm:rotation_degrees")
 tracks/4/interp = 2
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -342,7 +326,7 @@ tracks/4/keys = {
 "values": [ 128.335, 104.05, 104.05, 142.061 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body/Torso/Shoulder/Right_arm/Lower_arm_right:rotation_degrees")
+tracks/5/path = NodePath("Body/Torso/Shoulder/RightArm/LowerArmRight:rotation_degrees")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -390,7 +374,7 @@ tracks/8/keys = {
 "values": [ Vector2( -4.67578, -19.8605 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Body/Torso/Shoulder/Right_arm/Lower_arm_right/Right_hand:rotation_degrees")
+tracks/9/path = NodePath("Body/Torso/Shoulder/RightArm/LowerArmRight/RightHand:rotation_degrees")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -414,7 +398,7 @@ tracks/10/keys = {
 "values": [ -103.973 ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Body/Torso/Armor_piece:position")
+tracks/11/path = NodePath("Body/Torso/ArmorPiece:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -426,7 +410,7 @@ tracks/11/keys = {
 "values": [ Vector2( 69.4844, 13.0109 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Body/Torso/Armor_piece/Left_arm:rotation_degrees")
+tracks/12/path = NodePath("Body/Torso/ArmorPiece/LeftArm:rotation_degrees")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -444,7 +428,7 @@ custom_solver_bias = 0.0
 radius = 151.697
 height = 62.4031
 
-[node name="Archer_heavy" type="Node2D" index="0"]
+[node name="ArcherHeavy" type="Node2D" index="0"]
 
 scale = Vector2( 0.4, 0.4 )
 z_index = 2
@@ -456,14 +440,12 @@ projectile_launch_frequency = 2000
 projectile_offset = Vector2( -50, 0 )
 projectile_template = null
 attack_animation_speed = 0.25
-idle_animation_speed = 1
-animation_blend_speed = 1
+idle_animation_speed = 1.0
+animation_blend_speed = 1.0
 
 [node name="Body" type="Node2D" parent="." index="0"]
 
-editor/display_folded = true
-
-[node name="Foot_right" type="Sprite" parent="Body" index="0"]
+[node name="FootRight" type="Sprite" parent="Body" index="0"]
 
 show_behind_parent = true
 position = Vector2( -58.1815, -0.279724 )
@@ -472,7 +454,7 @@ texture = ExtResource( 2 )
 offset = Vector2( -11.8094, 30.2628 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Foot_left" type="Sprite" parent="Body" index="1"]
+[node name="FootLeft" type="Sprite" parent="Body" index="1"]
 
 show_behind_parent = true
 position = Vector2( 44.5938, 53.561 )
@@ -491,13 +473,12 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Torso" type="Sprite" parent="Body" index="3"]
 
-editor/display_folded = true
 position = Vector2( 0, -0.147265 )
 rotation = 0.752104
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Arrow_bag" type="Sprite" parent="Body/Torso" index="0"]
+[node name="ArrowBag" type="Sprite" parent="Body/Torso" index="0"]
 
 show_behind_parent = true
 position = Vector2( 29.9076, 1.24243 )
@@ -506,7 +487,7 @@ texture = ExtResource( 5 )
 offset = Vector2( -3.26807, -36.4615 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="Arrows" type="Sprite" parent="Body/Torso/Arrow_bag" index="0"]
+[node name="Arrows" type="Sprite" parent="Body/Torso/ArrowBag" index="0"]
 
 rotation = -8.9407e-08
 texture = ExtResource( 6 )
@@ -521,7 +502,7 @@ texture = ExtResource( 7 )
 offset = Vector2( -3.26807, -36.4615 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Right_arm" type="Sprite" parent="Body/Torso/Shoulder" index="0"]
+[node name="RightArm" type="Sprite" parent="Body/Torso/Shoulder" index="0"]
 
 show_behind_parent = true
 position = Vector2( -25.4468, -48.1622 )
@@ -531,7 +512,7 @@ texture = ExtResource( 8 )
 offset = Vector2( -2.92692, 32.2326 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="Lower_arm_right" type="Sprite" parent="Body/Torso/Shoulder/Right_arm" index="0"]
+[node name="LowerArmRight" type="Sprite" parent="Body/Torso/Shoulder/RightArm" index="0"]
 
 position = Vector2( 2.89691, 80.0891 )
 rotation = 1.31423
@@ -539,7 +520,7 @@ texture = ExtResource( 9 )
 offset = Vector2( -10.3558, 61.2752 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Right_hand" type="Sprite" parent="Body/Torso/Shoulder/Right_arm/Lower_arm_right" index="0"]
+[node name="RightHand" type="Sprite" parent="Body/Torso/Shoulder/RightArm/LowerArmRight" index="0"]
 
 show_behind_parent = true
 position = Vector2( -14.5484, 89.7987 )
@@ -548,14 +529,14 @@ texture = ExtResource( 10 )
 offset = Vector2( 7.5278, 32.1723 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
-[node name="Armor_piece" type="Sprite" parent="Body/Torso" index="2"]
+[node name="ArmorPiece" type="Sprite" parent="Body/Torso" index="2"]
 
 position = Vector2( 69.0612, 12.8318 )
 rotation = 2.03106
 texture = ExtResource( 11 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="Left_arm" type="Sprite" parent="Body/Torso/Armor_piece" index="0"]
+[node name="LeftArm" type="Sprite" parent="Body/Torso/ArmorPiece" index="0"]
 
 show_behind_parent = true
 position = Vector2( -2.63379, -8.92807 )
@@ -565,7 +546,7 @@ texture = ExtResource( 12 )
 offset = Vector2( 3.40039, 51.1805 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="Lower_arm_left" type="Sprite" parent="Body/Torso/Armor_piece/Left_arm" index="0"]
+[node name="LowerArmLeft" type="Sprite" parent="Body/Torso/ArmorPiece/LeftArm" index="0"]
 
 position = Vector2( 9.51941, 102.671 )
 rotation = 0.879943
@@ -574,7 +555,7 @@ offset = Vector2( 0.750122, 65.948 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform" ]
 
-[node name="Left_hand" type="Sprite" parent="Body/Torso/Armor_piece/Left_arm/Lower_arm_left" index="0"]
+[node name="LeftHand" type="Sprite" parent="Body/Torso/ArmorPiece/LeftArm/LowerArmLeft" index="0"]
 
 show_behind_parent = true
 position = Vector2( 3.59802, 97.955 )
@@ -583,7 +564,7 @@ texture = ExtResource( 13 )
 offset = Vector2( -16.1506, 26.1919 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
-[node name="Left_hand2" type="Sprite" parent="Body/Torso/Armor_piece/Left_arm/Lower_arm_left/Left_hand" index="0"]
+[node name="LeftHand2" type="Sprite" parent="Body/Torso/ArmorPiece/LeftArm/LowerArmLeft/LeftHand" index="0"]
 
 show_behind_parent = true
 position = Vector2( -46.6013, -2.88202 )
@@ -613,7 +594,6 @@ blend_times = [  ]
 
 [node name="EnemyCollider" type="StaticBody2D" parent="." index="2"]
 
-editor/display_folded = true
 position = Vector2( -28.8088, 94.1829 )
 input_pickable = false
 collision_layer = 32
