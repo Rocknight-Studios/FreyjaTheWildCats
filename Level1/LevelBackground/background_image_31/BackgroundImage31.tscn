@@ -1,0 +1,95 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Level1/LevelBackground/background_image_31/IceLevel31.png" type="Texture" id=1]
+[ext_resource path="res://Level1/Enemies/Trolls/Berserker/Berserker.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Unsorted/Steam/Steam.tscn" type="PackedScene" id=4]
+
+
+
+
+
+
+
+[node name="BackgroundImage31" type="Sprite" index="0"]
+
+position = Vector2( 960, -32940 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Geysers" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Geysers" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -350.479, 540.256, -192.845, 212.625, -338.115, 27.1719, -186.663, -155.188, -273.207, -232.461, -409.205, -235.551, -313.389, -544.637, -965.562, -535.367, -965.562, 543.348 )
+
+[node name="Forest" type="StaticBody2D" parent="." index="1"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Forest" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 669.507, 543.348, 647.871, 425.895, 765.324, -145.914, 579.872, -458.094, 576.781, -544.637, 963.14, -541.547, 966.231, 537.166 )
+
+[node name="Berserker" parent="." index="2" instance=ExtResource( 2 )]
+
+position = Vector2( 5.55188, 116.586 )
+
+[node name="Berserker2" parent="." index="3" instance=ExtResource( 2 )]
+
+position = Vector2( 151.75, 116.586 )
+
+[node name="Berserker3" parent="." index="4" instance=ExtResource( 2 )]
+
+position = Vector2( 379.376, 281.289 )
+
+[node name="Berserker4" parent="." index="5" instance=ExtResource( 2 )]
+
+position = Vector2( 292.397, 112.887 )
+
+[node name="Berserker5" parent="." index="6" instance=ExtResource( 2 )]
+
+position = Vector2( 438.596, 116.59 )
+
+[node name="Berserker6" parent="." index="7" instance=ExtResource( 2 )]
+
+position = Vector2( 94.3813, 284.996 )
+
+[node name="Berserker7" parent="." index="8" instance=ExtResource( 2 )]
+
+position = Vector2( 236.879, 281.297 )
+
+[node name="Ice_giant" parent="." index="9" instance=ExtResource( 3 )]
+
+position = Vector2( 222.074, -264.641 )
+
+[node name="Steam" parent="." index="10" instance=ExtResource( 4 )]
+
+position = Vector2( -573.996, 281.965 )
+scale = Vector2( 2, 2 )
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
+
+[node name="Steam2" parent="." index="11" instance=ExtResource( 4 )]
+
+position = Vector2( -679.733, -269.371 )
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
+
+

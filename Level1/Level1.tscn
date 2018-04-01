@@ -1,0 +1,160 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Level1/Level1.gd" type="Script" id=1]
+[ext_resource path="res://Level1/Camera2D.gd" type="Script" id=2]
+[ext_resource path="res://Level1/GameUI/GameUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level1/LevelBackground/LevelBackground.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Freyja/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Unsorted/FreyjaValkyrie'sJustice1.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Level1/Level1MusicPlayer.gd" type="Script" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 385.151 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 730.55, 12.4069 )
+
+[node name="Level1" type="Node" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="." index="0"]
+
+anchor_mode = 0
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+start_scroll_position_y = 0
+stop_and_clamp_position_y = -22650
+scroll_speed = 200
+
+[node name="ScreenBounds" type="Node2D" parent="Camera2D" index="0"]
+
+editor/display_folded = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="PlayerBounds" type="StaticBody2D" parent="Camera2D/ScreenBounds" index="0"]
+
+editor/display_folded = true
+scale = Vector2( 1.5, 1.5 )
+input_pickable = false
+collision_layer = 4
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="LeftWall" type="CollisionShape2D" parent="Camera2D/ScreenBounds/PlayerBounds" index="0"]
+
+position = Vector2( -6.66667, 346.667 )
+shape = SubResource( 1 )
+
+[node name="RightWall" type="CollisionShape2D" parent="Camera2D/ScreenBounds/PlayerBounds" index="1"]
+
+position = Vector2( 1293.33, 346.667 )
+shape = SubResource( 1 )
+
+[node name="TopWall" type="CollisionShape2D" parent="Camera2D/ScreenBounds/PlayerBounds" index="2"]
+
+position = Vector2( 606.667, -13.3333 )
+shape = SubResource( 2 )
+
+[node name="BottomWall" type="CollisionShape2D" parent="Camera2D/ScreenBounds/PlayerBounds" index="3"]
+
+position = Vector2( 666.667, 726.667 )
+shape = SubResource( 2 )
+
+[node name="ProjectileBounds" type="StaticBody2D" parent="Camera2D/ScreenBounds" index="1"]
+
+editor/display_folded = true
+visible = false
+position = Vector2( 20, 10 )
+scale = Vector2( 1.48, 1.48 )
+input_pickable = false
+collision_layer = 8
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision", "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="LeftWall" type="CollisionShape2D" parent="Camera2D/ScreenBounds/ProjectileBounds" index="0"]
+
+position = Vector2( -50, 360 )
+scale = Vector2( 1, 1.05391 )
+shape = SubResource( 1 )
+
+[node name="RightWall" type="CollisionShape2D" parent="Camera2D/ScreenBounds/ProjectileBounds" index="1"]
+
+position = Vector2( 1330, 360 )
+scale = Vector2( 1, 1.04103 )
+shape = SubResource( 1 )
+
+[node name="TopWall" type="CollisionShape2D" parent="Camera2D/ScreenBounds/ProjectileBounds" index="2"]
+
+position = Vector2( 630, -50 )
+shape = SubResource( 2 )
+
+[node name="BottomWall" type="CollisionShape2D" parent="Camera2D/ScreenBounds/ProjectileBounds" index="3"]
+
+position = Vector2( 630, 770 )
+shape = SubResource( 2 )
+
+[node name="UIZIndex" type="Node2D" parent="Camera2D" index="1"]
+
+z_index = 5
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="GameUI" parent="Camera2D/UIZIndex" index="0" instance=ExtResource( 3 )]
+
+rect_clip_content = false
+
+[node name="LevelBackground" parent="." index="1" instance=ExtResource( 4 )]
+
+position = Vector2( 0, 2.45557 )
+
+[node name="Player" parent="." index="2" instance=ExtResource( 5 )]
+
+position = Vector2( 960.781, 491.987 )
+
+[node name="Level1MusicPlayer" type="AudioStreamPlayer" parent="." index="3"]
+
+stream = ExtResource( 6 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+script = ExtResource( 7 )
+level_music = ExtResource( 6 )
+
+

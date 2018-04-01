@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Level1/LevelBackground/background_image_23/IceLevel23.png" type="Texture" id=1]
+[ext_resource path="res://Level1/Enemies/Trolls/Archer/ArcherHeavy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level1/Enemies/MiniSerpent/MiniSerpent.tscn" type="PackedScene" id=4]
+
+
+
+
+
+
+[node name="BackgroundImage23" type="Sprite"]
+
+position = Vector2( 960, -24300 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -0.237305, 547.205, -50.5879, 310.557, 67.7361, 121.742, 412.638, -69.5898, 639.216, -54.4844, 689.566, -167.773, 664.391, -308.756, 770.127, -409.457, 956.425, -386.799, 963.977, 534.617 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -858.87, 542.586, -620.303, 288.115, -658.928, 167.695, -713.458, 4.10547, -649.84, -89.0488, -702.097, -232.189, -820.245, -252.639, -870.231, -386.691, -449.897, -520.742, -231.779, -498.021, -54.5569, -538.92, -958.841, -541.191, -970.202, 547.131 )
+
+[node name="Archer_heavy" parent="." index="2" instance=ExtResource( 2 )]
+
+position = Vector2( -786.512, -109.186 )
+
+[node name="Archer_heavy2" parent="." index="3" instance=ExtResource( 2 )]
+
+position = Vector2( 803.167, -257.234 )
+
+[node name="Ice_giant" parent="." index="4" instance=ExtResource( 3 )]
+
+position = Vector2( -280.59, -170.357 )
+
+[node name="Ice_giant2" parent="." index="5" instance=ExtResource( 3 )]
+
+position = Vector2( 242.176, -334.037 )
+
+[node name="Serpent" parent="." index="6" instance=ExtResource( 4 )]
+
+position = Vector2( 211.206, 369.098 )
+rotation = 4.68438
+
+

@@ -1,7 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://GameUI/won.png" type="Texture" id=1]
+[ext_resource path="res://Level1/GameUI/Won.png" type="Texture" id=1]
 [ext_resource path="res://RestartButton.gd" type="Script" id=2]
+
+
 
 [node name="LevelComplete" type="Control" index="0"]
 
