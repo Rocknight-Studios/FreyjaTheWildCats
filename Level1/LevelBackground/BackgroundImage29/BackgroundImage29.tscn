@@ -1,0 +1,121 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage29/IceLevel29.png" type="Texture" id=1]
+[ext_resource path="res://Level1/Enemies/Trolls/Archer/ArcherHeavy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Level1/Enemies/Trolls/Berserker/Berserker.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Unsorted/Steam/Steam.tscn" type="PackedScene" id=5]
+
+
+
+
+
+
+
+
+
+[node name="BackgroundImage29" type="Sprite"]
+
+position = Vector2( 960, -30780 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -559.552, 547.814, -489.117, 166.105, -536.831, -99.7266, -609.537, -176.977, -530.015, -538.236, -961.708, -540.508, -963.98, 545.541 )
+
+[node name="Woods" type="StaticBody2D" parent="." index="1"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Woods" index="0"]
+
+position = Vector2( 0, -2.27344 )
+build_mode = 0
+polygon = PoolVector2Array( 621.926, 529.639, 608.293, 202.461, 833.229, 32.0547, 955.92, 29.7832, 965.009, 550.088 )
+
+[node name="Geysers" type="StaticBody2D" parent="." index="2"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Geysers" index="0"]
+
+position = Vector2( 0, -2.27344 )
+build_mode = 0
+polygon = PoolVector2Array( 780.971, 0.246094, 337.917, 70.6797, 337.917, -154.256, 222.041, -379.189, 349.277, -524.604, 867.31, -483.705, 955.92, -74.7324 )
+
+[node name="Archer_heavy" parent="." index="3" instance=ExtResource( 2 )]
+
+position = Vector2( -774.776, 513.488 )
+
+[node name="Archer_heavy2" parent="." index="4" instance=ExtResource( 2 )]
+
+position = Vector2( -772.504, -111.332 )
+
+[node name="Berserker" parent="." index="5" instance=ExtResource( 3 )]
+
+position = Vector2( -331.722, 427.15 )
+
+[node name="Berserker2" parent="." index="6" instance=ExtResource( 3 )]
+
+position = Vector2( -95.427, 343.084 )
+
+[node name="Berserker3" parent="." index="7" instance=ExtResource( 3 )]
+
+position = Vector2( 159.045, 440.783 )
+
+[node name="Berserker4" parent="." index="8" instance=ExtResource( 3 )]
+
+position = Vector2( 381.708, 329.453 )
+
+[node name="Ice_giant" parent="." index="9" instance=ExtResource( 4 )]
+
+position = Vector2( -340.391, -227.609 )
+
+[node name="Ice_giant2" parent="." index="10" instance=ExtResource( 4 )]
+
+position = Vector2( 51.2635, -227.609 )
+
+[node name="Steam" parent="." index="11" instance=ExtResource( 5 )]
+
+position = Vector2( 497.507, -93.0742 )
+
+[node name="Steam2" parent="." index="12" instance=ExtResource( 5 )]
+
+position = Vector2( 818.837, -142.936 )
+
+[node name="Steam3" parent="." index="13" instance=ExtResource( 5 )]
+
+position = Vector2( 718.006, -344.6 )
+
+[node name="Steam4" parent="." index="14" instance=ExtResource( 5 )]
+
+position = Vector2( 382.272, -375.623 )
+
+
