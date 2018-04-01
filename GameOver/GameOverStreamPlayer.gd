@@ -1,6 +1,6 @@
 extends AudioStreamPlayer
 
-onready var game_over_music = preload("res://unsorted/freyja-_not_impressed.m4a-ogg-coverted.ogg") # For speed and convenience.
+onready var game_over_music = preload("res://Unsorted/FreyjaNotImpressed.ogg") # For speed and convenience.
 onready var stream_start_time = OS.get_ticks_msec() # To know, when to stop playing the stream.
 var stream_length = 0 # For speed and convenience.
 

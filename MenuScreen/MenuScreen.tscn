@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://font/Norse.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Font/Norse.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://MenuScreen/text_background.png" type="Texture" id=2]
 [ext_resource path="res://MenuScreen/NewGameButton.gd" type="Script" id=3]
 [ext_resource path="res://MenuScreen/Button.gd" type="Script" id=4]
@@ -11,7 +11,7 @@
 [ext_resource path="res://MenuScreen/freyja.png" type="Texture" id=9]
 [ext_resource path="res://MenuScreen/menu_background_4.png" type="Texture" id=10]
 [ext_resource path="res://MenuScreen/background.png" type="Texture" id=11]
-[ext_resource path="res://unsorted/snow/snow_particle.png" type="Texture" id=12]
+[ext_resource path="res://Unsorted/Snow/SnowParticle.png" type="Texture" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -40,7 +40,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 [sub_resource type="Animation" id=4]
 
 resource_name = "CameraMovement"
-length = 3.0
+length = 12.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
@@ -50,10 +50,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 6, 12 ),
+"transitions": PoolRealArray( 0.25, 0.25, 0.25 ),
 "update": 0,
-"values": [ Vector2( 575.672, 600.964 ), Vector2( 1120.08, 632.149 ) ]
+"values": [ Vector2( 575.672, 600.964 ), Vector2( 1120.08, 632.149 ), Vector2( 575.672, 600.964 ) ]
 }
 
 [sub_resource type="ParticlesMaterial" id=5]
@@ -100,7 +100,6 @@ _sections_unfolded = [ "Emission Shape", "Gravity", "Initial Velocity", "Radial 
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -469,7 +468,6 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer" index="1"]
 
-editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -485,8 +483,7 @@ _sections_unfolded = [ "Scroll" ]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" index="0"]
 
-editor/display_folded = true
-motion_scale = Vector2( 0.1, 0.1 )
+motion_scale = Vector2( 0, 0 )
 motion_offset = Vector2( -800, 0 )
 motion_mirroring = Vector2( 1920, 2 )
 _sections_unfolded = [ "Motion" ]
@@ -502,7 +499,7 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 position = Vector2( 0, 2.78952 )
-motion_scale = Vector2( 0.15, 0.15 )
+motion_scale = Vector2( 0, 0 )
 motion_offset = Vector2( -900, 0 )
 motion_mirroring = Vector2( 1920, 2 )
 _sections_unfolded = [ "Motion" ]
@@ -532,7 +529,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" index="3"]
 
 editor/display_folded = true
-motion_scale = Vector2( 0.25, 0.25 )
+motion_scale = Vector2( 0.4, 0.4 )
 motion_offset = Vector2( -800, 0 )
 motion_mirroring = Vector2( 1920, 2 )
 _sections_unfolded = [ "Motion" ]
@@ -576,7 +573,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Camera2D" type="Camera2D" parent="." index="1"]
 
-position = Vector2( 1120.08, 630.098 )
+position = Vector2( 575.672, 600.964 )
 anchor_mode = 1
 rotating = false
 current = true

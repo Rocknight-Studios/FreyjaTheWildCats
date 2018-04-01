@@ -1,0 +1,163 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage16/IceLevel16.png" type="Texture" id=1]
+[ext_resource path="res://Level1/Enemies/Trolls/Archer/ArcherHeavy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Level1/Enemies/Trolls/Archer/TrollArcher.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=4]
+
+
+
+
+
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 215.141
+height = 407.13
+
+[sub_resource type="CapsuleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 69.5
+height = 580.365
+
+[sub_resource type="CapsuleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 108.141
+height = 12.0648
+
+[node name="BackgroundImage16" type="Sprite" index="0"]
+
+position = Vector2( 960, -16740 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Water" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+position = Vector2( -844.825, 285.025 )
+rotation = -0.495868
+input_pickable = false
+collision_layer = 64
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Water" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 162.839, -124.946, 143.66, -12.4922, 40.2905, 70.1475, -55.9761, 205.219, -57.5439, 253.864, 145.866, 363.898, 211.866, 204.722, 145.662, 86.9365, 196.597, -95.8574 )
+
+[node name="WaterRocks" type="StaticBody2D" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( -987.853, 316.004 )
+rotation = 0.154722
+input_pickable = false
+collision_layer = 16
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterRocks" index="0"]
+
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Rocks" type="StaticBody2D" parent="." index="2"]
+
+editor/display_folded = true
+position = Vector2( 975.351, 45.8594 )
+rotation = 0.489253
+input_pickable = false
+collision_layer = 16
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rocks" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 83.9253, 524.051, 133.625, 397.766, -82.5879, 398.799, -237.468, 156.116, -105.146, 45.7334, -212.501, 31.5898, -206.571, -324.796, -419.205, -431.635, -285.874, -502.624, -189.229, -328.2, 219.191, 440.624 )
+
+[node name="TowerWall" type="StaticBody2D" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( -80.4471, -307.984 )
+rotation = 1.55868
+input_pickable = false
+collision_layer = 64
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerWall" index="0"]
+
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="TowerWall2" type="StaticBody2D" parent="." index="4"]
+
+position = Vector2( -527.447, -348.984 )
+rotation = 1.55868
+input_pickable = false
+collision_layer = 64
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerWall2" index="0"]
+
+shape = SubResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Archer_heavy" parent="." index="5" instance=ExtResource( 2 )]
+
+position = Vector2( -506.673, -349.9 )
+
+[node name="Troll_archer" parent="." index="6" instance=ExtResource( 3 )]
+
+position = Vector2( -318.31, -309.928 )
+
+[node name="Troll_archer2" parent="." index="7" instance=ExtResource( 3 )]
+
+position = Vector2( -198.197, -307.723 )
+
+[node name="Troll_archer3" parent="." index="8" instance=ExtResource( 3 )]
+
+position = Vector2( -77.8987, -308.457 )
+
+[node name="Troll_archer4" parent="." index="9" instance=ExtResource( 3 )]
+
+position = Vector2( 40.7513, -306.252 )
+
+[node name="Ice_giant" parent="." index="10" instance=ExtResource( 4 )]
+
+position = Vector2( -200.105, 117.252 )
+
+[node name="Ice_giant2" parent="." index="11" instance=ExtResource( 4 )]
+
+position = Vector2( 280.353, 109.6 )
+
+[node name="Ice_giant3" parent="." index="12" instance=ExtResource( 4 )]
+
+position = Vector2( 522.49, -347.695 )
+
+
