@@ -10,7 +10,6 @@
 
 
 
-
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -29,7 +28,7 @@ custom_solver_bias = 0.0
 radius = 107.475
 height = 16.7412
 
-[node name="BackgroundImage21" type="Sprite" index="0"]
+[node name="BackgroundImage21" type="Sprite"]
 
 position = Vector2( 960, -22140 )
 texture = ExtResource( 1 )
@@ -119,24 +118,24 @@ position = Vector2( -358.846, 469.576 )
 
 [node name="Troll_archer2" parent="." index="7" instance=ExtResource( 3 )]
 
-position = Vector2( -221.459, 469.576 )
+position = Vector2( -240.193, 469.576 )
 
 [node name="Troll_archer3" parent="." index="8" instance=ExtResource( 3 )]
 
-position = Vector2( -86.1232, 469.576 )
+position = Vector2( -117.889, 469.576 )
 
 [node name="Troll_archer4" parent="." index="9" instance=ExtResource( 3 )]
 
-position = Vector2( 71.769, 469.576 )
+position = Vector2( 1.72144, 471.207 )
 
 [node name="Ice_giant" parent="." index="10" instance=ExtResource( 4 )]
 
-position = Vector2( -524.94, -155.842 )
+position = Vector2( -500.882, -185.451 )
 scale = Vector2( 0.7, 0.7 )
 
 [node name="Ice_giant2" parent="." index="11" instance=ExtResource( 4 )]
 
-position = Vector2( 254.268, -211.207 )
+position = Vector2( 183.423, -185.582 )
 scale = Vector2( 0.7, 0.7 )
 
 

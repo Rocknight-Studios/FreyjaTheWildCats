@@ -8,7 +8,6 @@
 
 
 
-
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -60,12 +59,12 @@ polygon = PoolVector2Array( -136.54, 395.802, 56.3997, 392.787, 250.846, 302.346
 
 [node name="Ice_giant" parent="." index="2" instance=ExtResource( 2 )]
 
-position = Vector2( -545.298, -224.935 )
+position = Vector2( -513.565, -201.552 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="Ice_giant2" parent="." index="3" instance=ExtResource( 2 )]
 
-position = Vector2( 234.024, -47.7134 )
+position = Vector2( 125.462, 64.1887 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="wind" parent="." index="4" instance=ExtResource( 3 )]

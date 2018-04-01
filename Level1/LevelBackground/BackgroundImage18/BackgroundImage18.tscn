@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage18/IceLevel18.png" type="Texture" id=1]
 [ext_resource path="res://Level1/Enemies/Trolls/Shield/ShieldTroll.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level1/Enemies/Trolls/Berserker/Berserker.tscn" type="PackedScene" id=4]
 
 
 
@@ -60,38 +61,53 @@ polygon = PoolVector2Array( 109.326, 523.76, 134.858, 427.133, -41.5537, 381.832
 
 [node name="Shield_troll" parent="." index="2" instance=ExtResource( 2 )]
 
-position = Vector2( -440.569, 17.6211 )
+position = Vector2( -405.275, 35.6211 )
 
 [node name="Shield_troll2" parent="." index="3" instance=ExtResource( 2 )]
 
-position = Vector2( -229.418, 47.6855 )
+position = Vector2( -69.4631, 37.9121 )
 
 [node name="Shield_troll3" parent="." index="4" instance=ExtResource( 2 )]
 
-position = Vector2( -1.97186, 17.6211 )
+position = Vector2( 76.9594, 36.3555 )
 
 [node name="Shield_troll4" parent="." index="5" instance=ExtResource( 2 )]
 
-position = Vector2( 197.534, 67.7266 )
+position = Vector2( 405.36, 37.8867 )
 
 [node name="Shield_troll5" parent="." index="6" instance=ExtResource( 2 )]
 
-position = Vector2( 394.061, 17.6211 )
+position = Vector2( 561.977, 38.2441 )
 
 [node name="Shield_troll6" parent="." index="7" instance=ExtResource( 2 )]
 
-position = Vector2( -648.56, 41.0039 )
+position = Vector2( -546.823, 36.1172 )
 
 [node name="Ice_giant" parent="." index="8" instance=ExtResource( 3 )]
 
-position = Vector2( -468.047, -265.832 )
+position = Vector2( -474.765, -265.832 )
 
 [node name="Ice_giant2" parent="." index="9" instance=ExtResource( 3 )]
 
-position = Vector2( -70.4344, -211.303 )
+position = Vector2( 7.35745, -258.916 )
 
 [node name="Ice_giant3" parent="." index="10" instance=ExtResource( 3 )]
 
-position = Vector2( 472.592, -281.738 )
+position = Vector2( 486.851, -260.98 )
+
+[node name="Berserker" parent="." index="11" instance=ExtResource( 4 )]
+
+position = Vector2( -479.702, 254.391 )
+animation_blend_speed = 1
+
+[node name="Berserker2" parent="." index="12" instance=ExtResource( 4 )]
+
+position = Vector2( 2.9812, 254.391 )
+animation_blend_speed = 1
+
+[node name="Berserker3" parent="." index="13" instance=ExtResource( 4 )]
+
+position = Vector2( 487.334, 254.391 )
+animation_blend_speed = 1
 
 

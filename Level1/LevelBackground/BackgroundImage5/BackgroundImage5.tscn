@@ -8,7 +8,6 @@
 
 
 
-
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -33,7 +32,7 @@ custom_solver_bias = 0.0
 radius = 44.958
 height = 114.983
 
-[node name="BackgroundImage5" type="Sprite"]
+[node name="BackgroundImage5" type="Sprite" index="0"]
 
 position = Vector2( 960, -4860 )
 texture = ExtResource( 1 )
@@ -115,17 +114,13 @@ _sections_unfolded = [ "Transform" ]
 [node name="Archer_heavy" parent="." index="4" instance=ExtResource( 2 )]
 
 position = Vector2( 20.5054, -133.285 )
-projectile_launch_frequency = 2000
-projectile_max_spawn_distance = 500.0
-projectile_offset = Vector2( -50, 0 )
-projectile_template = null
 
 [node name="Ice_giant" parent="." index="5" instance=ExtResource( 3 )]
 
-position = Vector2( -584.404, -235.812 )
+position = Vector2( -399.001, -124.269 )
 
 [node name="Ice_giant2" parent="." index="6" instance=ExtResource( 3 )]
 
-position = Vector2( 451.119, -166.094 )
+position = Vector2( 440.568, -132.932 )
 
 

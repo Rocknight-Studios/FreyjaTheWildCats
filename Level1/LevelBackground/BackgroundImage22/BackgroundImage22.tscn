@@ -11,7 +11,6 @@
 
 
 
-
 [node name="BackgroundImage22" type="Sprite"]
 
 position = Vector2( 960, -23220 )

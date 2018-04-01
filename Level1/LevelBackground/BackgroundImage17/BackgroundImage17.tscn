@@ -12,7 +12,6 @@
 
 
 
-
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -65,39 +64,44 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Ice_giant" parent="." index="2" instance=ExtResource( 2 )]
 
-position = Vector2( -143.141, 261.289 )
+position = Vector2( -316.34, 196.217 )
 
 [node name="Ice_giant2" parent="." index="3" instance=ExtResource( 2 )]
 
-position = Vector2( 418.062, 327.18 )
+position = Vector2( 487.441, 197.945 )
 
 [node name="Ice_giant3" parent="." index="4" instance=ExtResource( 2 )]
 
-position = Vector2( 468.048, -249.928 )
+position = Vector2( 483.012, -323.389 )
 
 [node name="Ice_giant4" parent="." index="5" instance=ExtResource( 2 )]
 
-position = Vector2( -329.451, -324.906 )
+position = Vector2( -318.371, -324.906 )
 
 [node name="berserker" parent="." index="6" instance=ExtResource( 3 )]
 
-position = Vector2( 134.052, 102.242 )
+position = Vector2( 69.9492, 100.284 )
+animation_blend_speed = 1
 
 [node name="berserker2" parent="." index="7" instance=ExtResource( 3 )]
 
-position = Vector2( 263.561, -124.965 )
+position = Vector2( 187.417, -148.313 )
+animation_blend_speed = 1
 
 [node name="berserker3" parent="." index="8" instance=ExtResource( 3 )]
 
-position = Vector2( 2.27197, -154.502 )
+position = Vector2( -43.2076, -145.46 )
+animation_blend_speed = 1
 
 [node name="berserker4" parent="." index="9" instance=ExtResource( 3 )]
 
-position = Vector2( 161.317, -349.9 )
+position = Vector2( 72.6241, -356.372 )
+animation_blend_speed = 1
 
 [node name="berserker5" parent="." index="10" instance=ExtResource( 3 )]
 
-position = Vector2( -520.306, 333.994 )
+position = Vector2( 75.2428, 328.736 )
+animation_blend_speed = 1
 
 [node name="wave_wrapper" type="Node2D" parent="." index="11"]
 
