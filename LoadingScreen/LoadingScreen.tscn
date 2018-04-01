@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://unsorted/acorn/acorn.png" type="Texture" id=1]
+[ext_resource path="res://Unsorted/Acorn/Acorn.png" type="Texture" id=1]
 
 [node name="LoadingScreen" type="Control" index="0"]
 

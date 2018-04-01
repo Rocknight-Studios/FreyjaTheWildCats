@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://font/Norse.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Font/Norse.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://MenuScreen/text_background.png" type="Texture" id=2]
 [ext_resource path="res://MenuScreen/NewGameButton.gd" type="Script" id=3]
 [ext_resource path="res://MenuScreen/Button.gd" type="Script" id=4]
@@ -11,7 +11,7 @@
 [ext_resource path="res://MenuScreen/freyja.png" type="Texture" id=9]
 [ext_resource path="res://MenuScreen/menu_background_4.png" type="Texture" id=10]
 [ext_resource path="res://MenuScreen/background.png" type="Texture" id=11]
-[ext_resource path="res://unsorted/snow/snow_particle.png" type="Texture" id=12]
+[ext_resource path="res://Unsorted/Snow/SnowParticle.png" type="Texture" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 

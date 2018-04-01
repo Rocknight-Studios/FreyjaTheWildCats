@@ -1,8 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://GameUI/lost.png" type="Texture" id=1]
+[ext_resource path="res://Level1/GameUI/Lost.png" type="Texture" id=1]
 [ext_resource path="res://RestartButton.gd" type="Script" id=2]
 [ext_resource path="res://GameOver/GameOverStreamPlayer.gd" type="Script" id=3]
+
+
 
 [node name="GameOver" type="Control" index="0"]
 
