@@ -12,7 +12,6 @@
 
 
 
-
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -122,23 +121,23 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Troll_archer" parent="." index="5" instance=ExtResource( 2 )]
 
-position = Vector2( -61.3461, 461.232 )
+position = Vector2( -38.5582, 461.232 )
 
 [node name="Troll_archer2" parent="." index="6" instance=ExtResource( 2 )]
 
-position = Vector2( 52.2576, 461.232 )
+position = Vector2( 81.6613, 461.232 )
 
 [node name="Troll_archer3" parent="." index="7" instance=ExtResource( 2 )]
 
-position = Vector2( 179.494, 461.232 )
+position = Vector2( 201.547, 461.232 )
 
 [node name="Troll_archer4" parent="." index="8" instance=ExtResource( 2 )]
 
-position = Vector2( 302.186, 461.232 )
+position = Vector2( 321.298, 461.232 )
 
 [node name="Troll_archer5" parent="." index="9" instance=ExtResource( 2 )]
 
-position = Vector2( 422.606, 461.232 )
+position = Vector2( 441.718, 461.967 )
 
 [node name="Archer_heavy" parent="." index="10" instance=ExtResource( 3 )]
 
@@ -154,26 +153,29 @@ position = Vector2( 590.739, -331.723 )
 
 [node name="Shield_troll" parent="." index="13" instance=ExtResource( 4 )]
 
-position = Vector2( -154.501, 56.8008 )
+position = Vector2( -426.576, 233.648 )
 
 [node name="Shield_troll2" parent="." index="14" instance=ExtResource( 4 )]
 
-position = Vector2( 43.1694, -22.7207 )
+position = Vector2( -338.188, 320.953 )
 
 [node name="Shield_troll3" parent="." index="15" instance=ExtResource( 4 )]
 
-position = Vector2( 238.568, -113.604 )
+position = Vector2( -245.288, 410.949 )
 
 [node name="berserker" parent="." index="16" instance=ExtResource( 5 )]
 
-position = Vector2( -390.797, -143.141 )
+position = Vector2( -384.599, -225.898 )
+animation_blend_speed = 1
 
 [node name="berserker2" parent="." index="17" instance=ExtResource( 5 )]
 
-position = Vector2( -79.5225, -245.385 )
+position = Vector2( -200.258, -227.936 )
+animation_blend_speed = 1
 
 [node name="berserker3" parent="." index="18" instance=ExtResource( 5 )]
 
-position = Vector2( -315.818, -406.703 )
+position = Vector2( -292.918, -367.539 )
+animation_blend_speed = 1
 
 

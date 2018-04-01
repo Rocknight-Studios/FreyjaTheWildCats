@@ -10,7 +10,6 @@
 
 
 
-
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -94,30 +93,37 @@ position = Vector2( 248.116, -141.486 )
 
 [node name="berserker" parent="." index="9" instance=ExtResource( 4 )]
 
-position = Vector2( -547.495, 82.0215 )
+position = Vector2( -568.039, 132.991 )
+animation_blend_speed = 1
 
 [node name="berserker2" parent="." index="10" instance=ExtResource( 4 )]
 
-position = Vector2( -264.52, 114.83 )
+position = Vector2( -310.688, 134.145 )
+animation_blend_speed = 1
 
 [node name="berserker3" parent="." index="11" instance=ExtResource( 4 )]
 
-position = Vector2( 28.7076, 104.577 )
+position = Vector2( -56.6517, 126.907 )
+animation_blend_speed = 1
 
 [node name="berserker4" parent="." index="12" instance=ExtResource( 4 )]
 
-position = Vector2( -430.614, -241.965 )
+position = Vector2( -442.114, -82.4678 )
+animation_blend_speed = 1
 
 [node name="berserker5" parent="." index="13" instance=ExtResource( 4 )]
 
-position = Vector2( -143.538, -229.662 )
+position = Vector2( -179.155, -86.7451 )
+animation_blend_speed = 1
 
 [node name="berserker6" parent="." index="14" instance=ExtResource( 4 )]
 
-position = Vector2( -79.9712, 342.439 )
+position = Vector2( -170.071, 354.218 )
+animation_blend_speed = 1
 
 [node name="berserker7" parent="." index="15" instance=ExtResource( 4 )]
 
-position = Vector2( -412.159, 410.107 )
+position = Vector2( -460.82, 354.055 )
+animation_blend_speed = 1
 
 

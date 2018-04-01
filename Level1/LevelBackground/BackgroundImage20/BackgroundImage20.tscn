@@ -8,7 +8,6 @@
 
 
 
-
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -21,7 +20,7 @@ custom_solver_bias = 0.0
 radius = 115.933
 height = 23.7461
 
-[node name="BackgroundImage20" type="Sprite" index="0"]
+[node name="BackgroundImage20" type="Sprite"]
 
 position = Vector2( 960, -21060 )
 texture = ExtResource( 1 )
@@ -86,18 +85,18 @@ position = Vector2( 580.305, -256.318 )
 
 [node name="Ice_giant" parent="." index="4" instance=ExtResource( 3 )]
 
-position = Vector2( -401.908, -36.9102 )
+position = Vector2( -358.483, -220.629 )
 
 [node name="Ice_giant2" parent="." index="5" instance=ExtResource( 3 )]
 
-position = Vector2( -38.9603, 311.684 )
+position = Vector2( -106.115, 144.004 )
 
 [node name="Ice_giant3" parent="." index="6" instance=ExtResource( 3 )]
 
-position = Vector2( 447.02, 221.459 )
+position = Vector2( 460.932, 144.373 )
 
 [node name="Ice_giant4" parent="." index="7" instance=ExtResource( 3 )]
 
-position = Vector2( 77.9208, -246.066 )
+position = Vector2( 162.063, -229.363 )
 
 

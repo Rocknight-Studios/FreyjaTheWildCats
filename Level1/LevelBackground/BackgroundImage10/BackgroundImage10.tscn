@@ -46,14 +46,14 @@ polygon = PoolVector2Array( -55.9797, 537.149, -179.073, 495.448, -222.568, 351.
 
 [node name="IceGiant" parent="." index="2" instance=ExtResource( 2 )]
 
-position = Vector2( -456.687, -243.112 )
+position = Vector2( -285.004, -188.849 )
 
 [node name="IceGiant2" parent="." index="3" instance=ExtResource( 2 )]
 
-position = Vector2( 352.172, -254.473 )
+position = Vector2( 281.327, -195.209 )
 
 [node name="IceGiant3" parent="." index="4" instance=ExtResource( 2 )]
 
-position = Vector2( -24.9929, 213.575 )
+position = Vector2( 0.690552, 104.791 )
 
 

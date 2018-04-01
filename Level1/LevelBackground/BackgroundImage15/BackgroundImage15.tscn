@@ -10,14 +10,13 @@
 
 
 
-
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 70.2217
 height = 561.322
 
-[node name="BackgroundImage15" type="Sprite" index="0"]
+[node name="BackgroundImage15" type="Sprite"]
 
 position = Vector2( 960, -15660 )
 texture = ExtResource( 1 )
@@ -77,7 +76,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Rocks" type="StaticBody2D" parent="." index="3"]
 
@@ -116,26 +115,30 @@ position = Vector2( 312.324, -133.613 )
 
 [node name="Shield_troll" parent="." index="8" instance=ExtResource( 3 )]
 
-position = Vector2( -125.264, -111.902 )
+position = Vector2( 513.923, 122.859 )
 
 [node name="Shield_troll2" parent="." index="9" instance=ExtResource( 3 )]
 
-position = Vector2( -397.503, -111.902 )
+position = Vector2( -336.935, 125.029 )
 
 [node name="berserker" parent="." index="10" instance=ExtResource( 4 )]
 
-position = Vector2( -313.994, -349.068 )
+position = Vector2( -189.471, 178.457 )
 
 [node name="berserker2" parent="." index="11" instance=ExtResource( 4 )]
 
-position = Vector2( -106.892, -349.068 )
+position = Vector2( -55.4994, 293.693 )
 
 [node name="berserker3" parent="." index="12" instance=ExtResource( 4 )]
 
-position = Vector2( 501.055, -430.906 )
+position = Vector2( 81.5333, 393.572 )
 
 [node name="berserker4" parent="." index="13" instance=ExtResource( 4 )]
 
-position = Vector2( 170.359, -390.822 )
+position = Vector2( 223.968, 299.584 )
+
+[node name="berserker5" parent="." index="14" instance=ExtResource( 4 )]
+
+position = Vector2( 349.175, 179.917 )
 
 

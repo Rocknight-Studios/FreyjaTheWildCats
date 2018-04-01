@@ -6,7 +6,6 @@
 
 
 
-
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -19,7 +18,7 @@ custom_solver_bias = 0.0
 radius = 74.5603
 height = 205.224
 
-[node name="BackgroundImage2" type="Sprite"]
+[node name="BackgroundImage2" type="Sprite" index="0"]
 
 position = Vector2( 960, -1620 )
 texture = ExtResource( 1 )
@@ -63,29 +62,26 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Shield_troll" parent="." index="2" instance=ExtResource( 2 )]
 
+position = Vector2( 3.01465, -58.7861 )
 projectile_launch_frequency = 1000
 projectile_offset = Vector2( 0, 0 )
-projectile_template = null
 
 [node name="Shield_troll4" parent="." index="3" instance=ExtResource( 2 )]
 
-position = Vector2( -543.025, 0 )
+position = Vector2( -540.01, -58.7861 )
 projectile_launch_frequency = 1000
 projectile_offset = Vector2( 0, 0 )
-projectile_template = null
 
 [node name="Shield_troll2" parent="." index="4" instance=ExtResource( 2 )]
 
-position = Vector2( 269.814, 0 )
+position = Vector2( 272.829, -58.7861 )
 projectile_launch_frequency = 1000
 projectile_offset = Vector2( 0, 0 )
-projectile_template = null
 
 [node name="Shield_troll3" parent="." index="5" instance=ExtResource( 2 )]
 
-position = Vector2( -273.212, 0 )
+position = Vector2( -270.197, -58.7861 )
 projectile_launch_frequency = 1000
 projectile_offset = Vector2( 0, 0 )
-projectile_template = null
 
 

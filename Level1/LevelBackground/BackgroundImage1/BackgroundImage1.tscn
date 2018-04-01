@@ -39,6 +39,7 @@ shape = SubResource( 1 )
 
 [node name="GuardTowerLeft" type="StaticBody2D" parent="." index="1"]
 
+editor/display_folded = true
 position = Vector2( -741.211, -352.361 )
 input_pickable = false
 collision_layer = 64
@@ -56,6 +57,7 @@ shape = SubResource( 1 )
 
 [node name="GuardTowerRight" type="StaticBody2D" parent="." index="2"]
 
+editor/display_folded = true
 position = Vector2( 710.178, -350.69 )
 input_pickable = false
 collision_layer = 64
@@ -73,6 +75,7 @@ shape = SubResource( 1 )
 
 [node name="IceBlock" type="StaticBody2D" parent="." index="3"]
 
+editor/display_folded = true
 position = Vector2( 882.424, 260.372 )
 input_pickable = false
 collision_layer = 16

@@ -14,7 +14,6 @@
 
 
 
-
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -160,19 +159,19 @@ position = Vector2( -773.296, -273.91 )
 
 [node name="Shield_troll" parent="." index="10" instance=ExtResource( 4 )]
 
-position = Vector2( -541.14, -167.019 )
+position = Vector2( -519.743, -243.637 )
 
 [node name="Shield_troll2" parent="." index="11" instance=ExtResource( 4 )]
 
-position = Vector2( -15.0316, -93.5303 )
+position = Vector2( -25.583, -190 )
 
 [node name="Shield_troll3" parent="." index="12" instance=ExtResource( 4 )]
 
-position = Vector2( 516.087, -135.285 )
+position = Vector2( 485.94, -249.549 )
 
 [node name="Ice_giant" parent="." index="13" instance=ExtResource( 5 )]
 
-position = Vector2( 16.7018, 332.367 )
+position = Vector2( 3.34033, 193.742 )
 
 [node name="wind" parent="." index="14" instance=ExtResource( 6 )]
 
