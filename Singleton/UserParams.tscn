@@ -6,6 +6,8 @@
 
 script = ExtResource( 1 )
 ice_giant_projectile_max_distance_from_parent = 700.0
+ice_giant_projectile_offsets = [ Vector2( 200, 0 ), Vector2( -200, 0 ) ]
+archer_projectile_offsets = [  ]
 game_over_scene_path = NodePath("res://GameOver/GameOver.tscn")
 level_won_scene_path = NodePath("res://LevelComplete/LevelComplete.tscn")
 new_game_scene_path = NodePath("res://Level1/Level1.tscn")
