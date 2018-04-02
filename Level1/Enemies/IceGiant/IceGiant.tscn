@@ -13,19 +13,6 @@
 [ext_resource path="res://Level1/Enemies/DeathSoulParticles.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Level1/Enemies/DeathParticles.tscn" type="PackedScene" id=12]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 [sub_resource type="Animation" id=1]
 
 resource_name = "Attack"
@@ -556,7 +543,7 @@ custom_solver_bias = 0.0
 radius = 138.0
 height = 388.0
 
-[node name="Ice_giant" type="Node2D" index="0"]
+[node name="Ice_giant" type="Node2D"]
 
 scale = Vector2( 0.5, 0.5 )
 z_index = 2
@@ -564,12 +551,11 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 total_health = 10
 fade_out_speed = 5
-projectile_launch_frequency = 2000
-projectile_offset = Vector2( -50, 0 )
 projectile_template = ExtResource( 2 )
 attack_animation_speed = 0.25
-idle_animation_speed = 1
-animation_blend_speed = 1
+idle_animation_speed = 1.0
+animation_blend_speed = 1.0
+projectile_type = "ice_giant_projectile_offsets"
 
 [node name="Body" type="Node2D" parent="." index="0"]
 
