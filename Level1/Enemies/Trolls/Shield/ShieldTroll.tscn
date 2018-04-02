@@ -432,7 +432,8 @@ __meta__ = {
 total_health = 15
 fade_out_speed = 5
 projectile_launch_frequency = 2000
-projectile_offset = Vector2( -50, 0 )
+projectile_offset_amount = 0
+projectile_offsets = [ -50.0, 100.0 ]
 projectile_template = null
 attack_animation_speed = 0.25
 idle_animation_speed = 1.0
@@ -479,6 +480,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 [node name="Hand" type="Sprite" parent="Body/Right_arm/Lower_right_arm" index="0"]
 
 position = Vector2( -11.1638, 105.034 )
+
 rotation = -0.0904216
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Visibility", "Z Index" ]
@@ -492,7 +494,7 @@ _sections_unfolded = [ "Visibility", "Z Index" ]
 [node name="Torso" type="Sprite" parent="Body" index="4"]
 
 position = Vector2( -1.99103, -39.805 )
-rotation = -0.076242
+rotation = 0.128758
 z_index = 1
 texture = ExtResource( 8 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -500,7 +502,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="Shield" type="Sprite" parent="Body/Torso" index="0"]
 
 position = Vector2( 57.5343, 55.0754 )
-rotation = -1.33153
+rotation = -1.51558
 texture = ExtResource( 9 )
 offset = Vector2( -16.7739, 64.5913 )
 _sections_unfolded = [ "Transform" ]
