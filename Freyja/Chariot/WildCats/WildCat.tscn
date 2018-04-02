@@ -12,23 +12,6 @@
 [ext_resource path="res://Freyja/Chariot/WildCats/Whiskers.png" type="Texture" id=10]
 [ext_resource path="res://Freyja/Chariot/WildCats/Tail.png" type="Texture" id=11]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [sub_resource type="Animation" id=1]
 
 resource_name = "Idle"
@@ -168,7 +151,7 @@ tracks/4/keys = {
 "values": [ Vector2( -3.77064, 53.8881 ), Vector2( -4.27628, 54.8479 ), Vector2( 1.19501, 52.9918 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Paw_front_right:position")
+tracks/5/path = NodePath("PawFrontRight:position")
 tracks/5/interp = 2
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -180,7 +163,7 @@ tracks/5/keys = {
 "values": [ Vector2( 49.1784, -14.1229 ), Vector2( 49.1708, -53.7606 ), Vector2( 47.2267, -10.1701 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Paw_back_right:position")
+tracks/6/path = NodePath("PawBackRight:position")
 tracks/6/interp = 2
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -192,7 +175,7 @@ tracks/6/keys = {
 "values": [ Vector2( 37.1394, 123.538 ), Vector2( 34.4509, 145.818 ), Vector2( 41.4959, 87.0044 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Paw_back_left:position")
+tracks/7/path = NodePath("PawBackLeft:position")
 tracks/7/interp = 2
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -204,7 +187,7 @@ tracks/7/keys = {
 "values": [ Vector2( -49.2986, 126.873 ), Vector2( -45.4177, 105.041 ), Vector2( -39.5003, 139.176 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Paw_front_left:position")
+tracks/8/path = NodePath("PawFrontLeft:position")
 tracks/8/interp = 2
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -240,7 +223,7 @@ tracks/10/keys = {
 "values": [ -11.2302, -19.422, -11.2302, -1.59597 ]
 }
 
-[node name="WildCat" type="Node2D"]
+[node name="WildCat" type="Node2D" index="0"]
 
 position = Vector2( 370.802, 277.348 )
 rotation = 0.00105062
@@ -254,13 +237,13 @@ visible = false
 position = Vector2( 867.924, 452.139 )
 texture = ExtResource( 3 )
 
-[node name="Paw_front_right" type="Sprite" parent="." index="2"]
+[node name="PawFrontRight" type="Sprite" parent="." index="2"]
 
 show_behind_parent = true
 position = Vector2( 49.2326, -24.8874 )
 texture = ExtResource( 4 )
 
-[node name="Paw_front_left" type="Sprite" parent="." index="3"]
+[node name="PawFrontLeft" type="Sprite" parent="." index="3"]
 
 show_behind_parent = true
 position = Vector2( -48.6808, -16.1355 )
@@ -268,13 +251,13 @@ texture = ExtResource( 4 )
 flip_v = true
 _sections_unfolded = [ "Offset" ]
 
-[node name="Paw_back_right" type="Sprite" parent="." index="4"]
+[node name="PawBackRight" type="Sprite" parent="." index="4"]
 
 show_behind_parent = true
 position = Vector2( 36.2914, 130.578 )
 texture = ExtResource( 4 )
 
-[node name="Paw_back_left" type="Sprite" parent="." index="5"]
+[node name="PawBackLeft" type="Sprite" parent="." index="5"]
 
 show_behind_parent = true
 position = Vector2( -48.5385, 120.652 )
@@ -306,18 +289,17 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Head" type="Sprite" parent="." index="9"]
 
-editor/display_folded = true
 position = Vector2( 2.57249, -55.0463 )
 rotation = -0.287768
 texture = ExtResource( 8 )
 offset = Vector2( 2.72764, -17.9592 )
 
-[node name="Ear_right" type="Sprite" parent="Head" index="0"]
+[node name="EarRight" type="Sprite" parent="Head" index="0"]
 
 position = Vector2( 43.1522, -47.2433 )
 texture = ExtResource( 9 )
 
-[node name="Ear_left" type="Sprite" parent="Head" index="1"]
+[node name="EarLeft" type="Sprite" parent="Head" index="1"]
 
 position = Vector2( -20.8026, -61.9845 )
 rotation = 0.382303
@@ -325,12 +307,12 @@ texture = ExtResource( 9 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform" ]
 
-[node name="Whiskers_right" type="Sprite" parent="Head" index="2"]
+[node name="WhiskersRight" type="Sprite" parent="Head" index="2"]
 
 position = Vector2( 35.8013, -69.2959 )
 texture = ExtResource( 10 )
 
-[node name="Whiskers_left" type="Sprite" parent="Head" index="3"]
+[node name="WhiskersLeft" type="Sprite" parent="Head" index="3"]
 
 position = Vector2( 0.884033, -73.3957 )
 rotation = 0.304126

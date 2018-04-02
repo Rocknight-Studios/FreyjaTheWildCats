@@ -4,10 +4,6 @@
 [ext_resource path="res://Level1/Enemies/Trolls/Archer/ArcherHeavy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=3]
 
-
-
-
-
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -20,7 +16,7 @@ custom_solver_bias = 0.0
 radius = 115.933
 height = 23.7461
 
-[node name="BackgroundImage20" type="Sprite"]
+[node name="BackgroundImage20" type="Sprite" index="0"]
 
 position = Vector2( 960, -21060 )
 texture = ExtResource( 1 )
@@ -79,23 +75,23 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 2 )
 
-[node name="Archer_heavy" parent="." index="3" instance=ExtResource( 2 )]
+[node name="ArcherHeavy" parent="." index="3" instance=ExtResource( 2 )]
 
 position = Vector2( 580.305, -256.318 )
 
-[node name="Ice_giant" parent="." index="4" instance=ExtResource( 3 )]
+[node name="IceGiant" parent="." index="4" instance=ExtResource( 3 )]
 
 position = Vector2( -358.483, -220.629 )
 
-[node name="Ice_giant2" parent="." index="5" instance=ExtResource( 3 )]
+[node name="IceGiant2" parent="." index="5" instance=ExtResource( 3 )]
 
 position = Vector2( -106.115, 144.004 )
 
-[node name="Ice_giant3" parent="." index="6" instance=ExtResource( 3 )]
+[node name="IceGiant3" parent="." index="6" instance=ExtResource( 3 )]
 
 position = Vector2( 460.932, 144.373 )
 
-[node name="Ice_giant4" parent="." index="7" instance=ExtResource( 3 )]
+[node name="IceGiant4" parent="." index="7" instance=ExtResource( 3 )]
 
 position = Vector2( 162.063, -229.363 )
 

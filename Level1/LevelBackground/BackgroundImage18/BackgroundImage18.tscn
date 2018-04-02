@@ -5,11 +5,6 @@
 [ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Level1/Enemies/Trolls/Berserker/Berserker.tscn" type="PackedScene" id=4]
 
-
-
-
-
-
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -59,55 +54,52 @@ _sections_unfolded = [ "Collision" ]
 build_mode = 0
 polygon = PoolVector2Array( 109.326, 523.76, 134.858, 427.133, -41.5537, 381.832, -162.471, 152.32, -42.2178, 37.2988, -131.931, -8.44531, -108.526, -406.834, 297.041, 420.529 )
 
-[node name="Shield_troll" parent="." index="2" instance=ExtResource( 2 )]
+[node name="ShieldTroll" parent="." index="2" instance=ExtResource( 2 )]
 
 position = Vector2( -405.275, 35.6211 )
 
-[node name="Shield_troll2" parent="." index="3" instance=ExtResource( 2 )]
+[node name="ShieldTroll2" parent="." index="3" instance=ExtResource( 2 )]
 
 position = Vector2( -69.4631, 37.9121 )
 
-[node name="Shield_troll3" parent="." index="4" instance=ExtResource( 2 )]
+[node name="ShieldTroll3" parent="." index="4" instance=ExtResource( 2 )]
 
 position = Vector2( 76.9594, 36.3555 )
 
-[node name="Shield_troll4" parent="." index="5" instance=ExtResource( 2 )]
+[node name="ShieldTroll4" parent="." index="5" instance=ExtResource( 2 )]
 
 position = Vector2( 405.36, 37.8867 )
 
-[node name="Shield_troll5" parent="." index="6" instance=ExtResource( 2 )]
+[node name="ShieldTroll5" parent="." index="6" instance=ExtResource( 2 )]
 
 position = Vector2( 561.977, 38.2441 )
 
-[node name="Shield_troll6" parent="." index="7" instance=ExtResource( 2 )]
+[node name="ShieldTroll6" parent="." index="7" instance=ExtResource( 2 )]
 
 position = Vector2( -546.823, 36.1172 )
 
-[node name="Ice_giant" parent="." index="8" instance=ExtResource( 3 )]
+[node name="IceGiant" parent="." index="8" instance=ExtResource( 3 )]
 
 position = Vector2( -474.765, -265.832 )
 
-[node name="Ice_giant2" parent="." index="9" instance=ExtResource( 3 )]
+[node name="IceGiant2" parent="." index="9" instance=ExtResource( 3 )]
 
 position = Vector2( 7.35745, -258.916 )
 
-[node name="Ice_giant3" parent="." index="10" instance=ExtResource( 3 )]
+[node name="IceGiant3" parent="." index="10" instance=ExtResource( 3 )]
 
 position = Vector2( 486.851, -260.98 )
 
 [node name="Berserker" parent="." index="11" instance=ExtResource( 4 )]
 
 position = Vector2( -479.702, 254.391 )
-animation_blend_speed = 1
 
 [node name="Berserker2" parent="." index="12" instance=ExtResource( 4 )]
 
 position = Vector2( 2.9812, 254.391 )
-animation_blend_speed = 1
 
 [node name="Berserker3" parent="." index="13" instance=ExtResource( 4 )]
 
 position = Vector2( 487.334, 254.391 )
-animation_blend_speed = 1
 
 

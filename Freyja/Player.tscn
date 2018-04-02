@@ -19,7 +19,7 @@ custom_solver_bias = 0.0
 radius = 73.0467
 height = 122.846
 
-[node name="Player" type="Node2D" index="0" groups=[
+[node name="Player" type="Node2D" groups=[
 "Player",
 ]]
 
@@ -56,7 +56,7 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 5 )
 _sections_unfolded = [ "Collision" ]
-total_health = 20
+total_health = 100
 health_decrease_amount = 1
 health_decrease_frequency = 500
 

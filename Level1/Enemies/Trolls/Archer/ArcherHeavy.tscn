@@ -428,13 +428,13 @@ custom_solver_bias = 0.0
 radius = 151.697
 height = 62.4031
 
-[node name="ArcherHeavy" type="Node2D" index="0"]
+[node name="ArcherHeavy" type="Node2D"]
 
 scale = Vector2( 0.4, 0.4 )
 z_index = 2
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
-total_health = 10
+total_health = 4
 fade_out_speed = 5
 projectile_launch_frequency = 2000
 projectile_offset = Vector2( -50, 0 )

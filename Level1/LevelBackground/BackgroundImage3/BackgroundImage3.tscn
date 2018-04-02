@@ -4,10 +4,6 @@
 [ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Level1/EnvironmentEffects/Wind.tscn" type="PackedScene" id=3]
 
-
-
-
-
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -57,17 +53,17 @@ _sections_unfolded = [ "Collision", "Transform" ]
 build_mode = 0
 polygon = PoolVector2Array( -136.54, 395.802, 56.3997, 392.787, 250.846, 302.346, 431.726, -86.5493, -139.556, -88.0544 )
 
-[node name="Ice_giant" parent="." index="2" instance=ExtResource( 2 )]
+[node name="IceGiant" parent="." index="2" instance=ExtResource( 2 )]
 
 position = Vector2( -513.565, -201.552 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
-[node name="Ice_giant2" parent="." index="3" instance=ExtResource( 2 )]
+[node name="IceGiant2" parent="." index="3" instance=ExtResource( 2 )]
 
 position = Vector2( 125.462, 64.1887 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
-[node name="wind" parent="." index="4" instance=ExtResource( 3 )]
+[node name="Wind" parent="." index="4" instance=ExtResource( 3 )]
 
 z_index = 3
 

@@ -7,21 +7,13 @@
 [ext_resource path="res://Level1/Enemies/Trolls/Shield/ShieldTroll.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Level1/Enemies/MiniSerpent/MiniSerpent.tscn" type="PackedScene" id=6]
 
-
-
-
-
-
-
-
-
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 128.561
 height = 20.0
 
-[node name="BackgroundImage27" type="Sprite"]
+[node name="BackgroundImage27" type="Sprite" index="0"]
 
 position = Vector2( 960, -28620 )
 texture = ExtResource( 1 )
@@ -75,15 +67,15 @@ bounce = 0.0
 position = Vector2( -788.338, 259.262 )
 shape = SubResource( 1 )
 
-[node name="Archer_heavy" parent="." index="3" instance=ExtResource( 2 )]
+[node name="ArcherHeavy" parent="." index="3" instance=ExtResource( 2 )]
 
 position = Vector2( -783.852, 265.002 )
 
-[node name="Ice_giant" parent="." index="4" instance=ExtResource( 3 )]
+[node name="IceGiant" parent="." index="4" instance=ExtResource( 3 )]
 
 position = Vector2( -307.203, 46.2637 )
 
-[node name="Ice_giant2" parent="." index="5" instance=ExtResource( 3 )]
+[node name="IceGiant2" parent="." index="5" instance=ExtResource( 3 )]
 
 position = Vector2( 198.016, 46.2637 )
 
@@ -95,27 +87,27 @@ position = Vector2( -316.456, 490.412 )
 
 position = Vector2( 188.763, 490.412 )
 
-[node name="Shield_troll" parent="." index="8" instance=ExtResource( 5 )]
+[node name="ShieldTroll" parent="." index="8" instance=ExtResource( 5 )]
 
 position = Vector2( -420.09, 309.053 )
 
-[node name="Shield_troll5" parent="." index="9" instance=ExtResource( 5 )]
+[node name="ShieldTroll5" parent="." index="9" instance=ExtResource( 5 )]
 
 position = Vector2( 85.1284, 309.053 )
 
-[node name="Shield_troll2" parent="." index="10" instance=ExtResource( 5 )]
+[node name="ShieldTroll2" parent="." index="10" instance=ExtResource( 5 )]
 
 position = Vector2( -309.053, 309.053 )
 
-[node name="Shield_troll4" parent="." index="11" instance=ExtResource( 5 )]
+[node name="ShieldTroll4" parent="." index="11" instance=ExtResource( 5 )]
 
 position = Vector2( 196.166, 309.053 )
 
-[node name="Shield_troll3" parent="." index="12" instance=ExtResource( 5 )]
+[node name="ShieldTroll3" parent="." index="12" instance=ExtResource( 5 )]
 
 position = Vector2( -199.867, 309.053 )
 
-[node name="Shield_troll6" parent="." index="13" instance=ExtResource( 5 )]
+[node name="ShieldTroll6" parent="." index="13" instance=ExtResource( 5 )]
 
 position = Vector2( 305.352, 309.053 )
 

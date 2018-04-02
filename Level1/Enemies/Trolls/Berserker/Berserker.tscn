@@ -22,7 +22,7 @@ length = 1.5
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Body/torso:rotation_degrees")
+tracks/0/path = NodePath("Body/Torso:rotation_degrees")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -34,7 +34,7 @@ tracks/0/keys = {
 "values": [ 0.0, 71.8432, 0.0, -46.0138 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Body/torso/right_shoulder/right_arm/right_lower_arm:rotation_degrees")
+tracks/1/path = NodePath("Body/Torso/RightShoulder/RightArm/RightLowerArm:rotation_degrees")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -46,7 +46,7 @@ tracks/1/keys = {
 "values": [ 4.73548, 73.6263, 4.73548 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body/torso/left_shoulder/left_arm/left_lower_arm:rotation_degrees")
+tracks/2/path = NodePath("Body/Torso/LeftShoulder/LeftArm/LeftLowerArm:rotation_degrees")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -58,7 +58,7 @@ tracks/2/keys = {
 "values": [ 11.3821, 79.6311, 11.3821 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Body/torso/right_shoulder/right_arm/right_lower_arm/right_hand/club:rotation_degrees")
+tracks/3/path = NodePath("Body/Torso/RightShoulder/RightArm/RightLowerArm/RightHand/Club:rotation_degrees")
 tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -70,7 +70,7 @@ tracks/3/keys = {
 "values": [ 1.17999, 1.17999 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body/torso/left_shoulder/left_arm:rotation_degrees")
+tracks/4/path = NodePath("Body/Torso/LeftShoulder/LeftArm:rotation_degrees")
 tracks/4/interp = 2
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -82,7 +82,7 @@ tracks/4/keys = {
 "values": [ -44.2449, -19.916, -44.2449 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body/torso/right_shoulder/right_arm:rotation_degrees")
+tracks/5/path = NodePath("Body/Torso/RightShoulder/RightArm:rotation_degrees")
 tracks/5/interp = 2
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -94,7 +94,7 @@ tracks/5/keys = {
 "values": [ -23.7067, -65.7206, -23.7067 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Body/torso/left_shoulder:position")
+tracks/6/path = NodePath("Body/Torso/LeftShoulder:position")
 tracks/6/interp = 2
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -106,7 +106,7 @@ tracks/6/keys = {
 "values": [ Vector2( 103.524, 15.9307 ), Vector2( 96.6736, 27.4668 ), Vector2( 103.524, 15.9307 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Body/torso/left_shoulder:rotation_degrees")
+tracks/7/path = NodePath("Body/Torso/LeftShoulder:rotation_degrees")
 tracks/7/interp = 2
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -118,7 +118,7 @@ tracks/7/keys = {
 "values": [ 60.8293 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Body/torso/right_shoulder:position")
+tracks/8/path = NodePath("Body/Torso/RightShoulder:position")
 tracks/8/interp = 2
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -130,7 +130,7 @@ tracks/8/keys = {
 "values": [ Vector2( -109.715, 9.23895 ), Vector2( -88.5746, -1.34128 ), Vector2( -109.715, 9.23895 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Body/torso/right_shoulder:rotation_degrees")
+tracks/9/path = NodePath("Body/Torso/RightShoulder:rotation_degrees")
 tracks/9/interp = 2
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -142,7 +142,7 @@ tracks/9/keys = {
 "values": [ 1.10636 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Body/torso/left_shoulder/left_arm/left_lower_arm/left_hand:rotation_degrees")
+tracks/10/path = NodePath("Body/Torso/LeftShoulder/LeftArm/LeftLowerArm/LeftHand:rotation_degrees")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -154,7 +154,7 @@ tracks/10/keys = {
 "values": [ -27.0553 ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Body/torso/right_shoulder/right_arm/right_lower_arm/right_hand:rotation_degrees")
+tracks/11/path = NodePath("Body/Torso/RightShoulder/RightArm/RightLowerArm/RightHand:rotation_degrees")
 tracks/11/interp = 2
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -166,7 +166,7 @@ tracks/11/keys = {
 "values": [ 17.7714, 95.9773, 17.7714 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Body/berserker_head:rotation_degrees")
+tracks/12/path = NodePath("Body/BerserkerHead:rotation_degrees")
 tracks/12/interp = 2
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -185,7 +185,7 @@ length = 1.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Body/torso/left_shoulder:position")
+tracks/0/path = NodePath("Body/Torso/LeftShoulder:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -197,7 +197,7 @@ tracks/0/keys = {
 "values": [ Vector2( 135.375, -225.625 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Body/torso/left_shoulder:rotation_degrees")
+tracks/1/path = NodePath("Body/Torso/LeftShoulder:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -209,7 +209,7 @@ tracks/1/keys = {
 "values": [ 61.5967 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body/torso/right_shoulder:position")
+tracks/2/path = NodePath("Body/Torso/RightShoulder:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -221,7 +221,7 @@ tracks/2/keys = {
 "values": [ Vector2( -78.5175, -236.455 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Body/torso/right_shoulder:rotation_degrees")
+tracks/3/path = NodePath("Body/Torso/RightShoulder:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -233,7 +233,7 @@ tracks/3/keys = {
 "values": [ 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body/foot:position")
+tracks/4/path = NodePath("Body/Foot:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -245,7 +245,7 @@ tracks/4/keys = {
 "values": [ Vector2( -38.4181, -189.846 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body/foot:rotation_degrees")
+tracks/5/path = NodePath("Body/Foot:rotation_degrees")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -257,7 +257,7 @@ tracks/5/keys = {
 "values": [ 0.0 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Body/berserker_head:position")
+tracks/6/path = NodePath("Body/BerserkerHead:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -269,7 +269,7 @@ tracks/6/keys = {
 "values": [ Vector2( 27, -232 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Body/berserker_head:rotation_degrees")
+tracks/7/path = NodePath("Body/BerserkerHead:rotation_degrees")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -281,7 +281,7 @@ tracks/7/keys = {
 "values": [ 1.33402e-08 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Body/torso:position")
+tracks/8/path = NodePath("Body/Torso:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -293,7 +293,7 @@ tracks/8/keys = {
 "values": [ Vector2( 31.851, -241.556 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Body/torso:rotation_degrees")
+tracks/9/path = NodePath("Body/Torso:rotation_degrees")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -312,7 +312,7 @@ length = 6.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Body/torso:rotation_degrees")
+tracks/0/path = NodePath("Body/Torso:rotation_degrees")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -324,7 +324,7 @@ tracks/0/keys = {
 "values": [ 0.0, 37.1032, -31.2232, 43.2613, -40.3532 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Body/berserker_head:rotation_degrees")
+tracks/1/path = NodePath("Body/BerserkerHead:rotation_degrees")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -336,7 +336,7 @@ tracks/1/keys = {
 "values": [ 1.33402e-08, 41.0, 41.0, -41.7689, -41.7689, 48.2463, 48.2463, -54.2874, -54.2874 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body/torso/right_shoulder/right_arm/right_lower_arm:rotation_degrees")
+tracks/2/path = NodePath("Body/Torso/RightShoulder/RightArm/RightLowerArm:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -348,7 +348,7 @@ tracks/2/keys = {
 "values": [ 4.73548, 32.8842, -33.6308, 32.8842, -33.6308 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Body/torso/left_shoulder/left_arm/left_lower_arm:rotation_degrees")
+tracks/3/path = NodePath("Body/Torso/LeftShoulder/LeftArm/LeftLowerArm:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -360,7 +360,7 @@ tracks/3/keys = {
 "values": [ 11.3821, 26.8047, 1.57012, 26.8047, 1.57012 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body/torso/right_shoulder/right_arm:rotation_degrees")
+tracks/4/path = NodePath("Body/Torso/RightShoulder/RightArm:rotation_degrees")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -372,7 +372,7 @@ tracks/4/keys = {
 "values": [ -23.7067, -38.2354, 8.27742, -38.2354, 8.27742 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body/torso/left_shoulder/left_arm:rotation_degrees")
+tracks/5/path = NodePath("Body/Torso/LeftShoulder/LeftArm:rotation_degrees")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -384,7 +384,7 @@ tracks/5/keys = {
 "values": [ -44.2449, -44.2449, -33.3929, -44.2449, -33.3929 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Body/torso/right_shoulder:position")
+tracks/6/path = NodePath("Body/Torso/RightShoulder:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -396,7 +396,7 @@ tracks/6/keys = {
 "values": [ Vector2( -109.715, 9.23895 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Body/torso/right_shoulder:rotation_degrees")
+tracks/7/path = NodePath("Body/Torso/RightShoulder:rotation_degrees")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -408,7 +408,7 @@ tracks/7/keys = {
 "values": [ 1.10636 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Body/torso/left_shoulder:position")
+tracks/8/path = NodePath("Body/Torso/LeftShoulder:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -420,7 +420,7 @@ tracks/8/keys = {
 "values": [ Vector2( 103.524, 15.9307 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Body/torso/left_shoulder:rotation_degrees")
+tracks/9/path = NodePath("Body/Torso/LeftShoulder:rotation_degrees")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -432,7 +432,7 @@ tracks/9/keys = {
 "values": [ 60.8293 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Body/torso/right_shoulder/right_arm/right_lower_arm/right_hand:rotation_degrees")
+tracks/10/path = NodePath("Body/Torso/RightShoulder/RightArm/RightLowerArm/RightHand:rotation_degrees")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -444,7 +444,7 @@ tracks/10/keys = {
 "values": [ 17.7714 ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Body/torso/right_shoulder/right_arm/right_lower_arm/right_hand/club:rotation_degrees")
+tracks/11/path = NodePath("Body/Torso/RightShoulder/RightArm/RightLowerArm/RightHand/Club:rotation_degrees")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -456,7 +456,7 @@ tracks/11/keys = {
 "values": [ 1.17999 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Body/torso/left_shoulder/left_arm/left_lower_arm/left_hand:rotation_degrees")
+tracks/12/path = NodePath("Body/Torso/LeftShoulder/LeftArm/LeftLowerArm/LeftHand:rotation_degrees")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -476,6 +476,7 @@ height = 72.6061
 
 [node name="Berserker" type="Node2D" index="0"]
 
+editor/display_folded = true
 scale = Vector2( 0.3, 0.3 )
 z_index = 2
 script = ExtResource( 1 )
@@ -483,7 +484,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 __meta__ = {
 "_edit_group_": true
 }
-total_health = 18
+total_health = 5
 fade_out_speed = 5
 projectile_launch_frequency = 2000
 projectile_offset = Vector2( -50, 0 )
@@ -494,16 +495,14 @@ animation_blend_speed = 1.0
 
 [node name="Body" type="Node2D" parent="." index="0"]
 
-editor/display_folded = true
-
-[node name="foot" type="Sprite" parent="Body" index="0"]
+[node name="Foot" type="Sprite" parent="Body" index="0"]
 
 position = Vector2( -38.4181, -189.846 )
 texture = ExtResource( 2 )
 offset = Vector2( -12.6653, 27.9718 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="foot2" type="Sprite" parent="Body" index="1"]
+[node name="Foot2" type="Sprite" parent="Body" index="1"]
 
 position = Vector2( 107.396, -194.238 )
 texture = ExtResource( 2 )
@@ -511,36 +510,34 @@ offset = Vector2( -12.6653, 27.9718 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform" ]
 
-[node name="torso" type="Sprite" parent="Body" index="2"]
+[node name="Torso" type="Sprite" parent="Body" index="2"]
 
-editor/display_folded = true
 position = Vector2( 31.851, -241.556 )
 rotation = 0.738369
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="back_fur" type="Sprite" parent="Body/torso" index="0"]
+[node name="BackFur" type="Sprite" parent="Body/Torso" index="0"]
 
 position = Vector2( -0.536356, -31.8746 )
 rotation = 0.0193096
 texture = ExtResource( 4 )
 
-[node name="right_shoulder" type="Sprite" parent="Body/torso" index="1"]
+[node name="RightShoulder" type="Sprite" parent="Body/Torso" index="1"]
 
 position = Vector2( -98.13, 3.44095 )
 rotation = 0.0193096
 texture = ExtResource( 5 )
 
-[node name="right_arm" type="Sprite" parent="Body/torso/right_shoulder" index="0"]
+[node name="RightArm" type="Sprite" parent="Body/Torso/RightShoulder" index="0"]
 
-editor/display_folded = true
 show_behind_parent = true
 position = Vector2( 13.9395, 22.9561 )
 rotation = -0.815601
 texture = ExtResource( 6 )
 offset = Vector2( -0.312609, 30.6443 )
 
-[node name="right_lower_arm" type="Sprite" parent="Body/torso/right_shoulder/right_arm" index="0"]
+[node name="RightLowerArm" type="Sprite" parent="Body/Torso/RightShoulder/RightArm" index="0"]
 
 position = Vector2( 21.5502, 77.2114 )
 rotation = 0.741554
@@ -549,7 +546,7 @@ texture = ExtResource( 7 )
 offset = Vector2( -6.53467, 66.7184 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="right_hand" type="Sprite" parent="Body/torso/right_shoulder/right_arm/right_lower_arm" index="0"]
+[node name="RightHand" type="Sprite" parent="Body/Torso/RightShoulder/RightArm/RightLowerArm" index="0"]
 
 show_behind_parent = true
 position = Vector2( -14.1699, 80.6593 )
@@ -558,7 +555,7 @@ texture = ExtResource( 6 )
 offset = Vector2( 15.5369, 31.9502 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="club" type="Sprite" parent="Body/torso/right_shoulder/right_arm/right_lower_arm/right_hand" index="0"]
+[node name="Club" type="Sprite" parent="Body/Torso/RightShoulder/RightArm/RightLowerArm/RightHand" index="0"]
 
 show_behind_parent = true
 position = Vector2( 25.8064, 34.4352 )
@@ -567,7 +564,7 @@ texture = ExtResource( 8 )
 offset = Vector2( -1.48877, 154.535 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="left_shoulder" type="Sprite" parent="Body/torso" index="2"]
+[node name="LeftShoulder" type="Sprite" parent="Body/Torso" index="2"]
 
 position = Vector2( 99.77, 22.2525 )
 rotation = 1.06167
@@ -576,7 +573,7 @@ flip_h = true
 flip_v = true
 _sections_unfolded = [ "Offset" ]
 
-[node name="left_arm" type="Sprite" parent="Body/torso/left_shoulder" index="0"]
+[node name="LeftArm" type="Sprite" parent="Body/Torso/LeftShoulder" index="0"]
 
 show_behind_parent = true
 position = Vector2( 20.1979, 32.4459 )
@@ -584,7 +581,7 @@ rotation = -0.539526
 texture = ExtResource( 9 )
 offset = Vector2( -2.0574, 57.1688 )
 
-[node name="left_lower_arm" type="Sprite" parent="Body/torso/left_shoulder/left_arm" index="0"]
+[node name="LeftLowerArm" type="Sprite" parent="Body/Torso/LeftShoulder/LeftArm" index="0"]
 
 position = Vector2( -6.07538, 128.208 )
 rotation = 0.85142
@@ -594,7 +591,7 @@ offset = Vector2( 2.11115, 68.8798 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform" ]
 
-[node name="left_hand" type="Sprite" parent="Body/torso/left_shoulder/left_arm/left_lower_arm" index="0"]
+[node name="LeftHand" type="Sprite" parent="Body/Torso/LeftShoulder/LeftArm/LeftLowerArm" index="0"]
 
 show_behind_parent = true
 position = Vector2( 6.03137, 83.1238 )
@@ -603,16 +600,15 @@ texture = ExtResource( 10 )
 offset = Vector2( -13.8981, 30.5137 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
-[node name="berserker_head" type="Sprite" parent="Body" index="3"]
+[node name="BerserkerHead" type="Sprite" parent="Body" index="3"]
 
-editor/display_folded = true
 position = Vector2( 27, -232 )
 rotation = 0.699005
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 11 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="beard" type="Sprite" parent="Body/berserker_head" index="0"]
+[node name="Beard" type="Sprite" parent="Body/BerserkerHead" index="0"]
 
 show_behind_parent = true
 position = Vector2( -0.990959, 87.2032 )
@@ -686,17 +682,17 @@ data = {
 "position": Vector2( 608, 209 ),
 "type": "output"
 }, {
-"blend": 1.0,
-"filter": [  ],
-"id": "blend2",
-"position": Vector2( 437, 171 ),
-"type": "blend2"
-}, {
 "filter": [  ],
 "from": "Attack",
 "id": "anim 2",
 "position": Vector2( 224, 255 ),
 "type": "animation"
+}, {
+"blend": 1.0,
+"filter": [  ],
+"id": "blend2",
+"position": Vector2( 437, 171 ),
+"type": "blend2"
 } ]
 }
 

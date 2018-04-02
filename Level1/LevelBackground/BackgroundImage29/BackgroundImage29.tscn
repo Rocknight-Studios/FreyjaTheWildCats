@@ -6,15 +6,7 @@
 [ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Unsorted/Steam/Steam.tscn" type="PackedScene" id=5]
 
-
-
-
-
-
-
-
-
-[node name="BackgroundImage29" type="Sprite"]
+[node name="BackgroundImage29" type="Sprite" index="0"]
 
 position = Vector2( 960, -30780 )
 texture = ExtResource( 1 )
@@ -70,11 +62,11 @@ position = Vector2( 0, -2.27344 )
 build_mode = 0
 polygon = PoolVector2Array( 780.971, 0.246094, 337.917, 70.6797, 337.917, -154.256, 222.041, -379.189, 349.277, -524.604, 867.31, -483.705, 955.92, -74.7324 )
 
-[node name="Archer_heavy" parent="." index="3" instance=ExtResource( 2 )]
+[node name="ArcherHeavy" parent="." index="3" instance=ExtResource( 2 )]
 
 position = Vector2( -774.776, 513.488 )
 
-[node name="Archer_heavy2" parent="." index="4" instance=ExtResource( 2 )]
+[node name="ArcherHeavy2" parent="." index="4" instance=ExtResource( 2 )]
 
 position = Vector2( -772.504, -111.332 )
 
@@ -94,11 +86,11 @@ position = Vector2( 159.045, 440.783 )
 
 position = Vector2( 381.708, 329.453 )
 
-[node name="Ice_giant" parent="." index="9" instance=ExtResource( 4 )]
+[node name="IceGiant" parent="." index="9" instance=ExtResource( 4 )]
 
 position = Vector2( -340.391, -227.609 )
 
-[node name="Ice_giant2" parent="." index="10" instance=ExtResource( 4 )]
+[node name="IceGiant2" parent="." index="10" instance=ExtResource( 4 )]
 
 position = Vector2( 51.2635, -227.609 )
 

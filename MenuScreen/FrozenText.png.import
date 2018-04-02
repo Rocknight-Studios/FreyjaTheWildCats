@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/menu_background_0.png-626b66c28338b17b09fe840772bd3621.stex"
+path="res://.import/FrozenText.png-cdb391295186c909223c860b6c1e4143.stex"
 
 [deps]
 
-source_file="res://MenuScreen/menu_background_0.png"
-source_md5="92a5cf01040299a907c6d68cad6ddbbd"
+source_file="res://MenuScreen/FrozenText.png"
+source_md5="3bda2a5cfa0e3e5af78ed1297604497a"
 
-dest_files=[ "res://.import/menu_background_0.png-626b66c28338b17b09fe840772bd3621.stex" ]
-dest_md5="a59dc050990519b9fbe25ff7f4e35c0a"
+dest_files=[ "res://.import/FrozenText.png-cdb391295186c909223c860b6c1e4143.stex" ]
+dest_md5="b2d76fb253004d200691ae253c3419e2"
 
 [params]
 

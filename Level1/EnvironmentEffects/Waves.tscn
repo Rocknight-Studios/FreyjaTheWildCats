@@ -2,9 +2,6 @@
 
 [ext_resource path="res://Level1/EnvironmentEffects/Wave.png" type="Texture" id=1]
 
-
-
-
 [sub_resource type="Animation" id=1]
 
 resource_name = "wave_1"
@@ -12,7 +9,7 @@ length = 6.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("wave:position")
+tracks/0/path = NodePath("Wave:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -24,7 +21,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 48.984, 31.2199 ), Vector2( 0, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("wave:self_modulate")
+tracks/1/path = NodePath("Wave:self_modulate")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -43,7 +40,7 @@ length = 6.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("wave:position")
+tracks/0/path = NodePath("Wave:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -55,7 +52,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 48.984, 31.2199 ), Vector2( 0, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("wave:self_modulate")
+tracks/1/path = NodePath("Wave:self_modulate")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -74,7 +71,7 @@ length = 6.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("wave:position")
+tracks/0/path = NodePath("Wave:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -86,7 +83,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 48.984, 31.2199 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("wave:self_modulate")
+tracks/1/path = NodePath("Wave:self_modulate")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -105,7 +102,7 @@ length = 6.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("wave:position")
+tracks/0/path = NodePath("Wave:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -117,7 +114,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 48.984, 31.2199 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("wave:self_modulate")
+tracks/1/path = NodePath("Wave:self_modulate")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -136,7 +133,7 @@ length = 6.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("wave:position")
+tracks/0/path = NodePath("Wave:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -148,7 +145,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 48.984, 31.2199 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("wave:self_modulate")
+tracks/1/path = NodePath("Wave:self_modulate")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -167,7 +164,7 @@ length = 6.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("wave:position")
+tracks/0/path = NodePath("Wave:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -179,7 +176,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 48.984, 31.2199 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("wave:self_modulate")
+tracks/1/path = NodePath("Wave:self_modulate")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -191,9 +188,9 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="waves" type="Node2D"]
+[node name="Waves" type="Node2D" index="0"]
 
-[node name="wave" type="Sprite" parent="." index="0"]
+[node name="Wave" type="Sprite" parent="." index="0"]
 
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 35.3774, 22.5477 )
