@@ -1,16 +1,15 @@
 #+ATTR_ORG: :width 400
 [[https://img.itch.zone/aW1nLzExMjc5MDguZ2lm/original/nMoIND.gif]]
 * A game about goddess Freyja and her magical kitties.
-#+BEGIN_SRC text -n
-  It has been forever that the trolls and ice giants are trying to kidnap Freyja and make her their lover... The goddess
-  of war and love is tired of sitting and waiting for another attack. Freyja and the wild cats will go to battle and make
-  their enemies feel her wrath! Guide Freyja's spear in her hand and help her prevail!
+It has been forever that the trolls and ice giants are trying to kidnap Freyja and make her their lover... 
+The goddess of war and love is tired of sitting and waiting for another attack. 
+Freyja and the wild cats will go to battle and make their enemies feel her wrath! 
+Guide Freyja's spear in her hand and help her prevail!
 
-  Controls:
+Controls:
 
-  Navigation: arrow keys;
-  Fire: F.
+Navigation: arrow keys;
+Fire: F.
 
-  Freyja the Wild Cats is in active development and you can follow the process here:
-  https://www.twitch.tv/rocknightstudios/
-#+END_SRC
+Freyja the Wild Cats is in active development and you can follow the process here:
+https://www.twitch.tv/rocknightstudios/
