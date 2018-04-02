@@ -7,13 +7,6 @@
 [ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Level1/EnvironmentEffects/Wind.tscn" type="PackedScene" id=6]
 
-
-
-
-
-
-
-
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -141,39 +134,39 @@ _sections_unfolded = [ "Transform" ]
 
 shape = SubResource( 3 )
 
-[node name="Archer_heavy" parent="." index="6" instance=ExtResource( 2 )]
+[node name="ArcherHeavy" parent="." index="6" instance=ExtResource( 2 )]
 
 position = Vector2( -267.23, -217.124 )
 
-[node name="Archer_heavy2" parent="." index="7" instance=ExtResource( 2 )]
+[node name="ArcherHeavy2" parent="." index="7" instance=ExtResource( 2 )]
 
 position = Vector2( 252.198, -222.134 )
 
-[node name="Troll_archer" parent="." index="8" instance=ExtResource( 3 )]
+[node name="TrollArcher" parent="." index="8" instance=ExtResource( 3 )]
 
 position = Vector2( 714.839, -300.633 )
 
-[node name="Troll_archer2" parent="." index="9" instance=ExtResource( 3 )]
+[node name="TrollArcher2" parent="." index="9" instance=ExtResource( 3 )]
 
 position = Vector2( -773.296, -273.91 )
 
-[node name="Shield_troll" parent="." index="10" instance=ExtResource( 4 )]
+[node name="ShieldTroll" parent="." index="10" instance=ExtResource( 4 )]
 
 position = Vector2( -519.743, -243.637 )
 
-[node name="Shield_troll2" parent="." index="11" instance=ExtResource( 4 )]
+[node name="ShieldTroll2" parent="." index="11" instance=ExtResource( 4 )]
 
 position = Vector2( -25.583, -190 )
 
-[node name="Shield_troll3" parent="." index="12" instance=ExtResource( 4 )]
+[node name="ShieldTroll3" parent="." index="12" instance=ExtResource( 4 )]
 
 position = Vector2( 485.94, -249.549 )
 
-[node name="Ice_giant" parent="." index="13" instance=ExtResource( 5 )]
+[node name="IceGiant" parent="." index="13" instance=ExtResource( 5 )]
 
 position = Vector2( 3.34033, 193.742 )
 
-[node name="wind" parent="." index="14" instance=ExtResource( 6 )]
+[node name="Wind" parent="." index="14" instance=ExtResource( 6 )]
 
 z_index = 3
 _sections_unfolded = [ "Transform", "Z Index" ]

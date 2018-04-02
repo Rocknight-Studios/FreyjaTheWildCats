@@ -4,10 +4,6 @@
 [ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Level1/Enemies/Trolls/Berserker/Berserker.tscn" type="PackedScene" id=3]
 
-
-
-
-
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -94,31 +90,28 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( -157.297, 519.531, -161.026, -95.8555, -315.085, -306.025, -82.1567, -559.788, 227.284, -507.95, 12.7202, 561.342 )
 
-[node name="Ice_giant" parent="." index="4" instance=ExtResource( 2 )]
+[node name="IceGiant" parent="." index="4" instance=ExtResource( 2 )]
 
 position = Vector2( -360.63, -54.2871 )
 
-[node name="Ice_giant2" parent="." index="5" instance=ExtResource( 2 )]
+[node name="IceGiant2" parent="." index="5" instance=ExtResource( 2 )]
 
 position = Vector2( 122.88, -54.5854 )
 
-[node name="Ice_giant3" parent="." index="6" instance=ExtResource( 2 )]
+[node name="IceGiant3" parent="." index="6" instance=ExtResource( 2 )]
 
 position = Vector2( -119.623, -319.88 )
 
-[node name="berserker" parent="." index="7" instance=ExtResource( 3 )]
+[node name="Berserker" parent="." index="7" instance=ExtResource( 3 )]
 
 position = Vector2( -225.465, 364.531 )
-animation_blend_speed = 1
 
-[node name="berserker2" parent="." index="8" instance=ExtResource( 3 )]
+[node name="Berserker2" parent="." index="8" instance=ExtResource( 3 )]
 
-position = Vector2( -28.2661, 364.444 )
-animation_blend_speed = 1
+position = Vector2( -29.2661, 364.444 )
 
-[node name="berserker3" parent="." index="9" instance=ExtResource( 3 )]
+[node name="Berserker3" parent="." index="9" instance=ExtResource( 3 )]
 
 position = Vector2( -126.485, 236.759 )
-animation_blend_speed = 1
 
 

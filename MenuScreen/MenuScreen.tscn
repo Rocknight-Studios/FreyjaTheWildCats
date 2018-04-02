@@ -1,17 +1,20 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Assets/Font/Norse.otf" type="DynamicFontData" id=1]
-[ext_resource path="res://MenuScreen/text_background.png" type="Texture" id=2]
+[ext_resource path="res://MenuScreen/FrozenText.png" type="Texture" id=2]
 [ext_resource path="res://MenuScreen/NewGameButton.gd" type="Script" id=3]
-[ext_resource path="res://MenuScreen/Button.gd" type="Script" id=4]
-[ext_resource path="res://MenuScreen/menu_background_0.png" type="Texture" id=5]
-[ext_resource path="res://MenuScreen/menu_background_1.png" type="Texture" id=6]
-[ext_resource path="res://MenuScreen/menu_background_2.png" type="Texture" id=7]
-[ext_resource path="res://MenuScreen/menu_background_3.png" type="Texture" id=8]
-[ext_resource path="res://MenuScreen/freyja.png" type="Texture" id=9]
-[ext_resource path="res://MenuScreen/menu_background_4.png" type="Texture" id=10]
-[ext_resource path="res://MenuScreen/background.png" type="Texture" id=11]
-[ext_resource path="res://Unsorted/Snow/SnowParticle.png" type="Texture" id=12]
+[ext_resource path="res://MenuScreen/TextBackground.png" type="Texture" id=4]
+[ext_resource path="res://MenuScreen/Button.gd" type="Script" id=5]
+[ext_resource path="res://MenuScreen/MenuBackgroundSky.png" type="Texture" id=6]
+[ext_resource path="res://MenuScreen/MenuBackground0.png" type="Texture" id=7]
+[ext_resource path="res://MenuScreen/MenuBackground1.png" type="Texture" id=8]
+[ext_resource path="res://MenuScreen/MenuSmoke.tscn" type="PackedScene" id=9]
+[ext_resource path="res://MenuScreen/MenuBackground2.png" type="Texture" id=10]
+[ext_resource path="res://MenuScreen/MenuBackground3.png" type="Texture" id=11]
+[ext_resource path="res://MenuScreen/Freyja.png" type="Texture" id=12]
+[ext_resource path="res://MenuScreen/MenuBackground4.png" type="Texture" id=13]
+[ext_resource path="res://MenuScreen/Background.png" type="Texture" id=14]
+[ext_resource path="res://Unsorted/Snow/SnowParticle.png" type="Texture" id=15]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -37,6 +40,62 @@ use_filter = false
 font_data = ExtResource( 1 )
 _sections_unfolded = [ "Font", "Settings" ]
 
+[sub_resource type="Gradient" id=8]
+
+offsets = PoolRealArray( 0, 0.548495, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=9]
+
+flags = 4
+gradient = SubResource( 8 )
+width = 2048
+
+[sub_resource type="ParticlesMaterial" id=10]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 2
+emission_box_extents = Vector3( 900, 1, 1 )
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 45.0
+flatness = 0.0
+gravity = Vector3( 0, -20, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 0.0
+angular_velocity = 30.0
+angular_velocity_random = 0.8
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 0.5
+scale_random = 0.0
+color_ramp = SubResource( 9 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angular Velocity", "Color", "Emission Shape", "Gravity", "Radial Accel", "Scale" ]
+
+[sub_resource type="StreamTexture" id=11]
+
+flags = 4
+load_path = "res://.import/Snowstorm.png-18ef25d721bfb86fdef360c87eedb62d.stex"
+
 [sub_resource type="Animation" id=4]
 
 resource_name = "CameraMovement"
@@ -56,7 +115,18 @@ tracks/0/keys = {
 "values": [ Vector2( 575.672, 600.964 ), Vector2( 1120.08, 632.149 ), Vector2( 575.672, 600.964 ) ]
 }
 
-[sub_resource type="ParticlesMaterial" id=5]
+[sub_resource type="Gradient" id=5]
+
+offsets = PoolRealArray( 0.337793, 0.695652 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=6]
+
+flags = 4
+gradient = SubResource( 5 )
+width = 2048
+
+[sub_resource type="ParticlesMaterial" id=7]
 
 render_priority = 0
 trail_divisor = 1
@@ -86,7 +156,7 @@ angle = 0.0
 angle_random = 0.0
 scale = 0.5
 scale_random = 1.0
-color = Color( 1, 1, 1, 1 )
+color_ramp = SubResource( 6 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -94,13 +164,12 @@ anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
-_sections_unfolded = [ "Emission Shape", "Gravity", "Initial Velocity", "Radial Accel", "Scale", "Spread", "Trail" ]
+_sections_unfolded = [ "Color", "Emission Shape", "Gravity", "Initial Velocity", "Radial Accel", "Scale", "Spread", "Trail" ]
 
 [node name="MenuScreen" type="Node" index="0"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -165,6 +234,7 @@ _sections_unfolded = [ "Size Flags", "custom_constants" ]
 
 [node name="Center" type="VBoxContainer" parent="CanvasLayer/MenuContainer/Menu" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -184,6 +254,7 @@ _sections_unfolded = [ "Margin", "Size Flags", "custom_constants" ]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MenuContainer/Menu/Center" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -251,7 +322,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.0546875, 0.0546875, 0.0546875, 1 )
 text = "Continue"
 percent_visible = 1.0
 lines_skipped = 0
@@ -265,10 +336,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -111.0
-margin_top = -22.0
-margin_right = 1206.0
-margin_bottom = 299.0
+margin_left = -76.0
+margin_right = 855.0
+margin_bottom = 321.0
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -282,7 +352,7 @@ _sections_unfolded = [ "Anchor", "Rect", "Size Flags", "Visibility" ]
 
 [node name="NewGameButton" type="Button" parent="CanvasLayer/MenuContainer/Menu/Right/Continue" index="1"]
 
-modulate = Color( 1, 1, 1, 0.248627 )
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -334,10 +404,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -262.0
-margin_top = -31.0
-margin_right = 1055.0
-margin_bottom = 290.0
+margin_left = -128.0
+margin_top = -34.0
+margin_right = 797.0
+margin_bottom = 287.0
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -345,7 +415,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 stretch_mode = 0
 _sections_unfolded = [ "Anchor", "Rect", "Size Flags", "Visibility" ]
 
@@ -380,9 +450,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -182.0
+margin_left = -164.0
 margin_top = -22.0
-margin_right = 1135.0
+margin_right = 761.0
 margin_bottom = 299.0
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -391,12 +461,13 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 stretch_mode = 0
 _sections_unfolded = [ "Anchor", "Rect", "Size Flags", "Visibility" ]
 
 [node name="Exit" type="Label" parent="CanvasLayer/MenuContainer/Menu/Right" index="3"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -412,7 +483,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Exit"
+text = "Quit"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -425,10 +496,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -166.0
-margin_top = -28.0
-margin_right = 1151.0
-margin_bottom = 293.0
+margin_left = -145.0
+margin_top = -33.0
+margin_right = 780.0
+margin_bottom = 288.0
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -436,13 +507,13 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 stretch_mode = 0
 _sections_unfolded = [ "Anchor", "Rect", "Size Flags", "Visibility" ]
 
 [node name="Button" type="Button" parent="CanvasLayer/MenuContainer/Menu/Right/Exit" index="1"]
 
-modulate = Color( 1, 1, 1, 0.127059 )
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -464,7 +535,7 @@ shortcut = null
 group = null
 flat = false
 align = 1
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer" index="1"]
@@ -484,6 +555,7 @@ _sections_unfolded = [ "Scroll" ]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" index="0"]
 
+editor/display_folded = true
 motion_scale = Vector2( 0, 0 )
 motion_offset = Vector2( -800, 0 )
 motion_mirroring = Vector2( 1920, 2 )
@@ -493,15 +565,30 @@ _sections_unfolded = [ "Motion" ]
 
 position = Vector2( 956.802, 543.954 )
 scale = Vector2( 1.1, 1.1 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" index="1"]
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" index="1"]
+
+editor/display_folded = true
+motion_scale = Vector2( 0, 0 )
+motion_offset = Vector2( -900, 0 )
+motion_mirroring = Vector2( 1920, 2 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="Background" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer7" index="0"]
+
+position = Vector2( 956.802, 543.954 )
+scale = Vector2( 1.1, 1.1 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" index="2"]
 
 editor/display_folded = true
 position = Vector2( 0, 2.78952 )
 motion_scale = Vector2( 0, 0 )
-motion_offset = Vector2( -900, 0 )
+motion_offset = Vector2( -1000, 0 )
 motion_mirroring = Vector2( 1920, 2 )
 _sections_unfolded = [ "Motion" ]
 
@@ -509,10 +596,14 @@ _sections_unfolded = [ "Motion" ]
 
 position = Vector2( 956.802, 543.954 )
 scale = Vector2( 1.1, 1.1 )
-texture = ExtResource( 6 )
+texture = ExtResource( 8 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="ParallaxLayer4" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" index="2"]
+[node name="MenuSmoke" parent="CanvasLayer/ParallaxBackground/ParallaxLayer3" index="1" instance=ExtResource( 9 )]
+
+position = Vector2( 916.308, 590.316 )
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" index="3"]
 
 editor/display_folded = true
 motion_scale = Vector2( 0.2, 0.2 )
@@ -524,14 +615,18 @@ _sections_unfolded = [ "Motion" ]
 
 position = Vector2( 956.802, 543.954 )
 scale = Vector2( 1.1, 1.1 )
-texture = ExtResource( 7 )
+texture = ExtResource( 10 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" index="3"]
+[node name="MenuSmoke2" parent="CanvasLayer/ParallaxBackground/ParallaxLayer4" index="1" instance=ExtResource( 9 )]
+
+position = Vector2( 936.757, 790.776 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" index="4"]
 
 editor/display_folded = true
 motion_scale = Vector2( 0.4, 0.4 )
-motion_offset = Vector2( -800, 0 )
+motion_offset = Vector2( -680, 0 )
 motion_mirroring = Vector2( 1920, 2 )
 _sections_unfolded = [ "Motion" ]
 
@@ -539,10 +634,10 @@ _sections_unfolded = [ "Motion" ]
 
 position = Vector2( 956.802, 543.954 )
 scale = Vector2( 1.1, 1.1 )
-texture = ExtResource( 8 )
+texture = ExtResource( 11 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="ParallaxLayer5" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" index="4"]
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" index="5"]
 
 editor/display_folded = true
 motion_scale = Vector2( 0.05, 0.05 )
@@ -554,14 +649,13 @@ _sections_unfolded = [ "Motion" ]
 
 position = Vector2( 420.988, 619.134 )
 scale = Vector2( 0.95819, 0.95819 )
-texture = ExtResource( 9 )
+texture = ExtResource( 12 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="ParallaxLayer6" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" index="5"]
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" index="6"]
 
-editor/display_folded = true
-motion_scale = Vector2( 0.5, 0.5 )
-motion_offset = Vector2( -600, 0 )
+motion_scale = Vector2( 0.05, 0.05 )
+motion_offset = Vector2( -900, -500 )
 motion_mirroring = Vector2( 0, 0 )
 _sections_unfolded = [ "Motion" ]
 
@@ -569,8 +663,16 @@ _sections_unfolded = [ "Motion" ]
 
 position = Vector2( 956.802, 543.954 )
 scale = Vector2( 1.1, 1.1 )
-texture = ExtResource( 10 )
+texture = ExtResource( 13 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="MenuSmoke3" parent="CanvasLayer/ParallaxBackground/ParallaxLayer6" index="1" instance=ExtResource( 9 )]
+
+position = Vector2( 936.757, 790.776 )
+amount = 10
+lifetime = 3.0
+process_material = SubResource( 10 )
+texture = SubResource( 11 )
 
 [node name="Camera2D" type="Camera2D" parent="." index="1"]
 
@@ -616,7 +718,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 11 )
+texture = ExtResource( 14 )
 stretch_mode = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
@@ -629,7 +731,7 @@ playback_speed = 1.0
 anims/CameraMovement = SubResource( 4 )
 blend_times = [  ]
 
-[node name="Particles2D" type="Particles2D" parent="." index="4"]
+[node name="Snow" type="Particles2D" parent="." index="4"]
 
 position = Vector2( 766.449, 87.4016 )
 rotation = 1.5708
@@ -646,12 +748,16 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 5 )
-texture = ExtResource( 12 )
+process_material = SubResource( 7 )
+texture = ExtResource( 15 )
 normal_map = null
 h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform" ]
+
+[connection signal="mouse_entered" from="CanvasLayer/MenuContainer/Menu/Right/Continue/NewGameButton" to="CanvasLayer/MenuContainer/Menu/Right/Continue/NewGameButton" method="_on_NewGameButton_mouse_entered"]
+
+[connection signal="mouse_exited" from="CanvasLayer/MenuContainer/Menu/Right/Continue/NewGameButton" to="CanvasLayer/MenuContainer/Menu/Right/Continue/NewGameButton" method="_on_NewGameButton_mouse_exited"]
 
 [connection signal="pressed" from="CanvasLayer/MenuContainer/Menu/Right/Continue/NewGameButton" to="CanvasLayer/MenuContainer/Menu/Right/Continue/NewGameButton" method="_on_NewGameButton_pressed"]
 

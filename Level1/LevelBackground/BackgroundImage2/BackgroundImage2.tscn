@@ -3,9 +3,6 @@
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage2/IceLevel2.png" type="Texture" id=1]
 [ext_resource path="res://Level1/Enemies/Trolls/Shield/ShieldTroll.tscn" type="PackedScene" id=2]
 
-
-
-
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -60,25 +57,25 @@ _sections_unfolded = [ "Collision", "Pickable", "Transform" ]
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Shield_troll" parent="." index="2" instance=ExtResource( 2 )]
+[node name="ShieldTroll" parent="." index="2" instance=ExtResource( 2 )]
 
 position = Vector2( 3.01465, -58.7861 )
 projectile_launch_frequency = 1000
 projectile_offset = Vector2( 0, 0 )
 
-[node name="Shield_troll4" parent="." index="3" instance=ExtResource( 2 )]
+[node name="ShieldTroll4" parent="." index="3" instance=ExtResource( 2 )]
 
 position = Vector2( -540.01, -58.7861 )
 projectile_launch_frequency = 1000
 projectile_offset = Vector2( 0, 0 )
 
-[node name="Shield_troll2" parent="." index="4" instance=ExtResource( 2 )]
+[node name="ShieldTroll2" parent="." index="4" instance=ExtResource( 2 )]
 
 position = Vector2( 272.829, -58.7861 )
 projectile_launch_frequency = 1000
 projectile_offset = Vector2( 0, 0 )
 
-[node name="Shield_troll3" parent="." index="5" instance=ExtResource( 2 )]
+[node name="ShieldTroll3" parent="." index="5" instance=ExtResource( 2 )]
 
 position = Vector2( -270.197, -58.7861 )
 projectile_launch_frequency = 1000

@@ -4,10 +4,6 @@
 [ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Level1/Enemies/Trolls/Shield/ShieldTroll.tscn" type="PackedScene" id=3]
 
-
-
-
-
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -72,19 +68,19 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( -228.672, 162.929, -230.754, -203.724, -27.3762, -304.312, -203.221, -458.885, -171.427, -694.859, 105.517, -962.777, 255.02, 95.4194 )
 
-[node name="Ice_giant" parent="." index="3" instance=ExtResource( 2 )]
+[node name="IceGiant" parent="." index="3" instance=ExtResource( 2 )]
 
 position = Vector2( 63.5435, -169.273 )
 
-[node name="Shield_troll" parent="." index="4" instance=ExtResource( 3 )]
+[node name="ShieldTroll" parent="." index="4" instance=ExtResource( 3 )]
 
 position = Vector2( 62.6145, 81.5648 )
 
-[node name="Shield_troll2" parent="." index="5" instance=ExtResource( 3 )]
+[node name="ShieldTroll2" parent="." index="5" instance=ExtResource( 3 )]
 
 position = Vector2( 235.34, 81.5648 )
 
-[node name="Shield_troll3" parent="." index="6" instance=ExtResource( 3 )]
+[node name="ShieldTroll3" parent="." index="6" instance=ExtResource( 3 )]
 
 position = Vector2( -109.482, 81.5648 )
 

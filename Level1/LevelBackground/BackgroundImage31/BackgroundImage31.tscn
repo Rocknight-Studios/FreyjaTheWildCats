@@ -5,13 +5,6 @@
 [ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Unsorted/Steam/Steam.tscn" type="PackedScene" id=4]
 
-
-
-
-
-
-
-
 [node name="BackgroundImage31" type="Sprite" index="0"]
 
 position = Vector2( 960, -32940 )
@@ -78,7 +71,7 @@ position = Vector2( 94.3813, 284.996 )
 
 position = Vector2( 236.879, 281.297 )
 
-[node name="Ice_giant" parent="." index="9" instance=ExtResource( 3 )]
+[node name="IceGiant" parent="." index="9" instance=ExtResource( 3 )]
 
 position = Vector2( 222.074, -264.641 )
 

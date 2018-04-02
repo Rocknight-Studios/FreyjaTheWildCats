@@ -5,18 +5,13 @@
 [ext_resource path="res://Level1/Enemies/Trolls/Shield/ShieldTroll.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Level1/Enemies/Trolls/Berserker/Berserker.tscn" type="PackedScene" id=4]
 
-
-
-
-
-
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 70.2217
 height = 561.322
 
-[node name="BackgroundImage15" type="Sprite"]
+[node name="BackgroundImage15" type="Sprite" index="0"]
 
 position = Vector2( 960, -15660 )
 texture = ExtResource( 1 )
@@ -97,47 +92,47 @@ _sections_unfolded = [ "Collision", "Transform" ]
 build_mode = 0
 polygon = PoolVector2Array( 283.238, -643.697, 196.105, -481.621, -38.1885, -380.204, 80.4775, -79.3516, 22.2651, 141.509, 68.3359, 255.842, -64.9468, 377.309, -232.603, 343.186, -50.7427, -385.073, 29.6357, -703.036 )
 
-[node name="Troll_archer" parent="." index="4" instance=ExtResource( 2 )]
+[node name="TrollArcher" parent="." index="4" instance=ExtResource( 2 )]
 
 position = Vector2( 649.701, -133.613 )
 
-[node name="Troll_archer2" parent="." index="5" instance=ExtResource( 2 )]
+[node name="TrollArcher2" parent="." index="5" instance=ExtResource( 2 )]
 
 position = Vector2( 541.139, -133.613 )
 
-[node name="Troll_archer3" parent="." index="6" instance=ExtResource( 2 )]
+[node name="TrollArcher3" parent="." index="6" instance=ExtResource( 2 )]
 
 position = Vector2( 420.886, -133.613 )
 
-[node name="Troll_archer4" parent="." index="7" instance=ExtResource( 2 )]
+[node name="TrollArcher4" parent="." index="7" instance=ExtResource( 2 )]
 
 position = Vector2( 312.324, -133.613 )
 
-[node name="Shield_troll" parent="." index="8" instance=ExtResource( 3 )]
+[node name="ShieldTroll" parent="." index="8" instance=ExtResource( 3 )]
 
 position = Vector2( 513.923, 122.859 )
 
-[node name="Shield_troll2" parent="." index="9" instance=ExtResource( 3 )]
+[node name="ShieldTroll2" parent="." index="9" instance=ExtResource( 3 )]
 
 position = Vector2( -336.935, 125.029 )
 
-[node name="berserker" parent="." index="10" instance=ExtResource( 4 )]
+[node name="Berserker" parent="." index="10" instance=ExtResource( 4 )]
 
 position = Vector2( -189.471, 178.457 )
 
-[node name="berserker2" parent="." index="11" instance=ExtResource( 4 )]
+[node name="Berserker2" parent="." index="11" instance=ExtResource( 4 )]
 
 position = Vector2( -55.4994, 293.693 )
 
-[node name="berserker3" parent="." index="12" instance=ExtResource( 4 )]
+[node name="Berserker3" parent="." index="12" instance=ExtResource( 4 )]
 
 position = Vector2( 81.5333, 393.572 )
 
-[node name="berserker4" parent="." index="13" instance=ExtResource( 4 )]
+[node name="Berserker4" parent="." index="13" instance=ExtResource( 4 )]
 
 position = Vector2( 223.968, 299.584 )
 
-[node name="berserker5" parent="." index="14" instance=ExtResource( 4 )]
+[node name="Berserker5" parent="." index="14" instance=ExtResource( 4 )]
 
 position = Vector2( 349.175, 179.917 )
 

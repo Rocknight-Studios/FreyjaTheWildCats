@@ -6,12 +6,6 @@
 [ext_resource path="res://Level1/EnvironmentEffects/Waves.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Level1/EnvironmentEffects/Wind.tscn" type="PackedScene" id=5]
 
-
-
-
-
-
-
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -62,67 +56,61 @@ build_mode = 0
 polygon = PoolVector2Array( -257.889, 139.204, -205.68, -379.689, 19.415, -491.449, -123.659, -670.447, -29.0894, -931.504, 182.765, -866.51, -116.673, 176.426 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Ice_giant" parent="." index="2" instance=ExtResource( 2 )]
+[node name="IceGiant" parent="." index="2" instance=ExtResource( 2 )]
 
 position = Vector2( -316.34, 196.217 )
 
-[node name="Ice_giant2" parent="." index="3" instance=ExtResource( 2 )]
+[node name="IceGiant2" parent="." index="3" instance=ExtResource( 2 )]
 
 position = Vector2( 487.441, 197.945 )
 
-[node name="Ice_giant3" parent="." index="4" instance=ExtResource( 2 )]
+[node name="IceGiant3" parent="." index="4" instance=ExtResource( 2 )]
 
 position = Vector2( 483.012, -323.389 )
 
-[node name="Ice_giant4" parent="." index="5" instance=ExtResource( 2 )]
+[node name="IceGiant4" parent="." index="5" instance=ExtResource( 2 )]
 
 position = Vector2( -318.371, -324.906 )
 
-[node name="berserker" parent="." index="6" instance=ExtResource( 3 )]
+[node name="Berserker" parent="." index="6" instance=ExtResource( 3 )]
 
 position = Vector2( 69.9492, 100.284 )
-animation_blend_speed = 1
 
-[node name="berserker2" parent="." index="7" instance=ExtResource( 3 )]
+[node name="Berserker2" parent="." index="7" instance=ExtResource( 3 )]
 
 position = Vector2( 187.417, -148.313 )
-animation_blend_speed = 1
 
-[node name="berserker3" parent="." index="8" instance=ExtResource( 3 )]
+[node name="Berserker3" parent="." index="8" instance=ExtResource( 3 )]
 
 position = Vector2( -43.2076, -145.46 )
-animation_blend_speed = 1
 
-[node name="berserker4" parent="." index="9" instance=ExtResource( 3 )]
+[node name="Berserker4" parent="." index="9" instance=ExtResource( 3 )]
 
 position = Vector2( 72.6241, -356.372 )
-animation_blend_speed = 1
 
-[node name="berserker5" parent="." index="10" instance=ExtResource( 3 )]
+[node name="Berserker5" parent="." index="10" instance=ExtResource( 3 )]
 
 position = Vector2( 75.2428, 328.736 )
-animation_blend_speed = 1
 
-[node name="wave_wrapper" type="Node2D" parent="." index="11"]
+[node name="WaveWrapper" type="Node2D" parent="." index="11"]
 
-editor/display_folded = true
 position = Vector2( -887.887, -203.004 )
 
-[node name="waves" parent="wave_wrapper" index="0" instance=ExtResource( 4 )]
+[node name="Waves" parent="WaveWrapper" index="0" instance=ExtResource( 4 )]
 
-[node name="waves2" parent="wave_wrapper" index="1" instance=ExtResource( 4 )]
+[node name="Waves2" parent="WaveWrapper" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 161.285, 85.918 )
 
-[node name="waves3" parent="wave_wrapper" index="2" instance=ExtResource( 4 )]
+[node name="Waves3" parent="WaveWrapper" index="2" instance=ExtResource( 4 )]
 
 position = Vector2( -7.53668, 176.357 )
 
-[node name="waves4" parent="wave_wrapper" index="3" instance=ExtResource( 4 )]
+[node name="Waves4" parent="WaveWrapper" index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 39.1909, 364.775 )
 
-[node name="wind" parent="." index="12" instance=ExtResource( 5 )]
+[node name="Wind" parent="." index="12" instance=ExtResource( 5 )]
 
 z_index = 3
 

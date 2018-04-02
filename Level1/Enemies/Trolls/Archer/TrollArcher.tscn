@@ -17,24 +17,6 @@
 [ext_resource path="res://Level1/Enemies/DeathSoulParticles.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Level1/Enemies/DeathParticles.tscn" type="PackedScene" id=16]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [sub_resource type="Animation" id=1]
 
 resource_name = "Attack"
@@ -421,13 +403,13 @@ custom_solver_bias = 0.0
 radius = 133.723
 height = 180.142
 
-[node name="Troll_archer" type="Node2D" index="0"]
+[node name="TrollArcher" type="Node2D"]
 
 scale = Vector2( 0.3, 0.3 )
 z_index = 2
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
-total_health = 5
+total_health = 3
 fade_out_speed = 5
 projectile_launch_frequency = 1000
 projectile_offset = Vector2( 0, 0 )
@@ -452,7 +434,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="RightLowerArm" type="Sprite" parent="Body/RightArm" index="0"]
 
-position = Vector2( 8.3258, 87.043 )
+position = Vector2( 11.9784, 92.62 )
 rotation = -1.34229
 texture = ExtResource( 4 )
 offset = Vector2( 2.56508, 27.9069 )
