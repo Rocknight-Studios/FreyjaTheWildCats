@@ -1,1 +1,25 @@
-* A game about godess Freyja and her magical kitties.
+#+ATTR_ORG: :width 400
+[[https://img.itch.zone/aW1nLzExMjc5MDguZ2lm/original/nMoIND.gif]]
+* A game about goddess Freyja and her magical kitties.
+It has been forever that the trolls and ice giants are trying to kidnap Freyja and make her their lover...
+
+The goddess of war and love is tired of sitting and waiting for another attack. 
+
+Freyja and the wild cats will go to battle and make their enemies feel her wrath!
+
+Guide Freyja's spear in her hand and help her prevail!
+** Controls
+- Navigation: arrow keys;
+- Fire: F.
+** Purpose
+- Freyja the Wild Cats is in active development and you can follow the process in our [[https://www.twitch.tv/rocknightstudios/][Twitch channel]].
+  We plan to add a lot of cool stuff to the game! And many, many of those things have been suggested by
+  our cool viewers. So if you think you want to follow the development and learn a thing or two or join it, 
+  you are more than welcome!
+
+- You can download game binaries [[https://rocknightstudios.itch.io/freyja-the-wild-cats][from our itch.io profile]], though they will always be a bit behind the this
+  Github repository.
+
+- We think that [[https://godotengine.org/][Godot]] is a super awesome game engine because of it's design and the freedom it provides to the user.
+  We believe that the best way to learn something is to build something. Therefore this game is
+  a learning project for us. But sharing is caring! So why not share with the awesome [[https://discord.gg/zH7NUgz][Godot community]].
