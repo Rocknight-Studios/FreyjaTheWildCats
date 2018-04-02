@@ -1,7 +1,6 @@
 #+ATTR_ORG: :width 400
 [[https://img.itch.zone/aW1nLzExMjc5MDguZ2lm/original/nMoIND.gif]]
 * A game about goddess Freyja and her magical kitties.
-** Description
 It has been forever that the trolls and ice giants are trying to kidnap Freyja and make her their lover...
 
 The goddess of war and love is tired of sitting and waiting for another attack. 
