@@ -6,12 +6,6 @@
 [ext_resource path="res://Level1/Enemies/Trolls/Shield/ShieldTroll.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=5]
 
-
-
-
-
-
-
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -178,35 +172,35 @@ _sections_unfolded = [ "Transform" ]
 shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Archer_heavy" parent="." index="9" instance=ExtResource( 3 )]
+[node name="ArcherHeavy" parent="." index="9" instance=ExtResource( 3 )]
 
 position = Vector2( -738.424, 2.27246 )
 
-[node name="Archer_heavy2" parent="." index="10" instance=ExtResource( 3 )]
+[node name="ArcherHeavy2" parent="." index="10" instance=ExtResource( 3 )]
 
 position = Vector2( -227.207, -136.323 )
 
-[node name="Archer_heavy3" parent="." index="11" instance=ExtResource( 3 )]
+[node name="ArcherHeavy3" parent="." index="11" instance=ExtResource( 3 )]
 
 position = Vector2( 277.193, -147.684 )
 
-[node name="Archer_heavy4" parent="." index="12" instance=ExtResource( 3 )]
+[node name="ArcherHeavy4" parent="." index="12" instance=ExtResource( 3 )]
 
 position = Vector2( 758.873, -22.7197 )
 
-[node name="Shield_troll" parent="." index="13" instance=ExtResource( 4 )]
+[node name="ShieldTroll" parent="." index="13" instance=ExtResource( 4 )]
 
 position = Vector2( -498.239, -59.8174 )
 
-[node name="Shield_troll2" parent="." index="14" instance=ExtResource( 4 )]
+[node name="ShieldTroll2" parent="." index="14" instance=ExtResource( 4 )]
 
 position = Vector2( 17.4561, -145.346 )
 
-[node name="Shield_troll3" parent="." index="15" instance=ExtResource( 4 )]
+[node name="ShieldTroll3" parent="." index="15" instance=ExtResource( 4 )]
 
 position = Vector2( 514.165, -83.2568 )
 
-[node name="Ice_giant" parent="." index="16" instance=ExtResource( 5 )]
+[node name="IceGiant" parent="." index="16" instance=ExtResource( 5 )]
 
 position = Vector2( 19.0447, 261.726 )
 

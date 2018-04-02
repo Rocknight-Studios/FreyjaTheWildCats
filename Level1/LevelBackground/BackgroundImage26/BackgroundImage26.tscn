@@ -6,14 +6,7 @@
 [ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Level1/Enemies/MiniSerpent/MiniSerpent.tscn" type="PackedScene" id=5]
 
-
-
-
-
-
-
-
-[node name="BackgroundImage26" type="Sprite"]
+[node name="BackgroundImage26" type="Sprite" index="0"]
 
 position = Vector2( 960, -27540 )
 texture = ExtResource( 1 )
@@ -83,31 +76,31 @@ position = Vector2( 604.207, 292.031 )
 
 position = Vector2( 407.84, 297.066 )
 
-[node name="Shield_troll" parent="." index="7" instance=ExtResource( 3 )]
+[node name="ShieldTroll" parent="." index="7" instance=ExtResource( 3 )]
 
 position = Vector2( 635.668, -186.6 )
 
-[node name="Shield_troll6" parent="." index="8" instance=ExtResource( 3 )]
+[node name="ShieldTroll6" parent="." index="8" instance=ExtResource( 3 )]
 
 position = Vector2( -732.044, -186.6 )
 
-[node name="Shield_troll2" parent="." index="9" instance=ExtResource( 3 )]
+[node name="ShieldTroll2" parent="." index="9" instance=ExtResource( 3 )]
 
 position = Vector2( 748.448, -186.6 )
 
-[node name="Shield_troll5" parent="." index="10" instance=ExtResource( 3 )]
+[node name="ShieldTroll5" parent="." index="10" instance=ExtResource( 3 )]
 
 position = Vector2( -619.264, -186.6 )
 
-[node name="Shield_troll3" parent="." index="11" instance=ExtResource( 3 )]
+[node name="ShieldTroll3" parent="." index="11" instance=ExtResource( 3 )]
 
 position = Vector2( 861.228, -186.6 )
 
-[node name="Shield_troll4" parent="." index="12" instance=ExtResource( 3 )]
+[node name="ShieldTroll4" parent="." index="12" instance=ExtResource( 3 )]
 
 position = Vector2( -506.484, -186.6 )
 
-[node name="Ice_giant" parent="." index="13" instance=ExtResource( 4 )]
+[node name="IceGiant" parent="." index="13" instance=ExtResource( 4 )]
 
 position = Vector2( -602.859, -471.625 )
 

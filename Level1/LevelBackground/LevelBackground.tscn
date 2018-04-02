@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage0/BackgroundImage0.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage1/BackgroundImage1.tscn" type="PackedScene" id=2]
@@ -22,8 +22,19 @@
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage19/BackgroundImage19.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage20/BackgroundImage20.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage21/BackgroundImage21.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage22/BackgroundImage22.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage23/BackgroundImage23.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage24/BackgroundImage24.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage25/BackgroundImage25.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage26/BackgroundImage26.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage27/BackgroundImage27.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage28/BackgroundImage28.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage29/BackgroundImage29.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage30/BackgroundImage30.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage31/BackgroundImage31.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage32/BackgroundImage32.tscn" type="PackedScene" id=33]
 
-[node name="LevelBackground" type="Node2D" index="0"]
+[node name="LevelBackground" type="Node2D"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -82,5 +93,27 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 962.272, -21060 )
 
 [node name="BackgroundImage21" parent="." index="21" instance=ExtResource( 22 )]
+
+[node name="BackgroundImage22" parent="." index="22" instance=ExtResource( 23 )]
+
+[node name="BackgroundImage23" parent="." index="23" instance=ExtResource( 24 )]
+
+[node name="BackgroundImage24" parent="." index="24" instance=ExtResource( 25 )]
+
+[node name="BackgroundImage25" parent="." index="25" instance=ExtResource( 26 )]
+
+[node name="BackgroundImage26" parent="." index="26" instance=ExtResource( 27 )]
+
+[node name="BackgroundImage27" parent="." index="27" instance=ExtResource( 28 )]
+
+[node name="BackgroundImage28" parent="." index="28" instance=ExtResource( 29 )]
+
+[node name="BackgroundImage29" parent="." index="29" instance=ExtResource( 30 )]
+
+[node name="BackgroundImage30" parent="." index="30" instance=ExtResource( 31 )]
+
+[node name="BackgroundImage31" parent="." index="31" instance=ExtResource( 32 )]
+
+[node name="BackgroundImage32" parent="." index="32" instance=ExtResource( 33 )]
 
 

@@ -5,24 +5,19 @@
 [ext_resource path="res://Level1/EnvironmentEffects/Wind.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Level1/Enemies/Trolls/Shield/ShieldTroll.tscn" type="PackedScene" id=4]
 
-
-
-
-
-
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 77.3838
 height = 570.831
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=2]
 
 custom_solver_bias = 0.0
 radius = 113.591
 height = 6.41678
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=3]
 
 custom_solver_bias = 0.0
 radius = 77.3838
@@ -106,7 +101,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TowerWall2" index="0"]
 
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="RocksLeft" type="StaticBody2D" parent="." index="4"]
@@ -125,54 +120,54 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RocksLeft" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Troll_archer" parent="." index="5" instance=ExtResource( 2 )]
+[node name="TrollArcher" parent="." index="5" instance=ExtResource( 2 )]
 
 position = Vector2( -758.702, -299.38 )
 
-[node name="Troll_archer2" parent="." index="6" instance=ExtResource( 2 )]
+[node name="TrollArcher2" parent="." index="6" instance=ExtResource( 2 )]
 
 position = Vector2( -518.772, -299.724 )
 
-[node name="Troll_archer3" parent="." index="7" instance=ExtResource( 2 )]
+[node name="TrollArcher3" parent="." index="7" instance=ExtResource( 2 )]
 
 position = Vector2( -398.377, -298.414 )
 
-[node name="Troll_archer4" parent="." index="8" instance=ExtResource( 2 )]
+[node name="TrollArcher4" parent="." index="8" instance=ExtResource( 2 )]
 
 position = Vector2( -278.021, -299.725 )
 
-[node name="Troll_archer5" parent="." index="9" instance=ExtResource( 2 )]
+[node name="TrollArcher5" parent="." index="9" instance=ExtResource( 2 )]
 
 position = Vector2( -158.194, -297.928 )
 
-[node name="wind" parent="." index="10" instance=ExtResource( 3 )]
+[node name="Wind" parent="." index="10" instance=ExtResource( 3 )]
 
 z_index = 3
 
-[node name="Shield_troll" parent="." index="11" instance=ExtResource( 4 )]
+[node name="Shieldtroll" parent="." index="11" instance=ExtResource( 4 )]
 
 position = Vector2( 105.263, -198.229 )
 
-[node name="Shield_troll2" parent="." index="12" instance=ExtResource( 4 )]
+[node name="ShieldTroll2" parent="." index="12" instance=ExtResource( 4 )]
 
 position = Vector2( 211.116, -84.29 )
 
-[node name="Shield_troll3" parent="." index="13" instance=ExtResource( 4 )]
+[node name="ShieldTroll3" parent="." index="13" instance=ExtResource( 4 )]
 
 position = Vector2( 330.532, 37.7803 )
 
-[node name="Shield_troll4" parent="." index="14" instance=ExtResource( 4 )]
+[node name="ShieldTroll4" parent="." index="14" instance=ExtResource( 4 )]
 
 position = Vector2( 222.055, 155.857 )
 
-[node name="Shield_troll5" parent="." index="15" instance=ExtResource( 4 )]
+[node name="ShieldTroll5" parent="." index="15" instance=ExtResource( 4 )]
 
 position = Vector2( 536.835, -207.05 )
 
-[node name="Shield_troll6" parent="." index="16" instance=ExtResource( 4 )]
+[node name="ShieldTroll6" parent="." index="16" instance=ExtResource( 4 )]
 
 position = Vector2( 439.307, -82.8115 )
 

@@ -2,9 +2,6 @@
 
 [ext_resource path="res://Level1/EnvironmentEffects/Snowstorm.png" type="Texture" id=1]
 
-
-
-
 [sub_resource type="Animation" id=1]
 
 resource_name = "wind"
@@ -12,7 +9,7 @@ length = 9.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("wind:position")
+tracks/0/path = NodePath("Wind:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -24,7 +21,7 @@ tracks/0/keys = {
 "values": [ Vector2( -1584.6, -1362.23 ), Vector2( 3351.99, 2168.82 ), Vector2( 2431.05, 1586.61 ), Vector2( -517.148, -512.489 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("wind:self_modulate")
+tracks/1/path = NodePath("Wind:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -36,7 +33,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0.950275 ), Color( 1, 1, 1, 0.0607843 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("wind:rotation_degrees")
+tracks/2/path = NodePath("Wind:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -48,12 +45,12 @@ tracks/2/keys = {
 "values": [ 0.0, 90.0 ]
 }
 
-[node name="wind" type="Node2D"]
+[node name="Wind" type="Node2D" index="0"]
 
 z_index = 2
 _sections_unfolded = [ "Z Index" ]
 
-[node name="wind" type="Sprite" parent="." index="0"]
+[node name="Wind" type="Sprite" parent="." index="0"]
 
 self_modulate = Color( 1, 1, 1, 0.950275 )
 position = Vector2( -1584.6, -1362.23 )

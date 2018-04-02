@@ -17,33 +17,14 @@
 [ext_resource path="res://Freyja/FreyjaProjectiles/Valkyrie/Sword.png" type="Texture" id=15]
 [ext_resource path="res://Freyja/FreyjaProjectiles/Valkyrie/Wing.png" type="Texture" id=16]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=1]
 
 resource_name = "attack"
 length = 6.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Right_wing:rotation_degrees")
+tracks/0/path = NodePath("RightWing:rotation_degrees")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -55,7 +36,7 @@ tracks/0/keys = {
 "values": [ 0.0, 3.0, 3.0, 4.08619, -2.0, -2.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Left_wing:rotation_degrees")
+tracks/1/path = NodePath("LeftWing:rotation_degrees")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -67,7 +48,7 @@ tracks/1/keys = {
 "values": [ 0.0, -3.0, -3.0, -4.52982, 2.0, 2.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Upper_right_arm:rotation_degrees")
+tracks/2/path = NodePath("UpperRightArm:rotation_degrees")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -79,7 +60,7 @@ tracks/2/keys = {
 "values": [ -45.7248, -139.17, -12.3313 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Upper_left_arm:rotation_degrees")
+tracks/3/path = NodePath("UpperLeftArm:rotation_degrees")
 tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -187,7 +168,7 @@ tracks/11/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 0.925541, 1 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Upper_left_arm/Elbow/Lower_left_arm/Left_hand:rotation_degrees")
+tracks/12/path = NodePath("UpperLeftArm/Elbow/LowerLeftArm/LeftHand:rotation_degrees")
 tracks/12/interp = 2
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -199,7 +180,7 @@ tracks/12/keys = {
 "values": [ -42.8979, -20.0 ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Upper_right_arm/Elbow/Lower_right_arm/Right_hand:rotation_degrees")
+tracks/13/path = NodePath("UpperRightArm/Elbow/LowerRightArm/RightHand:rotation_degrees")
 tracks/13/interp = 2
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -211,7 +192,7 @@ tracks/13/keys = {
 "values": [ 51.0582, 20.0 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Head/Hair_link_right/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6/Hair_link7/Hair_link8/Hair_link9/Position2D/Position2D2:rotation_degrees")
+tracks/14/path = NodePath("Head/HairLinkRight/HairLink2/HairLink3/HairLink4/HairLink5/HairLink6/HairLink7/HairLink8/HairLink9/Position2D/Position2D2:rotation_degrees")
 tracks/14/interp = 2
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -223,7 +204,7 @@ tracks/14/keys = {
 "values": [ 0.0, 0.0, 0.0, 0.0, 0.0 ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Head/Hair_link_right/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6/Hair_link7/Hair_link8/Hair_link9/Position2D:rotation_degrees")
+tracks/15/path = NodePath("Head/HairLinkRight/HairLink2/HairLink3/HairLink4/HairLink5/HairLink6/HairLink7/HairLink8/HairLink9/Position2D:rotation_degrees")
 tracks/15/interp = 2
 tracks/15/loop_wrap = true
 tracks/15/imported = false
@@ -235,7 +216,7 @@ tracks/15/keys = {
 "values": [ -2.55896, 13.8667, 13.8667, -28.363, -11.422 ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Head/Hair_link_right/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6/Hair_link7/Hair_link8/Hair_link9:rotation_degrees")
+tracks/16/path = NodePath("Head/HairLinkRight/HairLink2/HairLink3/HairLink4/HairLink5/HairLink6/HairLink7/HairLink8/HairLink9:rotation_degrees")
 tracks/16/interp = 2
 tracks/16/loop_wrap = true
 tracks/16/imported = false
@@ -247,7 +228,7 @@ tracks/16/keys = {
 "values": [ 177.956, 174.62, 174.62, 178.752, 182.73 ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Head/Hair_link_right/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6/Hair_link7/Hair_link8:rotation_degrees")
+tracks/17/path = NodePath("Head/HairLinkRight/HairLink2/HairLink3/HairLink4/HairLink5/HairLink6/HairLink7/HairLink8:rotation_degrees")
 tracks/17/interp = 2
 tracks/17/loop_wrap = true
 tracks/17/imported = false
@@ -259,7 +240,7 @@ tracks/17/keys = {
 "values": [ -0.480604, -6.07188, -6.07188, -0.805266, 2.17521 ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Head/Hair_link_right/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6/Hair_link7:rotation_degrees")
+tracks/18/path = NodePath("Head/HairLinkRight/HairLink2/HairLink3/HairLink4/HairLink5/HairLink6/HairLink7:rotation_degrees")
 tracks/18/interp = 2
 tracks/18/loop_wrap = true
 tracks/18/imported = false
@@ -271,7 +252,7 @@ tracks/18/keys = {
 "values": [ 5.48248, -1.29486, -1.29486, 4.34155, 6.88515 ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Head/Hair_link_right/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6:rotation_degrees")
+tracks/19/path = NodePath("Head/HairLinkRight/HairLink2/HairLink3/HairLink4/HairLink5/HairLink6:rotation_degrees")
 tracks/19/interp = 2
 tracks/19/loop_wrap = true
 tracks/19/imported = false
@@ -283,7 +264,7 @@ tracks/19/keys = {
 "values": [ 4.6765, -0.927506, -0.927506, 3.45548, 4.81445 ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Head/Hair_link_right/Hair_link2/Hair_link3/Hair_link4/Hair_link5:rotation_degrees")
+tracks/20/path = NodePath("Head/HairLinkRight/HairLink2/HairLink3/HairLink4/HairLink5:rotation_degrees")
 tracks/20/interp = 2
 tracks/20/loop_wrap = true
 tracks/20/imported = false
@@ -295,7 +276,7 @@ tracks/20/keys = {
 "values": [ -0.255653, -2.86398, -2.86398, 0.311343, -0.468751 ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Head/Hair_link_right/Hair_link2/Hair_link3/Hair_link4:rotation_degrees")
+tracks/21/path = NodePath("Head/HairLinkRight/HairLink2/HairLink3/HairLink4:rotation_degrees")
 tracks/21/interp = 2
 tracks/21/loop_wrap = true
 tracks/21/imported = false
@@ -307,7 +288,7 @@ tracks/21/keys = {
 "values": [ 2.23723, 3.0343, 3.0343, 7.548, 3.43436 ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Head/Hair_link_right/Hair_link2/Hair_link3:rotation_degrees")
+tracks/22/path = NodePath("Head/HairLinkRight/HairLink2/HairLink3:rotation_degrees")
 tracks/22/interp = 2
 tracks/22/loop_wrap = true
 tracks/22/imported = false
@@ -319,7 +300,7 @@ tracks/22/keys = {
 "values": [ -3.67727, -2.02457, -2.02457, 5.67491, -1.78666 ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Head/Hair_link_right/Hair_link2:rotation_degrees")
+tracks/23/path = NodePath("Head/HairLinkRight/HairLink2:rotation_degrees")
 tracks/23/interp = 2
 tracks/23/loop_wrap = true
 tracks/23/imported = false
@@ -331,7 +312,7 @@ tracks/23/keys = {
 "values": [ -2.35226, -1.82514, -1.82514, 4.79051, -1.64464 ]
 }
 tracks/24/type = "value"
-tracks/24/path = NodePath("Head/Hair_link_right:rotation_degrees")
+tracks/24/path = NodePath("Head/HairLinkRight:rotation_degrees")
 tracks/24/interp = 2
 tracks/24/loop_wrap = true
 tracks/24/imported = false
@@ -343,7 +324,7 @@ tracks/24/keys = {
 "values": [ -6.64803, -7.33689, -7.33689, 5.29095, -7.4669 ]
 }
 tracks/25/type = "value"
-tracks/25/path = NodePath("Head/Hair_link_left/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6/Hair_link7/Hair_link8/Hair_link9/Position2D/Position2D2:rotation_degrees")
+tracks/25/path = NodePath("Head/HairLinkLeft/HairLink2/HairLink3/HairLink4/HairlLink5/HairLink6/HairLink7/HairLink8/HairLink9/Position2D/Position2D2:rotation_degrees")
 tracks/25/interp = 2
 tracks/25/loop_wrap = true
 tracks/25/imported = false
@@ -355,7 +336,7 @@ tracks/25/keys = {
 "values": [ 0.0, 0.0, 0.0, 0.0, 0.0 ]
 }
 tracks/26/type = "value"
-tracks/26/path = NodePath("Head/Hair_link_left/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6/Hair_link7/Hair_link8/Hair_link9/Position2D:rotation_degrees")
+tracks/26/path = NodePath("Head/HairLinkLeft/HairLink2/HairLink3/HairLink4/HairlLink5/HairLink6/HairLink7/HairLink8/HairLink9/Position2D:rotation_degrees")
 tracks/26/interp = 2
 tracks/26/loop_wrap = true
 tracks/26/imported = false
@@ -367,7 +348,7 @@ tracks/26/keys = {
 "values": [ 15.7502, 21.119, 21.119, 30.2659, -4.6765 ]
 }
 tracks/27/type = "value"
-tracks/27/path = NodePath("Head/Hair_link_left/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6/Hair_link7/Hair_link8/Hair_link9:rotation_degrees")
+tracks/27/path = NodePath("Head/HairLinkLeft/HairLink2/HairLink3/HairLink4/HairlLink5/HairLink6/HairLink7/HairLink8/HairLink9:rotation_degrees")
 tracks/27/interp = 2
 tracks/27/loop_wrap = true
 tracks/27/imported = false
@@ -379,7 +360,7 @@ tracks/27/keys = {
 "values": [ 170.716, 176.99, 176.99, 178.435, 179.521 ]
 }
 tracks/28/type = "value"
-tracks/28/path = NodePath("Head/Hair_link_left/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6/Hair_link7/Hair_link8:rotation_degrees")
+tracks/28/path = NodePath("Head/HairLinkLeft/HairLink2/HairLink3/HairLink4/HairlLink5/HairLink6/HairLink7/HairLink8:rotation_degrees")
 tracks/28/interp = 2
 tracks/28/loop_wrap = true
 tracks/28/imported = false
@@ -391,7 +372,7 @@ tracks/28/keys = {
 "values": [ -7.8321, -4.38268, -4.38268, -2.16715, 0.366113 ]
 }
 tracks/29/type = "value"
-tracks/29/path = NodePath("Head/Hair_link_left/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6/Hair_link7:rotation_degrees")
+tracks/29/path = NodePath("Head/HairLinkLeft/HairLink2/HairLink3/HairLink4/HairlLink5/HairLink6/HairLink7:rotation_degrees")
 tracks/29/interp = 2
 tracks/29/loop_wrap = true
 tracks/29/imported = false
@@ -403,7 +384,7 @@ tracks/29/keys = {
 "values": [ -2.48955, -1.16852, -1.16852, 1.84144, 5.77213 ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("Head/Hair_link_left/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6:rotation_degrees")
+tracks/30/path = NodePath("Head/HairLinkLeft/HairLink2/HairLink3/HairLink4/HairlLink5/HairLink6:rotation_degrees")
 tracks/30/interp = 2
 tracks/30/loop_wrap = true
 tracks/30/imported = false
@@ -415,7 +396,7 @@ tracks/30/keys = {
 "values": [ -1.10781, -3.92346, -3.92346, -0.980511, 4.08222 ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Head/Hair_link_left/Hair_link2/Hair_link3/Hair_link4/Hair_link5:rotation_degrees")
+tracks/31/path = NodePath("Head/HairLinkLeft/HairLink2/HairLink3/HairLink4/HairlLink5:rotation_degrees")
 tracks/31/interp = 2
 tracks/31/loop_wrap = true
 tracks/31/imported = false
@@ -427,7 +408,7 @@ tracks/31/keys = {
 "values": [ -0.999943, -8.20411, -8.20411, -7.42163, -1.21456 ]
 }
 tracks/32/type = "value"
-tracks/32/path = NodePath("Head/Hair_link_left/Hair_link2/Hair_link3/Hair_link4:rotation_degrees")
+tracks/32/path = NodePath("Head/HairLinkLeft/HairLink2/HairLink3/HairLink4:rotation_degrees")
 tracks/32/interp = 2
 tracks/32/loop_wrap = true
 tracks/32/imported = false
@@ -439,7 +420,7 @@ tracks/32/keys = {
 "values": [ 7.54734, 0.0362094, 0.0362094, -4.32463, 3.79048 ]
 }
 tracks/33/type = "value"
-tracks/33/path = NodePath("Head/Hair_link_left/Hair_link2/Hair_link3:rotation_degrees")
+tracks/33/path = NodePath("Head/HairLinkLeft/HairLink2/HairLink3:rotation_degrees")
 tracks/33/interp = 2
 tracks/33/loop_wrap = true
 tracks/33/imported = false
@@ -451,7 +432,7 @@ tracks/33/keys = {
 "values": [ 2.60731, 0.264246, 0.264246, -7.78264, 1.10901 ]
 }
 tracks/34/type = "value"
-tracks/34/path = NodePath("Head/Hair_link_left/Hair_link2:rotation_degrees")
+tracks/34/path = NodePath("Head/HairLinkLeft/HairLink2:rotation_degrees")
 tracks/34/interp = 2
 tracks/34/loop_wrap = true
 tracks/34/imported = false
@@ -463,7 +444,7 @@ tracks/34/keys = {
 "values": [ 0.0436707, 1.29066, 1.29066, -4.28693, 1.09302 ]
 }
 tracks/35/type = "value"
-tracks/35/path = NodePath("Head/Hair_link_left:rotation_degrees")
+tracks/35/path = NodePath("Head/HairLinkLeft:rotation_degrees")
 tracks/35/interp = 2
 tracks/35/loop_wrap = true
 tracks/35/imported = false
@@ -475,7 +456,7 @@ tracks/35/keys = {
 "values": [ 23.0122, 23.9549, 23.9549, 21.2948, 23.8405 ]
 }
 tracks/36/type = "value"
-tracks/36/path = NodePath("Upper_right_arm/Elbow/Lower_right_arm:rotation_degrees")
+tracks/36/path = NodePath("UpperRightArm/Elbow/LowerRightArm:rotation_degrees")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/imported = false
@@ -487,7 +468,7 @@ tracks/36/keys = {
 "values": [ -1.70755e-06, -63.076, 1.66312 ]
 }
 tracks/37/type = "value"
-tracks/37/path = NodePath("Upper_left_arm/Elbow/Lower_left_arm:rotation_degrees")
+tracks/37/path = NodePath("UpperLeftArm/Elbow/LowerLeftArm:rotation_degrees")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/imported = false
@@ -499,14 +480,13 @@ tracks/37/keys = {
 "values": [ 3.41509e-06, 48.411, -8.07743 ]
 }
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=2]
 
-resource_name = "default"
 length = 1.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Upper_right_arm:position")
+tracks/0/path = NodePath("UpperRightArm:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -518,7 +498,7 @@ tracks/0/keys = {
 "values": [ Vector2( 921.16, 236.017 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Upper_right_arm:rotation_degrees")
+tracks/1/path = NodePath("UpperRightArm:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -530,7 +510,7 @@ tracks/1/keys = {
 "values": [ -45.7248 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Upper_left_arm:position")
+tracks/2/path = NodePath("UpperLeftArm:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -542,7 +522,7 @@ tracks/2/keys = {
 "values": [ Vector2( 830.935, 242.651 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Upper_left_arm:rotation_degrees")
+tracks/3/path = NodePath("UpperLeftArm:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -602,7 +582,7 @@ tracks/7/keys = {
 "values": [ 0.0 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Right_wing:position")
+tracks/8/path = NodePath("RightWing:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -614,7 +594,7 @@ tracks/8/keys = {
 "values": [ Vector2( 932.964, 243.685 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Right_wing:rotation_degrees")
+tracks/9/path = NodePath("RightWing:rotation_degrees")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -650,7 +630,7 @@ tracks/11/keys = {
 "values": [ 0.0 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Left_wing:position")
+tracks/12/path = NodePath("LeftWing:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -662,7 +642,7 @@ tracks/12/keys = {
 "values": [ Vector2( 309.547, 243.685 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Left_wing:rotation_degrees")
+tracks/13/path = NodePath("LeftWing:rotation_degrees")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -674,14 +654,13 @@ tracks/13/keys = {
 "values": [ 0.0 ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 
-resource_name = "flying"
 length = 6.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Right_wing:rotation_degrees")
+tracks/0/path = NodePath("RightWing:rotation_degrees")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -693,7 +672,7 @@ tracks/0/keys = {
 "values": [ 0.0, 3.0, -2.0, -2.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Left_wing:rotation_degrees")
+tracks/1/path = NodePath("LeftWing:rotation_degrees")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -705,7 +684,7 @@ tracks/1/keys = {
 "values": [ 0.0, -3.0, 2.0, 2.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Upper_right_arm:rotation_degrees")
+tracks/2/path = NodePath("UpperRightArm:rotation_degrees")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -717,7 +696,7 @@ tracks/2/keys = {
 "values": [ -45.7248, -42.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Upper_left_arm:rotation_degrees")
+tracks/3/path = NodePath("UpperLeftArm:rotation_degrees")
 tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -825,7 +804,7 @@ tracks/11/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 0.925541, 1 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Upper_left_arm/Elbow/Lower_left_arm/Left_hand:rotation_degrees")
+tracks/12/path = NodePath("UpperLeftArm/Elbow/LowerLeftArm/LeftHand:rotation_degrees")
 tracks/12/interp = 2
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -837,7 +816,7 @@ tracks/12/keys = {
 "values": [ -42.8979, -20.0 ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Upper_right_arm/Elbow/Lower_right_arm/Right_hand:rotation_degrees")
+tracks/13/path = NodePath("UpperRightArm/Elbow/LowerRightArm/RightHand:rotation_degrees")
 tracks/13/interp = 2
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -849,7 +828,7 @@ tracks/13/keys = {
 "values": [ 51.0582, 20.0 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Head/Hair_link_right/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6/Hair_link7/Hair_link8/Hair_link9/Position2D/Position2D2:rotation_degrees")
+tracks/14/path = NodePath("Head/HairLinkRight/HairLink2/HairLink3/HairLink4/HairLink5/HairLink6/HairLink7/HairLink8/HairLink9/Position2D/Position2D2:rotation_degrees")
 tracks/14/interp = 2
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -861,7 +840,7 @@ tracks/14/keys = {
 "values": [ 0.0, 0.0, 0.0 ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Head/Hair_link_right/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6/Hair_link7/Hair_link8/Hair_link9/Position2D:rotation_degrees")
+tracks/15/path = NodePath("Head/HairLinkRight/HairLink2/HairLink3/HairLink4/HairLink5/HairLink6/HairLink7/HairLink8/HairLink9/Position2D:rotation_degrees")
 tracks/15/interp = 2
 tracks/15/loop_wrap = true
 tracks/15/imported = false
@@ -873,7 +852,7 @@ tracks/15/keys = {
 "values": [ -2.55896, 13.8667, -11.422 ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Head/Hair_link_right/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6/Hair_link7/Hair_link8/Hair_link9:rotation_degrees")
+tracks/16/path = NodePath("Head/HairLinkRight/HairLink2/HairLink3/HairLink4/HairLink5/HairLink6/HairLink7/HairLink8/HairLink9:rotation_degrees")
 tracks/16/interp = 2
 tracks/16/loop_wrap = true
 tracks/16/imported = false
@@ -885,7 +864,7 @@ tracks/16/keys = {
 "values": [ 177.956, 174.62, 182.73 ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Head/Hair_link_right/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6/Hair_link7/Hair_link8:rotation_degrees")
+tracks/17/path = NodePath("Head/HairLinkRight/HairLink2/HairLink3/HairLink4/HairLink5/HairLink6/HairLink7/HairLink8:rotation_degrees")
 tracks/17/interp = 2
 tracks/17/loop_wrap = true
 tracks/17/imported = false
@@ -897,7 +876,7 @@ tracks/17/keys = {
 "values": [ -0.480604, -6.07188, 2.17521 ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Head/Hair_link_right/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6/Hair_link7:rotation_degrees")
+tracks/18/path = NodePath("Head/HairLinkRight/HairLink2/HairLink3/HairLink4/HairLink5/HairLink6/HairLink7:rotation_degrees")
 tracks/18/interp = 2
 tracks/18/loop_wrap = true
 tracks/18/imported = false
@@ -909,7 +888,7 @@ tracks/18/keys = {
 "values": [ 5.48248, -1.29486, 6.88515 ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Head/Hair_link_right/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6:rotation_degrees")
+tracks/19/path = NodePath("Head/HairLinkRight/HairLink2/HairLink3/HairLink4/HairLink5/HairLink6:rotation_degrees")
 tracks/19/interp = 2
 tracks/19/loop_wrap = true
 tracks/19/imported = false
@@ -921,7 +900,7 @@ tracks/19/keys = {
 "values": [ 4.6765, -0.927506, 4.81445 ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Head/Hair_link_right/Hair_link2/Hair_link3/Hair_link4/Hair_link5:rotation_degrees")
+tracks/20/path = NodePath("Head/HairLinkRight/HairLink2/HairLink3/HairLink4/HairLink5:rotation_degrees")
 tracks/20/interp = 2
 tracks/20/loop_wrap = true
 tracks/20/imported = false
@@ -933,7 +912,7 @@ tracks/20/keys = {
 "values": [ -0.255653, -2.86398, -0.468751 ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Head/Hair_link_right/Hair_link2/Hair_link3/Hair_link4:rotation_degrees")
+tracks/21/path = NodePath("Head/HairLinkRight/HairLink2/HairLink3/HairLink4:rotation_degrees")
 tracks/21/interp = 2
 tracks/21/loop_wrap = true
 tracks/21/imported = false
@@ -945,7 +924,7 @@ tracks/21/keys = {
 "values": [ 2.23723, 3.0343, 3.43436 ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Head/Hair_link_right/Hair_link2/Hair_link3:rotation_degrees")
+tracks/22/path = NodePath("Head/HairLinkRight/HairLink2/HairLink3:rotation_degrees")
 tracks/22/interp = 2
 tracks/22/loop_wrap = true
 tracks/22/imported = false
@@ -957,7 +936,7 @@ tracks/22/keys = {
 "values": [ -3.67727, -2.02457, -1.78666 ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Head/Hair_link_right/Hair_link2:rotation_degrees")
+tracks/23/path = NodePath("Head/HairLinkRight/HairLink2:rotation_degrees")
 tracks/23/interp = 2
 tracks/23/loop_wrap = true
 tracks/23/imported = false
@@ -969,7 +948,7 @@ tracks/23/keys = {
 "values": [ -2.35226, -1.82514, -1.64464 ]
 }
 tracks/24/type = "value"
-tracks/24/path = NodePath("Head/Hair_link_right:rotation_degrees")
+tracks/24/path = NodePath("Head/HairLinkRight:rotation_degrees")
 tracks/24/interp = 2
 tracks/24/loop_wrap = true
 tracks/24/imported = false
@@ -981,7 +960,7 @@ tracks/24/keys = {
 "values": [ -6.64803, -7.33689, -7.4669 ]
 }
 tracks/25/type = "value"
-tracks/25/path = NodePath("Head/Hair_link_left/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6/Hair_link7/Hair_link8/Hair_link9/Position2D/Position2D2:rotation_degrees")
+tracks/25/path = NodePath("Head/HairLinkLeft/HairLink2/HairLink3/HairLink4/HairlLink5/HairLink6/HairLink7/HairLink8/HairLink9/Position2D/Position2D2:rotation_degrees")
 tracks/25/interp = 2
 tracks/25/loop_wrap = true
 tracks/25/imported = false
@@ -993,7 +972,7 @@ tracks/25/keys = {
 "values": [ 0.0, 0.0, 0.0 ]
 }
 tracks/26/type = "value"
-tracks/26/path = NodePath("Head/Hair_link_left/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6/Hair_link7/Hair_link8/Hair_link9/Position2D:rotation_degrees")
+tracks/26/path = NodePath("Head/HairLinkLeft/HairLink2/HairLink3/HairLink4/HairlLink5/HairLink6/HairLink7/HairLink8/HairLink9/Position2D:rotation_degrees")
 tracks/26/interp = 2
 tracks/26/loop_wrap = true
 tracks/26/imported = false
@@ -1005,7 +984,7 @@ tracks/26/keys = {
 "values": [ 15.7502, 21.119, -4.6765 ]
 }
 tracks/27/type = "value"
-tracks/27/path = NodePath("Head/Hair_link_left/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6/Hair_link7/Hair_link8/Hair_link9:rotation_degrees")
+tracks/27/path = NodePath("Head/HairLinkLeft/HairLink2/HairLink3/HairLink4/HairlLink5/HairLink6/HairLink7/HairLink8/HairLink9:rotation_degrees")
 tracks/27/interp = 2
 tracks/27/loop_wrap = true
 tracks/27/imported = false
@@ -1017,7 +996,7 @@ tracks/27/keys = {
 "values": [ 170.716, 176.99, 179.521 ]
 }
 tracks/28/type = "value"
-tracks/28/path = NodePath("Head/Hair_link_left/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6/Hair_link7/Hair_link8:rotation_degrees")
+tracks/28/path = NodePath("Head/HairLinkLeft/HairLink2/HairLink3/HairLink4/HairlLink5/HairLink6/HairLink7/HairLink8:rotation_degrees")
 tracks/28/interp = 2
 tracks/28/loop_wrap = true
 tracks/28/imported = false
@@ -1029,7 +1008,7 @@ tracks/28/keys = {
 "values": [ -7.8321, -4.38268, 0.366113 ]
 }
 tracks/29/type = "value"
-tracks/29/path = NodePath("Head/Hair_link_left/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6/Hair_link7:rotation_degrees")
+tracks/29/path = NodePath("Head/HairLinkLeft/HairLink2/HairLink3/HairLink4/HairlLink5/HairLink6/HairLink7:rotation_degrees")
 tracks/29/interp = 2
 tracks/29/loop_wrap = true
 tracks/29/imported = false
@@ -1041,7 +1020,7 @@ tracks/29/keys = {
 "values": [ -2.48955, -1.16852, 5.77213 ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("Head/Hair_link_left/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6:rotation_degrees")
+tracks/30/path = NodePath("Head/HairLinkLeft/HairLink2/HairLink3/HairLink4/HairlLink5/HairLink6:rotation_degrees")
 tracks/30/interp = 2
 tracks/30/loop_wrap = true
 tracks/30/imported = false
@@ -1053,7 +1032,7 @@ tracks/30/keys = {
 "values": [ -1.10781, -3.92346, 4.08222 ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Head/Hair_link_left/Hair_link2/Hair_link3/Hair_link4/Hair_link5:rotation_degrees")
+tracks/31/path = NodePath("Head/HairLinkLeft/HairLink2/HairLink3/HairLink4/HairlLink5:rotation_degrees")
 tracks/31/interp = 2
 tracks/31/loop_wrap = true
 tracks/31/imported = false
@@ -1065,7 +1044,7 @@ tracks/31/keys = {
 "values": [ -0.999943, -8.20411, -1.21456 ]
 }
 tracks/32/type = "value"
-tracks/32/path = NodePath("Head/Hair_link_left/Hair_link2/Hair_link3/Hair_link4:rotation_degrees")
+tracks/32/path = NodePath("Head/HairLinkLeft/HairLink2/HairLink3/HairLink4:rotation_degrees")
 tracks/32/interp = 2
 tracks/32/loop_wrap = true
 tracks/32/imported = false
@@ -1077,7 +1056,7 @@ tracks/32/keys = {
 "values": [ 7.54734, 0.0362094, 3.79048 ]
 }
 tracks/33/type = "value"
-tracks/33/path = NodePath("Head/Hair_link_left/Hair_link2/Hair_link3:rotation_degrees")
+tracks/33/path = NodePath("Head/HairLinkLeft/HairLink2/HairLink3:rotation_degrees")
 tracks/33/interp = 2
 tracks/33/loop_wrap = true
 tracks/33/imported = false
@@ -1089,7 +1068,7 @@ tracks/33/keys = {
 "values": [ 2.60731, 0.264246, 1.10901 ]
 }
 tracks/34/type = "value"
-tracks/34/path = NodePath("Head/Hair_link_left/Hair_link2:rotation_degrees")
+tracks/34/path = NodePath("Head/HairLinkLeft/HairLink2:rotation_degrees")
 tracks/34/interp = 2
 tracks/34/loop_wrap = true
 tracks/34/imported = false
@@ -1101,7 +1080,7 @@ tracks/34/keys = {
 "values": [ 0.0436707, 1.29066, 1.09302 ]
 }
 tracks/35/type = "value"
-tracks/35/path = NodePath("Head/Hair_link_left:rotation_degrees")
+tracks/35/path = NodePath("Head/HairLinkLeft:rotation_degrees")
 tracks/35/interp = 2
 tracks/35/loop_wrap = true
 tracks/35/imported = false
@@ -1208,14 +1187,13 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="Head" type="Sprite" parent="." index="3"]
 
-editor/display_folded = true
 position = Vector2( 19.5731, -87.9017 )
 rotation = 0.0149888
 texture = ExtResource( 7 )
 offset = Vector2( -0.825562, -31.1283 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Hair_link_right" type="Sprite" parent="Head" index="0"]
+[node name="HairLinkRight" type="Sprite" parent="Head" index="0"]
 
 position = Vector2( 33.8785, -14.7647 )
 rotation = -0.122587
@@ -1227,7 +1205,7 @@ __meta__ = {
 "_edit_ik_": true
 }
 
-[node name="Hair_link2" type="Sprite" parent="Head/Hair_link_right" index="0"]
+[node name="HairLink2" type="Sprite" parent="Head/HairLinkRight" index="0"]
 
 position = Vector2( 6.0896, 26.8607 )
 rotation = -0.0417462
@@ -1239,7 +1217,7 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Hair_link3" type="Sprite" parent="Head/Hair_link_right/Hair_link2" index="0"]
+[node name="HairLink3" type="Sprite" parent="Head/HairLinkRight/HairLink2" index="0"]
 
 position = Vector2( 5.83026, 26.2648 )
 rotation = -0.0627318
@@ -1251,7 +1229,7 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Hair_link4" type="Sprite" parent="Head/Hair_link_right/Hair_link2/Hair_link3" index="0"]
+[node name="HairLink4" type="Sprite" parent="Head/HairLinkRight/HairLink2/HairLink3" index="0"]
 
 position = Vector2( 5.5719, 27.617 )
 rotation = 0.040489
@@ -1263,7 +1241,7 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Hair_link5" type="Sprite" parent="Head/Hair_link_right/Hair_link2/Hair_link3/Hair_link4" index="0"]
+[node name="HairLink5" type="Sprite" parent="Head/HairLinkRight/HairLink2/HairLink3/HairLink4" index="0"]
 
 position = Vector2( 6.33582, 26.6359 )
 rotation = -0.00231607
@@ -1275,7 +1253,7 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Hair_link6" type="Sprite" parent="Head/Hair_link_right/Hair_link2/Hair_link3/Hair_link4/Hair_link5" index="0"]
+[node name="HairLink6" type="Sprite" parent="Head/HairLinkRight/HairLink2/HairLink3/HairLink4/HairLink5" index="0"]
 
 position = Vector2( 4.42981, 25.2031 )
 rotation = 0.0892992
@@ -1287,7 +1265,7 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Hair_link7" type="Sprite" parent="Head/Hair_link_right/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6" index="0"]
+[node name="HairLink7" type="Sprite" parent="Head/HairLinkRight/HairLink2/HairLink3/HairLink4/HairLink5/HairLink6" index="0"]
 
 position = Vector2( 5.20984, 26.7465 )
 rotation = 0.109349
@@ -1299,7 +1277,7 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Hair_link8" type="Sprite" parent="Head/Hair_link_right/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6/Hair_link7" index="0"]
+[node name="HairLink8" type="Sprite" parent="Head/HairLinkRight/HairLink2/HairLink3/HairLink4/HairLink5/HairLink6/HairLink7" index="0"]
 
 position = Vector2( 6.33228, 25.8804 )
 rotation = 0.0081099
@@ -1310,7 +1288,7 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Hair_link9" type="Sprite" parent="Head/Hair_link_right/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6/Hair_link7/Hair_link8" index="0"]
+[node name="HairLink9" type="Sprite" parent="Head/HairLinkRight/HairLink2/HairLink3/HairLink4/HairLink5/HairLink6/HairLink7/HairLink8" index="0"]
 
 position = Vector2( 8.83728, 41.9161 )
 rotation = 3.127
@@ -1322,7 +1300,7 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Position2D" type="Position2D" parent="Head/Hair_link_right/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6/Hair_link7/Hair_link8/Hair_link9" index="0"]
+[node name="Position2D" type="Position2D" parent="Head/HairLinkRight/HairLink2/HairLink3/HairLink4/HairLink5/HairLink6/HairLink7/HairLink8/HairLink9" index="0"]
 
 position = Vector2( -6.8454, -28.4572 )
 rotation = -0.0871213
@@ -1331,14 +1309,14 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Position2D2" type="Position2D" parent="Head/Hair_link_right/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6/Hair_link7/Hair_link8/Hair_link9/Position2D" index="0"]
+[node name="Position2D2" type="Position2D" parent="Head/HairLinkRight/HairLink2/HairLink3/HairLink4/HairLink5/HairLink6/HairLink7/HairLink8/HairLink9/Position2D" index="0"]
 
 position = Vector2( -7.68225, -24.2065 )
 __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Ribbon" type="Sprite" parent="Head/Hair_link_right/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6/Hair_link7/Hair_link8" index="1"]
+[node name="Ribbon" type="Sprite" parent="Head/HairLinkRight/HairLink2/HairLink3/HairLink4/HairLink5/HairLink6/HairLink7/HairLink8" index="1"]
 
 position = Vector2( 6.87231, 19.074 )
 rotation = 6.11317
@@ -1347,9 +1325,8 @@ texture = ExtResource( 9 )
 offset = Vector2( 0.297522, 12.2397 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Hair_link_left" type="Sprite" parent="Head" index="1"]
+[node name="HairLinkLeft" type="Sprite" parent="Head" index="1"]
 
-editor/display_folded = true
 position = Vector2( -24.6376, -15.9954 )
 rotation = 0.404155
 scale = Vector2( 1.5, 1.5 )
@@ -1360,7 +1337,7 @@ __meta__ = {
 "_edit_ik_": true
 }
 
-[node name="Hair_link2" type="Sprite" parent="Head/Hair_link_left" index="0"]
+[node name="HairLink2" type="Sprite" parent="Head/HairLinkLeft" index="0"]
 
 position = Vector2( 6.0896, 26.8607 )
 rotation = 0.00468238
@@ -1372,7 +1349,7 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Hair_link3" type="Sprite" parent="Head/Hair_link_left/Hair_link2" index="0"]
+[node name="HairLink3" type="Sprite" parent="Head/HairLinkLeft/HairLink2" index="0"]
 
 position = Vector2( 5.83026, 26.2648 )
 rotation = 0.0466969
@@ -1384,7 +1361,7 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Hair_link4" type="Sprite" parent="Head/Hair_link_left/Hair_link2/Hair_link3" index="0"]
+[node name="HairLink4" type="Sprite" parent="Head/HairLinkLeft/HairLink2/HairLink3" index="0"]
 
 position = Vector2( 5.5719, 27.617 )
 rotation = 0.131445
@@ -1396,7 +1373,7 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Hair_link5" type="Sprite" parent="Head/Hair_link_left/Hair_link2/Hair_link3/Hair_link4" index="0"]
+[node name="HairlLink5" type="Sprite" parent="Head/HairLinkLeft/HairLink2/HairLink3/HairLink4" index="0"]
 
 position = Vector2( 6.33582, 26.6359 )
 rotation = -0.00721791
@@ -1408,7 +1385,7 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Hair_link6" type="Sprite" parent="Head/Hair_link_left/Hair_link2/Hair_link3/Hair_link4/Hair_link5" index="0"]
+[node name="HairLink6" type="Sprite" parent="Head/HairLinkLeft/HairLink2/HairLink3/HairLink4/HairlLink5" index="0"]
 
 position = Vector2( 4.42981, 25.2031 )
 rotation = 0.00288944
@@ -1420,7 +1397,7 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Hair_link7" type="Sprite" parent="Head/Hair_link_left/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6" index="0"]
+[node name="HairLink7" type="Sprite" parent="Head/HairLinkLeft/HairLink2/HairLink3/HairLink4/HairlLink5/HairLink6" index="0"]
 
 position = Vector2( 5.20984, 26.7465 )
 rotation = -0.0165613
@@ -1432,7 +1409,7 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Hair_link8" type="Sprite" parent="Head/Hair_link_left/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6/Hair_link7" index="0"]
+[node name="HairLink8" type="Sprite" parent="Head/HairLinkLeft/HairLink2/HairLink3/HairLink4/HairlLink5/HairLink6/HairLink7" index="0"]
 
 position = Vector2( 6.33228, 25.8804 )
 rotation = -0.113084
@@ -1443,7 +1420,7 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Hair_link9" type="Sprite" parent="Head/Hair_link_left/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6/Hair_link7/Hair_link8" index="0"]
+[node name="HairLink9" type="Sprite" parent="Head/HairLinkLeft/HairLink2/HairLink3/HairLink4/HairlLink5/HairLink6/HairLink7/HairLink8" index="0"]
 
 position = Vector2( 8.83728, 41.9161 )
 rotation = 3.00123
@@ -1455,7 +1432,7 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Position2D" type="Position2D" parent="Head/Hair_link_left/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6/Hair_link7/Hair_link8/Hair_link9" index="0"]
+[node name="Position2D" type="Position2D" parent="Head/HairLinkLeft/HairLink2/HairLink3/HairLink4/HairlLink5/HairLink6/HairLink7/HairLink8/HairLink9" index="0"]
 
 position = Vector2( -6.84595, -28.457 )
 rotation = 0.188741
@@ -1464,14 +1441,14 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Position2D2" type="Position2D" parent="Head/Hair_link_left/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6/Hair_link7/Hair_link8/Hair_link9/Position2D" index="0"]
+[node name="Position2D2" type="Position2D" parent="Head/HairLinkLeft/HairLink2/HairLink3/HairLink4/HairlLink5/HairLink6/HairLink7/HairLink8/HairLink9/Position2D" index="0"]
 
 position = Vector2( -7.68225, -24.2065 )
 __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Ribbon" type="Sprite" parent="Head/Hair_link_left/Hair_link2/Hair_link3/Hair_link4/Hair_link5/Hair_link6/Hair_link7/Hair_link8" index="1"]
+[node name="Ribbon" type="Sprite" parent="Head/HairLinkLeft/HairLink2/HairLink3/HairLink4/HairlLink5/HairLink6/HairLink7/HairLink8" index="1"]
 
 position = Vector2( 6.87231, 19.074 )
 rotation = 6.11317
@@ -1486,23 +1463,22 @@ position = Vector2( -3.07147, -56.4045 )
 texture = ExtResource( 10 )
 offset = Vector2( 2.73358, 47.2215 )
 
-[node name="Upper_right_arm" type="Sprite" parent="." index="4"]
+[node name="UpperRightArm" type="Sprite" parent="." index="4"]
 
-editor/display_folded = true
 position = Vector2( 67.335, -6.84879 )
 rotation = -0.6871
 texture = ExtResource( 11 )
 offset = Vector2( 0, 60 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Elbow" type="Sprite" parent="Upper_right_arm" index="0"]
+[node name="Elbow" type="Sprite" parent="UpperRightArm" index="0"]
 
 position = Vector2( -8.07327, 118.299 )
 rotation = -0.193903
 texture = ExtResource( 12 )
 offset = Vector2( -1.43667, 0.564661 )
 
-[node name="Lower_right_arm" type="Sprite" parent="Upper_right_arm/Elbow" index="0"]
+[node name="LowerRightArm" type="Sprite" parent="UpperRightArm/Elbow" index="0"]
 
 show_behind_parent = true
 position = Vector2( -1.91849, -6.81372 )
@@ -1511,7 +1487,7 @@ texture = ExtResource( 13 )
 offset = Vector2( 0, 60 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="Right_hand" type="Sprite" parent="Upper_right_arm/Elbow/Lower_right_arm" index="0"]
+[node name="RightHand" type="Sprite" parent="UpperRightArm/Elbow/LowerRightArm" index="0"]
 
 show_behind_parent = true
 position = Vector2( -7.47455, 109.876 )
@@ -1520,7 +1496,7 @@ texture = ExtResource( 14 )
 offset = Vector2( 10.1406, 27.5938 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="Sword2" type="Sprite" parent="Upper_right_arm/Elbow/Lower_right_arm/Right_hand" index="0"]
+[node name="Sword2" type="Sprite" parent="UpperRightArm/Elbow/LowerRightArm/RightHand" index="0"]
 
 show_behind_parent = true
 position = Vector2( 6.03857, 32.9382 )
@@ -1530,9 +1506,8 @@ offset = Vector2( -190.89, 1.39955 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
-[node name="Upper_left_arm" type="Sprite" parent="." index="5"]
+[node name="UpperLeftArm" type="Sprite" parent="." index="5"]
 
-editor/display_folded = true
 position = Vector2( -22.89, -0.214691 )
 rotation = 0.724555
 texture = ExtResource( 11 )
@@ -1540,7 +1515,7 @@ offset = Vector2( 0, 60 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform" ]
 
-[node name="Elbow" type="Sprite" parent="Upper_left_arm" index="0"]
+[node name="Elbow" type="Sprite" parent="UpperLeftArm" index="0"]
 
 position = Vector2( 10.9847, 117.329 )
 rotation = 0.194986
@@ -1549,7 +1524,7 @@ offset = Vector2( 1.00484, 1.16206 )
 flip_h = true
 _sections_unfolded = [ "Offset" ]
 
-[node name="Lower_left_arm" type="Sprite" parent="Upper_left_arm/Elbow" index="0"]
+[node name="LowerLeftArm" type="Sprite" parent="UpperLeftArm/Elbow" index="0"]
 
 show_behind_parent = true
 position = Vector2( -0.103882, 1.26227 )
@@ -1559,7 +1534,7 @@ offset = Vector2( 4.51938, 47.9464 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
-[node name="Left_hand" type="Sprite" parent="Upper_left_arm/Elbow/Lower_left_arm" index="0"]
+[node name="LeftHand" type="Sprite" parent="UpperLeftArm/Elbow/LowerLeftArm" index="0"]
 
 show_behind_parent = true
 position = Vector2( 14.7682, 96.4305 )
@@ -1569,7 +1544,7 @@ offset = Vector2( -11.2994, 30.4404 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
-[node name="Sword" type="Sprite" parent="Upper_left_arm/Elbow/Lower_left_arm/Left_hand" index="0"]
+[node name="Sword" type="Sprite" parent="UpperLeftArm/Elbow/LowerLeftArm/LeftHand" index="0"]
 
 show_behind_parent = true
 position = Vector2( -8.05701, 32.2915 )
@@ -1579,7 +1554,7 @@ offset = Vector2( -195.247, -0.457011 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Visibility" ]
 
-[node name="Right_wing" type="Sprite" parent="." index="6"]
+[node name="RightWing" type="Sprite" parent="." index="6"]
 
 position = Vector2( 79.139, 0.819275 )
 rotation = -0.0101432
@@ -1588,7 +1563,7 @@ texture = ExtResource( 16 )
 offset = Vector2( 260.331, -77.1849 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="Left_wing" type="Sprite" parent="." index="7"]
+[node name="LeftWing" type="Sprite" parent="." index="7"]
 
 position = Vector2( -21.8943, 8.98146 )
 rotation = 0.0101432
@@ -1605,9 +1580,9 @@ autoplay = "attack"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/attack = SubResource( 3 )
-anims/default = SubResource( 1 )
-anims/flying = SubResource( 2 )
+anims/attack = SubResource( 1 )
+anims/default = SubResource( 2 )
+anims/flying = SubResource( 3 )
 blend_times = [  ]
 
 
