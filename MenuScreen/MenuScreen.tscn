@@ -4,7 +4,7 @@
 [ext_resource path="res://MenuScreen/FrozenText.png" type="Texture" id=2]
 [ext_resource path="res://MenuScreen/NewGameButton.gd" type="Script" id=3]
 [ext_resource path="res://MenuScreen/TextBackground.png" type="Texture" id=4]
-[ext_resource path="res://MenuScreen/Button.gd" type="Script" id=5]
+[ext_resource path="res://MenuScreen/QuitButton.gd" type="Script" id=5]
 [ext_resource path="res://MenuScreen/MenuBackgroundSky.png" type="Texture" id=6]
 [ext_resource path="res://MenuScreen/MenuBackground0.png" type="Texture" id=7]
 [ext_resource path="res://MenuScreen/MenuBackground1.png" type="Texture" id=8]
@@ -464,9 +464,8 @@ texture = ExtResource( 4 )
 stretch_mode = 0
 _sections_unfolded = [ "Anchor", "Rect", "Size Flags", "Visibility" ]
 
-[node name="Exit" type="Label" parent="CanvasLayer/MenuContainer/Menu/Right" index="3"]
+[node name="Quit" type="Label" parent="CanvasLayer/MenuContainer/Menu/Right" index="3"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -488,7 +487,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/MenuContainer/Menu/Right/Exit" index="0"]
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/MenuContainer/Menu/Right/Quit" index="0"]
 
 show_behind_parent = true
 anchor_left = 0.0
@@ -510,7 +509,7 @@ texture = ExtResource( 4 )
 stretch_mode = 0
 _sections_unfolded = [ "Anchor", "Rect", "Size Flags", "Visibility" ]
 
-[node name="Button" type="Button" parent="CanvasLayer/MenuContainer/Menu/Right/Exit" index="1"]
+[node name="QuitButton" type="Button" parent="CanvasLayer/MenuContainer/Menu/Right/Quit" index="1"]
 
 modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.0
@@ -760,6 +759,6 @@ _sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Trans
 
 [connection signal="pressed" from="CanvasLayer/MenuContainer/Menu/Right/Continue/NewGameButton" to="CanvasLayer/MenuContainer/Menu/Right/Continue/NewGameButton" method="_on_NewGameButton_pressed"]
 
-[connection signal="pressed" from="CanvasLayer/MenuContainer/Menu/Right/Exit/Button" to="CanvasLayer/MenuContainer/Menu/Right/Exit/Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuContainer/Menu/Right/Quit/QuitButton" to="CanvasLayer/MenuContainer/Menu/Right/Quit/QuitButton" method="_on_Button_pressed"]
 
 
