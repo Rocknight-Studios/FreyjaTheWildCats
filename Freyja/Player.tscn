@@ -4,7 +4,7 @@
 [ext_resource path="res://Unsorted/DefaultProjectile.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Freyja/Chariot/Chariot.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Freyja/FreyjaBody/Freyja.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Freyja/StaticBody2D.gd" type="Script" id=5]
+[ext_resource path="res://Freyja/FreyjaCollisionArea.gd" type="Script" id=5]
 [ext_resource path="res://Freyja/PlayerPositioner.gd" type="Script" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -19,7 +19,7 @@ custom_solver_bias = 0.0
 radius = 73.0467
 height = 122.846
 
-[node name="Player" type="Node2D" groups=[
+[node name="Player" type="Node2D" index="0" groups=[
 "Player",
 ]]
 
@@ -42,7 +42,7 @@ scale = Vector2( 0.2, 0.2 )
 
 position = Vector2( 0, 0 )
 
-[node name="Area2D" type="Area2D" parent="Chariot/Freyja" index="6" groups=[
+[node name="FreyjaCollisionArea" type="Area2D" parent="Chariot/Freyja" index="6" groups=[
 "Freyja",
 ]]
 
@@ -60,7 +60,7 @@ total_health = 100
 health_decrease_amount = 1
 health_decrease_frequency = 500
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Chariot/Freyja/Area2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chariot/Freyja/FreyjaCollisionArea" index="0"]
 
 position = Vector2( -7.90526, -126.49 )
 shape = SubResource( 1 )
@@ -88,9 +88,9 @@ wait_time = 1.0
 one_shot = true
 autostart = false
 
-[connection signal="body_entered" from="Chariot/Freyja/Area2D" to="Chariot/Freyja/Area2D" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Chariot/Freyja/FreyjaCollisionArea" to="Chariot/Freyja/FreyjaCollisionArea" method="_on_Area2D_body_entered"]
 
-[connection signal="body_exited" from="Chariot/Freyja/Area2D" to="Chariot/Freyja/Area2D" method="_on_Area2D_body_exited"]
+[connection signal="body_exited" from="Chariot/Freyja/FreyjaCollisionArea" to="Chariot/Freyja/FreyjaCollisionArea" method="_on_Area2D_body_exited"]
 
 [connection signal="timeout" from="ProjectileTimer" to="." method="on_launch_a_projectile"]
 
