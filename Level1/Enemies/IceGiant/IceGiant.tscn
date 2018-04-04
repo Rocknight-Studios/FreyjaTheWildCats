@@ -543,7 +543,7 @@ custom_solver_bias = 0.0
 radius = 138.0
 height = 388.0
 
-[node name="IceGiant" type="Node2D"]
+[node name="IceGiant" type="Node2D" index="0"]
 
 position = Vector2( 0, 1 )
 scale = Vector2( 0.5, 0.5 )
@@ -557,6 +557,8 @@ attack_animation_speed = 0.25
 idle_animation_speed = 1.0
 animation_blend_speed = 1.0
 projectile_type = "ice_giant_projectile_offsets"
+enemy_launches_projectiles = true
+archer_projectile_offsets = [ Vector2( 200, 0 ), Vector2( -200, 0 ) ]
 
 [node name="Body" type="Node2D" parent="." index="0"]
 

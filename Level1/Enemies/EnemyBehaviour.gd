@@ -20,9 +20,10 @@ export var idle_animation_speed = 1.0 # To avoid use of magic numbers.
 export var animation_blend_speed = 1.0 # How quickly to blend between animations.
 var animation_blend_value = 0.0 # What is the current blending between idle and attack.
 export var projectile_type = "ice_giant_projectile_offsets" # To know, which array to use for the projectiles.
-var reference_to_profectile_offsets = null # For speed and convenience.
 var current_projectile_offset_index = 0 # To change which offset is being used.
 var animation_offset = .3 # Projectile must be launched at certain time compared to the animation.
+export var enemy_launches_projectiles = false # To save resources.
+export (Array) var archer_projectile_offsets = [] # Projectile offsets from the enemy. As Godot can't different array variables exposed in Inspector.
 
 func _ready():
 	self.add_to_group("Enemies")
@@ -31,8 +32,6 @@ func _ready():
 	death_timer = get_node("DeathTimer")
 	sprite_body = get_node("Body")
 	enemy_animation_tree_player.active = true
-
-	reference_to_profectile_offsets = Global.user_params.get(projectile_type)
 
 func receive_damage(damage_amount):
 	if current_health >= 0:
@@ -66,18 +65,19 @@ func manage_projectile(delta):
 		animation_blend_value += animation_blend_speed * delta
 		animation_blend_value = clamp(animation_blend_value, 0.0, 1.0)
 		enemy_animation_tree_player.blend2_node_set_amount("blend2", animation_blend_value)
-		var ticks_compensation = 1000.0 # For convenience.
-		var specific_animation_compensator = .5 # Each animation can have situation, where some events are be repeated multiple times during the animation.
-		if !enemy_must_fade_out && OS.get_ticks_msec() - projectile_launch_start_time > animation_offset + enemy_animator.get_animation("Attack").length * enemy_animator.playback_speed * ticks_compensation * specific_animation_compensator / attack_animation_speed:
-			projectile_launch_start_time = OS.get_ticks_msec()
-			if projectile_template:
-				var instanced_projectile = projectile_template.instance()
-				get_parent().add_child(instanced_projectile)
-				instanced_projectile.position = self.position + reference_to_profectile_offsets[current_projectile_offset_index]
-				instanced_projectile.direction = Global.player.get_global_transform().origin - self.get_global_transform().origin
-				current_projectile_offset_index += 1
-				if current_projectile_offset_index > reference_to_profectile_offsets.size() - 1: # Perhaps Sin function would be better here (have to investigate resource consumption).
-					current_projectile_offset_index = 0
+		if enemy_launches_projectiles:
+			var ticks_compensation = 1000.0 # For convenience.
+			var specific_animation_compensator = 1.0 / archer_projectile_offsets.size() # Each animation can have situation, where some events are be repeated multiple times during the animation.
+			if !enemy_must_fade_out && OS.get_ticks_msec() - projectile_launch_start_time > animation_offset + enemy_animator.get_animation("Attack").length * enemy_animator.playback_speed * ticks_compensation * specific_animation_compensator / attack_animation_speed:
+				projectile_launch_start_time = OS.get_ticks_msec()
+				if projectile_template:
+					var instanced_projectile = projectile_template.instance()
+					get_parent().add_child(instanced_projectile)
+					instanced_projectile.position = self.position + archer_projectile_offsets[current_projectile_offset_index]
+					instanced_projectile.direction = Global.player.get_global_transform().origin - self.get_global_transform().origin
+					current_projectile_offset_index += 1
+					if current_projectile_offset_index > archer_projectile_offsets.size() - 1: # Perhaps Sin function would be better here (have to investigate resource consumption).
+						current_projectile_offset_index = 0
 	else:
 		if abs(abs(enemy_animator.playback_speed) - abs(idle_animation_speed)) > Global.approximation_float:
 			enemy_animator.playback_speed = idle_animation_speed
