@@ -5,7 +5,7 @@ export var fade_out_speed = 5 # How quickly to fade enemy out on death.
 var middle_of_the_screen_y = 0.0 # To be fair and not start launching projectiles, when the player is at the top of the screen.
 onready var projectile_launch_start_time = OS.get_ticks_msec() # To know when to launch each projectile.
 onready var current_health = total_health # How much health does this enemy still have.
-onready var death_particles # For speed and convenience.
+onready var damage_particles # For speed and convenience.
 onready var death_soul_particles # For speed and convenience.
 onready var death_timer # For speed and convenience.
 onready var blood_splat_start_time = OS.get_ticks_msec() # To know, when to do the next blood splatter.
@@ -24,29 +24,39 @@ var current_projectile_offset_index = 0 # To change which offset is being used.
 var animation_offset = .3 # Projectile must be launched at certain time compared to the animation.
 export var enemy_launches_projectiles = false # To save resources.
 export (Array) var archer_projectile_offsets = [] # Projectile offsets from the enemy. As Godot can't different array variables exposed in Inspector.
+var original_damage_particle_alpha = 0.0 # To know, where to reset the alpha.
+var original_death_soul_particle_alpha = 0.0 # To know, where to reset the alpha.
 
 func _ready():
 	self.add_to_group("Enemies")
-	death_particles = get_node("DeathParticles")
+	damage_particles = get_node("DeathParticles")
 	death_soul_particles = get_node("DeathSoulParticles")
 	death_timer = get_node("DeathTimer")
 	sprite_body = get_node("Body")
 	enemy_animation_tree_player.active = true
+	damage_particles.restart()
+	death_soul_particles.restart()
+	original_damage_particle_alpha = damage_particles.modulate.a
+	original_death_soul_particle_alpha = death_soul_particles.modulate.a
+	damage_particles.modulate.a = 0.0
+	death_soul_particles.modulate.a = 0.0
 
 func receive_damage(damage_amount):
 	if current_health >= 0:
-		death_particles.emitting = true
-		if OS.get_ticks_msec() - blood_splat_start_time > death_particles.lifetime * 1000.0 * .8:
-			death_particles.restart()
+		damage_particles.modulate.a = original_damage_particle_alpha
+		damage_particles.emitting = true
+		if OS.get_ticks_msec() - blood_splat_start_time > damage_particles.lifetime * 1000.0 * .8:
+			damage_particles.restart()
 			blood_splat_start_time = OS.get_ticks_msec()
 		current_health -= damage_amount
 		if current_health < 0:
 			death_timer.wait_time = death_soul_particles.lifetime
+			death_soul_particles.modulate.a = original_death_soul_particle_alpha
 			death_soul_particles.emitting = true
 			death_soul_particles.restart()
 			enemy_must_fade_out = true
-			death_particles.emitting = false
-			death_particles.modulate.a = 0.0
+			damage_particles.emitting = false
+			damage_particles.modulate.a = 0.0
 			get_node("EnemyCollider").set_collision_layer(disable_layer_id)
 			death_timer.start()
 
