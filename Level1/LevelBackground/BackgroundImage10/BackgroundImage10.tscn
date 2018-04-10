@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage10/IceLevel10.png" type="Texture" id=1]
-[ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
+[ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=3]
 
 [node name="BackgroundImage10" type="Sprite" index="0"]
 
 position = Vector2( 960, -10260 )
 texture = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="RockWall" type="StaticBody2D" parent="." index="0"]
 
@@ -44,15 +46,15 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( -55.9797, 537.149, -179.073, 495.448, -222.568, 351.629, -98.2573, 267.232, -202.858, 199.977, -169.799, -64.0371, -138.899, -151.297, -300.696, -291.685, -401.283, -514.264, -151.331, -633.485, 322.514, 348.249 )
 
-[node name="IceGiant" parent="." index="2" instance=ExtResource( 2 )]
+[node name="IceGiant" parent="." index="2" instance=ExtResource( 3 )]
 
 position = Vector2( -285.004, -188.849 )
 
-[node name="IceGiant2" parent="." index="3" instance=ExtResource( 2 )]
+[node name="IceGiant2" parent="." index="3" instance=ExtResource( 3 )]
 
 position = Vector2( 281.327, -195.209 )
 
-[node name="IceGiant3" parent="." index="4" instance=ExtResource( 2 )]
+[node name="IceGiant3" parent="." index="4" instance=ExtResource( 3 )]
 
 position = Vector2( 0.690552, 104.791 )
 

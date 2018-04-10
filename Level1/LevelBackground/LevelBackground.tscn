@@ -34,7 +34,7 @@
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage31/BackgroundImage31.tscn" type="PackedScene" id=32]
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage32/BackgroundImage32.tscn" type="PackedScene" id=33]
 
-[node name="LevelBackground" type="Node2D"]
+[node name="LevelBackground" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 

@@ -1,14 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage24/IceLevel24.png" type="Texture" id=1]
-[ext_resource path="res://Level1/Enemies/Trolls/Archer/ArcherHeavy.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Level1/Enemies/Trolls/Shield/ShieldTroll.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Level1/Enemies/MiniSerpent/MiniSerpent.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
+[ext_resource path="res://Level1/Enemies/Trolls/Archer/ArcherHeavy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level1/Enemies/Trolls/Shield/ShieldTroll.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level1/Enemies/MiniSerpent/MiniSerpent.tscn" type="PackedScene" id=5]
 
 [node name="BackgroundImage24" type="Sprite" index="0"]
 
 position = Vector2( 960, -25380 )
 texture = ExtResource( 1 )
+script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="WaterTower" type="StaticBody2D" parent="." index="0"]
@@ -43,47 +45,47 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( 824.823, 539, 673.771, 443.334, 724.122, 85.8457, 678.806, -246.469, 497.544, -432.766, 497.544, -543.537, 960.77, -541.02, 968.322, 544.035 )
 
-[node name="ArcherHeavy" parent="." index="2" instance=ExtResource( 2 )]
+[node name="ArcherHeavy" parent="." index="2" instance=ExtResource( 3 )]
 
 position = Vector2( -777.916, -224.061 )
 
-[node name="ShieldTroll" parent="." index="3" instance=ExtResource( 3 )]
+[node name="ShieldTroll" parent="." index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 264.525, 213.299 )
 
-[node name="ShieldTroll8" parent="." index="4" instance=ExtResource( 3 )]
+[node name="ShieldTroll8" parent="." index="4" instance=ExtResource( 4 )]
 
 position = Vector2( 131.281, -62.4434 )
 
-[node name="ShieldTroll2" parent="." index="5" instance=ExtResource( 3 )]
+[node name="ShieldTroll2" parent="." index="5" instance=ExtResource( 4 )]
 
 position = Vector2( 382.878, 213.299 )
 
-[node name="ShieldTroll7" parent="." index="6" instance=ExtResource( 3 )]
+[node name="ShieldTroll7" parent="." index="6" instance=ExtResource( 4 )]
 
 position = Vector2( 249.633, -62.4434 )
 
-[node name="ShieldTroll3" parent="." index="7" instance=ExtResource( 3 )]
+[node name="ShieldTroll3" parent="." index="7" instance=ExtResource( 4 )]
 
 position = Vector2( 495.788, 213.299 )
 
-[node name="ShieldTroll6" parent="." index="8" instance=ExtResource( 3 )]
+[node name="ShieldTroll6" parent="." index="8" instance=ExtResource( 4 )]
 
 position = Vector2( 362.544, -62.4434 )
 
-[node name="ShieldTroll4" parent="." index="9" instance=ExtResource( 3 )]
+[node name="ShieldTroll4" parent="." index="9" instance=ExtResource( 4 )]
 
 position = Vector2( 612.78, 213.299 )
 
-[node name="ShieldTroll5" parent="." index="10" instance=ExtResource( 3 )]
+[node name="ShieldTroll5" parent="." index="10" instance=ExtResource( 4 )]
 
 position = Vector2( 479.536, -62.4434 )
 
-[node name="ShieldTroll9" parent="." index="11" instance=ExtResource( 3 )]
+[node name="ShieldTroll9" parent="." index="11" instance=ExtResource( 4 )]
 
 position = Vector2( 589.572, -62.4434 )
 
-[node name="Serpent" parent="." index="12" instance=ExtResource( 4 )]
+[node name="Serpent" parent="." index="12" instance=ExtResource( 5 )]
 
 position = Vector2( -144.348, 438.596 )
 rotation = 1.56897

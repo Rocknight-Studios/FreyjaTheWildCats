@@ -1,15 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage28/IceLevel28.png" type="Texture" id=1]
-[ext_resource path="res://Level1/Enemies/Trolls/Archer/ArcherHeavy.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Level1/Enemies/Trolls/Berserker/Berserker.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Level1/Enemies/MiniSerpent/MiniSerpent.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
+[ext_resource path="res://Level1/Enemies/Trolls/Archer/ArcherHeavy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level1/Enemies/Trolls/Berserker/Berserker.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Level1/Enemies/MiniSerpent/MiniSerpent.tscn" type="PackedScene" id=6]
 
 [node name="BackgroundImage28" type="Sprite" index="0"]
 
 position = Vector2( 960, -29700 )
 texture = ExtResource( 1 )
+script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="WaterLeft" type="StaticBody2D" parent="." index="0"]
@@ -60,39 +62,39 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( 450.042, 544.098, 349.341, 5.3457, 450.042, -120.531, 762.216, -180.951, 777.321, -548.512, 958.583, -543.477, 966.135, 536.545 )
 
-[node name="ArcherHeavy" parent="." index="3" instance=ExtResource( 2 )]
+[node name="ArcherHeavy" parent="." index="3" instance=ExtResource( 3 )]
 
 position = Vector2( -760.294, 62.9375 )
 
-[node name="Berserker" parent="." index="4" instance=ExtResource( 3 )]
+[node name="Berserker" parent="." index="4" instance=ExtResource( 4 )]
 
 position = Vector2( 119.454, 66.0117 )
 
-[node name="Berserker2" parent="." index="5" instance=ExtResource( 3 )]
+[node name="Berserker2" parent="." index="5" instance=ExtResource( 4 )]
 
 position = Vector2( 30.6571, -88.7207 )
 
-[node name="Berserker3" parent="." index="6" instance=ExtResource( 3 )]
+[node name="Berserker3" parent="." index="6" instance=ExtResource( 4 )]
 
 position = Vector2( 83.9049, 260.818 )
 
-[node name="Berserker4" parent="." index="7" instance=ExtResource( 3 )]
+[node name="Berserker4" parent="." index="7" instance=ExtResource( 4 )]
 
 position = Vector2( 158.019, 435.656 )
 
-[node name="Berserker5" parent="." index="8" instance=ExtResource( 3 )]
+[node name="Berserker5" parent="." index="8" instance=ExtResource( 4 )]
 
 position = Vector2( 206.389, -78.3223 )
 
-[node name="IceGiant" parent="." index="9" instance=ExtResource( 4 )]
+[node name="IceGiant" parent="." index="9" instance=ExtResource( 5 )]
 
 position = Vector2( -253.534, -109.186 )
 
-[node name="IceGiant2" parent="." index="10" instance=ExtResource( 4 )]
+[node name="IceGiant2" parent="." index="10" instance=ExtResource( 5 )]
 
 position = Vector2( 540.379, -379.375 )
 
-[node name="Serpent" parent="." index="11" instance=ExtResource( 5 )]
+[node name="Serpent" parent="." index="11" instance=ExtResource( 6 )]
 
 position = Vector2( 714.837, 156.996 )
 rotation = 4.6866

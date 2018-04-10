@@ -26,20 +26,23 @@ export var enemy_launches_projectiles = false # To save resources.
 export (Array) var archer_projectile_offsets = [] # Projectile offsets from the enemy. As Godot can't different array variables exposed in Inspector.
 var original_damage_particle_alpha = 0.0 # To know, where to reset the alpha.
 var original_death_soul_particle_alpha = 0.0 # To know, where to reset the alpha.
+onready var enemy_collider = get_node("EnemyCollider") # For speed and convenience.
+var initialized = false # To know, when to run the body of _ready method.
 
 func _ready():
-	self.add_to_group("Enemies")
-	damage_particles = get_node("DeathParticles")
-	death_soul_particles = get_node("DeathSoulParticles")
-	death_timer = get_node("DeathTimer")
-	sprite_body = get_node("Body")
-	enemy_animation_tree_player.active = true
-	damage_particles.restart()
-	death_soul_particles.restart()
-	original_damage_particle_alpha = damage_particles.modulate.a
-	original_death_soul_particle_alpha = death_soul_particles.modulate.a
-	damage_particles.modulate.a = 0.0
-	death_soul_particles.modulate.a = 0.0
+	if !initialized:
+		self.add_to_group("Enemies")
+		damage_particles = get_node("DeathParticles")
+		death_soul_particles = get_node("DeathSoulParticles")
+		death_timer = get_node("DeathTimer")
+		sprite_body = get_node("Body")
+		enemy_animation_tree_player.active = true
+		damage_particles.restart()
+		death_soul_particles.restart()
+		original_damage_particle_alpha = damage_particles.modulate.a
+		original_death_soul_particle_alpha = death_soul_particles.modulate.a
+		damage_particles.modulate.a = 0.0
+		death_soul_particles.modulate.a = 0.0
 
 func receive_damage(damage_amount):
 	if current_health >= 0:
@@ -57,11 +60,14 @@ func receive_damage(damage_amount):
 			enemy_must_fade_out = true
 			damage_particles.emitting = false
 			damage_particles.modulate.a = 0.0
-			get_node("EnemyCollider").set_collision_layer(disable_layer_id)
+			enemy_collider.set_collision_layer(disable_layer_id)
 			death_timer.start()
 
 func _on_DeathTimer_timeout():
-	self.queue_free()
+	#self.queue_free()
+	# Don't free the object, to enable quicker level restart, this function and it's calling mechanism, can be removed.
+	# It's here just temporarily.
+	pass
 
 func _process(delta):
 	manage_projectile(delta)
@@ -74,7 +80,8 @@ func manage_projectile(delta):
 			enemy_animator.playback_speed = attack_animation_speed
 		animation_blend_value += animation_blend_speed * delta
 		animation_blend_value = clamp(animation_blend_value, 0.0, 1.0)
-		enemy_animation_tree_player.blend2_node_set_amount("blend2", animation_blend_value)
+		if animation_blend_value < 1.0 - Global.approximation_float:
+			enemy_animation_tree_player.blend2_node_set_amount("blend2", animation_blend_value)
 		if enemy_launches_projectiles:
 			var ticks_compensation = 1000.0 # For convenience.
 			var specific_animation_compensator = 1.0 / archer_projectile_offsets.size() # Each animation can have situation, where some events are be repeated multiple times during the animation.
@@ -93,4 +100,5 @@ func manage_projectile(delta):
 			enemy_animator.playback_speed = idle_animation_speed
 		animation_blend_value -= animation_blend_speed * delta
 		animation_blend_value = clamp(animation_blend_value, 0.0, 1.0)
-		enemy_animation_tree_player.blend2_node_set_amount("blend2", animation_blend_value)
+		if animation_blend_value > Global.approximation_float:
+			enemy_animation_tree_player.blend2_node_set_amount("blend2", animation_blend_value)
