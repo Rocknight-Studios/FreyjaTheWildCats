@@ -549,7 +549,7 @@ position = Vector2( 0, 1 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 2
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Pause", "Transform", "Z Index" ]
 total_health = 5
 fade_out_speed = 5
 projectile_template = ExtResource( 2 )
@@ -727,17 +727,17 @@ data = {
 "position": Vector2( 490, 91 ),
 "type": "output"
 }, {
-"filter": [  ],
-"from": "Attack",
-"id": "anim 2",
-"position": Vector2( 106, 154 ),
-"type": "animation"
-}, {
 "blend": 0.0,
 "filter": [  ],
 "id": "blend2",
 "position": Vector2( 321, 59 ),
 "type": "blend2"
+}, {
+"filter": [  ],
+"from": "Attack",
+"id": "anim 2",
+"position": Vector2( 106, 154 ),
+"type": "animation"
 } ]
 }
 

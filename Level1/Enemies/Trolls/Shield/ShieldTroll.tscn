@@ -436,8 +436,8 @@ attack_animation_speed = 0.25
 idle_animation_speed = 1.0
 animation_blend_speed = 1.0
 projectile_type = "ice_giant_projectile_offsets"
-unique = [ 10.0, 20 ]
-non_unique = [ Vector2( 0, 0 ), 5 ]
+enemy_launches_projectiles = false
+archer_projectile_offsets = null
 
 [node name="Body" type="Node2D" parent="." index="0"]
 
@@ -623,17 +623,17 @@ data = {
 "position": Vector2( 546, 196 ),
 "type": "output"
 }, {
-"filter": [  ],
-"from": "Attack",
-"id": "anim 2",
-"position": Vector2( 130, 290 ),
-"type": "animation"
-}, {
 "blend": 0.0,
 "filter": [  ],
 "id": "blend2",
 "position": Vector2( 323, 196 ),
 "type": "blend2"
+}, {
+"filter": [  ],
+"from": "Attack",
+"id": "anim 2",
+"position": Vector2( 130, 290 ),
+"type": "animation"
 } ]
 }
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage5/IceLevel5.png" type="Texture" id=1]
-[ext_resource path="res://Level1/Enemies/Trolls/Archer/ArcherHeavy.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
+[ext_resource path="res://Level1/Enemies/Trolls/Archer/ArcherHeavy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -32,6 +33,7 @@ height = 114.983
 
 position = Vector2( 960, -4860 )
 texture = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Forest" type="StaticBody2D" parent="." index="0"]
 
@@ -107,15 +109,15 @@ bounce = 0.0
 shape = SubResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="ArcherHeavy" parent="." index="4" instance=ExtResource( 2 )]
+[node name="ArcherHeavy" parent="." index="4" instance=ExtResource( 3 )]
 
 position = Vector2( 20.5054, -133.285 )
 
-[node name="IceGiant" parent="." index="5" instance=ExtResource( 3 )]
+[node name="IceGiant" parent="." index="5" instance=ExtResource( 4 )]
 
 position = Vector2( -399.001, -124.269 )
 
-[node name="IceGiant2" parent="." index="6" instance=ExtResource( 3 )]
+[node name="IceGiant2" parent="." index="6" instance=ExtResource( 4 )]
 
 position = Vector2( 440.568, -132.932 )
 

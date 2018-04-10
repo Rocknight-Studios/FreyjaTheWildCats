@@ -428,7 +428,7 @@ custom_solver_bias = 0.0
 radius = 151.697
 height = 62.4031
 
-[node name="ArcherHeavy" type="Node2D"]
+[node name="ArcherHeavy" type="Node2D" index="0"]
 
 scale = Vector2( 0.4, 0.4 )
 z_index = 2
@@ -436,12 +436,13 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 total_health = 4
 fade_out_speed = 5
-projectile_launch_frequency = 2000
-projectile_offset = Vector2( -50, 0 )
 projectile_template = null
 attack_animation_speed = 0.25
 idle_animation_speed = 1.0
 animation_blend_speed = 1.0
+projectile_type = "ice_giant_projectile_offsets"
+enemy_launches_projectiles = false
+archer_projectile_offsets = null
 
 [node name="Body" type="Node2D" parent="." index="0"]
 
@@ -640,17 +641,17 @@ data = {
 "position": Vector2( 409, 132 ),
 "type": "output"
 }, {
-"filter": [  ],
-"from": "Attack",
-"id": "anim 2",
-"position": Vector2( 50, 188 ),
-"type": "animation"
-}, {
 "blend": 1.0,
 "filter": [  ],
 "id": "blend2",
 "position": Vector2( 241, 89 ),
 "type": "blend2"
+}, {
+"filter": [  ],
+"from": "Attack",
+"id": "anim 2",
+"position": Vector2( 50, 188 ),
+"type": "animation"
 } ]
 }
 

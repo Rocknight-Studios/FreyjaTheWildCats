@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage4/IceLevel4.png" type="Texture" id=1]
-[ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Level1/Enemies/Trolls/Shield/ShieldTroll.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
+[ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level1/Enemies/Trolls/Shield/ShieldTroll.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -14,6 +15,7 @@ height = 730.583
 
 position = Vector2( 960, -3780 )
 texture = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Forest" type="StaticBody2D" parent="." index="0"]
 
@@ -68,19 +70,19 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( -228.672, 162.929, -230.754, -203.724, -27.3762, -304.312, -203.221, -458.885, -171.427, -694.859, 105.517, -962.777, 255.02, 95.4194 )
 
-[node name="IceGiant" parent="." index="3" instance=ExtResource( 2 )]
+[node name="IceGiant" parent="." index="3" instance=ExtResource( 3 )]
 
 position = Vector2( 63.5435, -169.273 )
 
-[node name="ShieldTroll" parent="." index="4" instance=ExtResource( 3 )]
+[node name="ShieldTroll" parent="." index="4" instance=ExtResource( 4 )]
 
 position = Vector2( 62.6145, 81.5648 )
 
-[node name="ShieldTroll2" parent="." index="5" instance=ExtResource( 3 )]
+[node name="ShieldTroll2" parent="." index="5" instance=ExtResource( 4 )]
 
 position = Vector2( 235.34, 81.5648 )
 
-[node name="ShieldTroll3" parent="." index="6" instance=ExtResource( 3 )]
+[node name="ShieldTroll3" parent="." index="6" instance=ExtResource( 4 )]
 
 position = Vector2( -109.482, 81.5648 )
 
