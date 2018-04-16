@@ -87,17 +87,20 @@ func manage_projectile(delta):
 			var specific_animation_compensator = 1.0 / archer_projectile_offsets.size() # Each animation can have situation, where some events are be repeated multiple times during the animation.
 			if !enemy_must_fade_out && OS.get_ticks_msec() - projectile_launch_start_time > animation_offset + enemy_animator.get_animation("Attack").length * enemy_animator.playback_speed * ticks_compensation * specific_animation_compensator / attack_animation_speed:
 				projectile_launch_start_time = OS.get_ticks_msec()
-				if projectile_template:
-					var instanced_projectile = projectile_template.instance()
+				if current_projectile_offset_index > 0 && projectile_template:
+					var instanced_projectile = projectile_template.instance() # To manage the current projectile instance.
+					instanced_projectile.constant_rotation_direction = -1.0 if current_projectile_offset_index % 2 == 0 else 1.0
 					get_parent().add_child(instanced_projectile)
-					instanced_projectile.position = self.position + archer_projectile_offsets[current_projectile_offset_index]
-					instanced_projectile.direction = Global.player.get_global_transform().origin - self.get_global_transform().origin
-					current_projectile_offset_index += 1
+					instanced_projectile.parent_enemy = self
 					if current_projectile_offset_index > archer_projectile_offsets.size() - 1: # Perhaps Sin function would be better here (have to investigate resource consumption).
 						current_projectile_offset_index = 0
+					instanced_projectile.position = get_parent().to_local(get_node(archer_projectile_offsets[current_projectile_offset_index]).get_global_transform().origin) # For speed and convenience.
+					instanced_projectile.direction = Global.player.get_global_transform().origin - self.get_global_transform().origin
+				current_projectile_offset_index += 1
 	else:
 		if abs(abs(enemy_animator.playback_speed) - abs(idle_animation_speed)) > Global.approximation_float:
 			enemy_animator.playback_speed = idle_animation_speed
+			current_projectile_offset_index = -1
 		animation_blend_value -= animation_blend_speed * delta
 		animation_blend_value = clamp(animation_blend_value, 0.0, 1.0)
 		if animation_blend_value > Global.approximation_float:
