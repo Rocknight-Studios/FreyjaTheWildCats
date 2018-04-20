@@ -1,5 +1,6 @@
 extends Sprite
 
+export var enemy_optimization_distance = 3000.0 # Deactivate enemies at this distance.
 var enemies = [] # All the enemies of this block.
 enum ActivityState {none, activated, deactivated}
 onready var activity_state = ActivityState.none # To save resources.
@@ -20,7 +21,7 @@ func _process(delta):
 		manage_block_activity()
 
 func manage_block_activity():
-	if Global.player.get_global_transform().origin.distance_to(self.get_global_transform().origin) > 3000.0:
+	if Global.player.get_global_transform().origin.distance_to(self.get_global_transform().origin) > enemy_optimization_distance:
 		deactivate_block()
 	else:
 		activate_block()
