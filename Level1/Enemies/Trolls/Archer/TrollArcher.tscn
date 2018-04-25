@@ -403,7 +403,7 @@ custom_solver_bias = 0.0
 radius = 133.723
 height = 180.142
 
-[node name="TrollArcher" type="Node2D"]
+[node name="TrollArcher" type="Node2D" index="0"]
 
 scale = Vector2( 0.3, 0.3 )
 z_index = 2
@@ -411,12 +411,13 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 total_health = 3
 fade_out_speed = 5
-projectile_launch_frequency = 1000
-projectile_offset = Vector2( 0, 0 )
 projectile_template = null
 attack_animation_speed = 0.25
 idle_animation_speed = 1.0
 animation_blend_speed = 1.0
+projectile_type = "ice_giant_projectile_offsets"
+enemy_launches_projectiles = false
+archer_projectile_offsets = null
 
 [node name="Body" type="Node2D" parent="." index="0"]
 
@@ -578,17 +579,17 @@ data = {
 "position": Vector2( 364, 83 ),
 "type": "output"
 }, {
-"filter": [  ],
-"from": "Attack",
-"id": "anim 2",
-"position": Vector2( 52, 175 ),
-"type": "animation"
-}, {
 "blend": 0.0,
 "filter": [  ],
 "id": "blend2",
 "position": Vector2( 231, 76 ),
 "type": "blend2"
+}, {
+"filter": [  ],
+"from": "Attack",
+"id": "anim 2",
+"position": Vector2( 52, 175 ),
+"type": "animation"
 } ]
 }
 _sections_unfolded = [ "Playback" ]

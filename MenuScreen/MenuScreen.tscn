@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Assets/Font/Norse.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://MenuScreen/FrozenText.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://MenuScreen/MenuBackground4.png" type="Texture" id=13]
 [ext_resource path="res://MenuScreen/Background.png" type="Texture" id=14]
 [ext_resource path="res://Unsorted/Snow/SnowParticle.png" type="Texture" id=15]
+[ext_resource path="res://MenuScreen/freyja_-_a_journey_begins.ogg" type="AudioStream" id=16]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -165,7 +166,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Color", "Emission Shape", "Gravity", "Initial Velocity", "Radial Accel", "Scale", "Spread", "Trail" ]
 
-[node name="MenuScreen" type="Node" index="0"]
+[node name="MenuScreen" type="Node"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
 
@@ -177,6 +178,7 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="MenuContainer" type="MarginContainer" parent="CanvasLayer" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -538,6 +540,7 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer" index="1"]
 
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -752,6 +755,14 @@ normal_map = null
 h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform" ]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 16 )
+volume_db = 0.0
+autoplay = true
+mix_target = 0
+bus = "Master"
 
 [connection signal="mouse_entered" from="CanvasLayer/MenuContainer/Menu/Right/Continue/NewGameButton" to="CanvasLayer/MenuContainer/Menu/Right/Continue/NewGameButton" method="_on_NewGameButton_mouse_entered"]
 

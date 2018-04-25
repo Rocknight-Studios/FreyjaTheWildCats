@@ -3,9 +3,6 @@
 [ext_resource path="res://Level1/Enemies/IceGiant/Projectiles/IceProjectile.gd" type="Script" id=1]
 [ext_resource path="res://Level1/Enemies/IceGiant/Projectiles/LittleIce.png" type="Texture" id=2]
 
-
-
-
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -24,8 +21,9 @@ collision_mask = 256
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform", "Z Index", "collision" ]
-projectile_max_distance_from_parent = 1000.0
 projectile_speed = 0.5
+rotation_speed = 10.0
+rotate_projectile_constantly = true
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

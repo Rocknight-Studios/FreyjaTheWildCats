@@ -486,12 +486,13 @@ __meta__ = {
 }
 total_health = 5
 fade_out_speed = 5
-projectile_launch_frequency = 2000
-projectile_offset = Vector2( -50, 0 )
 projectile_template = null
 attack_animation_speed = 0.25
 idle_animation_speed = 1.0
 animation_blend_speed = 1.0
+projectile_type = "ice_giant_projectile_offsets"
+enemy_launches_projectiles = false
+archer_projectile_offsets = null
 
 [node name="Body" type="Node2D" parent="." index="0"]
 

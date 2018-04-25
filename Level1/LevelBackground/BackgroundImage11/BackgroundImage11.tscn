@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage11/IceLevel11.png" type="Texture" id=1]
-[ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Level1/EnvironmentEffects/Waves.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
+[ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level1/EnvironmentEffects/Waves.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -14,6 +15,7 @@ height = 683.725
 
 position = Vector2( 960, -11340 )
 texture = ExtResource( 1 )
+script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="RockWall" type="StaticBody2D" parent="." index="0"]
@@ -69,23 +71,23 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( -117.393, -67.6943, -176.339, 325.66, 102.056, 289.647, 41.923, -76.2285 )
 
-[node name="IceGiant" parent="." index="3" instance=ExtResource( 2 )]
+[node name="IceGiant" parent="." index="3" instance=ExtResource( 3 )]
 
 position = Vector2( -278.679, -244.649 )
 
-[node name="IceGiant2" parent="." index="4" instance=ExtResource( 2 )]
+[node name="IceGiant2" parent="." index="4" instance=ExtResource( 3 )]
 
 position = Vector2( 202.738, -245.726 )
 
-[node name="IceGiant3" parent="." index="5" instance=ExtResource( 2 )]
+[node name="IceGiant3" parent="." index="5" instance=ExtResource( 3 )]
 
 position = Vector2( -477.508, 240.443 )
 
-[node name="IceGiant4" parent="." index="6" instance=ExtResource( 2 )]
+[node name="IceGiant4" parent="." index="6" instance=ExtResource( 3 )]
 
 position = Vector2( -37.81, 243.845 )
 
-[node name="IceGiant5" parent="." index="7" instance=ExtResource( 2 )]
+[node name="IceGiant5" parent="." index="7" instance=ExtResource( 3 )]
 
 position = Vector2( 405.867, 239.753 )
 
@@ -94,31 +96,31 @@ position = Vector2( 405.867, 239.753 )
 editor/display_folded = true
 position = Vector2( 661.623, -465.675 )
 
-[node name="waves" parent="WaveWrapper" index="0" instance=ExtResource( 3 )]
+[node name="waves" parent="WaveWrapper" index="0" instance=ExtResource( 4 )]
 
 _sections_unfolded = [ "Transform" ]
 
-[node name="waves2" parent="WaveWrapper" index="1" instance=ExtResource( 3 )]
+[node name="waves2" parent="WaveWrapper" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 106.813, 79.8037 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="waves3" parent="WaveWrapper" index="2" instance=ExtResource( 3 )]
+[node name="waves3" parent="WaveWrapper" index="2" instance=ExtResource( 4 )]
 
 position = Vector2( -42.9708, 139.963 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="waves4" parent="WaveWrapper" index="3" instance=ExtResource( 3 )]
+[node name="waves4" parent="WaveWrapper" index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 176.795, 191.528 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="waves5" parent="WaveWrapper" index="4" instance=ExtResource( 3 )]
+[node name="waves5" parent="WaveWrapper" index="4" instance=ExtResource( 4 )]
 
 position = Vector2( 143.646, 320.44 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="waves6" parent="WaveWrapper" index="5" instance=ExtResource( 3 )]
+[node name="waves6" parent="WaveWrapper" index="5" instance=ExtResource( 4 )]
 
 position = Vector2( 178.022, 482.502 )
 _sections_unfolded = [ "Transform" ]

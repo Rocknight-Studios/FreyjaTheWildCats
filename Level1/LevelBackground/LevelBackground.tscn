@@ -1,119 +1,182 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage0/BackgroundImage0.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage1/BackgroundImage1.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage2/BackgroundImage2.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage3/BackgroundImage3.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage4/BackgroundImage4.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage5/BackgroundImage5.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage6/BackgroundImage6.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage7/BackgroundImage7.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage8/BackgroundImage8.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage9/BackgroundImage9.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage10/BackgroundImage10.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage11/BackgroundImage11.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage12/BackgroundImage12.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage13/BackgroundImage13.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage14/BackgroundImage14.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage15/BackgroundImage15.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage16/BackgroundImage16.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage17/BackgroundImage17.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage18/BackgroundImage18.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage19/BackgroundImage19.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage20/BackgroundImage20.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage21/BackgroundImage21.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage22/BackgroundImage22.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage23/BackgroundImage23.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage24/BackgroundImage24.tscn" type="PackedScene" id=25]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage25/BackgroundImage25.tscn" type="PackedScene" id=26]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage26/BackgroundImage26.tscn" type="PackedScene" id=27]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage27/BackgroundImage27.tscn" type="PackedScene" id=28]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage28/BackgroundImage28.tscn" type="PackedScene" id=29]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage29/BackgroundImage29.tscn" type="PackedScene" id=30]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage30/BackgroundImage30.tscn" type="PackedScene" id=31]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage31/BackgroundImage31.tscn" type="PackedScene" id=32]
-[ext_resource path="res://Level1/LevelBackground/BackgroundImage32/BackgroundImage32.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Level1/LevelBackground/LevelBackground.gd" type="Script" id=1]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage0/BackgroundImage0.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage1/BackgroundImage1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage2/BackgroundImage2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage3/BackgroundImage3.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage4/BackgroundImage4.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage5/BackgroundImage5.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage6/BackgroundImage6.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage7/BackgroundImage7.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage8/BackgroundImage8.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage9/BackgroundImage9.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage10/BackgroundImage10.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage11/BackgroundImage11.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage12/BackgroundImage12.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage13/BackgroundImage13.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage14/BackgroundImage14.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage15/BackgroundImage15.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage16/BackgroundImage16.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage17/BackgroundImage17.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage18/BackgroundImage18.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage19/BackgroundImage19.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage20/BackgroundImage20.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage21/BackgroundImage21.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage22/BackgroundImage22.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage23/BackgroundImage23.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage24/BackgroundImage24.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage25/BackgroundImage25.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage26/BackgroundImage26.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage27/BackgroundImage27.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage28/BackgroundImage28.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage29/BackgroundImage29.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage30/BackgroundImage30.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage31/BackgroundImage31.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage32/BackgroundImage32.tscn" type="PackedScene" id=34]
 
-[node name="LevelBackground" type="Node2D"]
+[node name="LevelBackground" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+block_optimization_distance = 2000.0
+
+[node name="BackgroundImage0" parent="." index="0" instance=ExtResource( 2 )]
 
 _sections_unfolded = [ "Transform" ]
+enemy_optimization_distance = 3000.0
 
-[node name="BackgroundImage0" parent="." index="0" instance=ExtResource( 1 )]
+[node name="BackgroundImage1" parent="." index="1" instance=ExtResource( 3 )]
 
-_sections_unfolded = [ "Transform" ]
+enemy_optimization_distance = 3000.0
 
-[node name="BackgroundImage1" parent="." index="1" instance=ExtResource( 2 )]
+[node name="BackgroundImage2" parent="." index="2" instance=ExtResource( 4 )]
 
-[node name="BackgroundImage2" parent="." index="2" instance=ExtResource( 3 )]
+enemy_optimization_distance = 3000.0
 
-[node name="BackgroundImage3" parent="." index="3" instance=ExtResource( 4 )]
-
-_sections_unfolded = [ "Transform" ]
-
-[node name="BackgroundImage4" parent="." index="4" instance=ExtResource( 5 )]
+[node name="BackgroundImage3" parent="." index="3" instance=ExtResource( 5 )]
 
 _sections_unfolded = [ "Transform" ]
+enemy_optimization_distance = 3000.0
 
-[node name="BackgroundImage5" parent="." index="5" instance=ExtResource( 6 )]
-
-[node name="BackgroundImage6" parent="." index="6" instance=ExtResource( 7 )]
-
-[node name="BackgroundImage7" parent="." index="7" instance=ExtResource( 8 )]
-
-[node name="BackgroundImage8" parent="." index="8" instance=ExtResource( 9 )]
+[node name="BackgroundImage4" parent="." index="4" instance=ExtResource( 6 )]
 
 _sections_unfolded = [ "Transform" ]
+enemy_optimization_distance = 3000.0
 
-[node name="BackgroundImage9" parent="." index="9" instance=ExtResource( 10 )]
+[node name="BackgroundImage5" parent="." index="5" instance=ExtResource( 7 )]
+
+enemy_optimization_distance = 3000.0
+
+[node name="BackgroundImage6" parent="." index="6" instance=ExtResource( 8 )]
+
+enemy_optimization_distance = 3000.0
+
+[node name="BackgroundImage7" parent="." index="7" instance=ExtResource( 9 )]
+
+enemy_optimization_distance = 3000.0
+
+[node name="BackgroundImage8" parent="." index="8" instance=ExtResource( 10 )]
 
 _sections_unfolded = [ "Transform" ]
+enemy_optimization_distance = 3000.0
 
-[node name="BackgroundImage10" parent="." index="10" instance=ExtResource( 11 )]
+[node name="BackgroundImage9" parent="." index="9" instance=ExtResource( 11 )]
 
-[node name="BackgroundImage11" parent="." index="11" instance=ExtResource( 12 )]
+_sections_unfolded = [ "Transform" ]
+enemy_optimization_distance = 3000.0
 
-[node name="BackgroundImage12" parent="." index="12" instance=ExtResource( 13 )]
+[node name="BackgroundImage10" parent="." index="10" instance=ExtResource( 12 )]
 
-[node name="BackgroundImage13" parent="." index="13" instance=ExtResource( 14 )]
+enemy_optimization_distance = 3000.0
 
-[node name="BackgroundImage14" parent="." index="14" instance=ExtResource( 15 )]
+[node name="BackgroundImage11" parent="." index="11" instance=ExtResource( 13 )]
 
-[node name="BackgroundImage15" parent="." index="15" instance=ExtResource( 16 )]
+enemy_optimization_distance = 3000.0
 
-[node name="BackgroundImage16" parent="." index="16" instance=ExtResource( 17 )]
+[node name="BackgroundImage12" parent="." index="12" instance=ExtResource( 14 )]
 
-[node name="BackgroundImage17" parent="." index="17" instance=ExtResource( 18 )]
+enemy_optimization_distance = 3000.0
 
-[node name="BackgroundImage18" parent="." index="18" instance=ExtResource( 19 )]
+[node name="BackgroundImage13" parent="." index="13" instance=ExtResource( 15 )]
 
-[node name="BackgroundImage19" parent="." index="19" instance=ExtResource( 20 )]
+enemy_optimization_distance = 3000.0
 
-[node name="BackgroundImage20" parent="." index="20" instance=ExtResource( 21 )]
+[node name="BackgroundImage14" parent="." index="14" instance=ExtResource( 16 )]
+
+enemy_optimization_distance = 3000.0
+
+[node name="BackgroundImage15" parent="." index="15" instance=ExtResource( 17 )]
+
+enemy_optimization_distance = 3000.0
+
+[node name="BackgroundImage16" parent="." index="16" instance=ExtResource( 18 )]
+
+enemy_optimization_distance = 3000.0
+
+[node name="BackgroundImage17" parent="." index="17" instance=ExtResource( 19 )]
+
+enemy_optimization_distance = 3000.0
+
+[node name="BackgroundImage18" parent="." index="18" instance=ExtResource( 20 )]
+
+enemy_optimization_distance = 3000.0
+
+[node name="BackgroundImage19" parent="." index="19" instance=ExtResource( 21 )]
+
+enemy_optimization_distance = 3000.0
+
+[node name="BackgroundImage20" parent="." index="20" instance=ExtResource( 22 )]
 
 position = Vector2( 962.272, -21060 )
+enemy_optimization_distance = 3000.0
 
-[node name="BackgroundImage21" parent="." index="21" instance=ExtResource( 22 )]
+[node name="BackgroundImage21" parent="." index="21" instance=ExtResource( 23 )]
 
-[node name="BackgroundImage22" parent="." index="22" instance=ExtResource( 23 )]
+enemy_optimization_distance = 3000.0
 
-[node name="BackgroundImage23" parent="." index="23" instance=ExtResource( 24 )]
+[node name="BackgroundImage22" parent="." index="22" instance=ExtResource( 24 )]
 
-[node name="BackgroundImage24" parent="." index="24" instance=ExtResource( 25 )]
+enemy_optimization_distance = 3000.0
 
-[node name="BackgroundImage25" parent="." index="25" instance=ExtResource( 26 )]
+[node name="BackgroundImage23" parent="." index="23" instance=ExtResource( 25 )]
 
-[node name="BackgroundImage26" parent="." index="26" instance=ExtResource( 27 )]
+enemy_optimization_distance = 3000.0
 
-[node name="BackgroundImage27" parent="." index="27" instance=ExtResource( 28 )]
+[node name="BackgroundImage24" parent="." index="24" instance=ExtResource( 26 )]
 
-[node name="BackgroundImage28" parent="." index="28" instance=ExtResource( 29 )]
+enemy_optimization_distance = 3000.0
 
-[node name="BackgroundImage29" parent="." index="29" instance=ExtResource( 30 )]
+[node name="BackgroundImage25" parent="." index="25" instance=ExtResource( 27 )]
 
-[node name="BackgroundImage30" parent="." index="30" instance=ExtResource( 31 )]
+enemy_optimization_distance = 3000.0
 
-[node name="BackgroundImage31" parent="." index="31" instance=ExtResource( 32 )]
+[node name="BackgroundImage26" parent="." index="26" instance=ExtResource( 28 )]
 
-[node name="BackgroundImage32" parent="." index="32" instance=ExtResource( 33 )]
+enemy_optimization_distance = 3000.0
+
+[node name="BackgroundImage27" parent="." index="27" instance=ExtResource( 29 )]
+
+enemy_optimization_distance = 3000.0
+
+[node name="BackgroundImage28" parent="." index="28" instance=ExtResource( 30 )]
+
+enemy_optimization_distance = 3000.0
+
+[node name="BackgroundImage29" parent="." index="29" instance=ExtResource( 31 )]
+
+enemy_optimization_distance = 3000.0
+
+[node name="BackgroundImage30" parent="." index="30" instance=ExtResource( 32 )]
+
+enemy_optimization_distance = 3000.0
+
+[node name="BackgroundImage31" parent="." index="31" instance=ExtResource( 33 )]
+
+enemy_optimization_distance = 3000.0
+
+[node name="BackgroundImage32" parent="." index="32" instance=ExtResource( 34 )]
+
+enemy_optimization_distance = 3000.0
 
 

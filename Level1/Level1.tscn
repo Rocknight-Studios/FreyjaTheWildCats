@@ -48,9 +48,9 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
-start_scroll_position_y = 0
+start_scroll_position_y = -2000
 stop_and_clamp_position_y = -34020
-scroll_speed = 200
+scroll_speed = 50
 
 [node name="ScreenBounds" type="Node2D" parent="Camera2D" index="0"]
 
