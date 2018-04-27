@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage36/IceLevel36.png" type="Texture" id=1]
+[ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
+
+[node name="BackgroundImage36" type="Sprite" index="0"]
+
+texture = ExtResource( 1 )
+offset = Vector2( 960, -38340 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Offset" ]
+enemy_optimization_distance = 3000.0
+
+
