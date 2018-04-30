@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage37/IceLevel37.png" type="Texture" id=1]
+[ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
+
+[node name="BackroundImage37" type="Sprite" index="0"]
+
+position = Vector2( 960, -39420 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+enemy_optimization_distance = 3000.0
+
+[node name="ForestGeyzers" type="StaticBody2D" parent="." index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ForestGeyzers" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -502.489, 541.461, -491.889, 398.359, -756.892, 305.605, -764.842, -52.1484, -605.84, -97.1992, -544.889, -380.75, -547.539, -542.402, -963.594, -537.102, -958.294, 538.809 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="1"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 692.674, 538.809, 644.973, 342.707, 695.324, -179.348, 886.126, -542.402, 957.677, -539.754, 957.677, 536.16 )
+
+

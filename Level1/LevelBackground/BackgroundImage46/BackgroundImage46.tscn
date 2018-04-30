@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage46/IceLevel46.png" type="Texture" id=1]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 123.957
+height = 20.0
+
+[node name="BackgroundImage46" type="Sprite" index="0"]
+
+position = Vector2( 960, -49140 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Rocks" type="StaticBody2D" parent="." index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rocks" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -956.251, 396.543, -827.102, 363.059, -712.302, 159.766, -714.694, -17.2148, -867.76, -148.758, -566.411, -349.656, -506.62, -545.773, -961.035, -540.988 )
+
+[node name="Water" type="StaticBody2D" parent="." index="1"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Water" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 667.562, 534.477, 852.466, 87.9258, 424.06, 78.6406, 426.008, -199.926, 636.394, -256.418, 523.409, -536.934, 957.817, -542.777, 959.765, 534.477 )
+
+[node name="Tower" type="StaticBody2D" parent="." index="2"]
+
+position = Vector2( -567.626, -108.027 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower" index="0"]
+
+position = Vector2( 0, -2.15625 )
+shape = SubResource( 1 )
+
+

@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage48/IceLevel48.png" type="Texture" id=1]
+
+[node name="BackgroundImage48" type="Sprite" index="0"]
+
+position = Vector2( 960, -51188 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Forest" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Forest" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -452.628, 539.395, -525.637, 471.422, -654.031, 343.027, -513.049, 282.605, -505.497, 116.449, -679.206, 3.16016, -719.486, -200.758, -588.575, -543.145, -963.686, -543.145, -961.169, 531.84 )
+
+[node name="Forest2" type="StaticBody2D" parent="." index="1"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Forest2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 475.812, 545.043, 558.891, 454.41, 838.336, 484.621, 732.6, 373.848, 760.293, 210.211, 956.66, 74.2617, 961.695, 537.488 )
+
+[node name="RightWall" type="StaticBody2D" parent="." index="2"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RightWall" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 964.213, -318.469, 183.779, -313.434, 113.289, -540.012, 961.695, -540.012 )
+
+

@@ -11,4 +11,35 @@ script = ExtResource( 2 )
 _sections_unfolded = [ "Offset", "Transform" ]
 enemy_optimization_distance = 3000.0
 
+[node name="Geyzers" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Geyzers" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -538.741, 540.164, -642.092, 389.109, -748.094, 325.512, -763.994, 39.3086, -501.641, -172.695, -557.292, -363.496, -509.591, -435.047, -623.542, -541.047, -957.446, -543.699, -957.446, 537.512 )
+
+[node name="Tower" type="StaticBody2D" parent="." index="1"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tower" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 879.024, 542.812, 751.823, 383.812, 717.372, 63.1562, 322.518, 68.457, 306.618, -111.742, 370.218, -170.043, 351.668, -541.047, 958.525, -538.398, 958.525, 540.164 )
+
 
