@@ -1,7 +1,7 @@
 extends Node2D
 
 export var total_health = 10 # How many time must this enemy be hit before it dies.
-export var fade_out_speed = 5 # How quickly to fade enemy out on death.
+export var fade_out_speed = 5.0 # How quickly to fade enemy out on death.
 var middle_of_the_screen_y = 0.0 # To be fair and not start launching projectiles, when the player is at the top of the screen.
 onready var projectile_launch_start_time = OS.get_ticks_msec() # To know when to launch each projectile.
 onready var current_health = total_health # How much health does this enemy still have.
@@ -44,11 +44,13 @@ func _ready():
 		damage_particles.modulate.a = 0.0
 		death_soul_particles.modulate.a = 0.0
 
+const blood_splat_start_coefficient = .8 # To avoid having magic numbers.
+
 func receive_damage(damage_amount):
 	if current_health >= 0:
 		damage_particles.modulate.a = original_damage_particle_alpha
 		damage_particles.emitting = true
-		if OS.get_ticks_msec() - blood_splat_start_time > damage_particles.lifetime * 1000.0 * .8:
+		if OS.get_ticks_msec() - blood_splat_start_time > damage_particles.lifetime * Global.to_seconds_multiplier * blood_splat_start_coefficient:
 			damage_particles.restart()
 			blood_splat_start_time = OS.get_ticks_msec()
 		current_health -= damage_amount
@@ -83,9 +85,8 @@ func manage_projectile(delta):
 		if animation_blend_value < 1.0 - Global.approximation_float:
 			enemy_animation_tree_player.blend2_node_set_amount("blend2", animation_blend_value)
 		if enemy_launches_projectiles:
-			var ticks_compensation = 1000.0 # For convenience.
 			var specific_animation_compensator = 1.0 / archer_projectile_offsets.size() # Each animation can have situation, where some events are be repeated multiple times during the animation.
-			if !enemy_must_fade_out && OS.get_ticks_msec() - projectile_launch_start_time > animation_offset + enemy_animator.get_animation("Attack").length * enemy_animator.playback_speed * ticks_compensation * specific_animation_compensator / attack_animation_speed:
+			if !enemy_must_fade_out && OS.get_ticks_msec() - projectile_launch_start_time > animation_offset + enemy_animator.get_animation("Attack").length * enemy_animator.playback_speed * Global.to_seconds_multiplier * specific_animation_compensator / attack_animation_speed:
 				projectile_launch_start_time = OS.get_ticks_msec()
 				if current_projectile_offset_index > 0 && projectile_template:
 					var instanced_projectile = projectile_template.instance() # To manage the current projectile instance.

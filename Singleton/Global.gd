@@ -8,7 +8,10 @@ signal level_lost_fade # To know, when to set lost state.
 signal change_health # To know, when to add or deplete health.
 signal start_new_game # To know, when the new game button has been pressed.
 
-var approximation_float = .0001 # To avoid having magic numbers.
+const full_circle_in_degrees = 360.0 # To avoid having magic numbers.
+const to_seconds_multiplier = 1000 # To avoid having magic numbers.
+const approximation_float = .0001 # To avoid having magic numbers.
+
 var player # For speed and convenience.
 var camera # For speed and convenience.
 var current_scene = null # Currently active scene for speed and convenience.

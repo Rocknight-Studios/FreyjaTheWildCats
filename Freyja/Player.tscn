@@ -25,10 +25,10 @@ height = 122.846
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
-default_speed = 1000
+default_speed = 1000.0
 projectile_offset = Vector2( 20, -20 )
 default_projectile = ExtResource( 2 )
-freyja_attack_animation_speed = 6
+freyja_attack_animation_speed = 6.0
 max_lerp_speed = 5.0
 lerp_speed_up_speed = 10.0
 lerp_speed_drop_distance = 100.0

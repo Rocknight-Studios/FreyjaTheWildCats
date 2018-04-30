@@ -9,7 +9,7 @@ custom_solver_bias = 0.0
 radius = 10.0
 height = 40.0
 
-[node name="DefaultProjectile" type="KinematicBody2D"]
+[node name="DefaultProjectile" type="KinematicBody2D" index="0"]
 
 scale = Vector2( 0.8, 0.8 )
 input_pickable = false
@@ -18,7 +18,7 @@ collision_mask = 184
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
-projectile_speed = 300
+projectile_speed = 300.0
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
