@@ -1,13 +1,13 @@
 extends Node2D
 
-export var default_speed = 10000 # Default movement speed of the player.
-export var projectile_offset = Vector2(.1, 0) # Projectile must not be in the middle of the player.
+export var default_speed = 1000.0 # Default movement speed of the player.
+export var projectile_offset = Vector2(.1, 0.0) # Projectile must not be in the middle of the player.
 export (PackedScene) var default_projectile # To be able to instantiate projectiles.
 onready var window_size = OS.get_window_size() # What is the window size in pixels.
-var projectile_shot_start_time = 0 # To know, when to do the next shot.
+var projectile_shot_start_time = 0.0 # To know, when to do the next shot.
 onready var freyja_animator = get_node("Chariot").get_node("Freyja").get_node("FreyjasHairAnimation") # To save resources.
-export var freyja_attack_animation_speed = 2 # How quickly to playback animation during attack.
-var freyja_idle_animation_speed = 1 # How quickly to playback animation during attack.
+export var freyja_attack_animation_speed = 2.0 # How quickly to playback animation during attack.
+var freyja_idle_animation_speed = 1.0 # How quickly to playback animation during attack.
 var player_positioner = null # For speed and convenience.
 export var max_lerp_speed = 5.0 # How quickly to lerp to the goal position.
 export var lerp_speed_up_speed = 10.0 # How quickly to speed up to max speed.
@@ -41,10 +41,10 @@ func _process(delta):
 	interpolate_to_player_positioner_state(delta)
 
 func manage_shooting():
-	var direction = Vector2(0, 1) # The direction of the current movement step.
+	var direction = Vector2(0.0, 1.0) # The direction of the current movement step.
 	if Input.is_action_pressed ("ui_shoot"):
 		# This is how to spawn instances synced with animation speed, when animation tree player is not used.
-		if OS.get_ticks_msec() - projectile_shot_start_time > freyja_animator.current_animation_length * 1000 / freyja_attack_animation_speed:
+		if OS.get_ticks_msec() - projectile_shot_start_time > freyja_animator.current_animation_length * Global.to_seconds_multiplier / freyja_attack_animation_speed:
 			freyja_animator.seek(0.0, true)
 			freyja_animator.current_animation = "SpearThrowingFlipHair"
 			freyja_animator.play()

@@ -5,7 +5,7 @@ export var rotation_speed = 10.0 # How quickly to rotate the projectile.
 export var rotate_projectile_constantly = false # Whether to rorate the projectile constantly.
 var damage_amount = 1 # To inform damage receiver, how much damage to inflict.
 var direction # Fly into this direction.
-var constant_rotation_direction = 1 # To which side to rotate the projectiles.
+var constant_rotation_direction = 1.0 # To which side to rotate the projectiles.
 var parent_enemy # For speed and convenience.
 
 func kill_projectile():
@@ -15,7 +15,7 @@ func _physics_process(delta):
 	var speed = delta * projectile_speed # For speed and convenience.
 	move_and_slide(direction * speed)
 	if !rotate_projectile_constantly:
-		self.rotation = atan2(direction.y, direction.x) * 180 / PI
+		self.rotation = atan2(direction.y, direction.x) * (Global.full_circle_in_degrees * .5) / PI
 	position += direction * speed
 
 	if get_slide_count() > 0:
@@ -28,8 +28,8 @@ func _physics_process(delta):
 
 func _process(delta):
 	if rotate_projectile_constantly:
-		if self.rotation > 360.0:
-			self.rotation -= 360.0
+		if self.rotation > Global.full_circle_in_degrees:
+			self.rotation -= Global.full_circle_in_degrees
 		elif self.rotation < 0.0:
-			self.rotation += 360.0
+			self.rotation += Global.full_circle_in_degrees
 		self.rotation += rotation_speed * delta * constant_rotation_direction

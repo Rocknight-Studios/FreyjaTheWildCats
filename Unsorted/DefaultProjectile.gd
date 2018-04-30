@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export var projectile_speed = 10000 # The speed of this projectile.
+export var projectile_speed = 300.0 # The speed of this projectile.
 var player_node # For speed and convenience.
 var damage_amount = 1 # To inform damage receiver, how much damage to inflict.
 
@@ -9,7 +9,7 @@ func _ready():
 
 func _physics_process(delta):
 	var speed = delta * (-projectile_speed - player_node.default_speed) # For speed and convenience.
-	move_and_slide(Vector2(0, speed))
+	move_and_slide(Vector2(0.0, speed))
 	position.y += speed
 
 	if get_slide_count() > 0:

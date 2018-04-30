@@ -1,6 +1,6 @@
 extends Node2D
 
-export var movement_speed = 400
+export var movement_speed = 400.0
 export var spirit_node_names = []
 var spirit_items = []
 onready var spirit_path = $Path2D/PathFollow2D
