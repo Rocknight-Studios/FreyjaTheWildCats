@@ -9,7 +9,7 @@ custom_solver_bias = 0.0
 radius = 110.442
 height = 20.0
 
-[node name="Background41" type="Sprite" index="0"]
+[node name="BackgroundImage41" type="Sprite" index="0"]
 
 position = Vector2( 960, -43740 )
 texture = ExtResource( 1 )

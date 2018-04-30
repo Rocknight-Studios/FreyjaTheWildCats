@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage46/IceLevel46.png" type="Texture" id=1]
+[ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -10,9 +11,11 @@ height = 20.0
 
 [node name="BackgroundImage46" type="Sprite" index="0"]
 
-position = Vector2( 960, -49140 )
+position = Vector2( 960, -48060 )
 texture = ExtResource( 1 )
+script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
+enemy_optimization_distance = 3000.0
 
 [node name="Rocks" type="StaticBody2D" parent="." index="0"]
 

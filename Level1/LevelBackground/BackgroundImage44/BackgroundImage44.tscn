@@ -11,7 +11,7 @@ height = 20.0
 
 [node name="BackgroundImage44" type="Sprite" index="0"]
 
-position = Vector2( 960, -46980 )
+position = Vector2( 960, -45900 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]

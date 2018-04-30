@@ -5,7 +5,7 @@
 
 [node name="BackgroundImage45" type="Sprite" index="0"]
 
-position = Vector2( 960, -48060 )
+position = Vector2( 960, -46980 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]

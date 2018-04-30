@@ -24,7 +24,7 @@ bounce = 0.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ForestGeyzers" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( -502.489, 541.461, -491.889, 398.359, -756.892, 305.605, -764.842, -52.1484, -605.84, -97.1992, -544.889, -380.75, -547.539, -542.402, -963.594, -537.102, -958.294, 538.809 )
+polygon = PoolVector2Array( -512.55, 539.199, -490.7, 392.898, -756.892, 305.605, -764.842, -52.1484, -605.84, -97.1992, -544.889, -380.75, -547.539, -542.402, -963.594, -537.102, -958.294, 538.809 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="1"]
 
@@ -39,6 +39,6 @@ bounce = 0.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( 692.674, 538.809, 644.973, 342.707, 695.324, -179.348, 886.126, -542.402, 957.677, -539.754, 957.677, 536.16 )
+polygon = PoolVector2Array( 681.601, 540.148, 644.973, 342.707, 695.324, -179.348, 886.126, -542.402, 957.677, -539.754, 957.677, 536.16 )
 
 
