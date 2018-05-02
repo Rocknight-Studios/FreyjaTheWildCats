@@ -1,6 +1,7 @@
 extends Node2D
 
 var current_health # For project to know the health of the player.
+var total_health = 10 # How much health does the player have.
 export var ice_giant_projectile_max_distance_from_parent = 700.0 # How far can enemy projectile travel from it's parent before it is destroyed.
 export var ice_giant_projectile_offsets = [] # Projectile offsets from the enemy. As Godot can't different array variables exposed in Inspector.
 export (NodePath) var game_over_scene_path # To easily set, which scene must be used as a game over scene.
