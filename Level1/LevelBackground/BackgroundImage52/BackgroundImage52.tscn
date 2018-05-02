@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage52/IceLevel52.png" type="Texture" id=1]
 [ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
+[ext_resource path="res://Level1/Enemies/Trolls/Berserker/Berserker.tscn" type="PackedScene" id=3]
 
 [node name="BackgroundImage52" type="Sprite" index="0"]
 
@@ -13,6 +14,7 @@ enemy_optimization_distance = 3000.0
 
 [node name="ForestLeft" type="StaticBody2D" parent="." index="0"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -28,6 +30,7 @@ polygon = PoolVector2Array( -857.281, 531.066, -749.101, 413.617, -674.921, -247
 
 [node name="ForestRight" type="StaticBody2D" parent="." index="1"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -40,5 +43,33 @@ bounce = 0.0
 
 build_mode = 0
 polygon = PoolVector2Array( 780.874, 543.43, 759.238, 39.6211, 851.964, -46.9219, 672.694, -291.102, 746.875, -541.461, 944.69, -532.188, 960.144, 534.16 )
+
+[node name="Berserker" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( -411.084, 0 )
+
+[node name="Berserker2" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( -120.543, -142.18 )
+
+[node name="Berserker3" parent="." index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 157.634, -225.633 )
+
+[node name="Berserker4" parent="." index="5" instance=ExtResource( 3 )]
+
+position = Vector2( 377.084, 3.08984 )
+
+[node name="Berserker5" parent="." index="6" instance=ExtResource( 3 )]
+
+position = Vector2( 333.812, 355.445 )
+
+[node name="Berserker6" parent="." index="7" instance=ExtResource( 3 )]
+
+position = Vector2( 67.9988, 92.7227 )
+
+[node name="Berserker7" parent="." index="8" instance=ExtResource( 3 )]
+
+position = Vector2( -101.998, 355.445 )
 
 

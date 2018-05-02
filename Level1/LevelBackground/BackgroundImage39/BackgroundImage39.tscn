@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage39/IceLevel39.png" type="Texture" id=1]
 [ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
+[ext_resource path="res://Level1/Enemies/Trolls/Archer/TrollArcher.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level1/Enemies/Trolls/Shield/ShieldTroll.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Level1/Enemies/Trolls/Archer/ArcherHeavy.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -67,6 +71,7 @@ polygon = PoolVector2Array( 664.481, 541.336, 660.165, 325.492, 781.038, 215.41,
 
 [node name="Tower" type="StaticBody2D" parent="." index="3"]
 
+editor/display_folded = true
 position = Vector2( 386.487, -423.836 )
 input_pickable = false
 collision_layer = 1
@@ -80,5 +85,29 @@ bounce = 0.0
 
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="TrollArcher" parent="." index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 395, -407.949 )
+
+[node name="ShieldTroll" parent="." index="5" instance=ExtResource( 4 )]
+
+position = Vector2( -224.481, 185.633 )
+
+[node name="ShieldTroll2" parent="." index="6" instance=ExtResource( 4 )]
+
+position = Vector2( -90.6556, 187.789 )
+
+[node name="ShieldTroll3" parent="." index="7" instance=ExtResource( 4 )]
+
+position = Vector2( 36.6939, 185.633 )
+
+[node name="IceGiant" parent="." index="8" instance=ExtResource( 5 )]
+
+position = Vector2( -84.1802, -7.63672 )
+
+[node name="ArcherHeavy" parent="." index="9" instance=ExtResource( 6 )]
+
+position = Vector2( 440.327, 489.973 )
 
 
