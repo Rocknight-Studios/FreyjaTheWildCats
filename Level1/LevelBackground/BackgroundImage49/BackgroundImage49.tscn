@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage49/IceLevel49.png" type="Texture" id=1]
+[ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 119.259
+height = 20.0
+
+[node name="BackgroundImage49" type="Sprite" index="0"]
+
+position = Vector2( 960, -51300 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+enemy_optimization_distance = 3000.0
+
+[node name="Forest" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Forest" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -613.262, 539.656, -915.447, 289.73, -713.233, -12.457, -720.049, -191.949, -965.433, -335.09, -958.616, 535.113 )
+
+[node name="Forest2" type="StaticBody2D" parent="." index="1"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Forest2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 597.751, 539.656, 456.883, 314.723, 472.787, 162.492, 627.288, -17, 625.016, -348.723, 440.978, -541.848, 956.738, -539.574, 956.738, 537.383 )
+
+[node name="Tower" type="StaticBody2D" parent="." index="2"]
+
+editor/display_folded = true
+position = Vector2( 239.245, 513.121 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower" index="0"]
+
+shape = SubResource( 1 )
+
+

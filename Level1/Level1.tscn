@@ -18,7 +18,7 @@ extents = Vector2( 10, 385.151 )
 custom_solver_bias = 0.0
 extents = Vector2( 730.55, 12.4069 )
 
-[node name="Level1" type="Node"]
+[node name="Level1" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -48,9 +48,9 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
-start_scroll_position_y = -2000
-stop_and_clamp_position_y = -34020
-scroll_speed = 50
+start_scroll_position_y = 0
+stop_and_clamp_position_y = -56700
+scroll_speed = 200
 
 [node name="ScreenBounds" type="Node2D" parent="Camera2D" index="0"]
 

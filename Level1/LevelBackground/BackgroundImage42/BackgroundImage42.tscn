@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage42/IceLevel42.png" type="Texture" id=1]
+[ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
+
+[node name="BackgroundImage42" type="Sprite"]
+
+position = Vector2( 960, -44820 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+enemy_optimization_distance = 3000.0
+
+[node name="Water" type="StaticBody2D" parent="." index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Water" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -373.695, 550.746, -266.071, 357.02, -335.429, -305.469, -495.67, -547.027, -957.26, -549.418, -959.651, 541.18 )
+
+[node name="Forest" type="StaticBody2D" parent="." index="1"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Forest" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 917.799, 545.961, 814.958, 476.602, 826.917, 263.746, 905.841, 163.297, 908.233, -28.0352, 779.083, -97.3945, 779.083, -539.852, 960.849, -539.852, 960.849, 548.352 )
+
+

@@ -19,16 +19,16 @@ custom_solver_bias = 0.0
 radius = 73.0467
 height = 122.846
 
-[node name="Player" type="Node2D" index="0" groups=[
+[node name="Player" type="Node2D" groups=[
 "Player",
 ]]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
-default_speed = 1000
+default_speed = 1000.0
 projectile_offset = Vector2( 20, -20 )
 default_projectile = ExtResource( 2 )
-freyja_attack_animation_speed = 6
+freyja_attack_animation_speed = 6.0
 max_lerp_speed = 5.0
 lerp_speed_up_speed = 10.0
 lerp_speed_drop_distance = 100.0

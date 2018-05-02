@@ -1,0 +1,82 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage41/IceLevel41.png" type="Texture" id=1]
+[ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 110.442
+height = 20.0
+
+[node name="BackgroundImage41" type="Sprite" index="0"]
+
+position = Vector2( 960, -43740 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+enemy_optimization_distance = 3000.0
+
+[node name="Water" type="StaticBody2D" parent="." index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Water" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -264.538, 540.25, -36.7899, 419.867, -108.368, 185.613, -368.652, 117.289, -580.579, -135.367, -358.891, -546.434, -960.797, -539.93, -957.544, 533.742 )
+
+[node name="Tower" type="StaticBody2D" parent="." index="1"]
+
+position = Vector2( -316.081, -208.777 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Forest" type="StaticBody2D" parent="." index="2"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Forest" index="0"]
+
+position = Vector2( 0, 1.75781 )
+build_mode = 0
+polygon = PoolVector2Array( 635.252, 536.59, 716.124, 439.895, 960.498, 453.957, 960.498, 543.621 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="3"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 959.383, -43.2031, 853.898, -122.32, 853.898, -324.5, 959.383, -426.469 )
+
+

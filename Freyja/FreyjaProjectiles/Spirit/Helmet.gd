@@ -1,3 +1,3 @@
 extends Sprite
 
-export var movement_offset = 100
+export var movement_offset = 100.0
