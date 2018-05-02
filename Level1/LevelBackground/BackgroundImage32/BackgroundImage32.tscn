@@ -5,12 +5,13 @@
 [ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Unsorted/Steam/Steam.tscn" type="PackedScene" id=4]
 
-[node name="BackgroundImage32" type="Sprite" index="0"]
+[node name="BackgroundImage32" type="Sprite"]
 
 position = Vector2( 960, -34020 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
+enemy_optimization_distance = 3000.0
 
 [node name="ForestGeyser" type="StaticBody2D" parent="." index="0"]
 

@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage40/IceLevel40.png" type="Texture" id=1]
+[ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 110.965
+height = 20.0
+
+[node name="BackgroundImage40" type="Sprite" index="0"]
+
+position = Vector2( 960, -42660 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+enemy_optimization_distance = 3000.0
+
+[node name="Forest" type="StaticBody2D" parent="." index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Forest" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -682.517, 543.668, -553.319, -434.129, -277.304, -542.773, -961.469, -536.898, -964.405, 537.797 )
+
+[node name="ForestRight" type="StaticBody2D" parent="." index="1"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ForestRight" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 588.912, 540.734, 527.249, 396.852, 691.684, 217.738, 644.702, 109.094, 685.811, -169.859, 547.804, -287.312, 547.804, -545.707, 953.017, -539.836, 955.953, 540.734 )
+
+[node name="Tower" type="StaticBody2D" parent="." index="2"]
+
+position = Vector2( -423.893, -63.3242 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower" index="0"]
+
+shape = SubResource( 1 )
+
+

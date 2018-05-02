@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Level1/LevelBackground/BackgroundImage34/IceLevel34.png" type="Texture" id=1]
+[ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
+
+[node name="BackGroundImage34" type="Sprite" index="0"]
+
+position = Vector2( 960, -36180 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+enemy_optimization_distance = 3000.0
+
+[node name="Rocks" type="StaticBody2D" parent="." index="0"]
+
+position = Vector2( 580.628, 53.9609 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rocks" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -97.6078, 488.332, -369.575, 384.727, -479.656, 125.711, -419.219, -208.852, -438.646, -342.676, -209.848, -593.059, 379.413, -593.059, 379.413, 481.855 )
+
+[node name="Rocks2" type="StaticBody2D" parent="." index="1"]
+
+position = Vector2( -852.595, 58.2773 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rocks2" index="0"]
+
+position = Vector2( 2.15848, 0 )
+build_mode = 0
+polygon = PoolVector2Array( 154.933, 479.695, -110.559, 484.016, -106.242, -599.535, 202.419, -603.855 )
+
+
