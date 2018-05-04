@@ -38,4 +38,4 @@ func on_level_lost_fade():
 		level_fade = LevelFades.game_over
 
 func on_health_change():
-	$"Label".text = str(Global.user_params.current_health)
+	$"FreyjaHealthProgress".value = Global.user_params.current_health

@@ -7,6 +7,9 @@ export var health_decrease_frequency = 500 # How quickly is the health depleting
 onready var health_depletion_step_start_time = OS.get_ticks_msec() # To know when to perform new depletion.
 onready var current_health = total_health # What is the current health of the player.
 
+func _ready():
+	Global.user_params.total_health = total_health
+
 func _physics_process(delta):
 	if collision_is_active:
 		if OS.get_ticks_msec() - health_depletion_step_start_time > health_decrease_frequency:
