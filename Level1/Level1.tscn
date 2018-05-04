@@ -18,7 +18,7 @@ extents = Vector2( 10, 385.151 )
 custom_solver_bias = 0.0
 extents = Vector2( 730.55, 12.4069 )
 
-[node name="Level1" type="Node" index="0"]
+[node name="Level1" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -49,7 +49,7 @@ editor_draw_drag_margin = false
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 start_scroll_position_y = 0.0
-stop_and_clamp_position_y = -34020.0
+stop_and_clamp_position_y = -56100.0
 scroll_speed = 200.0
 
 [node name="ScreenBounds" type="Node2D" parent="Camera2D" index="0"]
@@ -136,8 +136,6 @@ z_index = 5
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="GameUI" parent="Camera2D/UIZIndex" index="0" instance=ExtResource( 3 )]
-
-rect_clip_content = false
 
 [node name="LevelBackground" parent="." index="1" instance=ExtResource( 4 )]
 
