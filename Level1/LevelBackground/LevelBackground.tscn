@@ -57,8 +57,9 @@
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage53/BackgroundImage53.tscn" type="PackedScene" id=55]
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage54/BackgroundImage54.tscn" type="PackedScene" id=56]
 
-[node name="LevelBackground" type="Node2D"]
+[node name="LevelBackground" type="Node2D" index="0"]
 
+position = Vector2( 0, 2 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 block_optimization_distance = 2000.0
@@ -88,6 +89,7 @@ enemy_optimization_distance = 3000.0
 
 [node name="BackgroundImage5" parent="." index="5" instance=ExtResource( 7 )]
 
+_sections_unfolded = [ "Transform" ]
 enemy_optimization_distance = 3000.0
 
 [node name="BackgroundImage6" parent="." index="6" instance=ExtResource( 8 )]
@@ -158,8 +160,6 @@ enemy_optimization_distance = 3000.0
 enemy_optimization_distance = 3000.0
 
 [node name="BackgroundImage22" parent="." index="22" instance=ExtResource( 24 )]
-
-enemy_optimization_distance = 3000.0
 
 [node name="BackgroundImage23" parent="." index="23" instance=ExtResource( 25 )]
 

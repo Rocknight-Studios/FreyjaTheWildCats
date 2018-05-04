@@ -166,11 +166,10 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Color", "Emission Shape", "Gravity", "Initial Velocity", "Radial Accel", "Scale", "Spread", "Trail" ]
 
-[node name="MenuScreen" type="Node" index="0"]
+[node name="MenuScreen" type="Node"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -541,7 +540,6 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer" index="1"]
 
-editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -557,7 +555,6 @@ _sections_unfolded = [ "Scroll" ]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" index="0"]
 
-editor/display_folded = true
 motion_scale = Vector2( 0, 0 )
 motion_offset = Vector2( -800, 0 )
 motion_mirroring = Vector2( 1920, 2 )
@@ -656,6 +653,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="ParallaxLayer6" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" index="6"]
 
+editor/display_folded = true
 motion_scale = Vector2( 0.05, 0.05 )
 motion_offset = Vector2( -900, -500 )
 motion_mirroring = Vector2( 0, 0 )

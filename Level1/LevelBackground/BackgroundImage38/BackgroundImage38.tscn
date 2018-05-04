@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage38/IceLevel38.png" type="Texture" id=1]
 [ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
+[ext_resource path="res://Level1/Enemies/Trolls/Archer/ArcherHeavy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level1/Enemies/Trolls/Shield/ShieldTroll.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level1/Enemies/Trolls/Berserker/Berserker.tscn" type="PackedScene" id=5]
 
 [node name="BackgroundImage38" type="Sprite" index="0"]
 
@@ -29,6 +32,7 @@ polygon = PoolVector2Array( -538.741, 540.164, -642.092, 389.109, -748.094, 325.
 
 [node name="Tower" type="StaticBody2D" parent="." index="1"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -40,6 +44,42 @@ bounce = 0.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tower" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( 879.024, 542.812, 751.823, 383.812, 717.372, 63.1562, 322.518, 68.457, 306.618, -111.742, 370.218, -170.043, 351.668, -541.047, 958.525, -538.398, 958.525, 540.164 )
+polygon = PoolVector2Array( 879.024, 542.812, 751.823, 383.812, 714.724, 87.0078, 322.518, 68.457, 306.618, -111.742, 370.218, -170.043, 351.668, -541.047, 958.525, -538.398, 958.525, 540.164 )
+
+[node name="ArcherHeavy" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 421.355, -31.8008 )
+
+[node name="ShieldTroll" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 161.652, -34.4492 )
+
+[node name="ShieldTroll2" parent="." index="4" instance=ExtResource( 4 )]
+
+position = Vector2( 37.1003, -34.4492 )
+
+[node name="ShieldTroll3" parent="." index="5" instance=ExtResource( 4 )]
+
+position = Vector2( -84.8011, -34.4492 )
+
+[node name="ShieldTroll4" parent="." index="6" instance=ExtResource( 4 )]
+
+position = Vector2( -206.703, -34.4492 )
+
+[node name="ShieldTroll5" parent="." index="7" instance=ExtResource( 4 )]
+
+position = Vector2( -328.604, -34.4492 )
+
+[node name="Berserker" parent="." index="8" instance=ExtResource( 5 )]
+
+position = Vector2( -257.053, 241.152 )
+
+[node name="Berserker2" parent="." index="9" instance=ExtResource( 5 )]
+
+position = Vector2( 18.5504, 416.059 )
+
+[node name="Berserker3" parent="." index="10" instance=ExtResource( 5 )]
+
+position = Vector2( 453.156, 445.211 )
 
 
