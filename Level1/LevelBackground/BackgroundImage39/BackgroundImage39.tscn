@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage39/IceLevel39.png" type="Texture" id=1]
 [ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Level1/Enemies/Trolls/Shield/ShieldTroll.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Level1/Enemies/Trolls/Archer/ArcherHeavy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Unsorted/Steam/Steam.tscn" type="PackedScene" id=7]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -104,10 +105,18 @@ position = Vector2( 36.6939, 185.633 )
 
 [node name="IceGiant" parent="." index="8" instance=ExtResource( 5 )]
 
-position = Vector2( -84.1802, -7.63672 )
+position = Vector2( -87.0441, -27.6836 )
 
 [node name="ArcherHeavy" parent="." index="9" instance=ExtResource( 6 )]
 
 position = Vector2( 440.327, 489.973 )
+
+[node name="Steam" parent="." index="10" instance=ExtResource( 7 )]
+
+position = Vector2( -712.415, 387.148 )
+
+[node name="Steam2" parent="." index="11" instance=ExtResource( 7 )]
+
+position = Vector2( -709.242, -131.695 )
 
 

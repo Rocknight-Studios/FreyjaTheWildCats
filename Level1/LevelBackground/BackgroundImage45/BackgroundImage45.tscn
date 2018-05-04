@@ -32,7 +32,6 @@ polygon = PoolVector2Array( -960.668, 409.285, -787.294, 391.754, -539.896, 171.
 
 [node name="RocksWater" type="StaticBody2D" parent="." index="1"]
 
-editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -44,7 +43,7 @@ bounce = 0.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RocksWater" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( 566.58, 537.855, 513.983, 448.246, 628.916, 218.379, 675.669, -36.8125, 552.944, -104.992, 552.944, -288.105, 669.825, -543.297, 956.184, -543.297, 960.08, 545.645 )
+polygon = PoolVector2Array( 566.58, 537.855, 513.983, 448.246, 675.669, -36.8125, 552.944, -104.992, 552.944, -288.105, 669.825, -543.297, 956.184, -543.297, 960.08, 545.645 )
 
 [node name="IceGiant" parent="." index="2" instance=ExtResource( 3 )]
 

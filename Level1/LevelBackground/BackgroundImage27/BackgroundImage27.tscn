@@ -20,6 +20,7 @@ position = Vector2( 960, -28620 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
+enemy_optimization_distance = 3000.0
 
 [node name="WaterLeft" type="StaticBody2D" parent="." index="0"]
 
@@ -39,7 +40,6 @@ polygon = PoolVector2Array( -964.712, 114.246, -442.135, -110.688, -235.377, -19
 
 [node name="WaterLeft2" type="StaticBody2D" parent="." index="1"]
 
-editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -51,7 +51,7 @@ bounce = 0.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WaterLeft2" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( 441.701, -535.566, 382.627, -265.189, 407.62, -65.248, 496.23, 50.627, 637.099, 130.15, 716.621, 332.365, 952.917, 552.756, 959.733, -537.838 )
+polygon = PoolVector2Array( 441.701, -535.566, 382.627, -265.189, 407.62, -65.248, 496.23, 50.627, 637.099, 130.15, 698, 343, 794, 542, 959.733, -537.838 )
 
 [node name="WaterLeft3" type="StaticBody2D" parent="." index="2"]
 

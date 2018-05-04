@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage37/IceLevel37.png" type="Texture" id=1]
 [ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
 [ext_resource path="res://Level1/Enemies/Trolls/Shield/ShieldTroll.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Unsorted/Steam/Steam.tscn" type="PackedScene" id=5]
 
 [node name="BackroundImage37" type="Sprite" index="0"]
 
@@ -71,10 +72,24 @@ position = Vector2( 387.656, -1.95158 )
 
 [node name="IceGiant" parent="." index="8" instance=ExtResource( 4 )]
 
-position = Vector2( -270.775, -2.89844 )
+position = Vector2( -270.775, -36.3047 )
 
 [node name="IceGiant2" parent="." index="9" instance=ExtResource( 4 )]
 
-position = Vector2( 270.775, -193.809 )
+position = Vector2( 270.775, -227.215 )
+
+[node name="Steam" parent="." index="10" instance=ExtResource( 5 )]
+
+position = Vector2( -742.011, 548.559 )
+
+[node name="Steam3" parent="." index="11" instance=ExtResource( 5 )]
+
+position = Vector2( -755.261, -323.305 )
+
+[node name="Steam2" parent="." index="12" instance=ExtResource( 5 )]
+
+position = Vector2( -715.511, -156.352 )
+scale = Vector2( 0.6, 0.6 )
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 
 

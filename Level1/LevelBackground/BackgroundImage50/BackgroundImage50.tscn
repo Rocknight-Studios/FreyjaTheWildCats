@@ -17,7 +17,6 @@ enemy_optimization_distance = 3000.0
 
 [node name="Rocks" type="StaticBody2D" parent="." index="0"]
 
-editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -29,7 +28,7 @@ bounce = 0.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rocks" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( -936.727, 605.539, -423.239, 344.25, -461.864, 17.0742, -693.615, -373.723, -836.755, -544.129, -966.263, -537.312 )
+polygon = PoolVector2Array( -959.583, 607.895, -423.239, 344.25, -461.864, 17.0742, -693.615, -373.723, -836.755, -544.129, -966.263, -537.312 )
 
 [node name="Water" type="StaticBody2D" parent="." index="1"]
 
@@ -61,7 +60,7 @@ bounce = 0.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ice" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( 958.179, -221.492, 878.656, -176.051, 619.641, -264.664, 637.817, -541.855, 964.995, -537.312 )
+polygon = PoolVector2Array( 964.502, -119.238, 829.218, -70.8047, 619.641, -264.664, 637.817, -541.855, 964.995, -537.312 )
 
 [node name="Serpent" parent="." index="3" instance=ExtResource( 3 )]
 
@@ -75,7 +74,7 @@ rotation = 5.27287
 
 [node name="IceGiant" parent="." index="5" instance=ExtResource( 4 )]
 
-position = Vector2( -57.415, 13.3047 )
+position = Vector2( -59.2656, -8.90234 )
 
 [node name="ShieldTroll" parent="." index="6" instance=ExtResource( 5 )]
 

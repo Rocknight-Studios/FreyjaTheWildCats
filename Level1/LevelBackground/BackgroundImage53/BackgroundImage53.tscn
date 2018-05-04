@@ -30,7 +30,6 @@ polygon = PoolVector2Array( -770.863, 538.375, -798.556, 309.277, -692.82, 112.9
 
 [node name="Forest" type="StaticBody2D" parent="." index="1"]
 
-editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -42,7 +41,7 @@ bounce = 0.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Forest" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( 812.662, 540.891, 651.54, 274.031, 659.093, 130.535, 840.355, -48.2109, 744.689, -148.91, 744.689, -322.621, 888.188, -544.164, 963.714, -539.129, 968.749, 545.926 )
+polygon = PoolVector2Array( 750.705, 539.723, 651.54, 274.031, 659.093, 130.535, 840.355, -48.2109, 744.689, -148.91, 744.689, -322.621, 888.188, -544.164, 963.714, -539.129, 968.749, 545.926 )
 
 [node name="IceGiant" parent="." index="2" instance=ExtResource( 3 )]
 
