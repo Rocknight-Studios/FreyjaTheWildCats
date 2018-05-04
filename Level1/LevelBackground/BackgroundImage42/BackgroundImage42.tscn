@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage42/IceLevel42.png" type="Texture" id=1]
 [ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
+[ext_resource path="res://Level1/Enemies/MiniSerpent/MiniSerpent.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=4]
 
-[node name="BackgroundImage42" type="Sprite"]
+[node name="BackgroundImage42" type="Sprite" index="0"]
 
 position = Vector2( 960, -44820 )
 texture = ExtResource( 1 )
@@ -13,6 +15,7 @@ enemy_optimization_distance = 3000.0
 
 [node name="Water" type="StaticBody2D" parent="." index="0"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -28,6 +31,7 @@ polygon = PoolVector2Array( -373.695, 550.746, -266.071, 357.02, -335.429, -305.
 
 [node name="Forest" type="StaticBody2D" parent="." index="1"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -40,5 +44,23 @@ bounce = 0.0
 
 build_mode = 0
 polygon = PoolVector2Array( 917.799, 545.961, 814.958, 476.602, 826.917, 263.746, 905.841, 163.297, 908.233, -28.0352, 779.083, -97.3945, 779.083, -539.852, 960.849, -539.852, 960.849, 548.352 )
+
+[node name="Serpent" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( -513.857, 414.02 )
+rotation = 1.82949
+
+[node name="Serpent2" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( -455.13, -211.418 )
+rotation = 1.82949
+
+[node name="IceGiant" parent="." index="4" instance=ExtResource( 4 )]
+
+position = Vector2( 428.703, 362.168 )
+
+[node name="IceGiant2" parent="." index="5" instance=ExtResource( 4 )]
+
+position = Vector2( 378.786, -113.52 )
 
 
