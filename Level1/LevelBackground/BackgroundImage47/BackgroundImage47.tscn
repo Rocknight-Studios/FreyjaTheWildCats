@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage47/IceLevel47.png" type="Texture" id=1]
 [ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Level1/Enemies/Trolls/Shield/ShieldTroll.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Level1/Enemies/Trolls/Berserker/Berserker.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Level1/EnvironmentEffects/Wind.tscn" type="PackedScene" id=8]
 
 [node name="BackgroundImage47" type="Sprite" index="0"]
 
@@ -34,7 +35,6 @@ polygon = PoolVector2Array( -501.924, 540.344, -508.106, 299.254, -795.556, 33.4
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="1"]
 
-editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -46,7 +46,7 @@ bounce = 0.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( 539.697, 543.434, 601.514, 441.434, 749.876, 342.527, 740.603, 181.801, 598.423, 101.441, 582.969, -9.83203, 718.967, -232.375, 629.364, -361.484, 490.243, -399.281, 465.516, -541.461, 956.964, -547.641, 960.054, 537.25 )
+polygon = PoolVector2Array( 521.048, 541.695, 601.514, 441.434, 749.876, 342.527, 740.603, 181.801, 598.423, 101.441, 582.969, -9.83203, 718.967, -232.375, 629.364, -361.484, 490.243, -399.281, 465.516, -541.461, 956.964, -547.641, 960.054, 537.25 )
 
 [node name="ArcherHeavy" parent="." index="2" instance=ExtResource( 3 )]
 
@@ -88,5 +88,7 @@ position = Vector2( 393.704, 133.285 )
 [node name="Berserker3" parent="." index="11" instance=ExtResource( 7 )]
 
 position = Vector2( 215.307, 321.938 )
+
+[node name="Wind" parent="." index="12" instance=ExtResource( 8 )]
 
 

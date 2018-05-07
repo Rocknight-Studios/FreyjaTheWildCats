@@ -22,7 +22,6 @@ enemy_optimization_distance = 3000.0
 
 [node name="Forest" type="StaticBody2D" parent="." index="0"]
 
-editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -34,7 +33,7 @@ bounce = 0.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Forest" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( -953.846, 294.984, -840.861, 242.387, -823.329, 92.3906, -714.24, 61.2188, -737.616, -174.488, -612.943, -326.434, -634.371, -437.473, -733.72, -482.277, -959.691, -443.316 )
+polygon = PoolVector2Array( -953.846, 294.984, -840.861, 242.387, -823.329, 92.3906, -714.24, 61.2188, -696.775, -240.977, -614.958, -293.574, -634.371, -437.473, -733.72, -482.277, -959.758, -537.074 )
 
 [node name="Rocks" type="StaticBody2D" parent="." index="1"]
 

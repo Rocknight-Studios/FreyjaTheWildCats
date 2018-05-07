@@ -13,6 +13,7 @@ position = Vector2( 960, -27540 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
+enemy_optimization_distance = 3000.0
 
 [node name="Water" type="StaticBody2D" parent="." index="0"]
 
@@ -48,7 +49,6 @@ polygon = PoolVector2Array( 768.754, 543.039, 685.676, 397.021, 756.167, 308.908
 
 [node name="Woods2" type="StaticBody2D" parent="." index="2"]
 
-editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -60,7 +60,7 @@ bounce = 0.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Woods2" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( 957.569, -234.879, 720.921, -469.01, 720.921, -539.5, 962.604, -536.982 )
+polygon = PoolVector2Array( 957.569, -234.879, 764.526, -452.602, 792.46, -537.871, 962.604, -536.982 )
 
 [node name="Berserker" parent="." index="3" instance=ExtResource( 3 )]
 

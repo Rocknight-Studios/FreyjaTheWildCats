@@ -49,7 +49,7 @@ editor_draw_drag_margin = false
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 start_scroll_position_y = 0.0
-stop_and_clamp_position_y = -56100.0
+stop_and_clamp_position_y = -57780.0
 scroll_speed = 200.0
 
 [node name="ScreenBounds" type="Node2D" parent="Camera2D" index="0"]
@@ -132,6 +132,7 @@ shape = SubResource( 2 )
 
 [node name="UIZIndex" type="Node2D" parent="Camera2D" index="1"]
 
+editor/display_folded = true
 z_index = 5
 _sections_unfolded = [ "Transform", "Z Index" ]
 
@@ -143,7 +144,7 @@ position = Vector2( 0, 2.45557 )
 
 [node name="Player" parent="." index="2" instance=ExtResource( 5 )]
 
-position = Vector2( 960.781, 491.987 )
+position = Vector2( 962.009, 491.988 )
 
 [node name="Level1MusicPlayer" type="AudioStreamPlayer" parent="." index="3"]
 

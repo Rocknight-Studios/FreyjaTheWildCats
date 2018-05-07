@@ -15,7 +15,6 @@ enemy_optimization_distance = 3000.0
 
 [node name="Rocks" type="StaticBody2D" parent="." index="0"]
 
-editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -27,7 +26,7 @@ bounce = 0.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rocks" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( -568.808, 537.648, -335.693, 408.141, -350.803, 270, -413.398, 237.621, -419.874, 95.1641, -188.917, 36.8828, -137.114, -144.43, -63.7262, -325.738, -126.322, -545.902, -961.65, -539.43, -959.492, 537.648 )
+polygon = PoolVector2Array( -568.808, 537.648, -335.693, 408.141, -340.524, 292.457, -292.67, 71.3633, -191.011, 30.8438, -63.7262, -325.738, -126.322, -545.902, -961.65, -539.43, -959.492, 537.648 )
 
 [node name="Rocks2" type="StaticBody2D" parent="." index="1"]
 

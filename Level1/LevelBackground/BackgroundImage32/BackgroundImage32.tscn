@@ -5,7 +5,7 @@
 [ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Unsorted/Steam/Steam.tscn" type="PackedScene" id=4]
 
-[node name="BackgroundImage32" type="Sprite"]
+[node name="BackgroundImage32" type="Sprite" index="0"]
 
 position = Vector2( 960, -34020 )
 texture = ExtResource( 1 )
@@ -31,7 +31,6 @@ polygon = PoolVector2Array( -344.244, 541.129, -341.455, 278.914, -595.3, 192.44
 
 [node name="Forest" type="StaticBody2D" parent="." index="1"]
 
-editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -43,7 +42,7 @@ bounce = 0.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Forest" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( 615.347, 546.707, 584.662, 426.758, 685.084, 309.602, 651.61, -22.3516, 740.875, -186.934, 712.979, -329.199, 955.667, -538.41, 961.246, 543.918 )
+polygon = PoolVector2Array( 574.951, 540.996, 584.662, 426.758, 685.084, 309.602, 651.61, -22.3516, 740.875, -186.934, 712.979, -329.199, 955.667, -538.41, 961.246, 543.918 )
 
 [node name="IceGiant" parent="." index="2" instance=ExtResource( 3 )]
 

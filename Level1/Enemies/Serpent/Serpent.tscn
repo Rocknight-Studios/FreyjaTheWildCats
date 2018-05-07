@@ -772,7 +772,7 @@ tracks/9/keys = {
 "values": [ 0.0, 2.91345, -4.61654, 0.646123, -2.4537, 3.758 ]
 }
 
-[node name="Serpent" type="Node2D" index="0"]
+[node name="Serpent" type="Node2D"]
 
 position = Vector2( 961.251, 525.443 )
 scale = Vector2( 0.1, 0.1 )
