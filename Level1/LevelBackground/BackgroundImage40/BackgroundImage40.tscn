@@ -21,7 +21,6 @@ enemy_optimization_distance = 3000.0
 
 [node name="Forest" type="StaticBody2D" parent="." index="0"]
 
-editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -33,11 +32,10 @@ bounce = 0.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Forest" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( -682.517, 543.668, -553.319, -434.129, -277.304, -542.773, -961.469, -536.898, -964.405, 537.797 )
+polygon = PoolVector2Array( -660.759, 540.055, -553.319, -434.129, -277.304, -542.773, -961.469, -536.898, -964.405, 537.797 )
 
 [node name="ForestRight" type="StaticBody2D" parent="." index="1"]
 
-editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -49,7 +47,7 @@ bounce = 0.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ForestRight" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( 588.912, 540.734, 527.249, 396.852, 691.684, 217.738, 644.702, 109.094, 685.811, -169.859, 547.804, -287.312, 547.804, -545.707, 953.017, -539.836, 955.953, 540.734 )
+polygon = PoolVector2Array( 507.529, 540.051, 527.249, 396.852, 691.684, 217.738, 644.702, 109.094, 685.811, -169.859, 547.804, -287.312, 547.804, -545.707, 953.017, -539.836, 955.953, 540.734 )
 
 [node name="Tower" type="StaticBody2D" parent="." index="2"]
 

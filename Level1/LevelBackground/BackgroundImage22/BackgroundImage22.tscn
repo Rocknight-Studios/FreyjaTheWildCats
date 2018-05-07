@@ -32,7 +32,6 @@ polygon = PoolVector2Array( 625.242, 517.75, 441.134, 300.17, 480.187, 191.379, 
 
 [node name="Forest" type="StaticBody2D" parent="." index="1"]
 
-editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -44,7 +43,7 @@ bounce = 0.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Forest" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( -964.779, 436.855, -688.617, 191.379, -749.986, -3.88672, -604.932, -179.627, -685.828, -285.627, -808.566, -310.734, -643.985, -536.684, -964.779, -539.473 )
+polygon = PoolVector2Array( -964.779, 436.855, -688.617, 191.379, -749.986, -3.88672, -604.932, -179.627, -685.828, -285.627, -808.566, -310.734, -689.68, -534.385, -964.779, -539.473 )
 
 [node name="ShieldTroll" parent="." index="2" instance=ExtResource( 3 )]
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage51/IceLevel51.png" type="Texture" id=1]
 [ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
 [ext_resource path="res://Level1/Enemies/Trolls/Archer/ArcherHeavy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Level1/Enemies/Trolls/Archer/TrollArcher.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Level1/EnvironmentEffects/Wind.tscn" type="PackedScene" id=6]
 
 [node name="BackgroundImage51" type="Sprite" index="0"]
 
@@ -60,7 +61,7 @@ bounce = 0.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TowerLeft" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( -968.299, -184.246, -306.19, -176.691, -303.673, -481.312, -432.066, -509.004, -716.547, -438.516, -844.94, -446.066, -862.563, -541.734, -960.746, -536.699 )
+polygon = PoolVector2Array( -964.017, -140.562, -306.19, -176.691, -303.673, -481.312, -432.066, -509.004, -716.547, -438.516, -844.94, -446.066, -862.563, -541.734, -960.746, -536.699 )
 
 [node name="ArcherHeavy" parent="." index="3" instance=ExtResource( 3 )]
 
@@ -105,5 +106,7 @@ position = Vector2( -278.873, 167.09 )
 [node name="IceGiant3" parent="." index="13" instance=ExtResource( 5 )]
 
 position = Vector2( 293.227, 162.988 )
+
+[node name="Wind" parent="." index="14" instance=ExtResource( 6 )]
 
 

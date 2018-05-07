@@ -13,10 +13,10 @@ position = Vector2( 960, -31860 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
+enemy_optimization_distance = 3000.0
 
 [node name="Geyser" type="StaticBody2D" parent="." index="0"]
 
-editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -28,7 +28,7 @@ bounce = 0.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Geyser" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( 235.846, 555.318, 160.5, 387.504, 342.014, 295.035, 311.191, -194.709, 657.094, -496.09, 646.82, -557.736, 972.174, -547.463, 972.174, 551.893 )
+polygon = PoolVector2Array( 281.182, 542.061, 166.91, 406.021, 342.014, 295.035, 311.191, -194.709, 657.094, -496.09, 646.82, -557.736, 972.174, -547.463, 972.174, 551.893 )
 
 [node name="Forest" type="StaticBody2D" parent="." index="1"]
 

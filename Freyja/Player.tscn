@@ -56,7 +56,7 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 5 )
 _sections_unfolded = [ "Collision" ]
-total_health = 100
+total_health = 1000
 health_decrease_amount = 1
 health_decrease_frequency = 500
 

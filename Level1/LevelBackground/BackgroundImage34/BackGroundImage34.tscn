@@ -31,7 +31,6 @@ polygon = PoolVector2Array( -97.6078, 488.332, -369.575, 384.727, -479.656, 125.
 
 [node name="Rocks2" type="StaticBody2D" parent="." index="1"]
 
-editor/display_folded = true
 position = Vector2( -852.595, 58.2773 )
 input_pickable = false
 collision_layer = 1
@@ -45,7 +44,7 @@ bounce = 0.0
 
 position = Vector2( 2.15848, 0 )
 build_mode = 0
-polygon = PoolVector2Array( 154.933, 479.695, -110.559, 484.016, -106.242, -599.535, 202.419, -603.855 )
+polygon = PoolVector2Array( 154.933, 479.695, -110.559, 484.016, -106.242, -599.535, 247.429, -596.719 )
 
 [node name="Berserker" parent="." index="2" instance=ExtResource( 3 )]
 

@@ -163,8 +163,6 @@ enemy_optimization_distance = 3000.0
 
 [node name="BackgroundImage23" parent="." index="23" instance=ExtResource( 25 )]
 
-enemy_optimization_distance = 3000.0
-
 [node name="BackgroundImage24" parent="." index="24" instance=ExtResource( 26 )]
 
 enemy_optimization_distance = 3000.0
@@ -175,31 +173,21 @@ enemy_optimization_distance = 3000.0
 
 [node name="BackgroundImage26" parent="." index="26" instance=ExtResource( 28 )]
 
-enemy_optimization_distance = 3000.0
-
 [node name="BackgroundImage27" parent="." index="27" instance=ExtResource( 29 )]
-
-enemy_optimization_distance = 3000.0
 
 [node name="BackgroundImage28" parent="." index="28" instance=ExtResource( 30 )]
 
-enemy_optimization_distance = 3000.0
-
 [node name="BackgroundImage29" parent="." index="29" instance=ExtResource( 31 )]
-
-enemy_optimization_distance = 3000.0
 
 [node name="BackgroundImage30" parent="." index="30" instance=ExtResource( 32 )]
 
-enemy_optimization_distance = 3000.0
-
 [node name="BackgroundImage31" parent="." index="31" instance=ExtResource( 33 )]
-
-enemy_optimization_distance = 3000.0
 
 [node name="BackgroundImage32" parent="." index="32" instance=ExtResource( 34 )]
 
 [node name="BackgroundImage33" parent="." index="33" instance=ExtResource( 35 )]
+
+position = Vector2( 960, -35100 )
 
 [node name="BackgroundImage34" parent="." index="34" instance=ExtResource( 36 )]
 
