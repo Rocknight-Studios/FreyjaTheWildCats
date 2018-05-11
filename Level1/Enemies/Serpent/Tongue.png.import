@@ -7,10 +7,10 @@ path="res://.import/Tongue.png-776e94eec27edf79bcd5186275b52010.stex"
 [deps]
 
 source_file="res://Level1/Enemies/Serpent/Tongue.png"
-source_md5="bdbd27f855c1074c270e6bdcb4798e3e"
+source_md5="123af3978f3ee176a6682366fae3dd2b"
 
 dest_files=[ "res://.import/Tongue.png-776e94eec27edf79bcd5186275b52010.stex" ]
-dest_md5="a328525068682d13d61dfc94a69484c7"
+dest_md5="90f9ab7af51e01163aaadfb71d6ebafe"
 
 [params]
 
