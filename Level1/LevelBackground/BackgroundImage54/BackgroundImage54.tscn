@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage54/IceLevel54.png" type="Texture" id=1]
 [ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
-[ext_resource path="res://Level1/Enemies/Serpent/Serpent.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Level1/EnvironmentEffects/Wind.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level1/EnvironmentEffects/Wind.tscn" type="PackedScene" id=3]
 
 [node name="BackgroundImage54" type="Sprite" index="0"]
 
@@ -29,10 +28,6 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( -956.816, 510.086, -858.633, 484.91, -861.15, 235.676, -473.451, 59.4492, -2.67322, 263.367, 455.517, 200.43, 729.928, 326.305, 898.602, 550.367, 964.058, -544.758, -954.299, -539.723 )
 
-[node name="Serpent" parent="." index="1" instance=ExtResource( 3 )]
-
-position = Vector2( 40.4136, 113.379 )
-
-[node name="Wind" parent="." index="2" instance=ExtResource( 4 )]
+[node name="Wind" parent="." index="1" instance=ExtResource( 3 )]
 
 
