@@ -32,6 +32,7 @@ freyja_attack_animation_speed = 6.0
 max_lerp_speed = 5.0
 lerp_speed_up_speed = 10.0
 lerp_speed_drop_distance = 100.0
+bottom_offset = -100.0
 
 [node name="Chariot" parent="." index="0" instance=ExtResource( 3 )]
 
@@ -77,7 +78,7 @@ _sections_unfolded = [ "Collision", "Transform", "collision" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerPositioner" index="0"]
 
 visible = false
-position = Vector2( 0.440094, -39.6114 )
+position = Vector2( 1.51559, -44.7117 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "Visibility" ]
 

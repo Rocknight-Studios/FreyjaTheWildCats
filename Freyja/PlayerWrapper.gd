@@ -15,6 +15,8 @@ export var lerp_speed_drop_distance = 100.0 # How close to the goal position mus
 var lerp_speed = 0.0 # Current speed at which to lerp to the new positioner position.
 onready var projectile_timer = $"ProjectileTimer" # For speed and convenience.
 var animation_offset_qoefficient = .5 # Projectile must be launched at certain time compared to the animation.
+export var bottom_offset = -100.0 # To put Freyja exactly at the bottom of the screen.
+onready var bottom_movement_limiter = get_parent().get_node("Camera2D").get_node("BottomMovementLimiter") # For speed and convenience.
 
 func _ready():
 	Global.player = self
@@ -35,7 +37,11 @@ func interpolate_to_player_positioner_state(delta):
 	else:
 		lerp_speed -= lerp_speed_up_speed * delta
 	lerp_speed = clamp(lerp_speed, 0.0, max_lerp_speed)
-	self.position = lerp_position_2D(self.position, player_positioner.position, lerp_speed * delta)
+	if self.get_global_transform().origin.y < bottom_movement_limiter.get_global_transform().origin.y + bottom_offset:
+		self.position = lerp_position_2D(self.position, player_positioner.position, lerp_speed * delta)
+	else:
+		self.position.y = bottom_movement_limiter.get_global_transform().origin.y + bottom_offset
+		self.position = lerp_position_2D(self.position, player_positioner.position, lerp_speed * delta)
 
 func _process(delta):
 	interpolate_to_player_positioner_state(delta)
