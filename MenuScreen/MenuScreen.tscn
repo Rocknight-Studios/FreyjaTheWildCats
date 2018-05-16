@@ -103,7 +103,7 @@ length = 12.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Camera2D:position")
+tracks/0/path = NodePath("MenuCamera:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -170,6 +170,7 @@ _sections_unfolded = [ "Color", "Emission Shape", "Gravity", "Initial Velocity",
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -178,7 +179,6 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="MenuContainer" type="MarginContainer" parent="CanvasLayer" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -540,6 +540,7 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer" index="1"]
 
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -555,7 +556,6 @@ _sections_unfolded = [ "Scroll" ]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" index="0"]
 
-editor/display_folded = true
 motion_scale = Vector2( 0, 0 )
 motion_offset = Vector2( -800, 0 )
 motion_mirroring = Vector2( 1920, 2 )
@@ -675,7 +675,7 @@ lifetime = 3.0
 process_material = SubResource( 6 )
 texture = SubResource( 7 )
 
-[node name="Camera2D" type="Camera2D" parent="." index="1"]
+[node name="MenuCamera" type="Camera2D" parent="." index="1"]
 
 position = Vector2( 575.672, 600.964 )
 anchor_mode = 1
