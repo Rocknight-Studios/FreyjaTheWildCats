@@ -52,12 +52,7 @@ start_scroll_position_y = 0.0
 stop_and_clamp_position_y = -57780.0
 scroll_speed = 200.0
 
-[node name="BottomMovementLimiter" type="Node2D" parent="Camera2D" index="0"]
-
-position = Vector2( 0, 1080 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="ScreenBounds" type="Node2D" parent="Camera2D" index="1"]
+[node name="ScreenBounds" type="Node2D" parent="Camera2D" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -134,7 +129,7 @@ shape = SubResource( 2 )
 position = Vector2( 630, 770 )
 shape = SubResource( 2 )
 
-[node name="UIZIndex" type="Node2D" parent="Camera2D" index="2"]
+[node name="UIZIndex" type="Node2D" parent="Camera2D" index="1"]
 
 z_index = 5
 _sections_unfolded = [ "Transform", "Z Index" ]

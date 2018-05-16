@@ -17,12 +17,15 @@ var camera # For speed and convenience.
 var current_scene = null # Currently active scene for speed and convenience.
 var user_params_scene = preload("res://Singleton/UserParams.tscn") # To let user set parameters in inspector. Do it during runtime in the UserParams scene or in Remote.
 var loading_screen_scene = preload("res://LoadingScreen/LoadingScreen.tscn") # Persistent loading screen.
+var visual_debugger_scene = preload("res://Singleton/VisualDebugger.tscn") # To have persistent visual game debugger.
 var loading_screen = null # For speed and convenience.
-var user_params # Instanced access point to user params. Must be a child of Global, otherwise it doesn't appear in hierarchy. It can be accessed anywhere in the code using globa.user_params
-
+var user_params = null # Instanced access point to user params. Must be a child of Global, otherwise it doesn't appear in hierarchy. It can be accessed anywhere in the code using globa.user_params
+var visual_debugger = null # Instanced visual debugger.
 var loader = null # This will get polled in process.
 var wait_frames # To allow to show the loading screen up.
 var time_max = 100 # Max time allowed for poll.
+onready var visual_debugger_z_index_node2D = Node2D.new() # To be able to set the z_index.
+var z_index_over_menu = 6 # To avoid having magic numbers.
 
 func _ready():
 	# Connect all the global signals before loading any scene.
@@ -32,8 +35,13 @@ func _ready():
 	# Instance and add user params before anything else is done.
 	user_params = user_params_scene.instance()
 	loading_screen = loading_screen_scene.instance()
+	visual_debugger = visual_debugger_scene.instance()
 	add_child(user_params)
 	add_child(loading_screen)
+	add_child(visual_debugger_z_index_node2D)
+	visual_debugger_z_index_node2D.name = "VisualDebuggerZIndex"
+	visual_debugger_z_index_node2D.z_index = z_index_over_menu
+	visual_debugger_z_index_node2D.add_child(visual_debugger)
 	loading_screen.visible = false
 	# Get the current scene as soon as the scene tree is loaded.
 	# Current scene is going to be the last one because autoloads are always loaded first.
