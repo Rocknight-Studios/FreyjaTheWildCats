@@ -57,7 +57,7 @@
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage53/BackgroundImage53.tscn" type="PackedScene" id=55]
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage54/BackgroundImage54.tscn" type="PackedScene" id=56]
 
-[node name="LevelBackground" type="Node2D" index="0"]
+[node name="LevelBackground" type="Node2D"]
 
 position = Vector2( 0, 2 )
 script = ExtResource( 1 )
