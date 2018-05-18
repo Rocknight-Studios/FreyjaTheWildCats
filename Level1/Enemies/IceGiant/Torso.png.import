@@ -7,10 +7,10 @@ path="res://.import/Torso.png-836ccbc04743fb3fc2a6097db93f67e3.stex"
 [deps]
 
 source_file="res://Level1/Enemies/IceGiant/Torso.png"
-source_md5="899464f361a4be4887a6de7fe9dbed78"
+source_md5="6bffbc303c8416dc1148b411b11abd42"
 
 dest_files=[ "res://.import/Torso.png-836ccbc04743fb3fc2a6097db93f67e3.stex" ]
-dest_md5="b0260e20be426dbd7ad6e409515c4ae9"
+dest_md5="80b8848b6d499ea63946b77699157efa"
 
 [params]
 

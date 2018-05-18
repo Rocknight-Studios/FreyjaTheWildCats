@@ -7,10 +7,10 @@ path="res://.import/Spear.png-f86fe545e216d2baf1610a3e120d7a63.stex"
 [deps]
 
 source_file="res://Level1/Enemies/Trolls/Spear/Spear.png"
-source_md5="c81c32df70e4bd1ca804821ac9aac432"
+source_md5="0228016740851f8be8ba423a197335c5"
 
 dest_files=[ "res://.import/Spear.png-f86fe545e216d2baf1610a3e120d7a63.stex" ]
-dest_md5="7046213a2c39e55f2ac1d080ba40cf70"
+dest_md5="0431509c084d429374599f0d74b1718f"
 
 [params]
 

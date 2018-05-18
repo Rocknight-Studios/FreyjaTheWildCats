@@ -7,10 +7,10 @@ path="res://.import/Bow.png-ddd21a37e31c2a2df5693bc0700c8ba7.stex"
 [deps]
 
 source_file="res://Level1/Enemies/Trolls/Archer/Bow.png"
-source_md5="990ec17235cc1c5a08a27b9e17c8371a"
+source_md5="d077991b02842d7af6a64e609b2694da"
 
 dest_files=[ "res://.import/Bow.png-ddd21a37e31c2a2df5693bc0700c8ba7.stex" ]
-dest_md5="19f76db2f7628bab13f221bb446f81c8"
+dest_md5="9222a1f90a5caa7befc0b0fcf910720b"
 
 [params]
 

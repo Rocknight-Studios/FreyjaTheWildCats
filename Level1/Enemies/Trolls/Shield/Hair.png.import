@@ -7,10 +7,10 @@ path="res://.import/Hair.png-1888b6c729c837a84c09e7a37e6d47d2.stex"
 [deps]
 
 source_file="res://Level1/Enemies/Trolls/Shield/Hair.png"
-source_md5="f92c5a5612818f5c8d1ebd7e679348a0"
+source_md5="6350278d250d8c00b5f2b900f7820624"
 
 dest_files=[ "res://.import/Hair.png-1888b6c729c837a84c09e7a37e6d47d2.stex" ]
-dest_md5="1d13a54b79df5740994ea33a3406fa8c"
+dest_md5="909571cc6c5408fe6dce16a2868c9353"
 
 [params]
 

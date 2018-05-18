@@ -7,10 +7,10 @@ path="res://.import/Foot.png-81d7b4dea4830c9024687f063b461d31.stex"
 [deps]
 
 source_file="res://Level1/Enemies/Trolls/Shield/Foot.png"
-source_md5="495512ee00b013d572b88b21436abe70"
+source_md5="5078a53370794ad2b84a8dbd2c0708f5"
 
 dest_files=[ "res://.import/Foot.png-81d7b4dea4830c9024687f063b461d31.stex" ]
-dest_md5="3f7ea60756552ba305ab79ba57d6b89e"
+dest_md5="d94a9095e7ca993af54298b158c466e4"
 
 [params]
 
