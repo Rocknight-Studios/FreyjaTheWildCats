@@ -7,7 +7,7 @@
 [ext_resource path="res://Level1/GameUI/Lost.png" type="Texture" id=5]
 [ext_resource path="res://Level1/GameUI/PauseButton.gd" type="Script" id=6]
 
-[node name="GameUI" type="Control"]
+[node name="GameUI" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -24,6 +24,7 @@ fade_duration = 2.0
 
 [node name="FreyjaHealthProgress" type="TextureProgress" parent="." index="0"]
 
+modulate = Color( 1, 1, 1, 0.480667 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -52,7 +53,7 @@ texture_progress = ExtResource( 3 )
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false
-_sections_unfolded = [ "Margin", "Rect", "Textures" ]
+_sections_unfolded = [ "Margin", "Rect", "Textures", "Visibility" ]
 
 [node name="LevelCompleteFade" type="TextureRect" parent="." index="1"]
 
@@ -91,6 +92,7 @@ _sections_unfolded = [ "Visibility" ]
 [node name="PauseButton" type="Button" parent="." index="3"]
 
 pause_mode = 2
+modulate = Color( 1, 1, 1, 0.480667 )
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -114,7 +116,7 @@ text = "Pause"
 flat = false
 align = 1
 script = ExtResource( 6 )
-_sections_unfolded = [ "Pause" ]
+_sections_unfolded = [ "Pause", "Visibility" ]
 
 [connection signal="pressed" from="PauseButton" to="PauseButton" method="_on_PauseButton_pressed"]
 

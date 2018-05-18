@@ -76,8 +76,10 @@ func _process(delta):
 	if enemy_must_fade_out:
 		sprite_body.modulate.a -= fade_out_speed * delta
 
+onready var projectile_launch_start_distance = OS.window_size.y + OS.window_size.y / 4.0 # To save resources.
+
 func manage_projectile(delta):
-	if Global.player.get_global_transform().origin.distance_to(self.get_global_transform().origin) < Global.user_params.ice_giant_projectile_max_distance_from_parent:
+	if Global.player.get_global_transform().origin.distance_to(self.get_global_transform().origin) < projectile_launch_start_distance:
 		if abs(abs(enemy_animator.playback_speed) - abs(attack_animation_speed)) > Global.approximation_float:
 			enemy_animator.playback_speed = attack_animation_speed
 		animation_blend_value += animation_blend_speed * delta
@@ -96,7 +98,7 @@ func manage_projectile(delta):
 					if current_projectile_offset_index > archer_projectile_offsets.size() - 1: # Perhaps Sin function would be better here (have to investigate resource consumption).
 						current_projectile_offset_index = 0
 					instanced_projectile.position = get_parent().to_local(get_node(archer_projectile_offsets[current_projectile_offset_index]).get_global_transform().origin) # For speed and convenience.
-					instanced_projectile.direction = Global.player.get_global_transform().origin - self.get_global_transform().origin
+					instanced_projectile.direction = (Global.player.get_global_transform().origin - self.get_global_transform().origin).normalized()
 				current_projectile_offset_index += 1
 	else:
 		if abs(abs(enemy_animator.playback_speed) - abs(idle_animation_speed)) > Global.approximation_float:
