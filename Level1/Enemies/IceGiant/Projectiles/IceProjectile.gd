@@ -7,16 +7,19 @@ var damage_amount = 1 # To inform damage receiver, how much damage to inflict.
 var direction # Fly into this direction.
 var constant_rotation_direction = 1.0 # To which side to rotate the projectiles.
 var parent_enemy # For speed and convenience.
+var velocity_multiplier = 500.0 # To turn the normalized velocity into realistic speed.
+var velocity = Vector2 (0.0, 0.0) # To save resources.
 
 func kill_projectile():
 	self.queue_free()
 
 func _physics_process(delta):
 	var speed = delta * projectile_speed # For speed and convenience.
-	move_and_slide(direction * speed)
+	velocity = direction * speed * velocity_multiplier
+	move_and_slide(velocity)
 	if !rotate_projectile_constantly:
-		self.rotation = atan2(direction.y, direction.x) * (Global.full_circle_in_degrees * .5) / PI
-	position += direction * speed
+		self.rotation = atan2(velocity.y, velocity.x) * (Global.full_circle_in_degrees * .5) / PI
+	position += velocity
 
 	if get_slide_count() > 0:
 		var kinematic_collision_2D = get_slide_collision(0) # For speed and convenience.
