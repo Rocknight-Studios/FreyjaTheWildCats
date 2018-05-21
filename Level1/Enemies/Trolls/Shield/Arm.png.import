@@ -7,10 +7,10 @@ path="res://.import/Arm.png-f13ac3db9ca8b94a1c6f6e9b8b8ef2c5.stex"
 [deps]
 
 source_file="res://Level1/Enemies/Trolls/Shield/Arm.png"
-source_md5="4fb9c5f379a3ecb1d2122ecb81ab9405"
+source_md5="9e4561108fde9c8fae854d561ceb01b2"
 
 dest_files=[ "res://.import/Arm.png-f13ac3db9ca8b94a1c6f6e9b8b8ef2c5.stex" ]
-dest_md5="fb19be86950b7ab7d8abfeaa8da211f0"
+dest_md5="bec73a4b81ba7b50e85a292d13c640ca"
 
 [params]
 

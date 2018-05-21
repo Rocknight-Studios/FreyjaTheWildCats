@@ -7,10 +7,10 @@ path="res://.import/Torso.png-8e1fd16ce3db6a07454c11c112bf4620.stex"
 [deps]
 
 source_file="res://Level1/Enemies/Trolls/Archer/Torso.png"
-source_md5="9fe5110f557f61aad71b279b447cc366"
+source_md5="e4a0f35f69805d4896f869cf18d03737"
 
 dest_files=[ "res://.import/Torso.png-8e1fd16ce3db6a07454c11c112bf4620.stex" ]
-dest_md5="28c6eba9116dbac4fcb07d92b4f1d653"
+dest_md5="54a0b4af28ccab596f219b6c1f83d64d"
 
 [params]
 

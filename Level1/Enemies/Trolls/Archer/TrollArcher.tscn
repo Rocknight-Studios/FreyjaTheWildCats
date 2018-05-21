@@ -141,7 +141,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0.2, 1.4, 1.6 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -48.2989, 161.201 ), Vector2( -87.6719, -3.43471 ), Vector2( -17.9831, 170.184 ) ]
+"values": [ Vector2( -16.6501, 56.648 ), Vector2( -25.8219, 1.79648 ), Vector2( -8.08827, 58.5556 ) ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("Body/RightArm/RightLowerArm/RightHand/Arrow:rotation_degrees")
@@ -177,7 +177,7 @@ tracks/12/keys = {
 "times": PoolRealArray( 0, 1.6, 1.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 36.5081, -23.3985 ), Vector2( 36.5081, -23.3985 ), Vector2( 35.0008, 2.22601 ) ]
+"values": [ Vector2( -0.117207, -53.8403 ), Vector2( -0.117207, -53.8403 ), Vector2( -1.48777, -49.5019 ) ]
 }
 tracks/13/type = "value"
 tracks/13/path = NodePath("Body/Leg:rotation_degrees")
@@ -226,7 +226,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2, 3.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 36.5081, -23.3985 ), Vector2( 36.5081, -23.3985 ), Vector2( 24.7468, -71.9141 ) ]
+"values": [ Vector2( -0.911716, -52.9127 ), Vector2( -0.911716, -52.9127 ), Vector2( 3.3936, -62.2081 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Body/LeftArm:rotation_degrees")
@@ -400,17 +400,16 @@ tracks/14/keys = {
 [sub_resource type="CapsuleShape2D" id=4]
 
 custom_solver_bias = 0.0
-radius = 133.723
-height = 180.142
+radius = 49.5968
+height = 43.8666
 
-[node name="TrollArcher" type="Node2D" index="0"]
+[node name="TrollArcher" type="Node2D"]
 
-scale = Vector2( 0.3, 0.3 )
 z_index = 2
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 total_health = 3
-fade_out_speed = 5
+fade_out_speed = 5.0
 projectile_template = null
 attack_animation_speed = 0.25
 idle_animation_speed = 1.0
@@ -421,33 +420,38 @@ archer_projectile_offsets = null
 
 [node name="Body" type="Node2D" parent="." index="0"]
 
+editor/display_folded = true
+position = Vector2( 22.1533, 57.4787 )
+_sections_unfolded = [ "Transform" ]
+
 [node name="Leg" type="Sprite" parent="Body" index="0"]
 
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="RightArm" type="Sprite" parent="Body" index="1"]
 
-position = Vector2( -81.5944, -101.59 )
+position = Vector2( -39.9741, -67.453 )
 rotation = 0.57984
 texture = ExtResource( 3 )
-offset = Vector2( -1.19483, 46.5249 )
+offset = Vector2( -1.03715, 11.3741 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="RightLowerArm" type="Sprite" parent="Body/RightArm" index="0"]
 
-position = Vector2( 11.9784, 92.62 )
+position = Vector2( 0.662865, 23.0006 )
 rotation = -1.34229
 texture = ExtResource( 4 )
-offset = Vector2( 2.56508, 27.9069 )
+offset = Vector2( -2.34294, 8.00644 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="RightHand" type="Sprite" parent="Body/RightArm/RightLowerArm" index="0"]
 
 show_behind_parent = true
-position = Vector2( 2.57861, 62.1585 )
+position = Vector2( -2.15491, 18.4223 )
 rotation = 0.160198
 texture = ExtResource( 5 )
-offset = Vector2( 7.04578, 34.723 )
+offset = Vector2( 1.48601, 15.1857 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="Arrow" type="Sprite" parent="Body/RightArm/RightLowerArm/RightHand" index="0"]
@@ -455,41 +459,39 @@ _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 visible = false
 position = Vector2( -56.0679, 130.829 )
 rotation = 3.97314
+scale = Vector2( 0.3, 0.3 )
 z_index = 1
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
 
 [node name="LeftArm" type="Sprite" parent="Body" index="2"]
 
-editor/display_folded = true
-position = Vector2( 36.5081, -23.3985 )
-rotation = -6.6579e-08
+position = Vector2( -0.911716, -52.9127 )
+rotation = -1.33158e-07
 texture = ExtResource( 7 )
-offset = Vector2( -2.20847, 58.8897 )
+offset = Vector2( 4.30227, 18.2857 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="LeftLowerArm" type="Sprite" parent="Body/LeftArm" index="0"]
 
-show_behind_parent = true
-position = Vector2( 5.70151, 130.32 )
+position = Vector2( 6.95871, 38.0654 )
 rotation = 1.33158e-07
 texture = ExtResource( 8 )
-offset = Vector2( 3.85141, 32.2169 )
+offset = Vector2( 1.19934, 11.9266 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="LeftHand" type="Sprite" parent="Body/LeftArm/LeftLowerArm" index="0"]
 
 show_behind_parent = true
-position = Vector2( 8.14499, 64.3455 )
-rotation = -6.6579e-08
+position = Vector2( 1.88639, 24.8191 )
 texture = ExtResource( 9 )
-offset = Vector2( -14.472, 24.751 )
+offset = Vector2( -6.24989, 9.80812 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Bow" type="Sprite" parent="Body/LeftArm/LeftLowerArm/LeftHand" index="0"]
 
 show_behind_parent = true
-position = Vector2( -105.719, 22.1637 )
+position = Vector2( -35.1155, 10.352 )
 texture = ExtResource( 10 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -501,7 +503,7 @@ texture = ExtResource( 11 )
 
 [node name="ArrowBag" type="Sprite" parent="Body/Torso" index="0"]
 
-position = Vector2( 34.1543, -14.2029 )
+position = Vector2( 14.6317, -9.98737 )
 rotation = -0.447706
 texture = ExtResource( 12 )
 
@@ -513,7 +515,7 @@ texture = ExtResource( 13 )
 [node name="Helmet" type="Sprite" parent="Body" index="4"]
 
 position = Vector2( -22.6337, -60.2113 )
-rotation = 2.49671e-08
+scale = Vector2( 0.3, 0.3 )
 z_index = 2
 texture = ExtResource( 14 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -532,8 +534,7 @@ blend_times = [  ]
 
 [node name="EnemyCollider" type="StaticBody2D" parent="." index="2"]
 
-editor/display_folded = true
-position = Vector2( -4.70013, 56.3732 )
+position = Vector2( -1.09181, 34.157 )
 input_pickable = false
 collision_layer = 32
 collision_mask = 0
@@ -557,6 +558,9 @@ autostart = false
 [node name="DeathSoulParticles" parent="." index="4" instance=ExtResource( 15 )]
 
 [node name="DeathParticles" parent="." index="5" instance=ExtResource( 16 )]
+
+position = Vector2( 1.12221, 29.0659 )
+scale = Vector2( 6, 3 )
 
 [node name="AnimationTreePlayer" type="AnimationTreePlayer" parent="." index="6"]
 

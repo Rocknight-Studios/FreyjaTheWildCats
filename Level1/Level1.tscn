@@ -54,7 +54,6 @@ scroll_speed = 200.0
 
 [node name="ScreenBounds" type="Node2D" parent="Camera2D" index="0"]
 
-editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="PlayerBounds" type="StaticBody2D" parent="Camera2D/ScreenBounds" index="0"]
@@ -132,7 +131,6 @@ shape = SubResource( 2 )
 
 [node name="UIZIndex" type="Node2D" parent="Camera2D" index="1"]
 
-editor/display_folded = true
 z_index = 5
 _sections_unfolded = [ "Transform", "Z Index" ]
 

@@ -7,10 +7,10 @@ path="res://.import/TrollArrows.png-e52cc678dbf9486d76bdf7a345c3aa58.stex"
 [deps]
 
 source_file="res://Level1/Enemies/Trolls/Archer/TrollArrows.png"
-source_md5="44e9cbabc6f361966d267c7ef0c81291"
+source_md5="b79aea10351e6779d8f083c945b097de"
 
 dest_files=[ "res://.import/TrollArrows.png-e52cc678dbf9486d76bdf7a345c3aa58.stex" ]
-dest_md5="7077a82a6ff04834e580e40a4a1a3021"
+dest_md5="9679631358e7163c72a6c2c87fe712a5"
 
 [params]
 

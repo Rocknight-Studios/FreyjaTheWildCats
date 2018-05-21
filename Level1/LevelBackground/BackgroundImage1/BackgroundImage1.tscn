@@ -16,15 +16,17 @@ custom_solver_bias = 0.0
 radius = 119.859
 height = 160.9
 
-[node name="BackgroundImage1" type="Sprite" index="0"]
+[node name="BackgroundImage1" type="Sprite"]
 
 position = Vector2( 960, -540 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
+enemy_optimization_distance = 3000.0
 
 [node name="GuardTowerCentre" type="StaticBody2D" parent="." index="0"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 64
 collision_mask = 0

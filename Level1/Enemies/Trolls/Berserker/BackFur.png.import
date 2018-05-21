@@ -7,10 +7,10 @@ path="res://.import/BackFur.png-f466f2a9e9e0a4a1958ea378ea0751e7.stex"
 [deps]
 
 source_file="res://Level1/Enemies/Trolls/Berserker/BackFur.png"
-source_md5="a709c6199aac09c103bd315be148c188"
+source_md5="5150487aa138ffcf7a49103fc0a133e8"
 
 dest_files=[ "res://.import/BackFur.png-f466f2a9e9e0a4a1958ea378ea0751e7.stex" ]
-dest_md5="59d83c06a71c496deb46caa4e5f942bd"
+dest_md5="6e0f1fcd23ba8dbff5672cf8b576d1f7"
 
 [params]
 

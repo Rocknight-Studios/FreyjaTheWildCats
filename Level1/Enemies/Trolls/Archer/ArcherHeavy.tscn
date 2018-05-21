@@ -106,7 +106,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0, 1.4, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 69.4844, 13.0109 ), Vector2( 69.4844, 13.0109 ), Vector2( 76.3148, 15.9022 ) ]
+"values": [ Vector2( 18.0249, 2.0698 ), Vector2( 21.0097, 1.21523 ), Vector2( 22.423, 5.49602 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("Body/Torso/ArmorPiece/LeftArm:rotation_degrees")
@@ -166,7 +166,7 @@ tracks/11/keys = {
 "times": PoolRealArray( 0, 1.4, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -4.67578, -19.8605 ), Vector2( -4.67578, -19.8605 ), Vector2( -4.2356, -15.0191 ) ]
+"values": [ Vector2( -0.469847, -13.3898 ), Vector2( -1.11691, -20.184 ), Vector2( -0.0296674, -6.2837 ) ]
 }
 tracks/12/type = "value"
 tracks/12/path = NodePath("Body/Skirt:rotation_degrees")
@@ -371,7 +371,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -4.67578, -19.8605 ) ]
+"values": [ Vector2( 0.104023, -11.4958 ) ]
 }
 tracks/9/type = "value"
 tracks/9/path = NodePath("Body/Torso/Shoulder/RightArm/LowerArmRight/RightHand:rotation_degrees")
@@ -404,10 +404,10 @@ tracks/11/loop_wrap = true
 tracks/11/imported = false
 tracks/11/enabled = true
 tracks/11/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 69.4844, 13.0109 ) ]
+"values": [ Vector2( 21.42, 1.80558 ), Vector2( 20.3292, 1.23572 ) ]
 }
 tracks/12/type = "value"
 tracks/12/path = NodePath("Body/Torso/ArmorPiece/LeftArm:rotation_degrees")
@@ -425,17 +425,17 @@ tracks/12/keys = {
 [sub_resource type="CapsuleShape2D" id=4]
 
 custom_solver_bias = 0.0
-radius = 151.697
-height = 62.4031
+radius = 47.8676
+height = 50.2777
 
-[node name="ArcherHeavy" type="Node2D" index="0"]
+[node name="ArcherHeavy" type="Node2D"]
 
-scale = Vector2( 0.4, 0.4 )
+scale = Vector2( 1.2, 1.2 )
 z_index = 2
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 total_health = 4
-fade_out_speed = 5
+fade_out_speed = 5.0
 projectile_template = null
 attack_animation_speed = 0.25
 idle_animation_speed = 1.0
@@ -446,50 +446,52 @@ archer_projectile_offsets = null
 
 [node name="Body" type="Node2D" parent="." index="0"]
 
+_sections_unfolded = [ "Transform" ]
+
 [node name="FootRight" type="Sprite" parent="Body" index="0"]
 
 show_behind_parent = true
-position = Vector2( -58.1815, -0.279724 )
+position = Vector2( -27.4458, 7.80861 )
 rotation = 0.338843
 texture = ExtResource( 2 )
-offset = Vector2( -11.8094, 30.2628 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="FootLeft" type="Sprite" parent="Body" index="1"]
 
 show_behind_parent = true
-position = Vector2( 44.5938, 53.561 )
+position = Vector2( 5.50217, 15.5007 )
 texture = ExtResource( 2 )
-offset = Vector2( 10.4968, 31.1437 )
+offset = Vector2( 2.6761, 9.67384 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="Skirt" type="Sprite" parent="Body" index="2"]
 
-rotation = 0.681031
-scale = Vector2( 0.6, 0.6 )
+position = Vector2( 1.99342, -11.1829 )
+rotation = 0.474545
+scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 3 )
 offset = Vector2( 0.880708, 44.8505 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Torso" type="Sprite" parent="Body" index="3"]
 
-position = Vector2( 0, -0.147265 )
-rotation = 0.752104
+rotation = 0.706729
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="ArrowBag" type="Sprite" parent="Body/Torso" index="0"]
 
 show_behind_parent = true
-position = Vector2( 29.9076, 1.24243 )
+position = Vector2( 9.78278, -6.13297 )
 rotation = -0.514562
 texture = ExtResource( 5 )
-offset = Vector2( -3.26807, -36.4615 )
+offset = Vector2( -1.52748, -7.2771 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Arrows" type="Sprite" parent="Body/Torso/ArrowBag" index="0"]
 
+position = Vector2( 1.74059, 29.1844 )
 rotation = -8.9407e-08
 texture = ExtResource( 6 )
 offset = Vector2( -3.26807, -36.4615 )
@@ -497,87 +499,86 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Shoulder" type="Sprite" parent="Body/Torso" index="1"]
 
-position = Vector2( -24.4347, 2.45499 )
-rotation = -0.991814
+position = Vector2( -11.7058, -1.36486 )
+rotation = -1.81467
 texture = ExtResource( 7 )
-offset = Vector2( -3.26807, -36.4615 )
+offset = Vector2( 0.728382, -14.3942 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="RightArm" type="Sprite" parent="Body/Torso/Shoulder" index="0"]
 
 show_behind_parent = true
-position = Vector2( -25.4468, -48.1622 )
-rotation = 2.72054
+position = Vector2( -2.58534, -15.0858 )
+rotation = 2.23987
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 8 )
-offset = Vector2( -2.92692, 32.2326 )
+offset = Vector2( -0.196752, 13.3384 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="LowerArmRight" type="Sprite" parent="Body/Torso/Shoulder/RightArm" index="0"]
 
-position = Vector2( 2.89691, 80.0891 )
-rotation = 1.31423
+position = Vector2( 0.843113, 31.2509 )
+rotation = -1.52889
 texture = ExtResource( 9 )
-offset = Vector2( -10.3558, 61.2752 )
+offset = Vector2( -2.11522, 21.0287 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="RightHand" type="Sprite" parent="Body/Torso/Shoulder/RightArm/LowerArmRight" index="0"]
 
 show_behind_parent = true
-position = Vector2( -14.5484, 89.7987 )
-rotation = 0.444061
+position = Vector2( -2.80807, 32.6128 )
+rotation = 2.98024e-08
 texture = ExtResource( 10 )
-offset = Vector2( 7.5278, 32.1723 )
+offset = Vector2( 2.04119, 12.373 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="ArmorPiece" type="Sprite" parent="Body/Torso" index="2"]
 
-position = Vector2( 69.0612, 12.8318 )
-rotation = 2.03106
+position = Vector2( 21.42, 1.80558 )
+rotation = 2.60958
 texture = ExtResource( 11 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="LeftArm" type="Sprite" parent="Body/Torso/ArmorPiece" index="0"]
 
 show_behind_parent = true
-position = Vector2( -2.63379, -8.92807 )
+position = Vector2( -0.799831, -5.55047 )
 rotation = 2.98626
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 12 )
-offset = Vector2( 3.40039, 51.1805 )
+offset = Vector2( 0.897948, 18.9949 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="LowerArmLeft" type="Sprite" parent="Body/Torso/ArmorPiece/LeftArm" index="0"]
 
-position = Vector2( 9.51941, 102.671 )
-rotation = 0.879943
+position = Vector2( 3.25139, 37.1507 )
+rotation = 0.384702
 texture = ExtResource( 9 )
-offset = Vector2( 0.750122, 65.948 )
+offset = Vector2( 0.0828151, 20.6128 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="LeftHand" type="Sprite" parent="Body/Torso/ArmorPiece/LeftArm/LowerArmLeft" index="0"]
 
 show_behind_parent = true
-position = Vector2( 3.59802, 97.955 )
+position = Vector2( 1.5, 27.2645 )
 rotation = -0.144009
 texture = ExtResource( 13 )
-offset = Vector2( -16.1506, 26.1919 )
+offset = Vector2( -6.14717, 10.5565 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="LeftHand2" type="Sprite" parent="Body/Torso/ArmorPiece/LeftArm/LowerArmLeft/LeftHand" index="0"]
 
 show_behind_parent = true
-position = Vector2( -46.6013, -2.88202 )
+position = Vector2( 2.12357, -7.43664 )
 rotation = 2.98023e-08
 texture = ExtResource( 14 )
-offset = Vector2( -16.1506, 26.1919 )
+offset = Vector2( -17.8368, 16.9631 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="Helmet" type="Sprite" parent="Body" index="4"]
 
-position = Vector2( -4.70305, -20.1604 )
-rotation = 0.153852
+position = Vector2( 0.104023, -11.4958 )
 texture = ExtResource( 15 )
 _sections_unfolded = [ "Transform" ]
 
@@ -595,7 +596,8 @@ blend_times = [  ]
 
 [node name="EnemyCollider" type="StaticBody2D" parent="." index="2"]
 
-position = Vector2( -28.8088, 94.1829 )
+editor/display_folded = true
+position = Vector2( -8.489, 36.0683 )
 input_pickable = false
 collision_layer = 32
 collision_mask = 0
@@ -610,6 +612,9 @@ _sections_unfolded = [ "Collision", "Transform" ]
 shape = SubResource( 4 )
 
 [node name="DeathParticles" parent="." index="3" instance=ExtResource( 16 )]
+
+position = Vector2( 1.1057, 37.5938 )
+scale = Vector2( 6, 3 )
 
 [node name="DeathSoulParticles" parent="." index="4" instance=ExtResource( 17 )]
 

@@ -71,8 +71,6 @@ enemy_optimization_distance = 3000.0
 
 [node name="BackgroundImage1" parent="." index="1" instance=ExtResource( 3 )]
 
-enemy_optimization_distance = 3000.0
-
 [node name="BackgroundImage2" parent="." index="2" instance=ExtResource( 4 )]
 
 enemy_optimization_distance = 3000.0
@@ -156,8 +154,6 @@ position = Vector2( 962.272, -21060 )
 enemy_optimization_distance = 3000.0
 
 [node name="BackgroundImage21" parent="." index="21" instance=ExtResource( 23 )]
-
-enemy_optimization_distance = 3000.0
 
 [node name="BackgroundImage22" parent="." index="22" instance=ExtResource( 24 )]
 

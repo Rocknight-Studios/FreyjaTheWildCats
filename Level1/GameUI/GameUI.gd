@@ -13,6 +13,7 @@ func _ready():
 	Global.connect("change_health", self, "on_health_change")
 	game_over_fade_node.modulate.a = 0.0
 	level_complete_fade_node.modulate.a = 0.0
+	self.rect_min_size = OS.window_size # For UI items to be correctly positioned inside screen dimensions.
 
 func _process(delta):
 	if level_fade == LevelFades.level_complete:
