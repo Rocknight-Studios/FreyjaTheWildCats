@@ -21,6 +21,7 @@ extents = Vector2( 730.55, 12.4069 )
 [node name="Level1" type="Node"]
 
 script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
 
 [node name="Camera2D" type="Camera2D" parent="." index="0"]
 
@@ -47,13 +48,14 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 script = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Pause", "Transform" ]
 start_scroll_position_y = 0.0
 stop_and_clamp_position_y = -57780.0
 scroll_speed = 200.0
 
 [node name="ScreenBounds" type="Node2D" parent="Camera2D" index="0"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="PlayerBounds" type="StaticBody2D" parent="Camera2D/ScreenBounds" index="0"]
@@ -131,6 +133,7 @@ shape = SubResource( 2 )
 
 [node name="UIZIndex" type="Node2D" parent="Camera2D" index="1"]
 
+editor/display_folded = true
 z_index = 5
 _sections_unfolded = [ "Transform", "Z Index" ]
 
