@@ -7,10 +7,10 @@ path="res://.import/IceBag.png-ace3603af7e52a87796ef336ca885938.stex"
 [deps]
 
 source_file="res://Level1/Enemies/IceGiant/IceBag.png"
-source_md5="49ba6e326d9ee366a93e3d4eb414e913"
+source_md5="143cce5364e5b85d1253848d56bdeb27"
 
 dest_files=[ "res://.import/IceBag.png-ace3603af7e52a87796ef336ca885938.stex" ]
-dest_md5="0bb2988070b02ee9dc014f55410078ca"
+dest_md5="3ce4e5086db7ac91b6467cb3bb36c1ae"
 
 [params]
 

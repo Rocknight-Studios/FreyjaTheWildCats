@@ -127,7 +127,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0, 0.3, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -104.493, -50.7837 ), Vector2( -94.4857, -72.3907 ), Vector2( -100.843, 4.98369 ) ]
+"values": [ Vector2( -32.9945, -40.4561 ), Vector2( -30.9314, -53.7216 ), Vector2( -30.5361, -28.7795 ) ]
 }
 tracks/9/type = "value"
 tracks/9/path = NodePath("Body/Torso/Shield:position")
@@ -139,7 +139,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0, 0.3, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 57.5343, 55.0754 ), Vector2( 47.8418, 18.331 ), Vector2( 66.368, 49.4918 ) ]
+"values": [ Vector2( 25.9875, 2.73648 ), Vector2( 30.7845, -3.87485 ), Vector2( 27.068, 6.35455 ) ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("Body/Torso/Shield:rotation_degrees")
@@ -175,7 +175,7 @@ tracks/12/keys = {
 "times": PoolRealArray( 0, 0.3, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -1.99103, -39.805 ), Vector2( -1.08801, -54.245 ), Vector2( 3.16596, 14.86 ) ]
+"values": [ Vector2( -1.99103, -39.805 ), Vector2( -1.08801, -47.0777 ), Vector2( 0.0665796, -28.5313 ) ]
 }
 tracks/13/type = "value"
 tracks/13/path = NodePath("Body/Helmet:rotation_degrees")
@@ -308,7 +308,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -104.493, -50.7837 ) ]
+"values": [ Vector2( -34.2678, -43.9563 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("Body/Helmet:position")
@@ -344,7 +344,7 @@ tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 57.5343, 55.0754 ) ]
+"values": [ Vector2( 24.39, 8.4365 ) ]
 }
 tracks/11/type = "value"
 tracks/11/path = NodePath("Body/Helmet/Hair4/Hair_centre:rotation_degrees")
@@ -417,12 +417,11 @@ step = 0.1
 [sub_resource type="CapsuleShape2D" id=5]
 
 custom_solver_bias = 0.0
-radius = 175.276
+radius = 66.2112
 height = 58.0022
 
-[node name="ShieldTroll" type="Node2D" index="0"]
+[node name="ShieldTroll" type="Node2D"]
 
-scale = Vector2( 0.3, 0.3 )
 z_index = 2
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
@@ -430,7 +429,7 @@ __meta__ = {
 "_edit_group_": true
 }
 total_health = 15
-fade_out_speed = 5
+fade_out_speed = 5.0
 projectile_template = null
 attack_animation_speed = 0.25
 idle_animation_speed = 1.0
@@ -442,45 +441,44 @@ archer_projectile_offsets = null
 [node name="Body" type="Node2D" parent="." index="0"]
 
 editor/display_folded = true
+position = Vector2( 1.19165, 21.4496 )
 
 [node name="Left_leg" type="Sprite" parent="Body" index="0"]
 
-position = Vector2( 49.3227, 10.6942 )
+position = Vector2( 19.0737, -14.393 )
 texture = ExtResource( 2 )
 flip_h = true
 _sections_unfolded = [ "Offset" ]
 
 [node name="Right_leg" type="Sprite" parent="Body" index="1"]
 
-position = Vector2( -76.9253, 18.8392 )
+position = Vector2( -21.0292, -16.3709 )
 texture = ExtResource( 2 )
 
 [node name="Skirt" type="Sprite" parent="Body" index="2"]
 
-position = Vector2( -1.99103, -39.805 )
+position = Vector2( -1.99103, -38.805 )
 texture = ExtResource( 3 )
 
 [node name="Right_arm" type="Sprite" parent="Body" index="3"]
 
-editor/display_folded = true
-position = Vector2( -104.493, -50.7837 )
-rotation = -0.423069
+position = Vector2( -34.2678, -43.9563 )
 z_index = 1
 texture = ExtResource( 4 )
-offset = Vector2( -25.9167, 34.195 )
+offset = Vector2( -7.41932, 6.68292 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="Lower_right_arm" type="Sprite" parent="Body/Right_arm" index="0"]
 
-position = Vector2( -34.2947, 42.4172 )
+position = Vector2( -15.5671, 14.9684 )
 texture = ExtResource( 5 )
-offset = Vector2( -4.79413, 81.5877 )
+offset = Vector2( -0.768022, 20.9074 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Hand" type="Sprite" parent="Body/Right_arm/Lower_right_arm" index="0"]
 
-position = Vector2( -11.1638, 105.034 )
-rotation = 0.165259
+position = Vector2( -2.82343, 34.9704 )
+rotation = 0.00791758
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Visibility", "Z Index" ]
 
@@ -493,24 +491,22 @@ _sections_unfolded = [ "Visibility", "Z Index" ]
 [node name="Torso" type="Sprite" parent="Body" index="4"]
 
 position = Vector2( -1.99103, -39.805 )
-rotation = 0.032173
+rotation = 1.33158e-07
 z_index = 1
 texture = ExtResource( 8 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Shield" type="Sprite" parent="Body/Torso" index="0"]
 
-position = Vector2( 57.5343, 55.0754 )
-rotation = -1.14047
+position = Vector2( 24.39, 8.4365 )
+rotation = -0.937982
 texture = ExtResource( 9 )
-offset = Vector2( -16.7739, 64.5913 )
+offset = Vector2( -1.98333, 15.1241 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Helmet" type="Sprite" parent="Body" index="5"]
 
-editor/display_folded = true
 position = Vector2( -1.99103, -39.805 )
-rotation = 0.0146425
 z_index = 1
 texture = ExtResource( 10 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -518,46 +514,44 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="Hair4" type="Node2D" parent="Body/Helmet" index="0"]
 
 show_behind_parent = true
-rotation = -0.00584442
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Hair_centre" type="Sprite" parent="Body/Helmet/Hair4" index="0"]
 
-position = Vector2( 2.00171, -15.1813 )
+position = Vector2( 2.36811, -20.9553 )
 rotation = 0.192115
 texture = ExtResource( 11 )
-offset = Vector2( -4.60369, -27.7462 )
+offset = Vector2( -1.47371, -9.49857 )
 
 [node name="Hair_right" type="Sprite" parent="Body/Helmet/Hair4" index="1"]
 
-position = Vector2( -48.4268, 10.0865 )
+position = Vector2( -12.1589, -11.9631 )
 texture = ExtResource( 11 )
-offset = Vector2( -4.26172, -46.6093 )
+offset = Vector2( -2.25772, -12.6101 )
 
 [node name="Hair_left" type="Sprite" parent="Body/Helmet/Hair4" index="2"]
 
-position = Vector2( 47.2163, 5.22333 )
+position = Vector2( 14.7406, -9.38963 )
 texture = ExtResource( 11 )
-offset = Vector2( 13.5571, -38.9863 )
+offset = Vector2( 3.10315, -13.2771 )
 flip_h = true
 _sections_unfolded = [ "Offset" ]
 
 [node name="Feathers" type="Node2D" parent="Body/Helmet" index="1"]
 
-editor/display_folded = true
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Feather_right" type="Sprite" parent="Body/Helmet/Feathers" index="0"]
 
-position = Vector2( -18.045, 11.6996 )
+position = Vector2( -7.55579, -1.3343 )
 texture = ExtResource( 12 )
-offset = Vector2( -18.0154, -61.1125 )
+offset = Vector2( -5.11334, -18.4592 )
 
 [node name="Feather_left" type="Sprite" parent="Body/Helmet/Feathers" index="1"]
 
-position = Vector2( 29.0575, 12.363 )
+position = Vector2( 9.6054, -1.35706 )
 texture = ExtResource( 12 )
-offset = Vector2( 14.8821, -61.776 )
+offset = Vector2( 5.71514, -20.586 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform" ]
 
@@ -576,7 +570,6 @@ blend_times = [  ]
 
 [node name="EnemyCollider" type="StaticBody2D" parent="." index="2"]
 
-editor/display_folded = true
 input_pickable = false
 collision_layer = 32
 collision_mask = 0
@@ -588,10 +581,12 @@ _sections_unfolded = [ "Collision", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyCollider" index="0"]
 
-position = Vector2( 0, 12 )
+position = Vector2( 1.62903, 11.1855 )
 shape = SubResource( 5 )
 
 [node name="DeathParticles" parent="." index="3" instance=ExtResource( 13 )]
+
+scale = Vector2( 6, 3 )
 
 [node name="DeathSoulParticles" parent="." index="4" instance=ExtResource( 14 )]
 

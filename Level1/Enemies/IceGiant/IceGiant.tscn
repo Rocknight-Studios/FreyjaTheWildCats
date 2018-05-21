@@ -221,7 +221,7 @@ tracks/16/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 100.314, 56.7454 ) ]
+"values": [ Vector2( 36.8144, 37.3547 ) ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Body/Torso/UpperArmLeft:position")
@@ -233,7 +233,7 @@ tracks/17/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 113.526, 8.94525 ) ]
+"values": [ Vector2( 60.1403, 0.719908 ) ]
 }
 tracks/18/type = "value"
 tracks/18/path = NodePath("Body/Torso/UpperArmRight:position")
@@ -245,7 +245,7 @@ tracks/18/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -120.25, 13.919 ) ]
+"values": [ Vector2( -57.893, 8.35507 ) ]
 }
 tracks/19/type = "value"
 tracks/19/path = NodePath("Body/Torso/UpperArmRight/ArmRight:position")
@@ -257,7 +257,7 @@ tracks/19/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -92.2227, 82.3075 ) ]
+"values": [ Vector2( -40.4452, 50.361 ) ]
 }
 tracks/20/type = "value"
 tracks/20/path = NodePath("Body/Skirt:position")
@@ -438,7 +438,7 @@ tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -120.25, 13.919 ) ]
+"values": [ Vector2( -51.8862, -0.0477964 ) ]
 }
 tracks/13/type = "value"
 tracks/13/path = NodePath("Body/Torso/UpperArmRight:rotation_degrees")
@@ -462,7 +462,7 @@ tracks/14/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -92.2227, 82.3075 ) ]
+"values": [ Vector2( -46.1744, 45.2604 ) ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("Body/Torso/UpperArmRight/ArmRight:rotation_degrees")
@@ -486,7 +486,7 @@ tracks/16/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 100.314, 56.7454 ) ]
+"values": [ Vector2( 38.9299, 37.3786 ) ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Body/Torso/UpperArmLeft/ArmLeft:rotation_degrees")
@@ -534,7 +534,7 @@ tracks/20/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 113.526, 8.94525 ) ]
+"values": [ Vector2( 62.8045, 2.32939 ) ]
 }
 
 [sub_resource type="CapsuleShape2D" id=4]
@@ -543,7 +543,7 @@ custom_solver_bias = 0.0
 radius = 138.0
 height = 388.0
 
-[node name="IceGiant" type="Node2D" index="0"]
+[node name="IceGiant" type="Node2D"]
 
 position = Vector2( 0, 1 )
 scale = Vector2( 0.5, 0.5 )
@@ -551,7 +551,7 @@ z_index = 2
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause", "Transform", "Z Index" ]
 total_health = 5
-fade_out_speed = 5
+fade_out_speed = 5.0
 projectile_template = ExtResource( 2 )
 attack_animation_speed = 0.25
 idle_animation_speed = 1.0
@@ -559,7 +559,6 @@ animation_blend_speed = 1.0
 projectile_type = "ice_giant_projectile_offsets"
 enemy_launches_projectiles = true
 archer_projectile_offsets = [ "Body/Torso/UpperArmRight/ArmRight/Node2D", "Body/Torso/UpperArmLeft/ArmLeft/Node2D" ]
-debug = false
 
 [node name="Body" type="Node2D" parent="." index="0"]
 
@@ -568,27 +567,32 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="FootRight" type="Sprite" parent="Body" index="0"]
 
-position = Vector2( -131.799, 163.852 )
+position = Vector2( -126.531, 181.091 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="FootLeft" type="Sprite" parent="Body" index="1"]
 
-position = Vector2( 115.48, 167.444 )
+position = Vector2( 115.479, 167.448 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="LegRight" type="Sprite" parent="Body" index="2"]
 
 position = Vector2( -81.0368, 86.1981 )
+rotation = -0.092189
+scale = Vector2( 2, 2 )
 texture = ExtResource( 4 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="LegLeft" type="Sprite" parent="Body" index="3"]
 
 position = Vector2( 76.0001, 88.0031 )
-rotation = -0.158225
+rotation = -0.213333
+scale = Vector2( 2, 2 )
 texture = ExtResource( 4 )
 flip_h = true
 _sections_unfolded = [ "Transform" ]
@@ -596,77 +600,78 @@ _sections_unfolded = [ "Transform" ]
 [node name="Skirt" type="Sprite" parent="Body" index="4"]
 
 position = Vector2( 9.47215, 59.4041 )
-rotation = -0.120126
+rotation = -0.318265
+scale = Vector2( 2, 2 )
 texture = ExtResource( 5 )
-_sections_unfolded = [ "Material", "Transform", "Visibility" ]
+_sections_unfolded = [ "Material", "Offset", "Transform", "Visibility" ]
 
 [node name="Torso" type="Sprite" parent="Body" index="5"]
 
-position = Vector2( -16.8637, -0.521307 )
-rotation = -0.0621102
+position = Vector2( -2.50937, -6.38995 )
+rotation = -0.221471
+scale = Vector2( 2, 2 )
 texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="IceBag" type="Sprite" parent="Body/Torso" index="0"]
 
 show_behind_parent = true
-position = Vector2( 31.309, -229.923 )
+position = Vector2( 15.6545, -114.962 )
 rotation = 0.0639769
 texture = ExtResource( 7 )
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="UpperArmRight" type="Sprite" parent="Body/Torso" index="1"]
 
 show_behind_parent = true
-position = Vector2( -120.25, 13.919 )
-rotation = 2.31262
+position = Vector2( -57.893, 8.35507 )
+rotation = 0.331839
 texture = ExtResource( 8 )
-offset = Vector2( -55.5624, 37.4659 )
+offset = Vector2( -29.2367, 19.3366 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="ArmRight" type="Sprite" parent="Body/Torso/UpperArmRight" index="0"]
 
 show_behind_parent = true
-position = Vector2( -92.2227, 82.3075 )
-rotation = 1.51752
+position = Vector2( -40.4452, 50.361 )
+rotation = -0.0533669
 texture = ExtResource( 9 )
-offset = Vector2( 88.0221, 147.888 )
+offset = Vector2( 40, 70 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="Node2D" type="Node2D" parent="Body/Torso/UpperArmRight/ArmRight" index="0"]
 
-position = Vector2( 131.5, 226.078 )
+position = Vector2( 58.1407, 106.978 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="UpperArmLeft" type="Sprite" parent="Body/Torso" index="2"]
 
 show_behind_parent = true
-position = Vector2( 113.526, 8.94525 )
-rotation = -0.984106
+position = Vector2( 60.1403, 0.719908 )
+rotation = -1.86777
 texture = ExtResource( 8 )
-offset = Vector2( 60.6112, 39.2807 )
+offset = Vector2( 19.6807, 11.7514 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="ArmLeft" type="Sprite" parent="Body/Torso/UpperArmLeft" index="0"]
 
 show_behind_parent = true
-position = Vector2( 100.314, 56.7454 )
-rotation = -0.590237
+position = Vector2( 36.8144, 37.3547 )
+rotation = -1.30105
 texture = ExtResource( 9 )
-offset = Vector2( -99.2142, 159.443 )
+offset = Vector2( -48.0672, 69.7605 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="Node2D" type="Node2D" parent="Body/Torso/UpperArmLeft/ArmLeft" index="0"]
 
-position = Vector2( -138.167, 239.687 )
+position = Vector2( -65.4364, 106.056 )
 
 [node name="Head" type="Sprite" parent="Body/Torso" index="3"]
 
-position = Vector2( 8.54205, 26.7184 )
 texture = ExtResource( 10 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
 
@@ -736,17 +741,17 @@ data = {
 "position": Vector2( 490, 91 ),
 "type": "output"
 }, {
-"filter": [  ],
-"from": "Attack",
-"id": "anim 2",
-"position": Vector2( 106, 154 ),
-"type": "animation"
-}, {
 "blend": 0.0,
 "filter": [  ],
 "id": "blend2",
 "position": Vector2( 321, 59 ),
 "type": "blend2"
+}, {
+"filter": [  ],
+"from": "Attack",
+"id": "anim 2",
+"position": Vector2( 106, 154 ),
+"type": "animation"
 } ]
 }
 

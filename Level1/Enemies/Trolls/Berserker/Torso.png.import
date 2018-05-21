@@ -7,10 +7,10 @@ path="res://.import/Torso.png-e19f33dbe21319b253cd8dc4395d0f5e.stex"
 [deps]
 
 source_file="res://Level1/Enemies/Trolls/Berserker/Torso.png"
-source_md5="e80abc195e46fdfe6a647f027fbb1544"
+source_md5="055f8e76959138cd404bcb18bb70c860"
 
 dest_files=[ "res://.import/Torso.png-e19f33dbe21319b253cd8dc4395d0f5e.stex" ]
-dest_md5="4ce287ab69ff745864b3b2a61a679db9"
+dest_md5="ff22b640e45fae43ef6313fce219a462"
 
 [params]
 

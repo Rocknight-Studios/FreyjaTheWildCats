@@ -7,10 +7,10 @@ path="res://.import/LeftArm.png-4738ffe9e7bb08e381fd5ba99d1eb429.stex"
 [deps]
 
 source_file="res://Level1/Enemies/Trolls/Berserker/LeftArm.png"
-source_md5="bf2b7208092a5713459dd2cafd409243"
+source_md5="09da784eb130433235f749cfe2453d86"
 
 dest_files=[ "res://.import/LeftArm.png-4738ffe9e7bb08e381fd5ba99d1eb429.stex" ]
-dest_md5="75679f04a737d893307d50327575d019"
+dest_md5="87a12c9fff0d1d9fc37bc8183f2889de"
 
 [params]
 

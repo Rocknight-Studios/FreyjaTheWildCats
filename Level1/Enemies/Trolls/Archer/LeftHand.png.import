@@ -7,10 +7,10 @@ path="res://.import/LeftHand.png-4d923f366acd778f8faa653ebaa943fb.stex"
 [deps]
 
 source_file="res://Level1/Enemies/Trolls/Archer/LeftHand.png"
-source_md5="c4fb371d6456e7e820cba6900e42ebec"
+source_md5="ded184e152039025f1a0f0403a61178b"
 
 dest_files=[ "res://.import/LeftHand.png-4d923f366acd778f8faa653ebaa943fb.stex" ]
-dest_md5="2cc4af9dabb30a50fa0022173173c42a"
+dest_md5="36003aa59fb6901247a52b5d232cd9de"
 
 [params]
 

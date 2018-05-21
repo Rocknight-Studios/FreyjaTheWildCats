@@ -7,10 +7,10 @@ path="res://.import/Foot.png-de064f6197df745cd3f747a6cfd1c114.stex"
 [deps]
 
 source_file="res://Level1/Enemies/IceGiant/Foot.png"
-source_md5="792cbf6bfe7fe1cb457a5b78be56f080"
+source_md5="acafd40c5d5db0f9945ea1e44b6f43fe"
 
 dest_files=[ "res://.import/Foot.png-de064f6197df745cd3f747a6cfd1c114.stex" ]
-dest_md5="342eafe01d3c4767c291032cec79cb7c"
+dest_md5="1c5419a7c4e241fa2e4695d8390800f0"
 
 [params]
 

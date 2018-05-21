@@ -7,10 +7,10 @@ path="res://.import/Feather.png-02cd9dd9d744db7da79ee5f3546f5214.stex"
 [deps]
 
 source_file="res://Level1/Enemies/Trolls/Shield/Feather.png"
-source_md5="5284fbab418fa19e510fb13a51d86672"
+source_md5="0b3cb8bff92662d0a9de9cacb29aeeaa"
 
 dest_files=[ "res://.import/Feather.png-02cd9dd9d744db7da79ee5f3546f5214.stex" ]
-dest_md5="6dbb9f90e335cc13b5963ce305ce5a9c"
+dest_md5="04ef8bfbb717d24b8ae202a4fda7469e"
 
 [params]
 

@@ -17,6 +17,7 @@ enemy_optimization_distance = 3000.0
 
 [node name="Rocks" type="StaticBody2D" parent="." index="0"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -86,6 +87,6 @@ position = Vector2( 26.657, 207.105 )
 
 [node name="Berserker" parent="." index="8" instance=ExtResource( 6 )]
 
-position = Vector2( -53.314, 397.805 )
+position = Vector2( 0.353577, 395.953 )
 
 

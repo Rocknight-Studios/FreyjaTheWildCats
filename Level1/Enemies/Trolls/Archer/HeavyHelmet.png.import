@@ -7,10 +7,10 @@ path="res://.import/HeavyHelmet.png-388d147f1a2a61e3d3ed836b51557f8c.stex"
 [deps]
 
 source_file="res://Level1/Enemies/Trolls/Archer/HeavyHelmet.png"
-source_md5="7fd2a3d325584e60aec779d7807be0d4"
+source_md5="3fdb4b610675d39e331f4f0017531b54"
 
 dest_files=[ "res://.import/HeavyHelmet.png-388d147f1a2a61e3d3ed836b51557f8c.stex" ]
-dest_md5="7111a69d7705881516357fde46e1d803"
+dest_md5="15eaef405712620b6386be58c4df9883"
 
 [params]
 

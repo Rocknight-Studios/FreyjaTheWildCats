@@ -7,10 +7,10 @@ path="res://.import/Club.png-bbd65b291ab9cab083657d267c46cfd8.stex"
 [deps]
 
 source_file="res://Level1/Enemies/Trolls/Berserker/Club.png"
-source_md5="1876001c403d98812249cb37047d72d7"
+source_md5="8543ae397754baa4935e9003623b7535"
 
 dest_files=[ "res://.import/Club.png-bbd65b291ab9cab083657d267c46cfd8.stex" ]
-dest_md5="f65341cec5d6a4e5e1df8c106132b513"
+dest_md5="204d3cdc17d1f0754ebb320cde98da57"
 
 [params]
 
