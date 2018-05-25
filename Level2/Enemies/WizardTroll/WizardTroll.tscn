@@ -471,10 +471,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1.3, 4 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 1.3, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 9.95883, -57.5117 ]
+"values": [ 9.95883, -84.4416, -72.6626 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Body/Torso/ShoulderRight:rotation_degrees")
@@ -498,7 +498,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 1.3, 4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ -41.8487, 33.148 ]
+"values": [ -41.8487, 59.5264 ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("Body/Torso/ShoulderRight/UpperArm:rotation_degrees")
@@ -536,15 +536,123 @@ tracks/6/keys = {
 "update": 0,
 "values": [ -54.0299, -89.4658, -19.2048 ]
 }
+tracks/7/type = "value"
+tracks/7/path = NodePath("Body/Head:position")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1.6, 3, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -0.267395, -3.24353 ), Vector2( -5.67096, 4.32149 ), Vector2( -0.267395, -3.24353 ), Vector2( 8.9187, 11.3462 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Body/Head:rotation_degrees")
+tracks/8/interp = 2
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 1.6, 3, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 8.16043, 0.0, -14.0973 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Body/Fur:rotation_degrees")
+tracks/9/interp = 2
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 2, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -5.05397, 5.39119, -7.97899 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Body/Fur/Fur4:rotation_degrees")
+tracks/10/interp = 2
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 2, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 181.271, 168.235, 189.685 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Body/Fur/Fur3:rotation_degrees")
+tracks/11/interp = 2
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 111.65, 94.5458 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Body/Fur/Fur2:rotation_degrees")
+tracks/12/interp = 2
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 79.1989, 64.1063 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Body/Skirt:rotation_degrees")
+tracks/13/interp = 2
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 2, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -0.0242988, -5.33964 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Body/LegLeft:rotation_degrees")
+tracks/14/interp = 2
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 1.6, 4.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 6.04549, -19.1825 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Body/LegRight:rotation_degrees")
+tracks/15/interp = 2
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 1.6, 4.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 6.64551, -18.0299 ]
+}
 
-[node name="WizardTroll" type="Node2D" index="0"]
+[node name="WizardTroll" type="Node2D"]
 
 [node name="Body" type="Node2D" parent="." index="0"]
 
 [node name="FootRight" type="Sprite" parent="Body" index="0"]
 
 position = Vector2( -31.9678, 51.9275 )
-rotation = 0.154979
+rotation = 0.21725
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 1 )
 offset = Vector2( 8.64595, 22.7698 )
@@ -554,7 +662,7 @@ _sections_unfolded = [ "Offset", "Transform" ]
 [node name="FootLeft" type="Sprite" parent="Body" index="1"]
 
 position = Vector2( 20.4367, 46.9938 )
-rotation = -0.34713
+rotation = -0.257499
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 1 )
 offset = Vector2( 11.3405, 28.3445 )
@@ -563,7 +671,7 @@ _sections_unfolded = [ "Offset", "Transform" ]
 [node name="LegLeft" type="Sprite" parent="Body" index="2"]
 
 position = Vector2( 21.2311, 33.0913 )
-rotation = -0.141904
+rotation = -0.121744
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 2 )
 offset = Vector2( 21.2708, 21.7243 )
@@ -572,7 +680,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="LegRight" type="Sprite" parent="Body" index="3"]
 
 position = Vector2( -12.5321, 33.0913 )
-rotation = -0.175228
+rotation = -0.106293
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 2 )
 offset = Vector2( -28.381, 25.0344 )
@@ -582,7 +690,7 @@ _sections_unfolded = [ "Offset", "Transform" ]
 [node name="Skirt" type="Node2D" parent="Body" index="4"]
 
 editor/display_folded = true
-rotation = -0.132407
+rotation = -0.0468092
 
 [node name="Skirt2" type="Sprite" parent="Body/Skirt" index="0"]
 
@@ -601,26 +709,27 @@ offset = Vector2( -0.105209, 25.4989 )
 [node name="Skirt3" type="Sprite" parent="Body/Skirt" index="2"]
 
 position = Vector2( 31.6543, 9.44283 )
-rotation = -0.565548
+rotation = -0.523237
 texture = ExtResource( 3 )
 offset = Vector2( -0.105209, 25.4989 )
 
 [node name="Skirt" type="Sprite" parent="Body/Skirt" index="3"]
 
 position = Vector2( -27.1374, 9.08434 )
-rotation = 0.650746
+rotation = 0.600706
 texture = ExtResource( 3 )
 offset = Vector2( -0.105209, 25.4989 )
 
 [node name="Torso" type="Sprite" parent="Body" index="5"]
 
+editor/display_folded = true
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="ShoulderLeft" type="Sprite" parent="Body/Torso" index="0"]
 
 position = Vector2( 50.8854, 8.44227 )
-rotation = 0.0988877
+rotation = -0.562052
 texture = ExtResource( 5 )
 offset = Vector2( 3.8864, -1.45978 )
 
@@ -628,7 +737,7 @@ offset = Vector2( 3.8864, -1.45978 )
 
 show_behind_parent = true
 position = Vector2( 15.0453, 3.69814 )
-rotation = -0.647114
+rotation = -0.122995
 texture = ExtResource( 6 )
 offset = Vector2( 8.98833, 13.2374 )
 _sections_unfolded = [ "Offset", "Visibility" ]
@@ -637,7 +746,7 @@ _sections_unfolded = [ "Offset", "Visibility" ]
 
 show_behind_parent = true
 position = Vector2( 16.2713, 31.4143 )
-rotation = -0.191555
+rotation = 0.109401
 texture = ExtResource( 7 )
 offset = Vector2( 8.98833, 13.2374 )
 _sections_unfolded = [ "Offset", "Visibility" ]
@@ -652,7 +761,7 @@ _sections_unfolded = [ "Offset", "Visibility" ]
 [node name="ShoulderRight" type="Sprite" parent="Body/Torso" index="1"]
 
 position = Vector2( -39.7557, 4.98578 )
-rotation = 0.732042
+rotation = 0.269659
 texture = ExtResource( 5 )
 offset = Vector2( -11.4358, 4.85861 )
 flip_h = true
@@ -662,7 +771,7 @@ _sections_unfolded = [ "Offset" ]
 
 show_behind_parent = true
 position = Vector2( -21.9259, 13.9688 )
-rotation = 0.943535
+rotation = 1.42308
 texture = ExtResource( 6 )
 offset = Vector2( 8.98833, 13.2374 )
 _sections_unfolded = [ "Offset", "Visibility" ]
@@ -671,7 +780,7 @@ _sections_unfolded = [ "Offset", "Visibility" ]
 
 show_behind_parent = true
 position = Vector2( 19.2963, 27.3316 )
-rotation = -1.23094
+rotation = -0.943
 texture = ExtResource( 7 )
 offset = Vector2( -5.7713, 17.2202 )
 flip_h = true
@@ -688,8 +797,9 @@ _sections_unfolded = [ "Offset", "Visibility" ]
 
 [node name="Fur" type="Sprite" parent="Body" index="6"]
 
+editor/display_folded = true
 position = Vector2( 0.578247, 2.29012 )
-rotation = -0.118912
+rotation = -0.0882084
 texture = ExtResource( 9 )
 offset = Vector2( 0.610886, -37.2507 )
 _sections_unfolded = [ "Transform" ]
@@ -697,7 +807,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Fur4" type="Sprite" parent="Body/Fur" index="0"]
 
 position = Vector2( -0.728882, 0.570587 )
-rotation = 2.95385
+rotation = 3.16378
 scale = Vector2( 0.5, 1 )
 texture = ExtResource( 9 )
 offset = Vector2( 0.610886, -37.2507 )
@@ -706,7 +816,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Fur2" type="Sprite" parent="Body/Fur" index="1"]
 
 position = Vector2( 5.94978, 17.7858 )
-rotation = 1.05969
+rotation = 1.38228
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 9 )
 offset = Vector2( 0.610886, -37.2507 )
@@ -716,7 +826,7 @@ _sections_unfolded = [ "Offset", "Transform" ]
 [node name="Fur3" type="Sprite" parent="Body/Fur" index="2"]
 
 position = Vector2( -6.51965, 15.596 )
-rotation = 1.91435
+rotation = 1.94866
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 9 )
 offset = Vector2( -0.202671, 36.7944 )
@@ -727,8 +837,7 @@ _sections_unfolded = [ "Offset", "Transform" ]
 [node name="Head" type="Sprite" parent="Body" index="7"]
 
 editor/display_folded = true
-position = Vector2( 0.527039, 26.2008 )
-rotation = -0.33849
+position = Vector2( -0.267395, -3.24353 )
 texture = ExtResource( 10 )
 offset = Vector2( 0.775544, 22.1445 )
 
@@ -749,7 +858,7 @@ offset = Vector2( 38.1721, -47.94 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
 
 root_node = NodePath("..")
-autoplay = ""
+autoplay = "Idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
