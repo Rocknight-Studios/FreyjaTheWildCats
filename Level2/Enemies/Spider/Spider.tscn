@@ -1,12 +1,15 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://Level2/Enemies/Spider/Body.png" type="Texture" id=1]
-[ext_resource path="res://Level2/Enemies/Spider/Bottom.png" type="Texture" id=2]
-[ext_resource path="res://Level2/Enemies/Spider/Eyes.png" type="Texture" id=3]
-[ext_resource path="res://Level2/Enemies/Spider/LegTop.png" type="Texture" id=4]
-[ext_resource path="res://Level2/Enemies/Spider/LegMiddle.png" type="Texture" id=5]
-[ext_resource path="res://Level2/Enemies/Spider/LegBottom.png" type="Texture" id=6]
-[ext_resource path="res://Level2/Enemies/Spider/Fangs.png" type="Texture" id=7]
+[ext_resource path="res://Level1/Enemies/EnemyBehaviour.gd" type="Script" id=1]
+[ext_resource path="res://Level2/Enemies/Spider/Body.png" type="Texture" id=2]
+[ext_resource path="res://Level2/Enemies/Spider/Bottom.png" type="Texture" id=3]
+[ext_resource path="res://Level2/Enemies/Spider/Eyes.png" type="Texture" id=4]
+[ext_resource path="res://Level2/Enemies/Spider/LegTop.png" type="Texture" id=5]
+[ext_resource path="res://Level2/Enemies/Spider/LegMiddle.png" type="Texture" id=6]
+[ext_resource path="res://Level2/Enemies/Spider/LegBottom.png" type="Texture" id=7]
+[ext_resource path="res://Level2/Enemies/Spider/Fangs.png" type="Texture" id=8]
+[ext_resource path="res://Level1/Enemies/DeathSoulParticles.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Level1/Enemies/DeathParticles.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Animation" id=1]
 
@@ -15,7 +18,7 @@ length = 1.5
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Body/FangLeft:rotation_degrees")
+tracks/0/path = NodePath("Body/BodySprite/FangLeft:rotation_degrees")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -27,7 +30,7 @@ tracks/0/keys = {
 "values": [ 1.44154, -32.5929, 1.44154, 1.44154 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Body/FangRight:rotation_degrees")
+tracks/1/path = NodePath("Body/BodySprite/FangRight:rotation_degrees")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -39,7 +42,7 @@ tracks/1/keys = {
 "values": [ -1.58201, 34.8582, -1.58201, -1.58201 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body:position")
+tracks/2/path = NodePath("Body/BodySprite:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -51,7 +54,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, -81.2248 ), Vector2( 0, -91.2248 ), Vector2( 0, -81.2248 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Body/LegTop:rotation_degrees")
+tracks/3/path = NodePath("Body/BodySprite/LegTop:rotation_degrees")
 tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -63,7 +66,7 @@ tracks/3/keys = {
 "values": [ -89.2595, -75.9566, -135.904, -135.904, -131.892 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body/LegTop2:rotation_degrees")
+tracks/4/path = NodePath("Body/BodySprite/LegTop2:rotation_degrees")
 tracks/4/interp = 2
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -75,7 +78,7 @@ tracks/4/keys = {
 "values": [ -71.7248, -40.2628, -93.6883, -93.6883, -106.167 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body/LegTop7:rotation_degrees")
+tracks/5/path = NodePath("Body/BodySprite/LegTop7:rotation_degrees")
 tracks/5/interp = 2
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -87,7 +90,7 @@ tracks/5/keys = {
 "values": [ -247.687, -275.078, -248.871, -248.871, -215.293 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Body/LegTop3:rotation_degrees")
+tracks/6/path = NodePath("Body/BodySprite/LegTop3:rotation_degrees")
 tracks/6/interp = 2
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -99,7 +102,7 @@ tracks/6/keys = {
 "values": [ -50.8284, -18.9346, -56.4873, -56.4873, -86.0734 ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Body/LegTop8:rotation_degrees")
+tracks/7/path = NodePath("Body/BodySprite/LegTop8:rotation_degrees")
 tracks/7/interp = 2
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -111,7 +114,7 @@ tracks/7/keys = {
 "values": [ -261.289, -289.037, -266.789, -266.789, -223.213 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Body/LegTop4:rotation_degrees")
+tracks/8/path = NodePath("Body/BodySprite/LegTop4:rotation_degrees")
 tracks/8/interp = 2
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -123,7 +126,7 @@ tracks/8/keys = {
 "values": [ -26.6506, -3.79984, -14.3551, -14.3551, -77.6648 ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Body/LegTop6:rotation_degrees")
+tracks/9/path = NodePath("Body/BodySprite/LegTop6:rotation_degrees")
 tracks/9/interp = 2
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -135,7 +138,7 @@ tracks/9/keys = {
 "values": [ -230.8, -259.977, -214.914, -214.914, -200.488 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Body/LegTop5:rotation_degrees")
+tracks/10/path = NodePath("Body/BodySprite/LegTop5:rotation_degrees")
 tracks/10/interp = 2
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -147,7 +150,7 @@ tracks/10/keys = {
 "values": [ -211.515, -217.127, -165.216, -165.216, -159.542 ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Body/LegTop/LegMiddle:rotation_degrees")
+tracks/11/path = NodePath("Body/BodySprite/LegTop/LegMiddle:rotation_degrees")
 tracks/11/interp = 2
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -159,7 +162,7 @@ tracks/11/keys = {
 "values": [ 0.0, 32.2322, -5.48369, -5.48369, -41.0873 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Body/LegTop5/LegMiddle:rotation_degrees")
+tracks/12/path = NodePath("Body/BodySprite/LegTop5/LegMiddle:rotation_degrees")
 tracks/12/interp = 2
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -171,7 +174,7 @@ tracks/12/keys = {
 "values": [ 0.0, -44.7554, 0.766057, 0.766057, 46.131 ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Body/LegTop3/LegMiddle:rotation_degrees")
+tracks/13/path = NodePath("Body/BodySprite/LegTop3/LegMiddle:rotation_degrees")
 tracks/13/interp = 2
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -183,7 +186,7 @@ tracks/13/keys = {
 "values": [ 0.0, 16.097, -19.3856, -19.3856, -32.624 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Body/LegTop7/LegMiddle:rotation_degrees")
+tracks/14/path = NodePath("Body/BodySprite/LegTop7/LegMiddle:rotation_degrees")
 tracks/14/interp = 2
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -195,7 +198,7 @@ tracks/14/keys = {
 "values": [ 0.0, -11.7265, 17.8836, 17.8836, 38.0716 ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Body/LegTop8/LegMiddle:rotation_degrees")
+tracks/15/path = NodePath("Body/BodySprite/LegTop8/LegMiddle:rotation_degrees")
 tracks/15/interp = 2
 tracks/15/loop_wrap = true
 tracks/15/imported = false
@@ -207,7 +210,7 @@ tracks/15/keys = {
 "values": [ 0.0, -25.2408, 10.0188, 10.0188, 27.0668 ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Body/LegTop2/LegMiddle:rotation_degrees")
+tracks/16/path = NodePath("Body/BodySprite/LegTop2/LegMiddle:rotation_degrees")
 tracks/16/interp = 2
 tracks/16/loop_wrap = true
 tracks/16/imported = false
@@ -219,7 +222,7 @@ tracks/16/keys = {
 "values": [ 0.0, 15.2794, -25.2086, -25.2086, -42.9394 ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Body/LegTop4/LegMiddle:rotation_degrees")
+tracks/17/path = NodePath("Body/BodySprite/LegTop4/LegMiddle:rotation_degrees")
 tracks/17/interp = 2
 tracks/17/loop_wrap = true
 tracks/17/imported = false
@@ -231,7 +234,7 @@ tracks/17/keys = {
 "values": [ 0.0, 32.1169, -26.1503, -26.1503, -36.2938 ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Body/LegTop6/LegMiddle:rotation_degrees")
+tracks/18/path = NodePath("Body/BodySprite/LegTop6/LegMiddle:rotation_degrees")
 tracks/18/interp = 2
 tracks/18/loop_wrap = true
 tracks/18/imported = false
@@ -243,7 +246,7 @@ tracks/18/keys = {
 "values": [ 0.0, -11.284, 35.2802, 35.2802, 30.0891 ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Body/Bottom:rotation_degrees")
+tracks/19/path = NodePath("Body/BodySprite/Bottom:rotation_degrees")
 tracks/19/interp = 2
 tracks/19/loop_wrap = true
 tracks/19/imported = false
@@ -255,7 +258,7 @@ tracks/19/keys = {
 "values": [ 0.0, 13.6287, -9.05376, 13.6287, -9.05376, 13.6287, -9.05376 ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Body:rotation_degrees")
+tracks/20/path = NodePath("Body/BodySprite:rotation_degrees")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/imported = false
@@ -266,6 +269,102 @@ tracks/20/keys = {
 "update": 0,
 "values": [ 0.0, -5.10671, 9.04369, -5.10671, 9.04369, -5.10671, 9.04369 ]
 }
+tracks/21/type = "value"
+tracks/21/path = NodePath("Body/BodySprite/LegTop6/LegMiddle/LegBottom:rotation_degrees")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -49.1902 ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Body/BodySprite/LegTop/LegMiddle/LegBottom:rotation_degrees")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -2.02954 ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Body/BodySprite/LegTop5/LegMiddle/LegBottom:rotation_degrees")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -75.183 ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("Body/BodySprite/LegTop2/LegMiddle/LegBottom:rotation_degrees")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -6.56164 ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("Body/BodySprite/LegTop3/LegMiddle/LegBottom:rotation_degrees")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -10.392 ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("Body/BodySprite/LegTop7/LegMiddle/LegBottom:rotation_degrees")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -66.5975 ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("Body/BodySprite/LegTop4/LegMiddle/LegBottom:rotation_degrees")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -18.2265 ]
+}
+tracks/28/type = "value"
+tracks/28/path = NodePath("Body/BodySprite/LegTop8/LegMiddle/LegBottom:rotation_degrees")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -83.7985 ]
+}
 
 [sub_resource type="Animation" id=2]
 
@@ -274,7 +373,7 @@ length = 1.5
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Body/FangLeft:rotation_degrees")
+tracks/0/path = NodePath("Body/BodySprite/FangLeft:rotation_degrees")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -286,7 +385,7 @@ tracks/0/keys = {
 "values": [ 1.44154, -3.73965, 1.44154, 1.44154 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Body/FangRight:rotation_degrees")
+tracks/1/path = NodePath("Body/BodySprite/FangRight:rotation_degrees")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -298,7 +397,7 @@ tracks/1/keys = {
 "values": [ -1.58201, 13.6006, -1.58201, -1.58201 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body:position")
+tracks/2/path = NodePath("Body/BodySprite:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -310,7 +409,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Body/LegTop:rotation_degrees")
+tracks/3/path = NodePath("Body/BodySprite/LegTop:rotation_degrees")
 tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -322,7 +421,7 @@ tracks/3/keys = {
 "values": [ -89.2595, -84.1848, -97.0177 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body/LegTop2:rotation_degrees")
+tracks/4/path = NodePath("Body/BodySprite/LegTop2:rotation_degrees")
 tracks/4/interp = 2
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -334,7 +433,7 @@ tracks/4/keys = {
 "values": [ -71.7248, -66.0667, -75.2998 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body/LegTop7:rotation_degrees")
+tracks/5/path = NodePath("Body/BodySprite/LegTop7:rotation_degrees")
 tracks/5/interp = 2
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -346,7 +445,7 @@ tracks/5/keys = {
 "values": [ -247.687, -239.819, -253.904 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Body/LegTop3:rotation_degrees")
+tracks/6/path = NodePath("Body/BodySprite/LegTop3:rotation_degrees")
 tracks/6/interp = 2
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -358,7 +457,7 @@ tracks/6/keys = {
 "values": [ -50.8284, -44.4631, -59.0871 ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Body/LegTop8:rotation_degrees")
+tracks/7/path = NodePath("Body/BodySprite/LegTop8:rotation_degrees")
 tracks/7/interp = 2
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -370,7 +469,7 @@ tracks/7/keys = {
 "values": [ -261.289, -254.348, -268.034 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Body/LegTop4:rotation_degrees")
+tracks/8/path = NodePath("Body/BodySprite/LegTop4:rotation_degrees")
 tracks/8/interp = 2
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -382,7 +481,7 @@ tracks/8/keys = {
 "values": [ -26.6506, -22.9477, -34.8165 ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Body/LegTop6:rotation_degrees")
+tracks/9/path = NodePath("Body/BodySprite/LegTop6:rotation_degrees")
 tracks/9/interp = 2
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -394,7 +493,7 @@ tracks/9/keys = {
 "values": [ -230.8, -222.498, -231.201 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Body/LegTop5:rotation_degrees")
+tracks/10/path = NodePath("Body/BodySprite/LegTop5:rotation_degrees")
 tracks/10/interp = 2
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -406,7 +505,7 @@ tracks/10/keys = {
 "values": [ -211.515, -202.553, -213.821 ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Body/LegTop/LegMiddle:rotation_degrees")
+tracks/11/path = NodePath("Body/BodySprite/LegTop/LegMiddle:rotation_degrees")
 tracks/11/interp = 2
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -418,7 +517,7 @@ tracks/11/keys = {
 "values": [ 5.43392, 5.66801, 4.46571 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Body/LegTop5/LegMiddle:rotation_degrees")
+tracks/12/path = NodePath("Body/BodySprite/LegTop5/LegMiddle:rotation_degrees")
 tracks/12/interp = 2
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -430,7 +529,7 @@ tracks/12/keys = {
 "values": [ 0.0, -4.19364, -8.41644 ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Body/LegTop3/LegMiddle:rotation_degrees")
+tracks/13/path = NodePath("Body/BodySprite/LegTop3/LegMiddle:rotation_degrees")
 tracks/13/interp = 2
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -442,7 +541,7 @@ tracks/13/keys = {
 "values": [ 0.0 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Body/LegTop7/LegMiddle:rotation_degrees")
+tracks/14/path = NodePath("Body/BodySprite/LegTop7/LegMiddle:rotation_degrees")
 tracks/14/interp = 2
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -454,7 +553,7 @@ tracks/14/keys = {
 "values": [ 0.0, -2.23745, -0.96659 ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Body/LegTop8/LegMiddle:rotation_degrees")
+tracks/15/path = NodePath("Body/BodySprite/LegTop8/LegMiddle:rotation_degrees")
 tracks/15/interp = 2
 tracks/15/loop_wrap = true
 tracks/15/imported = false
@@ -466,7 +565,7 @@ tracks/15/keys = {
 "values": [ 0.0 ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Body/LegTop2/LegMiddle:rotation_degrees")
+tracks/16/path = NodePath("Body/BodySprite/LegTop2/LegMiddle:rotation_degrees")
 tracks/16/interp = 2
 tracks/16/loop_wrap = true
 tracks/16/imported = false
@@ -478,7 +577,7 @@ tracks/16/keys = {
 "values": [ 0.0, 1.74848, -6.48124 ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Body/LegTop4/LegMiddle:rotation_degrees")
+tracks/17/path = NodePath("Body/BodySprite/LegTop4/LegMiddle:rotation_degrees")
 tracks/17/interp = 2
 tracks/17/loop_wrap = true
 tracks/17/imported = false
@@ -490,7 +589,7 @@ tracks/17/keys = {
 "values": [ 0.0, 2.6337, -0.490242 ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Body/LegTop6/LegMiddle:rotation_degrees")
+tracks/18/path = NodePath("Body/BodySprite/LegTop6/LegMiddle:rotation_degrees")
 tracks/18/interp = 2
 tracks/18/loop_wrap = true
 tracks/18/imported = false
@@ -502,7 +601,7 @@ tracks/18/keys = {
 "values": [ 0.0, -3.38811, -10.3252 ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Body/Bottom:rotation_degrees")
+tracks/19/path = NodePath("Body/BodySprite/Bottom:rotation_degrees")
 tracks/19/interp = 2
 tracks/19/loop_wrap = true
 tracks/19/imported = false
@@ -514,7 +613,7 @@ tracks/19/keys = {
 "values": [ 0.0, 13.6287, -9.05376, 13.6287, -9.05376 ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Body:rotation_degrees")
+tracks/20/path = NodePath("Body/BodySprite:rotation_degrees")
 tracks/20/interp = 2
 tracks/20/loop_wrap = true
 tracks/20/imported = false
@@ -525,6 +624,102 @@ tracks/20/keys = {
 "update": 0,
 "values": [ 0.0, -3.99977, 4.4678 ]
 }
+tracks/21/type = "value"
+tracks/21/path = NodePath("Body/BodySprite/LegTop6/LegMiddle/LegBottom:rotation_degrees")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -49.1902 ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Body/BodySprite/LegTop/LegMiddle/LegBottom:rotation_degrees")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -2.02954 ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Body/BodySprite/LegTop5/LegMiddle/LegBottom:rotation_degrees")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -75.183 ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("Body/BodySprite/LegTop2/LegMiddle/LegBottom:rotation_degrees")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -6.56164 ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("Body/BodySprite/LegTop3/LegMiddle/LegBottom:rotation_degrees")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -10.392 ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("Body/BodySprite/LegTop7/LegMiddle/LegBottom:rotation_degrees")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -66.5975 ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("Body/BodySprite/LegTop4/LegMiddle/LegBottom:rotation_degrees")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -18.2265 ]
+}
+tracks/28/type = "value"
+tracks/28/path = NodePath("Body/BodySprite/LegTop8/LegMiddle/LegBottom:rotation_degrees")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -83.7985 ]
+}
 
 [sub_resource type="Animation" id=3]
 
@@ -533,7 +728,7 @@ length = 1.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Body/FangLeft:rotation_degrees")
+tracks/0/path = NodePath("Body/BodySprite/FangLeft:rotation_degrees")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -545,7 +740,7 @@ tracks/0/keys = {
 "values": [ 1.44154, -1.83342, 1.44154, 1.44154 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Body/FangRight:rotation_degrees")
+tracks/1/path = NodePath("Body/BodySprite/FangRight:rotation_degrees")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -557,7 +752,7 @@ tracks/1/keys = {
 "values": [ -1.58201, 8.17899, -1.58201, -1.58201 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body:position")
+tracks/2/path = NodePath("Body/BodySprite:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -569,7 +764,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Body/LegTop:rotation_degrees")
+tracks/3/path = NodePath("Body/BodySprite/LegTop:rotation_degrees")
 tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -581,7 +776,7 @@ tracks/3/keys = {
 "values": [ -96.2975, -63.8815 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body/LegTop2:rotation_degrees")
+tracks/4/path = NodePath("Body/BodySprite/LegTop2:rotation_degrees")
 tracks/4/interp = 2
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -593,7 +788,7 @@ tracks/4/keys = {
 "values": [ -59.7891, -67.9866 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body/LegTop7:rotation_degrees")
+tracks/5/path = NodePath("Body/BodySprite/LegTop7:rotation_degrees")
 tracks/5/interp = 2
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -605,7 +800,7 @@ tracks/5/keys = {
 "values": [ -259.359, -225.932 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Body/LegTop3:rotation_degrees")
+tracks/6/path = NodePath("Body/BodySprite/LegTop3:rotation_degrees")
 tracks/6/interp = 2
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -617,7 +812,7 @@ tracks/6/keys = {
 "values": [ -67.2646, -38.1562 ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Body/LegTop8:rotation_degrees")
+tracks/7/path = NodePath("Body/BodySprite/LegTop8:rotation_degrees")
 tracks/7/interp = 2
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -629,7 +824,7 @@ tracks/7/keys = {
 "values": [ -252.397, -300.244 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Body/LegTop4:rotation_degrees")
+tracks/8/path = NodePath("Body/BodySprite/LegTop4:rotation_degrees")
 tracks/8/interp = 2
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -641,7 +836,7 @@ tracks/8/keys = {
 "values": [ -10.6028, -37.4828 ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Body/LegTop6:rotation_degrees")
+tracks/9/path = NodePath("Body/BodySprite/LegTop6:rotation_degrees")
 tracks/9/interp = 2
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -653,7 +848,7 @@ tracks/9/keys = {
 "values": [ -198.312, -227.275 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Body/LegTop5:rotation_degrees")
+tracks/10/path = NodePath("Body/BodySprite/LegTop5:rotation_degrees")
 tracks/10/interp = 2
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -665,7 +860,7 @@ tracks/10/keys = {
 "values": [ -198.261, -190.436 ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Body/LegTop/LegMiddle:rotation_degrees")
+tracks/11/path = NodePath("Body/BodySprite/LegTop/LegMiddle:rotation_degrees")
 tracks/11/interp = 2
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -677,7 +872,7 @@ tracks/11/keys = {
 "values": [ -41.3143, -46.6578, -3.43852 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Body/LegTop5/LegMiddle:rotation_degrees")
+tracks/12/path = NodePath("Body/BodySprite/LegTop5/LegMiddle:rotation_degrees")
 tracks/12/interp = 2
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -689,7 +884,7 @@ tracks/12/keys = {
 "values": [ -11.3335, 17.6784, 35.4459 ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Body/LegTop3/LegMiddle:rotation_degrees")
+tracks/13/path = NodePath("Body/BodySprite/LegTop3/LegMiddle:rotation_degrees")
 tracks/13/interp = 2
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -701,7 +896,7 @@ tracks/13/keys = {
 "values": [ 20.6974, -9.34469, 11.2762 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Body/LegTop7/LegMiddle:rotation_degrees")
+tracks/14/path = NodePath("Body/BodySprite/LegTop7/LegMiddle:rotation_degrees")
 tracks/14/interp = 2
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -713,7 +908,7 @@ tracks/14/keys = {
 "values": [ 11.5443, 2.13061, -6.59041 ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Body/LegTop8/LegMiddle:rotation_degrees")
+tracks/15/path = NodePath("Body/BodySprite/LegTop8/LegMiddle:rotation_degrees")
 tracks/15/interp = 2
 tracks/15/loop_wrap = true
 tracks/15/imported = false
@@ -725,7 +920,7 @@ tracks/15/keys = {
 "values": [ 0.0, -6.08265, 21.2387 ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Body/LegTop2/LegMiddle:rotation_degrees")
+tracks/16/path = NodePath("Body/BodySprite/LegTop2/LegMiddle:rotation_degrees")
 tracks/16/interp = 2
 tracks/16/loop_wrap = true
 tracks/16/imported = false
@@ -737,7 +932,7 @@ tracks/16/keys = {
 "values": [ -0.36762, 13.9308, -33.3678 ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Body/LegTop4/LegMiddle:rotation_degrees")
+tracks/17/path = NodePath("Body/BodySprite/LegTop4/LegMiddle:rotation_degrees")
 tracks/17/interp = 2
 tracks/17/loop_wrap = true
 tracks/17/imported = false
@@ -749,7 +944,7 @@ tracks/17/keys = {
 "values": [ -9.98579, 21.406, -14.7722 ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Body/LegTop6/LegMiddle:rotation_degrees")
+tracks/18/path = NodePath("Body/BodySprite/LegTop6/LegMiddle:rotation_degrees")
 tracks/18/interp = 2
 tracks/18/loop_wrap = true
 tracks/18/imported = false
@@ -761,7 +956,7 @@ tracks/18/keys = {
 "values": [ -17.6702, -5.88984 ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Body/Bottom:rotation_degrees")
+tracks/19/path = NodePath("Body/BodySprite/Bottom:rotation_degrees")
 tracks/19/interp = 2
 tracks/19/loop_wrap = true
 tracks/19/imported = false
@@ -773,7 +968,7 @@ tracks/19/keys = {
 "values": [ 0.0, 13.6287, -9.05376 ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Body:rotation_degrees")
+tracks/20/path = NodePath("Body/BodySprite:rotation_degrees")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/imported = false
@@ -785,7 +980,7 @@ tracks/20/keys = {
 "values": [ 0.0 ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Body/LegTop/LegMiddle/LegBottom:rotation_degrees")
+tracks/21/path = NodePath("Body/BodySprite/LegTop/LegMiddle/LegBottom:rotation_degrees")
 tracks/21/interp = 2
 tracks/21/loop_wrap = true
 tracks/21/imported = false
@@ -797,7 +992,7 @@ tracks/21/keys = {
 "values": [ 21.0362, 4.91551, -6.7519 ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Body/LegTop5/LegMiddle/LegBottom:rotation_degrees")
+tracks/22/path = NodePath("Body/BodySprite/LegTop5/LegMiddle/LegBottom:rotation_degrees")
 tracks/22/interp = 2
 tracks/22/loop_wrap = true
 tracks/22/imported = false
@@ -809,7 +1004,7 @@ tracks/22/keys = {
 "values": [ -48.0999, -100.613 ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Body/LegTop2/LegMiddle/LegBottom:rotation_degrees")
+tracks/23/path = NodePath("Body/BodySprite/LegTop2/LegMiddle/LegBottom:rotation_degrees")
 tracks/23/interp = 2
 tracks/23/loop_wrap = true
 tracks/23/imported = false
@@ -821,7 +1016,7 @@ tracks/23/keys = {
 "values": [ -10.0292, 1.11711, -6.65062 ]
 }
 tracks/24/type = "value"
-tracks/24/path = NodePath("Body/LegTop6/LegMiddle/LegBottom:rotation_degrees")
+tracks/24/path = NodePath("Body/BodySprite/LegTop6/LegMiddle/LegBottom:rotation_degrees")
 tracks/24/interp = 2
 tracks/24/loop_wrap = true
 tracks/24/imported = false
@@ -833,7 +1028,7 @@ tracks/24/keys = {
 "values": [ -33.1851, -57.2155 ]
 }
 tracks/25/type = "value"
-tracks/25/path = NodePath("Body/LegTop7/LegMiddle/LegBottom:rotation_degrees")
+tracks/25/path = NodePath("Body/BodySprite/LegTop7/LegMiddle/LegBottom:rotation_degrees")
 tracks/25/interp = 2
 tracks/25/loop_wrap = true
 tracks/25/imported = false
@@ -845,7 +1040,7 @@ tracks/25/keys = {
 "values": [ -77.275, -43.9719, -61.784 ]
 }
 tracks/26/type = "value"
-tracks/26/path = NodePath("Body/LegTop3/LegMiddle/LegBottom:rotation_degrees")
+tracks/26/path = NodePath("Body/BodySprite/LegTop3/LegMiddle/LegBottom:rotation_degrees")
 tracks/26/interp = 2
 tracks/26/loop_wrap = true
 tracks/26/imported = false
@@ -857,7 +1052,7 @@ tracks/26/keys = {
 "values": [ -39.4163, -8.63747, -10.4104 ]
 }
 tracks/27/type = "value"
-tracks/27/path = NodePath("Body/LegTop4/LegMiddle/LegBottom:rotation_degrees")
+tracks/27/path = NodePath("Body/BodySprite/LegTop4/LegMiddle/LegBottom:rotation_degrees")
 tracks/27/interp = 2
 tracks/27/loop_wrap = true
 tracks/27/imported = false
@@ -869,7 +1064,7 @@ tracks/27/keys = {
 "values": [ 9.79413, 9.04002, -18.5337 ]
 }
 tracks/28/type = "value"
-tracks/28/path = NodePath("Body/LegTop8/LegMiddle/LegBottom:rotation_degrees")
+tracks/28/path = NodePath("Body/BodySprite/LegTop8/LegMiddle/LegBottom:rotation_degrees")
 tracks/28/interp = 2
 tracks/28/loop_wrap = true
 tracks/28/imported = false
@@ -881,295 +1076,326 @@ tracks/28/keys = {
 "values": [ -69.8595, -19.9859, -80.5906 ]
 }
 
-[node name="Spider" type="Node2D" index="0"]
+[sub_resource type="CapsuleShape2D" id=4]
 
-[node name="Body" type="Sprite" parent="." index="0"]
+custom_solver_bias = 0.0
+radius = 90.0018
+height = 113.109
 
-texture = ExtResource( 1 )
+[node name="Spider" type="Node2D"]
 
-[node name="Bottom" type="Sprite" parent="Body" index="0"]
+script = ExtResource( 1 )
+total_health = 10
+fade_out_speed = 5.0
+projectile_template = null
+attack_animation_speed = 0.25
+idle_animation_speed = 1.0
+animation_blend_speed = 1.0
+projectile_type = "ice_giant_projectile_offsets"
+enemy_launches_projectiles = false
+archer_projectile_offsets = null
+
+[node name="Body" type="Node2D" parent="." index="0"]
+
+editor/display_folded = true
+rotation = 3.14159
+_sections_unfolded = [ "Transform" ]
+
+[node name="BodySprite" type="Sprite" parent="Body" index="0"]
+
+editor/display_folded = true
+position = Vector2( 0, -90.9533 )
+rotation = -0.0824231
+texture = ExtResource( 2 )
+
+[node name="Bottom" type="Sprite" parent="Body/BodySprite" index="0"]
 
 position = Vector2( -0.295654, 64.7563 )
-rotation = 0.163017
-texture = ExtResource( 2 )
+rotation = 0.237006
+texture = ExtResource( 3 )
 offset = Vector2( 0.295654, 61.2933 )
 
-[node name="Eyes" type="Node2D" parent="Body" index="1"]
+[node name="Eyes" type="Node2D" parent="Body/BodySprite" index="1"]
 
 editor/display_folded = true
 
-[node name="Eye" type="Sprite" parent="Body/Eyes" index="0"]
+[node name="Eye" type="Sprite" parent="Body/BodySprite/Eyes" index="0"]
 
 position = Vector2( -19.3018, -46.2873 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
-[node name="Eye2" type="Sprite" parent="Body/Eyes" index="1"]
+[node name="Eye2" type="Sprite" parent="Body/BodySprite/Eyes" index="1"]
 
 position = Vector2( 20.0365, -45.5738 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
-[node name="Eye3" type="Sprite" parent="Body/Eyes" index="2"]
+[node name="Eye3" type="Sprite" parent="Body/BodySprite/Eyes" index="2"]
 
 position = Vector2( 43.3434, -23.6938 )
 scale = Vector2( 0.75, 0.75 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
-[node name="Eye4" type="Sprite" parent="Body/Eyes" index="3"]
+[node name="Eye4" type="Sprite" parent="Body/BodySprite/Eyes" index="3"]
 
 position = Vector2( -44.1767, -23.6938 )
 scale = Vector2( 0.75, 0.75 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
-[node name="Eye5" type="Sprite" parent="Body/Eyes" index="4"]
+[node name="Eye5" type="Sprite" parent="Body/BodySprite/Eyes" index="4"]
 
 position = Vector2( -54.981, 1.07706 )
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
-[node name="Eye6" type="Sprite" parent="Body/Eyes" index="5"]
+[node name="Eye6" type="Sprite" parent="Body/BodySprite/Eyes" index="5"]
 
 position = Vector2( 54.1478, 1.07706 )
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
-[node name="LegTop" type="Sprite" parent="Body" index="2"]
+[node name="LegTop" type="Sprite" parent="Body/BodySprite" index="2"]
 
+editor/display_folded = true
 show_behind_parent = true
 position = Vector2( 57.7941, -33.6275 )
-rotation = -1.18912
-texture = ExtResource( 4 )
+rotation = -2.44965
+texture = ExtResource( 5 )
 offset = Vector2( 4.18909, 7.83376 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="LegMiddle" type="Sprite" parent="Body/LegTop" index="0"]
+[node name="LegMiddle" type="Sprite" parent="Body/BodySprite/LegTop" index="0"]
 
 show_behind_parent = true
 position = Vector2( 12.6408, 21.5695 )
-rotation = -0.847501
-texture = ExtResource( 5 )
+rotation = -0.126142
+texture = ExtResource( 6 )
 offset = Vector2( 9.04763, 14.9214 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="LegBottom" type="Sprite" parent="Body/LegTop/LegMiddle" index="0"]
+[node name="LegBottom" type="Sprite" parent="Body/BodySprite/LegTop/LegMiddle" index="0"]
 
 show_behind_parent = true
 position = Vector2( 19.9602, 32.0006 )
-rotation = -0.00395207
-texture = ExtResource( 6 )
+rotation = -0.0354222
+texture = ExtResource( 7 )
 offset = Vector2( 5.63214, 27.2802 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="LegTop5" type="Sprite" parent="Body" index="3"]
+[node name="LegTop5" type="Sprite" parent="Body/BodySprite" index="3"]
 
+editor/display_folded = true
 show_behind_parent = true
 position = Vector2( -61.7402, -25.8665 )
-rotation = -3.34164
-texture = ExtResource( 4 )
+rotation = -2.82072
+texture = ExtResource( 5 )
 offset = Vector2( 4.18909, 7.83376 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="LegMiddle" type="Sprite" parent="Body/LegTop5" index="0"]
+[node name="LegMiddle" type="Sprite" parent="Body/BodySprite/LegTop5" index="0"]
 
 show_behind_parent = true
 position = Vector2( 12.6408, 21.5695 )
-rotation = 0.450932
-texture = ExtResource( 5 )
+rotation = 0.0489454
+texture = ExtResource( 6 )
 offset = Vector2( 9.04763, 14.9214 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="LegBottom" type="Sprite" parent="Body/LegTop5/LegMiddle" index="0"]
+[node name="LegBottom" type="Sprite" parent="Body/BodySprite/LegTop5/LegMiddle" index="0"]
 
 show_behind_parent = true
 position = Vector2( 20.0151, 33.6914 )
-rotation = -1.75514
-texture = ExtResource( 6 )
+rotation = -1.31219
+texture = ExtResource( 7 )
 offset = Vector2( -3.19697, 26.141 )
 flip_h = true
 _sections_unfolded = [ "Visibility" ]
 
-[node name="LegTop2" type="Sprite" parent="Body" index="4"]
+[node name="LegTop2" type="Sprite" parent="Body/BodySprite" index="4"]
 
+editor/display_folded = true
 show_behind_parent = true
 position = Vector2( 64.2339, -9.3101 )
-rotation = -1.16783
-texture = ExtResource( 4 )
+rotation = -1.69666
+texture = ExtResource( 5 )
 offset = Vector2( 4.18909, 7.83376 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="LegMiddle" type="Sprite" parent="Body/LegTop2" index="0"]
+[node name="LegMiddle" type="Sprite" parent="Body/BodySprite/LegTop2" index="0"]
 
 show_behind_parent = true
 position = Vector2( 12.6408, 21.5695 )
-rotation = 0.230776
-texture = ExtResource( 5 )
+rotation = -0.482551
+texture = ExtResource( 6 )
 offset = Vector2( 9.04763, 14.9214 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="LegBottom" type="Sprite" parent="Body/LegTop2/LegMiddle" index="0"]
+[node name="LegBottom" type="Sprite" parent="Body/BodySprite/LegTop2/LegMiddle" index="0"]
 
 show_behind_parent = true
 position = Vector2( 19.9602, 32.0006 )
-rotation = 0.0200543
-texture = ExtResource( 6 )
+rotation = -0.114522
+texture = ExtResource( 7 )
 offset = Vector2( 5.63214, 27.2802 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="LegTop6" type="Sprite" parent="Body" index="5"]
+[node name="LegTop6" type="Sprite" parent="Body/BodySprite" index="5"]
 
+editor/display_folded = true
 show_behind_parent = true
 position = Vector2( -65.5673, -2.08947 )
-rotation = -3.90042
-texture = ExtResource( 4 )
+rotation = -3.70099
+texture = ExtResource( 5 )
 offset = Vector2( 4.18909, 7.83376 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="LegMiddle" type="Sprite" parent="Body/LegTop6" index="0"]
+[node name="LegMiddle" type="Sprite" parent="Body/BodySprite/LegTop6" index="0"]
 
 show_behind_parent = true
 position = Vector2( 12.6408, 21.5695 )
-rotation = -0.129752
-texture = ExtResource( 5 )
+rotation = 0.677093
+texture = ExtResource( 6 )
 offset = Vector2( 9.04763, 14.9214 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="LegBottom" type="Sprite" parent="Body/LegTop6/LegMiddle" index="0"]
+[node name="LegBottom" type="Sprite" parent="Body/BodySprite/LegTop6/LegMiddle" index="0"]
 
 show_behind_parent = true
 position = Vector2( 21.7382, 31.5313 )
-rotation = -0.943613
-texture = ExtResource( 6 )
+rotation = -0.858531
+texture = ExtResource( 7 )
 offset = Vector2( -7.17646, 27.5875 )
 flip_h = true
 _sections_unfolded = [ "Visibility" ]
 
-[node name="LegTop3" type="Sprite" parent="Body" index="6"]
+[node name="LegTop3" type="Sprite" parent="Body/BodySprite" index="6"]
 
+editor/display_folded = true
 show_behind_parent = true
 position = Vector2( 65.3443, 13.0208 )
-rotation = -0.732555
-texture = ExtResource( 4 )
+rotation = -1.01903
+texture = ExtResource( 5 )
 offset = Vector2( 4.18909, 7.83376 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="LegMiddle" type="Sprite" parent="Body/LegTop3" index="0"]
+[node name="LegMiddle" type="Sprite" parent="Body/BodySprite/LegTop3" index="0"]
 
 show_behind_parent = true
 position = Vector2( 12.6408, 21.5695 )
-rotation = -0.117359
-texture = ExtResource( 5 )
+rotation = -0.376769
+texture = ExtResource( 6 )
 offset = Vector2( 9.04763, 14.9214 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="LegBottom" type="Sprite" parent="Body/LegTop3/LegMiddle" index="0"]
+[node name="LegBottom" type="Sprite" parent="Body/BodySprite/LegTop3/LegMiddle" index="0"]
 
 show_behind_parent = true
 position = Vector2( 19.9602, 32.0006 )
-rotation = -0.11905
-texture = ExtResource( 6 )
+rotation = -0.181375
+texture = ExtResource( 7 )
 offset = Vector2( 5.63214, 27.2802 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="LegTop7" type="Sprite" parent="Body" index="7"]
+[node name="LegTop7" type="Sprite" parent="Body/BodySprite" index="7"]
 
 editor/display_folded = true
 show_behind_parent = true
 position = Vector2( -66.0779, 21.8626 )
-rotation = -4.01974
-texture = ExtResource( 4 )
+rotation = -4.32675
+texture = ExtResource( 5 )
 offset = Vector2( 4.18909, 7.83376 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="LegMiddle" type="Sprite" parent="Body/LegTop7" index="0"]
+[node name="LegMiddle" type="Sprite" parent="Body/BodySprite/LegTop7" index="0"]
 
 show_behind_parent = true
 position = Vector2( 12.6408, 21.5695 )
-rotation = 0.0313629
-texture = ExtResource( 5 )
+rotation = 0.339775
+texture = ExtResource( 6 )
 offset = Vector2( 9.04763, 14.9214 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="LegBottom" type="Sprite" parent="Body/LegTop7/LegMiddle" index="0"]
+[node name="LegBottom" type="Sprite" parent="Body/BodySprite/LegTop7/LegMiddle" index="0"]
 
 show_behind_parent = true
 position = Vector2( 20.0999, 31.5113 )
-rotation = -0.83023
-texture = ExtResource( 6 )
+rotation = -1.16235
+texture = ExtResource( 7 )
 offset = Vector2( -7.24506, 28.3959 )
 flip_h = true
 _sections_unfolded = [ "Visibility" ]
 
-[node name="LegTop4" type="Sprite" parent="Body" index="8"]
+[node name="LegTop4" type="Sprite" parent="Body/BodySprite" index="8"]
 
 editor/display_folded = true
 show_behind_parent = true
 position = Vector2( 63.8405, 37.5726 )
-rotation = -0.592693
-texture = ExtResource( 4 )
+rotation = -0.233268
+texture = ExtResource( 5 )
 offset = Vector2( 4.18909, 7.83376 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="LegMiddle" type="Sprite" parent="Body/LegTop4" index="0"]
+[node name="LegMiddle" type="Sprite" parent="Body/BodySprite/LegTop4" index="0"]
 
 show_behind_parent = true
 position = Vector2( 12.6408, 21.5695 )
-rotation = 0.370165
-texture = ExtResource( 5 )
+rotation = -0.525117
+texture = ExtResource( 6 )
 offset = Vector2( 9.04763, 14.9214 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="LegBottom" type="Sprite" parent="Body/LegTop4/LegMiddle" index="0"]
+[node name="LegBottom" type="Sprite" parent="Body/BodySprite/LegTop4/LegMiddle" index="0"]
 
 show_behind_parent = true
 position = Vector2( 19.9602, 32.0006 )
-rotation = 0.147898
-texture = ExtResource( 6 )
+rotation = -0.318113
+texture = ExtResource( 7 )
 offset = Vector2( 5.63214, 27.2802 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="LegTop8" type="Sprite" parent="Body" index="9"]
+[node name="LegTop8" type="Sprite" parent="Body/BodySprite" index="9"]
 
 editor/display_folded = true
 show_behind_parent = true
 position = Vector2( -60.5571, 46.9547 )
-rotation = -5.13077
-texture = ExtResource( 4 )
+rotation = -4.64931
+texture = ExtResource( 5 )
 offset = Vector2( 4.18909, 7.83376 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="LegMiddle" type="Sprite" parent="Body/LegTop8" index="0"]
+[node name="LegMiddle" type="Sprite" parent="Body/BodySprite/LegTop8" index="0"]
 
 show_behind_parent = true
 position = Vector2( 12.6408, 21.5695 )
-rotation = 0.158784
-texture = ExtResource( 5 )
+rotation = 0.211164
+texture = ExtResource( 6 )
 offset = Vector2( 9.04763, 14.9214 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="LegBottom" type="Sprite" parent="Body/LegTop8/LegMiddle" index="0"]
+[node name="LegBottom" type="Sprite" parent="Body/BodySprite/LegTop8/LegMiddle" index="0"]
 
 show_behind_parent = true
 position = Vector2( 20.9834, 29.5475 )
-rotation = -0.643724
-texture = ExtResource( 6 )
+rotation = -1.46256
+texture = ExtResource( 7 )
 offset = Vector2( -6.9495, 30.0955 )
 flip_h = true
 _sections_unfolded = [ "Visibility" ]
 
-[node name="FangRight" type="Sprite" parent="Body" index="10"]
+[node name="FangRight" type="Sprite" parent="Body/BodySprite" index="10"]
 
 show_behind_parent = true
 position = Vector2( 25.8809, -32.0872 )
-rotation = 0.0553826
-texture = ExtResource( 7 )
+rotation = -0.0180582
+texture = ExtResource( 8 )
 offset = Vector2( -5.41209, -34.6025 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="FangLeft" type="Sprite" parent="Body" index="11"]
+[node name="FangLeft" type="Sprite" parent="Body/BodySprite" index="11"]
 
 show_behind_parent = true
 position = Vector2( -17.0471, -32.5438 )
-rotation = -0.00268606
-texture = ExtResource( 7 )
+rotation = 0.0162371
+texture = ExtResource( 8 )
 offset = Vector2( -5.41209, -34.6025 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
@@ -1177,7 +1403,7 @@ _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
 
 root_node = NodePath("..")
-autoplay = "Running"
+autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
@@ -1185,5 +1411,74 @@ anims/Attack = SubResource( 1 )
 anims/Idle = SubResource( 2 )
 anims/Running = SubResource( 3 )
 blend_times = [  ]
+
+[node name="AnimationTreePlayer" type="AnimationTreePlayer" parent="." index="2"]
+
+playback_process_mode = 1
+master_player = NodePath("../AnimationPlayer")
+base_path = NodePath("..")
+active = false
+data = {
+"active": false,
+"connections": [ "blend2", "out", 0, "anim", "blend2", 0, "anim 2", "blend2", 1 ],
+"master": NodePath("../AnimationPlayer"),
+"nodes": [ {
+"filter": [  ],
+"from": "Idle",
+"id": "anim",
+"position": Vector2( 68, 100 ),
+"type": "animation"
+}, {
+"id": "out",
+"position": Vector2( 416, 146 ),
+"type": "output"
+}, {
+"filter": [  ],
+"from": "Attack",
+"id": "anim 2",
+"position": Vector2( 68, 210 ),
+"type": "animation"
+}, {
+"blend": 1.0,
+"filter": [  ],
+"id": "blend2",
+"position": Vector2( 272, 146 ),
+"type": "blend2"
+} ]
+}
+
+[node name="EnemyCollider" type="StaticBody2D" parent="." index="3"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 32
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision", "Transform", "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyCollider" index="0"]
+
+position = Vector2( 1, 44.2279 )
+shape = SubResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="DeathSoulParticles" parent="." index="4" instance=ExtResource( 9 )]
+
+[node name="DeathParticles" parent="." index="5" instance=ExtResource( 10 )]
+
+self_modulate = Color( 0.204437, 0.546023, 0.679688, 1 )
+scale = Vector2( 15, 7 )
+
+[node name="DeathTimer" type="Timer" parent="." index="6"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
 
 

@@ -543,7 +543,7 @@ custom_solver_bias = 0.0
 radius = 138.0
 height = 388.0
 
-[node name="IceGiant" type="Node2D"]
+[node name="IceGiant" type="Node2D" index="0"]
 
 position = Vector2( 0, 1 )
 scale = Vector2( 0.5, 0.5 )
@@ -567,7 +567,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="FootRight" type="Sprite" parent="Body" index="0"]
 
-position = Vector2( -126.531, 181.091 )
+position = Vector2( -131.799, 163.852 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
 flip_h = true
@@ -575,7 +575,7 @@ _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="FootLeft" type="Sprite" parent="Body" index="1"]
 
-position = Vector2( 115.479, 167.448 )
+position = Vector2( 112.568, 184.877 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Offset", "Transform" ]
@@ -583,7 +583,7 @@ _sections_unfolded = [ "Offset", "Transform" ]
 [node name="LegRight" type="Sprite" parent="Body" index="2"]
 
 position = Vector2( -81.0368, 86.1981 )
-rotation = -0.092189
+rotation = 0.226347
 scale = Vector2( 2, 2 )
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Offset", "Transform" ]
@@ -591,7 +591,7 @@ _sections_unfolded = [ "Offset", "Transform" ]
 [node name="LegLeft" type="Sprite" parent="Body" index="3"]
 
 position = Vector2( 76.0001, 88.0031 )
-rotation = -0.213333
+rotation = 0.0474976
 scale = Vector2( 2, 2 )
 texture = ExtResource( 4 )
 flip_h = true
@@ -600,15 +600,15 @@ _sections_unfolded = [ "Transform" ]
 [node name="Skirt" type="Sprite" parent="Body" index="4"]
 
 position = Vector2( 9.47215, 59.4041 )
-rotation = -0.318265
+rotation = 0.257841
 scale = Vector2( 2, 2 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Material", "Offset", "Transform", "Visibility" ]
 
 [node name="Torso" type="Sprite" parent="Body" index="5"]
 
-position = Vector2( -2.50937, -6.38995 )
-rotation = -0.221471
+position = Vector2( -0.361375, -1.00274 )
+rotation = 0.308623
 scale = Vector2( 2, 2 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
@@ -625,7 +625,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 show_behind_parent = true
 position = Vector2( -57.893, 8.35507 )
-rotation = 0.331839
+rotation = 1.35924
 texture = ExtResource( 8 )
 offset = Vector2( -29.2367, 19.3366 )
 flip_h = true
@@ -635,7 +635,7 @@ _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 show_behind_parent = true
 position = Vector2( -40.4452, 50.361 )
-rotation = -0.0533669
+rotation = 0.761432
 texture = ExtResource( 9 )
 offset = Vector2( 40, 70 )
 flip_h = true
@@ -650,7 +650,7 @@ _sections_unfolded = [ "Transform" ]
 
 show_behind_parent = true
 position = Vector2( 60.1403, 0.719908 )
-rotation = -1.86777
+rotation = -0.291716
 texture = ExtResource( 8 )
 offset = Vector2( 19.6807, 11.7514 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
@@ -659,7 +659,7 @@ _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 show_behind_parent = true
 position = Vector2( 36.8144, 37.3547 )
-rotation = -1.30105
+rotation = -0.0332797
 texture = ExtResource( 9 )
 offset = Vector2( -48.0672, 69.7605 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]

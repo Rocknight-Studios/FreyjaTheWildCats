@@ -476,6 +476,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Torso" type="Sprite" parent="Body" index="3"]
 
+editor/display_folded = true
 rotation = 0.706729
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
