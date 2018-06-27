@@ -1,8 +1,10 @@
 extends CanvasLayer
 
 var visual_debugger_is_active = false # To switch between enabled and disabled.
-onready var debugger_camera = $"Camera2D" # For speed and convenience.
+onready var debugger_camera = $"DebuggerCamera2D" # For speed and convenience.
 onready var camera_movement_speed_slider = $"CameraMovementSpeedSlider" # For speed and convenience.
+onready var scene_node_selector = $"SceneNodeSelector" # For speed and convenience.
+onready var mouse_is_over_visual_debugger_gui = false # To know, when it is allowed to perform scene node detection.
 
 func _ready():
 	set_gui_visibility(false)
@@ -13,10 +15,17 @@ func set_gui_visibility(state):
 	$"StepButton".visible = state
 	$"RunButton".visible = state
 	camera_movement_speed_slider.visible = state
+	$"SelectionInfo".visible = state
 	$"CameraMovementSpeedLabel".visible = state
 	$"CameraJumpPositionX".visible = state
 	$"CameraJumpPositionY".visible = state
 	$"CameraJumpPositionButton".visible = state
+	$"VisualDebuggerBackground".visible = state
+	$"CurrentNodeInfo".visible = state
+	$"WatchesList".visible = state
+	$"ShowNodeInfoButton".visible = state
+	$"JumpToNodeButton".visible = state
+	scene_node_selector.visible = state
 
 func manage_camera_movement(speed):
 	var direction = Vector2() # The direction of the current movement step.
