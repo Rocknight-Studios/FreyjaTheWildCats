@@ -234,7 +234,6 @@ _sections_unfolded = [ "Size Flags", "custom_constants" ]
 
 [node name="Center" type="VBoxContainer" parent="CanvasLayer/MenuContainer/Menu" index="1"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -254,7 +253,6 @@ _sections_unfolded = [ "Margin", "Size Flags", "custom_constants" ]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MenuContainer/Menu/Center" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -375,7 +373,6 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="Start" type="Label" parent="CanvasLayer/MenuContainer/Menu/Right" index="1"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -421,7 +418,6 @@ _sections_unfolded = [ "Anchor", "Rect", "Size Flags", "Visibility" ]
 
 [node name="Options" type="Label" parent="CanvasLayer/MenuContainer/Menu/Right" index="2"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
