@@ -25,6 +25,7 @@ _sections_unfolded = [ "Pause" ]
 
 [node name="Camera2D" type="Camera2D" parent="." index="0"]
 
+editor/display_folded = true
 anchor_mode = 0
 rotating = false
 current = true

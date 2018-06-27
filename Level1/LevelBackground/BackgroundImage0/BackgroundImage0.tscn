@@ -15,6 +15,7 @@ height = 33.2553
 position = Vector2( 960, 540 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
+enemy_optimization_distance = 3000.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
 

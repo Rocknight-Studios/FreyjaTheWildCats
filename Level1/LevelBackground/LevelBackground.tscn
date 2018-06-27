@@ -67,18 +67,14 @@ block_optimization_distance = 2000.0
 [node name="BackgroundImage0" parent="." index="0" instance=ExtResource( 2 )]
 
 _sections_unfolded = [ "Transform" ]
-enemy_optimization_distance = 3000.0
 
 [node name="BackgroundImage1" parent="." index="1" instance=ExtResource( 3 )]
 
 [node name="BackgroundImage2" parent="." index="2" instance=ExtResource( 4 )]
 
-enemy_optimization_distance = 3000.0
-
 [node name="BackgroundImage3" parent="." index="3" instance=ExtResource( 5 )]
 
 _sections_unfolded = [ "Transform" ]
-enemy_optimization_distance = 3000.0
 
 [node name="BackgroundImage4" parent="." index="4" instance=ExtResource( 6 )]
 
@@ -117,8 +113,6 @@ enemy_optimization_distance = 3000.0
 enemy_optimization_distance = 3000.0
 
 [node name="BackgroundImage12" parent="." index="12" instance=ExtResource( 14 )]
-
-enemy_optimization_distance = 3000.0
 
 [node name="BackgroundImage13" parent="." index="13" instance=ExtResource( 15 )]
 

@@ -16,11 +16,12 @@ custom_solver_bias = 0.0
 radius = 74.5603
 height = 205.224
 
-[node name="BackgroundImage2" type="Sprite" index="0"]
+[node name="BackgroundImage2" type="Sprite"]
 
 position = Vector2( 960, -1620 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
+enemy_optimization_distance = 3000.0
 
 [node name="LeftCliff" type="StaticBody2D" parent="." index="0"]
 

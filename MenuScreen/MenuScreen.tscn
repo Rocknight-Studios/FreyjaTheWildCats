@@ -166,11 +166,10 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Color", "Emission Shape", "Gravity", "Initial Velocity", "Radial Accel", "Scale", "Spread", "Trail" ]
 
-[node name="MenuScreen" type="Node" index="0"]
+[node name="MenuScreen" type="Node"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -540,7 +539,6 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer" index="1"]
 
-editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -563,7 +561,7 @@ _sections_unfolded = [ "Motion" ]
 
 [node name="Background" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer" index="0"]
 
-position = Vector2( 956.802, 543.954 )
+position = Vector2( 956.802, 546.005 )
 scale = Vector2( 1.1, 1.1 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]

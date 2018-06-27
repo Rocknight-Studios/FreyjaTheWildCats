@@ -1,16 +1,20 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://Level2/Enemies/ForestGiant/Foot.png" type="Texture" id=1]
-[ext_resource path="res://Level2/Enemies/ForestGiant/Leg.png" type="Texture" id=2]
-[ext_resource path="res://Level2/Enemies/WizardTroll/Skirt.png" type="Texture" id=3]
-[ext_resource path="res://Level2/Enemies/WizardTroll/Torso.png" type="Texture" id=4]
-[ext_resource path="res://Level2/Enemies/WizardTroll/Shoulder.png" type="Texture" id=5]
-[ext_resource path="res://Level2/Enemies/WizardTroll/UpperArm.png" type="Texture" id=6]
-[ext_resource path="res://Level2/Enemies/WizardTroll/Hand.png" type="Texture" id=7]
-[ext_resource path="res://Level2/Enemies/WizardTroll/Bracelet.png" type="Texture" id=8]
-[ext_resource path="res://Level2/Enemies/WizardTroll/Fur.png" type="Texture" id=9]
-[ext_resource path="res://Level2/Enemies/WizardTroll/Head.png" type="Texture" id=10]
-[ext_resource path="res://Level2/Enemies/WizardTroll/Antlers.png" type="Texture" id=11]
+[ext_resource path="res://Level1/Enemies/EnemyBehaviour.gd" type="Script" id=1]
+[ext_resource path="res://Level2/Enemies/ForestGiant/Foot.png" type="Texture" id=2]
+[ext_resource path="res://Level2/Enemies/ForestGiant/Leg.png" type="Texture" id=3]
+[ext_resource path="res://Level2/Enemies/WizardTroll/Skirt.png" type="Texture" id=4]
+[ext_resource path="res://Level2/Enemies/WizardTroll/Torso.png" type="Texture" id=5]
+[ext_resource path="res://Level2/Enemies/WizardTroll/Shoulder.png" type="Texture" id=6]
+[ext_resource path="res://Level2/Enemies/WizardTroll/UpperArm.png" type="Texture" id=7]
+[ext_resource path="res://Level2/Enemies/WizardTroll/Hand.png" type="Texture" id=8]
+[ext_resource path="res://Level2/Enemies/WizardTroll/Bracelet.png" type="Texture" id=9]
+[ext_resource path="res://Level2/Enemies/WizardTroll/Staff.png" type="Texture" id=10]
+[ext_resource path="res://Level2/Enemies/WizardTroll/Fur.png" type="Texture" id=11]
+[ext_resource path="res://Level2/Enemies/WizardTroll/Head.png" type="Texture" id=12]
+[ext_resource path="res://Level2/Enemies/WizardTroll/Antlers.png" type="Texture" id=13]
+[ext_resource path="res://Level1/Enemies/DeathParticles.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Level1/Enemies/DeathSoulParticles.tscn" type="PackedScene" id=15]
 
 [sub_resource type="Animation" id=1]
 
@@ -222,6 +226,42 @@ tracks/16/keys = {
 "update": 0,
 "values": [ 0.0, -8.23227 ]
 }
+tracks/17/type = "value"
+tracks/17/path = NodePath("Body/Skirt/Skirt:rotation_degrees")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 28.2174 ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Body/Skirt/Skirt3:rotation_degrees")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -57.687 ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Body/Head:rotation_degrees")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -4.42772 ]
+}
 
 [sub_resource type="Animation" id=2]
 
@@ -251,7 +291,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.2, 1.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ -12.6565, 42.3354, -59.9988 ]
+"values": [ 72.7883, 42.3354, -59.9988 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Body/Torso/ShoulderLeft:rotation_degrees")
@@ -263,7 +303,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.2, 1.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 9.95883, -38.7401, 61.4885 ]
+"values": [ 17.3918, -38.7401, 61.4885 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Body/LegLeft:rotation_degrees")
@@ -311,7 +351,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0, 0.3, 0.7, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ -29.9793, -40.7711, -61.7286, -29.9793 ]
+"values": [ -57.687, -40.7711, -61.7286, -29.9793 ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("Body/Skirt/Skirt:rotation_degrees")
@@ -323,7 +363,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0, 0.3, 0.7, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 34.4179, 41.6905, 22.5592, 34.4179 ]
+"values": [ 28.2174, 41.6905, 22.5592, 34.4179 ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("Body/Head:rotation_degrees")
@@ -431,7 +471,7 @@ tracks/16/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ -54.0299, -30.7553 ]
+"values": [ -61.4362, -57.8376 ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Body/Head:position")
@@ -444,6 +484,30 @@ tracks/17/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -0.267395, -3.24353 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Body/Torso/ShoulderRight:rotation_degrees")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 41.3908 ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Body/Torso/ShoulderLeft/UpperArm:rotation_degrees")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2.35817 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -471,10 +535,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1.3, 4 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 1.3, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 9.95883, -57.5117 ]
+"values": [ 9.95883, -84.4416, -72.6626 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Body/Torso/ShoulderRight:rotation_degrees")
@@ -498,7 +562,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 1.3, 4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ -41.8487, 33.148 ]
+"values": [ -41.8487, 59.5264 ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("Body/Torso/ShoulderRight/UpperArm:rotation_degrees")
@@ -536,17 +600,192 @@ tracks/6/keys = {
 "update": 0,
 "values": [ -54.0299, -89.4658, -19.2048 ]
 }
+tracks/7/type = "value"
+tracks/7/path = NodePath("Body/Head:position")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1.6, 3, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -0.267395, -3.24353 ), Vector2( -5.67096, 4.32149 ), Vector2( -0.267395, -3.24353 ), Vector2( 8.9187, 11.3462 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Body/Head:rotation_degrees")
+tracks/8/interp = 2
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 1.6, 3, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 8.16043, 0.0, -14.0973 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Body/Fur:rotation_degrees")
+tracks/9/interp = 2
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 2, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -5.05397, 5.39119, -7.97899 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Body/Fur/Fur4:rotation_degrees")
+tracks/10/interp = 2
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 2, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 181.271, 168.235, 189.685 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Body/Fur/Fur3:rotation_degrees")
+tracks/11/interp = 2
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 111.65, 94.5458 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Body/Fur/Fur2:rotation_degrees")
+tracks/12/interp = 2
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 79.1989, 64.1063 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Body/Skirt:rotation_degrees")
+tracks/13/interp = 2
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 2, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -0.0242988, -5.33964 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Body/LegLeft:rotation_degrees")
+tracks/14/interp = 2
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 1.6, 4.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 6.04549, -19.1825 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Body/LegRight:rotation_degrees")
+tracks/15/interp = 2
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 1.6, 4.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 6.64551, -18.0299 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Body/FootRight:rotation_degrees")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 11.1767 ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Body/FootLeft:rotation_degrees")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -10.8316 ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Body/Skirt/Skirt:rotation_degrees")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 28.2174 ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Body/Skirt/Skirt3:rotation_degrees")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -57.687 ]
+}
+
+[sub_resource type="CapsuleShape2D" id=4]
+
+custom_solver_bias = 0.0
+radius = 70.4481
+height = 20.0
 
 [node name="WizardTroll" type="Node2D" index="0"]
 
+script = ExtResource( 1 )
+total_health = 10
+fade_out_speed = 5.0
+projectile_template = null
+attack_animation_speed = 0.25
+idle_animation_speed = 1.0
+animation_blend_speed = 1.0
+projectile_type = "ice_giant_projectile_offsets"
+enemy_launches_projectiles = false
+archer_projectile_offsets = null
+
 [node name="Body" type="Node2D" parent="." index="0"]
+
+editor/display_folded = true
 
 [node name="FootRight" type="Sprite" parent="Body" index="0"]
 
 position = Vector2( -31.9678, 51.9275 )
-rotation = 0.154979
+rotation = 0.19507
 scale = Vector2( 0.6, 0.6 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 offset = Vector2( 8.64595, 22.7698 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform" ]
@@ -554,27 +793,27 @@ _sections_unfolded = [ "Offset", "Transform" ]
 [node name="FootLeft" type="Sprite" parent="Body" index="1"]
 
 position = Vector2( 20.4367, 46.9938 )
-rotation = -0.34713
+rotation = -0.189047
 scale = Vector2( 0.6, 0.6 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 offset = Vector2( 11.3405, 28.3445 )
 _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="LegLeft" type="Sprite" parent="Body" index="2"]
 
 position = Vector2( 21.2311, 33.0913 )
-rotation = -0.141904
+rotation = -0.307019
 scale = Vector2( 0.6, 0.6 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 offset = Vector2( 21.2708, 21.7243 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="LegRight" type="Sprite" parent="Body" index="3"]
 
 position = Vector2( -12.5321, 33.0913 )
-rotation = -0.175228
+rotation = -0.28751
 scale = Vector2( 0.6, 0.6 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 offset = Vector2( -28.381, 25.0344 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform" ]
@@ -582,54 +821,55 @@ _sections_unfolded = [ "Offset", "Transform" ]
 [node name="Skirt" type="Node2D" parent="Body" index="4"]
 
 editor/display_folded = true
-rotation = -0.132407
+rotation = -0.0924301
 
 [node name="Skirt2" type="Sprite" parent="Body/Skirt" index="0"]
 
 position = Vector2( -18.8922, 4.06553 )
 rotation = 1.52588
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 offset = Vector2( -0.105209, 25.4989 )
 
 [node name="Skirt4" type="Sprite" parent="Body/Skirt" index="1"]
 
 position = Vector2( 18.3903, 4.7825 )
 rotation = -1.56435
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 offset = Vector2( -0.105209, 25.4989 )
 
 [node name="Skirt3" type="Sprite" parent="Body/Skirt" index="2"]
 
 position = Vector2( 31.6543, 9.44283 )
-rotation = -0.565548
-texture = ExtResource( 3 )
+rotation = -1.00683
+texture = ExtResource( 4 )
 offset = Vector2( -0.105209, 25.4989 )
 
 [node name="Skirt" type="Sprite" parent="Body/Skirt" index="3"]
 
 position = Vector2( -27.1374, 9.08434 )
-rotation = 0.650746
-texture = ExtResource( 3 )
+rotation = 0.492487
+texture = ExtResource( 4 )
 offset = Vector2( -0.105209, 25.4989 )
 
 [node name="Torso" type="Sprite" parent="Body" index="5"]
 
-texture = ExtResource( 4 )
+editor/display_folded = true
+texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="ShoulderLeft" type="Sprite" parent="Body/Torso" index="0"]
 
 position = Vector2( 50.8854, 8.44227 )
-rotation = 0.0988877
-texture = ExtResource( 5 )
+rotation = -1.54858
+texture = ExtResource( 6 )
 offset = Vector2( 3.8864, -1.45978 )
 
 [node name="UpperArm" type="Sprite" parent="Body/Torso/ShoulderLeft" index="0"]
 
 show_behind_parent = true
 position = Vector2( 15.0453, 3.69814 )
-rotation = -0.647114
-texture = ExtResource( 6 )
+rotation = 1.01769
+texture = ExtResource( 7 )
 offset = Vector2( 8.98833, 13.2374 )
 _sections_unfolded = [ "Offset", "Visibility" ]
 
@@ -637,23 +877,23 @@ _sections_unfolded = [ "Offset", "Visibility" ]
 
 show_behind_parent = true
 position = Vector2( 16.2713, 31.4143 )
-rotation = -0.191555
-texture = ExtResource( 7 )
+rotation = 0.106721
+texture = ExtResource( 8 )
 offset = Vector2( 8.98833, 13.2374 )
 _sections_unfolded = [ "Offset", "Visibility" ]
 
 [node name="Bracelet" type="Sprite" parent="Body/Torso/ShoulderLeft/UpperArm/Hand" index="0"]
 
 position = Vector2( -5.57624, -12.819 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 offset = Vector2( 8.98833, 13.2374 )
 _sections_unfolded = [ "Offset", "Visibility" ]
 
 [node name="ShoulderRight" type="Sprite" parent="Body/Torso" index="1"]
 
 position = Vector2( -39.7557, 4.98578 )
-rotation = 0.732042
-texture = ExtResource( 5 )
+rotation = 0.792656
+texture = ExtResource( 6 )
 offset = Vector2( -11.4358, 4.85861 )
 flip_h = true
 _sections_unfolded = [ "Offset" ]
@@ -662,8 +902,8 @@ _sections_unfolded = [ "Offset" ]
 
 show_behind_parent = true
 position = Vector2( -21.9259, 13.9688 )
-rotation = 0.943535
-texture = ExtResource( 6 )
+rotation = 0.880672
+texture = ExtResource( 7 )
 offset = Vector2( 8.98833, 13.2374 )
 _sections_unfolded = [ "Offset", "Visibility" ]
 
@@ -671,8 +911,8 @@ _sections_unfolded = [ "Offset", "Visibility" ]
 
 show_behind_parent = true
 position = Vector2( 19.2963, 27.3316 )
-rotation = -1.23094
-texture = ExtResource( 7 )
+rotation = -0.615976
+texture = ExtResource( 8 )
 offset = Vector2( -5.7713, 17.2202 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Visibility" ]
@@ -681,34 +921,43 @@ _sections_unfolded = [ "Offset", "Visibility" ]
 
 position = Vector2( -4.91619, -13.2521 )
 rotation = 0.371557
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 offset = Vector2( 8.98833, 13.2374 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Visibility" ]
 
+[node name="Staff" type="Sprite" parent="Body/Torso/ShoulderRight/UpperArm/Hand" index="1"]
+
+show_behind_parent = true
+position = Vector2( -8.67429, 28.9691 )
+rotation = 2.96471
+texture = ExtResource( 10 )
+offset = Vector2( 7.11891, -4.31143 )
+_sections_unfolded = [ "Visibility" ]
+
 [node name="Fur" type="Sprite" parent="Body" index="6"]
 
 position = Vector2( 0.578247, 2.29012 )
-rotation = -0.118912
-texture = ExtResource( 9 )
+rotation = -0.146589
+texture = ExtResource( 11 )
 offset = Vector2( 0.610886, -37.2507 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Fur4" type="Sprite" parent="Body/Fur" index="0"]
 
 position = Vector2( -0.728882, 0.570587 )
-rotation = 2.95385
+rotation = 3.31756
 scale = Vector2( 0.5, 1 )
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 offset = Vector2( 0.610886, -37.2507 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Fur2" type="Sprite" parent="Body/Fur" index="1"]
 
 position = Vector2( 5.94978, 17.7858 )
-rotation = 1.05969
+rotation = 1.12723
 scale = Vector2( 0.6, 0.6 )
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 offset = Vector2( 0.610886, -37.2507 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform" ]
@@ -716,9 +965,9 @@ _sections_unfolded = [ "Offset", "Transform" ]
 [node name="Fur3" type="Sprite" parent="Body/Fur" index="2"]
 
 position = Vector2( -6.51965, 15.596 )
-rotation = 1.91435
+rotation = 1.8232
 scale = Vector2( 0.6, 0.6 )
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 offset = Vector2( -0.202671, 36.7944 )
 flip_h = true
 flip_v = true
@@ -726,16 +975,15 @@ _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="Head" type="Sprite" parent="Body" index="7"]
 
-editor/display_folded = true
-position = Vector2( 0.527039, 26.2008 )
-rotation = -0.33849
-texture = ExtResource( 10 )
+position = Vector2( 7.68214, 9.14388 )
+rotation = -0.21289
+texture = ExtResource( 12 )
 offset = Vector2( 0.775544, 22.1445 )
 
 [node name="AntlerRight" type="Sprite" parent="Body/Head" index="0"]
 
 position = Vector2( -14.9689, -2.09887 )
-texture = ExtResource( 11 )
+texture = ExtResource( 13 )
 offset = Vector2( -37.9199, -47.9165 )
 flip_h = true
 _sections_unfolded = [ "Offset" ]
@@ -743,13 +991,13 @@ _sections_unfolded = [ "Offset" ]
 [node name="AntlerLeft" type="Sprite" parent="Body/Head" index="1"]
 
 position = Vector2( 16.099, -1.78337 )
-texture = ExtResource( 11 )
+texture = ExtResource( 13 )
 offset = Vector2( 38.1721, -47.94 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
 
 root_node = NodePath("..")
-autoplay = ""
+autoplay = "Idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
@@ -757,5 +1005,73 @@ anims/Attack = SubResource( 1 )
 anims/Attack2 = SubResource( 2 )
 anims/Idle = SubResource( 3 )
 blend_times = [  ]
+
+[node name="AnimationTreePlayer" type="AnimationTreePlayer" parent="." index="2"]
+
+playback_process_mode = 1
+master_player = NodePath("../AnimationPlayer")
+base_path = NodePath("..")
+active = true
+data = {
+"active": true,
+"connections": [ "blend2", "out", 0, "anim", "blend2", 0, "anim 2", "blend2", 1 ],
+"master": NodePath("../AnimationPlayer"),
+"nodes": [ {
+"filter": [  ],
+"from": "Attack2",
+"id": "anim",
+"position": Vector2( 109, 74 ),
+"type": "animation"
+}, {
+"id": "out",
+"position": Vector2( 461, 126 ),
+"type": "output"
+}, {
+"blend": 1.0,
+"filter": [  ],
+"id": "blend2",
+"position": Vector2( 298, 113 ),
+"type": "blend2"
+}, {
+"filter": [  ],
+"from": "Idle",
+"id": "anim 2",
+"position": Vector2( 107, 207 ),
+"type": "animation"
+} ]
+}
+
+[node name="DeathTimer" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="DeathParticles" parent="." index="4" instance=ExtResource( 14 )]
+
+scale = Vector2( 10, 5 )
+
+[node name="DeathSoulParticles" parent="." index="5" instance=ExtResource( 15 )]
+
+[node name="EnemyCollider" type="StaticBody2D" parent="." index="6"]
+
+editor/display_folded = true
+visible = false
+position = Vector2( 2.16144, 17.2915 )
+input_pickable = false
+collision_layer = 32
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyCollider" index="0"]
+
+shape = SubResource( 4 )
+
+[connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
 
 

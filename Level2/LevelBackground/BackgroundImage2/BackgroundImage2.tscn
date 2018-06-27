@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage2/ForestLevel2.png" type="Texture" id=1]
+[ext_resource path="res://Level2/EnvironmentObjects/Bush-BackgroundImage2Left.png" type="Texture" id=2]
+[ext_resource path="res://Level2/EnvironmentObjects/Bush-BackgroundImage2Right.png" type="Texture" id=3]
+
+
+
+[node name="BackgroundImage2" type="Sprite" index="0"]
+
+position = Vector2( 960, -1620 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -965.192, 222.444, -566.47, -77.3707, -467.562, -265.914, -671.56, -497.729, -557.197, -547.184, -959.011, -544.093 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 966.749, 129.718, 744.206, 49.3552, 354.756, -194.824, 289.848, -414.276, 311.484, -537.911, 963.658, -547.183 )
+
+[node name="Bush-BackgroundImage2Left" type="Sprite" parent="." index="2"]
+
+position = Vector2( -695.088, 537.587 )
+texture = ExtResource( 2 )
+
+[node name="Bush-BackgroundImage2Right" type="Sprite" parent="." index="3"]
+
+position = Vector2( 760.917, 507.721 )
+texture = ExtResource( 3 )
+
+

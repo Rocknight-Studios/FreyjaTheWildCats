@@ -40,7 +40,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Gravity", "Initial Velocity" ]
 
-[node name="DeathParticles" type="Particles2D" index="0"]
+[node name="DeathParticles" type="Particles2D"]
 
 self_modulate = Color( 0.835938, 0, 0, 1 )
 scale = Vector2( 20, 10 )
