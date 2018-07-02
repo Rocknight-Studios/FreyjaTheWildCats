@@ -42,6 +42,8 @@ func manage_selection():
 			var current_root = Global.camera.get_tree().get_root()
 			get_all_nodes(current_root)
 
+		selection_info.text = selection_info.text.substr(1, selection_info.text.length() - 1)
+
 func determine_whether_this_node_is_under_mouse(node):
 	var manage_this_node = false # For convenience.
 	for i in range(node_types_to_detect.size()):
@@ -53,7 +55,7 @@ func determine_whether_this_node_is_under_mouse(node):
 		if (relative_mouse_position).distance_to(node.get_global_transform().origin) < selection_radius * visual_debugger.debugger_camera.zoom_scale:
 			full_node_path = ""
 			reversed_node_path = []
-			selection_info.text += node.name + "\n"
+			selection_info.text += "\n" + node.name
 			get_reversed_node_path(node)
 			for i in range(reversed_node_path.size() - 1, -1, -1):
 				full_node_path += "/" + reversed_node_path[i]

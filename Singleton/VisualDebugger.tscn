@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Singleton/VisualDebugger.gd" type="Script" id=1]
 [ext_resource path="res://Singleton/VisualDebuggerBackground.gd" type="Script" id=2]
@@ -8,8 +8,9 @@
 [ext_resource path="res://Singleton/CameraMovementSpeedSlider.gd" type="Script" id=6]
 [ext_resource path="res://Singleton/SceneNodeSelector.gd" type="Script" id=7]
 [ext_resource path="res://Singleton/ShowNodeInfoButton.gd" type="Script" id=8]
-[ext_resource path="res://Singleton/JumpToNodeButton.gd" type="Script" id=9]
-[ext_resource path="res://Singleton/JumpToSelectedNodeButton.gd" type="Script" id=10]
+[ext_resource path="res://Singleton/WarningLine.gd" type="Script" id=9]
+[ext_resource path="res://Singleton/JumpToNodeButton.gd" type="Script" id=10]
+[ext_resource path="res://Singleton/JumpToSelectedNodeButton.gd" type="Script" id=11]
 
 [node name="VisualDebugger" type="CanvasLayer" index="0"]
 
@@ -46,10 +47,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 10.0
-margin_top = 50.0
-margin_right = 164.0
-margin_bottom = 93.0
+margin_left = 16.0
+margin_top = 111.0
+margin_right = 170.0
+margin_bottom = 154.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -73,10 +74,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 201.0
-margin_top = 50.0
-margin_right = 355.0
-margin_bottom = 93.0
+margin_left = 207.0
+margin_top = 111.0
+margin_right = 361.0
+margin_bottom = 154.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -152,10 +153,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 8.0
-margin_top = 120.0
-margin_right = 360.0
-margin_bottom = 136.0
+margin_left = 14.0
+margin_top = 181.0
+margin_right = 366.0
+margin_bottom = 197.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -182,10 +183,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 11.0
-margin_top = 102.0
-margin_right = 123.0
-margin_bottom = 116.0
+margin_left = 17.0
+margin_top = 163.0
+margin_right = 129.0
+margin_bottom = 177.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -203,10 +204,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 164.0
-margin_top = 156.0
-margin_right = 241.0
-margin_bottom = 176.0
+margin_left = 170.0
+margin_top = 217.0
+margin_right = 247.0
+margin_bottom = 237.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -228,10 +229,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 14.0
-margin_top = 154.0
-margin_right = 79.0
-margin_bottom = 178.0
+margin_left = 20.0
+margin_top = 215.0
+margin_right = 85.0
+margin_bottom = 239.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_neighbour_right = NodePath("../CameraJumpPositionY")
@@ -256,10 +257,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 91.0
-margin_top = 154.0
-margin_right = 156.0
-margin_bottom = 178.0
+margin_left = 97.0
+margin_top = 215.0
+margin_right = 162.0
+margin_bottom = 239.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_neighbour_left = NodePath("../CameraJumpPositionX")
@@ -286,7 +287,25 @@ node_types_to_detect = [ "Node2D", "StaticBody2D" ]
 selection_color = Color( 0, 0.1, 0, 0.1 )
 reversed_node_path = [  ]
 
-[node name="ListOfNodesTitle" type="Label" parent="." index="12"]
+[node name="NodeSelectionBackground" type="ColorRect" parent="." index="12"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 12.0
+margin_top = 392.0
+margin_right = 377.0
+margin_bottom = 683.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.0731964, 0.0847458, 0.160156, 1 )
+
+[node name="ListOfNodesTitle" type="Label" parent="." index="13"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -307,7 +326,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="SelectionInfo" type="TextEdit" parent="." index="13"]
+[node name="SelectionInfo" type="TextEdit" parent="." index="14"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -316,7 +335,7 @@ anchor_bottom = 0.0
 margin_left = 19.0
 margin_top = 428.0
 margin_right = 371.0
-margin_bottom = 674.0
+margin_bottom = 548.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -342,7 +361,63 @@ caret_blink_speed = 0.65
 caret_moving_by_right_click = true
 _sections_unfolded = [ "Mouse" ]
 
-[node name="WatchesTitle2" type="Label" parent="." index="14"]
+[node name="SelectionInfo2" type="TextEdit" parent="." index="15"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 19.0
+margin_top = 580.0
+margin_right = 371.0
+margin_bottom = 672.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+text = ""
+readonly = true
+highlight_current_line = true
+syntax_highlighting = false
+show_line_numbers = true
+highlight_all_occurrences = false
+override_selected_font_color = false
+context_menu_enabled = true
+smooth_scrolling = true
+v_scroll_speed = 80.0
+hiding_enabled = 0
+wrap_lines = false
+caret_block_mode = false
+caret_blink = false
+caret_blink_speed = 0.65
+caret_moving_by_right_click = true
+_sections_unfolded = [ "Mouse" ]
+
+[node name="ListOfNodesTypesToDetectTitle" type="Label" parent="." index="16"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_top = 560.0
+margin_right = 319.0
+margin_bottom = 574.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Show only nodes of these types."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="WatchesTitle" type="Label" parent="." index="17"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -363,7 +438,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="CurrentNodeInfo" type="TextEdit" parent="." index="15"]
+[node name="CurrentNodeInfo" type="TextEdit" parent="." index="18"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -397,7 +472,7 @@ caret_blink = false
 caret_blink_speed = 0.65
 caret_moving_by_right_click = true
 
-[node name="SelectedNodeTitle" type="Label" parent="." index="16"]
+[node name="SelectedNodeTitle" type="Label" parent="." index="19"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -418,7 +493,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="WatchesList" type="TextEdit" parent="." index="17"]
+[node name="WatchesList" type="TextEdit" parent="." index="20"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -452,7 +527,7 @@ caret_blink = false
 caret_blink_speed = 0.65
 caret_moving_by_right_click = true
 
-[node name="ShowNodeInfoButton" type="Button" parent="." index="18"]
+[node name="ShowNodeInfoButton" type="Button" parent="." index="21"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -478,16 +553,65 @@ flat = false
 align = 1
 script = ExtResource( 8 )
 
-[node name="JumpToNodeButton" type="Button" parent="." index="19"]
+[node name="WarningLineLabel" type="Label" parent="." index="22"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 17.0
-margin_top = 201.0
-margin_right = 129.0
-margin_bottom = 221.0
+margin_left = 19.0
+margin_top = 48.0
+margin_right = 136.0
+margin_bottom = 62.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Debugger Warning"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="WarningLine" type="LineEdit" parent="." index="23"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_top = 69.0
+margin_right = 362.0
+margin_bottom = 93.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Look for useful info here!"
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+script = ExtResource( 9 )
+_sections_unfolded = [ "custom_colors" ]
+
+[node name="JumpToNodeButton" type="Button" parent="." index="24"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 23.0
+margin_top = 262.0
+margin_right = 135.0
+margin_bottom = 282.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -502,7 +626,7 @@ group = null
 text = "Jump To Node"
 flat = false
 align = 1
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 
 [node name="JumpToNodePath" type="LineEdit" parent="JumpToNodeButton" index="0"]
 
@@ -528,16 +652,16 @@ caret_blink = false
 caret_blink_speed = 0.65
 caret_position = 0
 
-[node name="JumpToSelectedNodeButton" type="Button" parent="." index="20"]
+[node name="JumpToSelectedNodeButton" type="Button" parent="." index="25"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 144.0
-margin_top = 832.0
-margin_right = 304.0
-margin_bottom = 852.0
+margin_left = 143.0
+margin_top = 834.0
+margin_right = 303.0
+margin_bottom = 854.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -552,7 +676,7 @@ group = null
 text = "Jump To Selected Node"
 flat = false
 align = 1
-script = ExtResource( 10 )
+script = ExtResource( 11 )
 
 [connection signal="button_down" from="StepButton" to="StepButton" method="_on_StepButton_button_down"]
 
@@ -565,6 +689,8 @@ script = ExtResource( 10 )
 [connection signal="button_down" from="CameraJumpPositionButton" to="." method="_on_JumpPositionButton_button_down"]
 
 [connection signal="pressed" from="ShowNodeInfoButton" to="ShowNodeInfoButton" method="_on_ShowNodeInfoButton_pressed"]
+
+[connection signal="text_changed" from="WarningLine" to="WarningLine" method="_on_WarningLine_text_changed"]
 
 [connection signal="pressed" from="JumpToNodeButton" to="JumpToNodeButton" method="_on_JumpToNodeButton_pressed"]
 
