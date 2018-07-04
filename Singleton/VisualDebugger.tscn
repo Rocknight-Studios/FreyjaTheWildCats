@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Singleton/VisualDebugger.gd" type="Script" id=1]
 [ext_resource path="res://Singleton/VisualDebuggerBackground.gd" type="Script" id=2]
@@ -9,8 +9,9 @@
 [ext_resource path="res://Singleton/SceneNodeSelector.gd" type="Script" id=7]
 [ext_resource path="res://Singleton/ShowNodeInfoButton.gd" type="Script" id=8]
 [ext_resource path="res://Singleton/WarningLine.gd" type="Script" id=9]
-[ext_resource path="res://Singleton/JumpToNodeButton.gd" type="Script" id=10]
-[ext_resource path="res://Singleton/JumpToSelectedNodeButton.gd" type="Script" id=11]
+[ext_resource path="res://Singleton/EnablePersistentFollowButton.gd" type="Script" id=10]
+[ext_resource path="res://Singleton/JumpToNodeButton.gd" type="Script" id=11]
+[ext_resource path="res://Singleton/JumpToSelectedNodeButton.gd" type="Script" id=12]
 
 [node name="VisualDebugger" type="CanvasLayer" index="0"]
 
@@ -31,7 +32,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = -1.0
 margin_right = 383.0
-margin_bottom = 1079.0
+margin_bottom = 1080.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -602,7 +603,33 @@ caret_position = 0
 script = ExtResource( 9 )
 _sections_unfolded = [ "custom_colors" ]
 
-[node name="JumpToNodeButton" type="Button" parent="." index="24"]
+[node name="EnablePersistentFollowButton" type="CheckButton" parent="." index="24"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 207.0
+margin_top = 284.0
+margin_right = 372.0
+margin_bottom = 324.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Follow node: "
+flat = false
+align = 0
+script = ExtResource( 10 )
+
+[node name="JumpToNodeButton" type="Button" parent="." index="25"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -626,7 +653,7 @@ group = null
 text = "Jump To Node"
 flat = false
 align = 1
-script = ExtResource( 10 )
+script = ExtResource( 11 )
 
 [node name="JumpToNodePath" type="LineEdit" parent="JumpToNodeButton" index="0"]
 
@@ -635,9 +662,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 125.0
-margin_top = -3.0
+margin_top = -2.0
 margin_right = 340.0
-margin_bottom = 21.0
+margin_bottom = 22.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -652,7 +679,7 @@ caret_blink = false
 caret_blink_speed = 0.65
 caret_position = 0
 
-[node name="JumpToSelectedNodeButton" type="Button" parent="." index="25"]
+[node name="JumpToSelectedNodeButton" type="Button" parent="." index="26"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -676,7 +703,7 @@ group = null
 text = "Jump To Selected Node"
 flat = false
 align = 1
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 
 [connection signal="button_down" from="StepButton" to="StepButton" method="_on_StepButton_button_down"]
 
