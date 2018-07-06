@@ -98,7 +98,7 @@ _sections_unfolded = [ "Margin", "Pause" ]
 
 [node name="ActivityLabel" type="Label" parent="." index="3"]
 
-modulate = Color( 1, 0, 0, 1 )
+modulate = Color( 0, 0.835938, 1, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -601,7 +601,7 @@ caret_blink = false
 caret_blink_speed = 0.65
 caret_position = 0
 script = ExtResource( 9 )
-_sections_unfolded = [ "custom_colors" ]
+_sections_unfolded = [ "Visibility", "custom_colors" ]
 
 [node name="EnablePersistentFollowButton" type="CheckButton" parent="." index="24"]
 
