@@ -1,14 +1,16 @@
 extends Button
 
+onready var visual_debugger = get_parent() # For speed and convenience.
+onready var goal_position = Vector2(.0, .0) # For speed and convenience.
+
 func _on_JumpToSelectedNodeButton_pressed():
-	var debugger_camera = get_parent().get_node("DebuggerCamera2D") # For speed and convenience.
 	var node_path = "" # For speed and convenience.
 
 	if get_parent().get_node("ShowNodeInfoButton"):
 		node_path = get_parent().get_node("ShowNodeInfoButton").full_selected_path
 		if node_path != "":
 			var relative_position = get_node(node_path).get_global_transform().origin # For speed and convenience.
-			debugger_camera.position = relative_position - OS.window_size * .5 * get_parent().debugger_camera.zoom
+			visual_debugger.set_moving_to_node(true, relative_position)
 		else:
 			get_parent().get_node("WarningLine").text = "There is no node selected! Please select a node, to which to jump."
 	else:
