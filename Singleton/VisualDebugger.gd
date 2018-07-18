@@ -10,17 +10,32 @@ enum Slide_direction {NONE, IN, OUT}
 onready var slide_direction = Slide_direction.NONE # To know, when to slide in and out the menu.
 onready var slide_speed = 5.0 # How quickly to slide in and out.
 onready var enable_exact_follow = $"EnableExactFollow" # For speed and convenience.
+onready var visual_debugger_children = [] # To not loose the access to the children.
+onready var menu_is_active = false # To avoid reactivating menu.
 
 func _ready():
 	set_gui_visibility(false)
 	debugger_camera.anchor_mode = 0
 	self.offset.x = menu_slide_pos_bounds.x
+	for i in range(1, self.get_child_count()):
+		visual_debugger_children.append(self.get_child(i))
+	deactivate_menu()
 
 func set_gui_visibility(state):
 	if state:
 		slide_direction = Slide_direction.IN
 	else:
 		slide_direction = Slide_direction.OUT
+
+func activate_menu():
+	menu_is_active = true
+	for i in range(0, visual_debugger_children.size()):
+		add_child(visual_debugger_children[i])
+
+func deactivate_menu():
+	menu_is_active = false
+	for i in range(0, visual_debugger_children.size()):
+		remove_child(visual_debugger_children[i])
 
 func slide_menu(goal_pos, delta):
 	if abs(abs(self.offset.x) - abs(goal_pos)) > Global.approximation_float:
@@ -70,7 +85,10 @@ func _process(delta):
 			set_gui_visibility(false)
 			Global.camera.make_current()
 			get_tree().paused = false
+			deactivate_menu()
 		else:
+			if !menu_is_active:
+				activate_menu()
 			get_tree().paused = true
 			visual_debugger_is_active = true
 			set_gui_visibility(true)
@@ -79,13 +97,13 @@ func _process(delta):
 	if visual_debugger_is_active:
 		manage_camera_movement(camera_movement_speed_slider.value)
 
-		if slide_direction == Slide_direction.IN:
-			slide_menu(menu_slide_pos_bounds.y, delta)
-		elif slide_direction == Slide_direction.OUT:
-			slide_menu(menu_slide_pos_bounds.x, delta)
-
 		if is_moving_to_node:
 			move_to_the_node(delta)
+
+	if slide_direction == Slide_direction.IN:
+		slide_menu(menu_slide_pos_bounds.y, delta)
+	elif slide_direction == Slide_direction.OUT:
+		slide_menu(menu_slide_pos_bounds.x, delta)
 
 func _on_JumpPositionButton_button_down():
 	debugger_camera.position.x = $"CameraJumpPositionX".text.to_int()

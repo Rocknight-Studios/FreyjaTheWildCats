@@ -27,10 +27,9 @@ func manage_customization_params(event):
 		selection_radius = clamp(selection_radius, 5.0, 2000.0)
 
 func _process(delta):
-	if visual_debugger.visual_debugger_is_active:
-		absolute_mouse_position = get_viewport().get_mouse_position()
-		relative_mouse_position = visual_debugger.debugger_camera.position + absolute_mouse_position * visual_debugger.debugger_camera.zoom
-		update()
+	absolute_mouse_position = get_viewport().get_mouse_position()
+	relative_mouse_position = visual_debugger.debugger_camera.position + absolute_mouse_position * visual_debugger.debugger_camera.zoom
+	update()
 
 func manage_selection():
 	if !visual_debugger.mouse_is_over_visual_debugger_gui && Input.is_action_just_pressed("mouse_left_click"):
@@ -75,5 +74,4 @@ func get_all_nodes(node):
 			determine_whether_this_node_is_under_mouse(i)
 
 func _draw():
-	if visual_debugger.visual_debugger_is_active:
-		draw_circle(absolute_mouse_position, selection_radius, selection_color);
+	draw_circle(absolute_mouse_position, selection_radius, selection_color);
