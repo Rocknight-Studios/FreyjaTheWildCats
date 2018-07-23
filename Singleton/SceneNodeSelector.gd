@@ -6,8 +6,7 @@ export var selection_color = Color(0, .1, 0, .1) # What color to use for selecti
 onready var selection_radius = 50.0 # How precisely to detect the selectable node.
 onready var relative_mouse_position = Vector2(0.0, 0.0) # To detect object relative to the debugger camera position.
 onready var absolute_mouse_position = Vector2(0.0, 0.0) # For speed and convenience.
-onready var visual_debugger = get_parent() # For speed and convenience.
-onready var selection_info = get_parent().get_node("SelectionInfo") # For speed and convenience.
+onready var selection_info = get_parent().get_node("TabContainer/NodeSelection/SelectionInfo") # For speed and convenience.
 
 var full_paths = [] # To quickly access full path for each node.
 var full_node_path = "" # To make easier life for the player and Godot to find the node.
@@ -28,11 +27,11 @@ func manage_customization_params(event):
 
 func _process(delta):
 	absolute_mouse_position = get_viewport().get_mouse_position()
-	relative_mouse_position = visual_debugger.debugger_camera.position + absolute_mouse_position * visual_debugger.debugger_camera.zoom
+	relative_mouse_position = Global.visual_debugger.debugger_camera.position + absolute_mouse_position * Global.visual_debugger.debugger_camera.zoom
 	update()
 
 func manage_selection():
-	if !visual_debugger.mouse_is_over_visual_debugger_gui && Input.is_action_just_pressed("mouse_left_click"):
+	if !Global.visual_debugger.mouse_is_over_visual_debugger_gui && Input.is_action_just_pressed("mouse_left_click"):
 
 		selection_info.text = ""
 		full_paths = []
@@ -51,7 +50,7 @@ func determine_whether_this_node_is_under_mouse(node):
 			break
 
 	if manage_this_node:
-		if (relative_mouse_position).distance_to(node.get_global_transform().origin) < selection_radius * visual_debugger.debugger_camera.zoom_scale:
+		if (relative_mouse_position).distance_to(node.get_global_transform().origin) < selection_radius * Global.visual_debugger.debugger_camera.zoom_scale:
 			full_node_path = ""
 			reversed_node_path = []
 			selection_info.text += "\n" + node.name

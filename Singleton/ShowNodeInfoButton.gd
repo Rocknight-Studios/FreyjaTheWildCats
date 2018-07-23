@@ -1,8 +1,8 @@
 extends Button
 
 onready var full_selected_path = "" # To have a convenient access from other scripts.
-onready var selection_info = get_parent().get_node("SelectionInfo") # For speed and convenience
-onready var scene_node_selector = get_parent().get_node("SceneNodeSelector") # For speed and convenience
+onready var selection_info = get_parent().get_parent().get_node("SelectionInfo") # For speed and convenience
+onready var scene_node_selector = get_parent().get_parent().get_parent().get_parent().get_node("SceneNodeSelector") # For speed and convenience
 const selection_size = Vector2(10.0, 10.0) # The relative size of the selection.
 var old_mouse_position = Vector2(.0, .0) # To detect and measure mouse position changes.
 
@@ -16,7 +16,7 @@ func _on_ShowNodeInfoButton_pressed():
 		full_selected_path = scene_node_selector.full_paths[selection_info.cursor_get_line()]
 		current_node_info.text += full_selected_path
 	else:
-		get_parent().get_node("WarningLine").text = "List is empty! Use selection circle to select nodes in the scene."
+		Global.visual_debugger.warning_line.text = "List is empty! Use selection circle to select nodes in the scene."
 
 func _process(delta):
 	update()
@@ -49,7 +49,7 @@ const arrow_stem_length = 100.0 # How long are the stems for the direction arrow
 
 func draw_local_axis_arrows():
 	if full_selected_path != "":
-		var visual_debugger_camera = get_parent().debugger_camera # For speed and convenience.
+		var visual_debugger_camera = get_parent().get_parent().get_parent().get_parent().debugger_camera # For speed and convenience.
 		var camera_zoom = visual_debugger_camera.zoom # For speed and convenience.
 		if get_parent().get_node(full_selected_path):
 			node = get_parent().get_node(full_selected_path)
@@ -104,7 +104,7 @@ func draw_local_axis_arrows():
 
 			draw_rect(Rect2(center_of_the_node_with_scale, size), Color(.1, .9, .1, .9), true)
 		else:
-			get_parent().get_node("WarningLine").text = "Node not found! Check Godot Debugger!"
+			Global.visual_debugger.warning_line.text = "Node not found! Check Godot Debugger!"
 
 func _draw():
 	draw_local_axis_arrows()
