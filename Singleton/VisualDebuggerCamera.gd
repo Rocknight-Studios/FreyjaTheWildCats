@@ -3,7 +3,6 @@ extends Camera2D
 var zoom_scale = 1.0 # What is the current scale of the scene.
 var hit_the_zoom_bound = false # To know, when to act accordingly, when zoom has hit threshold.
 var previous_mouse_drag_position = Vector2(.0, .0) # To calculate, where to move.
-onready var visual_debugger = get_parent() # For speed and convenience.
 
 func _input(event):
 	if Input.is_action_pressed("left_control_down"):
@@ -36,7 +35,7 @@ func manage_mouse_drag():
 	var current_mouse_drag_position = get_viewport().get_mouse_position() # For speed and convenience.
 	var distance_to_previous_mouse_position = current_mouse_drag_position.distance_to(previous_mouse_drag_position) # For speed and convenience.
 	if distance_to_previous_mouse_position > Global.approximation_float:
-		visual_debugger.is_moving_to_node = false
+		Global.visual_debugger.is_moving_to_node = false
 		position.x += previous_mouse_drag_position.x - current_mouse_drag_position.x
 		position.y += previous_mouse_drag_position.y - current_mouse_drag_position.y
 	previous_mouse_drag_position = get_viewport().get_mouse_position()

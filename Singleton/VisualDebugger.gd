@@ -2,16 +2,17 @@ extends CanvasLayer
 
 var visual_debugger_is_active = false # To switch between enabled and disabled.
 onready var debugger_camera = $"DebuggerCamera2D" # For speed and convenience.
-onready var camera_movement_speed_slider = $"CameraMovementSpeedSlider" # For speed and convenience.
+onready var camera_movement_speed_slider = $"GeneralControlsContainer/CameraMovementSpeedSlider" # For speed and convenience.
 onready var scene_node_selector = $"SceneNodeSelector" # For speed and convenience.
 onready var mouse_is_over_visual_debugger_gui = false # To know, when it is allowed to perform scene node detection.
 onready var menu_slide_pos_bounds = Vector2(-500.0, 0.0) # Where to slide menu on x.
 enum Slide_direction {NONE, IN, OUT}
 onready var slide_direction = Slide_direction.NONE # To know, when to slide in and out the menu.
 onready var slide_speed = 5.0 # How quickly to slide in and out.
-onready var enable_exact_follow = $"EnableExactFollow" # For speed and convenience.
+onready var enable_exact_follow = $"GeneralControlsContainer/EnableExactFollow" # For speed and convenience.
 onready var visual_debugger_children = [] # To not loose the access to the children.
 onready var menu_is_active = false # To avoid reactivating menu.
+onready var warning_line = $"InfoContainer/WarningLine" # For speed and convenience.
 
 func _ready():
 	set_gui_visibility(false)
@@ -106,5 +107,5 @@ func _process(delta):
 		slide_menu(menu_slide_pos_bounds.x, delta)
 
 func _on_JumpPositionButton_button_down():
-	debugger_camera.position.x = $"CameraJumpPositionX".text.to_int()
-	debugger_camera.position.y = $"CameraJumpPositionY".text.to_int()
+	debugger_camera.position.x = $"GeneralControlsContainer/CameraJumpPositionX".text.to_int()
+	debugger_camera.position.y = $"GeneralControlsContainer/CameraJumpPositionY".text.to_int()
