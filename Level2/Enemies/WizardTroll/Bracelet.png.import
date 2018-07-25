@@ -7,10 +7,7 @@ path="res://.import/Bracelet.png-5cf4dd83f91c847c1e9c6003a193e28b.stex"
 [deps]
 
 source_file="res://Level2/Enemies/WizardTroll/Bracelet.png"
-source_md5="ee27e93053b3ebfab343b68f3fdbcaaa"
-
 dest_files=[ "res://.import/Bracelet.png-5cf4dd83f91c847c1e9c6003a193e28b.stex" ]
-dest_md5="73064ecac47bd6daa8f49a5422f44d58"
 
 [params]
 

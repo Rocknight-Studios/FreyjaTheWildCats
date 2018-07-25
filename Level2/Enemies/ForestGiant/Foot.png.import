@@ -7,10 +7,7 @@ path="res://.import/Foot.png-3ebe175007cc44e401296e0377c52da2.stex"
 [deps]
 
 source_file="res://Level2/Enemies/ForestGiant/Foot.png"
-source_md5="44794f47c486bfed7449f287ac4a4223"
-
 dest_files=[ "res://.import/Foot.png-3ebe175007cc44e401296e0377c52da2.stex" ]
-dest_md5="db39ca749d3676b3fc70242f08a35a36"
 
 [params]
 

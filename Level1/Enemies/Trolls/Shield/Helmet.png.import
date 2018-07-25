@@ -7,10 +7,7 @@ path="res://.import/Helmet.png-9ae38df15d2c1f502bff5bfe286a24dd.stex"
 [deps]
 
 source_file="res://Level1/Enemies/Trolls/Shield/Helmet.png"
-source_md5="8824520874e8029d99ba9b710663504c"
-
 dest_files=[ "res://.import/Helmet.png-9ae38df15d2c1f502bff5bfe286a24dd.stex" ]
-dest_md5="551696f7bace3024c27d1aaf0d19ff99"
 
 [params]
 

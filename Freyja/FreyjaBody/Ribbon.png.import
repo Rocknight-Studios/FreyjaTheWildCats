@@ -7,10 +7,7 @@ path="res://.import/Ribbon.png-8b39498e104542eb84fb1957e4df5c2f.stex"
 [deps]
 
 source_file="res://Freyja/FreyjaBody/Ribbon.png"
-source_md5="497ba79350f59c284aba6b1c4f3a8fbc"
-
 dest_files=[ "res://.import/Ribbon.png-8b39498e104542eb84fb1957e4df5c2f.stex" ]
-dest_md5="da69b2ed62b76824560011fa1b9d62da"
 
 [params]
 

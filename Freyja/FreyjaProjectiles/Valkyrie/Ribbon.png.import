@@ -7,10 +7,7 @@ path="res://.import/Ribbon.png-5d79462342f09109bcf424d361cf495b.stex"
 [deps]
 
 source_file="res://Freyja/FreyjaProjectiles/Valkyrie/Ribbon.png"
-source_md5="01f23a9c82b81e452ab7e463e55f4fe4"
-
 dest_files=[ "res://.import/Ribbon.png-5d79462342f09109bcf424d361cf495b.stex" ]
-dest_md5="97bdc059a17fe8310498d381707ce266"
 
 [params]
 

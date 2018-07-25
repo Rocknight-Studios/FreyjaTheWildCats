@@ -7,10 +7,7 @@ path="res://.import/Fur.png-e47d31c7b3e6363de4329eef3f948857.stex"
 [deps]
 
 source_file="res://Level2/Enemies/ForestGiant/Fur.png"
-source_md5="cedfbfb225498f76de133e0d30027257"
-
 dest_files=[ "res://.import/Fur.png-e47d31c7b3e6363de4329eef3f948857.stex" ]
-dest_md5="3b428e1cce1582cec9b2113527bf917a"
 
 [params]
 

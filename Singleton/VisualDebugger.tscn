@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Singleton/VisualDebugger.gd" type="Script" id=1]
 [ext_resource path="res://Singleton/VisualDebuggerBackground.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Singleton/EnablePersistentFollowButton.gd" type="Script" id=10]
 [ext_resource path="res://Singleton/ShowNodeInfoButton.gd" type="Script" id=11]
 [ext_resource path="res://Singleton/JumpToSelectedNodeButton.gd" type="Script" id=12]
+[ext_resource path="res://Singleton/TransformationModeButton.gd" type="Script" id=13]
 
 [node name="VisualDebugger" type="CanvasLayer" index="0"]
 
@@ -172,7 +173,6 @@ _sections_unfolded = [ "Visibility", "custom_colors" ]
 
 [node name="GeneralControlsContainer" type="Container" parent="." index="5"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -479,7 +479,6 @@ align = 0
 
 [node name="TabContainer" type="TabContainer" parent="." index="6"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -500,6 +499,7 @@ tabs_visible = true
 [node name="NodeSelection" type="Container" parent="TabContainer" index="0"]
 
 editor/display_folded = true
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -777,7 +777,52 @@ caret_blink = false
 caret_blink_speed = 0.65
 caret_moving_by_right_click = true
 
-[node name="Watches" type="Container" parent="TabContainer" index="1"]
+[node name="Transformations" type="Container" parent="TabContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="TransformationModeButton" type="MenuButton" parent="TabContainer/Transformations" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8.0
+margin_top = 5.0
+margin_right = 149.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+action_mode = 0
+enabled_focus_mode = 0
+shortcut = null
+group = null
+text = "Transformation mode: MOVE"
+flat = false
+align = 1
+items = [ "MOVE", null, 0, false, false, -1, 0, null, "", false, "ROTATE", null, 0, false, false, -1, 0, null, "", false, "SCALE", null, 0, false, false, -1, 0, null, "", false ]
+script = ExtResource( 13 )
+_sections_unfolded = [ "Margin" ]
+
+[node name="Watches" type="Container" parent="TabContainer" index="2"]
 
 editor/display_folded = true
 visible = false

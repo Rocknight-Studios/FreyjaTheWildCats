@@ -7,10 +7,7 @@ path="res://.import/Body.png-10218c423042e1578fc168480196eebc.stex"
 [deps]
 
 source_file="res://Level2/Enemies/Spider/Body.png"
-source_md5="85954da3e395699aa0d05cdf8b3259b1"
-
 dest_files=[ "res://.import/Body.png-10218c423042e1578fc168480196eebc.stex" ]
-dest_md5="899bb0fdc5137587d6fc2e25cf23b0d4"
 
 [params]
 

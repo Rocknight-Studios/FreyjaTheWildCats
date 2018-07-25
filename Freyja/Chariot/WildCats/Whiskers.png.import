@@ -7,10 +7,7 @@ path="res://.import/Whiskers.png-ce3b33cd54e47cd68988278ebd7a5f96.stex"
 [deps]
 
 source_file="res://Freyja/Chariot/WildCats/Whiskers.png"
-source_md5="8f633202e8fb1bb43f4660a251e1da65"
-
 dest_files=[ "res://.import/Whiskers.png-ce3b33cd54e47cd68988278ebd7a5f96.stex" ]
-dest_md5="a6ffbf5c267b4be614b070db43f2e58b"
 
 [params]
 

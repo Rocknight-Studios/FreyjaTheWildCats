@@ -7,10 +7,7 @@ path="res://.import/ValkyrieRune.png-a445f2ffe82955477fca62d42ccc9384.stex"
 [deps]
 
 source_file="res://Unsorted/Runes/ValkyrieRune.png"
-source_md5="2d3e3583bd51fcb66fc84b3ad8575816"
-
 dest_files=[ "res://.import/ValkyrieRune.png-a445f2ffe82955477fca62d42ccc9384.stex" ]
-dest_md5="a40857f000a4018a72e1443628723037"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/Wing.png-f0a4c6d6b0265bf3d9ab66e870d0f651.stex"
 [deps]
 
 source_file="res://Freyja/FreyjaProjectiles/Valkyrie/Wing.png"
-source_md5="0122ebe0cf594f5999cd0c0f82694003"
-
 dest_files=[ "res://.import/Wing.png-f0a4c6d6b0265bf3d9ab66e870d0f651.stex" ]
-dest_md5="006fb2bfec019f594dd2e8ba1196169e"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/GuardTower.png-deeee5246bfa371ce484e07c449b1dd1.stex"
 [deps]
 
 source_file="res://Level1/Rocks/GuardTower.png"
-source_md5="31f3bd2e710a5386c16e3da729cb5b53"
-
 dest_files=[ "res://.import/GuardTower.png-deeee5246bfa371ce484e07c449b1dd1.stex" ]
-dest_md5="5842ccd686fca234ddac2e5fcdddccd9"
 
 [params]
 

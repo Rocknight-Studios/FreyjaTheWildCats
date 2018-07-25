@@ -7,10 +7,7 @@ path="res://.import/Skirt.png-e9cf9352dab4d1c2049e5b7c48a2e329.stex"
 [deps]
 
 source_file="res://Level1/Enemies/IceGiant/Skirt.png"
-source_md5="df268ba34a0a6de836afb3026f824a4c"
-
 dest_files=[ "res://.import/Skirt.png-e9cf9352dab4d1c2049e5b7c48a2e329.stex" ]
-dest_md5="cd740a8c5f66a893362ba5865e4d2001"
 
 [params]
 

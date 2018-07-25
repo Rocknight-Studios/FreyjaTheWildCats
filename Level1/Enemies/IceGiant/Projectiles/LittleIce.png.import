@@ -7,10 +7,7 @@ path="res://.import/LittleIce.png-8ac945767fa795de06c1cb53213b14b6.stex"
 [deps]
 
 source_file="res://Level1/Enemies/IceGiant/Projectiles/LittleIce.png"
-source_md5="a794e9adccbd39e781848e7328e48f80"
-
 dest_files=[ "res://.import/LittleIce.png-8ac945767fa795de06c1cb53213b14b6.stex" ]
-dest_md5="9e2ec99e2641e32d1202c0aea28a51b8"
 
 [params]
 

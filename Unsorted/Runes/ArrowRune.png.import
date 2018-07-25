@@ -7,10 +7,7 @@ path="res://.import/ArrowRune.png-b79c54b4fa2ec6a03c5b9941e79a237a.stex"
 [deps]
 
 source_file="res://Unsorted/Runes/ArrowRune.png"
-source_md5="34d06ea61db1af68d653b80d906de1d2"
-
 dest_files=[ "res://.import/ArrowRune.png-b79c54b4fa2ec6a03c5b9941e79a237a.stex" ]
-dest_md5="a8f180b6846baf310281b63124ced139"
 
 [params]
 

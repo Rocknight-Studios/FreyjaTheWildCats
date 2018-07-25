@@ -7,10 +7,7 @@ path="res://.import/BigFluff.png-43b80948597c77a594341b61431fdf50.stex"
 [deps]
 
 source_file="res://Freyja/Chariot/WildCats/BigFluff.png"
-source_md5="d081d58f7df31e76bf5656acd10b1c35"
-
 dest_files=[ "res://.import/BigFluff.png-43b80948597c77a594341b61431fdf50.stex" ]
-dest_md5="7fea9bd26874a62da194c33037204a5b"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/SpiritRune.png-ee2df3349a48c2370bda9a6b2f6d1664.stex"
 [deps]
 
 source_file="res://Unsorted/Runes/SpiritRune.png"
-source_md5="f747dd233a16d146515356b712715153"
-
 dest_files=[ "res://.import/SpiritRune.png-ee2df3349a48c2370bda9a6b2f6d1664.stex" ]
-dest_md5="4280be27a295eba6387300326b2a0a52"
 
 [params]
 

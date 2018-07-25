@@ -7,10 +7,7 @@ path="res://.import/DeathParticleSpark.png-4fa7d3e89360d5da38ccf7bc7b44f795.stex
 [deps]
 
 source_file="res://Unsorted/Sparks/DeathParticleSpark.png"
-source_md5="808fec0f21dd86fbb0c491cb998584a5"
-
 dest_files=[ "res://.import/DeathParticleSpark.png-4fa7d3e89360d5da38ccf7bc7b44f795.stex" ]
-dest_md5="5aa23eb553ec494e96178253fb9baa1e"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/ShapeShift.png-05ebd0894005ccd8c49e1e8258cd85d8.stex"
 [deps]
 
 source_file="res://Unsorted/Runes/ShapeShift.png"
-source_md5="21f6daa0cbdc71b383d57dccedc9ec52"
-
 dest_files=[ "res://.import/ShapeShift.png-05ebd0894005ccd8c49e1e8258cd85d8.stex" ]
-dest_md5="46dd1e156a685a8336590f41e43dcb72"
 
 [params]
 

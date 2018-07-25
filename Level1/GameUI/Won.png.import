@@ -7,10 +7,7 @@ path="res://.import/Won.png-8d2e5e2882a46a31f884d4a3e597d227.stex"
 [deps]
 
 source_file="res://Level1/GameUI/Won.png"
-source_md5="b8669375ae35662d6036dfb86b66ae3d"
-
 dest_files=[ "res://.import/Won.png-8d2e5e2882a46a31f884d4a3e597d227.stex" ]
-dest_md5="463c305c1d6b44e133e90a0dee7ecca0"
 
 [params]
 

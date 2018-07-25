@@ -7,10 +7,7 @@ path="res://.import/HairPiece1.png-0cdf263f672177dcb58eed839d7fb5fb.stex"
 [deps]
 
 source_file="res://Freyja/FreyjaProjectiles/Spirit/Hair/HairPiece1.png"
-source_md5="69f121ba444ca9cbf3b4a105d2bc47f2"
-
 dest_files=[ "res://.import/HairPiece1.png-0cdf263f672177dcb58eed839d7fb5fb.stex" ]
-dest_md5="961873d74764d3ca89ddc9c914576c57"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/ShoulderPlate.png-87b1a35164fc2cffa5ffd6c7305eda68.stex"
 [deps]
 
 source_file="res://Freyja/FreyjaBody/ShoulderPlate.png"
-source_md5="6cbe1069bb1acada6ba47f1f212516d6"
-
 dest_files=[ "res://.import/ShoulderPlate.png-87b1a35164fc2cffa5ffd6c7305eda68.stex" ]
-dest_md5="5cd63e745fdff2b2a69ef5dfb0bb35bb"
 
 [params]
 

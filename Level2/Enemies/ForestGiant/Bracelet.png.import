@@ -7,10 +7,7 @@ path="res://.import/Bracelet.png-7ca87a913315447a7a59df92a33c5d69.stex"
 [deps]
 
 source_file="res://Level2/Enemies/ForestGiant/Bracelet.png"
-source_md5="f25ea0b43c788863886fe6da305fcfca"
-
 dest_files=[ "res://.import/Bracelet.png-7ca87a913315447a7a59df92a33c5d69.stex" ]
-dest_md5="d3bd14f48fb9e5443928b3ef236fd1c7"
 
 [params]
 

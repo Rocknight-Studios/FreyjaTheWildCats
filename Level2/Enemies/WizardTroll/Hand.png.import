@@ -7,10 +7,7 @@ path="res://.import/Hand.png-683b17136158b3f25d28d31327aa1c11.stex"
 [deps]
 
 source_file="res://Level2/Enemies/WizardTroll/Hand.png"
-source_md5="33ec224bbcfd4633a445cdffea37590e"
-
 dest_files=[ "res://.import/Hand.png-683b17136158b3f25d28d31327aa1c11.stex" ]
-dest_md5="ea804bab83420364eebc85478d603117"
 
 [params]
 

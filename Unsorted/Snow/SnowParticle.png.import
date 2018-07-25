@@ -7,10 +7,7 @@ path="res://.import/SnowParticle.png-19670a6ad5c44810adaa0271c17221df.stex"
 [deps]
 
 source_file="res://Unsorted/Snow/SnowParticle.png"
-source_md5="b5d5777c7cb3d13f103fd8e0154e6240"
-
 dest_files=[ "res://.import/SnowParticle.png-19670a6ad5c44810adaa0271c17221df.stex" ]
-dest_md5="3e981c26748b06e9c213a61717a2b696"
 
 [params]
 

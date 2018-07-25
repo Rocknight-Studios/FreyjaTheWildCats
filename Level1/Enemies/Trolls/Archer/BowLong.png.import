@@ -7,10 +7,7 @@ path="res://.import/BowLong.png-90e83f826d36ebb0173fd0478dfc3c47.stex"
 [deps]
 
 source_file="res://Level1/Enemies/Trolls/Archer/BowLong.png"
-source_md5="65eae66c291d1149d285f63bd381ef2a"
-
 dest_files=[ "res://.import/BowLong.png-90e83f826d36ebb0173fd0478dfc3c47.stex" ]
-dest_md5="69c5dcbcb3ac96b8e8d711805ecc75a0"
 
 [params]
 

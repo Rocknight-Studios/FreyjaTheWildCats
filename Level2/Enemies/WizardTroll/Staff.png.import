@@ -7,10 +7,7 @@ path="res://.import/Staff.png-1c107de2bfdfb115e17d81540a60f565.stex"
 [deps]
 
 source_file="res://Level2/Enemies/WizardTroll/Staff.png"
-source_md5="fea6c1490f0359f45c852ece914eb2d2"
-
 dest_files=[ "res://.import/Staff.png-1c107de2bfdfb115e17d81540a60f565.stex" ]
-dest_md5="031c39651d47726ced53b403e0ce2af7"
 
 [params]
 

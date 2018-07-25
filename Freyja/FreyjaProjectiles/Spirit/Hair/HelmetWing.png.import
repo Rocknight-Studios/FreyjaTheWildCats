@@ -7,10 +7,7 @@ path="res://.import/HelmetWing.png-1e26afa937d12f52858af0c7eef0c331.stex"
 [deps]
 
 source_file="res://Freyja/FreyjaProjectiles/Spirit/Hair/HelmetWing.png"
-source_md5="09d14536d0008ada01c3cc4363338d75"
-
 dest_files=[ "res://.import/HelmetWing.png-1e26afa937d12f52858af0c7eef0c331.stex" ]
-dest_md5="6baf5634ebce5ad924098bb41ab3a3a4"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/UpperArm.png-887d3e95d091d66de103c723acc0728e.stex"
 [deps]
 
 source_file="res://Level1/Enemies/IceGiant/UpperArm.png"
-source_md5="84ee6ffbec8c7989e32bb536f937f53b"
-
 dest_files=[ "res://.import/UpperArm.png-887d3e95d091d66de103c723acc0728e.stex" ]
-dest_md5="b190efeabbf31083598a4bc02e59a3f6"
 
 [params]
 

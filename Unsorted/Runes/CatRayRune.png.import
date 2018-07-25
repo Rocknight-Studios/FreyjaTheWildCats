@@ -7,10 +7,7 @@ path="res://.import/CatRayRune.png-2abbc45bd59645a16954c1c1bd00bf52.stex"
 [deps]
 
 source_file="res://Unsorted/Runes/CatRayRune.png"
-source_md5="c0a419a97b5c3364b91168407d5abbc5"
-
 dest_files=[ "res://.import/CatRayRune.png-2abbc45bd59645a16954c1c1bd00bf52.stex" ]
-dest_md5="3832dbe3f24ba0cb1500730b29e8b160"
 
 [params]
 

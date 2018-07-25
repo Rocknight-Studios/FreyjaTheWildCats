@@ -7,10 +7,7 @@ path="res://.import/GameMenuHealthBarUnder.png-7334192859343679b408d8302aab98e9.
 [deps]
 
 source_file="res://Unsorted/GameMenuHealthBarUnder.png"
-source_md5="2c903586b04f713305c34fa0dcdb18a1"
-
 dest_files=[ "res://.import/GameMenuHealthBarUnder.png-7334192859343679b408d8302aab98e9.stex" ]
-dest_md5="ceff268fbc89d10d87bb94e974d8d1b7"
 
 [params]
 

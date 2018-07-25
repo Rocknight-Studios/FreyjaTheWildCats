@@ -7,10 +7,7 @@ path="res://.import/SmallRibbon.png-06d571ca707c86fd7d89f3d0ee20ff8c.stex"
 [deps]
 
 source_file="res://Freyja/FreyjaProjectiles/Valkyrie/SmallRibbon.png"
-source_md5="ba602665fc136f482763b43c003acf34"
-
 dest_files=[ "res://.import/SmallRibbon.png-06d571ca707c86fd7d89f3d0ee20ff8c.stex" ]
-dest_md5="46674587776e22bc7d6a022493080910"
 
 [params]
 

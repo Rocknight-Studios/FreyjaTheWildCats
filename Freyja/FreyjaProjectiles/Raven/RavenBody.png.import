@@ -7,10 +7,7 @@ path="res://.import/RavenBody.png-de52816412ebc3d7ea3b2802aadca28c.stex"
 [deps]
 
 source_file="res://Freyja/FreyjaProjectiles/Raven/RavenBody.png"
-source_md5="793ae0bddcb7e1bea157036cc6d8e957"
-
 dest_files=[ "res://.import/RavenBody.png-de52816412ebc3d7ea3b2802aadca28c.stex" ]
-dest_md5="70c22f7e48e1119172ee58b63e960cf9"
 
 [params]
 

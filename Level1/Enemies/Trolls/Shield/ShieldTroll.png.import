@@ -7,10 +7,7 @@ path="res://.import/ShieldTroll.png-010c0e152d6e0010938e603fd36e58ba.stex"
 [deps]
 
 source_file="res://Level1/Enemies/Trolls/Shield/ShieldTroll.png"
-source_md5="983561c36043ea2354baeb8d3c3abd83"
-
 dest_files=[ "res://.import/ShieldTroll.png-010c0e152d6e0010938e603fd36e58ba.stex" ]
-dest_md5="2a7e27925e4824101c8835d7d4c23a4c"
 
 [params]
 

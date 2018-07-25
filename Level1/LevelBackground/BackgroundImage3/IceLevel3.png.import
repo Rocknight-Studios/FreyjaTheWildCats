@@ -7,10 +7,7 @@ path="res://.import/IceLevel3.png-8293ae552931ad098e738b1bb63705a7.stex"
 [deps]
 
 source_file="res://Level1/LevelBackground/BackgroundImage3/IceLevel3.png"
-source_md5="8a3de85e635936be76163156e083818b"
-
 dest_files=[ "res://.import/IceLevel3.png-8293ae552931ad098e738b1bb63705a7.stex" ]
-dest_md5="2d78ccdfb696a9ea3428a73444833ab0"
 
 [params]
 

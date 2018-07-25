@@ -7,10 +7,7 @@ path="res://.import/GameMenuHealthBarProgress.png-d05a6fbcb223ab2c61857e66db0ae5
 [deps]
 
 source_file="res://Unsorted/GameMenuHealthBarProgress.png"
-source_md5="d6c6f2f3ad4bdf852b95a47418d4d27c"
-
 dest_files=[ "res://.import/GameMenuHealthBarProgress.png-d05a6fbcb223ab2c61857e66db0ae547.stex" ]
-dest_md5="0f5a41aaa04d62e585f5795bd38e3a73"
 
 [params]
 

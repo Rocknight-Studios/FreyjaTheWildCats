@@ -7,10 +7,7 @@ path="res://.import/golden_particles.png-96d9ceb2213cbb046a7cf9364d5ac2b8.stex"
 [deps]
 
 source_file="res://Freyja/GoldenHairParticles/golden_particles.png"
-source_md5="3b22f0bbf8070c0c666bfefc2af15afb"
-
 dest_files=[ "res://.import/golden_particles.png-96d9ceb2213cbb046a7cf9364d5ac2b8.stex" ]
-dest_md5="b631e15b4917c9643f40ecf367434c4e"
 
 [params]
 

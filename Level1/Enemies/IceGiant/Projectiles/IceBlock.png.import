@@ -7,10 +7,7 @@ path="res://.import/IceBlock.png-6e627def151f4233b5b9de9ba45c9e95.stex"
 [deps]
 
 source_file="res://Level1/Enemies/IceGiant/Projectiles/IceBlock.png"
-source_md5="780d2f4b7b2c84af63034406b22bef4d"
-
 dest_files=[ "res://.import/IceBlock.png-6e627def151f4233b5b9de9ba45c9e95.stex" ]
-dest_md5="97e69bf13879d3f728dd841965d7ca97"
 
 [params]
 

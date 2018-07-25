@@ -7,10 +7,7 @@ path="res://.import/Spirit2.png-5082b84b99d528de2fe6d6fb53e98654.stex"
 [deps]
 
 source_file="res://Freyja/FreyjaProjectiles/Spirit/Spirit2.png"
-source_md5="b8464408d66a739ff08de45832f55631"
-
 dest_files=[ "res://.import/Spirit2.png-5082b84b99d528de2fe6d6fb53e98654.stex" ]
-dest_md5="7e5cf2d883591567a3fe82f0a0f0e2ff"
 
 [params]
 

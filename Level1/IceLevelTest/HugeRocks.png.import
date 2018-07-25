@@ -7,10 +7,7 @@ path="res://.import/HugeRocks.png-4d9c26b2a15942b65e85dea2728a1a05.stex"
 [deps]
 
 source_file="res://Level1/IceLevelTest/HugeRocks.png"
-source_md5="0e2e618b7476e3b12f996bc2f02bc69a"
-
 dest_files=[ "res://.import/HugeRocks.png-4d9c26b2a15942b65e85dea2728a1a05.stex" ]
-dest_md5="183ee6be9770d20cc23a8d4acda39f25"
 
 [params]
 

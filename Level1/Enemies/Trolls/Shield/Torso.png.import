@@ -7,10 +7,7 @@ path="res://.import/Torso.png-142755dc4fc1a9a380ec68d02ffad3e0.stex"
 [deps]
 
 source_file="res://Level1/Enemies/Trolls/Shield/Torso.png"
-source_md5="909481bdc1336885933d9068620ebe97"
-
 dest_files=[ "res://.import/Torso.png-142755dc4fc1a9a380ec68d02ffad3e0.stex" ]
-dest_md5="4402d509b47537123a64b4378e2c26d0"
 
 [params]
 

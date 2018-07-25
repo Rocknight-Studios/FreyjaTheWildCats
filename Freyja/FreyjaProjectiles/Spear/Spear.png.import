@@ -7,10 +7,7 @@ path="res://.import/Spear.png-229cff0c810cd5d8fbe71b46f645f192.stex"
 [deps]
 
 source_file="res://Freyja/FreyjaProjectiles/Spear/Spear.png"
-source_md5="d11f8e40bb02f3ad923cc1e6f98f0060"
-
 dest_files=[ "res://.import/Spear.png-229cff0c810cd5d8fbe71b46f645f192.stex" ]
-dest_md5="fdec191b7838c18e29de7bc0ed027061"
 
 [params]
 

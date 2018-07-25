@@ -7,10 +7,7 @@ path="res://.import/Skirt1.png-be18ec0f325ae75eda893c29dd386fa7.stex"
 [deps]
 
 source_file="res://Freyja/FreyjaProjectiles/Valkyrie/Skirt1.png"
-source_md5="c1a54aa3b778cf8ca3d4ecea45e8416d"
-
 dest_files=[ "res://.import/Skirt1.png-be18ec0f325ae75eda893c29dd386fa7.stex" ]
-dest_md5="8880d3428fa1a54bab38b4e4fa99d9df"
 
 [params]
 

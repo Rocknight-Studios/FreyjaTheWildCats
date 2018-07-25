@@ -7,10 +7,7 @@ path="res://.import/Arrow.png-fab52cf3691ea37154d082568b016478.stex"
 [deps]
 
 source_file="res://Unsorted/Arrow/Arrow.png"
-source_md5="b7c86fc4dc56c3fe9af40e4a06078963"
-
 dest_files=[ "res://.import/Arrow.png-fab52cf3691ea37154d082568b016478.stex" ]
-dest_md5="b667cc53f75786b7895f62cf800477e0"
 
 [params]
 

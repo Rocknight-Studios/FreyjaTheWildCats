@@ -7,10 +7,7 @@ path="res://.import/Spike.png-c1e6755198821c48daadc2227bcc180e.stex"
 [deps]
 
 source_file="res://Level2/Enemies/Giant/Spike.png"
-source_md5="e8555ad081ba184348c609455625f61f"
-
 dest_files=[ "res://.import/Spike.png-c1e6755198821c48daadc2227bcc180e.stex" ]
-dest_md5="1ee3ea05a9373ebae65c7be4af6a5200"
 
 [params]
 

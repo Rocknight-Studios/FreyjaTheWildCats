@@ -7,10 +7,7 @@ path="res://.import/UpperRightArm2.png-0d61b71c06891a0e9c25b1977d8cf7c7.stex"
 [deps]
 
 source_file="res://Freyja/FreyjaBody/RightArm/UpperRightArm2.png"
-source_md5="0838fcc03ef8e7b776a77a036f4d07be"
-
 dest_files=[ "res://.import/UpperRightArm2.png-0d61b71c06891a0e9c25b1977d8cf7c7.stex" ]
-dest_md5="eeb215d7c35dd277b0c4dab764cec6c5"
 
 [params]
 

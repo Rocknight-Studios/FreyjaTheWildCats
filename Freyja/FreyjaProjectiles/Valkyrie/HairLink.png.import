@@ -7,10 +7,7 @@ path="res://.import/HairLink.png-fd8a45453a534609013ee6f94b4b201a.stex"
 [deps]
 
 source_file="res://Freyja/FreyjaProjectiles/Valkyrie/HairLink.png"
-source_md5="606eeef6546d0da1aa85675fcd5b85a9"
-
 dest_files=[ "res://.import/HairLink.png-fd8a45453a534609013ee6f94b4b201a.stex" ]
-dest_md5="a4b324e3e462b9075ee36b693397aa3b"
 
 [params]
 

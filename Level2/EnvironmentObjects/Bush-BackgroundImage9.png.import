@@ -7,10 +7,7 @@ path="res://.import/Bush-BackgroundImage9.png-65f25d234296d513f6bee4d050e8b4bc.s
 [deps]
 
 source_file="res://Level2/EnvironmentObjects/Bush-BackgroundImage9.png"
-source_md5="dc7b2c8bf90d88220c52aca0760d27a9"
-
 dest_files=[ "res://.import/Bush-BackgroundImage9.png-65f25d234296d513f6bee4d050e8b4bc.stex" ]
-dest_md5="275c593afce6f8bfd91447a07a615fd2"
 
 [params]
 

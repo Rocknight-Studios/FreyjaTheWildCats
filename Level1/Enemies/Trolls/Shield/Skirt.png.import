@@ -7,10 +7,7 @@ path="res://.import/Skirt.png-5bd353906df41c1113d18703ee6f9de3.stex"
 [deps]
 
 source_file="res://Level1/Enemies/Trolls/Shield/Skirt.png"
-source_md5="4fa806c64a5beca32b5dd7d340c375ed"
-
 dest_files=[ "res://.import/Skirt.png-5bd353906df41c1113d18703ee6f9de3.stex" ]
-dest_md5="42bb36d2f072cd088e9df8c53d568627"
 
 [params]
 

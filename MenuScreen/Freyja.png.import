@@ -7,10 +7,7 @@ path="res://.import/Freyja.png-4cbf0b392f3281e500df4bf7821f1a71.stex"
 [deps]
 
 source_file="res://MenuScreen/Freyja.png"
-source_md5="67b658c000045de7ce644589c1776631"
-
 dest_files=[ "res://.import/Freyja.png-4cbf0b392f3281e500df4bf7821f1a71.stex" ]
-dest_md5="e8435882ea033a49a2204570c1178ea5"
 
 [params]
 

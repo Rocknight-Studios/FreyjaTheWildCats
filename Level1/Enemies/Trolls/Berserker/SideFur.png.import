@@ -7,10 +7,7 @@ path="res://.import/SideFur.png-3e56507c042d1673becbea1be76284c0.stex"
 [deps]
 
 source_file="res://Level1/Enemies/Trolls/Berserker/SideFur.png"
-source_md5="3745c0405a24bb7358f9c0f2552b1477"
-
 dest_files=[ "res://.import/SideFur.png-3e56507c042d1673becbea1be76284c0.stex" ]
-dest_md5="a679974a7bf271d4d8fd2251d9852862"
 
 [params]
 

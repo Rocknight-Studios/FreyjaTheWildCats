@@ -7,10 +7,7 @@ path="res://.import/Fur.png-20f66bc169779921735eda2280aba42e.stex"
 [deps]
 
 source_file="res://Level2/Enemies/WizardTroll/Fur.png"
-source_md5="dc0b1d7fa7a96ad59807c0816a020ab5"
-
 dest_files=[ "res://.import/Fur.png-20f66bc169779921735eda2280aba42e.stex" ]
-dest_md5="d4912a75cac7504443e33a7b80d762a4"
 
 [params]
 

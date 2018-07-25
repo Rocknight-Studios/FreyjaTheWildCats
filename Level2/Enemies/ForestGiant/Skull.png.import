@@ -7,10 +7,7 @@ path="res://.import/Skull.png-aa972c2fb9d79171d54f30596e261ca2.stex"
 [deps]
 
 source_file="res://Level2/Enemies/ForestGiant/Skull.png"
-source_md5="0bfa43b2a7887595286086edd917338e"
-
 dest_files=[ "res://.import/Skull.png-aa972c2fb9d79171d54f30596e261ca2.stex" ]
-dest_md5="4fc38af181836e8c1c291a1a0fa8011a"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/MenuBackground4.png-fa7fc4ac1dec22e828c5b8f423cdbbbc.stex"
 [deps]
 
 source_file="res://MenuScreen/MenuBackground4.png"
-source_md5="8b2fa83947d1e472b061cf2f65a55293"
-
 dest_files=[ "res://.import/MenuBackground4.png-fa7fc4ac1dec22e828c5b8f423cdbbbc.stex" ]
-dest_md5="82de3c03e8b0b45399a5da4d1bce9364"
 
 [params]
 

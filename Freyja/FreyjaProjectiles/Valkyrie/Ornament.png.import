@@ -7,10 +7,7 @@ path="res://.import/Ornament.png-fdf63f71240c19f6a4c3cfd1260bde73.stex"
 [deps]
 
 source_file="res://Freyja/FreyjaProjectiles/Valkyrie/Ornament.png"
-source_md5="38ef0860269551ae5ac8ad947d381589"
-
 dest_files=[ "res://.import/Ornament.png-fdf63f71240c19f6a4c3cfd1260bde73.stex" ]
-dest_md5="4b6e7f0ee9e1be23a9b8e981b458bdf8"
 
 [params]
 

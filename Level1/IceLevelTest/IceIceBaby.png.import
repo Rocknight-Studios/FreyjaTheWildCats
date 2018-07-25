@@ -7,10 +7,7 @@ path="res://.import/IceIceBaby.png-afe77ad41bca1d7489b16425d4753bf6.stex"
 [deps]
 
 source_file="res://Level1/IceLevelTest/IceIceBaby.png"
-source_md5="35e623432e53d0582d1ec4406e00da44"
-
 dest_files=[ "res://.import/IceIceBaby.png-afe77ad41bca1d7489b16425d4753bf6.stex" ]
-dest_md5="a1e0e6704ba0dd6fc854ea9d073f5fbb"
 
 [params]
 

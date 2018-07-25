@@ -7,10 +7,7 @@ path="res://.import/Head.png-21261be4602bfd2f38dd01a6b1aa04ea.stex"
 [deps]
 
 source_file="res://Level1/Enemies/IceGiant/Head.png"
-source_md5="e1516c388e155260cc91e48618169f47"
-
 dest_files=[ "res://.import/Head.png-21261be4602bfd2f38dd01a6b1aa04ea.stex" ]
-dest_md5="5fa3e96d666399e7c1876ba0e98966aa"
 
 [params]
 

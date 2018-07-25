@@ -7,10 +7,7 @@ path="res://.import/Ice4.png-ab098eb6592fc7e9c93a4511b1b1980e.stex"
 [deps]
 
 source_file="res://Level1/IceLevelTest/Ice4.png"
-source_md5="7feccb271ea9ae207ed666cbbc3c3b22"
-
 dest_files=[ "res://.import/Ice4.png-ab098eb6592fc7e9c93a4511b1b1980e.stex" ]
-dest_md5="89fdb520267f8a6046a4a7760fa8176a"
 
 [params]
 

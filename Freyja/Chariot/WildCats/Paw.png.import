@@ -7,10 +7,7 @@ path="res://.import/Paw.png-5356c281259bad2adbfe04421d2df9af.stex"
 [deps]
 
 source_file="res://Freyja/Chariot/WildCats/Paw.png"
-source_md5="62f1f69cc8ffb2a4659ea4f011aed4f4"
-
 dest_files=[ "res://.import/Paw.png-5356c281259bad2adbfe04421d2df9af.stex" ]
-dest_md5="1c5b0bf42498a5d1613bc99d11cf5f3f"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/Helmet.png-c6bda84599b2b723a8ac7926df057923.stex"
 [deps]
 
 source_file="res://Level2/Enemies/Giant/Helmet.png"
-source_md5="8810dbdfaee48277c2c055e357881da7"
-
 dest_files=[ "res://.import/Helmet.png-c6bda84599b2b723a8ac7926df057923.stex" ]
-dest_md5="e0ff244f516a16de1d330e1a645d4135"
 
 [params]
 

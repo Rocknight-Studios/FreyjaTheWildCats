@@ -7,10 +7,7 @@ path="res://.import/LeftLowerArm.png-d9d25c9a6f32290345805e08571de520.stex"
 [deps]
 
 source_file="res://Level1/Enemies/Trolls/Archer/LeftLowerArm.png"
-source_md5="ff6a2f3238cb9abbeb8e8e64633b20ea"
-
 dest_files=[ "res://.import/LeftLowerArm.png-d9d25c9a6f32290345805e08571de520.stex" ]
-dest_md5="ef6e64f1dc5fbea465e7097332f096da"
 
 [params]
 

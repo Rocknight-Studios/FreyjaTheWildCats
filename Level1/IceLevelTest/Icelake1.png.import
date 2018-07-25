@@ -7,10 +7,7 @@ path="res://.import/Icelake1.png-e5669492a5b72c93d05644e388dc415b.stex"
 [deps]
 
 source_file="res://Level1/IceLevelTest/Icelake1.png"
-source_md5="8d3bfbc55f73696b62c022f79f3ffb42"
-
 dest_files=[ "res://.import/Icelake1.png-e5669492a5b72c93d05644e388dc415b.stex" ]
-dest_md5="7c919cfd10c01aa81e11dd3bd6fcbd68"
 
 [params]
 

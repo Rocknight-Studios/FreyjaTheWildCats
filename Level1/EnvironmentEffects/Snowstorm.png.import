@@ -7,10 +7,7 @@ path="res://.import/Snowstorm.png-18ef25d721bfb86fdef360c87eedb62d.stex"
 [deps]
 
 source_file="res://Level1/EnvironmentEffects/Snowstorm.png"
-source_md5="c7e5d6846ea9ec82a13825762146b912"
-
 dest_files=[ "res://.import/Snowstorm.png-18ef25d721bfb86fdef360c87eedb62d.stex" ]
-dest_md5="60102cc0dc5e9e713c27d3e77edf35d5"
 
 [params]
 

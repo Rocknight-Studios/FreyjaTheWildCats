@@ -7,10 +7,7 @@ path="res://.import/Torso.png-801b335c6dd5b7929412dff89ef3eb1c.stex"
 [deps]
 
 source_file="res://Level2/Enemies/ForestGiant/Torso.png"
-source_md5="684371c0bb79ab496bf6ca9eac6bb391"
-
 dest_files=[ "res://.import/Torso.png-801b335c6dd5b7929412dff89ef3eb1c.stex" ]
-dest_md5="7320ef72a3ad8276f73b0f939d93256d"
 
 [params]
 

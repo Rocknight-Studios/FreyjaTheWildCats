@@ -7,10 +7,7 @@ path="res://.import/Arm.png-0872d7c055e9b640041b8189e14c8ac2.stex"
 [deps]
 
 source_file="res://Level2/Enemies/Giant/Arm.png"
-source_md5="8fb20eb36da1d3922205bc306cc63180"
-
 dest_files=[ "res://.import/Arm.png-0872d7c055e9b640041b8189e14c8ac2.stex" ]
-dest_md5="43a17b9b43d31ce6aa82cfc09b319ed9"
 
 [params]
 

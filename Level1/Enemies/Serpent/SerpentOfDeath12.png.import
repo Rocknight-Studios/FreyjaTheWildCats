@@ -7,10 +7,7 @@ path="res://.import/SerpentOfDeath12.png-96059417e810b302fc43a5f9ec78c319.stex"
 [deps]
 
 source_file="res://Level1/Enemies/Serpent/SerpentOfDeath12.png"
-source_md5="1ed1987d67b866df5e4b541f2ce177f4"
-
 dest_files=[ "res://.import/SerpentOfDeath12.png-96059417e810b302fc43a5f9ec78c319.stex" ]
-dest_md5="da480d697086f16c50222111118965fa"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/Elbow.png-f678be1bac5ade968c7a0fc5dc4e2dbb.stex"
 [deps]
 
 source_file="res://Freyja/FreyjaProjectiles/Valkyrie/Elbow.png"
-source_md5="bfd0ee90a4d936020247c879896c3b41"
-
 dest_files=[ "res://.import/Elbow.png-f678be1bac5ade968c7a0fc5dc4e2dbb.stex" ]
-dest_md5="0e54e03c229803dd88ac4c8d2b27dcb6"
 
 [params]
 

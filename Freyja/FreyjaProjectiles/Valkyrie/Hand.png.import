@@ -7,10 +7,7 @@ path="res://.import/Hand.png-9d1748fd23432391eb242fbe4111deee.stex"
 [deps]
 
 source_file="res://Freyja/FreyjaProjectiles/Valkyrie/Hand.png"
-source_md5="0018d80cd7e93ba264645164127f84d3"
-
 dest_files=[ "res://.import/Hand.png-9d1748fd23432391eb242fbe4111deee.stex" ]
-dest_md5="77e262f83d7ece2727421e3bc955dd76"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/Shoulder.png-b654b84ed7c0fded7d3ccb29d6500c1f.stex"
 [deps]
 
 source_file="res://Level2/Enemies/Giant/Shoulder.png"
-source_md5="00ec6015439b153460014f9fe73abcd3"
-
 dest_files=[ "res://.import/Shoulder.png-b654b84ed7c0fded7d3ccb29d6500c1f.stex" ]
-dest_md5="11b2df2cb87136cf3b0a49600a8e4379"
 
 [params]
 

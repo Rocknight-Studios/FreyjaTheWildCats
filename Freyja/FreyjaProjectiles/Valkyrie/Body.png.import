@@ -7,10 +7,7 @@ path="res://.import/Body.png-9597d7d33bff24159aa471a1e525d141.stex"
 [deps]
 
 source_file="res://Freyja/FreyjaProjectiles/Valkyrie/Body.png"
-source_md5="4c72f6e13c2c87d32f4c2b172f65bcf6"
-
 dest_files=[ "res://.import/Body.png-9597d7d33bff24159aa471a1e525d141.stex" ]
-dest_md5="0108d07a2f387d71d5d7cf8e0820e282"
 
 [params]
 

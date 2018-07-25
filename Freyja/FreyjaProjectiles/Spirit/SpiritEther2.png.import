@@ -7,10 +7,7 @@ path="res://.import/SpiritEther2.png-bf69d1ae26033430813a4d9eacccba48.stex"
 [deps]
 
 source_file="res://Freyja/FreyjaProjectiles/Spirit/SpiritEther2.png"
-source_md5="cdfd0cb2b5a29a8c341ab2a2cf1d4b7f"
-
 dest_files=[ "res://.import/SpiritEther2.png-bf69d1ae26033430813a4d9eacccba48.stex" ]
-dest_md5="1e3341c3a844701444297869907c26ac"
 
 [params]
 
