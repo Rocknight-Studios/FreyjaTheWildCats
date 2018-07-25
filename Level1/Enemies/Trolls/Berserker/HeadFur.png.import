@@ -7,10 +7,7 @@ path="res://.import/HeadFur.png-c6dd78bd05fefe60a91a72736c3496b5.stex"
 [deps]
 
 source_file="res://Level1/Enemies/Trolls/Berserker/HeadFur.png"
-source_md5="18156cc6de35e1eee5a959626cb650f0"
-
 dest_files=[ "res://.import/HeadFur.png-c6dd78bd05fefe60a91a72736c3496b5.stex" ]
-dest_md5="974e9a358102af782ca6c211638096a4"
 
 [params]
 

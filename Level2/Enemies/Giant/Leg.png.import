@@ -7,10 +7,7 @@ path="res://.import/Leg.png-43a9286dc84fb8656b971f3c78941dc7.stex"
 [deps]
 
 source_file="res://Level2/Enemies/Giant/Leg.png"
-source_md5="cb79d8ccdc7048d232dd8beb845ce5a1"
-
 dest_files=[ "res://.import/Leg.png-43a9286dc84fb8656b971f3c78941dc7.stex" ]
-dest_md5="6be09290230251b7ac0dc376ae1f4e3e"
 
 [params]
 

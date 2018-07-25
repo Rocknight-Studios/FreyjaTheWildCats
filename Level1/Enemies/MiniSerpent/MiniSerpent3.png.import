@@ -7,10 +7,7 @@ path="res://.import/MiniSerpent3.png-a9b4e53902ace3148fcca40d4e5a3134.stex"
 [deps]
 
 source_file="res://Level1/Enemies/MiniSerpent/MiniSerpent3.png"
-source_md5="693717c149c7f907eb9f56bedd9c3b64"
-
 dest_files=[ "res://.import/MiniSerpent3.png-a9b4e53902ace3148fcca40d4e5a3134.stex" ]
-dest_md5="7ddf8768aca5512f61b2e9c76d337e83"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/Skirt.png-2b3696baa75360c52edc45a9fdaf3c3c.stex"
 [deps]
 
 source_file="res://Freyja/FreyjaBody/Skirt.png"
-source_md5="acde3cb5388c4932d13aa62c3bc3061f"
-
 dest_files=[ "res://.import/Skirt.png-2b3696baa75360c52edc45a9fdaf3c3c.stex" ]
-dest_md5="2f83f6547494d7620cc3e72ee83092f8"
 
 [params]
 

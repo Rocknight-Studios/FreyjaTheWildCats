@@ -7,10 +7,7 @@ path="res://.import/Wing1.png-fa211d785624da94d7e92154f5d3c3d3.stex"
 [deps]
 
 source_file="res://Freyja/FreyjaProjectiles/Raven/Wing/Wing1.png"
-source_md5="d1ef2debb460d70944463dc4a7967887"
-
 dest_files=[ "res://.import/Wing1.png-fa211d785624da94d7e92154f5d3c3d3.stex" ]
-dest_md5="0f3eea9233930c160297f070a1d7bffa"
 
 [params]
 

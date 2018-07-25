@@ -7,10 +7,7 @@ path="res://.import/Amulet.png-79bc62039aefd710b9adecc5f3054d26.stex"
 [deps]
 
 source_file="res://Freyja/FreyjaProjectiles/Valkyrie/Amulet.png"
-source_md5="1e438678633b1bc0fd56591420a3d19a"
-
 dest_files=[ "res://.import/Amulet.png-79bc62039aefd710b9adecc5f3054d26.stex" ]
-dest_md5="afdfcf5695b7ee93b760cb4e9b963365"
 
 [params]
 

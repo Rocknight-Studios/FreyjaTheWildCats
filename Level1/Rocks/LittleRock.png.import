@@ -7,10 +7,7 @@ path="res://.import/LittleRock.png-3d83997d576d4587341eae39b3512538.stex"
 [deps]
 
 source_file="res://Level1/Rocks/LittleRock.png"
-source_md5="fffcd54e211140c6e640f1c165f5a557"
-
 dest_files=[ "res://.import/LittleRock.png-3d83997d576d4587341eae39b3512538.stex" ]
-dest_md5="1c351e34b59985018c5f9fcf4bd6690e"
 
 [params]
 

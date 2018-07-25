@@ -7,10 +7,7 @@ path="res://.import/Shoulder.png-2ba753fc50baa7397ab4d03445f0396c.stex"
 [deps]
 
 source_file="res://Level2/Enemies/WizardTroll/Shoulder.png"
-source_md5="c02603bf2caea4e875daf0f46128ff6b"
-
 dest_files=[ "res://.import/Shoulder.png-2ba753fc50baa7397ab4d03445f0396c.stex" ]
-dest_md5="155580fba27dc149100c68edc50f6cfa"
 
 [params]
 

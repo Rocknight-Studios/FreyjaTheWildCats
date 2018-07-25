@@ -7,10 +7,7 @@ path="res://.import/Medallion.png-9eefa31bb891ed92c6a5bfeb79cb8c92.stex"
 [deps]
 
 source_file="res://Freyja/FreyjaBody/Medallion.png"
-source_md5="0f9aa0c1ec5cdb001acfc686589f5b0c"
-
 dest_files=[ "res://.import/Medallion.png-9eefa31bb891ed92c6a5bfeb79cb8c92.stex" ]
-dest_md5="620539f4c956a68744195ca939907619"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/SpikeyRocks.png-ba698b8a4a9228b7cb0a8b4e08396609.stex"
 [deps]
 
 source_file="res://Level1/IceLevelTest/SpikeyRocks.png"
-source_md5="93b4019d91ef67b7d40f8eca14ba4498"
-
 dest_files=[ "res://.import/SpikeyRocks.png-ba698b8a4a9228b7cb0a8b4e08396609.stex" ]
-dest_md5="a30add9bbd6d303632353641cec1e342"
 
 [params]
 

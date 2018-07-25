@@ -7,10 +7,7 @@ path="res://.import/FreyjaNotImpressed.ogg-71657a8961d5ef39a3de63f55705942b.oggs
 [deps]
 
 source_file="res://Unsorted/FreyjaNotImpressed.ogg"
-source_md5="84105c420b5b9e176ed2110a856ef58c"
-
 dest_files=[ "res://.import/FreyjaNotImpressed.ogg-71657a8961d5ef39a3de63f55705942b.oggstr" ]
-dest_md5="178424785dc48119014d358463736aee"
 
 [params]
 

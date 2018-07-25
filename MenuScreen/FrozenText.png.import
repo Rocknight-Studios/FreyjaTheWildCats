@@ -7,10 +7,7 @@ path="res://.import/FrozenText.png-cdb391295186c909223c860b6c1e4143.stex"
 [deps]
 
 source_file="res://MenuScreen/FrozenText.png"
-source_md5="3bda2a5cfa0e3e5af78ed1297604497a"
-
 dest_files=[ "res://.import/FrozenText.png-cdb391295186c909223c860b6c1e4143.stex" ]
-dest_md5="b2d76fb253004d200691ae253c3419e2"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/Ear.png-d5aeba31c62ad5870ef9c05b6749d8c0.stex"
 [deps]
 
 source_file="res://Freyja/Chariot/WildCats/Ear.png"
-source_md5="4967b2bad509db77d31f5aa033cba32d"
-
 dest_files=[ "res://.import/Ear.png-d5aeba31c62ad5870ef9c05b6749d8c0.stex" ]
-dest_md5="024e64f6f8f77f327dcc568ae8de8645"
 
 [params]
 

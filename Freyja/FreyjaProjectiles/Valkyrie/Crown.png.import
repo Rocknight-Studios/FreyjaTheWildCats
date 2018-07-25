@@ -7,10 +7,7 @@ path="res://.import/Crown.png-24216bee9a78ed8247bf33a133cb01c7.stex"
 [deps]
 
 source_file="res://Freyja/FreyjaProjectiles/Valkyrie/Crown.png"
-source_md5="35ec4fb8a1b6308407105dbcc6655f60"
-
 dest_files=[ "res://.import/Crown.png-24216bee9a78ed8247bf33a133cb01c7.stex" ]
-dest_md5="f49717cc4de6051015c2baea422d40e3"
 
 [params]
 

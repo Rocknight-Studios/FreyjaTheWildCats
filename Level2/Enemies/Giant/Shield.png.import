@@ -7,10 +7,7 @@ path="res://.import/Shield.png-181c9dfafa01232f207855dbc7e6cf29.stex"
 [deps]
 
 source_file="res://Level2/Enemies/Giant/Shield.png"
-source_md5="e2703f42f991c11fd4e83e61f729cd27"
-
 dest_files=[ "res://.import/Shield.png-181c9dfafa01232f207855dbc7e6cf29.stex" ]
-dest_md5="3a5d2df546f973c4c30508b10ef101b3"
 
 [params]
 

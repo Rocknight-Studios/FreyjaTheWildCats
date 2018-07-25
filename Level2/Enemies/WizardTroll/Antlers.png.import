@@ -7,10 +7,7 @@ path="res://.import/Antlers.png-ebee61d5d6562f9c26030e352c955edb.stex"
 [deps]
 
 source_file="res://Level2/Enemies/WizardTroll/Antlers.png"
-source_md5="1555c218154709b773051675a8922238"
-
 dest_files=[ "res://.import/Antlers.png-ebee61d5d6562f9c26030e352c955edb.stex" ]
-dest_md5="88eb47947d58f2e8e345b46672248acc"
 
 [params]
 

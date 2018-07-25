@@ -7,10 +7,7 @@ path="res://.import/Chest.png-0b91e860424d26107ad1a6e7350d1df2.stex"
 [deps]
 
 source_file="res://Freyja/FreyjaBody/Chest.png"
-source_md5="aa7490b64b8683fa29948d7c920af153"
-
 dest_files=[ "res://.import/Chest.png-0b91e860424d26107ad1a6e7350d1df2.stex" ]
-dest_md5="9c047727aa6437ae78b6749fec4e8936"
 
 [params]
 

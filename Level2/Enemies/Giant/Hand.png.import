@@ -7,10 +7,7 @@ path="res://.import/Hand.png-5e28e327e382efd17d5b584820dd3e85.stex"
 [deps]
 
 source_file="res://Level2/Enemies/Giant/Hand.png"
-source_md5="31fe78b726280a471a0028d5f4d3caff"
-
 dest_files=[ "res://.import/Hand.png-5e28e327e382efd17d5b584820dd3e85.stex" ]
-dest_md5="2706fccc7a3eab763cd44b62cd81558f"
 
 [params]
 

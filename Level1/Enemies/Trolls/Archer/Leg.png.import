@@ -7,10 +7,7 @@ path="res://.import/Leg.png-487b1ab4d36262883a0af223a42adc63.stex"
 [deps]
 
 source_file="res://Level1/Enemies/Trolls/Archer/Leg.png"
-source_md5="c00fbc71c2bce5c413c72d77dad82944"
-
 dest_files=[ "res://.import/Leg.png-487b1ab4d36262883a0af223a42adc63.stex" ]
-dest_md5="48c5f8d81e019647340aa846eec63d3f"
 
 [params]
 

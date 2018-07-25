@@ -7,10 +7,7 @@ path="res://.import/Horn.png-783603ab1f1019f3ba312e38a022b588.stex"
 [deps]
 
 source_file="res://Level2/Enemies/Giant/Horn.png"
-source_md5="c27b448d89dfc26bbab545e9f7a6d049"
-
 dest_files=[ "res://.import/Horn.png-783603ab1f1019f3ba312e38a022b588.stex" ]
-dest_md5="05f17983319a79025b5404462123f5ee"
 
 [params]
 

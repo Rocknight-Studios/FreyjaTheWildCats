@@ -7,10 +7,7 @@ path="res://.import/ChariotLink.png-7dc46e834b3cb8d82811ffe0ae4caa0a.stex"
 [deps]
 
 source_file="res://Freyja/Chariot/ChariotLink.png"
-source_md5="8701aff3b26cf194f1999e9b939d1ed1"
-
 dest_files=[ "res://.import/ChariotLink.png-7dc46e834b3cb8d82811ffe0ae4caa0a.stex" ]
-dest_md5="676f1ef211b6146861a5f0e6b08d785a"
 
 [params]
 

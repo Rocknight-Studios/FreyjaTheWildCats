@@ -7,10 +7,7 @@ path="res://.import/Club.png-3f3c3cded9a6b69289f26d937bd9175c.stex"
 [deps]
 
 source_file="res://Level2/Enemies/Giant/Club.png"
-source_md5="64f52386c6d93817bbff07b3663b5e7a"
-
 dest_files=[ "res://.import/Club.png-3f3c3cded9a6b69289f26d937bd9175c.stex" ]
-dest_md5="4a443dcc52d51610ba9a9fe0bf022c65"
 
 [params]
 

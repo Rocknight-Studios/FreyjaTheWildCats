@@ -7,10 +7,7 @@ path="res://.import/Leg.png-de865917a9245b63fe43c5b88ec85fe7.stex"
 [deps]
 
 source_file="res://Level1/Enemies/Trolls/Berserker/Leg.png"
-source_md5="7a35759a5c7c1eead58d3cdf6a25957f"
-
 dest_files=[ "res://.import/Leg.png-de865917a9245b63fe43c5b88ec85fe7.stex" ]
-dest_md5="e5469821392f8d99ab50eec52b8ab87b"
 
 [params]
 

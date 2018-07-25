@@ -7,10 +7,7 @@ path="res://.import/Hair.png-9be9879c5c4e5e38c5478808d794927a.stex"
 [deps]
 
 source_file="res://Freyja/FreyjaProjectiles/Valkyrie/Hair.png"
-source_md5="b9863cd098ac9f3105d74110ea7c2be9"
-
 dest_files=[ "res://.import/Hair.png-9be9879c5c4e5e38c5478808d794927a.stex" ]
-dest_md5="e0bdeaf42790cb971bd1941800c192a8"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/UpperArm.png-28aa4deeeb0f3e5b709f298578baa130.stex"
 [deps]
 
 source_file="res://Freyja/FreyjaProjectiles/Valkyrie/UpperArm.png"
-source_md5="c3f581342fbd1661bc3e2d89d77ab5da"
-
 dest_files=[ "res://.import/UpperArm.png-28aa4deeeb0f3e5b709f298578baa130.stex" ]
-dest_md5="c63bf409df38da5497e89279f839b694"
 
 [params]
 

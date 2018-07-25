@@ -7,10 +7,7 @@ path="res://.import/Smoke2.png-24623943c284cb859565a2f21d8be7f8.stex"
 [deps]
 
 source_file="res://Freyja/FreyjaProjectiles/Spear/Smoke2.png"
-source_md5="1e4be8ba39cc6e385dcf04ae1a491797"
-
 dest_files=[ "res://.import/Smoke2.png-24623943c284cb859565a2f21d8be7f8.stex" ]
-dest_md5="fa87a6fbcea587e8d91df252e59b19a9"
 
 [params]
 

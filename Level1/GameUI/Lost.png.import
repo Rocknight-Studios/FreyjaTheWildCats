@@ -7,10 +7,7 @@ path="res://.import/Lost.png-658c0e268e48936fa01bd8a670fb3e19.stex"
 [deps]
 
 source_file="res://Level1/GameUI/Lost.png"
-source_md5="4deb1b00ef2c80e7c6db614102e7bd0b"
-
 dest_files=[ "res://.import/Lost.png-658c0e268e48936fa01bd8a670fb3e19.stex" ]
-dest_md5="16bab8e5b31ab6e15233d92397912640"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/GiantTorso.png-ca9fab683337e5eff2b1914bc8ce059d.stex"
 [deps]
 
 source_file="res://Level2/Enemies/Giant/GiantTorso.png"
-source_md5="8b5bedf798d8a296b3bf2af2b51e1882"
-
 dest_files=[ "res://.import/GiantTorso.png-ca9fab683337e5eff2b1914bc8ce059d.stex" ]
-dest_md5="93e288b09e27cff6cd7e1b8862955fa3"
 
 [params]
 

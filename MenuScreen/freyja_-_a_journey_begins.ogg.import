@@ -7,10 +7,7 @@ path="res://.import/freyja_-_a_journey_begins.ogg-1f8274b765f3e8eeeca802da792528
 [deps]
 
 source_file="res://MenuScreen/freyja_-_a_journey_begins.ogg"
-source_md5="d4cdc6bc2a5e6a99a7be9124fda0b0d0"
-
 dest_files=[ "res://.import/freyja_-_a_journey_begins.ogg-1f8274b765f3e8eeeca802da79252868.oggstr" ]
-dest_md5="105dab21a977c2f90ec34aa6ad254d6a"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/Helmet.png-977c55453275101bc2706c0a55f58e0c.stex"
 [deps]
 
 source_file="res://Freyja/FreyjaBody/Helmet.png"
-source_md5="9a4088fbedf68397a62fd47dee8d83bf"
-
 dest_files=[ "res://.import/Helmet.png-977c55453275101bc2706c0a55f58e0c.stex" ]
-dest_md5="ca155c374e2127e2d9888423eed1f731"
 
 [params]
 

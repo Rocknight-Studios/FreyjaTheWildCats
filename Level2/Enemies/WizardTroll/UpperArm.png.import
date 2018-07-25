@@ -7,10 +7,7 @@ path="res://.import/UpperArm.png-8841fcae871dc76a23285c743fe3163b.stex"
 [deps]
 
 source_file="res://Level2/Enemies/WizardTroll/UpperArm.png"
-source_md5="09ae1b0de01f3c24e20944bbb5b746a7"
-
 dest_files=[ "res://.import/UpperArm.png-8841fcae871dc76a23285c743fe3163b.stex" ]
-dest_md5="7b59982d8429a494454c4f2a6505dd80"
 
 [params]
 

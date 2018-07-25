@@ -7,10 +7,7 @@ path="res://.import/Antlers.png-d2b4f331f9a0b2c41ff0c84477d56cd1.stex"
 [deps]
 
 source_file="res://Level2/Enemies/ForestGiant/Antlers.png"
-source_md5="676595f683a5d53bcbfa093848e6cf00"
-
 dest_files=[ "res://.import/Antlers.png-d2b4f331f9a0b2c41ff0c84477d56cd1.stex" ]
-dest_md5="2fad687492e709735de7d674ee12319d"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/ArmorPiece.png-c356a683758a027e06ecbef4a70fc935.stex"
 [deps]
 
 source_file="res://Level1/Enemies/Trolls/Shield/ArmorPiece.png"
-source_md5="cfa0c89b7b78eba8981593d5049d1373"
-
 dest_files=[ "res://.import/ArmorPiece.png-c356a683758a027e06ecbef4a70fc935.stex" ]
-dest_md5="f7ca7666986eb3707804ad9f04307371"
 
 [params]
 

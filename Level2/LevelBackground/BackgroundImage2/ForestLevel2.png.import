@@ -7,10 +7,7 @@ path="res://.import/ForestLevel2.png-59e7645dbdb6f565adecd17812730193.stex"
 [deps]
 
 source_file="res://Level2/LevelBackground/BackgroundImage2/ForestLevel2.png"
-source_md5="3b6b1ef0d0dbd75c6b9d8b995de37504"
-
 dest_files=[ "res://.import/ForestLevel2.png-59e7645dbdb6f565adecd17812730193.stex" ]
-dest_md5="df395c8ac4e22a4c15995b21c41f3dd9"
 
 [params]
 

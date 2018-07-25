@@ -7,10 +7,7 @@ path="res://.import/LegTop.png-bb4a75c5bf2b640fe4f80a045b216504.stex"
 [deps]
 
 source_file="res://Level2/Enemies/Spider/LegTop.png"
-source_md5="90f2b459dc6f9316db75cdf37fb69601"
-
 dest_files=[ "res://.import/LegTop.png-bb4a75c5bf2b640fe4f80a045b216504.stex" ]
-dest_md5="bd335df9d49b90bf9eb651c18c489a7e"
 
 [params]
 

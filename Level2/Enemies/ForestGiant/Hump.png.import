@@ -7,10 +7,7 @@ path="res://.import/Hump.png-541341e7e27173b993393f9d239dc0ca.stex"
 [deps]
 
 source_file="res://Level2/Enemies/ForestGiant/Hump.png"
-source_md5="f8daf6f4a24192818a8080e8898f9afe"
-
 dest_files=[ "res://.import/Hump.png-541341e7e27173b993393f9d239dc0ca.stex" ]
-dest_md5="39f43977344a6319f74ce96267b621ac"
 
 [params]
 
