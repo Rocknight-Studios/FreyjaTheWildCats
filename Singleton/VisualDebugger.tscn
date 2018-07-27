@@ -1,18 +1,19 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Singleton/VisualDebugger.gd" type="Script" id=1]
-[ext_resource path="res://Singleton/VisualDebuggerBackground.gd" type="Script" id=2]
-[ext_resource path="res://Singleton/SceneNodeSelector.gd" type="Script" id=3]
-[ext_resource path="res://Singleton/VisualDebuggerCamera.gd" type="Script" id=4]
-[ext_resource path="res://Singleton/WarningLine.gd" type="Script" id=5]
-[ext_resource path="res://Singleton/StepButton.gd" type="Script" id=6]
-[ext_resource path="res://Singleton/RunButton.gd" type="Script" id=7]
-[ext_resource path="res://Singleton/CameraMovementSpeedSlider.gd" type="Script" id=8]
-[ext_resource path="res://Singleton/JumpToNodeButton.gd" type="Script" id=9]
-[ext_resource path="res://Singleton/EnablePersistentFollowButton.gd" type="Script" id=10]
-[ext_resource path="res://Singleton/ShowNodeInfoButton.gd" type="Script" id=11]
-[ext_resource path="res://Singleton/JumpToSelectedNodeButton.gd" type="Script" id=12]
-[ext_resource path="res://Singleton/TransformationModeButton.gd" type="Script" id=13]
+[ext_resource path="res://Singleton/IndicatorDrawSurface.gd" type="Script" id=2]
+[ext_resource path="res://Singleton/VisualDebuggerBackground.gd" type="Script" id=3]
+[ext_resource path="res://Singleton/SceneNodeSelector.gd" type="Script" id=4]
+[ext_resource path="res://Singleton/VisualDebuggerCamera.gd" type="Script" id=5]
+[ext_resource path="res://Singleton/WarningLine.gd" type="Script" id=6]
+[ext_resource path="res://Singleton/StepButton.gd" type="Script" id=7]
+[ext_resource path="res://Singleton/RunButton.gd" type="Script" id=8]
+[ext_resource path="res://Singleton/CameraMovementSpeedSlider.gd" type="Script" id=9]
+[ext_resource path="res://Singleton/JumpToNodeButton.gd" type="Script" id=10]
+[ext_resource path="res://Singleton/EnablePersistentFollowButton.gd" type="Script" id=11]
+[ext_resource path="res://Singleton/ShowNodeInfoButton.gd" type="Script" id=12]
+[ext_resource path="res://Singleton/JumpToSelectedNodeButton.gd" type="Script" id=13]
+[ext_resource path="res://Singleton/TransformationModeButton.gd" type="Script" id=14]
 
 [node name="VisualDebugger" type="CanvasLayer" index="0"]
 
@@ -25,7 +26,7 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause", "Z Index" ]
 
-[node name="VisualDebuggerBackground" type="Panel" parent="." index="0"]
+[node name="MenuSlideBackground" type="Panel" parent="." index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -40,17 +41,38 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 2 )
 _sections_unfolded = [ "Rect" ]
 
-[node name="SceneNodeSelector" type="Node2D" parent="." index="1"]
+[node name="IndicatorDrawSurface" type="Node2D" parent="." index="1"]
 
+script = ExtResource( 2 )
+
+[node name="VisualDebuggerBackground" type="Panel" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -1.0
+margin_right = 383.0
+margin_bottom = 1080.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 script = ExtResource( 3 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="SceneNodeSelector" type="Node2D" parent="." index="3"]
+
+script = ExtResource( 4 )
 node_types_to_detect = [ "Node2D", "StaticBody2D" ]
 selection_color = Color( 0, 0.1, 0, 0.1 )
 reversed_node_path = [  ]
 
-[node name="DebuggerCamera2D" type="Camera2D" parent="." index="2"]
+[node name="DebuggerCamera2D" type="Camera2D" parent="." index="4"]
 
 pause_mode = 2
 anchor_mode = 1
@@ -75,10 +97,10 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 _sections_unfolded = [ "Drag Margin", "Editor", "Offset", "Pause", "Smoothing", "Transform", "Z Index" ]
 
-[node name="ActivityLabel" type="Label" parent="." index="3"]
+[node name="ActivityLabel" type="Label" parent="." index="5"]
 
 modulate = Color( 0, 0.835938, 1, 1 )
 anchor_left = 0.0
@@ -102,8 +124,9 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Margin", "Pause", "Rect", "Visibility" ]
 
-[node name="InfoContainer" type="Container" parent="." index="4"]
+[node name="InfoContainer" type="Container" parent="." index="6"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -168,11 +191,12 @@ placeholder_alpha = 0.6
 caret_blink = false
 caret_blink_speed = 0.65
 caret_position = 0
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 _sections_unfolded = [ "Visibility", "custom_colors" ]
 
-[node name="GeneralControlsContainer" type="Container" parent="." index="5"]
+[node name="GeneralControlsContainer" type="Container" parent="." index="7"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -215,7 +239,7 @@ group = null
 text = "Step"
 flat = false
 align = 1
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 _sections_unfolded = [ "Margin", "Pause" ]
 
 [node name="RunButton" type="Button" parent="GeneralControlsContainer" index="1"]
@@ -242,7 +266,7 @@ group = null
 text = "Run"
 flat = false
 align = 1
-script = ExtResource( 7 )
+script = ExtResource( 8 )
 _sections_unfolded = [ "Margin", "Pause" ]
 
 [node name="CameraMovementSpeedLabel" type="Label" parent="GeneralControlsContainer" index="2"]
@@ -294,7 +318,7 @@ editable = true
 tick_count = 0
 ticks_on_borders = false
 focus_mode = 2
-script = ExtResource( 8 )
+script = ExtResource( 9 )
 
 [node name="CameraJumpPositionX" type="LineEdit" parent="GeneralControlsContainer" index="4"]
 
@@ -375,7 +399,7 @@ group = null
 text = "Jump To Node"
 flat = false
 align = 1
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 
 [node name="JumpToNodePath" type="LineEdit" parent="GeneralControlsContainer" index="7"]
 
@@ -450,7 +474,7 @@ group = null
 text = "Follow node: "
 flat = false
 align = 0
-script = ExtResource( 10 )
+script = ExtResource( 11 )
 
 [node name="EnableExactFollow" type="CheckButton" parent="GeneralControlsContainer" index="10"]
 
@@ -477,7 +501,7 @@ text = "Jump right away: "
 flat = false
 align = 0
 
-[node name="TabContainer" type="TabContainer" parent="." index="6"]
+[node name="TabContainer" type="TabContainer" parent="." index="8"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -498,8 +522,6 @@ tabs_visible = true
 
 [node name="NodeSelection" type="Container" parent="TabContainer" index="0"]
 
-editor/display_folded = true
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -651,7 +673,6 @@ _sections_unfolded = [ "Mouse" ]
 
 [node name="SelectedNodeInfo" type="Container" parent="TabContainer/NodeSelection" index="5"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -694,7 +715,7 @@ group = null
 text = "Show Node Info"
 flat = false
 align = 1
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 
 [node name="JumpToSelectedNodeButton" type="Button" parent="TabContainer/NodeSelection/SelectedNodeInfo" index="1"]
 
@@ -720,7 +741,7 @@ group = null
 text = "Jump To Selected Node"
 flat = false
 align = 1
-script = ExtResource( 12 )
+script = ExtResource( 13 )
 
 [node name="SelectedNodeTitle" type="Label" parent="TabContainer/NodeSelection/SelectedNodeInfo" index="2"]
 
@@ -779,6 +800,7 @@ caret_moving_by_right_click = true
 
 [node name="Transformations" type="Container" parent="TabContainer" index="1"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -819,7 +841,7 @@ text = "Transformation mode: MOVE"
 flat = false
 align = 1
 items = [ "MOVE", null, 0, false, false, -1, 0, null, "", false, "ROTATE", null, 0, false, false, -1, 0, null, "", false, "SCALE", null, 0, false, false, -1, 0, null, "", false ]
-script = ExtResource( 13 )
+script = ExtResource( 14 )
 _sections_unfolded = [ "Margin" ]
 
 [node name="Watches" type="Container" parent="TabContainer" index="2"]

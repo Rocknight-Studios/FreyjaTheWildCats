@@ -6,4 +6,5 @@ func _ready():
 	self.get_popup().connect("id_pressed", self, "manage_id")
 
 func manage_id(ID):
+	Global.visual_debugger.transformation_mode = ID
 	self.text = "Transformation mode: " + self.get_popup().get_item_text(ID)
