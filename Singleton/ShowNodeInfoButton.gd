@@ -12,5 +12,6 @@ func _on_ShowNodeInfoButton_pressed():
 		current_node_info.text += "Full Path: "
 		full_selected_path = Global.visual_debugger.scene_node_selector.full_paths[selection_info.cursor_get_line()]
 		current_node_info.text += full_selected_path
+		Global.visual_debugger.node_is_selected = true
 	else:
 		Global.visual_debugger.warning_line.text = "List is empty! Use selection circle to select nodes in the scene."
