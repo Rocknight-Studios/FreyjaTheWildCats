@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage45/ForestLevel45.png" type="Texture" id=1]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage45/Trees.png" type="Texture" id=2]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage45/Trees3.png" type="Texture" id=3]
+[ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level2/Enemies/WizardTroll/WizardTroll.tscn" type="PackedScene" id=5]
+
+[node name="BackgroundImage45" type="Sprite" index="0"]
+
+modulate = Color( 1, 1, 1, 0.941176 )
+position = Vector2( 960, -48060 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+position = Vector2( 867.708, -397.16 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 91.6561, 403.066, -160.886, 70.6602, -283.919, 44.7578, -357.307, -145.188, 95.973, -147.344 )
+
+[node name="Trees" type="Sprite" parent="." index="1"]
+
+modulate = Color( 1, 1, 1, 0.941176 )
+position = Vector2( 660.495, 403.633 )
+rotation = 0.0174533
+z_index = 1
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+
+[node name="Trees3" type="Sprite" parent="." index="2"]
+
+modulate = Color( 1, 1, 1, 0.941176 )
+position = Vector2( -625.622, 532.836 )
+rotation = 0.0174533
+z_index = 1
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+
+[node name="Trees4" type="Sprite" parent="." index="3"]
+
+modulate = Color( 1, 1, 1, 0.941176 )
+position = Vector2( -729.48, -477.773 )
+rotation = 0.0174533
+z_index = 1
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+
+[node name="Giant" parent="." index="4" instance=ExtResource( 4 )]
+
+position = Vector2( -311.573, 255.648 )
+
+[node name="Giant2" parent="." index="5" instance=ExtResource( 4 )]
+
+position = Vector2( 315.567, 47.9297 )
+
+[node name="Giant3" parent="." index="6" instance=ExtResource( 4 )]
+
+position = Vector2( -455.375, -279.621 )
+
+[node name="WizardTroll" parent="." index="7" instance=ExtResource( 5 )]
+
+position = Vector2( 111.846, -379.477 )
+
+

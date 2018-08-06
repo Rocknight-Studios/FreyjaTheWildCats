@@ -1,0 +1,109 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage12/ForestLevel12.png" type="Texture" id=1]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage11/Rock.png" type="Texture" id=2]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage12/Trees.png" type="Texture" id=3]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage12/Trees2.png" type="Texture" id=4]
+[ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=5]
+
+[node name="BackgroundImage12" type="Sprite" index="0"]
+
+position = Vector2( 960, -12420 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 135.134, 545.018, 22.7253, 246.06, 25.1171, 124.084, -194.916, -93.5576, -428.942, -113.885, -511.653, 142.003, -543.962, 431.491, -429.3, 537.843 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -970.141, -17.8379, -675.986, -200.691, -535.533, -542.547, -956.891, -542.547 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." index="2"]
+
+editor/display_folded = true
+position = Vector2( 643.961, -373.657 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -108.876, -166.24, 309.831, 186.217, 312.482, -166.24 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( 643.961, -373.657 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D4" index="0"]
+
+position = Vector2( -388.539, 156.471 )
+build_mode = 0
+polygon = PoolVector2Array( 122.022, -75.9834, 157.184, 1.37305, 197.62, -67.1934 )
+
+[node name="Rock" type="Sprite" parent="." index="4"]
+
+position = Vector2( -48.8035, 357.892 )
+z_index = 1
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="Trees" type="Sprite" parent="." index="5"]
+
+modulate = Color( 1, 1, 1, 0.941176 )
+position = Vector2( -858.941, 341.623 )
+z_index = 1
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="Trees2" type="Sprite" parent="." index="6"]
+
+modulate = Color( 1, 1, 1, 0.941176 )
+position = Vector2( 882.309, 209.488 )
+z_index = 1
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="Giant" parent="." index="7" instance=ExtResource( 5 )]
+
+position = Vector2( 364.111, 144.2 )
+
+

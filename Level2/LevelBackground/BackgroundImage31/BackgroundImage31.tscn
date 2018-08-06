@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage31/ForestLevel31.png" type="Texture" id=1]
+[ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=2]
+
+[node name="BackgroundImage31" type="Sprite" index="0"]
+
+position = Vector2( 960, -32940 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+position = Vector2( -18.5503, -365.707 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -149.728, -186.828, -231.879, 112.625, -1.32501, 218.629, 247.779, -75.5273, 242.479, -184.18 )
+
+[node name="Giant" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 219.908, 198.277 )
+
+

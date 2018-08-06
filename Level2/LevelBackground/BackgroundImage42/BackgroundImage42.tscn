@@ -1,0 +1,144 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage42/ForestLevel42.png" type="Texture" id=1]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage42/Trees4.png" type="Texture" id=2]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage42/Trees3.png" type="Texture" id=3]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage42/Trees2.png" type="Texture" id=4]
+[ext_resource path="res://Level2/Enemies/Spider/Spider.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Level2/Enemies/WizardTroll/WizardTroll.tscn" type="PackedScene" id=7]
+
+[node name="BackgroundImage42" type="Sprite" index="0"]
+
+position = Vector2( 960, -44820 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+position = Vector2( -603.027, -506.332 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -349.987, -3.91797, 28.0039, 55.8555, 253.04, -33.8086 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 283.932, -540.613, 457.984, -454.469, 960.799, -523.035 )
+
+[node name="Trees" type="Sprite" parent="." index="2"]
+
+modulate = Color( 1, 1, 1, 0.941176 )
+position = Vector2( 636.012, -235.855 )
+z_index = 1
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="Trees3" type="Sprite" parent="." index="3"]
+
+modulate = Color( 1, 1, 1, 0.941176 )
+position = Vector2( -339.206, -243.805 )
+z_index = 1
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="Trees2" type="Sprite" parent="." index="4"]
+
+modulate = Color( 1, 1, 1, 0.941176 )
+position = Vector2( -704.913, 275.605 )
+rotation = 0.0174533
+z_index = 1
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." index="5"]
+
+editor/display_folded = true
+position = Vector2( 594.15, -19.4844 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -61.839, 9.33594, 119.328, -31.5703, 162.185, 155.438, -20.9303, 202.191 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." index="6"]
+
+editor/display_folded = true
+position = Vector2( -545.449, 364.281 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D4" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -91.0596, -14.0391, 154.392, 19.0742, 193.353, 167.125, -36.5147, 151.543 )
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="." index="7"]
+
+editor/display_folded = true
+position = Vector2( -771.421, -255.191 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D5" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -133.916, 73.6211, 2.44598, -66.6367, 173.873, 204.137, -32.6187, 233.359 )
+
+[node name="Spider" parent="." index="8" instance=ExtResource( 5 )]
+
+position = Vector2( -380.276, -203.293 )
+rotation = -0.367612
+
+[node name="Spider2" parent="." index="9" instance=ExtResource( 5 )]
+
+position = Vector2( 609.877, -253.516 )
+rotation = 1.05378
+
+[node name="Giant" parent="." index="10" instance=ExtResource( 6 )]
+
+position = Vector2( 150.676, 231.988 )
+
+[node name="WizardTroll" parent="." index="11" instance=ExtResource( 7 )]
+
+position = Vector2( 148.284, -143.5 )
+
+

@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage5/ForestLevel5.png" type="Texture" id=1]
+[ext_resource path="res://Level2/Enemies/ForestArcher/ForestArcher.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage5/Trees.png" type="Texture" id=4]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage5/Trees2.png" type="Texture" id=5]
 
 [node name="BackgroundImage5" type="Sprite" index="0"]
 
@@ -10,6 +14,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -25,6 +30,7 @@ polygon = PoolVector2Array( -367.352, 543.436, -445.458, 392.802, -676.987, 376.
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -37,5 +43,33 @@ bounce = 0.0
 
 build_mode = 0
 polygon = PoolVector2Array( 899.084, 546.225, 463.921, 370.486, 330.024, 80.3774, 494.605, 16.2188, 834.925, -547.262, 960.453, -538.893 )
+
+[node name="ArcherHeavy" parent="." index="2" instance=ExtResource( 2 )]
+
+position = Vector2( -547.965, 500.018 )
+
+[node name="Giant" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 13.6992, 226.035 )
+
+[node name="Giant2" parent="." index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 174.664, -332.204 )
+
+[node name="Trees" type="Sprite" parent="." index="5"]
+
+modulate = Color( 1, 1, 1, 0.941176 )
+position = Vector2( 715.778, -291.106 )
+z_index = 1
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="Trees2" type="Sprite" parent="." index="6"]
+
+modulate = Color( 1, 1, 1, 0.941176 )
+position = Vector2( 801.397, 599.335 )
+z_index = 1
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
 
 

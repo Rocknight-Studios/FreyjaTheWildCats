@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage22/ForestLevel22.png" type="Texture" id=1]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage22/Trees.png" type="Texture" id=2]
+[ext_resource path="res://Level2/Enemies/Spider/Spider.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=4]
+
+[node name="BackgroundImage22" type="Sprite"]
+
+position = Vector2( 960, -23220 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+position = Vector2( 695.234, 23.9727 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -623.726, 513.652, -634.001, 208.844, 264.987, 112.148, 259.872, 520.502 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -360.017, 541.049, -350.408, 167.055, -959.265, 120.789, -959.357, 534.199 )
+
+[node name="Trees" type="Sprite" parent="." index="2"]
+
+modulate = Color( 1, 1, 1, 0.941176 )
+position = Vector2( 1047.83, -149.689 )
+z_index = 1
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="Trees2" type="Sprite" parent="." index="3"]
+
+modulate = Color( 1, 1, 1, 0.941176 )
+position = Vector2( -633.743, -529.842 )
+z_index = 1
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="Spider" parent="." index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 697.381, -161.793 )
+
+[node name="Spider2" parent="." index="5" instance=ExtResource( 3 )]
+
+position = Vector2( -597.707, -334.469 )
+rotation = -0.896455
+
+[node name="Giant" parent="." index="6" instance=ExtResource( 4 )]
+
+position = Vector2( 77.2722, -219.451 )
+
+

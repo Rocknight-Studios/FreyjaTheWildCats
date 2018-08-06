@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage13/ForestLevel13.png" type="Texture" id=1]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage13/Rock.png" type="Texture" id=2]
+[ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=3]
+
+[node name="BackgroundImage13" type="Sprite" index="0"]
+
+position = Vector2( 960, -13500 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+position = Vector2( 662.653, -10.792 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -68.9694, 556.192, -229.211, 360.075, -300.961, 166.351, -355.969, -199.575, -162.244, -529.625, 294.564, -527.233, 294.564, 549.017 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( -755.767, 11.959 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 201.45, 528.658, 321.034, 141.208, 423.875, -339.518, 277.984, -552.376, -209.916, -557.159, -205.133, 523.875 )
+
+[node name="Rock" type="Sprite" parent="." index="2"]
+
+position = Vector2( -839.42, 162.68 )
+z_index = 1
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="Giant" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( -164.129, 270.81 )
+
+[node name="Giant2" parent="." index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 4.03271, -239.213 )
+
+

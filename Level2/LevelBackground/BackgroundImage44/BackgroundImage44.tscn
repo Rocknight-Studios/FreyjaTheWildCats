@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage44/ForestLevel44.png" type="Texture" id=1]
+[ext_resource path="res://Level2/Enemies/WizardTroll/WizardTroll.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Level2/Enemies/ForestGiant/ForestGiant.tscn" type="PackedScene" id=3]
+
+[node name="BackgroundImage44" type="Sprite" index="0"]
+
+position = Vector2( 960, -46980 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+position = Vector2( -588.35, 358.75 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 357.842, 188.23, 358.062, -205.609, -373.663, -298.426, -373.663, 176.441 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( 559.65, 380.273 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -362.05, 161.922, -366.875, -255.191, 397.228, -483.992, 403.284, 164.316 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." index="2"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -530.317, -149.047, -435.343, -90.7695, -482.83, 2.04688, -582.12, -45.4414 )
+
+[node name="WizardTroll" parent="." index="3" instance=ExtResource( 2 )]
+
+position = Vector2( -5.30017, 307.406 )
+
+[node name="ForestGiant" parent="." index="4" instance=ExtResource( 3 )]
+
+position = Vector2( -405.458, -310.051 )
+
+[node name="ForestGiant2" parent="." index="5" instance=ExtResource( 3 )]
+
+position = Vector2( 408.108, -302.105 )
+
+

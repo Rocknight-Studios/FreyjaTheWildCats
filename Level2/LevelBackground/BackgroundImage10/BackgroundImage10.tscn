@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage10/ForestLevel10.png" type="Texture" id=1]
+[ext_resource path="res://Level2/Enemies/ForestArcher/ForestArcher.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage10/Trees.png" type="Texture" id=3]
+[ext_resource path="res://Level2/Enemies/WizardTroll/WizardTroll.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level2/Enemies/Spider/Spider.tscn" type="PackedScene" id=5]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 218.175
+height = 20.0
 
 [node name="BackgroundImage10" type="Sprite" index="0"]
 
@@ -8,8 +18,10 @@ position = Vector2( 960, -10260 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="0"]
 
+editor/display_folded = true
+position = Vector2( 426.764, 284.016 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -18,13 +30,26 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" index="0"]
 
-build_mode = 0
-polygon = PoolVector2Array( -943.834, 82.3779, -720.673, -51.5186, -790.411, -204.941, -949.413, -224.468 )
+shape = SubResource( 1 )
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
+[node name="ArcherHeavy" parent="." index="1" instance=ExtResource( 2 )]
 
+position = Vector2( 540.753, 302.186 )
+
+[node name="ArcherHeavy2" parent="." index="2" instance=ExtResource( 2 )]
+
+position = Vector2( 365.804, 336.267 )
+
+[node name="ArcherHeavy3" parent="." index="3" instance=ExtResource( 2 )]
+
+position = Vector2( 436.238, 170.405 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." index="4"]
+
+editor/display_folded = true
+position = Vector2( -68.1621, -333.995 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -33,9 +58,43 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( 347.224, 500.013, 189.332, 284.705, 314.415, 89.9033, 593.289, 114.51, 640.452, 403.637 )
+polygon = PoolVector2Array( 227.928, -205.062, 223.467, 256.318, 1033.51, 413.315, 1025.43, -202.791 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." index="5"]
+
+editor/display_folded = true
+position = Vector2( -515.76, -383.98 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D4" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -446.877, -157.35, -435.517, 576.53, 248.054, 315.144, 243.833, -157.35 )
+
+[node name="Trees" type="Sprite" parent="." index="6"]
+
+modulate = Color( 1, 1, 1, 0.941176 )
+position = Vector2( -686.219, 371.005 )
+z_index = 1
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="WizardTroll" parent="." index="7" instance=ExtResource( 4 )]
+
+position = Vector2( -44.4148, -384.928 )
+
+[node name="Spider" parent="." index="8" instance=ExtResource( 5 )]
+
+position = Vector2( -688.43, 316.457 )
+rotation = -0.46098
 
 
