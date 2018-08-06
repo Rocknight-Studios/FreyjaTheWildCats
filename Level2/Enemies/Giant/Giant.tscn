@@ -422,7 +422,7 @@ archer_projectile_offsets = null
 
 [node name="FootLeft" type="Sprite" parent="Body" index="0"]
 
-position = Vector2( 121.898, 69.9152 )
+position = Vector2( 122.632, 69.3812 )
 rotation = -0.207121
 scale = Vector2( 1.3, 1.3 )
 texture = ExtResource( 2 )
@@ -431,7 +431,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="FootRight" type="Sprite" parent="Body" index="1"]
 
-position = Vector2( -128.733, 67.0422 )
+position = Vector2( -129.071, 66.8921 )
 rotation = 0.246738
 scale = Vector2( 1.3, 1.3 )
 texture = ExtResource( 2 )
@@ -442,14 +442,14 @@ _sections_unfolded = [ "Offset", "Transform" ]
 [node name="LegLeft" type="Sprite" parent="Body" index="2"]
 
 position = Vector2( 67.2268, 21.2638 )
-rotation = -0.285926
+rotation = 0.401902
 texture = ExtResource( 3 )
 offset = Vector2( 25.627, 28.421 )
 
 [node name="LegRight" type="Sprite" parent="Body" index="3"]
 
 position = Vector2( -51.6911, 18.8203 )
-rotation = 0.0858469
+rotation = 0.205692
 texture = ExtResource( 3 )
 offset = Vector2( -41.9771, 33.308 )
 flip_h = true
@@ -458,7 +458,8 @@ _sections_unfolded = [ "Offset" ]
 [node name="Torso" type="Sprite" parent="Body" index="4"]
 
 editor/display_folded = true
-rotation = -0.122322
+position = Vector2( 1.19721, -20.5596 )
+rotation = 0.307028
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Animation", "Offset", "Transform" ]
 
@@ -466,7 +467,7 @@ _sections_unfolded = [ "Animation", "Offset", "Transform" ]
 
 editor/display_folded = true
 position = Vector2( 94.3227, -29.3823 )
-rotation = 0.582195
+rotation = -1.06572
 texture = ExtResource( 5 )
 offset = Vector2( 23.2125, 6.38789 )
 _sections_unfolded = [ "Visibility" ]
@@ -474,7 +475,7 @@ _sections_unfolded = [ "Visibility" ]
 [node name="Arm" type="Sprite" parent="Body/Torso/ShoulderLeft" index="0"]
 
 position = Vector2( 61.4705, 5.30975 )
-rotation = 1.05754
+rotation = 0.729176
 texture = ExtResource( 6 )
 offset = Vector2( 46.0689, -3.01005 )
 _sections_unfolded = [ "Visibility" ]
@@ -491,7 +492,7 @@ _sections_unfolded = [ "Material", "Offset", "Visibility" ]
 
 show_behind_parent = true
 position = Vector2( 99.7627, -9.65812 )
-rotation = -1.013
+rotation = -1.93495
 texture = ExtResource( 8 )
 offset = Vector2( 10.0106, 37.1453 )
 _sections_unfolded = [ "Material", "Visibility" ]
@@ -500,7 +501,7 @@ _sections_unfolded = [ "Material", "Visibility" ]
 
 editor/display_folded = true
 position = Vector2( -76.9408, -38.1951 )
-rotation = 3.03725
+rotation = 4.92198
 texture = ExtResource( 5 )
 offset = Vector2( 30.6082, -6.8707 )
 flip_v = true
@@ -510,7 +511,7 @@ _sections_unfolded = [ "Offset", "Visibility" ]
 
 show_behind_parent = true
 position = Vector2( 71.2803, -7.86118 )
-rotation = -1.04854
+rotation = -0.331518
 texture = ExtResource( 6 )
 offset = Vector2( 51.0265, 5.99929 )
 flip_v = true
@@ -520,7 +521,7 @@ _sections_unfolded = [ "Offset", "Visibility" ]
 
 show_behind_parent = true
 position = Vector2( 102.807, 11.6177 )
-rotation = -1.94306
+rotation = -0.531622
 texture = ExtResource( 8 )
 offset = Vector2( -8.92084, 38.1722 )
 flip_h = true
@@ -548,7 +549,7 @@ offset = Vector2( 0.975967, -21.2844 )
 [node name="Hair" type="Sprite" parent="Body/Torso" index="3"]
 
 position = Vector2( -2.00626, 35.925 )
-rotation = -0.517274
+rotation = -0.0141204
 texture = ExtResource( 11 )
 offset = Vector2( 0.432437, 0.700489 )
 
@@ -556,7 +557,7 @@ offset = Vector2( 0.432437, 0.700489 )
 
 editor/display_folded = true
 position = Vector2( 0.437256, 41.6265 )
-rotation = -0.576421
+rotation = 0.12119
 texture = ExtResource( 12 )
 offset = Vector2( 0.432437, 0.700489 )
 
@@ -578,7 +579,7 @@ offset = Vector2( 57.1395, 1.44236 )
 
 editor/display_folded = true
 position = Vector2( 2.88077, -57.7432 )
-rotation = 0.000846856
+rotation = 0.0339191
 texture = ExtResource( 14 )
 offset = Vector2( 0.432437, 0.700489 )
 
@@ -620,7 +621,7 @@ data = {
 "position": Vector2( 329, 154 ),
 "type": "output"
 }, {
-"blend": 0.0,
+"blend": 1.0,
 "filter": [  ],
 "id": "blend2",
 "position": Vector2( 202, 117 ),

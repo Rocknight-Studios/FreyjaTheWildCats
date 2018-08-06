@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage19/ForestLevel19.png" type="Texture" id=1]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage19/Trees.png" type="Texture" id=2]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage19/Trees2.png" type="Texture" id=3]
+[ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=4]
+
+[node name="BackgroundImage19" type="Sprite" index="0"]
+
+position = Vector2( 960, -19980 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 100.664, 182.592, 167.94, 333.963, 352.949, 413.854, 466.477, 376.01, 588.414, 199.412, 680.919, -132.764, 643.076, -397.662, 466.477, -448.119, 121.688, -326.182 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( -407.86, -256.49 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -265.567, -292.268, -322.369, 103.072, -6.5506, 280.295, 191.12, 259.846, 257.01, 16.7344, 195.664, -280.908 )
+
+[node name="Trees" type="Sprite" parent="." index="2"]
+
+modulate = Color( 1, 1, 1, 0.941176 )
+position = Vector2( 1019.99, 55.6348 )
+z_index = 1
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="Trees2" type="Sprite" parent="." index="3"]
+
+modulate = Color( 1, 1, 1, 0.941176 )
+position = Vector2( -970.535, 18.543 )
+z_index = 1
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="Giant" parent="." index="4" instance=ExtResource( 4 )]
+
+position = Vector2( -346.178, 287.451 )
+
+

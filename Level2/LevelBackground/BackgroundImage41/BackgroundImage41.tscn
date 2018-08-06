@@ -1,0 +1,101 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage41/ForestLevel41.png" type="Texture" id=1]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage41/Walls.png" type="Texture" id=2]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage41/Trees.png" type="Texture" id=3]
+[ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level2/Enemies/ForestArcher/ForestArcher.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Level2/Enemies/Spider/Spider.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Level2/Enemies/ForestGiant/ForestGiant.tscn" type="PackedScene" id=7]
+
+[node name="BackgroundImage41" type="Sprite" index="0"]
+
+modulate = Color( 1, 1, 1, 0.941176 )
+position = Vector2( 960, -43740 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+position = Vector2( 683.713, 336.559 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -300.324, 202.816, -313.574, -178.793, -154.572, -279.492, 285.337, -213.242, 282.687, 200.164 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( -617.462, 315.355 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 295.937, 229.32, 314.487, -139.039, 139.584, -263.59, -342.725, -192.039, -340.075, 224.02 )
+
+[node name="Walls" type="Sprite" parent="." index="2"]
+
+position = Vector2( -33.4834, 365.926 )
+z_index = 1
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="Trees" type="Sprite" parent="." index="3"]
+
+modulate = Color( 1, 1, 1, 0.941176 )
+position = Vector2( 818.866, -394.855 )
+z_index = 1
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="Giant" parent="." index="4" instance=ExtResource( 4 )]
+
+position = Vector2( 9.57599, 303.758 )
+
+[node name="ArcherHeavy" parent="." index="5" instance=ExtResource( 5 )]
+
+position = Vector2( -600.311, 265.473 )
+
+[node name="ArcherHeavy2" parent="." index="6" instance=ExtResource( 5 )]
+
+position = Vector2( -449.635, 332.438 )
+
+[node name="ArcherHeavy3" parent="." index="7" instance=ExtResource( 5 )]
+
+position = Vector2( 526.169, 356.355 )
+
+[node name="ArcherHeavy4" parent="." index="8" instance=ExtResource( 5 )]
+
+position = Vector2( 631.402, 255.91 )
+
+[node name="Spider" parent="." index="9" instance=ExtResource( 6 )]
+
+position = Vector2( 796.746, -274.68 )
+rotation = 1.18878
+
+[node name="ForestGiant" parent="." index="10" instance=ExtResource( 7 )]
+
+position = Vector2( -520.125, -270.777 )
+rotation = -0.539402
+
+[node name="Giant2" parent="." index="11" instance=ExtResource( 4 )]
+
+position = Vector2( 103.246, -278.57 )
+
+

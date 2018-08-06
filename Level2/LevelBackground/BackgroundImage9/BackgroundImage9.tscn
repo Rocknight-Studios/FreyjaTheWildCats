@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage9/ForestLevel9.png" type="Texture" id=1]
+[ext_resource path="res://Level2/Enemies/Spider/Spider.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Level2/Enemies/ForestGiant/ForestGiant.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage9/Trees2.png" type="Texture" id=4]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage9/Trees.png" type="Texture" id=5]
+
+[node name="BackgroundImage9" type="Sprite" index="0"]
+
+position = Vector2( 960, -9180 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -528.177, 541.25, -382.764, 395.838, -460.015, 102.739, -965.946, -288.149, -959.871, 529.89 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 960.033, -258.521, 289.77, -415.294, 282.954, -528.897, 960.033, -533.441 )
+
+[node name="Spider" parent="." index="2" instance=ExtResource( 2 )]
+
+position = Vector2( 747.71, -65.4561 )
+rotation = 1.37769
+
+[node name="Spider2" parent="." index="3" instance=ExtResource( 2 )]
+
+position = Vector2( 878.237, 429.208 )
+rotation = 1.15856
+
+[node name="ForestGiant" parent="." index="4" instance=ExtResource( 3 )]
+
+position = Vector2( -397.771, -239.166 )
+
+[node name="ForestGiant2" parent="." index="5" instance=ExtResource( 3 )]
+
+position = Vector2( 113.289, -83.0791 )
+
+[node name="Trees2" type="Sprite" parent="." index="6"]
+
+modulate = Color( 1, 1, 1, 0.941176 )
+position = Vector2( 918.895, 614.317 )
+z_index = 1
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="Trees" type="Sprite" parent="." index="7"]
+
+modulate = Color( 1, 1, 1, 0.941176 )
+position = Vector2( 831.135, -92.9219 )
+z_index = 1
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+

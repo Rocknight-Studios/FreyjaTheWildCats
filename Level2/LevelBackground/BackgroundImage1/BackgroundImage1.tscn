@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage1/ForestLevel1.png" type="Texture" id=1]
+[ext_resource path="res://Level2/Enemies/Spider/Spider.tscn" type="PackedScene" id=2]
 
-[node name="BackgroundImage1" type="Sprite"]
+[node name="BackgroundImage1" type="Sprite" index="0"]
 
 position = Vector2( 960, -540 )
 texture = ExtResource( 1 )
@@ -10,6 +11,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -25,6 +27,7 @@ polygon = PoolVector2Array( -500.562, 560.351, -386.2, 374.899, -395.473, 158.53
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -37,5 +40,15 @@ bounce = 0.0
 
 build_mode = 0
 polygon = PoolVector2Array( 343.245, 554.17, 429.79, 350.172, 633.787, 291.445, 463.789, -85.6408, 605.969, -203.094, 958.329, -166.003, 976.874, 535.624 )
+
+[node name="Spider" parent="." index="2" instance=ExtResource( 2 )]
+
+position = Vector2( -506.903, -173.089 )
+rotation = -1.13252
+
+[node name="Spider2" parent="." index="3" instance=ExtResource( 2 )]
+
+position = Vector2( 747.991, -343.086 )
+rotation = 1.10841
 
 

@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage50/ForestLevel50.png" type="Texture" id=1]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage50/Bridge.png" type="Texture" id=2]
+
+[node name="BackgroundImage50" type="Sprite"]
+
+position = Vector2( 960, -53460 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+position = Vector2( 731.85, 196.117 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -435.758, 340.117, -442.933, -138.219, -10.0417, -176.484, 28.2251, -736.133, 226.733, -736.133, 230.795, 340.961 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -338.527, 539.727, -290.826, 391.324, -298.777, 46.8203, -720.134, 36.2188, -783.735, -538.84, -955.988, -538.84, -961.288, 547.68 )
+
+[node name="Bridge" type="Sprite" parent="." index="2"]
+
+position = Vector2( 95.4019, 386.91 )
+z_index = 1
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Z Index" ]
+
+

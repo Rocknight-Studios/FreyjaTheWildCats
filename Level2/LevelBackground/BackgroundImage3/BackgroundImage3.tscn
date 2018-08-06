@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage3/ForestLevel3.png" type="Texture" id=1]
+[ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=2]
 
 [node name="BackgroundImage3" type="Sprite" index="0"]
 
@@ -10,6 +11,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -25,6 +27,7 @@ polygon = PoolVector2Array( -566.828, 545.964, -432.932, 498.542, -371.562, -92.
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -37,5 +40,9 @@ bounce = 0.0
 
 build_mode = 0
 polygon = PoolVector2Array( 320.238, 543.175, 283.974, 428.805, 331.396, 336.75, 225.394, 77.3257, 292.343, -179.31, 677.296, -435.945, 959.037, -474.999, 967.405, 532.017 )
+
+[node name="Giant" parent="." index="2" instance=ExtResource( 2 )]
+
+position = Vector2( -39.0532, -55.7905 )
 
 

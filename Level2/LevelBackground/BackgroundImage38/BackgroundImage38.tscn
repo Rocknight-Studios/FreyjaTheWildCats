@@ -1,0 +1,98 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage38/ForestLevel38.png" type="Texture" id=1]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage38/Bridge.png" type="Texture" id=2]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage38/Trees.png" type="Texture" id=3]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage39/Cliff.png" type="Texture" id=4]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage38/TreesOnCliff.png" type="Texture" id=5]
+[ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Level2/Enemies/ForestArcher/ForestArcher.tscn" type="PackedScene" id=7]
+
+[node name="BackgroundImage38" type="Sprite" index="0"]
+
+position = Vector2( 960, -40500 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+position = Vector2( 630.276, -32.375 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -119.193, 573.348, -175.313, 320.805, -319.931, 61.7852, -205.532, -391.496, 18.95, -512.371, 329.771, -510.211, 329.771, 569.027 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -423.539, 538.812, -337.199, 174.031, -227.117, -272.777, -404.112, -542.586, -958.842, -540.426, -961, 538.812 )
+
+[node name="Bridge" type="Sprite" parent="." index="2"]
+
+z_index = 2
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Trees" type="Sprite" parent="." index="3"]
+
+position = Vector2( 1207.79, 265.473 )
+z_index = 3
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="Rocks" type="Sprite" parent="." index="4"]
+
+position = Vector2( -670.552, 312.34 )
+z_index = 1
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="TreesOnRocks" type="Sprite" parent="." index="5"]
+
+position = Vector2( -927.838, 79.3281 )
+z_index = 2
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="Giant" parent="." index="6" instance=ExtResource( 6 )]
+
+position = Vector2( 43.8864, 26.4062 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="ArcherHeavy" parent="." index="7" instance=ExtResource( 7 )]
+
+position = Vector2( -403.447, -59.9219 )
+
+[node name="ArcherHeavy2" parent="." index="8" instance=ExtResource( 7 )]
+
+position = Vector2( -118, -85.8242 )
+
+[node name="ArcherHeavy3" parent="." index="9" instance=ExtResource( 7 )]
+
+position = Vector2( 186.346, -79.3555 )
+
+[node name="ArcherHeavy4" parent="." index="10" instance=ExtResource( 7 )]
+
+position = Vector2( 538.178, -66.4062 )
+
+

@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage18/ForestLevel18.png" type="Texture" id=1]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage19/Trees2.png" type="Texture" id=2]
+[ext_resource path="res://Level2/Enemies/ForestArcher/ForestArcher.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level2/Enemies/ForestGiant/ForestGiant.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Level2/Enemies/WizardTroll/WizardTroll.tscn" type="PackedScene" id=6]
+
+[node name="BackgroundImage18" type="Sprite" index="0"]
+
+position = Vector2( 960, -18900 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -958.569, 417.43, -743.261, 396.924, -646.885, 206.223, -806.828, -19.3379, -960.62, -19.3379 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 962.797, -337.174, 474.766, -33.6914, 355.834, 384.621, 407.098, 542.514, 962.797, 538.412 )
+
+[node name="Trees" type="Sprite" parent="." index="2"]
+
+modulate = Color( 1, 1, 1, 0.941176 )
+position = Vector2( -914.962, -426.797 )
+z_index = 1
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="ArcherHeavy" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( -887.066, 119.949 )
+
+[node name="ArcherHeavy2" parent="." index="4" instance=ExtResource( 3 )]
+
+position = Vector2( -803.381, 273.371 )
+
+[node name="ForestGiant" parent="." index="5" instance=ExtResource( 4 )]
+
+position = Vector2( -384.953, 267.793 )
+
+[node name="ForestGiant2" parent="." index="6" instance=ExtResource( 4 )]
+
+position = Vector2( 122.739, -290.109 )
+
+[node name="Giant" parent="." index="7" instance=ExtResource( 5 )]
+
+position = Vector2( -446.323, -256.635 )
+
+[node name="WizardTroll" parent="." index="8" instance=ExtResource( 6 )]
+
+position = Vector2( 94.8436, 237.109 )
+
+

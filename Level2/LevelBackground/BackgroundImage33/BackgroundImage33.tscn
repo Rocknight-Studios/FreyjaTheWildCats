@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage33/ForestLevel33.png" type="Texture" id=1]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage33/Trees.png" type="Texture" id=2]
+[ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level2/Enemies/WizardTroll/WizardTroll.tscn" type="PackedScene" id=4]
+
+[node name="BackgroundImage33" type="Sprite" index="0"]
+
+position = Vector2( 960, -35100 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 402.408, 548.324, 337.833, 26.9414, 411.974, -374.859, 371.316, -539.883, -353.359, -544.668, -374.884, 98.6914, -185.942, 545.934 )
+
+[node name="Bush" type="Sprite" parent="." index="1"]
+
+modulate = Color( 1, 1, 1, 0.941176 )
+position = Vector2( -195.213, 657.215 )
+z_index = 1
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="Giant" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( -677.749, 151.406 )
+
+[node name="Giant2" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 666.934, 147.805 )
+
+[node name="WizardTroll" parent="." index="4" instance=ExtResource( 4 )]
+
+position = Vector2( -659.724, -255.961 )
+
+[node name="WizardTroll2" parent="." index="5" instance=ExtResource( 4 )]
+
+position = Vector2( 670.539, -288.406 )
+
+

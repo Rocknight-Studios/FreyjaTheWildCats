@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage34/ForestLevel34.png" type="Texture" id=1]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage34/Trees2.png" type="Texture" id=2]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage34/Trees.png" type="Texture" id=3]
+[ext_resource path="res://Level2/Enemies/Spider/Spider.tscn" type="PackedScene" id=4]
+
+[node name="BackgroundImage34" type="Sprite" index="0"]
+
+position = Vector2( 960, -36180 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 372.332, 549.887, 231.879, -335.23, 17.2254, -377.629, -136.477, -486.281, -120.577, -208.027, -351.131, 414.734, -351.131, 539.285 )
+
+[node name="Trees" type="Sprite" parent="." index="1"]
+
+modulate = Color( 1, 1, 1, 0.941176 )
+position = Vector2( -939.161, 248.371 )
+z_index = 1
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+
+[node name="Trees2" type="Sprite" parent="." index="2"]
+
+modulate = Color( 1, 1, 1, 0.941176 )
+position = Vector2( 1000.45, 83.5156 )
+z_index = 1
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="Spider" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 782.301, -335.273 )
+rotation = 1.04618
+
+[node name="Spider4" parent="." index="4" instance=ExtResource( 4 )]
+
+position = Vector2( 847.192, 176.645 )
+rotation = 1.04618
+
+[node name="Spider2" parent="." index="5" instance=ExtResource( 4 )]
+
+position = Vector2( -717.409, -86.5234 )
+rotation = -0.740413
+
+[node name="Spider3" parent="." index="6" instance=ExtResource( 4 )]
+
+position = Vector2( -775.09, 299.223 )
+rotation = -0.740413
+
+

@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage23/ForestLevel23.png" type="Texture" id=1]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage23/Trees.png" type="Texture" id=2]
+[ext_resource path="res://Level2/Enemies/ForestArcher/ForestArcher.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level2/Enemies/ForestGiant/ForestGiant.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Level2/Enemies/Spider/Spider.tscn" type="PackedScene" id=6]
+
+[node name="BackgroundImage23" type="Sprite"]
+
+position = Vector2( 960, -24300 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -972.555, -37.3711, -784.012, -9.55273, -632.559, -123.916, -644.922, -374.277, -827.284, -470.094, -969.465, -417.549 )
+
+[node name="Trees" type="Sprite" parent="." index="1"]
+
+modulate = Color( 1, 1, 1, 0.941176 )
+position = Vector2( 880.464, -24.248 )
+z_index = 1
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="ArcherHeavy" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( -878.622, -163.643 )
+
+[node name="ArcherHeavy2" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( -767.85, -289.518 )
+
+[node name="ForestGiant" parent="." index="4" instance=ExtResource( 4 )]
+
+position = Vector2( -629.386, 236.648 )
+
+[node name="ForestGiant2" parent="." index="5" instance=ExtResource( 4 )]
+
+position = Vector2( -337.351, -161.123 )
+
+[node name="Giant" parent="." index="6" instance=ExtResource( 5 )]
+
+position = Vector2( 354.973, -259.307 )
+
+[node name="Spider" parent="." index="7" instance=ExtResource( 6 )]
+
+position = Vector2( 541.272, 173.707 )
+
+
