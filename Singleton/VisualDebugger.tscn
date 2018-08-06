@@ -6,14 +6,14 @@
 [ext_resource path="res://Singleton/SceneNodeSelector.gd" type="Script" id=4]
 [ext_resource path="res://Singleton/VisualDebuggerCamera.gd" type="Script" id=5]
 [ext_resource path="res://Singleton/WarningLine.gd" type="Script" id=6]
-[ext_resource path="res://Singleton/StepButton.gd" type="Script" id=7]
-[ext_resource path="res://Singleton/RunButton.gd" type="Script" id=8]
-[ext_resource path="res://Singleton/CameraMovementSpeedSlider.gd" type="Script" id=9]
-[ext_resource path="res://Singleton/JumpToNodeButton.gd" type="Script" id=10]
-[ext_resource path="res://Singleton/EnablePersistentFollowButton.gd" type="Script" id=11]
-[ext_resource path="res://Singleton/ShowNodeInfoButton.gd" type="Script" id=12]
-[ext_resource path="res://Singleton/JumpToSelectedNodeButton.gd" type="Script" id=13]
-[ext_resource path="res://Singleton/TransformationModeButton.gd" type="Script" id=14]
+[ext_resource path="res://Singleton/ShowNodeInfoButton.gd" type="Script" id=7]
+[ext_resource path="res://Singleton/JumpToSelectedNodeButton.gd" type="Script" id=8]
+[ext_resource path="res://Singleton/TransformationModeButton.gd" type="Script" id=9]
+[ext_resource path="res://Singleton/StepButton.gd" type="Script" id=10]
+[ext_resource path="res://Singleton/RunButton.gd" type="Script" id=11]
+[ext_resource path="res://Singleton/CameraMovementSpeedSlider.gd" type="Script" id=12]
+[ext_resource path="res://Singleton/JumpToNodeButton.gd" type="Script" id=13]
+[ext_resource path="res://Singleton/EnablePersistentFollowButton.gd" type="Script" id=14]
 
 [node name="VisualDebugger" type="CanvasLayer" index="0"]
 
@@ -194,315 +194,9 @@ caret_position = 0
 script = ExtResource( 6 )
 _sections_unfolded = [ "Visibility", "custom_colors" ]
 
-[node name="GeneralControlsContainer" type="Container" parent="." index="7"]
+[node name="TabContainer" type="TabContainer" parent="." index="7"]
 
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 102.0
-margin_right = -1549.0
-margin_bottom = -719.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="StepButton" type="Button" parent="GeneralControlsContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 6.0
-margin_top = 9.0
-margin_right = 160.0
-margin_bottom = 52.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Step"
-flat = false
-align = 1
-script = ExtResource( 7 )
-_sections_unfolded = [ "Margin", "Pause" ]
-
-[node name="RunButton" type="Button" parent="GeneralControlsContainer" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 197.0
-margin_top = 9.0
-margin_right = 351.0
-margin_bottom = 52.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Run"
-flat = false
-align = 1
-script = ExtResource( 8 )
-_sections_unfolded = [ "Margin", "Pause" ]
-
-[node name="CameraMovementSpeedLabel" type="Label" parent="GeneralControlsContainer" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 7.0
-margin_top = 61.0
-margin_right = 119.0
-margin_bottom = 75.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Movement speed"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="CameraMovementSpeedSlider" type="HSlider" parent="GeneralControlsContainer" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 4.0
-margin_top = 79.0
-margin_right = 356.0
-margin_bottom = 95.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 0
-min_value = 1.0
-max_value = 50.0
-step = 1.0
-page = 0.0
-value = 25.0
-exp_edit = false
-rounded = false
-editable = true
-tick_count = 0
-ticks_on_borders = false
-focus_mode = 2
-script = ExtResource( 9 )
-
-[node name="CameraJumpPositionX" type="LineEdit" parent="GeneralControlsContainer" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 10.0
-margin_top = 113.0
-margin_right = 75.0
-margin_bottom = 137.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_neighbour_right = NodePath("../CameraJumpPositionY")
-focus_next = NodePath("../CameraJumpPositionY")
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 1
-size_flags_horizontal = 1
-size_flags_vertical = 1
-text = "0"
-focus_mode = 2
-context_menu_enabled = true
-placeholder_alpha = 0.6
-caret_blink = false
-caret_blink_speed = 0.65
-caret_position = 0
-_sections_unfolded = [ "Focus" ]
-
-[node name="CameraJumpPositionY" type="LineEdit" parent="GeneralControlsContainer" index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 87.0
-margin_top = 113.0
-margin_right = 152.0
-margin_bottom = 137.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_neighbour_left = NodePath("../CameraJumpPositionX")
-focus_previous = NodePath("../CameraJumpPositionX")
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 1
-size_flags_horizontal = 1
-size_flags_vertical = 1
-text = "0"
-focus_mode = 2
-context_menu_enabled = true
-placeholder_alpha = 0.6
-caret_blink = false
-caret_blink_speed = 0.65
-caret_position = 0
-
-[node name="JumpToNodeButton" type="Button" parent="GeneralControlsContainer" index="6"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 13.0
-margin_top = 160.0
-margin_right = 125.0
-margin_bottom = 180.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Jump To Node"
-flat = false
-align = 1
-script = ExtResource( 10 )
-
-[node name="JumpToNodePath" type="LineEdit" parent="GeneralControlsContainer" index="7"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 138.0
-margin_top = 158.0
-margin_right = 353.0
-margin_bottom = 182.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 1
-size_flags_horizontal = 1
-size_flags_vertical = 1
-focus_mode = 2
-context_menu_enabled = true
-placeholder_alpha = 0.6
-caret_blink = false
-caret_blink_speed = 0.65
-caret_position = 0
-
-[node name="CameraJumpPositionButton" type="Button" parent="GeneralControlsContainer" index="8"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 160.0
-margin_top = 115.0
-margin_right = 237.0
-margin_bottom = 135.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Jump here"
-flat = false
-align = 1
-
-[node name="EnablePersistentFollowButton" type="CheckButton" parent="GeneralControlsContainer" index="9"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 197.0
-margin_top = 182.0
-margin_right = 362.0
-margin_bottom = 222.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Follow node: "
-flat = false
-align = 0
-script = ExtResource( 11 )
-
-[node name="EnableExactFollow" type="CheckButton" parent="GeneralControlsContainer" index="10"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 173.0
-margin_top = 216.0
-margin_right = 361.0
-margin_bottom = 256.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Jump right away: "
-flat = false
-align = 0
-
-[node name="TabContainer" type="TabContainer" parent="." index="8"]
-
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -715,7 +409,7 @@ group = null
 text = "Show Node Info"
 flat = false
 align = 1
-script = ExtResource( 12 )
+script = ExtResource( 7 )
 
 [node name="JumpToSelectedNodeButton" type="Button" parent="TabContainer/NodeSelection/SelectedNodeInfo" index="1"]
 
@@ -741,7 +435,7 @@ group = null
 text = "Jump To Selected Node"
 flat = false
 align = 1
-script = ExtResource( 13 )
+script = ExtResource( 8 )
 
 [node name="SelectedNodeTitle" type="Label" parent="TabContainer/NodeSelection/SelectedNodeInfo" index="2"]
 
@@ -841,7 +535,7 @@ text = "Transformation mode: MOVE"
 flat = false
 align = 1
 items = [ "MOVE", null, 0, false, false, -1, 0, null, "", false, "ROTATE", null, 0, false, false, -1, 0, null, "", false, "SCALE", null, 0, false, false, -1, 0, null, "", false ]
-script = ExtResource( 14 )
+script = ExtResource( 9 )
 _sections_unfolded = [ "Margin" ]
 
 [node name="Watches" type="Container" parent="TabContainer" index="2"]
@@ -976,7 +670,318 @@ caret_blink = false
 caret_blink_speed = 0.65
 caret_moving_by_right_click = true
 
+[node name="GeneralControlsContainer" type="Container" parent="." index="8"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 102.0
+margin_right = -1549.0
+margin_bottom = -719.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StepButton" type="Button" parent="GeneralControlsContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 6.0
+margin_top = 9.0
+margin_right = 160.0
+margin_bottom = 52.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Step"
+flat = false
+align = 1
+script = ExtResource( 10 )
+_sections_unfolded = [ "Margin", "Pause" ]
+
+[node name="RunButton" type="Button" parent="GeneralControlsContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 197.0
+margin_top = 9.0
+margin_right = 351.0
+margin_bottom = 52.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Run"
+flat = false
+align = 1
+script = ExtResource( 11 )
+_sections_unfolded = [ "Margin", "Pause" ]
+
+[node name="CameraMovementSpeedLabel" type="Label" parent="GeneralControlsContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 7.0
+margin_top = 61.0
+margin_right = 119.0
+margin_bottom = 75.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Movement speed"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="CameraMovementSpeedSlider" type="HSlider" parent="GeneralControlsContainer" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 4.0
+margin_top = 79.0
+margin_right = 356.0
+margin_bottom = 95.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = 1.0
+max_value = 50.0
+step = 1.0
+page = 0.0
+value = 25.0
+exp_edit = false
+rounded = false
+editable = true
+tick_count = 0
+ticks_on_borders = false
+focus_mode = 2
+script = ExtResource( 12 )
+
+[node name="CameraJumpPositionX" type="LineEdit" parent="GeneralControlsContainer" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10.0
+margin_top = 113.0
+margin_right = 75.0
+margin_bottom = 137.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_neighbour_right = NodePath("../CameraJumpPositionY")
+focus_next = NodePath("../CameraJumpPositionY")
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+text = "0"
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+_sections_unfolded = [ "Focus" ]
+
+[node name="CameraJumpPositionY" type="LineEdit" parent="GeneralControlsContainer" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 87.0
+margin_top = 113.0
+margin_right = 152.0
+margin_bottom = 137.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_neighbour_left = NodePath("../CameraJumpPositionX")
+focus_previous = NodePath("../CameraJumpPositionX")
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+text = "0"
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+
+[node name="JumpToNodeButton" type="Button" parent="GeneralControlsContainer" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 13.0
+margin_top = 160.0
+margin_right = 125.0
+margin_bottom = 180.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Jump To Node"
+flat = false
+align = 1
+script = ExtResource( 13 )
+
+[node name="JumpToNodePath" type="LineEdit" parent="GeneralControlsContainer" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 138.0
+margin_top = 158.0
+margin_right = 353.0
+margin_bottom = 182.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+
+[node name="CameraJumpPositionButton" type="Button" parent="GeneralControlsContainer" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 160.0
+margin_top = 115.0
+margin_right = 237.0
+margin_bottom = 135.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Jump here"
+flat = false
+align = 1
+
+[node name="EnablePersistentFollowButton" type="CheckButton" parent="GeneralControlsContainer" index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 197.0
+margin_top = 182.0
+margin_right = 362.0
+margin_bottom = 222.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Follow node: "
+flat = false
+align = 0
+script = ExtResource( 14 )
+
+[node name="EnableExactFollow" type="CheckButton" parent="GeneralControlsContainer" index="10"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 173.0
+margin_top = 216.0
+margin_right = 361.0
+margin_bottom = 256.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Jump right away: "
+flat = false
+align = 0
+
 [connection signal="text_changed" from="InfoContainer/WarningLine" to="InfoContainer/WarningLine" method="_on_WarningLine_text_changed"]
+
+[connection signal="pressed" from="TabContainer/NodeSelection/SelectedNodeInfo/ShowNodeInfoButton" to="TabContainer/NodeSelection/SelectedNodeInfo/ShowNodeInfoButton" method="_on_ShowNodeInfoButton_pressed"]
+
+[connection signal="pressed" from="TabContainer/NodeSelection/SelectedNodeInfo/JumpToSelectedNodeButton" to="TabContainer/NodeSelection/SelectedNodeInfo/JumpToSelectedNodeButton" method="_on_JumpToSelectedNodeButton_pressed"]
 
 [connection signal="button_down" from="GeneralControlsContainer/StepButton" to="GeneralControlsContainer/StepButton" method="_on_StepButton_button_down"]
 
@@ -989,9 +994,5 @@ caret_moving_by_right_click = true
 [connection signal="pressed" from="GeneralControlsContainer/JumpToNodeButton" to="GeneralControlsContainer/JumpToNodeButton" method="_on_JumpToNodeButton_pressed"]
 
 [connection signal="button_down" from="GeneralControlsContainer/CameraJumpPositionButton" to="." method="_on_JumpPositionButton_button_down"]
-
-[connection signal="pressed" from="TabContainer/NodeSelection/SelectedNodeInfo/ShowNodeInfoButton" to="TabContainer/NodeSelection/SelectedNodeInfo/ShowNodeInfoButton" method="_on_ShowNodeInfoButton_pressed"]
-
-[connection signal="pressed" from="TabContainer/NodeSelection/SelectedNodeInfo/JumpToSelectedNodeButton" to="TabContainer/NodeSelection/SelectedNodeInfo/JumpToSelectedNodeButton" method="_on_JumpToSelectedNodeButton_pressed"]
 
 
