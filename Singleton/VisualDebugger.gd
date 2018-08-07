@@ -15,6 +15,7 @@ onready var menu_is_active = false # To avoid reactivating menu.
 onready var warning_line = $"InfoContainer/WarningLine" # For speed and convenience.
 enum VD_Transformation_modes {MOVE, ROTATE, SCALE}
 onready var transformation_mode = VD_Transformation_modes.MOVE # For speed and convenience.
+onready var node_is_selected = false # To save resources and know, when some node is selected in the scene.
 
 func _ready():
 	set_gui_visibility(false)
