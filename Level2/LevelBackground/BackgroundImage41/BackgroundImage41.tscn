@@ -8,7 +8,7 @@
 [ext_resource path="res://Level2/Enemies/Spider/Spider.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Level2/Enemies/ForestGiant/ForestGiant.tscn" type="PackedScene" id=7]
 
-[node name="BackgroundImage41" type="Sprite" index="0"]
+[node name="BackgroundImage41" type="Sprite"]
 
 modulate = Color( 1, 1, 1, 0.941176 )
 position = Vector2( 960, -43740 )
@@ -96,6 +96,6 @@ rotation = -0.539402
 
 [node name="Giant2" parent="." index="11" instance=ExtResource( 4 )]
 
-position = Vector2( 103.246, -278.57 )
+position = Vector2( 181.167, -196.754 )
 
 

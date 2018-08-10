@@ -59,6 +59,7 @@ position = Vector2( -526.339, -310.035 )
 [node name="WizardTroll2" parent="." index="5" instance=ExtResource( 3 )]
 
 position = Vector2( 573.204, -317.242 )
+_sections_unfolded = [ "Z Index" ]
 
 [node name="ForestGiant" parent="." index="6" instance=ExtResource( 4 )]
 
@@ -68,8 +69,9 @@ position = Vector2( -3.60498, -36.0508 )
 
 modulate = Color( 1, 1, 1, 0.941176 )
 position = Vector2( 1031.05, -539.18 )
+z_index = 1
 texture = ExtResource( 5 )
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Visibility", "Z Index" ]
 
 [node name="Trees2" type="Sprite" parent="." index="8"]
 

@@ -304,6 +304,7 @@ enemy_optimization_distance = 3000.0
 
 [node name="BackgroundImage40" parent="." index="40" instance=ExtResource( 43 )]
 
+position = Vector2( 960, -42660 )
 script = ExtResource( 4 )
 enemy_optimization_distance = 3000.0
 
@@ -374,6 +375,7 @@ enemy_optimization_distance = 3000.0
 
 [node name="BackgroundImage54" parent="." index="54" instance=ExtResource( 57 )]
 
+position = Vector2( 960, -57780 )
 script = ExtResource( 4 )
 enemy_optimization_distance = 3000.0
 

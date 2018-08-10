@@ -8,4 +8,35 @@ position = Vector2( 960, 59400 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -710.227, 554.945, -719.036, 217.266, -413.658, -82.2383, -346.122, -540.309, -959.816, -543.242, -962.752, 543.199 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
+
+position = Vector2( 599.012, 14.6836 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 132.5, 531.453, 161.864, 243.691, -152.324, -2.96094, -258.032, -554.992, 361.534, -554.992, 361.534, 534.391 )
+
 

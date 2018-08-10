@@ -53,7 +53,7 @@ position = Vector2( 42.7981, 158.604 )
 
 [node name="Giant" parent="." index="4" instance=ExtResource( 3 )]
 
-position = Vector2( 181.766, -311.273 )
+position = Vector2( 169.402, -184.55 )
 
 [node name="Rock" type="Sprite" parent="." index="5"]
 

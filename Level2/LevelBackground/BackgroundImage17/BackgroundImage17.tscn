@@ -4,7 +4,7 @@
 [ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Level2/Enemies/ForestArcher/ForestArcher.tscn" type="PackedScene" id=3]
 
-[node name="BackgroundImage17" type="Sprite"]
+[node name="BackgroundImage17" type="Sprite" index="0"]
 
 position = Vector2( 960, -17820 )
 texture = ExtResource( 1 )
@@ -42,15 +42,15 @@ polygon = PoolVector2Array( 614.954, 553.482, 664.94, 330.818, 867.156, 226.303,
 
 [node name="Giant" parent="." index="2" instance=ExtResource( 2 )]
 
-position = Vector2( -105.09, 256.543 )
+position = Vector2( -16.9758, 372.35 )
 
 [node name="Giant2" parent="." index="3" instance=ExtResource( 2 )]
 
-position = Vector2( 173.09, -120.547 )
+position = Vector2( 288.897, -32.4316 )
 
 [node name="Giant3" parent="." index="4" instance=ExtResource( 2 )]
 
-position = Vector2( -299.816, -352.363 )
+position = Vector2( -168.904, -191.24 )
 
 [node name="ArcherHeavy" parent="." index="5" instance=ExtResource( 3 )]
 
