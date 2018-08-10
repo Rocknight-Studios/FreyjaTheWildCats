@@ -73,7 +73,7 @@ rotation = -1.31401
 [node name="Trees" type="Sprite" parent="." index="8"]
 
 modulate = Color( 1, 1, 1, 0.941176 )
-position = Vector2( -756.878, 318.506 )
+position = Vector2( -723.24, 78.8354 )
 z_index = 1
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Visibility", "Z Index" ]

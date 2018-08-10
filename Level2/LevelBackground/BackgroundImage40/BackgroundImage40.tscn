@@ -46,7 +46,7 @@ polygon = PoolVector2Array( 375.428, -547.027, 545.948, -465.004, 956.059, -482.
 
 modulate = Color( 1, 1, 1, 0.941176 )
 position = Vector2( 759.589, 115.461 )
-z_index = 1
+z_index = 2
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Visibility", "Z Index" ]
 
@@ -76,6 +76,6 @@ position = Vector2( -671.88, -215.789 )
 
 [node name="Giant4" parent="." index="8" instance=ExtResource( 3 )]
 
-position = Vector2( -64.8162, -318.684 )
+position = Vector2( -50.3961, -192.504 )
 
 

@@ -38,6 +38,6 @@ position = Vector2( -688.384, 10.2734 )
 
 [node name="Giant" parent="." index="4" instance=ExtResource( 5 )]
 
-position = Vector2( 65.0713, -335.629 )
+position = Vector2( 4.65039, -184.578 )
 
 

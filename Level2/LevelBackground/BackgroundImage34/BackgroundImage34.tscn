@@ -5,7 +5,7 @@
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage34/Trees.png" type="Texture" id=3]
 [ext_resource path="res://Level2/Enemies/Spider/Spider.tscn" type="PackedScene" id=4]
 
-[node name="BackgroundImage34" type="Sprite" index="0"]
+[node name="BackgroundImage34" type="Sprite"]
 
 position = Vector2( 960, -36180 )
 texture = ExtResource( 1 )
@@ -30,7 +30,8 @@ polygon = PoolVector2Array( 372.332, 549.887, 231.879, -335.23, 17.2254, -377.62
 [node name="Trees" type="Sprite" parent="." index="1"]
 
 modulate = Color( 1, 1, 1, 0.941176 )
-position = Vector2( -939.161, 248.371 )
+position = Vector2( -872.767, 14.1914 )
+scale = Vector2( 0.718395, 0.718395 )
 z_index = 1
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
@@ -38,7 +39,8 @@ _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 [node name="Trees2" type="Sprite" parent="." index="2"]
 
 modulate = Color( 1, 1, 1, 0.941176 )
-position = Vector2( 1000.45, 83.5156 )
+position = Vector2( 916.34, -20.707 )
+scale = Vector2( 0.722224, 0.722224 )
 z_index = 1
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Visibility", "Z Index" ]

@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage51/ForestLevel51.png" type="Texture" id=1]
+[ext_resource path="res://Level2/Enemies/ForestArcher/ForestArcher.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Level2/Enemies/ForestGiant/ForestGiant.tscn" type="PackedScene" id=3]
 
 [node name="BackgroundImage51" type="Sprite" index="0"]
 
@@ -40,5 +42,45 @@ bounce = 0.0
 
 build_mode = 0
 polygon = PoolVector2Array( -769.969, 535.805, -716.006, 63.0938, -277.834, -75.0469, -262.725, -334.066, -439.721, -452.781, -733.274, -541.281, -966.391, -543.438, -959.915, 542.277 )
+
+[node name="ArcherHeavy" parent="." index="2" instance=ExtResource( 2 )]
+
+position = Vector2( -461.592, -191.328 )
+
+[node name="ArcherHeavy5" parent="." index="3" instance=ExtResource( 2 )]
+
+position = Vector2( 466.376, -191.328 )
+
+[node name="ArcherHeavy7" parent="." index="4" instance=ExtResource( 2 )]
+
+position = Vector2( 569.218, -294.172 )
+
+[node name="ArcherHeavy8" parent="." index="5" instance=ExtResource( 2 )]
+
+position = Vector2( -389.842, -298.957 )
+
+[node name="ArcherHeavy2" parent="." index="6" instance=ExtResource( 2 )]
+
+position = Vector2( -870.568, 31.1016 )
+
+[node name="ArcherHeavy6" parent="." index="7" instance=ExtResource( 2 )]
+
+position = Vector2( 904.051, 31.1016 )
+
+[node name="ArcherHeavy3" parent="." index="8" instance=ExtResource( 2 )]
+
+position = Vector2( -870.568, 344.41 )
+
+[node name="ArcherHeavy4" parent="." index="9" instance=ExtResource( 2 )]
+
+position = Vector2( 904.051, 344.41 )
+
+[node name="ForestGiant" parent="." index="10" instance=ExtResource( 3 )]
+
+position = Vector2( -368.317, 344.398 )
+
+[node name="ForestGiant2" parent="." index="11" instance=ExtResource( 3 )]
+
+position = Vector2( 358.75, 344.398 )
 
 
