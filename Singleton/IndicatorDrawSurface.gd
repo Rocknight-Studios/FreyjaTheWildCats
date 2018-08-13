@@ -3,53 +3,79 @@ extends Node2D
 onready var show_node_info = get_parent().get_node("TabContainer/NodeSelection/SelectedNodeInfo/ShowNodeInfoButton") # For speed and convenience.
 const selection_size = Vector2(10.0, 10.0) # The relative size of the selection.
 var old_mouse_position = Vector2(.0, .0) # To detect and measure mouse position changes.
+var mouse_is_over_rotation_circle = false # For speed and convenience.
+var absolute_mouse_position = Vector2(.0, .0) # For speed and convenience.
+const min_distance_to_rotation_circle_middle = 10.0 # To prevent ugly rotations. For speed and convenience.
+onready var min_sqr_distance_to_rotation_circle_middle = min_distance_to_rotation_circle_middle * min_distance_to_rotation_circle_middle # To prevent ugly rotations.
+var sqr_distance_to_mouse = .0 # For speed and convenience.
 
 func _process(delta):
 	update()
 
 func _input(event):
+	absolute_mouse_position = Global.visual_debugger.scene_node_selector.absolute_mouse_position
+	sqr_distance_to_mouse = absolute_mouse_position.distance_squared_to(center_of_the_node_with_scale)
+	if sqr_distance_to_mouse < circle_size * circle_size:
+		mouse_is_over_rotation_circle = true
+	else:
+		mouse_is_over_rotation_circle = false
+
 	if Input.is_action_pressed("mouse_left_click"):
 		if Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.MOVE:
 			move_on_axis()
 		elif Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.ROTATE:
 			rotate_on_axis()
+
+		if mouse_is_over_rotation_circle:
+			rotate_on_axis_is_enabled = true
 	else:
 		mouse_is_over_arrow = VD_Mouse_is_over_arrow.NONE
-	old_mouse_position = Global.visual_debugger.scene_node_selector.relative_mouse_position
+		rotate_on_axis_is_enabled = false
+	old_mouse_position = absolute_mouse_position
 
 func move_on_axis():
 	if mouse_is_over_arrow == VD_Mouse_is_over_arrow.X_ARROW:
-		node.global_position += old_mouse_position.distance_to(Global.visual_debugger.scene_node_selector.relative_mouse_position) * -arrow_direction_vector_x * (1.0 if node.global_position.distance_squared_to(old_mouse_position) < node.global_position.distance_squared_to(Global.visual_debugger.scene_node_selector.relative_mouse_position) else -1.0)
+		if node.global_position.x > absolute_mouse_position.x:
+			node.global_position -= old_mouse_position.distance_to(absolute_mouse_position) * -arrow_direction_vector_x * (movement_coefficient if node.global_position.distance_squared_to(old_mouse_position) < node.global_position.distance_squared_to(absolute_mouse_position) else -movement_coefficient)
+		else:
+			node.global_position += old_mouse_position.distance_to(absolute_mouse_position) * -arrow_direction_vector_x * (movement_coefficient if node.global_position.distance_squared_to(old_mouse_position) < node.global_position.distance_squared_to(absolute_mouse_position) else -movement_coefficient)
 	elif mouse_is_over_arrow == VD_Mouse_is_over_arrow.Y_ARROW:
-		node.global_position += old_mouse_position.distance_to(Global.visual_debugger.scene_node_selector.relative_mouse_position) * arrow_direction_vector_y * (1.0 if node.global_position.distance_squared_to(old_mouse_position) < node.global_position.distance_squared_to(Global.visual_debugger.scene_node_selector.relative_mouse_position) else -1.0)
+		if node.global_position.y > absolute_mouse_position.y:
+			node.global_position += old_mouse_position.distance_to(absolute_mouse_position) * arrow_direction_vector_y * (movement_coefficient if node.global_position.distance_squared_to(old_mouse_position) < node.global_position.distance_squared_to(absolute_mouse_position) else -movement_coefficient)
+		else:
+			node.global_position -= old_mouse_position.distance_to(absolute_mouse_position) * arrow_direction_vector_y * (movement_coefficient if node.global_position.distance_squared_to(old_mouse_position) < node.global_position.distance_squared_to(absolute_mouse_position) else -movement_coefficient)
+	elif mouse_is_over_arrow == VD_Mouse_is_over_arrow.MIDDLE:
+		node.global_position.x += absolute_mouse_position.x - old_mouse_position.x
+		node.global_position.y += absolute_mouse_position.y - old_mouse_position.y
 
 onready var rotate_on_axis_is_enabled = false # For speed and convenience.
-const rotation_coefficient = -.025 # How quickly to rotate node on mouse drag.
+const rotation_coefficient = -.1 # How quickly to rotate node on mouse drag.
+const movement_coefficient = 1.0 # How quickly to rotate node on mouse drag.
 
 func rotate_on_axis():
-	if rotate_on_axis_is_enabled:
-		var current_mouse_position = Global.visual_debugger.scene_node_selector.relative_mouse_position # For speed and convenience.
-		if Global.visual_debugger.scene_node_selector.absolute_mouse_position.y > center_of_the_node_with_scale.y:
-			if current_mouse_position.x > old_mouse_position.x:
-				node.global_rotation += (current_mouse_position.x - old_mouse_position.x) * rotation_coefficient
+	if rotate_on_axis_is_enabled && sqr_distance_to_mouse > min_sqr_distance_to_rotation_circle_middle:
+		var rotation_coefficient_with_distance_coefficient = zoomed_size.x * (rotation_coefficient / clamp(absolute_mouse_position.distance_to(center_of_the_node_with_scale), Global.approximation_float, OS.window_size.x)) # For speed and convenience.
+		if absolute_mouse_position.y > center_of_the_node_with_scale.y:
+			if absolute_mouse_position.x > old_mouse_position.x:
+				node.global_rotation += (absolute_mouse_position.x - old_mouse_position.x) * rotation_coefficient_with_distance_coefficient
 			else:
-				node.global_rotation -= (old_mouse_position.x - current_mouse_position.x) * rotation_coefficient
+				node.global_rotation -= (old_mouse_position.x - absolute_mouse_position.x) * rotation_coefficient_with_distance_coefficient
 		else:
-			if current_mouse_position.x > old_mouse_position.x:
-				node.global_rotation -= (current_mouse_position.x - old_mouse_position.x) * rotation_coefficient
+			if absolute_mouse_position.x > old_mouse_position.x:
+				node.global_rotation -= (absolute_mouse_position.x - old_mouse_position.x) * rotation_coefficient_with_distance_coefficient
 			else:
-				node.global_rotation += (old_mouse_position.x - current_mouse_position.x) * rotation_coefficient
+				node.global_rotation += (old_mouse_position.x - absolute_mouse_position.x) * rotation_coefficient_with_distance_coefficient
 
-		if Global.visual_debugger.scene_node_selector.absolute_mouse_position.x < center_of_the_node_with_scale.x:
-			if current_mouse_position.y > old_mouse_position.y:
-				node.global_rotation += (current_mouse_position.y - old_mouse_position.y) * rotation_coefficient
+		if absolute_mouse_position.x < center_of_the_node_with_scale.x:
+			if absolute_mouse_position.y > old_mouse_position.y:
+				node.global_rotation += (absolute_mouse_position.y - old_mouse_position.y) * rotation_coefficient_with_distance_coefficient
 			else:
-				node.global_rotation -= (old_mouse_position.y - current_mouse_position.y) * rotation_coefficient
+				node.global_rotation -= (old_mouse_position.y - absolute_mouse_position.y) * rotation_coefficient_with_distance_coefficient
 		else:
-			if current_mouse_position.y > old_mouse_position.y:
-				node.global_rotation -= (current_mouse_position.y - old_mouse_position.y) * rotation_coefficient
+			if absolute_mouse_position.y > old_mouse_position.y:
+				node.global_rotation -= (absolute_mouse_position.y - old_mouse_position.y) * rotation_coefficient_with_distance_coefficient
 			else:
-				node.global_rotation += (old_mouse_position.y - current_mouse_position.y) * rotation_coefficient
+				node.global_rotation += (old_mouse_position.y - absolute_mouse_position.y) * rotation_coefficient_with_distance_coefficient
 
 func draw_arrow_head(arrow_direction_vector, center_of_the_node, tip_of_the_arrow, line_color, arrow_length, thickness):
 	draw_line(tip_of_the_arrow, tip_of_the_arrow + Vector2(arrow_direction_vector.y, -arrow_direction_vector.x) * arrow_length, line_color, thickness, true)
@@ -57,7 +83,7 @@ func draw_arrow_head(arrow_direction_vector, center_of_the_node, tip_of_the_arro
 	draw_line(tip_of_the_arrow + arrow_direction_vector * arrow_length, tip_of_the_arrow + Vector2(arrow_direction_vector.y, -arrow_direction_vector.x) * arrow_length, line_color, thickness, true)
 	draw_line(tip_of_the_arrow + arrow_direction_vector * arrow_length, tip_of_the_arrow - Vector2(arrow_direction_vector.y, -arrow_direction_vector.x) * arrow_length, line_color, thickness, true)
 
-enum VD_Mouse_is_over_arrow {NONE, X_ARROW, Y_ARROW}
+enum VD_Mouse_is_over_arrow {NONE, X_ARROW, Y_ARROW, MIDDLE}
 onready var mouse_is_over_arrow = VD_Mouse_is_over_arrow.NONE # Act only on one axis.
 var node = null # For speed and convenience.
 var arrow_direction_vector_y = Vector2(.0, .0) # For speed and convenience.
@@ -124,25 +150,32 @@ func draw_local_axis_arrows():
 			var arrow_stem_selection_error = 20.0 # How close must the mouse cursor get to the arrow stem for it to be considered selected.
 
 			if mouse_is_over_arrow == VD_Mouse_is_over_arrow.NONE:
-				if Global.visual_debugger.scene_node_selector.absolute_mouse_position.x - current_node_position.x > (center_of_the_node.x if center_of_the_node.x < y_arrow_tip_position.x else y_arrow_tip_position.x) - arrow_stem_selection_error:
-					if Global.visual_debugger.scene_node_selector.absolute_mouse_position.y - current_node_position.y > (center_of_the_node.y if center_of_the_node.y < y_arrow_tip_position.y else y_arrow_tip_position.y) - arrow_stem_selection_error:
-						if Global.visual_debugger.scene_node_selector.absolute_mouse_position.x - current_node_position.x < (center_of_the_node.x if center_of_the_node.x > y_arrow_tip_position.x else y_arrow_tip_position.x) + arrow_stem_selection_error:
-							if Global.visual_debugger.scene_node_selector.absolute_mouse_position.y - current_node_position.y < (center_of_the_node.y if center_of_the_node.y > y_arrow_tip_position.y else y_arrow_tip_position.y) + arrow_stem_selection_error:
+				if absolute_mouse_position.x - current_node_position.x > (center_of_the_node_with_scale.x if center_of_the_node_with_scale.x < y_arrow_tip_position.x else y_arrow_tip_position.x) - arrow_stem_selection_error:
+					if absolute_mouse_position.y - current_node_position.y > (center_of_the_node_with_scale.y if center_of_the_node_with_scale.y < y_arrow_tip_position.y else y_arrow_tip_position.y) - arrow_stem_selection_error:
+						if absolute_mouse_position.x - current_node_position.x < (center_of_the_node_with_scale.x if center_of_the_node_with_scale.x > y_arrow_tip_position.x else y_arrow_tip_position.x) + arrow_stem_selection_error:
+							if absolute_mouse_position.y - current_node_position.y < (center_of_the_node_with_scale.y if center_of_the_node_with_scale.y > y_arrow_tip_position.y else y_arrow_tip_position.y) + arrow_stem_selection_error:
 								mouse_is_over_arrow = VD_Mouse_is_over_arrow.Y_ARROW
 			if mouse_is_over_arrow == VD_Mouse_is_over_arrow.NONE:
-				if Global.visual_debugger.scene_node_selector.absolute_mouse_position.x - current_node_position.x > (center_of_the_node.x if center_of_the_node.x < x_arrow_tip_position.x else x_arrow_tip_position.x) - arrow_stem_selection_error:
-					if Global.visual_debugger.scene_node_selector.absolute_mouse_position.y - current_node_position.y > (center_of_the_node.y if center_of_the_node.y < x_arrow_tip_position.y else x_arrow_tip_position.y) - arrow_stem_selection_error:
-						if Global.visual_debugger.scene_node_selector.absolute_mouse_position.x - current_node_position.x < (center_of_the_node.x if center_of_the_node.x > x_arrow_tip_position.x else x_arrow_tip_position.x) + arrow_stem_selection_error:
-							if Global.visual_debugger.scene_node_selector.absolute_mouse_position.y - current_node_position.y < (center_of_the_node.y if center_of_the_node.y > x_arrow_tip_position.y else x_arrow_tip_position.y) + arrow_stem_selection_error:
+				if absolute_mouse_position.x - current_node_position.x > (center_of_the_node_with_scale.x if center_of_the_node_with_scale.x < x_arrow_tip_position.x else x_arrow_tip_position.x) - arrow_stem_selection_error:
+					if absolute_mouse_position.y - current_node_position.y > (center_of_the_node_with_scale.y if center_of_the_node_with_scale.y < x_arrow_tip_position.y else x_arrow_tip_position.y) - arrow_stem_selection_error:
+						if absolute_mouse_position.x - current_node_position.x < (center_of_the_node_with_scale.x if center_of_the_node_with_scale.x > x_arrow_tip_position.x else x_arrow_tip_position.x) + arrow_stem_selection_error:
+							if absolute_mouse_position.y - current_node_position.y < (center_of_the_node_with_scale.y if center_of_the_node_with_scale.y > x_arrow_tip_position.y else x_arrow_tip_position.y) + arrow_stem_selection_error:
 								mouse_is_over_arrow = VD_Mouse_is_over_arrow.X_ARROW
+			if absolute_mouse_position.distance_to(current_node_position + center_of_the_node_with_scale) < move_rectangle_size.x:
+				mouse_is_over_arrow = VD_Mouse_is_over_arrow.MIDDLE
 
 			draw_line(center_of_the_node_with_scale, y_arrow_tip_position, Color (y_color.r, y_color.g, y_color.b, 1.0 if mouse_is_over_arrow == VD_Mouse_is_over_arrow.Y_ARROW else y_color.a), 5.0, true)
 			draw_line(center_of_the_node_with_scale, x_arrow_tip_position, Color (x_color.r, x_color.g, x_color.b, 1.0 if mouse_is_over_arrow == VD_Mouse_is_over_arrow.X_ARROW else x_color.a), 5.0, true)
 			draw_arrows_and_axis_characters()
 
-			draw_rect(Rect2(center_of_the_node_with_scale - zoomed_size * .5, zoomed_size), Color(.1, .9, .1, .9), true)
+			if mouse_is_over_arrow != VD_Mouse_is_over_arrow.MIDDLE:
+				draw_rect(Rect2(center_of_the_node_with_scale - move_rectangle_size * .5, move_rectangle_size), Color(.1, .9, .1, .7), true)
+			else:
+				draw_rect(Rect2(center_of_the_node_with_scale - move_rectangle_size * .5, move_rectangle_size), Color(.1, .9, .1, .9), true)
 		else:
 			Global.visual_debugger.warning_line.text = "Node not found! Check Godot Debugger!"
+
+onready var move_rectangle_size = Vector2(10.0, 10.0) # To have an convenient handle.
 
 func draw_circle_arc(center, radius, angle_from, angle_to, color, thickness, detail):
 	var points_arc = PoolVector2Array()
@@ -167,14 +200,12 @@ func draw_rotation_circle(): # !!!DRAW ALSO ARROW FOR DIRECTION!!!
 		draw_line(center_of_the_node_with_scale, x_arrow_tip_position, x_color, 5.0, true)
 		draw_arrows_and_axis_characters()
 
-		if (Global.visual_debugger.scene_node_selector.absolute_mouse_position.distance_squared_to(center_of_the_node_with_scale) < circle_size * circle_size):
-			rotate_on_axis_is_enabled = true
+		if mouse_is_over_rotation_circle || rotate_on_axis_is_enabled:
 			draw_circle(center_of_the_node_with_scale, circle_size - 6.0, Color(.0, .0, 1.0, .35))
 		else:
-			rotate_on_axis_is_enabled = false
 			draw_circle(center_of_the_node_with_scale, circle_size - 6.0, Color(.0, .0, 1.0, .2))
 
-		draw_circle(center_of_the_node_with_scale, zoomed_size.x * .5, Color(.1, .9, .1, .9))
+		draw_circle(center_of_the_node_with_scale, min_distance_to_rotation_circle_middle, Color(.0, .0, 1.0, .9))
 
 func draw_scale_handles():
 	print("manage scaling")
