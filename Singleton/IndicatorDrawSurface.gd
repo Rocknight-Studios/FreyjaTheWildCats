@@ -8,8 +8,6 @@ var absolute_mouse_position = Vector2(.0, .0) # For speed and convenience.
 const min_distance_to_rotation_circle_middle = 10.0 # To prevent ugly rotations. For speed and convenience.
 onready var min_sqr_distance_to_rotation_circle_middle = min_distance_to_rotation_circle_middle * min_distance_to_rotation_circle_middle # To prevent ugly rotations.
 var sqr_distance_to_mouse = .0 # For speed and convenience.
-var mouse_was_pressed = false # To know, when to initialize mouse click behavior.
-var move_distance_from_center_of_node_to_cursor = .0 # Initialized distance.
 
 func _process(delta):
 	update()
@@ -24,27 +22,22 @@ func _input(event):
 
 	if Input.is_action_pressed("mouse_left_click"):
 		if Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.MOVE:
-			if !mouse_was_pressed:
-				move_distance_from_center_of_node_to_cursor = sqr_distance_to_mouse
 			move_on_axis()
 		elif Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.ROTATE:
 			rotate_on_axis()
 
 		if mouse_is_over_rotation_circle:
 			rotate_on_axis_is_enabled = true
-
-		mouse_was_pressed = true
 	else:
-		mouse_was_pressed = false
 		mouse_is_over_arrow = VD_Mouse_is_over_arrow.NONE
 		rotate_on_axis_is_enabled = false
 	old_mouse_position = absolute_mouse_position
 
 func move_on_axis():
 	if mouse_is_over_arrow == VD_Mouse_is_over_arrow.X_ARROW:
-		node.global_position.x += (absolute_mouse_position.x - old_mouse_position.x) * camera_zoom.x
+		node.global_position += arrow_direction_vector_x * arrow_direction_vector_x.normalized().dot((absolute_mouse_position - old_mouse_position))
 	elif mouse_is_over_arrow == VD_Mouse_is_over_arrow.Y_ARROW:
-		node.global_position.y += (absolute_mouse_position.y - old_mouse_position.y) * camera_zoom.y
+		node.global_position += arrow_direction_vector_y * arrow_direction_vector_y.normalized().dot((absolute_mouse_position - old_mouse_position))
 	elif mouse_is_over_arrow == VD_Mouse_is_over_arrow.MIDDLE:
 		node.global_position.x += (absolute_mouse_position.x - old_mouse_position.x) * camera_zoom.x
 		node.global_position.y += (absolute_mouse_position.y - old_mouse_position.y) * camera_zoom.y
@@ -150,8 +143,9 @@ func draw_local_axis_arrows():
 		if Global.visual_debugger.node_is_selected:
 			var arrow_stem_selection_error = 20.0 # How close must the mouse cursor get to the arrow stem for it to be considered selected.
 
-			if absolute_mouse_position.distance_to(current_node_position + center_of_the_node_with_scale) < move_rectangle_size.x:
-				mouse_is_over_arrow = VD_Mouse_is_over_arrow.MIDDLE
+			if mouse_is_over_arrow == VD_Mouse_is_over_arrow.NONE:
+				if absolute_mouse_position.distance_to(current_node_position + center_of_the_node_with_scale) < move_rectangle_size.x:
+					mouse_is_over_arrow = VD_Mouse_is_over_arrow.MIDDLE
 			if mouse_is_over_arrow == VD_Mouse_is_over_arrow.NONE:
 				if absolute_mouse_position.x - current_node_position.x > (center_of_the_node_with_scale.x if center_of_the_node_with_scale.x < y_arrow_tip_position.x else y_arrow_tip_position.x) - arrow_stem_selection_error:
 					if absolute_mouse_position.y - current_node_position.y > (center_of_the_node_with_scale.y if center_of_the_node_with_scale.y < y_arrow_tip_position.y else y_arrow_tip_position.y) - arrow_stem_selection_error:
@@ -190,7 +184,7 @@ func draw_circle_arc(center, radius, angle_from, angle_to, color, thickness, det
 
 var circle_size = .0 # For speed and convenience.
 
-func draw_rotation_circle(): # !!!DRAW ALSO ARROW FOR DIRECTION!!!
+func draw_rotation_circle():
 	calculate_node_draw_center()
 	if Global.visual_debugger.node_is_selected:
 		circle_size = center_of_the_node_with_scale.distance_to(y_arrow_tip_position)
