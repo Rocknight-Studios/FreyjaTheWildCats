@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Singleton/VisualDebugger.gd" type="Script" id=1]
 [ext_resource path="res://Singleton/IndicatorDrawSurface.gd" type="Script" id=2]
@@ -8,12 +8,14 @@
 [ext_resource path="res://Singleton/WarningLine.gd" type="Script" id=6]
 [ext_resource path="res://Singleton/ShowNodeInfoButton.gd" type="Script" id=7]
 [ext_resource path="res://Singleton/JumpToSelectedNodeButton.gd" type="Script" id=8]
-[ext_resource path="res://Singleton/TransformationModeButton.gd" type="Script" id=9]
-[ext_resource path="res://Singleton/StepButton.gd" type="Script" id=10]
-[ext_resource path="res://Singleton/RunButton.gd" type="Script" id=11]
-[ext_resource path="res://Singleton/CameraMovementSpeedSlider.gd" type="Script" id=12]
-[ext_resource path="res://Singleton/JumpToNodeButton.gd" type="Script" id=13]
-[ext_resource path="res://Singleton/EnablePersistentFollowButton.gd" type="Script" id=14]
+[ext_resource path="res://Singleton/CurrentNodeInfo.gd" type="Script" id=9]
+[ext_resource path="res://Singleton/TransformationModeButton.gd" type="Script" id=10]
+[ext_resource path="res://Singleton/StepButton.gd" type="Script" id=11]
+[ext_resource path="res://Singleton/RunButton.gd" type="Script" id=12]
+[ext_resource path="res://Singleton/CameraMovementSpeedSlider.gd" type="Script" id=13]
+[ext_resource path="res://Singleton/JumpToNodeButton.gd" type="Script" id=14]
+[ext_resource path="res://Singleton/JumpToNodePath.gd" type="Script" id=15]
+[ext_resource path="res://Singleton/EnablePersistentFollowButton.gd" type="Script" id=16]
 
 [node name="VisualDebugger" type="CanvasLayer" index="0"]
 
@@ -196,7 +198,6 @@ _sections_unfolded = [ "Visibility", "custom_colors" ]
 
 [node name="TabContainer" type="TabContainer" parent="." index="7"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -491,9 +492,11 @@ caret_block_mode = false
 caret_blink = false
 caret_blink_speed = 0.65
 caret_moving_by_right_click = true
+script = ExtResource( 9 )
 
 [node name="Transformations" type="Container" parent="TabContainer" index="1"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -535,7 +538,7 @@ text = "Transformation mode: MOVE"
 flat = false
 align = 1
 items = [ "MOVE", null, 0, false, false, -1, 0, null, "", false, "ROTATE", null, 0, false, false, -1, 0, null, "", false, "SCALE", null, 0, false, false, -1, 0, null, "", false ]
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 _sections_unfolded = [ "Margin" ]
 
 [node name="Watches" type="Container" parent="TabContainer" index="2"]
@@ -672,7 +675,6 @@ caret_moving_by_right_click = true
 
 [node name="GeneralControlsContainer" type="Container" parent="." index="8"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -715,7 +717,7 @@ group = null
 text = "Step"
 flat = false
 align = 1
-script = ExtResource( 10 )
+script = ExtResource( 11 )
 _sections_unfolded = [ "Margin", "Pause" ]
 
 [node name="RunButton" type="Button" parent="GeneralControlsContainer" index="1"]
@@ -742,7 +744,7 @@ group = null
 text = "Run"
 flat = false
 align = 1
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 _sections_unfolded = [ "Margin", "Pause" ]
 
 [node name="CameraMovementSpeedLabel" type="Label" parent="GeneralControlsContainer" index="2"]
@@ -794,7 +796,7 @@ editable = true
 tick_count = 0
 ticks_on_borders = false
 focus_mode = 2
-script = ExtResource( 12 )
+script = ExtResource( 13 )
 
 [node name="CameraJumpPositionX" type="LineEdit" parent="GeneralControlsContainer" index="4"]
 
@@ -875,7 +877,7 @@ group = null
 text = "Jump To Node"
 flat = false
 align = 1
-script = ExtResource( 13 )
+script = ExtResource( 14 )
 
 [node name="JumpToNodePath" type="LineEdit" parent="GeneralControlsContainer" index="7"]
 
@@ -900,6 +902,7 @@ placeholder_alpha = 0.6
 caret_blink = false
 caret_blink_speed = 0.65
 caret_position = 0
+script = ExtResource( 15 )
 
 [node name="CameraJumpPositionButton" type="Button" parent="GeneralControlsContainer" index="8"]
 
@@ -950,7 +953,7 @@ group = null
 text = "Follow node: "
 flat = false
 align = 0
-script = ExtResource( 14 )
+script = ExtResource( 16 )
 
 [node name="EnableExactFollow" type="CheckButton" parent="GeneralControlsContainer" index="10"]
 

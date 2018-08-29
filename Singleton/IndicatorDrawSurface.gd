@@ -43,33 +43,32 @@ func move_on_axis():
 		node.global_position.y += (absolute_mouse_position.y - old_mouse_position.y) * camera_zoom.y
 
 onready var rotate_on_axis_is_enabled = false # For speed and convenience.
-const rotation_coefficient = -.1 # How quickly to rotate node on mouse drag.
+const rotation_coefficient = -.01 # How quickly to rotate node on mouse drag.
 const movement_coefficient = 1.0 # How quickly to rotate node on mouse drag.
 
 func rotate_on_axis():
 	if rotate_on_axis_is_enabled && sqr_distance_to_mouse > min_sqr_distance_to_rotation_circle_middle:
-		var rotation_coefficient_with_distance_coefficient = zoomed_size.x * (rotation_coefficient / clamp(absolute_mouse_position.distance_to(center_of_the_node_with_scale), Global.approximation_float, OS.window_size.x)) # For speed and convenience.
 		if absolute_mouse_position.y > center_of_the_node_with_scale.y:
 			if absolute_mouse_position.x > old_mouse_position.x:
-				node.global_rotation += (absolute_mouse_position.x - old_mouse_position.x) * rotation_coefficient_with_distance_coefficient
+				node.global_rotation += (absolute_mouse_position.x - old_mouse_position.x) * rotation_coefficient
 			else:
-				node.global_rotation -= (old_mouse_position.x - absolute_mouse_position.x) * rotation_coefficient_with_distance_coefficient
+				node.global_rotation -= (old_mouse_position.x - absolute_mouse_position.x) * rotation_coefficient
 		else:
 			if absolute_mouse_position.x > old_mouse_position.x:
-				node.global_rotation -= (absolute_mouse_position.x - old_mouse_position.x) * rotation_coefficient_with_distance_coefficient
+				node.global_rotation -= (absolute_mouse_position.x - old_mouse_position.x) * rotation_coefficient
 			else:
-				node.global_rotation += (old_mouse_position.x - absolute_mouse_position.x) * rotation_coefficient_with_distance_coefficient
+				node.global_rotation += (old_mouse_position.x - absolute_mouse_position.x) * rotation_coefficient
 
 		if absolute_mouse_position.x < center_of_the_node_with_scale.x:
 			if absolute_mouse_position.y > old_mouse_position.y:
-				node.global_rotation += (absolute_mouse_position.y - old_mouse_position.y) * rotation_coefficient_with_distance_coefficient
+				node.global_rotation += (absolute_mouse_position.y - old_mouse_position.y) * rotation_coefficient
 			else:
-				node.global_rotation -= (old_mouse_position.y - absolute_mouse_position.y) * rotation_coefficient_with_distance_coefficient
+				node.global_rotation -= (old_mouse_position.y - absolute_mouse_position.y) * rotation_coefficient
 		else:
 			if absolute_mouse_position.y > old_mouse_position.y:
-				node.global_rotation -= (absolute_mouse_position.y - old_mouse_position.y) * rotation_coefficient_with_distance_coefficient
+				node.global_rotation -= (absolute_mouse_position.y - old_mouse_position.y) * rotation_coefficient
 			else:
-				node.global_rotation += (old_mouse_position.y - absolute_mouse_position.y) * rotation_coefficient_with_distance_coefficient
+				node.global_rotation += (old_mouse_position.y - absolute_mouse_position.y) * rotation_coefficient
 
 func draw_arrow_head(arrow_direction_vector, center_of_the_node, tip_of_the_arrow, line_color, arrow_length, thickness):
 	draw_line(tip_of_the_arrow, tip_of_the_arrow + Vector2(arrow_direction_vector.y, -arrow_direction_vector.x) * arrow_length, line_color, thickness, true)
