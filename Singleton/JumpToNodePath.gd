@@ -1,5 +1,7 @@
 extends LineEdit
 
-func _input(event):
-	if Input.is_action_pressed("paste_text"):
-		self.text = OS.get_clipboard()
+func _on_JumpToNodePath_mouse_exited():
+	release_focus()
+
+func _on_JumpToNodePath_mouse_entered():
+	grab_focus()

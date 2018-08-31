@@ -388,13 +388,14 @@ __meta__ = {
 
 [node name="ShowNodeInfoButton" type="Button" parent="TabContainer/NodeSelection/SelectedNodeInfo" index="0"]
 
+self_modulate = Color( 0.496094, 1, 0.716553, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 7.0
-margin_top = 20.0
-margin_right = 119.0
+margin_top = 6.0
+margin_right = 171.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -403,6 +404,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -411,6 +413,7 @@ text = "Show Node Info"
 flat = false
 align = 1
 script = ExtResource( 7 )
+_sections_unfolded = [ "Visibility", "custom_colors" ]
 
 [node name="JumpToSelectedNodeButton" type="Button" parent="TabContainer/NodeSelection/SelectedNodeInfo" index="1"]
 
@@ -418,9 +421,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 130.0
+margin_left = 186.0
 margin_top = 20.0
-margin_right = 290.0
+margin_right = 346.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -995,6 +998,14 @@ align = 0
 [connection signal="mouse_exited" from="GeneralControlsContainer/CameraMovementSpeedSlider" to="GeneralControlsContainer/CameraMovementSpeedSlider" method="_on_CameraMovementSpeedSlider_mouse_exited"]
 
 [connection signal="pressed" from="GeneralControlsContainer/JumpToNodeButton" to="GeneralControlsContainer/JumpToNodeButton" method="_on_JumpToNodeButton_pressed"]
+
+[connection signal="mouse_entered" from="GeneralControlsContainer/JumpToNodePath" to="." method="_on_disable_keyboard_movement"]
+
+[connection signal="mouse_entered" from="GeneralControlsContainer/JumpToNodePath" to="GeneralControlsContainer/JumpToNodePath" method="_on_JumpToNodePath_mouse_entered"]
+
+[connection signal="mouse_exited" from="GeneralControlsContainer/JumpToNodePath" to="." method="_on_enable_keyboard_movement"]
+
+[connection signal="mouse_exited" from="GeneralControlsContainer/JumpToNodePath" to="GeneralControlsContainer/JumpToNodePath" method="_on_JumpToNodePath_mouse_exited"]
 
 [connection signal="button_down" from="GeneralControlsContainer/CameraJumpPositionButton" to="." method="_on_JumpPositionButton_button_down"]
 
