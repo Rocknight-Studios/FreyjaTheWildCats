@@ -12,6 +12,8 @@ var sqr_distance_to_mouse = .0 # For speed and convenience.
 func _process(delta):
 	update()
 
+var forbid_transformation_mouse_input = false # To forbid input if the click wasn't on interactable transformation element.
+
 func _input(event):
 	absolute_mouse_position = Global.visual_debugger.scene_node_selector.absolute_mouse_position
 	sqr_distance_to_mouse = absolute_mouse_position.distance_squared_to(center_of_the_node)
@@ -20,14 +22,20 @@ func _input(event):
 	else:
 		mouse_is_over_rotation_circle = false
 
-	if Input.is_action_pressed("mouse_left_click"):
-		if Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.MOVE:
-			move_on_axis()
-		elif Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.ROTATE:
-			rotate_on_axis()
+	if Input.is_action_just_pressed("mouse_left_click") && !mouse_is_over_arrow && !mouse_is_over_rotation_circle:
+		forbid_transformation_mouse_input = true
+	elif Input.is_action_just_released("mouse_left_click"):
+		forbid_transformation_mouse_input = false
 
-		if mouse_is_over_rotation_circle:
-			rotate_on_axis_is_enabled = true
+	if Input.is_action_pressed("mouse_left_click"):
+		if !forbid_transformation_mouse_input:
+			if Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.MOVE:
+				move_on_axis()
+			elif Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.ROTATE:
+				rotate_on_axis()
+
+			if mouse_is_over_rotation_circle:
+				rotate_on_axis_is_enabled = true
 	else:
 		mouse_is_over_arrow = VD_Mouse_is_over_arrow.NONE
 		rotate_on_axis_is_enabled = false
@@ -158,8 +166,8 @@ func draw_local_axis_arrows():
 							if absolute_mouse_position.y - current_node_position.y < (center_of_the_node_with_scale.y if center_of_the_node_with_scale.y > x_arrow_tip_position.y else x_arrow_tip_position.y) + arrow_stem_selection_error:
 								mouse_is_over_arrow = VD_Mouse_is_over_arrow.X_ARROW
 
-			draw_line(center_of_the_node_with_scale, y_arrow_tip_position, Color (y_color.r, y_color.g, y_color.b, 1.0 if mouse_is_over_arrow == VD_Mouse_is_over_arrow.Y_ARROW else y_color.a), 5.0, true)
-			draw_line(center_of_the_node_with_scale, x_arrow_tip_position, Color (x_color.r, x_color.g, x_color.b, 1.0 if mouse_is_over_arrow == VD_Mouse_is_over_arrow.X_ARROW else x_color.a), 5.0, true)
+			draw_line(center_of_the_node_with_scale, y_arrow_tip_position, Color (y_color.r, y_color.g, y_color.b, (y_color.a if forbid_transformation_mouse_input else 1.0) if mouse_is_over_arrow == VD_Mouse_is_over_arrow.Y_ARROW else y_color.a), 5.0, true)
+			draw_line(center_of_the_node_with_scale, x_arrow_tip_position, Color (x_color.r, x_color.g, x_color.b, (x_color.a if forbid_transformation_mouse_input else 1.0) if mouse_is_over_arrow == VD_Mouse_is_over_arrow.X_ARROW else x_color.a), 5.0, true)
 			draw_arrows_and_axis_characters()
 
 			if mouse_is_over_arrow != VD_Mouse_is_over_arrow.MIDDLE:
@@ -194,7 +202,7 @@ func draw_rotation_circle():
 		draw_line(center_of_the_node_with_scale, x_arrow_tip_position, x_color, 5.0, true)
 		draw_arrows_and_axis_characters()
 
-		if mouse_is_over_rotation_circle || rotate_on_axis_is_enabled:
+		if (mouse_is_over_rotation_circle && !forbid_transformation_mouse_input) || rotate_on_axis_is_enabled:
 			draw_circle(center_of_the_node_with_scale, circle_size - 6.0, Color(.0, .0, 1.0, .35))
 		else:
 			draw_circle(center_of_the_node_with_scale, circle_size - 6.0, Color(.0, .0, 1.0, .2))
