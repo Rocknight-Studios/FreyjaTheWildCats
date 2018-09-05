@@ -8,11 +8,10 @@ var absolute_mouse_position = Vector2(.0, .0) # For speed and convenience.
 const min_distance_to_rotation_circle_middle = 10.0 # To prevent ugly rotations. For speed and convenience.
 onready var min_sqr_distance_to_rotation_circle_middle = min_distance_to_rotation_circle_middle * min_distance_to_rotation_circle_middle # To prevent ugly rotations.
 var sqr_distance_to_mouse = .0 # For speed and convenience.
+var forbid_transformation_mouse_input = false # To forbid input if the click wasn't on interactable transformation element.
 
 func _process(delta):
 	update()
-
-var forbid_transformation_mouse_input = false # To forbid input if the click wasn't on interactable transformation element.
 
 func _input(event):
 	absolute_mouse_position = Global.visual_debugger.scene_node_selector.absolute_mouse_position
@@ -22,13 +21,15 @@ func _input(event):
 	else:
 		mouse_is_over_rotation_circle = false
 
-	if Input.is_action_just_pressed("mouse_left_click") && !mouse_is_over_arrow && !mouse_is_over_rotation_circle:
-		forbid_transformation_mouse_input = true
+	if Input.is_action_just_pressed("mouse_left_click"):
+		if !(mouse_is_over_arrow && Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.MOVE) && !(mouse_is_over_rotation_circle && Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.ROTATE):
+			forbid_transformation_mouse_input = true
 	elif Input.is_action_just_released("mouse_left_click"):
 		forbid_transformation_mouse_input = false
 
 	if Input.is_action_pressed("mouse_left_click"):
 		if !forbid_transformation_mouse_input:
+			Global.visual_debugger.forbid_selection_circle_management = true
 			if Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.MOVE:
 				move_on_axis()
 			elif Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.ROTATE:
@@ -37,6 +38,7 @@ func _input(event):
 			if mouse_is_over_rotation_circle:
 				rotate_on_axis_is_enabled = true
 	else:
+		Global.visual_debugger.forbid_selection_circle_management = false
 		mouse_is_over_arrow = VD_Mouse_is_over_arrow.NONE
 		rotate_on_axis_is_enabled = false
 	old_mouse_position = absolute_mouse_position

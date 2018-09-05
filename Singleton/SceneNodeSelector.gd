@@ -31,7 +31,7 @@ func _process(delta):
 	update()
 
 func manage_selection():
-	if !Global.visual_debugger.mouse_is_over_visual_debugger_gui && Input.is_action_just_pressed("mouse_left_click"):
+	if !Global.visual_debugger.forbid_selection_circle_management && !Global.visual_debugger.mouse_is_over_visual_debugger_gui && Input.is_action_just_pressed("mouse_left_click"):
 
 		selection_info.text = ""
 		full_paths = []
@@ -73,4 +73,7 @@ func get_all_nodes(node):
 			determine_whether_this_node_is_under_mouse(i)
 
 func _draw():
-	draw_circle(absolute_mouse_position, selection_radius, selection_color);
+	if !Global.visual_debugger.forbid_selection_circle_management:
+		draw_circle(absolute_mouse_position, selection_radius, selection_color);
+	else:
+		draw_circle(absolute_mouse_position, selection_radius, Color(0.0, 0.0, 0.0, 0.0));
