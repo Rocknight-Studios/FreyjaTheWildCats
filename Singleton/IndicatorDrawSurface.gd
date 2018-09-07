@@ -1,12 +1,12 @@
 extends Node2D
 
 onready var show_node_info = get_parent().get_node("TabContainer/NodeSelection/SelectedNodeInfo/ShowNodeInfoButton") # For speed and convenience.
-const selection_size = Vector2(10.0, 10.0) # The relative size of the selection.
+const SELECTION_SIZE = Vector2(10.0, 10.0) # The relative size of the selection.
 var old_mouse_position = Vector2(.0, .0) # To detect and measure mouse position changes.
 var mouse_is_over_rotation_circle = false # For speed and convenience.
 var absolute_mouse_position = Vector2(.0, .0) # For speed and convenience.
-const min_distance_to_rotation_circle_middle = 10.0 # To prevent ugly rotations. For speed and convenience.
-onready var min_sqr_distance_to_rotation_circle_middle = min_distance_to_rotation_circle_middle * min_distance_to_rotation_circle_middle # To prevent ugly rotations.
+const MIN_DISTANCE_TO_ROTATION_CIRCLE_MIDDLE = 10.0 # To prevent ugly rotations. For speed and convenience.
+onready var min_sqr_distance_to_rotation_circle_middle = MIN_DISTANCE_TO_ROTATION_CIRCLE_MIDDLE * MIN_DISTANCE_TO_ROTATION_CIRCLE_MIDDLE # To prevent ugly rotations.
 var sqr_distance_to_mouse = .0 # For speed and convenience.
 var forbid_transformation_mouse_input = false # To forbid input if the click wasn't on interactable transformation element.
 
@@ -22,7 +22,7 @@ func _input(event):
 		mouse_is_over_rotation_circle = false
 
 	if Input.is_action_just_pressed("mouse_left_click"):
-		if !(mouse_is_over_arrow && Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.MOVE) && !(mouse_is_over_rotation_circle && Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.ROTATE):
+		if !(mouse_is_over_arrow && Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.MOVE) && !(mouse_is_over_rotation_circle && Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.ROTATE) && !(mouse_is_over_arrow && Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.SCALE):
 			forbid_transformation_mouse_input = true
 	elif Input.is_action_just_released("mouse_left_click"):
 		forbid_transformation_mouse_input = false
@@ -34,6 +34,8 @@ func _input(event):
 				move_on_axis()
 			elif Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.ROTATE:
 				rotate_on_axis()
+			elif Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.SCALE:
+				scale_on_axis()
 
 			if mouse_is_over_rotation_circle:
 				rotate_on_axis_is_enabled = true
@@ -41,6 +43,10 @@ func _input(event):
 		Global.visual_debugger.forbid_selection_circle_management = false
 		mouse_is_over_arrow = VD_Mouse_is_over_arrow.NONE
 		rotate_on_axis_is_enabled = false
+		scale_arrow_stem_increase_amount_x = .0
+		scale_arrow_stem_increase_amount_y = .0
+		x_arrow_stem_length = DEFAULT_ARROW_STEM_LENGTH
+		y_arrow_stem_length = DEFAULT_ARROW_STEM_LENGTH
 	old_mouse_position = absolute_mouse_position
 
 func move_on_axis():
@@ -52,33 +58,59 @@ func move_on_axis():
 		node.global_position.x += (absolute_mouse_position.x - old_mouse_position.x) * camera_zoom.x
 		node.global_position.y += (absolute_mouse_position.y - old_mouse_position.y) * camera_zoom.y
 
+const SCALE_MULTIPLIER = .01 # How sensitive are scale handles.
+var scale_arrow_stem_increase_amount_x = .0 # How much does the stem length must increase, when scaling is happening.
+var scale_arrow_stem_increase_amount_y = .0 # How much does the stem length must increase, when scaling is happening.
+const SCALE_STEM_MULTIPLIER = 10.0 # How significant is the handle scaling.
+const SCALE_HANDLE_INCREASE_DECREASE_BOUND = 7.5 # Handle scaling cannot go past this bound.
+
+func scale_on_axis():
+	if mouse_is_over_arrow == VD_Mouse_is_over_arrow.X_ARROW:
+		var scale_amount = arrow_direction_vector_x * arrow_direction_vector_x.normalized().dot((absolute_mouse_position - old_mouse_position)) * SCALE_MULTIPLIER # For speed and convenience.
+		node.global_scale += scale_amount
+		scale_arrow_stem_increase_amount_x += scale_amount.x
+		x_arrow_stem_length = clamp(DEFAULT_ARROW_STEM_LENGTH + scale_arrow_stem_increase_amount_x * SCALE_STEM_MULTIPLIER, DEFAULT_ARROW_STEM_LENGTH - SCALE_HANDLE_INCREASE_DECREASE_BOUND, DEFAULT_ARROW_STEM_LENGTH + SCALE_HANDLE_INCREASE_DECREASE_BOUND)
+	elif mouse_is_over_arrow == VD_Mouse_is_over_arrow.Y_ARROW:
+		var scale_amount = arrow_direction_vector_y * arrow_direction_vector_y.normalized().dot((absolute_mouse_position - old_mouse_position)) * SCALE_MULTIPLIER
+		node.global_scale -= scale_amount
+		scale_arrow_stem_increase_amount_x -= scale_amount.y
+		y_arrow_stem_length = clamp(DEFAULT_ARROW_STEM_LENGTH + scale_arrow_stem_increase_amount_x * SCALE_STEM_MULTIPLIER, DEFAULT_ARROW_STEM_LENGTH - SCALE_HANDLE_INCREASE_DECREASE_BOUND, DEFAULT_ARROW_STEM_LENGTH + SCALE_HANDLE_INCREASE_DECREASE_BOUND)
+	elif mouse_is_over_arrow == VD_Mouse_is_over_arrow.MIDDLE:
+		var scale_amount_x = (absolute_mouse_position.x - old_mouse_position.x) * camera_zoom.x * SCALE_MULTIPLIER
+		var scale_amount_y = (absolute_mouse_position.y - old_mouse_position.y) * camera_zoom.y * SCALE_MULTIPLIER
+		node.global_scale.x += scale_amount_x
+		node.global_scale.y -= scale_amount_y
+		scale_arrow_stem_increase_amount_x += scale_amount_x
+		scale_arrow_stem_increase_amount_y += scale_amount_y
+		x_arrow_stem_length = clamp(DEFAULT_ARROW_STEM_LENGTH + scale_arrow_stem_increase_amount_x * SCALE_STEM_MULTIPLIER, DEFAULT_ARROW_STEM_LENGTH - SCALE_HANDLE_INCREASE_DECREASE_BOUND, DEFAULT_ARROW_STEM_LENGTH + SCALE_HANDLE_INCREASE_DECREASE_BOUND)
+		y_arrow_stem_length = clamp(DEFAULT_ARROW_STEM_LENGTH + scale_arrow_stem_increase_amount_y * SCALE_STEM_MULTIPLIER, DEFAULT_ARROW_STEM_LENGTH - SCALE_HANDLE_INCREASE_DECREASE_BOUND, DEFAULT_ARROW_STEM_LENGTH + SCALE_HANDLE_INCREASE_DECREASE_BOUND)
+
 onready var rotate_on_axis_is_enabled = false # For speed and convenience.
-const rotation_coefficient = -.01 # How quickly to rotate node on mouse drag.
-const movement_coefficient = 1.0 # How quickly to rotate node on mouse drag.
+const ROTATION_COEFFICIENT = -.01 # How quickly to rotate node on mouse drag.
 
 func rotate_on_axis():
 	if rotate_on_axis_is_enabled && sqr_distance_to_mouse > min_sqr_distance_to_rotation_circle_middle:
 		if absolute_mouse_position.y > center_of_the_node_with_scale.y:
 			if absolute_mouse_position.x > old_mouse_position.x:
-				node.global_rotation += (absolute_mouse_position.x - old_mouse_position.x) * rotation_coefficient
+				node.global_rotation += (absolute_mouse_position.x - old_mouse_position.x) * ROTATION_COEFFICIENT
 			else:
-				node.global_rotation -= (old_mouse_position.x - absolute_mouse_position.x) * rotation_coefficient
+				node.global_rotation -= (old_mouse_position.x - absolute_mouse_position.x) * ROTATION_COEFFICIENT
 		else:
 			if absolute_mouse_position.x > old_mouse_position.x:
-				node.global_rotation -= (absolute_mouse_position.x - old_mouse_position.x) * rotation_coefficient
+				node.global_rotation -= (absolute_mouse_position.x - old_mouse_position.x) * ROTATION_COEFFICIENT
 			else:
-				node.global_rotation += (old_mouse_position.x - absolute_mouse_position.x) * rotation_coefficient
+				node.global_rotation += (old_mouse_position.x - absolute_mouse_position.x) * ROTATION_COEFFICIENT
 
 		if absolute_mouse_position.x < center_of_the_node_with_scale.x:
 			if absolute_mouse_position.y > old_mouse_position.y:
-				node.global_rotation += (absolute_mouse_position.y - old_mouse_position.y) * rotation_coefficient
+				node.global_rotation += (absolute_mouse_position.y - old_mouse_position.y) * ROTATION_COEFFICIENT
 			else:
-				node.global_rotation -= (old_mouse_position.y - absolute_mouse_position.y) * rotation_coefficient
+				node.global_rotation -= (old_mouse_position.y - absolute_mouse_position.y) * ROTATION_COEFFICIENT
 		else:
 			if absolute_mouse_position.y > old_mouse_position.y:
-				node.global_rotation -= (absolute_mouse_position.y - old_mouse_position.y) * rotation_coefficient
+				node.global_rotation -= (absolute_mouse_position.y - old_mouse_position.y) * ROTATION_COEFFICIENT
 			else:
-				node.global_rotation += (old_mouse_position.y - absolute_mouse_position.y) * rotation_coefficient
+				node.global_rotation += (old_mouse_position.y - absolute_mouse_position.y) * ROTATION_COEFFICIENT
 
 func draw_arrow_head(arrow_direction_vector, center_of_the_node, tip_of_the_arrow, line_color, arrow_length, thickness):
 	draw_line(tip_of_the_arrow, tip_of_the_arrow + Vector2(arrow_direction_vector.y, -arrow_direction_vector.x) * arrow_length, line_color, thickness, true)
@@ -91,7 +123,9 @@ onready var mouse_is_over_arrow = VD_Mouse_is_over_arrow.NONE # Act only on one 
 var node = null # For speed and convenience.
 var arrow_direction_vector_y = Vector2(.0, .0) # For speed and convenience.
 var arrow_direction_vector_x = Vector2(.0, .0) # For speed and convenience.
-const arrow_stem_length = 100.0 # How long are the stems for the direction arrows.
+const DEFAULT_ARROW_STEM_LENGTH = 100.0 # How long are the stems for the direction arrows.
+onready var x_arrow_stem_length = DEFAULT_ARROW_STEM_LENGTH # To be able to change stem length dynamically.
+onready var y_arrow_stem_length = DEFAULT_ARROW_STEM_LENGTH # To be able to change stem length dynamically.
 var node_global_transform = Vector2(.0, .0) # For a wider scope.
 var node_position = Vector2(.0, .0) # For a wider scope.
 var debugger_camera_position = Vector2(.0, .0) # For a wider scope.
@@ -128,25 +162,36 @@ func calculate_node_draw_center():
 		debugger_camera_position = visual_debugger_camera.get_global_transform().origin # For convenience.
 		camera_to_object_vector = node_position - debugger_camera_position # For convenience.
 		current_node_position = self.get_global_transform().origin # For convenience.
-		zoomed_size = selection_size / camera_zoom # For convenience.
+		zoomed_size = SELECTION_SIZE / camera_zoom # For convenience.
 		center_of_the_node = camera_to_object_vector / camera_zoom - current_node_position # For speed and convenience.
 		center_of_the_node_with_scale = center_of_the_node - zoomed_size * .5 # For speed and convenience.
 		rotation_transform_y = Transform2D(node_global_transform.get_rotation(), Vector2(.0, .0)) # For speed and convenience.
 		arrow_direction_vector_y = rotation_transform_y.xform(Vector2(0, 1))
 		arrow_direction_vector_x = Vector2(arrow_direction_vector_y.y, -arrow_direction_vector_y.x)
-		y_arrow_tip_position = center_of_the_node_with_scale + arrow_direction_vector_y * arrow_stem_length # For speed and convenience.
-		x_arrow_tip_position = center_of_the_node_with_scale - arrow_direction_vector_x * arrow_stem_length # For speed and convenience.
+		y_arrow_tip_position = center_of_the_node_with_scale + arrow_direction_vector_y * y_arrow_stem_length # For speed and convenience.
+		x_arrow_tip_position = center_of_the_node_with_scale - arrow_direction_vector_x * x_arrow_stem_length # For speed and convenience.
 
-func draw_arrows_and_axis_characters():
+var scale_tip_rectangle_size = Vector2 (10.0, 10.0) # To set the size of the arrow tips for the scale arrows.
+
+func draw_tips_and_axis_characters():
 	draw_line(Vector2(y_arrow_tip_position.x + character_offset_x, y_arrow_tip_position.y + character_offset_y), Vector2(y_arrow_tip_position.x + character_offset_x + character_width * .5, y_arrow_tip_position.y + character_offset_y + character_width * .5), y_character_color, character_thickenss, true)
 	draw_line(Vector2(y_arrow_tip_position.x + character_offset_x + character_width, y_arrow_tip_position.y + character_offset_y), Vector2(y_arrow_tip_position.x + character_offset_x, y_arrow_tip_position.y + character_offset_y + character_width), y_character_color, character_thickenss, true)
-	draw_arrow_head(arrow_direction_vector_y, center_of_the_node, y_arrow_tip_position, y_arrow_color, 10.0, 2.0)
 
 	draw_line(Vector2(x_arrow_tip_position.x + character_offset_x, x_arrow_tip_position.y + character_offset_y), Vector2(x_arrow_tip_position.x + character_offset_x + character_width, x_arrow_tip_position.y + character_offset_y + character_width), x_character_color, character_thickenss, true)
 	draw_line(Vector2(x_arrow_tip_position.x + character_offset_x + character_width, x_arrow_tip_position.y + character_offset_y), Vector2(x_arrow_tip_position.x + character_offset_x, x_arrow_tip_position.y + character_offset_y + character_width), x_character_color, character_thickenss, true)
-	draw_arrow_head(arrow_direction_vector_x, center_of_the_node, x_arrow_tip_position, x_arrow_color, -10.0, 2.0)
 
-func draw_local_axis_arrows():
+	if Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.MOVE || Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.ROTATE:
+		draw_arrow_head(arrow_direction_vector_x, center_of_the_node, x_arrow_tip_position, x_arrow_color, -7.5, 2.0)
+		draw_arrow_head(arrow_direction_vector_y, center_of_the_node, y_arrow_tip_position, y_arrow_color, 7.5, 2.0)
+		draw_arrow_head(arrow_direction_vector_x, center_of_the_node, x_arrow_tip_position, x_arrow_color, -5.0, 2.0)
+		draw_arrow_head(arrow_direction_vector_y, center_of_the_node, y_arrow_tip_position, y_arrow_color, 5.0, 2.0)
+		draw_arrow_head(arrow_direction_vector_x, center_of_the_node, x_arrow_tip_position, x_arrow_color, -2.5, 2.0)
+		draw_arrow_head(arrow_direction_vector_y, center_of_the_node, y_arrow_tip_position, y_arrow_color, 2.5, 2.0)
+	elif Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.SCALE:
+		draw_rect(Rect2(x_arrow_tip_position - scale_tip_rectangle_size * .5, scale_tip_rectangle_size), x_arrow_color, true)
+		draw_rect(Rect2(y_arrow_tip_position - scale_tip_rectangle_size * .5, scale_tip_rectangle_size), y_arrow_color, true)
+
+func draw_local_axis_handles():
 	if show_node_info.full_selected_path != "":
 		calculate_node_draw_center()
 		if Global.visual_debugger.node_is_selected:
@@ -170,7 +215,8 @@ func draw_local_axis_arrows():
 
 			draw_line(center_of_the_node_with_scale, y_arrow_tip_position, Color (y_color.r, y_color.g, y_color.b, (y_color.a if forbid_transformation_mouse_input else 1.0) if mouse_is_over_arrow == VD_Mouse_is_over_arrow.Y_ARROW else y_color.a), 5.0, true)
 			draw_line(center_of_the_node_with_scale, x_arrow_tip_position, Color (x_color.r, x_color.g, x_color.b, (x_color.a if forbid_transformation_mouse_input else 1.0) if mouse_is_over_arrow == VD_Mouse_is_over_arrow.X_ARROW else x_color.a), 5.0, true)
-			draw_arrows_and_axis_characters()
+
+			draw_tips_and_axis_characters()
 
 			if mouse_is_over_arrow != VD_Mouse_is_over_arrow.MIDDLE:
 				draw_rect(Rect2(center_of_the_node_with_scale - move_rectangle_size * .5, move_rectangle_size), Color(.1, .9, .1, .7), true)
@@ -202,23 +248,20 @@ func draw_rotation_circle():
 
 		draw_line(center_of_the_node_with_scale, y_arrow_tip_position, y_color, 5.0, true)
 		draw_line(center_of_the_node_with_scale, x_arrow_tip_position, x_color, 5.0, true)
-		draw_arrows_and_axis_characters()
+		draw_tips_and_axis_characters()
 
 		if (mouse_is_over_rotation_circle && !forbid_transformation_mouse_input) || rotate_on_axis_is_enabled:
 			draw_circle(center_of_the_node_with_scale, circle_size - 6.0, Color(.0, .0, 1.0, .35))
 		else:
 			draw_circle(center_of_the_node_with_scale, circle_size - 6.0, Color(.0, .0, 1.0, .2))
 
-		draw_circle(center_of_the_node_with_scale, min_distance_to_rotation_circle_middle, Color(.0, .0, 1.0, .9))
-
-func draw_scale_handles():
-	print("manage scaling")
+		draw_circle(center_of_the_node_with_scale, MIN_DISTANCE_TO_ROTATION_CIRCLE_MIDDLE, Color(.0, .0, 1.0, .9))
 
 func _draw():
 	if show_node_info != null:
 		if Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.MOVE:
-			draw_local_axis_arrows()
+			draw_local_axis_handles()
 		elif Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.ROTATE:
 			draw_rotation_circle()
 		elif Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.SCALE:
-			draw_scale_handles()
+			draw_local_axis_handles()
