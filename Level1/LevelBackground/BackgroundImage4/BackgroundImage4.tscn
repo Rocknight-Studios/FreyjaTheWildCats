@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage4/IceLevel4.png" type="Texture" id=1]
 [ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
 [ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Level1/Enemies/Trolls/Shield/ShieldTroll.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level1/EnvironmentEffects/Snow.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Level1/EnvironmentEffects/SnowStormSides.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -16,6 +18,7 @@ height = 730.583
 position = Vector2( 960, -3780 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
+enemy_optimization_distance = 3000.0
 
 [node name="Forest" type="StaticBody2D" parent="." index="0"]
 
@@ -85,5 +88,13 @@ position = Vector2( 235.34, 81.5648 )
 [node name="ShieldTroll3" parent="." index="6" instance=ExtResource( 4 )]
 
 position = Vector2( -109.482, 81.5648 )
+
+[node name="Snow" parent="." index="7" instance=ExtResource( 5 )]
+
+position = Vector2( 42.7474, -49.6814 )
+
+[node name="Snow2" parent="." index="8" instance=ExtResource( 6 )]
+
+position = Vector2( -871.023, -334.732 )
 
 

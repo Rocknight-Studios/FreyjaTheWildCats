@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage23/ForestLevel23.png" type="Texture" id=1]
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage23/Trees.png" type="Texture" id=2]
@@ -6,8 +6,9 @@
 [ext_resource path="res://Level2/Enemies/ForestGiant/ForestGiant.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Level2/Enemies/Spider/Spider.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Level2/EnvironmentObjects/Leaf.tscn" type="PackedScene" id=7]
 
-[node name="BackgroundImage23" type="Sprite"]
+[node name="BackgroundImage23" type="Sprite" index="0"]
 
 position = Vector2( 960, -24300 )
 texture = ExtResource( 1 )
@@ -60,5 +61,13 @@ position = Vector2( 354.973, -259.307 )
 [node name="Spider" parent="." index="7" instance=ExtResource( 6 )]
 
 position = Vector2( 541.272, 173.707 )
+
+[node name="Leaf" parent="." index="8" instance=ExtResource( 7 )]
+
+position = Vector2( 325.372, -48.4102 )
+
+[node name="Leaf2" parent="." index="9" instance=ExtResource( 7 )]
+
+position = Vector2( -733.417, 396.916 )
 
 

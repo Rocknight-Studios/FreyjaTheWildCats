@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage36/ForestLevel36.png" type="Texture" id=1]
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage36/Trees.png" type="Texture" id=2]
@@ -7,8 +7,10 @@
 [ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Level2/Enemies/ForestArcher/ForestArcher.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Level2/Enemies/ForestGiant/ForestGiant.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Level2/EnvironmentObjects/Leaf.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Level2/EnvironmentObjects/Needle.tscn" type="PackedScene" id=9]
 
-[node name="BackgroundImage36" type="Sprite"]
+[node name="BackgroundImage36" type="Sprite" index="0"]
 
 position = Vector2( 960, -38340 )
 texture = ExtResource( 1 )
@@ -78,5 +80,13 @@ position = Vector2( 458.459, -370.996 )
 [node name="ForestGiant" parent="." index="9" instance=ExtResource( 7 )]
 
 position = Vector2( 272.955, 278.254 )
+
+[node name="Leaf" parent="." index="10" instance=ExtResource( 8 )]
+
+position = Vector2( -320.524, 0.0351562 )
+
+[node name="Needle" parent="." index="11" instance=ExtResource( 9 )]
+
+position = Vector2( 689.55, 359.191 )
 
 

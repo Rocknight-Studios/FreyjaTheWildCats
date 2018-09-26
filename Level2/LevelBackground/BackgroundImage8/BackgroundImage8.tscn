@@ -5,7 +5,7 @@
 [ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage9/Rock.png" type="Texture" id=4]
 
-[node name="BackgroundImage8" type="Sprite" index="0"]
+[node name="BackgroundImage8" type="Sprite"]
 
 position = Vector2( 960, -8100 )
 texture = ExtResource( 1 )
@@ -45,15 +45,15 @@ polygon = PoolVector2Array( 163.556, 544.265, 249.175, 260.008, 738.919, -61.920
 
 [node name="WizardTroll" parent="." index="2" instance=ExtResource( 2 )]
 
-position = Vector2( -354.972, 158.604 )
+position = Vector2( -375.194, 206.194 )
 
 [node name="WizardTroll2" parent="." index="3" instance=ExtResource( 2 )]
 
-position = Vector2( 42.7981, 158.604 )
+position = Vector2( 140.09, 138.031 )
 
 [node name="Giant" parent="." index="4" instance=ExtResource( 3 )]
 
-position = Vector2( 169.402, -184.55 )
+position = Vector2( -67.1203, -214.03 )
 
 [node name="Rock" type="Sprite" parent="." index="5"]
 

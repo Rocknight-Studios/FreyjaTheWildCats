@@ -6,7 +6,7 @@
 [ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Level2/Enemies/WizardTroll/WizardTroll.tscn" type="PackedScene" id=5]
 
-[node name="BackgroundImage50" type="Sprite" index="0"]
+[node name="BackgroundImage50" type="Sprite"]
 
 position = Vector2( 960, -53460 )
 texture = ExtResource( 1 )
@@ -62,19 +62,19 @@ position = Vector2( -488.955, 428.566 )
 
 [node name="ArcherHeavy3" parent="." index="5" instance=ExtResource( 3 )]
 
-position = Vector2( -525.967, 278.57 )
+position = Vector2( -525.967, 282.449 )
 
 [node name="ArcherHeavy4" parent="." index="6" instance=ExtResource( 3 )]
 
-position = Vector2( 461.682, 350.641 )
+position = Vector2( 477.19, 328.668 )
 
 [node name="ArcherHeavy5" parent="." index="7" instance=ExtResource( 3 )]
 
-position = Vector2( 561.032, 430.512 )
+position = Vector2( 563.617, 418.883 )
 
 [node name="ArcherHeavy6" parent="." index="8" instance=ExtResource( 3 )]
 
-position = Vector2( 615.577, 301.945 )
+position = Vector2( 603.946, 291.602 )
 
 [node name="ArcherHeavy7" parent="." index="9" instance=ExtResource( 3 )]
 
@@ -82,7 +82,7 @@ position = Vector2( -232.705, 375.332 )
 
 [node name="ArcherHeavy8" parent="." index="10" instance=ExtResource( 3 )]
 
-position = Vector2( -9.54651, 375.332 )
+position = Vector2( -0.499939, 375.332 )
 
 [node name="ArcherHeavy9" parent="." index="11" instance=ExtResource( 3 )]
 
@@ -90,11 +90,11 @@ position = Vector2( 214.665, 375.332 )
 
 [node name="Giant" parent="." index="12" instance=ExtResource( 4 )]
 
-position = Vector2( -304.336, -183.633 )
+position = Vector2( -216.521, -258.211 )
 
 [node name="Giant2" parent="." index="13" instance=ExtResource( 4 )]
 
-position = Vector2( 276.839, -197.992 )
+position = Vector2( 237.726, -258.211 )
 
 [node name="WizardTroll" parent="." index="14" instance=ExtResource( 5 )]
 
