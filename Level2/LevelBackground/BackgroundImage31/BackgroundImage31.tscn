@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage31/ForestLevel31.png" type="Texture" id=1]
 [ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Level2/EnvironmentObjects/Leaf.tscn" type="PackedScene" id=3]
 
 [node name="BackgroundImage31" type="Sprite" index="0"]
 
@@ -28,6 +29,14 @@ polygon = PoolVector2Array( -149.728, -186.828, -231.879, 112.625, -1.32501, 218
 
 [node name="Giant" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 219.908, 198.277 )
+position = Vector2( 510.605, 192.404 )
+
+[node name="Giant2" parent="." index="2" instance=ExtResource( 2 )]
+
+position = Vector2( -496.557, 192.404 )
+
+[node name="Leaf" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( -1.00879, 320.439 )
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage29/IceLevel29.png" type="Texture" id=1]
 [ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Level1/Enemies/Trolls/Berserker/Berserker.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Unsorted/Steam/Steam.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Level1/EnvironmentEffects/SnowStormSides.tscn" type="PackedScene" id=7]
 
 [node name="BackgroundImage29" type="Sprite" index="0"]
 
@@ -93,5 +94,13 @@ position = Vector2( 718.006, -344.6 )
 [node name="Steam4" parent="." index="13" instance=ExtResource( 6 )]
 
 position = Vector2( 382.272, -375.623 )
+
+[node name="Snow" parent="." index="14" instance=ExtResource( 7 )]
+
+position = Vector2( 824.34, 43.4727 )
+
+[node name="Snow2" parent="." index="15" instance=ExtResource( 7 )]
+
+position = Vector2( -834.271, -458.656 )
 
 

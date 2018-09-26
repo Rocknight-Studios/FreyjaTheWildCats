@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage13/ForestLevel13.png" type="Texture" id=1]
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage13/Rock.png" type="Texture" id=2]
 [ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level2/EnvironmentObjects/Needle.tscn" type="PackedScene" id=4]
 
 [node name="BackgroundImage13" type="Sprite" index="0"]
 
@@ -53,10 +54,14 @@ _sections_unfolded = [ "Z Index" ]
 
 [node name="Giant" parent="." index="3" instance=ExtResource( 3 )]
 
-position = Vector2( -164.129, 270.81 )
+position = Vector2( -2.4762, 284.061 )
 
 [node name="Giant2" parent="." index="4" instance=ExtResource( 3 )]
 
-position = Vector2( 4.03271, -239.213 )
+position = Vector2( -11.8676, -233.912 )
+
+[node name="Needle" parent="." index="5" instance=ExtResource( 4 )]
+
+position = Vector2( -844.306, -42.5732 )
 
 

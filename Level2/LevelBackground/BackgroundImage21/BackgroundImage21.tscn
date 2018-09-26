@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage21/ForestLevel21.png" type="Texture" id=1]
 [ext_resource path="res://Level2/Enemies/ForestGiant/ForestGiant.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Level2/Enemies/ForestArcher/ForestArcher.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Level2/Enemies/WizardTroll/WizardTroll.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level2/EnvironmentObjects/Waves.tscn" type="PackedScene" id=5]
 
-[node name="BackgroundImage21" type="Sprite" index="0"]
+[node name="BackgroundImage21" type="Sprite"]
 
 position = Vector2( 960, -22140 )
 texture = ExtResource( 1 )
@@ -47,7 +48,7 @@ polygon = PoolVector2Array( -192.202, -423.461, -189.017, 322.691, 710.983, 372.
 
 [node name="ForestGiant" parent="." index="2" instance=ExtResource( 2 )]
 
-position = Vector2( -490, 290 )
+position = Vector2( -430, 380 )
 
 [node name="ArcherHeavy" parent="." index="3" instance=ExtResource( 3 )]
 
@@ -63,6 +64,30 @@ position = Vector2( -140, -260 )
 
 [node name="ForestGiant2" parent="." index="6" instance=ExtResource( 2 )]
 
-position = Vector2( 370, 310 )
+position = Vector2( 360, 390 )
+
+[node name="Waves" parent="." index="7" instance=ExtResource( 5 )]
+
+position = Vector2( 320, -450 )
+z_index = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform", "Z Index" ]
+
+[node name="Waves4" parent="." index="8" instance=ExtResource( 5 )]
+
+position = Vector2( 460, -140 )
+z_index = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform", "Z Index" ]
+
+[node name="Waves3" parent="." index="9" instance=ExtResource( 5 )]
+
+position = Vector2( 740, -370 )
+z_index = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform", "Z Index" ]
+
+[node name="Waves2" parent="." index="10" instance=ExtResource( 5 )]
+
+position = Vector2( -700, -480 )
+z_index = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform", "Z Index" ]
 
 
