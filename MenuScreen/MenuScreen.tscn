@@ -544,6 +544,7 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer" index="1"]
 
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -559,6 +560,7 @@ _sections_unfolded = [ "Scroll" ]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" index="0"]
 
+editor/display_folded = true
 motion_scale = Vector2( 0, 0 )
 motion_offset = Vector2( -800, 0 )
 motion_mirroring = Vector2( 1920, 2 )

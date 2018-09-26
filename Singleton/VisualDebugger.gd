@@ -16,6 +16,8 @@ onready var warning_line = $"InfoContainer/WarningLine" # For speed and convenie
 enum VD_Transformation_modes {MOVE, ROTATE, SCALE}
 onready var transformation_mode = VD_Transformation_modes.MOVE # For speed and convenience.
 onready var node_is_selected = false # To save resources and know, when some node is selected in the scene.
+var keyboard_movement_is_allowed = true # For the access from other behaviours.
+var forbid_selection_circle_management = false # To not manage selection circle, when transformation is active.
 
 func _ready():
 	set_gui_visibility(false)
@@ -82,6 +84,12 @@ func move_to_the_node(delta):
 		is_moving_to_node = false
 		debugger_camera.position = goal_position
 
+func _on_disable_keyboard_movement():
+	keyboard_movement_is_allowed = false
+
+func _on_enable_keyboard_movement():
+	keyboard_movement_is_allowed = true
+
 func _process(delta):
 	if Input.is_action_just_pressed ("visual_debugger"):
 		if visual_debugger_is_active:
@@ -98,7 +106,7 @@ func _process(delta):
 			set_gui_visibility(true)
 			debugger_camera.make_current()
 
-	if visual_debugger_is_active:
+	if visual_debugger_is_active && keyboard_movement_is_allowed:
 		manage_camera_movement(camera_movement_speed_slider.value)
 
 		if is_moving_to_node:

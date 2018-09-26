@@ -1,19 +1,23 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Singleton/VisualDebugger.gd" type="Script" id=1]
-[ext_resource path="res://Singleton/IndicatorDrawSurface.gd" type="Script" id=2]
-[ext_resource path="res://Singleton/VisualDebuggerBackground.gd" type="Script" id=3]
-[ext_resource path="res://Singleton/SceneNodeSelector.gd" type="Script" id=4]
+[ext_resource path="res://Singleton/VisualDebuggerBackground.gd" type="Script" id=2]
+[ext_resource path="res://Singleton/SceneNodeSelector.gd" type="Script" id=3]
+[ext_resource path="res://Singleton/IndicatorDrawSurface.gd" type="Script" id=4]
 [ext_resource path="res://Singleton/VisualDebuggerCamera.gd" type="Script" id=5]
 [ext_resource path="res://Singleton/WarningLine.gd" type="Script" id=6]
 [ext_resource path="res://Singleton/ShowNodeInfoButton.gd" type="Script" id=7]
 [ext_resource path="res://Singleton/JumpToSelectedNodeButton.gd" type="Script" id=8]
-[ext_resource path="res://Singleton/TransformationModeButton.gd" type="Script" id=9]
-[ext_resource path="res://Singleton/StepButton.gd" type="Script" id=10]
-[ext_resource path="res://Singleton/RunButton.gd" type="Script" id=11]
-[ext_resource path="res://Singleton/CameraMovementSpeedSlider.gd" type="Script" id=12]
-[ext_resource path="res://Singleton/JumpToNodeButton.gd" type="Script" id=13]
-[ext_resource path="res://Singleton/EnablePersistentFollowButton.gd" type="Script" id=14]
+[ext_resource path="res://Singleton/CurrentNodeInfo.gd" type="Script" id=9]
+[ext_resource path="res://Singleton/Outliner.gd" type="Script" id=10]
+[ext_resource path="res://Singleton/WatchesList.gd" type="Script" id=11]
+[ext_resource path="res://Singleton/TransformationModeButton.gd" type="Script" id=12]
+[ext_resource path="res://Singleton/StepButton.gd" type="Script" id=13]
+[ext_resource path="res://Singleton/RunButton.gd" type="Script" id=14]
+[ext_resource path="res://Singleton/CameraMovementSpeedSlider.gd" type="Script" id=15]
+[ext_resource path="res://Singleton/JumpToNodeButton.gd" type="Script" id=16]
+[ext_resource path="res://Singleton/JumpToNodePath.gd" type="Script" id=17]
+[ext_resource path="res://Singleton/EnablePersistentFollowButton.gd" type="Script" id=18]
 
 [node name="VisualDebugger" type="CanvasLayer" index="0"]
 
@@ -43,11 +47,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="IndicatorDrawSurface" type="Node2D" parent="." index="1"]
-
-script = ExtResource( 2 )
-
-[node name="VisualDebuggerBackground" type="Panel" parent="." index="2"]
+[node name="VisualDebuggerBackground" type="Panel" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -62,15 +62,19 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 3 )
+script = ExtResource( 2 )
 _sections_unfolded = [ "Rect" ]
 
-[node name="SceneNodeSelector" type="Node2D" parent="." index="3"]
+[node name="SceneNodeSelector" type="Node2D" parent="." index="2"]
 
-script = ExtResource( 4 )
+script = ExtResource( 3 )
 node_types_to_detect = [ "Node2D", "StaticBody2D" ]
 selection_color = Color( 0, 0.1, 0, 0.1 )
 reversed_node_path = [  ]
+
+[node name="IndicatorDrawSurface" type="Node2D" parent="." index="3"]
+
+script = ExtResource( 4 )
 
 [node name="DebuggerCamera2D" type="Camera2D" parent="." index="4"]
 
@@ -196,7 +200,6 @@ _sections_unfolded = [ "Visibility", "custom_colors" ]
 
 [node name="TabContainer" type="TabContainer" parent="." index="7"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -216,6 +219,7 @@ tabs_visible = true
 
 [node name="NodeSelection" type="Container" parent="TabContainer" index="0"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -387,13 +391,14 @@ __meta__ = {
 
 [node name="ShowNodeInfoButton" type="Button" parent="TabContainer/NodeSelection/SelectedNodeInfo" index="0"]
 
+self_modulate = Color( 0.496094, 1, 0.716553, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 7.0
-margin_top = 20.0
-margin_right = 119.0
+margin_top = 6.0
+margin_right = 171.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -402,6 +407,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -410,6 +416,7 @@ text = "Show Node Info"
 flat = false
 align = 1
 script = ExtResource( 7 )
+_sections_unfolded = [ "Visibility", "custom_colors" ]
 
 [node name="JumpToSelectedNodeButton" type="Button" parent="TabContainer/NodeSelection/SelectedNodeInfo" index="1"]
 
@@ -417,9 +424,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 130.0
+margin_left = 186.0
 margin_top = 20.0
-margin_right = 290.0
+margin_right = 346.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -491,9 +498,275 @@ caret_block_mode = false
 caret_blink = false
 caret_blink_speed = 0.65
 caret_moving_by_right_click = true
+script = ExtResource( 9 )
 
-[node name="Transformations" type="Container" parent="TabContainer" index="1"]
+[node name="Watches" type="Container" parent="TabContainer" index="1"]
 
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="OutlinerTitle" type="Label" parent="TabContainer/Watches" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 4.0
+margin_top = 19.0
+margin_right = 303.0
+margin_bottom = 33.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Select Node/s to inspect"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Outliner" type="Tree" parent="TabContainer/Watches" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 5.0
+margin_top = 40.0
+margin_right = 360.0
+margin_bottom = 240.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+columns = 1
+allow_reselect = false
+allow_rmb_select = false
+hide_folding = false
+hide_root = false
+drop_mode_flags = 0
+select_mode = 2
+script = ExtResource( 10 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="Refresh" type="Button" parent="TabContainer/Watches" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 240.0
+margin_top = 5.0
+margin_right = 360.0
+margin_bottom = 35.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Refresh"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="WatchesTitle" type="Label" parent="TabContainer/Watches" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 4.0
+margin_top = 303.0
+margin_right = 303.0
+margin_bottom = 317.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "List of watches"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="WatchesList" type="ItemList" parent="TabContainer/Watches" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 5.0
+margin_top = 330.0
+margin_right = 360.0
+margin_bottom = 625.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+items = [  ]
+select_mode = 0
+allow_reselect = false
+icon_mode = 1
+fixed_icon_size = Vector2( 0, 0 )
+script = ExtResource( 11 )
+_sections_unfolded = [ "Margin", "Rect" ]
+
+[node name="AddWatch" type="Button" parent="TabContainer/Watches" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 240.0
+margin_top = 292.0
+margin_right = 360.0
+margin_bottom = 322.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Add Watch"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="WatchName" type="TextEdit" parent="TabContainer/Watches" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 5.0
+margin_top = 255.0
+margin_right = 360.0
+margin_bottom = 285.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+text = "Type watch name"
+readonly = false
+highlight_current_line = false
+syntax_highlighting = false
+show_line_numbers = false
+highlight_all_occurrences = false
+override_selected_font_color = false
+context_menu_enabled = true
+smooth_scrolling = false
+v_scroll_speed = 80.0
+hiding_enabled = 0
+wrap_lines = false
+caret_block_mode = false
+caret_blink = false
+caret_blink_speed = 0.65
+caret_moving_by_right_click = true
+_sections_unfolded = [ "Rect" ]
+
+[node name="WatchValue" type="TextEdit" parent="TabContainer/Watches" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 5.0
+margin_top = 640.0
+margin_right = 225.0
+margin_bottom = 670.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+text = "Type value here"
+readonly = false
+highlight_current_line = false
+syntax_highlighting = false
+show_line_numbers = false
+highlight_all_occurrences = false
+override_selected_font_color = false
+context_menu_enabled = true
+smooth_scrolling = false
+v_scroll_speed = 80.0
+hiding_enabled = 0
+wrap_lines = false
+caret_block_mode = false
+caret_blink = false
+caret_blink_speed = 0.65
+caret_moving_by_right_click = true
+_sections_unfolded = [ "Rect" ]
+
+[node name="SetValue" type="Button" parent="TabContainer/Watches" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 240.0
+margin_top = 640.0
+margin_right = 360.0
+margin_bottom = 670.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Set Value"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Transformations" type="Container" parent="TabContainer" index="2"]
+
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -535,140 +808,8 @@ text = "Transformation mode: MOVE"
 flat = false
 align = 1
 items = [ "MOVE", null, 0, false, false, -1, 0, null, "", false, "ROTATE", null, 0, false, false, -1, 0, null, "", false, "SCALE", null, 0, false, false, -1, 0, null, "", false ]
-script = ExtResource( 9 )
+script = ExtResource( 12 )
 _sections_unfolded = [ "Margin" ]
-
-[node name="Watches" type="Container" parent="TabContainer" index="2"]
-
-editor/display_folded = true
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 32.0
-margin_right = -4.0
-margin_bottom = -4.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="WatchesTitle" type="Label" parent="TabContainer/Watches" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 4.0
-margin_top = 19.0
-margin_right = 303.0
-margin_bottom = 33.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Type names for watches seperated by new line"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="WatchesList" type="TextEdit" parent="TabContainer/Watches" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 4.0
-margin_top = 40.0
-margin_right = 355.0
-margin_bottom = 337.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-text = ""
-readonly = false
-highlight_current_line = false
-syntax_highlighting = false
-show_line_numbers = true
-highlight_all_occurrences = false
-override_selected_font_color = false
-context_menu_enabled = true
-smooth_scrolling = true
-v_scroll_speed = 80.0
-hiding_enabled = 0
-wrap_lines = false
-caret_block_mode = false
-caret_blink = false
-caret_blink_speed = 0.65
-caret_moving_by_right_click = true
-
-[node name="WatchesValuesTitle" type="Label" parent="TabContainer/Watches" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 6.0
-margin_top = 357.0
-margin_right = 305.0
-margin_bottom = 371.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Type names for watches seperated by new line"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="WatchesValues" type="TextEdit" parent="TabContainer/Watches" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 5.0
-margin_top = 379.0
-margin_right = 356.0
-margin_bottom = 666.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-text = ""
-readonly = false
-highlight_current_line = false
-syntax_highlighting = false
-show_line_numbers = true
-highlight_all_occurrences = false
-override_selected_font_color = false
-context_menu_enabled = true
-smooth_scrolling = true
-v_scroll_speed = 80.0
-hiding_enabled = 0
-wrap_lines = false
-caret_block_mode = false
-caret_blink = false
-caret_blink_speed = 0.65
-caret_moving_by_right_click = true
 
 [node name="GeneralControlsContainer" type="Container" parent="." index="8"]
 
@@ -715,7 +856,7 @@ group = null
 text = "Step"
 flat = false
 align = 1
-script = ExtResource( 10 )
+script = ExtResource( 13 )
 _sections_unfolded = [ "Margin", "Pause" ]
 
 [node name="RunButton" type="Button" parent="GeneralControlsContainer" index="1"]
@@ -742,7 +883,7 @@ group = null
 text = "Run"
 flat = false
 align = 1
-script = ExtResource( 11 )
+script = ExtResource( 14 )
 _sections_unfolded = [ "Margin", "Pause" ]
 
 [node name="CameraMovementSpeedLabel" type="Label" parent="GeneralControlsContainer" index="2"]
@@ -794,7 +935,7 @@ editable = true
 tick_count = 0
 ticks_on_borders = false
 focus_mode = 2
-script = ExtResource( 12 )
+script = ExtResource( 15 )
 
 [node name="CameraJumpPositionX" type="LineEdit" parent="GeneralControlsContainer" index="4"]
 
@@ -875,7 +1016,7 @@ group = null
 text = "Jump To Node"
 flat = false
 align = 1
-script = ExtResource( 13 )
+script = ExtResource( 16 )
 
 [node name="JumpToNodePath" type="LineEdit" parent="GeneralControlsContainer" index="7"]
 
@@ -900,6 +1041,7 @@ placeholder_alpha = 0.6
 caret_blink = false
 caret_blink_speed = 0.65
 caret_position = 0
+script = ExtResource( 17 )
 
 [node name="CameraJumpPositionButton" type="Button" parent="GeneralControlsContainer" index="8"]
 
@@ -950,7 +1092,7 @@ group = null
 text = "Follow node: "
 flat = false
 align = 0
-script = ExtResource( 14 )
+script = ExtResource( 18 )
 
 [node name="EnableExactFollow" type="CheckButton" parent="GeneralControlsContainer" index="10"]
 
@@ -983,6 +1125,10 @@ align = 0
 
 [connection signal="pressed" from="TabContainer/NodeSelection/SelectedNodeInfo/JumpToSelectedNodeButton" to="TabContainer/NodeSelection/SelectedNodeInfo/JumpToSelectedNodeButton" method="_on_JumpToSelectedNodeButton_pressed"]
 
+[connection signal="button_down" from="TabContainer/Watches/Refresh" to="TabContainer/Watches/Outliner" method="_on_form_the_outliner"]
+
+[connection signal="button_down" from="TabContainer/Watches/AddWatch" to="TabContainer/Watches/WatchesList" method="_on_AddNode_button_down"]
+
 [connection signal="button_down" from="GeneralControlsContainer/StepButton" to="GeneralControlsContainer/StepButton" method="_on_StepButton_button_down"]
 
 [connection signal="button_down" from="GeneralControlsContainer/RunButton" to="GeneralControlsContainer/RunButton" method="_on_RunButton_button_down"]
@@ -992,6 +1138,14 @@ align = 0
 [connection signal="mouse_exited" from="GeneralControlsContainer/CameraMovementSpeedSlider" to="GeneralControlsContainer/CameraMovementSpeedSlider" method="_on_CameraMovementSpeedSlider_mouse_exited"]
 
 [connection signal="pressed" from="GeneralControlsContainer/JumpToNodeButton" to="GeneralControlsContainer/JumpToNodeButton" method="_on_JumpToNodeButton_pressed"]
+
+[connection signal="mouse_entered" from="GeneralControlsContainer/JumpToNodePath" to="." method="_on_disable_keyboard_movement"]
+
+[connection signal="mouse_entered" from="GeneralControlsContainer/JumpToNodePath" to="GeneralControlsContainer/JumpToNodePath" method="_on_JumpToNodePath_mouse_entered"]
+
+[connection signal="mouse_exited" from="GeneralControlsContainer/JumpToNodePath" to="." method="_on_enable_keyboard_movement"]
+
+[connection signal="mouse_exited" from="GeneralControlsContainer/JumpToNodePath" to="GeneralControlsContainer/JumpToNodePath" method="_on_JumpToNodePath_mouse_exited"]
 
 [connection signal="button_down" from="GeneralControlsContainer/CameraJumpPositionButton" to="." method="_on_JumpPositionButton_button_down"]
 
