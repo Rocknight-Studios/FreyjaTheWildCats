@@ -94,8 +94,9 @@ func manage_block_activity():
 
 "
 
-[node name="LevelBackground" type="Node2D" index="0"]
+[node name="LevelBackground" type="Node2D"]
 
+position = Vector2( 0, 8 )
 script = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 block_optimization_distance = 2000.0
@@ -304,7 +305,6 @@ enemy_optimization_distance = 3000.0
 
 [node name="BackgroundImage40" parent="." index="40" instance=ExtResource( 43 )]
 
-position = Vector2( 960, -42660 )
 script = ExtResource( 4 )
 enemy_optimization_distance = 3000.0
 

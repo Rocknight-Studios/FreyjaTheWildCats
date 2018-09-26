@@ -50,7 +50,7 @@ position = Vector2( -435.403, -143.801 )
 
 [node name="ForestGiant2" parent="." index="3" instance=ExtResource( 2 )]
 
-position = Vector2( 451.38, -143.801 )
+position = Vector2( 453.89, -143.801 )
 
 [node name="WizardTroll" parent="." index="4" instance=ExtResource( 3 )]
 
@@ -58,6 +58,6 @@ position = Vector2( -431.408, 251.66 )
 
 [node name="WizardTroll2" parent="." index="5" instance=ExtResource( 3 )]
 
-position = Vector2( 463.364, 251.66 )
+position = Vector2( 457.885, 251.66 )
 
 

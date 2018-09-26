@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Level1/Enemies/EnemyBehaviour.gd" type="Script" id=1]
 [ext_resource path="res://Level1/Enemies/IceGiant/Projectiles/IceProjectile.tscn" type="PackedScene" id=2]
@@ -9,9 +9,10 @@
 [ext_resource path="res://Level1/Enemies/IceGiant/IceBag.png" type="Texture" id=7]
 [ext_resource path="res://Level1/Enemies/IceGiant/UpperArm.png" type="Texture" id=8]
 [ext_resource path="res://Level1/Enemies/IceGiant/Arm.png" type="Texture" id=9]
-[ext_resource path="res://Level1/Enemies/IceGiant/Head.png" type="Texture" id=10]
-[ext_resource path="res://Level1/Enemies/DeathSoulParticles.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Level1/Enemies/DeathParticles.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Level1/EnvironmentEffects/Swing.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Level1/Enemies/IceGiant/Head.png" type="Texture" id=11]
+[ext_resource path="res://Level1/Enemies/DeathSoulParticles.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Level1/Enemies/DeathParticles.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Animation" id=1]
 
@@ -543,7 +544,7 @@ custom_solver_bias = 0.0
 radius = 138.0
 height = 388.0
 
-[node name="IceGiant" type="Node2D" index="0"]
+[node name="IceGiant" type="Node2D"]
 
 position = Vector2( 0, 1 )
 scale = Vector2( 0.5, 0.5 )
@@ -646,6 +647,11 @@ _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 position = Vector2( 58.1407, 106.978 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="Swing" parent="Body/Torso/UpperArmRight/ArmRight" index="1" instance=ExtResource( 10 )]
+
+position = Vector2( 11.5966, 150.399 )
+rotation = -1.89361
+
 [node name="UpperArmLeft" type="Sprite" parent="Body/Torso" index="2"]
 
 show_behind_parent = true
@@ -664,13 +670,19 @@ texture = ExtResource( 9 )
 offset = Vector2( -48.0672, 69.7605 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
-[node name="Node2D" type="Node2D" parent="Body/Torso/UpperArmLeft/ArmLeft" index="0"]
+[node name="Swing2" parent="Body/Torso/UpperArmLeft/ArmLeft" index="0" instance=ExtResource( 10 )]
+
+position = Vector2( 3.73233, 137.193 )
+rotation = -1.6494
+scale = Vector2( 1, 1 )
+
+[node name="Node2D" type="Node2D" parent="Body/Torso/UpperArmLeft/ArmLeft" index="1"]
 
 position = Vector2( -65.4364, 106.056 )
 
 [node name="Head" type="Sprite" parent="Body/Torso" index="3"]
 
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
@@ -705,11 +717,11 @@ _sections_unfolded = [ "Collision", "Transform" ]
 shape = SubResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="DeathSoulParticles" parent="." index="3" instance=ExtResource( 11 )]
+[node name="DeathSoulParticles" parent="." index="3" instance=ExtResource( 12 )]
 
 scale = Vector2( 1.5, 1.5 )
 
-[node name="DeathParticles" parent="." index="4" instance=ExtResource( 12 )]
+[node name="DeathParticles" parent="." index="4" instance=ExtResource( 13 )]
 
 position = Vector2( -2, 78 )
 

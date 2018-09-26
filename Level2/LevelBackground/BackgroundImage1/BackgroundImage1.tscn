@@ -3,7 +3,7 @@
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage1/ForestLevel1.png" type="Texture" id=1]
 [ext_resource path="res://Level2/Enemies/Spider/Spider.tscn" type="PackedScene" id=2]
 
-[node name="BackgroundImage1" type="Sprite" index="0"]
+[node name="BackgroundImage1" type="Sprite"]
 
 position = Vector2( 960, -540 )
 texture = ExtResource( 1 )
@@ -43,12 +43,12 @@ polygon = PoolVector2Array( 343.245, 554.17, 429.79, 350.172, 633.787, 291.445, 
 
 [node name="Spider" parent="." index="2" instance=ExtResource( 2 )]
 
-position = Vector2( -506.903, -173.089 )
+position = Vector2( -476.693, -152.949 )
 rotation = -1.13252
 
 [node name="Spider2" parent="." index="3" instance=ExtResource( 2 )]
 
-position = Vector2( 747.991, -343.086 )
+position = Vector2( 667.43, -295.253 )
 rotation = 1.10841
 
 

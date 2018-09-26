@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage54/IceLevel54.png" type="Texture" id=1]
 [ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
 [ext_resource path="res://Level1/EnvironmentEffects/Wind.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Level1/Enemies/Serpent/Serpent.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level1/EnvironmentEffects/WavesIce.tscn" type="PackedScene" id=5]
 
-[node name="BackgroundImage54" type="Sprite"]
+[node name="BackgroundImage54" type="Sprite" index="0"]
 
 position = Vector2( 960, -56700 )
 texture = ExtResource( 1 )
@@ -34,5 +35,29 @@ polygon = PoolVector2Array( -956.816, 510.086, -858.633, 484.91, -861.15, 235.67
 [node name="Serpent" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 0, -279.441 )
+
+[node name="Waves" parent="." index="3" instance=ExtResource( 5 )]
+
+position = Vector2( 727.29, -3.70703 )
+
+[node name="Waves2" parent="." index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 525.573, -331.262 )
+
+[node name="Waves3" parent="." index="5" instance=ExtResource( 5 )]
+
+position = Vector2( 246.131, -222.078 )
+
+[node name="Waves4" parent="." index="6" instance=ExtResource( 5 )]
+
+position = Vector2( -268.339, -347.918 )
+
+[node name="Waves5" parent="." index="7" instance=ExtResource( 5 )]
+
+position = Vector2( -90.6801, -127.695 )
+
+[node name="Waves6" parent="." index="8" instance=ExtResource( 5 )]
+
+position = Vector2( -608.851, -216.516 )
 
 

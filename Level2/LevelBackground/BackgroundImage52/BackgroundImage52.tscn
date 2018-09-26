@@ -4,7 +4,7 @@
 [ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Level2/Enemies/WizardTroll/WizardTroll.tscn" type="PackedScene" id=3]
 
-[node name="BackgroundImage52" type="Sprite" index="0"]
+[node name="BackgroundImage52" type="Sprite"]
 
 position = Vector2( 960, -55620 )
 texture = ExtResource( 1 )
@@ -49,14 +49,14 @@ position = Vector2( -390.533, -170.305 )
 
 [node name="Giant2" parent="." index="3" instance=ExtResource( 2 )]
 
-position = Vector2( 349.424, -170.305 )
+position = Vector2( 358.234, -170.305 )
 
 [node name="WizardTroll" parent="." index="4" instance=ExtResource( 3 )]
 
-position = Vector2( -381.724, 337.68 )
+position = Vector2( -252.846, 337.68 )
 
 [node name="WizardTroll2" parent="." index="5" instance=ExtResource( 3 )]
 
-position = Vector2( 358.234, 337.68 )
+position = Vector2( 255.349, 337.68 )
 
 

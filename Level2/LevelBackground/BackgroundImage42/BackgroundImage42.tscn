@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage42/ForestLevel42.png" type="Texture" id=1]
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage42/Trees4.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Level2/Enemies/Spider/Spider.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Level2/Enemies/WizardTroll/WizardTroll.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Level2/EnvironmentObjects/Leaf.tscn" type="PackedScene" id=8]
 
 [node name="BackgroundImage42" type="Sprite" index="0"]
 
@@ -140,5 +141,9 @@ position = Vector2( 150.676, 231.988 )
 [node name="WizardTroll" parent="." index="11" instance=ExtResource( 7 )]
 
 position = Vector2( 148.284, -143.5 )
+
+[node name="Needle" parent="." index="12" instance=ExtResource( 8 )]
+
+position = Vector2( -53.1945, -53.7969 )
 
 

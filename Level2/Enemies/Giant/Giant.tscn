@@ -422,7 +422,7 @@ archer_projectile_offsets = null
 
 [node name="FootLeft" type="Sprite" parent="Body" index="0"]
 
-position = Vector2( 122.248, 69.6604 )
+position = Vector2( 121.898, 69.9152 )
 rotation = -0.207121
 scale = Vector2( 1.3, 1.3 )
 texture = ExtResource( 2 )
@@ -431,7 +431,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="FootRight" type="Sprite" parent="Body" index="1"]
 
-position = Vector2( -129.642, 66.6381 )
+position = Vector2( -128.733, 67.0422 )
 rotation = 0.246738
 scale = Vector2( 1.3, 1.3 )
 texture = ExtResource( 2 )
@@ -442,14 +442,14 @@ _sections_unfolded = [ "Offset", "Transform" ]
 [node name="LegLeft" type="Sprite" parent="Body" index="2"]
 
 position = Vector2( 67.2268, 21.2638 )
-rotation = 0.214882
+rotation = 0.287381
 texture = ExtResource( 3 )
 offset = Vector2( 25.627, 28.421 )
 
 [node name="LegRight" type="Sprite" parent="Body" index="3"]
 
 position = Vector2( -51.6911, 18.8203 )
-rotation = 0.11825
+rotation = 0.442107
 texture = ExtResource( 3 )
 offset = Vector2( -41.9771, 33.308 )
 flip_h = true
@@ -457,15 +457,14 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="Torso" type="Sprite" parent="Body" index="4"]
 
-position = Vector2( 0.543613, -12.4776 )
-rotation = 0.168955
+rotation = 0.43721
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Animation", "Offset", "Transform" ]
 
 [node name="ShoulderLeft" type="Sprite" parent="Body/Torso" index="0"]
 
 position = Vector2( 94.3227, -29.3823 )
-rotation = -0.33821
+rotation = -0.11158
 texture = ExtResource( 5 )
 offset = Vector2( 23.2125, 6.38789 )
 _sections_unfolded = [ "Visibility" ]
@@ -473,7 +472,7 @@ _sections_unfolded = [ "Visibility" ]
 [node name="Arm" type="Sprite" parent="Body/Torso/ShoulderLeft" index="0"]
 
 position = Vector2( 61.4705, 5.30975 )
-rotation = 0.944119
+rotation = 1.05754
 texture = ExtResource( 6 )
 offset = Vector2( 46.0689, -3.01005 )
 _sections_unfolded = [ "Visibility" ]
@@ -490,7 +489,7 @@ _sections_unfolded = [ "Material", "Offset", "Visibility" ]
 
 show_behind_parent = true
 position = Vector2( 99.7627, -9.65813 )
-rotation = -1.3868
+rotation = -1.013
 texture = ExtResource( 8 )
 offset = Vector2( 10.0106, 37.1453 )
 _sections_unfolded = [ "Material", "Visibility" ]
@@ -499,7 +498,7 @@ _sections_unfolded = [ "Material", "Visibility" ]
 
 editor/display_folded = true
 position = Vector2( -76.9408, -38.1951 )
-rotation = 4.03696
+rotation = 2.34613
 texture = ExtResource( 5 )
 offset = Vector2( 30.6082, -6.8707 )
 flip_v = true
@@ -509,7 +508,7 @@ _sections_unfolded = [ "Offset", "Visibility" ]
 
 show_behind_parent = true
 position = Vector2( 71.2803, -7.86118 )
-rotation = -0.695014
+rotation = -1.04854
 texture = ExtResource( 6 )
 offset = Vector2( 51.0265, 5.99929 )
 flip_v = true
@@ -519,7 +518,7 @@ _sections_unfolded = [ "Offset", "Visibility" ]
 
 show_behind_parent = true
 position = Vector2( 102.807, 11.6177 )
-rotation = -1.24839
+rotation = -1.94306
 texture = ExtResource( 8 )
 offset = Vector2( -8.92084, 38.1722 )
 flip_h = true
@@ -547,7 +546,7 @@ offset = Vector2( 0.975967, -21.2844 )
 [node name="Hair" type="Sprite" parent="Body/Torso" index="3"]
 
 position = Vector2( -2.00626, 35.925 )
-rotation = 0.00381414
+rotation = 0.626747
 texture = ExtResource( 11 )
 offset = Vector2( 0.432437, 0.700489 )
 
@@ -555,7 +554,7 @@ offset = Vector2( 0.432437, 0.700489 )
 
 editor/display_folded = true
 position = Vector2( 0.437256, 41.6265 )
-rotation = 0.065955
+rotation = 0.678121
 texture = ExtResource( 12 )
 offset = Vector2( 0.432437, 0.700489 )
 
@@ -577,7 +576,7 @@ offset = Vector2( 57.1395, 1.44236 )
 
 editor/display_folded = true
 position = Vector2( 2.88077, -57.7432 )
-rotation = 0.0439842
+rotation = 0.256633
 texture = ExtResource( 14 )
 offset = Vector2( 0.432437, 0.700489 )
 
@@ -603,9 +602,9 @@ blend_times = [  ]
 playback_process_mode = 1
 master_player = NodePath("../AnimationPlayer")
 base_path = NodePath("..")
-active = true
+active = false
 data = {
-"active": true,
+"active": false,
 "connections": [ "blend2", "out", 0, "anim", "blend2", 0, "anim 2", "blend2", 1 ],
 "master": NodePath("../AnimationPlayer"),
 "nodes": [ {
@@ -619,17 +618,17 @@ data = {
 "position": Vector2( 329, 154 ),
 "type": "output"
 }, {
+"blend": 0.0,
+"filter": [  ],
+"id": "blend2",
+"position": Vector2( 202, 117 ),
+"type": "blend2"
+}, {
 "filter": [  ],
 "from": "Attack",
 "id": "anim 2",
 "position": Vector2( 60, 190 ),
 "type": "animation"
-}, {
-"blend": 1.0,
-"filter": [  ],
-"id": "blend2",
-"position": Vector2( 202, 117 ),
-"type": "blend2"
 } ]
 }
 

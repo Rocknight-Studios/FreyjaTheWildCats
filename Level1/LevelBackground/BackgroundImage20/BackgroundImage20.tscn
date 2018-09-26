@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage20/IceLevel20.png" type="Texture" id=1]
 [ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
 [ext_resource path="res://Level1/Enemies/Trolls/Archer/ArcherHeavy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level1/EnvironmentEffects/Snow.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -23,6 +24,7 @@ position = Vector2( 960, -21060 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
+enemy_optimization_distance = 3000.0
 
 [node name="Rocks" type="StaticBody2D" parent="." index="0"]
 
@@ -96,5 +98,9 @@ position = Vector2( 460.932, 144.373 )
 [node name="IceGiant4" parent="." index="7" instance=ExtResource( 4 )]
 
 position = Vector2( 162.063, -229.363 )
+
+[node name="Snow" parent="." index="8" instance=ExtResource( 5 )]
+
+position = Vector2( 85.9684, -20.2344 )
 
 

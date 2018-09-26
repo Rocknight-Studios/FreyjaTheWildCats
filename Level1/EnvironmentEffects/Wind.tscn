@@ -45,15 +45,16 @@ tracks/2/keys = {
 "values": [ 0.0, 90.0 ]
 }
 
-[node name="Wind" type="Node2D" index="0"]
+[node name="Wind" type="Node2D"]
 
 z_index = 2
 _sections_unfolded = [ "Z Index" ]
 
 [node name="Wind" type="Sprite" parent="." index="0"]
 
-self_modulate = Color( 1, 1, 1, 0.950275 )
-position = Vector2( -1584.6, -1362.23 )
+self_modulate = Color( 1, 1, 1, 0.533781 )
+position = Vector2( 726.905, 291.146 )
+rotation = 0.735508
 scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Visibility" ]

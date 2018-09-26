@@ -43,6 +43,6 @@ polygon = PoolVector2Array( -960.791, -44.5645, -532.81, -286.248, -497.565, -54
 
 [node name="Giant" parent="." index="2" instance=ExtResource( 2 )]
 
-position = Vector2( -49.4539, -250.361 )
+position = Vector2( -18.5453, -123.635 )
 
 

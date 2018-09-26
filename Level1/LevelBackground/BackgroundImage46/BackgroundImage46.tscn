@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage46/IceLevel46.png" type="Texture" id=1]
 [ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Level1/Enemies/Trolls/Shield/ShieldTroll.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Level1/Enemies/Trolls/Berserker/Berserker.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Level1/EnvironmentEffects/Snow.tscn" type="PackedScene" id=9]
 
 [node name="BackgroundImage46" type="Sprite" index="0"]
 
@@ -89,5 +90,9 @@ position = Vector2( -155.842, 56.4922 )
 [node name="Berserker" parent="." index="11" instance=ExtResource( 8 )]
 
 position = Vector2( -31.1684, 276.617 )
+
+[node name="Snow" parent="." index="12" instance=ExtResource( 9 )]
+
+position = Vector2( 83.403, 31.332 )
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage28/IceLevel28.png" type="Texture" id=1]
 [ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://Level1/Enemies/Trolls/Berserker/Berserker.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Level1/Enemies/MiniSerpent/MiniSerpent.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Level1/EnvironmentEffects/Snow.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Level1/EnvironmentEffects/SnowStormSides.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Level1/EnvironmentEffects/WavesIce.tscn" type="PackedScene" id=9]
 
 [node name="BackgroundImage28" type="Sprite" index="0"]
 
@@ -33,6 +36,7 @@ polygon = PoolVector2Array( -144.096, 536.545, -18.2191, 327.59, -73.6047, 174.0
 
 [node name="Towers" type="StaticBody2D" parent="." index="1"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -98,5 +102,21 @@ position = Vector2( 540.379, -379.375 )
 
 position = Vector2( 714.837, 156.996 )
 rotation = 4.6866
+
+[node name="Snow" parent="." index="12" instance=ExtResource( 7 )]
+
+position = Vector2( 40.8555, 96.6465 )
+
+[node name="Snow2" parent="." index="13" instance=ExtResource( 8 )]
+
+position = Vector2( -867.536, -426.244 )
+
+[node name="Snow3" parent="." index="14" instance=ExtResource( 8 )]
+
+position = Vector2( 889.782, -512.365 )
+
+[node name="Waves" parent="." index="15" instance=ExtResource( 9 )]
+
+position = Vector2( 701.287, 305.529 )
 
 
