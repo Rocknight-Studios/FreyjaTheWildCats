@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage1/ForestLevel1.png" type="Texture" id=1]
 [ext_resource path="res://Level2/Enemies/Spider/Spider.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Level2/EnvironmentObjects/Flower.png" type="Texture" id=3]
 
-[node name="BackgroundImage1" type="Sprite"]
+[node name="BackgroundImage1" type="Sprite" index="0"]
 
 position = Vector2( 960, -540 )
 texture = ExtResource( 1 )
@@ -50,5 +51,20 @@ rotation = -1.13252
 
 position = Vector2( 667.43, -295.253 )
 rotation = 1.10841
+
+[node name="Flower" type="Sprite" parent="." index="4"]
+
+position = Vector2( 513.281, 258.303 )
+texture = ExtResource( 3 )
+
+[node name="Flower2" type="Sprite" parent="." index="5"]
+
+position = Vector2( 581.299, 278.708 )
+texture = ExtResource( 3 )
+
+[node name="Flower3" type="Sprite" parent="." index="6"]
+
+position = Vector2( 397.796, 349.233 )
+texture = ExtResource( 3 )
 
 
