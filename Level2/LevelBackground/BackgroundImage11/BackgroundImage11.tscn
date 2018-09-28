@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage11/ForestLevel11.png" type="Texture" id=1]
 [ext_resource path="res://Level2/Enemies/ForestArcher/ForestArcher.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Level2/Enemies/WizardTroll/WizardTroll.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level2/EnvironmentObjects/Flower.tscn" type="PackedScene" id=5]
 
-[node name="BackgroundImage11" type="Sprite" index="0"]
+[node name="BackgroundImage11" type="Sprite"]
 
 position = Vector2( 960, -11340 )
 texture = ExtResource( 1 )
@@ -13,6 +14,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
 
+editor/display_folded = true
 position = Vector2( 330.05, 389.842 )
 input_pickable = false
 collision_layer = 1
@@ -29,6 +31,7 @@ polygon = PoolVector2Array( 194.405, -589.302, 158.605, -451.832, -164.82, -389.
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
 
+editor/display_folded = true
 position = Vector2( -787.945, 390.73 )
 input_pickable = false
 collision_layer = 1
@@ -45,6 +48,7 @@ polygon = PoolVector2Array( -175.274, 155.352, -173.105, -935.639, 89.8464, -748
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="." index="2"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -60,6 +64,7 @@ polygon = PoolVector2Array( -424.731, -541.286, -213.402, -249.979, -61.4554, -2
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="." index="3"]
 
+editor/display_folded = true
 position = Vector2( -23.8002, 46.0146 )
 input_pickable = false
 collision_layer = 1
@@ -98,5 +103,37 @@ position = Vector2( 346.1, -353.521 )
 [node name="Giant" parent="." index="9" instance=ExtResource( 4 )]
 
 position = Vector2( -58.4408, 227.92 )
+
+[node name="Flower" parent="." index="10" instance=ExtResource( 5 )]
+
+position = Vector2( -372.067, 67.6494 )
+
+[node name="Flower2" parent="." index="11" instance=ExtResource( 5 )]
+
+position = Vector2( -305.585, 113.138 )
+
+[node name="Flower3" parent="." index="12" instance=ExtResource( 5 )]
+
+position = Vector2( -367.402, 128.301 )
+
+[node name="Flower4" parent="." index="13" instance=ExtResource( 5 )]
+
+position = Vector2( 132.964, 43.1572 )
+
+[node name="Flower5" parent="." index="14" instance=ExtResource( 5 )]
+
+position = Vector2( 171.454, 111.974 )
+
+[node name="Flower6" parent="." index="15" instance=ExtResource( 5 )]
+
+position = Vector2( 236.77, 26.8301 )
+
+[node name="Flower7" parent="." index="16" instance=ExtResource( 5 )]
+
+position = Vector2( 516.695, 57.1553 )
+
+[node name="Flower8" parent="." index="17" instance=ExtResource( 5 )]
+
+position = Vector2( 564.516, 144.633 )
 
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage17/ForestLevel17.png" type="Texture" id=1]
 [ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Level2/Enemies/ForestArcher/ForestArcher.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Level2/EnvironmentObjects/Leaf.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level2/EnvironmentObjects/Flower.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level2/EnvironmentObjects/LeavesWithShadow.tscn" type="PackedScene" id=5]
 
 [node name="BackgroundImage17" type="Sprite" index="0"]
 
@@ -59,8 +60,20 @@ position = Vector2( -219.255, -261.727 )
 
 position = Vector2( 803.63, 454.357 )
 
-[node name="Leaf" parent="." index="6" instance=ExtResource( 4 )]
+[node name="Flower" parent="." index="6" instance=ExtResource( 4 )]
 
-position = Vector2( -552.044, 440.652 )
+position = Vector2( 629.857, 115.631 )
+
+[node name="Flower2" parent="." index="7" instance=ExtResource( 4 )]
+
+position = Vector2( 729.165, 168.686 )
+
+[node name="Flower3" parent="." index="8" instance=ExtResource( 4 )]
+
+position = Vector2( 780.859, 112.908 )
+
+[node name="Node2D" parent="." index="9" instance=ExtResource( 5 )]
+
+position = Vector2( -1581.66, -253.844 )
 
 
