@@ -6,7 +6,7 @@
 [ext_resource path="res://Level2/Enemies/ForestGiant/ForestGiant.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Level2/Enemies/Spider/Spider.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Level2/EnvironmentObjects/Leaf.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Level2/EnvironmentObjects/LeavesWithShadow.tscn" type="PackedScene" id=7]
 
 [node name="BackgroundImage23" type="Sprite" index="0"]
 
@@ -62,12 +62,12 @@ position = Vector2( 354.973, -259.307 )
 
 position = Vector2( 541.272, 173.707 )
 
-[node name="Leaf" parent="." index="8" instance=ExtResource( 7 )]
+[node name="Node2D" parent="." index="8" instance=ExtResource( 7 )]
 
-position = Vector2( 325.372, -48.4102 )
+position = Vector2( -1495.99, -324.543 )
 
-[node name="Leaf2" parent="." index="9" instance=ExtResource( 7 )]
+[node name="Node2D2" parent="." index="9" instance=ExtResource( 7 )]
 
-position = Vector2( -733.417, 396.916 )
+position = Vector2( -389.451, -655.266 )
 
 

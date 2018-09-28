@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage6/ForestLevel6.png" type="Texture" id=1]
 [ext_resource path="res://Level2/Enemies/ForestArcher/ForestArcher.tscn" type="PackedScene" id=2]
@@ -7,8 +7,9 @@
 [ext_resource path="res://Level2/Enemies/Spider/Spider.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage6/Trees.png" type="Texture" id=6]
 [ext_resource path="res://Level2/EnvironmentObjects/Needle.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Level2/EnvironmentObjects/Flower.tscn" type="PackedScene" id=8]
 
-[node name="BackgroundImage6" type="Sprite" index="0"]
+[node name="BackgroundImage6" type="Sprite"]
 
 position = Vector2( 960, -5940 )
 texture = ExtResource( 1 )
@@ -82,5 +83,21 @@ _sections_unfolded = [ "Visibility", "Z Index" ]
 [node name="Needle" parent="." index="9" instance=ExtResource( 7 )]
 
 position = Vector2( -350.401, 59.6602 )
+
+[node name="Flower" parent="." index="10" instance=ExtResource( 8 )]
+
+position = Vector2( 636.956, -376.696 )
+
+[node name="Flower3" parent="." index="11" instance=ExtResource( 8 )]
+
+position = Vector2( 619.4, -382.061 )
+
+[node name="Flower4" parent="." index="12" instance=ExtResource( 8 )]
+
+position = Vector2( 742.293, -401.568 )
+
+[node name="Flower2" parent="." index="13" instance=ExtResource( 8 )]
+
+position = Vector2( 600.99, -372.512 )
 
 

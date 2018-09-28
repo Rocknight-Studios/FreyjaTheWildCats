@@ -94,7 +94,7 @@ func manage_block_activity():
 
 "
 
-[node name="LevelBackground" type="Node2D"]
+[node name="LevelBackground" type="Node2D" index="0"]
 
 position = Vector2( 0, 8 )
 script = SubResource( 1 )
