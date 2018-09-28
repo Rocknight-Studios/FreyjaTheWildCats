@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage43/ForestLevel43.png" type="Texture" id=1]
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage43/Trees.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Level2/Enemies/WizardTroll/WizardTroll.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Level2/EnvironmentObjects/Needle.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Level2/EnvironmentObjects/Flower.tscn" type="PackedScene" id=7]
 
 [node name="BackgroundImage43" type="Sprite" index="0"]
 
@@ -113,5 +114,117 @@ position = Vector2( -10.7925, -318.809 )
 [node name="Needle" parent="." index="11" instance=ExtResource( 6 )]
 
 position = Vector2( -17.6111, -68.4805 )
+
+[node name="Flower" parent="." index="12" instance=ExtResource( 7 )]
+
+position = Vector2( 150.358, -75.8984 )
+
+[node name="Flower2" parent="." index="13" instance=ExtResource( 7 )]
+
+position = Vector2( 222.207, -97.9609 )
+
+[node name="Flower3" parent="." index="14" instance=ExtResource( 7 )]
+
+position = Vector2( -239.064, -89.3867 )
+
+[node name="Flower4" parent="." index="15" instance=ExtResource( 7 )]
+
+position = Vector2( -287.25, -107.547 )
+
+[node name="Flower5" parent="." index="16" instance=ExtResource( 7 )]
+
+position = Vector2( -310.295, -48.1875 )
+
+[node name="Flower6" parent="." index="17" instance=ExtResource( 7 )]
+
+position = Vector2( -442.98, -164.809 )
+
+[node name="Flower7" parent="." index="18" instance=ExtResource( 7 )]
+
+position = Vector2( -498.847, -168.996 )
+
+[node name="Flower8" parent="." index="19" instance=ExtResource( 7 )]
+
+position = Vector2( -565.19, -99.168 )
+
+[node name="Flower9" parent="." index="20" instance=ExtResource( 7 )]
+
+position = Vector2( -631.532, -61.4531 )
+
+[node name="Flower10" parent="." index="21" instance=ExtResource( 7 )]
+
+position = Vector2( -639.214, -121.508 )
+
+[node name="Flower11" parent="." index="22" instance=ExtResource( 7 )]
+
+position = Vector2( -692.288, -170.391 )
+
+[node name="Flower12" parent="." index="23" instance=ExtResource( 7 )]
+
+position = Vector2( -715.333, -125.695 )
+
+[node name="Flower13" parent="." index="24" instance=ExtResource( 7 )]
+
+position = Vector2( -766.312, -113.824 )
+
+[node name="Flower14" parent="." index="25" instance=ExtResource( 7 )]
+
+position = Vector2( -792.151, -155.727 )
+
+[node name="Flower15" parent="." index="26" instance=ExtResource( 7 )]
+
+position = Vector2( -858.493, -145.953 )
+
+[node name="Flower16" parent="." index="27" instance=ExtResource( 7 )]
+
+position = Vector2( -898.299, -70.5312 )
+
+[node name="Flower17" parent="." index="28" instance=ExtResource( 7 )]
+
+position = Vector2( 861.558, -181.297 )
+
+[node name="Flower18" parent="." index="29" instance=ExtResource( 7 )]
+
+position = Vector2( 925.005, -236.172 )
+
+[node name="Flower19" parent="." index="30" instance=ExtResource( 7 )]
+
+position = Vector2( 671.22, -220.738 )
+
+[node name="Flower20" parent="." index="31" instance=ExtResource( 7 )]
+
+position = Vector2( 596.628, -202.734 )
+
+[node name="Flower21" parent="." index="32" instance=ExtResource( 7 )]
+
+position = Vector2( 414.005, -153.863 )
+
+[node name="Flower22" parent="." index="33" instance=ExtResource( 7 )]
+
+position = Vector2( 933.578, -32.1172 )
+
+[node name="Flower23" parent="." index="34" instance=ExtResource( 7 )]
+
+position = Vector2( 868.417, 44.1914 )
+
+[node name="Flower24" parent="." index="35" instance=ExtResource( 7 )]
+
+position = Vector2( 742.382, -71.5547 )
+
+[node name="Flower25" parent="." index="36" instance=ExtResource( 7 )]
+
+position = Vector2( 947.647, 186.348 )
+
+[node name="Flower26" parent="." index="37" instance=ExtResource( 7 )]
+
+position = Vector2( 884.489, 178.98 )
+
+[node name="Flower27" parent="." index="38" instance=ExtResource( 7 )]
+
+position = Vector2( 842.383, 246.352 )
+
+[node name="Flower28" parent="." index="39" instance=ExtResource( 7 )]
+
+position = Vector2( 902.384, 370.559 )
 
 
