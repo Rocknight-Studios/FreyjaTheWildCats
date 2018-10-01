@@ -1,24 +1,37 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Unsorted/Sparks/DeathParticleSpark.png" type="Texture" id=1]
+
+[sub_resource type="Gradient" id=2]
+
+offsets = PoolRealArray( 0, 0.365591, 0.65233, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=3]
+
+flags = 4
+gradient = SubResource( 2 )
+width = 2048
 
 [sub_resource type="ParticlesMaterial" id=1]
 
 render_priority = 0
 trail_divisor = 1
 emission_shape = 1
-emission_sphere_radius = 5.0
+emission_sphere_radius = 10.0
 flag_align_y = false
 flag_rotate_y = false
 flag_disable_z = true
-spread = 45.0
+spread = 180.0
 flatness = 0.0
-gravity = Vector3( 0, 100, 0 )
-initial_velocity = 1.0
+gravity = Vector3( 0, 50, 0 )
+initial_velocity = 5.0
 initial_velocity_random = 0.0
-angular_velocity = 0.0
-angular_velocity_random = 0.0
+angular_velocity = 10.0
+angular_velocity_random = 1.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-linear_accel = 0.0
+linear_accel = 15.0
 linear_accel_random = 0.0
 radial_accel = 0.0
 radial_accel_random = 0.0
@@ -28,9 +41,9 @@ damping = 0.0
 damping_random = 0.0
 angle = 0.0
 angle_random = 0.0
-scale = 1.0
+scale = 0.02
 scale_random = 0.0
-color = Color( 1, 1, 1, 1 )
+color_ramp = SubResource( 3 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -38,19 +51,18 @@ anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
-_sections_unfolded = [ "Gravity", "Initial Velocity" ]
+_sections_unfolded = [ "Angular Velocity", "Color", "Emission Shape", "Flags", "Gravity", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Radial Accel", "Scale", "Spread", "Trail" ]
 
-[node name="DeathParticles" type="Particles2D"]
+[node name="DeathParticles" type="Particles2D" index="0"]
 
-self_modulate = Color( 0.835938, 0, 0, 1 )
-scale = Vector2( 20, 10 )
+scale = Vector2( 5, 5 )
 emitting = false
 amount = 32
-lifetime = 1.0
+lifetime = 0.5
 one_shot = true
 preprocess = 0.0
 speed_scale = 1.0
-explosiveness = 0.5
+explosiveness = 0.4
 randomness = 1.0
 fixed_fps = 0
 fract_delta = true
@@ -58,10 +70,10 @@ visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
 process_material = SubResource( 1 )
-texture = null
+texture = ExtResource( 1 )
 normal_map = null
 h_frames = 1
 v_frames = 1
-_sections_unfolded = [ "Drawing", "Process Material", "Time", "Transform", "Visibility" ]
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
 

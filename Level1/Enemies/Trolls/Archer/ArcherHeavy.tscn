@@ -1,23 +1,24 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Level1/Enemies/EnemyBehaviour.gd" type="Script" id=1]
-[ext_resource path="res://Level1/Enemies/Trolls/Shield/Foot.png" type="Texture" id=2]
-[ext_resource path="res://Level1/Enemies/IceGiant/Skirt.png" type="Texture" id=3]
-[ext_resource path="res://Level1/Enemies/Trolls/Archer/Torso.png" type="Texture" id=4]
-[ext_resource path="res://Level1/Enemies/Trolls/Archer/ArrowBag.png" type="Texture" id=5]
-[ext_resource path="res://Level1/Enemies/Trolls/Archer/TrollArrows.png" type="Texture" id=6]
-[ext_resource path="res://Level1/Enemies/Trolls/Shield/Hair.png" type="Texture" id=7]
-[ext_resource path="res://Level1/Enemies/Trolls/Archer/RightArm.png" type="Texture" id=8]
-[ext_resource path="res://Level1/Enemies/Trolls/Shield/LowerArm.png" type="Texture" id=9]
-[ext_resource path="res://Level1/Enemies/Trolls/Archer/LeftHand.png" type="Texture" id=10]
-[ext_resource path="res://Level1/EnvironmentEffects/Swing.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Level1/Enemies/Trolls/Shield/ArmorPiece.png" type="Texture" id=12]
-[ext_resource path="res://Level1/Enemies/Trolls/Archer/LeftArm.png" type="Texture" id=13]
-[ext_resource path="res://Level1/Enemies/Trolls/Archer/RightHand.png" type="Texture" id=14]
-[ext_resource path="res://Level1/Enemies/Trolls/Archer/BowLong.png" type="Texture" id=15]
-[ext_resource path="res://Level1/Enemies/Trolls/Archer/HeavyHelmet.png" type="Texture" id=16]
-[ext_resource path="res://Level1/Enemies/DeathParticles.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Level1/Enemies/DeathSoulParticles.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Level2/EnvironmentObjects/Shadow.png" type="Texture" id=2]
+[ext_resource path="res://Level1/Enemies/Trolls/Shield/Foot.png" type="Texture" id=3]
+[ext_resource path="res://Level1/Enemies/IceGiant/Skirt.png" type="Texture" id=4]
+[ext_resource path="res://Level1/Enemies/Trolls/Archer/Torso.png" type="Texture" id=5]
+[ext_resource path="res://Level1/Enemies/Trolls/Archer/ArrowBag.png" type="Texture" id=6]
+[ext_resource path="res://Level1/Enemies/Trolls/Archer/TrollArrows.png" type="Texture" id=7]
+[ext_resource path="res://Level1/Enemies/Trolls/Shield/Hair.png" type="Texture" id=8]
+[ext_resource path="res://Level1/Enemies/Trolls/Archer/RightArm.png" type="Texture" id=9]
+[ext_resource path="res://Level1/Enemies/Trolls/Shield/LowerArm.png" type="Texture" id=10]
+[ext_resource path="res://Level1/Enemies/Trolls/Archer/LeftHand.png" type="Texture" id=11]
+[ext_resource path="res://Level1/EnvironmentEffects/Swing.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Level1/Enemies/Trolls/Shield/ArmorPiece.png" type="Texture" id=13]
+[ext_resource path="res://Level1/Enemies/Trolls/Archer/LeftArm.png" type="Texture" id=14]
+[ext_resource path="res://Level1/Enemies/Trolls/Archer/RightHand.png" type="Texture" id=15]
+[ext_resource path="res://Level1/Enemies/Trolls/Archer/BowLong.png" type="Texture" id=16]
+[ext_resource path="res://Level1/Enemies/Trolls/Archer/HeavyHelmet.png" type="Texture" id=17]
+[ext_resource path="res://Level1/Enemies/DeathParticles.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Level1/Enemies/DeathSoulParticles.tscn" type="PackedScene" id=19]
 
 [sub_resource type="Animation" id=1]
 
@@ -434,7 +435,7 @@ height = 50.2777
 scale = Vector2( 1.2, 1.2 )
 z_index = 2
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 total_health = 4
 fade_out_speed = 5.0
 projectile_template = null
@@ -449,36 +450,43 @@ archer_projectile_offsets = null
 
 _sections_unfolded = [ "Transform" ]
 
-[node name="FootRight" type="Sprite" parent="Body" index="0"]
+[node name="Shadow" type="Sprite" parent="Body" index="0"]
+
+self_modulate = Color( 1, 1, 1, 0.470588 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="FootRight" type="Sprite" parent="Body" index="1"]
 
 show_behind_parent = true
 position = Vector2( -27.4458, 7.80861 )
 rotation = 0.338843
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 _sections_unfolded = [ "Offset", "Transform" ]
 
-[node name="FootLeft" type="Sprite" parent="Body" index="1"]
+[node name="FootLeft" type="Sprite" parent="Body" index="2"]
 
 show_behind_parent = true
 position = Vector2( 5.50217, 15.5007 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 offset = Vector2( 2.6761, 9.67384 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform" ]
 
-[node name="Skirt" type="Sprite" parent="Body" index="2"]
+[node name="Skirt" type="Sprite" parent="Body" index="3"]
 
 position = Vector2( 1.99342, -11.1829 )
 rotation = 0.474545
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 offset = Vector2( 0.880708, 44.8505 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Torso" type="Sprite" parent="Body" index="3"]
+[node name="Torso" type="Sprite" parent="Body" index="4"]
 
+editor/display_folded = true
 rotation = 0.706729
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="ArrowBag" type="Sprite" parent="Body/Torso" index="0"]
@@ -486,7 +494,7 @@ _sections_unfolded = [ "Transform" ]
 show_behind_parent = true
 position = Vector2( 9.78278, -6.13297 )
 rotation = -0.514562
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 offset = Vector2( -1.52748, -7.2771 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -494,7 +502,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 position = Vector2( 1.74059, 29.1844 )
 rotation = -8.9407e-08
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 offset = Vector2( -3.26807, -36.4615 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -502,7 +510,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 position = Vector2( -11.7058, -1.36486 )
 rotation = -1.81467
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 offset = Vector2( 0.728382, -14.3942 )
 _sections_unfolded = [ "Transform" ]
 
@@ -512,7 +520,7 @@ show_behind_parent = true
 position = Vector2( -2.58534, -15.0858 )
 rotation = 2.23987
 scale = Vector2( 0.8, 0.8 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 offset = Vector2( -0.196752, 13.3384 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -520,7 +528,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 position = Vector2( 0.843113, 31.2509 )
 rotation = -1.52889
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 offset = Vector2( -2.11522, 21.0287 )
 _sections_unfolded = [ "Transform" ]
 
@@ -529,11 +537,11 @@ _sections_unfolded = [ "Transform" ]
 show_behind_parent = true
 position = Vector2( -2.80807, 32.6128 )
 rotation = 2.98024e-08
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 offset = Vector2( 2.04119, 12.373 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
-[node name="Swing" parent="Body/Torso/Shoulder/RightArm/LowerArmRight/RightHand" index="0" instance=ExtResource( 11 )]
+[node name="Swing" parent="Body/Torso/Shoulder/RightArm/LowerArmRight/RightHand" index="0" instance=ExtResource( 12 )]
 
 position = Vector2( -21.2236, 13.7685 )
 rotation = -1.38685
@@ -543,7 +551,7 @@ scale = Vector2( 0.338211, 0.338211 )
 
 position = Vector2( 21.42, 1.80558 )
 rotation = 2.60958
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="LeftArm" type="Sprite" parent="Body/Torso/ArmorPiece" index="0"]
@@ -552,7 +560,7 @@ show_behind_parent = true
 position = Vector2( -0.799831, -5.55047 )
 rotation = 2.98626
 scale = Vector2( 0.8, 0.8 )
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 offset = Vector2( 0.897948, 18.9949 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -560,7 +568,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 position = Vector2( 3.25139, 37.1507 )
 rotation = 0.384702
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 offset = Vector2( 0.0828151, 20.6128 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform" ]
@@ -570,7 +578,7 @@ _sections_unfolded = [ "Offset", "Transform" ]
 show_behind_parent = true
 position = Vector2( 1.5, 27.2645 )
 rotation = -0.144009
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 offset = Vector2( -6.14717, 10.5565 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
@@ -579,14 +587,14 @@ _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 show_behind_parent = true
 position = Vector2( 2.12357, -7.43664 )
 rotation = 2.98023e-08
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 offset = Vector2( -17.8368, 16.9631 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
-[node name="Helmet" type="Sprite" parent="Body" index="4"]
+[node name="Helmet" type="Sprite" parent="Body" index="5"]
 
 position = Vector2( 0.104023, -11.4958 )
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
@@ -618,12 +626,12 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 shape = SubResource( 4 )
 
-[node name="DeathParticles" parent="." index="3" instance=ExtResource( 17 )]
+[node name="DeathParticles" parent="." index="3" instance=ExtResource( 18 )]
 
 position = Vector2( 1.1057, 37.5938 )
 scale = Vector2( 6, 3 )
 
-[node name="DeathSoulParticles" parent="." index="4" instance=ExtResource( 18 )]
+[node name="DeathSoulParticles" parent="." index="4" instance=ExtResource( 19 )]
 
 [node name="DeathTimer" type="Timer" parent="." index="5"]
 
@@ -653,17 +661,17 @@ data = {
 "position": Vector2( 409, 132 ),
 "type": "output"
 }, {
-"blend": 1.0,
-"filter": [  ],
-"id": "blend2",
-"position": Vector2( 241, 89 ),
-"type": "blend2"
-}, {
 "filter": [  ],
 "from": "Attack",
 "id": "anim 2",
 "position": Vector2( 50, 188 ),
 "type": "animation"
+}, {
+"blend": 1.0,
+"filter": [  ],
+"id": "blend2",
+"position": Vector2( 241, 89 ),
+"type": "blend2"
 } ]
 }
 
