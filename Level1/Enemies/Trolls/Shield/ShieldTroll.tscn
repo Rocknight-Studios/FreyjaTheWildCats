@@ -1,19 +1,20 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Level1/Enemies/EnemyBehaviour.gd" type="Script" id=1]
-[ext_resource path="res://Level1/Enemies/Trolls/Shield/Foot.png" type="Texture" id=2]
-[ext_resource path="res://Level1/Enemies/Trolls/Shield/Skirt.png" type="Texture" id=3]
-[ext_resource path="res://Level1/Enemies/Trolls/Shield/Arm.png" type="Texture" id=4]
-[ext_resource path="res://Level1/Enemies/Trolls/Shield/LowerArm.png" type="Texture" id=5]
-[ext_resource path="res://Level1/Enemies/Trolls/Shield/ArmorPiece.png" type="Texture" id=6]
-[ext_resource path="res://Level1/Enemies/Trolls/Spear/Spear.png" type="Texture" id=7]
-[ext_resource path="res://Level1/Enemies/Trolls/Shield/Torso.png" type="Texture" id=8]
-[ext_resource path="res://Level1/Enemies/Trolls/Shield/Shield.png" type="Texture" id=9]
-[ext_resource path="res://Level1/Enemies/Trolls/Shield/Helmet.png" type="Texture" id=10]
-[ext_resource path="res://Level1/Enemies/Trolls/Shield/Hair.png" type="Texture" id=11]
-[ext_resource path="res://Level1/Enemies/Trolls/Shield/Feather.png" type="Texture" id=12]
-[ext_resource path="res://Level1/Enemies/DeathParticles.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Level1/Enemies/DeathSoulParticles.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Level2/EnvironmentObjects/Shadow.png" type="Texture" id=2]
+[ext_resource path="res://Level1/Enemies/Trolls/Shield/Foot.png" type="Texture" id=3]
+[ext_resource path="res://Level1/Enemies/Trolls/Shield/Skirt.png" type="Texture" id=4]
+[ext_resource path="res://Level1/Enemies/Trolls/Shield/Arm.png" type="Texture" id=5]
+[ext_resource path="res://Level1/Enemies/Trolls/Shield/LowerArm.png" type="Texture" id=6]
+[ext_resource path="res://Level1/Enemies/Trolls/Shield/ArmorPiece.png" type="Texture" id=7]
+[ext_resource path="res://Level1/Enemies/Trolls/Spear/Spear.png" type="Texture" id=8]
+[ext_resource path="res://Level1/Enemies/Trolls/Shield/Torso.png" type="Texture" id=9]
+[ext_resource path="res://Level1/Enemies/Trolls/Shield/Shield.png" type="Texture" id=10]
+[ext_resource path="res://Level1/Enemies/Trolls/Shield/Helmet.png" type="Texture" id=11]
+[ext_resource path="res://Level1/Enemies/Trolls/Shield/Hair.png" type="Texture" id=12]
+[ext_resource path="res://Level1/Enemies/Trolls/Shield/Feather.png" type="Texture" id=13]
+[ext_resource path="res://Level1/Enemies/DeathParticles.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Level1/Enemies/DeathSoulParticles.tscn" type="PackedScene" id=15]
 
 [sub_resource type="Animation" id=1]
 
@@ -550,36 +551,45 @@ archer_projectile_offsets = null
 
 position = Vector2( 1.19165, 21.4496 )
 
-[node name="Left_leg" type="Sprite" parent="Body" index="0"]
+[node name="Shadow" type="Sprite" parent="Body" index="0"]
+
+self_modulate = Color( 1, 1, 1, 0.470588 )
+position = Vector2( 2.38329, -38.1325 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Left_leg" type="Sprite" parent="Body" index="1"]
 
 position = Vector2( 7.95174, -14.393 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 flip_h = true
 _sections_unfolded = [ "Offset" ]
 
-[node name="Right_leg" type="Sprite" parent="Body" index="1"]
+[node name="Right_leg" type="Sprite" parent="Body" index="2"]
 
 position = Vector2( -29.4618, -49.5744 )
 rotation = 1.02316
-texture = ExtResource( 2 )
-
-[node name="Skirt" type="Sprite" parent="Body" index="2"]
-
-position = Vector2( -1.99103, -38.805 )
 texture = ExtResource( 3 )
 
-[node name="Right_arm" type="Sprite" parent="Body" index="3"]
+[node name="Skirt" type="Sprite" parent="Body" index="3"]
 
+position = Vector2( -1.99103, -38.805 )
+texture = ExtResource( 4 )
+
+[node name="Right_arm" type="Sprite" parent="Body" index="4"]
+
+editor/display_folded = true
 position = Vector2( -32.9945, -40.4561 )
 z_index = 1
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 offset = Vector2( -7.41932, 6.68292 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="Lower_right_arm" type="Sprite" parent="Body/Right_arm" index="0"]
 
 position = Vector2( -15.5671, 14.9684 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 offset = Vector2( -0.768022, 20.9074 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -587,36 +597,38 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 position = Vector2( -2.82343, 34.9704 )
 rotation = 0.00791758
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Visibility", "Z Index" ]
 
 [node name="Spear" type="Sprite" parent="Body/Right_arm/Lower_right_arm/Hand" index="0"]
 
 z_index = -1
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 _sections_unfolded = [ "Visibility", "Z Index" ]
 
-[node name="Torso" type="Sprite" parent="Body" index="4"]
+[node name="Torso" type="Sprite" parent="Body" index="5"]
 
+editor/display_folded = true
 position = Vector2( -4.61893, -43.3089 )
 z_index = 1
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Shield" type="Sprite" parent="Body/Torso" index="0"]
 
 position = Vector2( 25.9875, 2.73648 )
 rotation = -0.937982
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 offset = Vector2( -1.98333, 15.1241 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Helmet" type="Sprite" parent="Body" index="5"]
+[node name="Helmet" type="Sprite" parent="Body" index="6"]
 
+editor/display_folded = true
 position = Vector2( -1.99103, -39.805 )
 rotation = -0.0601343
 z_index = 1
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Hair4" type="Node2D" parent="Body/Helmet" index="0"]
@@ -628,19 +640,19 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 position = Vector2( 2.36811, -20.9553 )
 rotation = 0.192115
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 offset = Vector2( -1.47371, -9.49857 )
 
 [node name="Hair_right" type="Sprite" parent="Body/Helmet/Hair4" index="1"]
 
 position = Vector2( -12.1589, -11.9631 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 offset = Vector2( -2.25772, -12.6101 )
 
 [node name="Hair_left" type="Sprite" parent="Body/Helmet/Hair4" index="2"]
 
 position = Vector2( 14.7406, -9.38963 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 offset = Vector2( 3.10315, -13.2771 )
 flip_h = true
 _sections_unfolded = [ "Offset" ]
@@ -652,13 +664,13 @@ _sections_unfolded = [ "Visibility" ]
 [node name="Feather_right" type="Sprite" parent="Body/Helmet/Feathers" index="0"]
 
 position = Vector2( -7.55579, -1.3343 )
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 offset = Vector2( -5.11334, -18.4592 )
 
 [node name="Feather_left" type="Sprite" parent="Body/Helmet/Feathers" index="1"]
 
 position = Vector2( 9.6054, -1.35706 )
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 offset = Vector2( 5.71514, -20.586 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform" ]
@@ -678,6 +690,7 @@ blend_times = [  ]
 
 [node name="EnemyCollider" type="StaticBody2D" parent="." index="2"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 32
 collision_mask = 0
@@ -692,11 +705,11 @@ _sections_unfolded = [ "Collision", "Z Index" ]
 position = Vector2( 1.62903, 11.1855 )
 shape = SubResource( 5 )
 
-[node name="DeathParticles" parent="." index="3" instance=ExtResource( 13 )]
+[node name="DeathParticles" parent="." index="3" instance=ExtResource( 14 )]
 
 scale = Vector2( 6, 3 )
 
-[node name="DeathSoulParticles" parent="." index="4" instance=ExtResource( 14 )]
+[node name="DeathSoulParticles" parent="." index="4" instance=ExtResource( 15 )]
 
 [node name="DeathTimer" type="Timer" parent="." index="5"]
 
@@ -726,17 +739,17 @@ data = {
 "position": Vector2( 546, 196 ),
 "type": "output"
 }, {
-"blend": 0.0,
-"filter": [  ],
-"id": "blend2",
-"position": Vector2( 323, 196 ),
-"type": "blend2"
-}, {
 "filter": [  ],
 "from": "Attack",
 "id": "anim 2",
 "position": Vector2( 130, 290 ),
 "type": "animation"
+}, {
+"blend": 0.0,
+"filter": [  ],
+"id": "blend2",
+"position": Vector2( 323, 196 ),
+"type": "blend2"
 } ]
 }
 

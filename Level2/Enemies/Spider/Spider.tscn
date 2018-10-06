@@ -1,15 +1,16 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Level1/Enemies/EnemyBehaviour.gd" type="Script" id=1]
-[ext_resource path="res://Level2/Enemies/Spider/Body.png" type="Texture" id=2]
-[ext_resource path="res://Level2/Enemies/Spider/Bottom.png" type="Texture" id=3]
-[ext_resource path="res://Level2/Enemies/Spider/Eyes.png" type="Texture" id=4]
-[ext_resource path="res://Level2/Enemies/Spider/LegTop.png" type="Texture" id=5]
-[ext_resource path="res://Level2/Enemies/Spider/LegMiddle.png" type="Texture" id=6]
-[ext_resource path="res://Level2/Enemies/Spider/LegBottom.png" type="Texture" id=7]
-[ext_resource path="res://Level2/Enemies/Spider/Fangs.png" type="Texture" id=8]
-[ext_resource path="res://Level1/Enemies/DeathSoulParticles.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Level1/Enemies/DeathParticles.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Level2/EnvironmentObjects/Shadow.png" type="Texture" id=2]
+[ext_resource path="res://Level2/Enemies/Spider/Body.png" type="Texture" id=3]
+[ext_resource path="res://Level2/Enemies/Spider/Bottom.png" type="Texture" id=4]
+[ext_resource path="res://Level2/Enemies/Spider/Eyes.png" type="Texture" id=5]
+[ext_resource path="res://Level2/Enemies/Spider/LegTop.png" type="Texture" id=6]
+[ext_resource path="res://Level2/Enemies/Spider/LegMiddle.png" type="Texture" id=7]
+[ext_resource path="res://Level2/Enemies/Spider/LegBottom.png" type="Texture" id=8]
+[ext_resource path="res://Level2/Enemies/Spider/Fangs.png" type="Texture" id=9]
+[ext_resource path="res://Level1/Enemies/DeathSoulParticles.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Level1/Enemies/DeathParticles.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Animation" id=1]
 
@@ -1082,7 +1083,7 @@ custom_solver_bias = 0.0
 radius = 90.0018
 height = 113.109
 
-[node name="Spider" type="Node2D"]
+[node name="Spider" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 total_health = 10
@@ -1097,22 +1098,30 @@ archer_projectile_offsets = null
 
 [node name="Body" type="Node2D" parent="." index="0"]
 
-editor/display_folded = true
 rotation = 3.14159
 _sections_unfolded = [ "Transform" ]
 
-[node name="BodySprite" type="Sprite" parent="Body" index="0"]
+[node name="Shadow" type="Sprite" parent="Body" index="0"]
+
+self_modulate = Color( 1, 1, 1, 0.470588 )
+position = Vector2( -1.67009, -30.0634 )
+rotation = -3.14159
+scale = Vector2( 3, 4 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="BodySprite" type="Sprite" parent="Body" index="1"]
 
 editor/display_folded = true
 position = Vector2( 0, -90.9533 )
 rotation = -0.0824231
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="Bottom" type="Sprite" parent="Body/BodySprite" index="0"]
 
 position = Vector2( -0.295654, 64.7563 )
 rotation = 0.237006
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 offset = Vector2( 0.295654, 61.2933 )
 
 [node name="Eyes" type="Node2D" parent="Body/BodySprite" index="1"]
@@ -1122,36 +1131,36 @@ editor/display_folded = true
 [node name="Eye" type="Sprite" parent="Body/BodySprite/Eyes" index="0"]
 
 position = Vector2( -19.3018, -46.2873 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="Eye2" type="Sprite" parent="Body/BodySprite/Eyes" index="1"]
 
 position = Vector2( 20.0365, -45.5738 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="Eye3" type="Sprite" parent="Body/BodySprite/Eyes" index="2"]
 
 position = Vector2( 43.3434, -23.6938 )
 scale = Vector2( 0.75, 0.75 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="Eye4" type="Sprite" parent="Body/BodySprite/Eyes" index="3"]
 
 position = Vector2( -44.1767, -23.6938 )
 scale = Vector2( 0.75, 0.75 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="Eye5" type="Sprite" parent="Body/BodySprite/Eyes" index="4"]
 
 position = Vector2( -54.981, 1.07706 )
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="Eye6" type="Sprite" parent="Body/BodySprite/Eyes" index="5"]
 
 position = Vector2( 54.1478, 1.07706 )
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="LegTop" type="Sprite" parent="Body/BodySprite" index="2"]
 
@@ -1159,7 +1168,7 @@ editor/display_folded = true
 show_behind_parent = true
 position = Vector2( 57.7941, -33.6275 )
 rotation = -2.44965
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 offset = Vector2( 4.18909, 7.83376 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -1168,7 +1177,7 @@ _sections_unfolded = [ "Visibility" ]
 show_behind_parent = true
 position = Vector2( 12.6408, 21.5695 )
 rotation = -0.126142
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 offset = Vector2( 9.04763, 14.9214 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -1177,7 +1186,7 @@ _sections_unfolded = [ "Visibility" ]
 show_behind_parent = true
 position = Vector2( 19.9602, 32.0006 )
 rotation = -0.0354222
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 offset = Vector2( 5.63214, 27.2802 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -1187,7 +1196,7 @@ editor/display_folded = true
 show_behind_parent = true
 position = Vector2( -61.7402, -25.8665 )
 rotation = -2.82072
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 offset = Vector2( 4.18909, 7.83376 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -1196,7 +1205,7 @@ _sections_unfolded = [ "Visibility" ]
 show_behind_parent = true
 position = Vector2( 12.6408, 21.5695 )
 rotation = 0.0489454
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 offset = Vector2( 9.04763, 14.9214 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -1205,7 +1214,7 @@ _sections_unfolded = [ "Visibility" ]
 show_behind_parent = true
 position = Vector2( 20.0151, 33.6914 )
 rotation = -1.31219
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 offset = Vector2( -3.19697, 26.141 )
 flip_h = true
 _sections_unfolded = [ "Visibility" ]
@@ -1216,7 +1225,7 @@ editor/display_folded = true
 show_behind_parent = true
 position = Vector2( 64.2339, -9.3101 )
 rotation = -1.69666
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 offset = Vector2( 4.18909, 7.83376 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -1225,7 +1234,7 @@ _sections_unfolded = [ "Visibility" ]
 show_behind_parent = true
 position = Vector2( 12.6408, 21.5695 )
 rotation = -0.482551
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 offset = Vector2( 9.04763, 14.9214 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -1234,7 +1243,7 @@ _sections_unfolded = [ "Visibility" ]
 show_behind_parent = true
 position = Vector2( 19.9602, 32.0006 )
 rotation = -0.114522
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 offset = Vector2( 5.63214, 27.2802 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -1244,7 +1253,7 @@ editor/display_folded = true
 show_behind_parent = true
 position = Vector2( -65.5673, -2.08947 )
 rotation = -3.70099
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 offset = Vector2( 4.18909, 7.83376 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -1253,7 +1262,7 @@ _sections_unfolded = [ "Visibility" ]
 show_behind_parent = true
 position = Vector2( 12.6408, 21.5695 )
 rotation = 0.677093
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 offset = Vector2( 9.04763, 14.9214 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -1262,7 +1271,7 @@ _sections_unfolded = [ "Visibility" ]
 show_behind_parent = true
 position = Vector2( 21.7382, 31.5313 )
 rotation = -0.858531
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 offset = Vector2( -7.17646, 27.5875 )
 flip_h = true
 _sections_unfolded = [ "Visibility" ]
@@ -1273,7 +1282,7 @@ editor/display_folded = true
 show_behind_parent = true
 position = Vector2( 65.3443, 13.0208 )
 rotation = -1.01903
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 offset = Vector2( 4.18909, 7.83376 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -1282,7 +1291,7 @@ _sections_unfolded = [ "Visibility" ]
 show_behind_parent = true
 position = Vector2( 12.6408, 21.5695 )
 rotation = -0.376769
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 offset = Vector2( 9.04763, 14.9214 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -1291,7 +1300,7 @@ _sections_unfolded = [ "Visibility" ]
 show_behind_parent = true
 position = Vector2( 19.9602, 32.0006 )
 rotation = -0.181375
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 offset = Vector2( 5.63214, 27.2802 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -1301,7 +1310,7 @@ editor/display_folded = true
 show_behind_parent = true
 position = Vector2( -66.0779, 21.8626 )
 rotation = -4.32675
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 offset = Vector2( 4.18909, 7.83376 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -1310,7 +1319,7 @@ _sections_unfolded = [ "Visibility" ]
 show_behind_parent = true
 position = Vector2( 12.6408, 21.5695 )
 rotation = 0.339775
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 offset = Vector2( 9.04763, 14.9214 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -1319,7 +1328,7 @@ _sections_unfolded = [ "Visibility" ]
 show_behind_parent = true
 position = Vector2( 20.0999, 31.5113 )
 rotation = -1.16235
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 offset = Vector2( -7.24506, 28.3959 )
 flip_h = true
 _sections_unfolded = [ "Visibility" ]
@@ -1330,7 +1339,7 @@ editor/display_folded = true
 show_behind_parent = true
 position = Vector2( 63.8405, 37.5726 )
 rotation = -0.233268
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 offset = Vector2( 4.18909, 7.83376 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -1339,7 +1348,7 @@ _sections_unfolded = [ "Visibility" ]
 show_behind_parent = true
 position = Vector2( 12.6408, 21.5695 )
 rotation = -0.525117
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 offset = Vector2( 9.04763, 14.9214 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -1348,7 +1357,7 @@ _sections_unfolded = [ "Visibility" ]
 show_behind_parent = true
 position = Vector2( 19.9602, 32.0006 )
 rotation = -0.318113
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 offset = Vector2( 5.63214, 27.2802 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -1358,7 +1367,7 @@ editor/display_folded = true
 show_behind_parent = true
 position = Vector2( -60.5571, 46.9547 )
 rotation = -4.64931
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 offset = Vector2( 4.18909, 7.83376 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -1367,7 +1376,7 @@ _sections_unfolded = [ "Visibility" ]
 show_behind_parent = true
 position = Vector2( 12.6408, 21.5695 )
 rotation = 0.211164
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 offset = Vector2( 9.04763, 14.9214 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -1376,7 +1385,7 @@ _sections_unfolded = [ "Visibility" ]
 show_behind_parent = true
 position = Vector2( 20.9834, 29.5475 )
 rotation = -1.46256
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 offset = Vector2( -6.9495, 30.0955 )
 flip_h = true
 _sections_unfolded = [ "Visibility" ]
@@ -1386,7 +1395,7 @@ _sections_unfolded = [ "Visibility" ]
 show_behind_parent = true
 position = Vector2( 25.8809, -32.0872 )
 rotation = -0.0180582
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 offset = Vector2( -5.41209, -34.6025 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -1395,7 +1404,7 @@ _sections_unfolded = [ "Visibility" ]
 show_behind_parent = true
 position = Vector2( -17.0471, -32.5438 )
 rotation = 0.0162371
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 offset = Vector2( -5.41209, -34.6025 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
@@ -1465,9 +1474,9 @@ position = Vector2( 1, 44.2279 )
 shape = SubResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="DeathSoulParticles" parent="." index="4" instance=ExtResource( 9 )]
+[node name="DeathSoulParticles" parent="." index="4" instance=ExtResource( 10 )]
 
-[node name="DeathParticles" parent="." index="5" instance=ExtResource( 10 )]
+[node name="DeathParticles" parent="." index="5" instance=ExtResource( 11 )]
 
 self_modulate = Color( 0.204437, 0.546023, 0.679688, 1 )
 scale = Vector2( 15, 7 )
