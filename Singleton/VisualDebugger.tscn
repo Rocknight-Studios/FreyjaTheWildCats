@@ -1,31 +1,176 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Singleton/VisualDebugger.gd" type="Script" id=1]
 [ext_resource path="res://Singleton/VisualDebuggerBackground.gd" type="Script" id=2]
 [ext_resource path="res://Singleton/SceneNodeSelector.gd" type="Script" id=3]
 [ext_resource path="res://Singleton/IndicatorDrawSurface.gd" type="Script" id=4]
 [ext_resource path="res://Singleton/VisualDebuggerCamera.gd" type="Script" id=5]
-[ext_resource path="res://Singleton/WarningLine.gd" type="Script" id=6]
-[ext_resource path="res://Singleton/ShowNodeInfoButton.gd" type="Script" id=7]
-[ext_resource path="res://Singleton/JumpToSelectedNodeButton.gd" type="Script" id=8]
-[ext_resource path="res://Singleton/CurrentNodeInfo.gd" type="Script" id=9]
-[ext_resource path="res://Singleton/Outliner.gd" type="Script" id=10]
-[ext_resource path="res://Assets/Font/overpass-mono/overpass-mono-bold.otf" type="DynamicFontData" id=11]
+[ext_resource path="res://Assets/Font/overpass-mono/overpass-mono-bold.otf" type="DynamicFontData" id=6]
+[ext_resource path="res://Singleton/WarningLine.gd" type="Script" id=7]
+[ext_resource path="res://Singleton/ShowNodeInfoButton.gd" type="Script" id=8]
+[ext_resource path="res://Singleton/JumpToSelectedNodeButton.gd" type="Script" id=9]
+[ext_resource path="res://Singleton/CurrentNodeInfo.gd" type="Script" id=10]
+[ext_resource path="res://Singleton/Outliner.gd" type="Script" id=11]
 [ext_resource path="res://Singleton/WatchesList.gd" type="Script" id=12]
-[ext_resource path="res://Singleton/TransformationModeButton.gd" type="Script" id=13]
-[ext_resource path="res://Singleton/StepButton.gd" type="Script" id=14]
-[ext_resource path="res://Singleton/RunButton.gd" type="Script" id=15]
-[ext_resource path="res://Singleton/CameraMovementSpeedSlider.gd" type="Script" id=16]
-[ext_resource path="res://Singleton/JumpToNodeButton.gd" type="Script" id=17]
-[ext_resource path="res://Singleton/JumpToNodePath.gd" type="Script" id=18]
-[ext_resource path="res://Singleton/EnablePersistentFollowButton.gd" type="Script" id=19]
+[ext_resource path="res://Singleton/WatchName.gd" type="Script" id=13]
+[ext_resource path="res://Singleton/TransformationModeButton.gd" type="Script" id=14]
+[ext_resource path="res://Singleton/StepButton.gd" type="Script" id=15]
+[ext_resource path="res://Singleton/RunButton.gd" type="Script" id=16]
+[ext_resource path="res://Singleton/CameraMovementSpeedSlider.gd" type="Script" id=17]
+[ext_resource path="res://Singleton/JumpToNodeButton.gd" type="Script" id=18]
+[ext_resource path="res://Singleton/JumpToNodePath.gd" type="Script" id=19]
+[ext_resource path="res://Singleton/EnablePersistentFollowButton.gd" type="Script" id=20]
+
+[sub_resource type="DynamicFont" id=13]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=12]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=22]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=23]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=24]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=25]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=26]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=27]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=28]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=29]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Settings" ]
+
+[sub_resource type="DynamicFont" id=8]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=9]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=10]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=7]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=3]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 13
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 11 )
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=4]
+
+size = 14
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=5]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=11]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=2]
@@ -33,7 +178,115 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 13
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 11 )
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=6]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=34]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=30]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="Theme" id=31]
+
+default_font = SubResource( 30 )
+
+[sub_resource type="DynamicFont" id=14]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=15]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=16]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=17]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=18]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=20]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=21]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=19]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=33]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=32]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [node name="VisualDebugger" type="CanvasLayer" index="0"]
@@ -130,8 +383,8 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 168.0
-margin_bottom = 24.0
+margin_right = 184.0
+margin_bottom = 27.0
 rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -139,11 +392,12 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = SubResource( 13 )
 text = "Visual debugger v. 1"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Margin", "Pause", "Rect", "Visibility" ]
+_sections_unfolded = [ "Margin", "Pause", "Rect", "Visibility", "custom_fonts" ]
 
 [node name="InfoContainer" type="Container" parent="." index="6"]
 
@@ -212,7 +466,7 @@ placeholder_alpha = 0.6
 caret_blink = false
 caret_blink_speed = 0.65
 caret_position = 0
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 _sections_unfolded = [ "Visibility", "custom_colors" ]
 
 [node name="TabContainer" type="TabContainer" parent="." index="7"]
@@ -231,18 +485,21 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 12 )
 tab_align = 1
 tabs_visible = true
+_sections_unfolded = [ "custom_fonts" ]
 
-[node name="NodeSelection" type="Container" parent="TabContainer" index="0"]
+[node name="VisualSelect" type="Container" parent="TabContainer" index="0"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
-margin_top = 32.0
+margin_top = 35.0
 margin_right = -4.0
 margin_bottom = -4.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -255,7 +512,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="NodeSelectionBackground" type="ColorRect" parent="TabContainer/NodeSelection" index="0"]
+[node name="NodeSelectionBackground" type="ColorRect" parent="TabContainer/VisualSelect" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -270,18 +527,18 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 0.114304, 0.116243, 0.128906, 1 )
-_sections_unfolded = [ "Anchor", "Margin" ]
+color = Color( 0.114304, 0.116243, 0.128906, 0.165725 )
+_sections_unfolded = [ "Anchor", "Margin", "Visibility" ]
 
-[node name="ListOfNodesTitle" type="Label" parent="TabContainer/NodeSelection" index="1"]
+[node name="ListOfNodesTitle" type="Label" parent="TabContainer/VisualSelect" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 8.0
-margin_top = 9.0
-margin_right = 307.0
+margin_left = 6.0
+margin_top = 6.0
+margin_right = 249.0
 margin_bottom = 23.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -289,13 +546,14 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = SubResource( 22 )
 text = "List of currenly marked nodes"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Margin" ]
+_sections_unfolded = [ "Margin", "custom_fonts" ]
 
-[node name="SelectionInfo" type="TextEdit" parent="TabContainer/NodeSelection" index="2"]
+[node name="SelectionInfo" type="TextEdit" parent="TabContainer/VisualSelect" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -312,6 +570,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 23 )
 text = ""
 readonly = true
 highlight_current_line = true
@@ -328,38 +587,40 @@ caret_block_mode = false
 caret_blink = false
 caret_blink_speed = 0.65
 caret_moving_by_right_click = true
-_sections_unfolded = [ "Mouse" ]
+_sections_unfolded = [ "Mouse", "custom_fonts" ]
 
-[node name="ListOfNodesTypesToDetectTitle" type="Label" parent="TabContainer/NodeSelection" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 8.0
-margin_top = 214.0
-margin_right = 307.0
-margin_bottom = 228.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Show only nodes of these types."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="SelectionInfo2" type="TextEdit" parent="TabContainer/NodeSelection" index="4"]
+[node name="ListOfNodesTypesToDetectTitle" type="Label" parent="TabContainer/VisualSelect" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 7.0
+margin_top = 210.0
+margin_right = 306.0
+margin_bottom = 227.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 24 )
+text = "Show only nodes of these types."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="SelectionInfo2" type="TextEdit" parent="TabContainer/VisualSelect" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 6.0
 margin_top = 230.0
-margin_right = 358.0
+margin_right = 357.0
 margin_bottom = 400.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -368,6 +629,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 25 )
 text = ""
 readonly = true
 highlight_current_line = true
@@ -384,9 +646,9 @@ caret_block_mode = false
 caret_blink = false
 caret_blink_speed = 0.65
 caret_moving_by_right_click = true
-_sections_unfolded = [ "Mouse" ]
+_sections_unfolded = [ "Mouse", "custom_fonts" ]
 
-[node name="SelectedNodeInfo" type="Container" parent="TabContainer/NodeSelection" index="5"]
+[node name="SelectedNodeInfo" type="Container" parent="TabContainer/VisualSelect" index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -395,7 +657,7 @@ anchor_bottom = 1.0
 margin_left = 1.0
 margin_top = 418.0
 margin_right = -1.0
-margin_bottom = -27.0
+margin_bottom = 1.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -406,7 +668,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="ShowNodeInfoButton" type="Button" parent="TabContainer/NodeSelection/SelectedNodeInfo" index="0"]
+[node name="ShowNodeInfoButton" type="Button" parent="TabContainer/VisualSelect/SelectedNodeInfo" index="0"]
 
 self_modulate = Color( 0.496094, 1, 0.716553, 1 )
 anchor_left = 0.0
@@ -424,7 +686,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 26 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -432,19 +694,19 @@ group = null
 text = "Show Node Info"
 flat = false
 align = 1
-script = ExtResource( 7 )
-_sections_unfolded = [ "Visibility", "custom_colors" ]
+script = ExtResource( 8 )
+_sections_unfolded = [ "Visibility", "custom_fonts" ]
 
-[node name="JumpToSelectedNodeButton" type="Button" parent="TabContainer/NodeSelection/SelectedNodeInfo" index="1"]
+[node name="JumpToSelectedNodeButton" type="Button" parent="TabContainer/VisualSelect/SelectedNodeInfo" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 186.0
-margin_top = 20.0
-margin_right = 346.0
-margin_bottom = 40.0
+margin_left = 181.0
+margin_top = 18.0
+margin_right = 361.0
+margin_bottom = 41.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -452,6 +714,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 27 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -459,9 +722,10 @@ group = null
 text = "Jump To Selected Node"
 flat = false
 align = 1
-script = ExtResource( 8 )
+script = ExtResource( 9 )
+_sections_unfolded = [ "custom_fonts" ]
 
-[node name="SelectedNodeTitle" type="Label" parent="TabContainer/NodeSelection/SelectedNodeInfo" index="2"]
+[node name="SelectedNodeTitle" type="Label" parent="TabContainer/VisualSelect/SelectedNodeInfo" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -469,20 +733,22 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 4.0
 margin_top = 48.0
-margin_right = 239.0
-margin_bottom = 62.0
+margin_right = 299.0
+margin_bottom = 65.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = SubResource( 28 )
 text = "Information about the selected node"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
 
-[node name="CurrentNodeInfo" type="TextEdit" parent="TabContainer/NodeSelection/SelectedNodeInfo" index="3"]
+[node name="CurrentNodeInfo" type="TextEdit" parent="TabContainer/VisualSelect/SelectedNodeInfo" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -499,6 +765,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 29 )
 text = ""
 readonly = true
 highlight_current_line = false
@@ -515,7 +782,8 @@ caret_block_mode = false
 caret_blink = false
 caret_blink_speed = 0.65
 caret_moving_by_right_click = true
-script = ExtResource( 9 )
+script = ExtResource( 10 )
+_sections_unfolded = [ "custom_fonts" ]
 
 [node name="Watches" type="Container" parent="TabContainer" index="1"]
 
@@ -524,7 +792,7 @@ anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
-margin_top = 32.0
+margin_top = 35.0
 margin_right = -4.0
 margin_bottom = -4.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -546,7 +814,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 4.0
 margin_top = 19.0
-margin_right = 303.0
+margin_right = 176.0
 margin_bottom = 33.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -554,10 +822,12 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = SubResource( 8 )
 text = "Select Node/s to inspect"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
 
 [node name="Outliner" type="Tree" parent="TabContainer/Watches" index="1"]
 
@@ -576,6 +846,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/title_button_font = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 columns = 1
 allow_reselect = false
 allow_rmb_select = false
@@ -583,16 +855,17 @@ hide_folding = false
 hide_root = false
 drop_mode_flags = 0
 select_mode = 2
-script = ExtResource( 10 )
-_sections_unfolded = [ "Rect" ]
+script = ExtResource( 11 )
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [node name="Refresh" type="Button" parent="TabContainer/Watches" index="2"]
 
+modulate = Color( 0, 0.648438, 1, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 201.0
+margin_left = 218.0
 margin_top = 5.0
 margin_right = 360.0
 margin_bottom = 35.0
@@ -603,6 +876,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 7 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -610,7 +884,7 @@ group = null
 text = "Refresh"
 flat = false
 align = 1
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Rect", "Visibility" ]
 
 [node name="WatchesTitle" type="Label" parent="TabContainer/Watches" index="3"]
 
@@ -619,8 +893,8 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 4.0
-margin_top = 303.0
-margin_right = 303.0
+margin_top = 300.0
+margin_right = 124.0
 margin_bottom = 317.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -628,11 +902,12 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
 text = "List of watches"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [node name="WatchesList" type="ItemList" parent="TabContainer/Watches" index="4"]
 
@@ -643,7 +918,7 @@ anchor_bottom = 0.0
 margin_left = 5.0
 margin_top = 330.0
 margin_right = 360.0
-margin_bottom = 607.0
+margin_bottom = 580.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 focus_mode = 2
@@ -670,9 +945,9 @@ anchor_top = 1.0
 anchor_right = 0.0
 anchor_bottom = 1.0
 margin_left = 3.0
-margin_top = -66.0
+margin_top = -91.0
 margin_right = 361.0
-margin_bottom = -50.0
+margin_bottom = -75.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -690,11 +965,40 @@ custom_step = -1.0
 
 [node name="AddWatch" type="Button" parent="TabContainer/Watches" index="6"]
 
+modulate = Color( 0, 1, 0.015625, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 198.0
+margin_left = 131.0
+margin_top = 292.0
+margin_right = 242.0
+margin_bottom = 322.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 4 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Add Watch"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
+
+[node name="RemoveWatch" type="Button" parent="TabContainer/Watches" index="7"]
+
+modulate = Color( 1, 0, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 248.0
 margin_top = 292.0
 margin_right = 360.0
 margin_bottom = 322.0
@@ -705,16 +1009,17 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 5 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Add Watch"
+text = "Remove Watch"
 flat = false
 align = 1
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
 
-[node name="WatchName" type="TextEdit" parent="TabContainer/Watches" index="7"]
+[node name="WatchName" type="TextEdit" parent="TabContainer/Watches" index="8"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -731,6 +1036,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 11 )
 text = "Type watch name"
 readonly = false
 highlight_current_line = false
@@ -747,9 +1053,10 @@ caret_block_mode = false
 caret_blink = false
 caret_blink_speed = 0.65
 caret_moving_by_right_click = true
-_sections_unfolded = [ "Rect" ]
+script = ExtResource( 13 )
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="WatchValue" type="TextEdit" parent="TabContainer/Watches" index="8"]
+[node name="WatchValue" type="TextEdit" parent="TabContainer/Watches" index="9"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -785,7 +1092,7 @@ caret_blink_speed = 0.65
 caret_moving_by_right_click = true
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="SetValue" type="Button" parent="TabContainer/Watches" index="9"]
+[node name="SetValue" type="Button" parent="TabContainer/Watches" index="10"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -802,6 +1109,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 6 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -809,9 +1117,127 @@ group = null
 text = "Set Value"
 flat = false
 align = 1
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Transformations" type="Container" parent="TabContainer" index="2"]
+[node name="WatchFieldWrapper" type="Control" parent="TabContainer/Watches" index="11"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 595.0
+margin_right = 359.0
+margin_bottom = 628.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="NodeCheckBox" type="CheckBox" parent="TabContainer/Watches/WatchFieldWrapper" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -5.0
+margin_right = 99.0
+margin_bottom = 19.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 34 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Show Node"
+flat = false
+align = 0
+
+[node name="NameCheckBox" type="CheckBox" parent="TabContainer/Watches/WatchFieldWrapper" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 112.0
+margin_top = -5.0
+margin_right = 212.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 34 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Show Name"
+flat = false
+align = 0
+
+[node name="ValueCheckBox" type="CheckBox" parent="TabContainer/Watches/WatchFieldWrapper" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 12.0
+margin_right = 24.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 34 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Show Value"
+flat = false
+align = 0
+
+[node name="TypeCheckBox" type="CheckBox" parent="TabContainer/Watches/WatchFieldWrapper" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 112.0
+margin_top = 12.0
+margin_right = 212.0
+margin_bottom = 37.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 34 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Show Type"
+flat = false
+align = 0
+
+[node name="Transform" type="Container" parent="TabContainer" index="2"]
 
 editor/display_folded = true
 visible = false
@@ -820,7 +1246,7 @@ anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
-margin_top = 32.0
+margin_top = 35.0
 margin_right = -4.0
 margin_bottom = -4.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -830,7 +1256,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="TransformationModeButton" type="MenuButton" parent="TabContainer/Transformations" index="0"]
+[node name="TransformationModeButton" type="MenuButton" parent="TabContainer/Transform" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -838,14 +1264,15 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 8.0
 margin_top = 5.0
-margin_right = 149.0
-margin_bottom = 20.0
+margin_right = 247.0
+margin_bottom = 28.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = SubResource( 31 )
 toggle_mode = false
 action_mode = 0
 enabled_focus_mode = 0
@@ -855,12 +1282,11 @@ text = "Transformation mode: MOVE"
 flat = false
 align = 1
 items = [ "MOVE", null, 0, false, false, -1, 0, null, "", false, "ROTATE", null, 0, false, false, -1, 0, null, "", false, "SCALE", null, 0, false, false, -1, 0, null, "", false ]
-script = ExtResource( 13 )
-_sections_unfolded = [ "Margin" ]
+script = ExtResource( 14 )
+_sections_unfolded = [ "Margin", "Theme", "custom_fonts" ]
 
 [node name="GeneralControlsContainer" type="Container" parent="." index="8"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -896,6 +1322,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 14 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -903,8 +1330,8 @@ group = null
 text = "Step"
 flat = false
 align = 1
-script = ExtResource( 14 )
-_sections_unfolded = [ "Margin", "Pause" ]
+script = ExtResource( 15 )
+_sections_unfolded = [ "Margin", "Pause", "custom_fonts" ]
 
 [node name="RunButton" type="Button" parent="GeneralControlsContainer" index="1"]
 
@@ -923,6 +1350,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 15 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -930,8 +1358,8 @@ group = null
 text = "Run"
 flat = false
 align = 1
-script = ExtResource( 15 )
-_sections_unfolded = [ "Margin", "Pause" ]
+script = ExtResource( 16 )
+_sections_unfolded = [ "Margin", "Pause", "custom_fonts" ]
 
 [node name="CameraMovementSpeedLabel" type="Label" parent="GeneralControlsContainer" index="2"]
 
@@ -941,18 +1369,20 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 7.0
 margin_top = 61.0
-margin_right = 119.0
-margin_bottom = 75.0
+margin_right = 128.0
+margin_bottom = 78.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = SubResource( 16 )
 text = "Movement speed"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
 
 [node name="CameraMovementSpeedSlider" type="HSlider" parent="GeneralControlsContainer" index="3"]
 
@@ -982,7 +1412,7 @@ editable = true
 tick_count = 0
 ticks_on_borders = false
 focus_mode = 2
-script = ExtResource( 16 )
+script = ExtResource( 17 )
 
 [node name="CameraJumpPositionX" type="LineEdit" parent="GeneralControlsContainer" index="4"]
 
@@ -990,10 +1420,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 10.0
-margin_top = 113.0
-margin_right = 75.0
-margin_bottom = 137.0
+margin_left = 5.0
+margin_top = 114.0
+margin_right = 111.0
+margin_bottom = 141.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_neighbour_right = NodePath("../CameraJumpPositionY")
@@ -1003,6 +1433,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 1
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 17 )
 text = "0"
 focus_mode = 2
 context_menu_enabled = true
@@ -1010,7 +1441,7 @@ placeholder_alpha = 0.6
 caret_blink = false
 caret_blink_speed = 0.65
 caret_position = 0
-_sections_unfolded = [ "Focus" ]
+_sections_unfolded = [ "Focus", "Rect", "custom_fonts" ]
 
 [node name="CameraJumpPositionY" type="LineEdit" parent="GeneralControlsContainer" index="5"]
 
@@ -1018,10 +1449,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 87.0
+margin_left = 125.0
 margin_top = 113.0
-margin_right = 152.0
-margin_bottom = 137.0
+margin_right = 231.0
+margin_bottom = 140.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_neighbour_left = NodePath("../CameraJumpPositionX")
@@ -1031,6 +1462,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 1
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 18 )
 text = "0"
 focus_mode = 2
 context_menu_enabled = true
@@ -1038,6 +1470,7 @@ placeholder_alpha = 0.6
 caret_blink = false
 caret_blink_speed = 0.65
 caret_position = 0
+_sections_unfolded = [ "custom_fonts" ]
 
 [node name="JumpToNodeButton" type="Button" parent="GeneralControlsContainer" index="6"]
 
@@ -1045,10 +1478,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 13.0
-margin_top = 160.0
-margin_right = 125.0
-margin_bottom = 180.0
+margin_left = 6.0
+margin_top = 152.0
+margin_right = 118.0
+margin_bottom = 177.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -1056,6 +1489,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 20 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1063,7 +1497,8 @@ group = null
 text = "Jump To Node"
 flat = false
 align = 1
-script = ExtResource( 17 )
+script = ExtResource( 18 )
+_sections_unfolded = [ "custom_fonts" ]
 
 [node name="JumpToNodePath" type="LineEdit" parent="GeneralControlsContainer" index="7"]
 
@@ -1071,10 +1506,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 138.0
-margin_top = 158.0
+margin_left = 127.0
+margin_top = 151.0
 margin_right = 353.0
-margin_bottom = 182.0
+margin_bottom = 178.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -1082,13 +1517,15 @@ mouse_filter = 0
 mouse_default_cursor_shape = 1
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 21 )
 focus_mode = 2
 context_menu_enabled = true
 placeholder_alpha = 0.6
 caret_blink = false
 caret_blink_speed = 0.65
 caret_position = 0
-script = ExtResource( 18 )
+script = ExtResource( 19 )
+_sections_unfolded = [ "custom_fonts" ]
 
 [node name="CameraJumpPositionButton" type="Button" parent="GeneralControlsContainer" index="8"]
 
@@ -1096,10 +1533,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 160.0
+margin_left = 248.0
 margin_top = 115.0
-margin_right = 237.0
-margin_bottom = 135.0
+margin_right = 351.0
+margin_bottom = 139.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -1107,6 +1544,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 19 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1114,6 +1552,7 @@ group = null
 text = "Jump here"
 flat = false
 align = 1
+_sections_unfolded = [ "custom_fonts" ]
 
 [node name="EnablePersistentFollowButton" type="CheckButton" parent="GeneralControlsContainer" index="9"]
 
@@ -1121,7 +1560,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 197.0
+margin_left = 178.0
 margin_top = 182.0
 margin_right = 362.0
 margin_bottom = 222.0
@@ -1132,6 +1571,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 33 )
 toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
@@ -1139,7 +1579,8 @@ group = null
 text = "Follow node: "
 flat = false
 align = 0
-script = ExtResource( 19 )
+script = ExtResource( 20 )
+_sections_unfolded = [ "custom_fonts" ]
 
 [node name="EnableExactFollow" type="CheckButton" parent="GeneralControlsContainer" index="10"]
 
@@ -1147,9 +1588,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 173.0
+margin_left = 146.0
 margin_top = 216.0
-margin_right = 361.0
+margin_right = 362.0
 margin_bottom = 256.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1158,6 +1599,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 32 )
 toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
@@ -1165,18 +1607,23 @@ group = null
 text = "Jump right away: "
 flat = false
 align = 0
+_sections_unfolded = [ "custom_fonts" ]
 
 [connection signal="text_changed" from="InfoContainer/WarningLine" to="InfoContainer/WarningLine" method="_on_WarningLine_text_changed"]
 
-[connection signal="pressed" from="TabContainer/NodeSelection/SelectedNodeInfo/ShowNodeInfoButton" to="TabContainer/NodeSelection/SelectedNodeInfo/ShowNodeInfoButton" method="_on_ShowNodeInfoButton_pressed"]
+[connection signal="pressed" from="TabContainer/VisualSelect/SelectedNodeInfo/ShowNodeInfoButton" to="TabContainer/VisualSelect/SelectedNodeInfo/ShowNodeInfoButton" method="_on_ShowNodeInfoButton_pressed"]
 
-[connection signal="pressed" from="TabContainer/NodeSelection/SelectedNodeInfo/JumpToSelectedNodeButton" to="TabContainer/NodeSelection/SelectedNodeInfo/JumpToSelectedNodeButton" method="_on_JumpToSelectedNodeButton_pressed"]
+[connection signal="pressed" from="TabContainer/VisualSelect/SelectedNodeInfo/JumpToSelectedNodeButton" to="TabContainer/VisualSelect/SelectedNodeInfo/JumpToSelectedNodeButton" method="_on_JumpToSelectedNodeButton_pressed"]
 
 [connection signal="button_down" from="TabContainer/Watches/Refresh" to="TabContainer/Watches/Outliner" method="_on_form_the_outliner"]
 
 [connection signal="value_changed" from="TabContainer/Watches/HScrollBar" to="TabContainer/Watches/WatchesList" method="_on_HScrollBar_value_changed"]
 
 [connection signal="button_down" from="TabContainer/Watches/AddWatch" to="TabContainer/Watches/WatchesList" method="_on_AddWatch_button_down"]
+
+[connection signal="focus_exited" from="TabContainer/Watches/WatchName" to="TabContainer/Watches/WatchName" method="_on_WatchName_focus_exited"]
+
+[connection signal="gui_input" from="TabContainer/Watches/WatchName" to="TabContainer/Watches/WatchName" method="_on_WatchName_gui_input"]
 
 [connection signal="button_down" from="TabContainer/Watches/SetValue" to="TabContainer/Watches/WatchesList" method="_on_SetValue_button_down"]
 

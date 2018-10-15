@@ -122,7 +122,7 @@ func modify_watch_value():
 		print("TYPE_MAX is not yet implemented")
 
 	if get_item_metadata(selected_item_index)[1] == "name":
-		if watch_value.text.length > 0:
+		if watch_value.text.length() > 0:
 			var full_path = get_item_metadata(selected_item_index)[0] # For speed and convenience.
 			var full_parent_path = "" # To append the new name.
 			for i in range(0, full_path.get_name_count() - 1):
