@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Singleton/VisualDebugger.gd" type="Script" id=1]
 [ext_resource path="res://Singleton/VisualDebuggerBackground.gd" type="Script" id=2]
@@ -10,14 +10,31 @@
 [ext_resource path="res://Singleton/JumpToSelectedNodeButton.gd" type="Script" id=8]
 [ext_resource path="res://Singleton/CurrentNodeInfo.gd" type="Script" id=9]
 [ext_resource path="res://Singleton/Outliner.gd" type="Script" id=10]
-[ext_resource path="res://Singleton/WatchesList.gd" type="Script" id=11]
-[ext_resource path="res://Singleton/TransformationModeButton.gd" type="Script" id=12]
-[ext_resource path="res://Singleton/StepButton.gd" type="Script" id=13]
-[ext_resource path="res://Singleton/RunButton.gd" type="Script" id=14]
-[ext_resource path="res://Singleton/CameraMovementSpeedSlider.gd" type="Script" id=15]
-[ext_resource path="res://Singleton/JumpToNodeButton.gd" type="Script" id=16]
-[ext_resource path="res://Singleton/JumpToNodePath.gd" type="Script" id=17]
-[ext_resource path="res://Singleton/EnablePersistentFollowButton.gd" type="Script" id=18]
+[ext_resource path="res://Assets/Font/overpass-mono/overpass-mono-bold.otf" type="DynamicFontData" id=11]
+[ext_resource path="res://Singleton/WatchesList.gd" type="Script" id=12]
+[ext_resource path="res://Singleton/TransformationModeButton.gd" type="Script" id=13]
+[ext_resource path="res://Singleton/StepButton.gd" type="Script" id=14]
+[ext_resource path="res://Singleton/RunButton.gd" type="Script" id=15]
+[ext_resource path="res://Singleton/CameraMovementSpeedSlider.gd" type="Script" id=16]
+[ext_resource path="res://Singleton/JumpToNodeButton.gd" type="Script" id=17]
+[ext_resource path="res://Singleton/JumpToNodePath.gd" type="Script" id=18]
+[ext_resource path="res://Singleton/EnablePersistentFollowButton.gd" type="Script" id=19]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 11 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 11 )
+_sections_unfolded = [ "Font", "Settings" ]
 
 [node name="VisualDebugger" type="CanvasLayer" index="0"]
 
@@ -219,6 +236,7 @@ tabs_visible = true
 
 [node name="NodeSelection" type="Container" parent="TabContainer" index="0"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -501,7 +519,6 @@ script = ExtResource( 9 )
 
 [node name="Watches" type="Container" parent="TabContainer" index="1"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -575,7 +592,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 240.0
+margin_left = 201.0
 margin_top = 5.0
 margin_right = 360.0
 margin_bottom = 35.0
@@ -626,7 +643,7 @@ anchor_bottom = 0.0
 margin_left = 5.0
 margin_top = 330.0
 margin_right = 360.0
-margin_bottom = 625.0
+margin_bottom = 607.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 focus_mode = 2
@@ -634,21 +651,50 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 1 )
 items = [  ]
 select_mode = 0
 allow_reselect = false
+max_columns = 0
+same_column_width = true
+fixed_column_width = 335
 icon_mode = 1
 fixed_icon_size = Vector2( 0, 0 )
-script = ExtResource( 11 )
-_sections_unfolded = [ "Margin", "Rect" ]
+script = ExtResource( 12 )
+_sections_unfolded = [ "Columns", "Margin", "Rect", "custom_fonts" ]
 
-[node name="AddWatch" type="Button" parent="TabContainer/Watches" index="5"]
+[node name="HScrollBar" type="HScrollBar" parent="TabContainer/Watches" index="5"]
+
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+margin_left = 3.0
+margin_top = -66.0
+margin_right = 361.0
+margin_bottom = -50.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = 0.0
+max_value = 2.0
+step = 1.0
+page = 1.0
+value = 0.0
+exp_edit = false
+rounded = false
+custom_step = -1.0
+
+[node name="AddWatch" type="Button" parent="TabContainer/Watches" index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 240.0
+margin_left = 198.0
 margin_top = 292.0
 margin_right = 360.0
 margin_bottom = 322.0
@@ -668,7 +714,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="WatchName" type="TextEdit" parent="TabContainer/Watches" index="6"]
+[node name="WatchName" type="TextEdit" parent="TabContainer/Watches" index="7"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -703,7 +749,7 @@ caret_blink_speed = 0.65
 caret_moving_by_right_click = true
 _sections_unfolded = [ "Rect" ]
 
-[node name="WatchValue" type="TextEdit" parent="TabContainer/Watches" index="7"]
+[node name="WatchValue" type="TextEdit" parent="TabContainer/Watches" index="8"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -720,6 +766,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 2 )
 text = "Type value here"
 readonly = false
 highlight_current_line = false
@@ -736,15 +783,15 @@ caret_block_mode = false
 caret_blink = false
 caret_blink_speed = 0.65
 caret_moving_by_right_click = true
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="SetValue" type="Button" parent="TabContainer/Watches" index="8"]
+[node name="SetValue" type="Button" parent="TabContainer/Watches" index="9"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 240.0
+margin_left = 237.0
 margin_top = 640.0
 margin_right = 360.0
 margin_bottom = 670.0
@@ -808,7 +855,7 @@ text = "Transformation mode: MOVE"
 flat = false
 align = 1
 items = [ "MOVE", null, 0, false, false, -1, 0, null, "", false, "ROTATE", null, 0, false, false, -1, 0, null, "", false, "SCALE", null, 0, false, false, -1, 0, null, "", false ]
-script = ExtResource( 12 )
+script = ExtResource( 13 )
 _sections_unfolded = [ "Margin" ]
 
 [node name="GeneralControlsContainer" type="Container" parent="." index="8"]
@@ -856,7 +903,7 @@ group = null
 text = "Step"
 flat = false
 align = 1
-script = ExtResource( 13 )
+script = ExtResource( 14 )
 _sections_unfolded = [ "Margin", "Pause" ]
 
 [node name="RunButton" type="Button" parent="GeneralControlsContainer" index="1"]
@@ -883,7 +930,7 @@ group = null
 text = "Run"
 flat = false
 align = 1
-script = ExtResource( 14 )
+script = ExtResource( 15 )
 _sections_unfolded = [ "Margin", "Pause" ]
 
 [node name="CameraMovementSpeedLabel" type="Label" parent="GeneralControlsContainer" index="2"]
@@ -935,7 +982,7 @@ editable = true
 tick_count = 0
 ticks_on_borders = false
 focus_mode = 2
-script = ExtResource( 15 )
+script = ExtResource( 16 )
 
 [node name="CameraJumpPositionX" type="LineEdit" parent="GeneralControlsContainer" index="4"]
 
@@ -1016,7 +1063,7 @@ group = null
 text = "Jump To Node"
 flat = false
 align = 1
-script = ExtResource( 16 )
+script = ExtResource( 17 )
 
 [node name="JumpToNodePath" type="LineEdit" parent="GeneralControlsContainer" index="7"]
 
@@ -1041,7 +1088,7 @@ placeholder_alpha = 0.6
 caret_blink = false
 caret_blink_speed = 0.65
 caret_position = 0
-script = ExtResource( 17 )
+script = ExtResource( 18 )
 
 [node name="CameraJumpPositionButton" type="Button" parent="GeneralControlsContainer" index="8"]
 
@@ -1092,7 +1139,7 @@ group = null
 text = "Follow node: "
 flat = false
 align = 0
-script = ExtResource( 18 )
+script = ExtResource( 19 )
 
 [node name="EnableExactFollow" type="CheckButton" parent="GeneralControlsContainer" index="10"]
 
@@ -1126,6 +1173,8 @@ align = 0
 [connection signal="pressed" from="TabContainer/NodeSelection/SelectedNodeInfo/JumpToSelectedNodeButton" to="TabContainer/NodeSelection/SelectedNodeInfo/JumpToSelectedNodeButton" method="_on_JumpToSelectedNodeButton_pressed"]
 
 [connection signal="button_down" from="TabContainer/Watches/Refresh" to="TabContainer/Watches/Outliner" method="_on_form_the_outliner"]
+
+[connection signal="value_changed" from="TabContainer/Watches/HScrollBar" to="TabContainer/Watches/WatchesList" method="_on_HScrollBar_value_changed"]
 
 [connection signal="button_down" from="TabContainer/Watches/AddWatch" to="TabContainer/Watches/WatchesList" method="_on_AddWatch_button_down"]
 
