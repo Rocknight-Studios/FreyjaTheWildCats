@@ -21,7 +21,87 @@
 [ext_resource path="res://Singleton/JumpToNodePath.gd" type="Script" id=19]
 [ext_resource path="res://Singleton/EnablePersistentFollowButton.gd" type="Script" id=20]
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=1]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=3]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=4]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=5]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=6]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=7]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=8]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=9]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=10]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Settings" ]
+
+[sub_resource type="DynamicFont" id=11]
 
 size = 13
 use_mipmaps = false
@@ -30,6 +110,78 @@ font_data = ExtResource( 6 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=12]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=13]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=14]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=15]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=16]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=17]
+
+size = 14
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=18]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=19]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=20]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=21]
 
 size = 13
 use_mipmaps = false
@@ -53,13 +205,9 @@ use_filter = false
 font_data = ExtResource( 6 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=24]
+[sub_resource type="Theme" id=24]
 
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
+default_font = SubResource( 23 )
 
 [sub_resource type="DynamicFont" id=25]
 
@@ -99,102 +247,6 @@ size = 13
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 6 )
-_sections_unfolded = [ "Settings" ]
-
-[sub_resource type="DynamicFont" id=8]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=9]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=10]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=7]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=3]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=1]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=4]
-
-size = 14
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=5]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=11]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=2]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=6]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=34]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=30]
@@ -205,11 +257,7 @@ use_filter = false
 font_data = ExtResource( 6 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="Theme" id=31]
-
-default_font = SubResource( 30 )
-
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=31]
 
 size = 13
 use_mipmaps = false
@@ -217,55 +265,7 @@ use_filter = false
 font_data = ExtResource( 6 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=15]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=16]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=17]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=18]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=20]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=21]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=19]
+[sub_resource type="DynamicFont" id=32]
 
 size = 13
 use_mipmaps = false
@@ -281,7 +281,7 @@ use_filter = false
 font_data = ExtResource( 6 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=32]
+[sub_resource type="DynamicFont" id=34]
 
 size = 13
 use_mipmaps = false
@@ -392,7 +392,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 1 )
 text = "Visual debugger v. 1"
 percent_visible = 1.0
 lines_skipped = 0
@@ -485,7 +485,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 2 )
 tab_align = 1
 tabs_visible = true
 _sections_unfolded = [ "custom_fonts" ]
@@ -546,7 +546,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 22 )
+custom_fonts/font = SubResource( 3 )
 text = "List of currenly marked nodes"
 percent_visible = 1.0
 lines_skipped = 0
@@ -570,7 +570,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 23 )
+custom_fonts/font = SubResource( 4 )
 text = ""
 readonly = true
 highlight_current_line = true
@@ -605,7 +605,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 24 )
+custom_fonts/font = SubResource( 5 )
 text = "Show only nodes of these types."
 percent_visible = 1.0
 lines_skipped = 0
@@ -629,7 +629,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 25 )
+custom_fonts/font = SubResource( 6 )
 text = ""
 readonly = true
 highlight_current_line = true
@@ -686,7 +686,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 26 )
+custom_fonts/font = SubResource( 7 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -714,7 +714,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 27 )
+custom_fonts/font = SubResource( 8 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -741,7 +741,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 28 )
+custom_fonts/font = SubResource( 9 )
 text = "Information about the selected node"
 percent_visible = 1.0
 lines_skipped = 0
@@ -765,7 +765,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 29 )
+custom_fonts/font = SubResource( 10 )
 text = ""
 readonly = true
 highlight_current_line = false
@@ -822,7 +822,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 11 )
 text = "Select Node/s to inspect"
 percent_visible = 1.0
 lines_skipped = 0
@@ -846,8 +846,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/title_button_font = SubResource( 9 )
-custom_fonts/font = SubResource( 10 )
+custom_fonts/title_button_font = SubResource( 12 )
+custom_fonts/font = SubResource( 13 )
 columns = 1
 allow_reselect = false
 allow_rmb_select = false
@@ -876,7 +876,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 14 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -902,7 +902,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 15 )
 text = "List of watches"
 percent_visible = 1.0
 lines_skipped = 0
@@ -926,7 +926,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 16 )
 items = [  ]
 select_mode = 0
 allow_reselect = false
@@ -981,7 +981,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 17 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1009,7 +1009,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 18 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1036,7 +1036,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 19 )
 text = "Type watch name"
 readonly = false
 highlight_current_line = false
@@ -1073,7 +1073,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 20 )
 text = "Type value here"
 readonly = false
 highlight_current_line = false
@@ -1109,7 +1109,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 21 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1151,7 +1151,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 34 )
+custom_fonts/font = SubResource( 22 )
 toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
@@ -1177,7 +1177,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 34 )
+custom_fonts/font = SubResource( 22 )
 toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
@@ -1202,7 +1202,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 34 )
+custom_fonts/font = SubResource( 22 )
 toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
@@ -1228,7 +1228,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 34 )
+custom_fonts/font = SubResource( 22 )
 toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
@@ -1272,7 +1272,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = SubResource( 31 )
+theme = SubResource( 24 )
 toggle_mode = false
 action_mode = 0
 enabled_focus_mode = 0
@@ -1322,7 +1322,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 25 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1350,7 +1350,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 26 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1377,7 +1377,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 27 )
 text = "Movement speed"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1433,7 +1433,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 1
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 28 )
 text = "0"
 focus_mode = 2
 context_menu_enabled = true
@@ -1462,7 +1462,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 1
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 18 )
+custom_fonts/font = SubResource( 29 )
 text = "0"
 focus_mode = 2
 context_menu_enabled = true
@@ -1489,7 +1489,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 20 )
+custom_fonts/font = SubResource( 30 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1517,7 +1517,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 1
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 21 )
+custom_fonts/font = SubResource( 31 )
 focus_mode = 2
 context_menu_enabled = true
 placeholder_alpha = 0.6
@@ -1544,7 +1544,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 19 )
+custom_fonts/font = SubResource( 32 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1599,7 +1599,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 32 )
+custom_fonts/font = SubResource( 34 )
 toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null

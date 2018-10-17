@@ -4,6 +4,10 @@ onready var watch_name = get_parent().get_node("WatchName") # For speed and conv
 onready var outliner = get_parent().get_node("Outliner") # For speed and convenience.
 onready var watch_value = get_parent().get_node("WatchValue") # For speed and convenience.
 onready var h_scroll_bar = get_parent().get_node("HScrollBar") # For speed and convenience. Is under parent to be visible outside this ItemList bounds.
+onready var node_check_box = get_parent().get_node("WatchFieldWrapper").get_node("NodeCheckBox") # For speed and convenience.
+onready var name_check_box = get_parent().get_node("WatchFieldWrapper").get_node("NameCheckBox") # For speed and convenience.
+onready var value_check_box = get_parent().get_node("WatchFieldWrapper").get_node("ValueCheckBox") # For speed and convenience.
+onready var type_check_box = get_parent().get_node("WatchFieldWrapper").get_node("TypeCheckBox") # For speed and convenience.
 
 var h_scroll_value = 0 # To know, what substring of item text to form.
 var type_names = ["TYPE_NIL", "TYPE_BOOL", "TYPE_INT", "TYPE_REAL", "TYPE_STRING", "TYPE_VECTOR2", "TYPE_RECT2", "TYPE_VECTOR3", "TYPE_TRANSFORM2D", "TYPE_PLANE", "TYPE_QUAT", "TYPE_AABB", "TYPE_BASIS", "TYPE_TRANSFORM", "TYPE_COLOR", "TYPE_NODE_PATH", "TYPE_RID", "TYPE_OBJECT", "TYPE_DICTIONARY", "TYPE_ARRAY", "TYPE_RAW_ARRAY", "TYPE_INT_ARRAY", "TYPE_REAL_ARRAY", "TYPE_STRING_ARRAY", "TYPE_VECTOR2_ARRAY", "TYPE_VECTOR3_ARRAY", "TYPE_COLOR_ARRAY", "TYPE_MAX"]
@@ -44,7 +48,53 @@ func set_watch_value(index):
 	var item_metadata = get_item_metadata(index) # For speed and convenience.
 	var current_node = get_node(item_metadata[0]) # For speed and convenience.
 	var current_node_path = current_node.get_path() # For speed and convenience.
-	var item_text = str(current_node_path.get_name(current_node_path.get_name_count() - 1), "->", item_metadata[1], " = ", current_node.get(item_metadata[1]), " : ", type_names [typeof(current_node.get(item_metadata[1]))]) # For speed and convenience.
+	var checkbox_mask = 0 # Bitwise mask to simplify logic and speed up calculations.
+	if node_check_box.pressed:
+		checkbox_mask |= 1
+	if name_check_box.pressed:
+		checkbox_mask |= 2
+	if value_check_box.pressed:
+		checkbox_mask |= 4
+	if type_check_box.pressed:
+		checkbox_mask |= 8
+
+	var node_string = current_node_path.get_name(current_node_path.get_name_count() - 1) # For convenience.
+	var name_string = item_metadata[1] # For convenience.
+	var value_string = current_node.get(item_metadata[1]) # For convenience.
+	var type_string = type_names[typeof(current_node.get(item_metadata[1]))] # For convenience.
+
+	var item_text = ""
+	if checkbox_mask == 1:
+		item_text = str("Node = ", node_string)
+	elif checkbox_mask == 2:
+		item_text = str("Watch = ", name_string)
+	elif checkbox_mask == 3:
+		item_text = str(node_string, "->", name_string)
+	elif checkbox_mask == 4:
+		item_text = str("Value = ", value_string)
+	elif checkbox_mask == 5:
+		item_text = str("Node = ", node_string, " | Value = ", value_string)
+	elif checkbox_mask == 6:
+		item_text = str("Watch = ", name_string, " | Value = ", value_string)
+	elif checkbox_mask == 7:
+		item_text = str(node_string, "->", name_string, " = ", value_string)
+	elif checkbox_mask == 8:
+		item_text = str("Type = ", type_string)
+	elif checkbox_mask == 9:
+		item_text = str("Node = ", node_string, " | Type ", type_string)
+	elif checkbox_mask == 10:
+		item_text = str("Watch = ", name_string, " | Type ", type_string)
+	elif checkbox_mask == 11:
+		item_text = str("Node = ", node_string, " | Watch = ", name_string, " | Type ", type_string)
+	elif checkbox_mask == 12:
+		item_text = str("Value = ", value_string, " | Type ", type_string)
+	elif checkbox_mask == 13:
+		item_text = str("Node = ", node_string, " | Value = ", value_string, " | Type ", type_string)
+	elif checkbox_mask == 14:
+		item_text = str("Watch = ", name_string, " | Value = ", value_string, " | Type ", type_string)
+	elif checkbox_mask == 15:
+		item_text = str(node_string, "->", name_string, " = ", value_string, " : ", type_string)
+
 	var item_text_length = item_text.length() # For speed and convenience.
 	set_item_metadata(index, [item_metadata[0], item_metadata[1], item_text_length])
 	var actual_scroll_value = floor(h_scroll_value * (h_scroll_bar.max_value / (h_scroll_bar.max_value - h_scroll_bar.page))) # For speed and convenience.
