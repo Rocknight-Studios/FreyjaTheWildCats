@@ -8,6 +8,7 @@ onready var node_check_box = get_parent().get_node("WatchFieldWrapper").get_node
 onready var name_check_box = get_parent().get_node("WatchFieldWrapper").get_node("NameCheckBox") # For speed and convenience.
 onready var value_check_box = get_parent().get_node("WatchFieldWrapper").get_node("ValueCheckBox") # For speed and convenience.
 onready var type_check_box = get_parent().get_node("WatchFieldWrapper").get_node("TypeCheckBox") # For speed and convenience.
+onready var raw_check_box = get_parent().get_node("WatchFieldWrapper").get_node("RawCheckBox") # For speed and convenience.
 
 var h_scroll_value = 0 # To know, what substring of item text to form.
 var type_names = ["TYPE_NIL", "TYPE_BOOL", "TYPE_INT", "TYPE_REAL", "TYPE_STRING", "TYPE_VECTOR2", "TYPE_RECT2", "TYPE_VECTOR3", "TYPE_TRANSFORM2D", "TYPE_PLANE", "TYPE_QUAT", "TYPE_AABB", "TYPE_BASIS", "TYPE_TRANSFORM", "TYPE_COLOR", "TYPE_NODE_PATH", "TYPE_RID", "TYPE_OBJECT", "TYPE_DICTIONARY", "TYPE_ARRAY", "TYPE_RAW_ARRAY", "TYPE_INT_ARRAY", "TYPE_REAL_ARRAY", "TYPE_STRING_ARRAY", "TYPE_VECTOR2_ARRAY", "TYPE_VECTOR3_ARRAY", "TYPE_COLOR_ARRAY", "TYPE_MAX"]
@@ -21,7 +22,6 @@ func add_a_watch():
 		item_count = get_item_count()
 		set_item_metadata(item_count - 1, [outliner.get_selected().get_metadata(0), watch_name.text, 0])
 		set_watch_value(item_count - 1)
-		set_up_h_scroll_bar()
 		select(item_count - 1, true)
 
 func set_up_h_scroll_bar():
@@ -44,6 +44,8 @@ func _ready():
 func remove_a_watch():
 	pass
 
+var last_checkbox_checked_state = 0 # To determine, where to reset the state.
+
 func set_watch_value(index):
 	var item_metadata = get_item_metadata(index) # For speed and convenience.
 	var current_node = get_node(item_metadata[0]) # For speed and convenience.
@@ -58,42 +60,101 @@ func set_watch_value(index):
 	if type_check_box.pressed:
 		checkbox_mask |= 8
 
+	if checkbox_mask == 0:
+		checkbox_mask = last_checkbox_checked_state
+		if checkbox_mask == 1:
+			node_check_box.pressed = true
+		elif checkbox_mask == 2:
+			name_check_box.pressed = true
+		elif checkbox_mask == 4:
+			value_check_box.pressed = true
+		elif checkbox_mask == 8:
+			type_check_box.pressed = true
+	else:
+		last_checkbox_checked_state = checkbox_mask
+
 	var node_string = current_node_path.get_name(current_node_path.get_name_count() - 1) # For convenience.
 	var name_string = item_metadata[1] # For convenience.
 	var value_string = current_node.get(item_metadata[1]) # For convenience.
 	var type_string = type_names[typeof(current_node.get(item_metadata[1]))] # For convenience.
+	var raw_check_box_is_pressed = raw_check_box.pressed # For speed and convenience.
 
 	var item_text = ""
 	if checkbox_mask == 1:
-		item_text = str("Node = ", node_string)
+		if raw_check_box_is_pressed:
+			item_text = str(node_string)
+		else:
+			item_text = str("Node = ", node_string)
 	elif checkbox_mask == 2:
-		item_text = str("Watch = ", name_string)
+		if raw_check_box_is_pressed:
+			item_text = str(name_string)
+		else:
+			item_text = str("Watch = ", name_string)
 	elif checkbox_mask == 3:
-		item_text = str(node_string, "->", name_string)
+		if raw_check_box_is_pressed:
+			item_text = str(node_string, " ", name_string)
+		else:
+			item_text = str(node_string, "->", name_string)
 	elif checkbox_mask == 4:
-		item_text = str("Value = ", value_string)
+		if raw_check_box_is_pressed:
+			item_text = str(value_string)
+		else:
+			item_text = str("Value = ", value_string)
 	elif checkbox_mask == 5:
-		item_text = str("Node = ", node_string, " | Value = ", value_string)
+		if raw_check_box_is_pressed:
+			item_text = str(node_string, " ", value_string)
+		else:
+			item_text = str("Node = ", node_string, " | Value = ", value_string)
 	elif checkbox_mask == 6:
-		item_text = str("Watch = ", name_string, " | Value = ", value_string)
+		if raw_check_box_is_pressed:
+			item_text = str(name_string, " ", value_string)
+		else:
+			item_text = str("Watch = ", name_string, " | Value = ", value_string)
 	elif checkbox_mask == 7:
-		item_text = str(node_string, "->", name_string, " = ", value_string)
+		if raw_check_box_is_pressed:
+			item_text = str(node_string, " ", name_string, " ", value_string)
+		else:
+			item_text = str(node_string, "->", name_string, " = ", value_string)
 	elif checkbox_mask == 8:
-		item_text = str("Type = ", type_string)
+		if raw_check_box_is_pressed:
+			item_text = str(type_string)
+		else:
+			item_text = str("Type = ", type_string)
 	elif checkbox_mask == 9:
-		item_text = str("Node = ", node_string, " | Type ", type_string)
+		if raw_check_box_is_pressed:
+			item_text = str(node_string, " ", type_string)
+		else:
+			item_text = str("Node = ", node_string, " | Type ", type_string)
 	elif checkbox_mask == 10:
-		item_text = str("Watch = ", name_string, " | Type ", type_string)
+		if raw_check_box_is_pressed:
+			item_text = str(name_string, " ", type_string)
+		else:
+			item_text = str("Watch = ", name_string, " | Type ", type_string)
 	elif checkbox_mask == 11:
-		item_text = str("Node = ", node_string, " | Watch = ", name_string, " | Type ", type_string)
+		if raw_check_box_is_pressed:
+			item_text = str(node_string, " ", name_string, " ", type_string)
+		else:
+			item_text = str("Node = ", node_string, " | Watch = ", name_string, " | Type ", type_string)
 	elif checkbox_mask == 12:
-		item_text = str("Value = ", value_string, " | Type ", type_string)
+		if raw_check_box_is_pressed:
+			item_text = str(value_string, " ", type_string)
+		else:
+			item_text = str("Value = ", value_string, " | Type ", type_string)
 	elif checkbox_mask == 13:
-		item_text = str("Node = ", node_string, " | Value = ", value_string, " | Type ", type_string)
+		if raw_check_box_is_pressed:
+			item_text = str(node_string, " ", value_string, " ", type_string)
+		else:
+			item_text = str("Node = ", node_string, " | Value = ", value_string, " | Type ", type_string)
 	elif checkbox_mask == 14:
-		item_text = str("Watch = ", name_string, " | Value = ", value_string, " | Type ", type_string)
+		if raw_check_box_is_pressed:
+			item_text = str(name_string, " ", value_string, " ", type_string)
+		else:
+			item_text = str("Watch = ", name_string, " | Value = ", value_string, " | Type ", type_string)
 	elif checkbox_mask == 15:
-		item_text = str(node_string, "->", name_string, " = ", value_string, " : ", type_string)
+		if raw_check_box_is_pressed:
+			item_text = str(node_string, " ", name_string, " ", value_string, " ", type_string)
+		else:
+			item_text = str(node_string, "->", name_string, " = ", value_string, " : ", type_string)
 
 	var item_text_length = item_text.length() # For speed and convenience.
 	set_item_metadata(index, [item_metadata[0], item_metadata[1], item_text_length])
@@ -102,6 +163,8 @@ func set_watch_value(index):
 		set_item_text(index, item_text.substr(actual_scroll_value, item_text_length - actual_scroll_value))
 	else:
 		set_item_text(index, "\n")
+
+	set_up_h_scroll_bar()
 
 func modify_watch_value():
 	var type_index_of_the_new_value = typeof(get_node(get_item_metadata(get_selected_items()[0])[0]).get(get_item_metadata(get_selected_items()[0])[1])) # For speed and convenience.
@@ -189,8 +252,6 @@ func modify_watch_value():
 			print("Name must contain at least one character!")
 	else:
 		set_watch_value(selected_item_index)
-
-	set_up_h_scroll_bar()
 
 func update_watches():
 	if item_count > 0:
