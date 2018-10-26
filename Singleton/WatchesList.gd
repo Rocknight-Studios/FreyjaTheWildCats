@@ -16,13 +16,20 @@ var item_count = 0 # For speed and convenience.
 
 const MIN_CHARACTERS_LIST_ITEM = 42 # Don't let to show less than five character in the list item.
 
+func remove_a_watch():
+	remove_item(get_selected_items()[0])
+	item_count -= 1;
+
 func add_a_watch():
 	if watch_name.text != "Type watch name":
-		add_item(watch_name.text, null, true)
-		item_count = get_item_count()
-		set_item_metadata(item_count - 1, [outliner.get_selected().get_metadata(0), watch_name.text, 0])
-		set_watch_value(item_count - 1)
-		select(item_count - 1, true)
+		if outliner.get_selected():
+			add_item(watch_name.text, null, true)
+			item_count = get_item_count()
+			set_item_metadata(item_count - 1, [outliner.get_selected().get_metadata(0), watch_name.text, 0])
+			set_watch_value(item_count - 1)
+			select(item_count - 1, true)
+		else:
+			print("No node is selected.")
 
 func set_up_h_scroll_bar():
 	var longest_item_string_length = 0 # To limit the h scroll bar max value.
@@ -41,130 +48,128 @@ func set_up_h_scroll_bar():
 func _ready():
 	h_scroll_bar.visible = false
 
-func remove_a_watch():
-	pass
-
 var last_checkbox_checked_state = 0 # To determine, where to reset the state.
 
 func set_watch_value(index):
 	var item_metadata = get_item_metadata(index) # For speed and convenience.
-	var current_node = get_node(item_metadata[0]) # For speed and convenience.
-	var current_node_path = current_node.get_path() # For speed and convenience.
-	var checkbox_mask = 0 # Bitwise mask to simplify logic and speed up calculations.
-	if node_check_box.pressed:
-		checkbox_mask |= 1
-	if name_check_box.pressed:
-		checkbox_mask |= 2
-	if value_check_box.pressed:
-		checkbox_mask |= 4
-	if type_check_box.pressed:
-		checkbox_mask |= 8
+	if item_metadata != null:
+		var current_node = get_node(item_metadata[0]) # For speed and convenience.
+		var current_node_path = current_node.get_path() # For speed and convenience.
+		var checkbox_mask = 0 # Bitwise mask to simplify logic and speed up calculations.
+		if node_check_box.pressed:
+			checkbox_mask |= 1
+		if name_check_box.pressed:
+			checkbox_mask |= 2
+		if value_check_box.pressed:
+			checkbox_mask |= 4
+		if type_check_box.pressed:
+			checkbox_mask |= 8
 
-	if checkbox_mask == 0:
-		checkbox_mask = last_checkbox_checked_state
+		if checkbox_mask == 0:
+			checkbox_mask = last_checkbox_checked_state
+			if checkbox_mask == 1:
+				node_check_box.pressed = true
+			elif checkbox_mask == 2:
+				name_check_box.pressed = true
+			elif checkbox_mask == 4:
+				value_check_box.pressed = true
+			elif checkbox_mask == 8:
+				type_check_box.pressed = true
+		else:
+			last_checkbox_checked_state = checkbox_mask
+
+		var node_string = current_node_path.get_name(current_node_path.get_name_count() - 1) # For convenience.
+		var name_string = item_metadata[1] # For convenience.
+		var value_string = current_node.get(item_metadata[1]) # For convenience.
+		var type_string = type_names[typeof(current_node.get(item_metadata[1]))] # For convenience.
+		var raw_check_box_is_pressed = raw_check_box.pressed # For speed and convenience.
+
+		var item_text = ""
 		if checkbox_mask == 1:
-			node_check_box.pressed = true
+			if raw_check_box_is_pressed:
+				item_text = str(node_string)
+			else:
+				item_text = str("Node = ", node_string)
 		elif checkbox_mask == 2:
-			name_check_box.pressed = true
+			if raw_check_box_is_pressed:
+				item_text = str(name_string)
+			else:
+				item_text = str("Watch = ", name_string)
+		elif checkbox_mask == 3:
+			if raw_check_box_is_pressed:
+				item_text = str(node_string, " ", name_string)
+			else:
+				item_text = str(node_string, "->", name_string)
 		elif checkbox_mask == 4:
-			value_check_box.pressed = true
+			if raw_check_box_is_pressed:
+				item_text = str(value_string)
+			else:
+				item_text = str("Value = ", value_string)
+		elif checkbox_mask == 5:
+			if raw_check_box_is_pressed:
+				item_text = str(node_string, " ", value_string)
+			else:
+				item_text = str("Node = ", node_string, " | Value = ", value_string)
+		elif checkbox_mask == 6:
+			if raw_check_box_is_pressed:
+				item_text = str(name_string, " ", value_string)
+			else:
+				item_text = str("Watch = ", name_string, " | Value = ", value_string)
+		elif checkbox_mask == 7:
+			if raw_check_box_is_pressed:
+				item_text = str(node_string, " ", name_string, " ", value_string)
+			else:
+				item_text = str(node_string, "->", name_string, " = ", value_string)
 		elif checkbox_mask == 8:
-			type_check_box.pressed = true
-	else:
-		last_checkbox_checked_state = checkbox_mask
+			if raw_check_box_is_pressed:
+				item_text = str(type_string)
+			else:
+				item_text = str("Type = ", type_string)
+		elif checkbox_mask == 9:
+			if raw_check_box_is_pressed:
+				item_text = str(node_string, " ", type_string)
+			else:
+				item_text = str("Node = ", node_string, " | Type ", type_string)
+		elif checkbox_mask == 10:
+			if raw_check_box_is_pressed:
+				item_text = str(name_string, " ", type_string)
+			else:
+				item_text = str("Watch = ", name_string, " | Type ", type_string)
+		elif checkbox_mask == 11:
+			if raw_check_box_is_pressed:
+				item_text = str(node_string, " ", name_string, " ", type_string)
+			else:
+				item_text = str("Node = ", node_string, " | Watch = ", name_string, " | Type ", type_string)
+		elif checkbox_mask == 12:
+			if raw_check_box_is_pressed:
+				item_text = str(value_string, " ", type_string)
+			else:
+				item_text = str("Value = ", value_string, " | Type ", type_string)
+		elif checkbox_mask == 13:
+			if raw_check_box_is_pressed:
+				item_text = str(node_string, " ", value_string, " ", type_string)
+			else:
+				item_text = str("Node = ", node_string, " | Value = ", value_string, " | Type ", type_string)
+		elif checkbox_mask == 14:
+			if raw_check_box_is_pressed:
+				item_text = str(name_string, " ", value_string, " ", type_string)
+			else:
+				item_text = str("Watch = ", name_string, " | Value = ", value_string, " | Type ", type_string)
+		elif checkbox_mask == 15:
+			if raw_check_box_is_pressed:
+				item_text = str(node_string, " ", name_string, " ", value_string, " ", type_string)
+			else:
+				item_text = str(node_string, "->", name_string, " = ", value_string, " : ", type_string)
 
-	var node_string = current_node_path.get_name(current_node_path.get_name_count() - 1) # For convenience.
-	var name_string = item_metadata[1] # For convenience.
-	var value_string = current_node.get(item_metadata[1]) # For convenience.
-	var type_string = type_names[typeof(current_node.get(item_metadata[1]))] # For convenience.
-	var raw_check_box_is_pressed = raw_check_box.pressed # For speed and convenience.
+		var item_text_length = item_text.length() # For speed and convenience.
+		set_item_metadata(index, [item_metadata[0], item_metadata[1], item_text_length])
+		var actual_scroll_value = floor(h_scroll_value * (h_scroll_bar.max_value / (h_scroll_bar.max_value - h_scroll_bar.page))) # For speed and convenience.
+		if actual_scroll_value < item_text_length:
+			set_item_text(index, item_text.substr(actual_scroll_value, item_text_length - actual_scroll_value))
+		else:
+			set_item_text(index, "\n")
 
-	var item_text = ""
-	if checkbox_mask == 1:
-		if raw_check_box_is_pressed:
-			item_text = str(node_string)
-		else:
-			item_text = str("Node = ", node_string)
-	elif checkbox_mask == 2:
-		if raw_check_box_is_pressed:
-			item_text = str(name_string)
-		else:
-			item_text = str("Watch = ", name_string)
-	elif checkbox_mask == 3:
-		if raw_check_box_is_pressed:
-			item_text = str(node_string, " ", name_string)
-		else:
-			item_text = str(node_string, "->", name_string)
-	elif checkbox_mask == 4:
-		if raw_check_box_is_pressed:
-			item_text = str(value_string)
-		else:
-			item_text = str("Value = ", value_string)
-	elif checkbox_mask == 5:
-		if raw_check_box_is_pressed:
-			item_text = str(node_string, " ", value_string)
-		else:
-			item_text = str("Node = ", node_string, " | Value = ", value_string)
-	elif checkbox_mask == 6:
-		if raw_check_box_is_pressed:
-			item_text = str(name_string, " ", value_string)
-		else:
-			item_text = str("Watch = ", name_string, " | Value = ", value_string)
-	elif checkbox_mask == 7:
-		if raw_check_box_is_pressed:
-			item_text = str(node_string, " ", name_string, " ", value_string)
-		else:
-			item_text = str(node_string, "->", name_string, " = ", value_string)
-	elif checkbox_mask == 8:
-		if raw_check_box_is_pressed:
-			item_text = str(type_string)
-		else:
-			item_text = str("Type = ", type_string)
-	elif checkbox_mask == 9:
-		if raw_check_box_is_pressed:
-			item_text = str(node_string, " ", type_string)
-		else:
-			item_text = str("Node = ", node_string, " | Type ", type_string)
-	elif checkbox_mask == 10:
-		if raw_check_box_is_pressed:
-			item_text = str(name_string, " ", type_string)
-		else:
-			item_text = str("Watch = ", name_string, " | Type ", type_string)
-	elif checkbox_mask == 11:
-		if raw_check_box_is_pressed:
-			item_text = str(node_string, " ", name_string, " ", type_string)
-		else:
-			item_text = str("Node = ", node_string, " | Watch = ", name_string, " | Type ", type_string)
-	elif checkbox_mask == 12:
-		if raw_check_box_is_pressed:
-			item_text = str(value_string, " ", type_string)
-		else:
-			item_text = str("Value = ", value_string, " | Type ", type_string)
-	elif checkbox_mask == 13:
-		if raw_check_box_is_pressed:
-			item_text = str(node_string, " ", value_string, " ", type_string)
-		else:
-			item_text = str("Node = ", node_string, " | Value = ", value_string, " | Type ", type_string)
-	elif checkbox_mask == 14:
-		if raw_check_box_is_pressed:
-			item_text = str(name_string, " ", value_string, " ", type_string)
-		else:
-			item_text = str("Watch = ", name_string, " | Value = ", value_string, " | Type ", type_string)
-	elif checkbox_mask == 15:
-		if raw_check_box_is_pressed:
-			item_text = str(node_string, " ", name_string, " ", value_string, " ", type_string)
-		else:
-			item_text = str(node_string, "->", name_string, " = ", value_string, " : ", type_string)
-
-	var item_text_length = item_text.length() # For speed and convenience.
-	set_item_metadata(index, [item_metadata[0], item_metadata[1], item_text_length])
-	var actual_scroll_value = floor(h_scroll_value * (h_scroll_bar.max_value / (h_scroll_bar.max_value - h_scroll_bar.page))) # For speed and convenience.
-	if actual_scroll_value < item_text_length:
-		set_item_text(index, item_text.substr(actual_scroll_value, item_text_length - actual_scroll_value))
-	else:
-		set_item_text(index, "\n")
-
-	set_up_h_scroll_bar()
+		set_up_h_scroll_bar()
 
 func modify_watch_value():
 	var type_index_of_the_new_value = typeof(get_node(get_item_metadata(get_selected_items()[0])[0]).get(get_item_metadata(get_selected_items()[0])[1])) # For speed and convenience.
@@ -269,3 +274,6 @@ func _on_SetValue_button_down():
 
 func _on_HScrollBar_value_changed(value):
 	h_scroll_value = value
+
+func _on_RemoveWatch_pressed():
+	remove_a_watch()
