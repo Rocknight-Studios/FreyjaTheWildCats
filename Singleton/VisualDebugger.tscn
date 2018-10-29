@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://Singleton/VisualDebugger.gd" type="Script" id=1]
 [ext_resource path="res://Singleton/VisualDebuggerBackground.gd" type="Script" id=2]
@@ -126,6 +126,22 @@ font_data = ExtResource( 6 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=14]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=35]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=36]
 
 size = 13
 use_mipmaps = false
@@ -302,6 +318,7 @@ _sections_unfolded = [ "Pause", "Z Index" ]
 
 [node name="MenuSlideBackground" type="Panel" parent="." index="0"]
 
+modulate = Color( 1, 1, 1, 0.784314 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -319,6 +336,7 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="VisualDebuggerBackground" type="Panel" parent="." index="1"]
 
+modulate = Color( 1, 1, 1, 0.784314 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -333,7 +351,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 2 )
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Rect", "Visibility" ]
 
 [node name="SceneNodeSelector" type="Node2D" parent="." index="2"]
 
@@ -812,8 +830,8 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 4.0
-margin_top = 19.0
-margin_right = 176.0
+margin_top = 16.0
+margin_right = 196.0
 margin_bottom = 33.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -835,9 +853,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 5.0
-margin_top = 40.0
+margin_top = 43.0
 margin_right = 360.0
-margin_bottom = 240.0
+margin_bottom = 215.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 focus_mode = 2
@@ -883,18 +901,74 @@ group = null
 text = "Refresh"
 flat = false
 align = 1
-_sections_unfolded = [ "Rect", "Visibility" ]
+_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
 
-[node name="WatchesTitle" type="Label" parent="TabContainer/Watches" index="3"]
+[node name="RemoveNode" type="Button" parent="TabContainer/Watches" index="3"]
+
+modulate = Color( 1, 0, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 219.0
+margin_top = 225.0
+margin_right = 361.0
+margin_bottom = 248.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 35 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Remove Node"
+flat = false
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="AddNode" type="Button" parent="TabContainer/Watches" index="4"]
+
+modulate = Color( 0.0078125, 1, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 77.0
+margin_top = 225.0
+margin_right = 213.0
+margin_bottom = 248.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 36 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Add Node"
+flat = false
+align = 1
+_sections_unfolded = [ "Visibility", "custom_fonts" ]
+
+[node name="WatchesTitle" type="Label" parent="TabContainer/Watches" index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 4.0
-margin_top = 300.0
+margin_top = 266.0
 margin_right = 124.0
-margin_bottom = 317.0
+margin_bottom = 283.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -908,16 +982,16 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="WatchesList" type="ItemList" parent="TabContainer/Watches" index="4"]
+[node name="WatchesList" type="ItemList" parent="TabContainer/Watches" index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 5.0
-margin_top = 330.0
+margin_top = 286.0
 margin_right = 360.0
-margin_bottom = 580.0
+margin_bottom = 500.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 focus_mode = 2
@@ -937,16 +1011,16 @@ fixed_icon_size = Vector2( 0, 0 )
 script = ExtResource( 12 )
 _sections_unfolded = [ "Columns", "Margin", "Rect", "custom_fonts" ]
 
-[node name="HScrollBar" type="HScrollBar" parent="TabContainer/Watches" index="5"]
+[node name="HScrollBar" type="HScrollBar" parent="TabContainer/Watches" index="7"]
 
 anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 0.0
 anchor_bottom = 1.0
 margin_left = 3.0
-margin_top = -91.0
+margin_top = -172.0
 margin_right = 361.0
-margin_bottom = -75.0
+margin_bottom = -156.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -962,7 +1036,7 @@ exp_edit = false
 rounded = false
 custom_step = -1.0
 
-[node name="AddWatch" type="Button" parent="TabContainer/Watches" index="6"]
+[node name="AddWatch" type="Button" parent="TabContainer/Watches" index="8"]
 
 modulate = Color( 0, 1, 0.015625, 1 )
 anchor_left = 0.0
@@ -970,9 +1044,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 131.0
-margin_top = 292.0
+margin_top = 562.0
 margin_right = 242.0
-margin_bottom = 322.0
+margin_bottom = 586.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -990,7 +1064,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
 
-[node name="RemoveWatch" type="Button" parent="TabContainer/Watches" index="7"]
+[node name="RemoveWatch" type="Button" parent="TabContainer/Watches" index="9"]
 
 modulate = Color( 1, 0, 0, 1 )
 anchor_left = 0.0
@@ -998,9 +1072,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 248.0
-margin_top = 292.0
+margin_top = 562.0
 margin_right = 360.0
-margin_bottom = 322.0
+margin_bottom = 585.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -1018,16 +1092,16 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
 
-[node name="WatchName" type="TextEdit" parent="TabContainer/Watches" index="8"]
+[node name="WatchName" type="TextEdit" parent="TabContainer/Watches" index="10"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 5.0
-margin_top = 255.0
+margin_top = 522.0
 margin_right = 360.0
-margin_bottom = 285.0
+margin_bottom = 552.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -1055,7 +1129,7 @@ caret_moving_by_right_click = true
 script = ExtResource( 13 )
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="WatchValue" type="TextEdit" parent="TabContainer/Watches" index="9"]
+[node name="WatchValue" type="TextEdit" parent="TabContainer/Watches" index="11"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1091,7 +1165,7 @@ caret_blink_speed = 0.65
 caret_moving_by_right_click = true
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="SetValue" type="Button" parent="TabContainer/Watches" index="10"]
+[node name="SetValue" type="Button" parent="TabContainer/Watches" index="12"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1118,7 +1192,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="WatchFieldWrapper" type="Control" parent="TabContainer/Watches" index="11"]
+[node name="WatchFieldWrapper" type="Control" parent="TabContainer/Watches" index="13"]
 
 anchor_left = 0.0
 anchor_top = 0.0
