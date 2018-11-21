@@ -6,7 +6,7 @@ export var selection_color = Color(0, .1, 0, .1) # What color to use for selecti
 onready var selection_radius = 50.0 # How precisely to detect the selectable node.
 onready var relative_mouse_position = Vector2(0.0, 0.0) # To detect object relative to the debugger camera position.
 onready var absolute_mouse_position = Vector2(0.0, 0.0) # For speed and convenience.
-onready var selection_info = get_parent().get_node("TabContainer/NodeSelection/SelectionInfo") # For speed and convenience.
+onready var selection_info = get_parent().get_node("TabContainer/VisualSelect/SelectionInfo") # For speed and convenience.
 
 var full_paths = [] # To quickly access full path for each node.
 var full_node_path = "" # To make easier life for the player and Godot to find the node.

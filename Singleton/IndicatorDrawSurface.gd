@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var show_node_info = get_parent().get_node("TabContainer/NodeSelection/SelectedNodeInfo/ShowNodeInfoButton") # For speed and convenience.
+onready var show_node_info = get_parent().get_node("TabContainer/VisualSelect/SelectedNodeInfo/ShowNodeInfoButton") # For speed and convenience.
 const SELECTION_SIZE = Vector2(10.0, 10.0) # The relative size of the selection.
 var old_mouse_position = Vector2(.0, .0) # To detect and measure mouse position changes.
 var mouse_is_over_rotation_circle = false # For speed and convenience.
