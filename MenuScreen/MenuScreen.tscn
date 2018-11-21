@@ -170,6 +170,7 @@ _sections_unfolded = [ "Color", "Emission Shape", "Gravity", "Initial Velocity",
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -544,7 +545,6 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer" index="1"]
 
-editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -575,7 +575,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="ParallaxLayer7" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground" index="1"]
 
-editor/display_folded = true
 motion_scale = Vector2( 0, 0 )
 motion_offset = Vector2( -900, 0 )
 motion_mirroring = Vector2( 1920, 2 )

@@ -529,7 +529,7 @@ custom_solver_bias = 0.0
 radius = 66.2112
 height = 58.0022
 
-[node name="ShieldTroll" type="Node2D"]
+[node name="ShieldTroll" type="Node2D" index="0"]
 
 z_index = 2
 script = ExtResource( 1 )
@@ -707,7 +707,8 @@ shape = SubResource( 5 )
 
 [node name="DeathParticles" parent="." index="3" instance=ExtResource( 14 )]
 
-scale = Vector2( 6, 3 )
+position = Vector2( 1.47299, 40.6371 )
+scale = Vector2( 6, 4 )
 
 [node name="DeathSoulParticles" parent="." index="4" instance=ExtResource( 15 )]
 

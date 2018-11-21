@@ -15,42 +15,6 @@
 [ext_resource path="res://Freyja/FreyjaProjectiles/Spirit/SpiritEther4.png" type="Texture" id=13]
 [ext_resource path="res://Freyja/FreyjaProjectiles/Spirit/SpiritEther5.png" type="Texture" id=14]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [sub_resource type="Curve2D" id=1]
 
 bake_interval = 10.0
@@ -194,11 +158,12 @@ _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
-movement_speed = 400
+movement_speed = 400.0
 spirit_node_names = [ "Path2D/Ether", "Path2D/Ether2", "Path2D/Ether3", "Path2D/Ether4", "Path2D/Ether5" ]
 
 [node name="Path2D" type="Path2D" parent="." index="0"]
 
+self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 position = Vector2( 600, -240.86 )
 scale = Vector2( 0.499606, 0.504307 )
 curve = SubResource( 1 )
@@ -226,7 +191,7 @@ texture = ExtResource( 2 )
 offset = Vector2( 310.121, 24.4131 )
 script = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
-movement_offset = 1000
+movement_offset = 100.0
 
 [node name="Hair6" type="Node2D" parent="Path2D/Ether" index="0"]
 
@@ -306,7 +271,7 @@ texture = ExtResource( 11 )
 offset = Vector2( 179.037, 29.2815 )
 script = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
-movement_offset = 720
+movement_offset = 100.0
 
 [node name="Ether3" type="Sprite" parent="Path2D" index="3"]
 
@@ -317,7 +282,7 @@ texture = ExtResource( 12 )
 offset = Vector2( 8.67819, 27.6113 )
 script = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
-movement_offset = 400
+movement_offset = 100.0
 
 [node name="Ether4" type="Sprite" parent="Path2D" index="4"]
 
@@ -328,7 +293,7 @@ texture = ExtResource( 13 )
 offset = Vector2( -48.0541, 29.0503 )
 script = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
-movement_offset = 290
+movement_offset = 100.0
 
 [node name="Ether5" type="Sprite" parent="Path2D" index="5"]
 
@@ -339,7 +304,7 @@ texture = ExtResource( 14 )
 offset = Vector2( -215.38, 35.8522 )
 script = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
-movement_offset = 0
+movement_offset = 100.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
 

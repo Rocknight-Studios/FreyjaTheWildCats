@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage5/IceLevel5.png" type="Texture" id=1]
 [ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Level1/EnvironmentEffects/Snow.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Level1/EnvironmentEffects/SnowStormSides.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Level2/EnvironmentObjects/CloudShadow.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Level2/EnvironmentObjects/PileOfRocks2.tscn" type="PackedScene" id=8]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -131,5 +133,11 @@ position = Vector2( -0.995361, 72.3306 )
 [node name="Snow2" parent="." index="8" instance=ExtResource( 6 )]
 
 position = Vector2( -921.534, -477.203 )
+
+[node name="CloudShadow" parent="." index="9" instance=ExtResource( 7 )]
+
+[node name="PileOfRocks2" parent="." index="10" instance=ExtResource( 8 )]
+
+position = Vector2( 888.404, 324.824 )
 
 

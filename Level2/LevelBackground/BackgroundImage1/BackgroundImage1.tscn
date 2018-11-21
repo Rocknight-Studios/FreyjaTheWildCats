@@ -1,30 +1,25 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage1/ForestLevel1.png" type="Texture" id=1]
-[ext_resource path="res://Level2/Enemies/Spider/Spider.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Level2/EnvironmentObjects/Flower.png" type="Texture" id=3]
+[ext_resource path="res://Level2/EnvironmentObjects/Victim.png" type="Texture" id=2]
+[ext_resource path="res://Level2/Enemies/Spider/Spider.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level2/EnvironmentObjects/Flower.png" type="Texture" id=4]
+[ext_resource path="res://Level2/EnvironmentObjects/CloudShadow.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage1/Bushes.png" type="Texture" id=6]
+[ext_resource path="res://Level2/LevelBackground/BackgroundImage6/Trees.png" type="Texture" id=7]
 
-[node name="BackgroundImage1" type="Sprite" index="0"]
+[node name="BackgroundImage1" type="Sprite"]
 
 position = Vector2( 960, -540 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+[node name="Victim" type="Sprite" parent="." index="0"]
 
-editor/display_folded = true
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
-
-build_mode = 0
-polygon = PoolVector2Array( -500.562, 560.351, -386.2, 374.899, -395.473, 158.538, -951.83, -224.73, -961.102, 538.715 )
+position = Vector2( -580.623, 330.843 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
 
@@ -42,29 +37,40 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( 343.245, 554.17, 429.79, 350.172, 633.787, 291.445, 463.789, -85.6408, 605.969, -203.094, 958.329, -166.003, 976.874, 535.624 )
 
-[node name="Spider" parent="." index="2" instance=ExtResource( 2 )]
-
-position = Vector2( -476.693, -152.949 )
-rotation = -1.13252
-
-[node name="Spider2" parent="." index="3" instance=ExtResource( 2 )]
+[node name="Spider2" parent="." index="2" instance=ExtResource( 3 )]
 
 position = Vector2( 667.43, -295.253 )
 rotation = 1.10841
 
-[node name="Flower" type="Sprite" parent="." index="4"]
+[node name="Flower" type="Sprite" parent="." index="3"]
 
 position = Vector2( 513.281, 258.303 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
-[node name="Flower2" type="Sprite" parent="." index="5"]
+[node name="Flower2" type="Sprite" parent="." index="4"]
 
 position = Vector2( 581.299, 278.708 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
-[node name="Flower3" type="Sprite" parent="." index="6"]
+[node name="Flower3" type="Sprite" parent="." index="5"]
 
 position = Vector2( 397.796, 349.233 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
+
+[node name="CloudShadow" parent="." index="6" instance=ExtResource( 5 )]
+
+position = Vector2( -1570.8, -103.588 )
+
+[node name="Bushes" type="Sprite" parent="." index="7"]
+
+position = Vector2( -463.225, 236.647 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Bushes2" type="Sprite" parent="." index="8"]
+
+position = Vector2( -901.596, 448.983 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Visibility" ]
 
 

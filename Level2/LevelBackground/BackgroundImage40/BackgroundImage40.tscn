@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage40/ForestLevel40.png" type="Texture" id=1]
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage40/Trees.png" type="Texture" id=2]
 [ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Level2/EnvironmentObjects/Leaf.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level2/EnvironmentObjects/CloudShadow.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level2/EnvironmentObjects/LeavesWithShadow.tscn" type="PackedScene" id=5]
 
 [node name="BackgroundImage40" type="Sprite" index="0"]
 
@@ -75,12 +76,10 @@ position = Vector2( 631.965, -235.914 )
 
 position = Vector2( -671.88, -215.789 )
 
-[node name="Giant4" parent="." index="8" instance=ExtResource( 3 )]
+[node name="CloudShadow" parent="." index="8" instance=ExtResource( 4 )]
 
-position = Vector2( -50.3961, -192.504 )
+[node name="Node2D" parent="." index="9" instance=ExtResource( 5 )]
 
-[node name="Leaf" parent="." index="9" instance=ExtResource( 4 )]
-
-position = Vector2( -75.7146, -26.375 )
+position = Vector2( -597.521, -486.871 )
 
 

@@ -3,7 +3,7 @@
 [ext_resource path="res://Level1/Level1.gd" type="Script" id=1]
 [ext_resource path="res://Level1/Camera2D.gd" type="Script" id=2]
 [ext_resource path="res://Level1/GameUI/GameUI.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Level1/LevelBackground/LevelBackground.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level2/LevelBackground2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Freyja/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Unsorted/FreyjaValkyrie'sJustice1.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Level1/Level1MusicPlayer.gd" type="Script" id=7]
@@ -141,8 +141,6 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="GameUI" parent="Camera2D/UIZIndex" index="0" instance=ExtResource( 3 )]
 
 [node name="LevelBackground" parent="." index="1" instance=ExtResource( 4 )]
-
-position = Vector2( 0, 2.45557 )
 
 [node name="Player" parent="." index="2" instance=ExtResource( 5 )]
 

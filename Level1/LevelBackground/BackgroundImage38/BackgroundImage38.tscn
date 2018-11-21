@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage38/IceLevel38.png" type="Texture" id=1]
 [ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
@@ -7,8 +7,9 @@
 [ext_resource path="res://Level1/Enemies/Trolls/Berserker/Berserker.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Unsorted/Steam/Steam.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Level1/EnvironmentEffects/Wind.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Level2/EnvironmentObjects/PileOfRocks2.tscn" type="PackedScene" id=8]
 
-[node name="BackgroundImage38" type="Sprite" index="0"]
+[node name="BackgroundImage38" type="Sprite"]
 
 position = Vector2( 960, -40500 )
 texture = ExtResource( 1 )
@@ -97,5 +98,9 @@ position = Vector2( -689.008, -188.152 )
 position = Vector2( -757.909, -490.254 )
 
 [node name="Wind" parent="." index="14" instance=ExtResource( 7 )]
+
+[node name="PileOfRocks2" parent="." index="15" instance=ExtResource( 8 )]
+
+position = Vector2( 728.875, -204.77 )
 
 

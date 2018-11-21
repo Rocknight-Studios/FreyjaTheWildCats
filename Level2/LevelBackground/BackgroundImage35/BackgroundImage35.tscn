@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage35/ForestLevel35.png" type="Texture" id=1]
 [ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Level2/Enemies/ForestArcher/ForestArcher.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Level2/Enemies/WizardTroll/WizardTroll.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Level2/EnvironmentObjects/Needle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Level2/EnvironmentObjects/CloudShadow.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Level2/EnvironmentObjects/Mist.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Level2/EnvironmentObjects/Victim.png" type="Texture" id=8]
 
 [node name="BackgroundImage35" type="Sprite" index="0"]
 
@@ -55,5 +58,23 @@ position = Vector2( 25.7888, 13.4258 )
 [node name="Needle2" parent="." index="7" instance=ExtResource( 5 )]
 
 position = Vector2( 805.433, 517.105 )
+
+[node name="CloudShadow" parent="." index="8" instance=ExtResource( 6 )]
+
+[node name="Mist" parent="." index="9" instance=ExtResource( 7 )]
+
+position = Vector2( 731.851, -184.156 )
+
+[node name="Mist2" parent="." index="10" instance=ExtResource( 7 )]
+
+position = Vector2( 456.809, 203.301 )
+
+[node name="Victim" type="Sprite" parent="." index="11"]
+
+position = Vector2( 961.667, 255.262 )
+rotation = 2.98699
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Transform" ]
 
 

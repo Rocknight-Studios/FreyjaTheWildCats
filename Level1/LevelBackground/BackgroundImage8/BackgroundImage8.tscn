@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage8/IceLevel8.png" type="Texture" id=1]
 [ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
 [ext_resource path="res://Level1/Enemies/Trolls/Archer/ArcherHeavy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Level1/Enemies/Trolls/Archer/TrollArcher.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Level1/Enemies/Trolls/Berserker/Berserker.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Level2/EnvironmentObjects/PileOfRocks3.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -23,6 +24,7 @@ height = 18.8733
 position = Vector2( 960, -8100 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
+enemy_optimization_distance = 3000.0
 
 [node name="GuardTower" type="StaticBody2D" parent="." index="0"]
 
@@ -115,5 +117,10 @@ position = Vector2( -170.071, 354.218 )
 [node name="Berserker7" parent="." index="15" instance=ExtResource( 5 )]
 
 position = Vector2( -460.82, 354.055 )
+
+[node name="PileOfRocks3" parent="." index="16" instance=ExtResource( 6 )]
+
+position = Vector2( 913.492, -316.657 )
+rotation = -0.501759
 
 

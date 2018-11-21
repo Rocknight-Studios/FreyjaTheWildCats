@@ -8,7 +8,7 @@
 [ext_resource path="res://Level1/EnvironmentEffects/Snow.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Level1/EnvironmentEffects/WavesIce.tscn" type="PackedScene" id=7]
 
-[node name="BackgroundImage23" type="Sprite" index="0"]
+[node name="BackgroundImage23" type="Sprite"]
 
 position = Vector2( 960, -24300 )
 texture = ExtResource( 1 )

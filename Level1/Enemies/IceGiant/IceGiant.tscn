@@ -732,7 +732,8 @@ scale = Vector2( 1.5, 1.5 )
 
 [node name="DeathParticles" parent="." index="4" instance=ExtResource( 14 )]
 
-position = Vector2( -2, 78 )
+position = Vector2( -3.80499, 164.641 )
+scale = Vector2( 20, 15 )
 
 [node name="DeathTimer" type="Timer" parent="." index="5"]
 

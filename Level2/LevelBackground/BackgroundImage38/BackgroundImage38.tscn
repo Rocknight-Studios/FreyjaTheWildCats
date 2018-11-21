@@ -8,10 +8,10 @@
 [ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Level2/Enemies/ForestArcher/ForestArcher.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Level2/EnvironmentObjects/Needle.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Level2/EnvironmentObjects/Leaf.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Level2/EnvironmentObjects/Flower.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Level2/EnvironmentObjects/Flower.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Level2/EnvironmentObjects/LeavesWithShadow.tscn" type="PackedScene" id=10]
 
-[node name="BackgroundImage38" type="Sprite" index="0"]
+[node name="BackgroundImage38" type="Sprite"]
 
 position = Vector2( 960, -40500 )
 texture = ExtResource( 1 )
@@ -86,36 +86,28 @@ scale = Vector2( 1.2, 1.2 )
 
 position = Vector2( -403.447, -59.9219 )
 
-[node name="ArcherHeavy2" parent="." index="8" instance=ExtResource( 7 )]
-
-position = Vector2( -118, -85.8242 )
-
-[node name="ArcherHeavy3" parent="." index="9" instance=ExtResource( 7 )]
-
-position = Vector2( 186.346, -79.3555 )
-
-[node name="ArcherHeavy4" parent="." index="10" instance=ExtResource( 7 )]
+[node name="ArcherHeavy4" parent="." index="8" instance=ExtResource( 7 )]
 
 position = Vector2( 538.178, -66.4062 )
 
-[node name="Needle" parent="." index="11" instance=ExtResource( 8 )]
+[node name="Needle" parent="." index="9" instance=ExtResource( 8 )]
 
 position = Vector2( -557.833, -53.7969 )
 
-[node name="Leaf" parent="." index="12" instance=ExtResource( 9 )]
-
-position = Vector2( 919.698, 215.887 )
-
-[node name="Flower" parent="." index="13" instance=ExtResource( 10 )]
+[node name="Flower" parent="." index="10" instance=ExtResource( 9 )]
 
 position = Vector2( 432.462, 348.695 )
 
-[node name="Flower2" parent="." index="14" instance=ExtResource( 10 )]
+[node name="Flower2" parent="." index="11" instance=ExtResource( 9 )]
 
 position = Vector2( 477.695, 457.254 )
 
-[node name="Flower3" parent="." index="15" instance=ExtResource( 10 )]
+[node name="Flower3" parent="." index="12" instance=ExtResource( 9 )]
 
 position = Vector2( 458.309, 519.289 )
+
+[node name="Node2D" parent="." index="13" instance=ExtResource( 10 )]
+
+position = Vector2( -161.886, -142.457 )
 
 

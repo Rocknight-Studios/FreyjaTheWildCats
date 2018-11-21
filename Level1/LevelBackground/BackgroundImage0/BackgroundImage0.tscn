@@ -10,11 +10,12 @@ custom_solver_bias = 0.0
 radius = 127.854
 height = 33.2553
 
-[node name="BackgroundImage0" type="Sprite" index="0"]
+[node name="BackgroundImage0" type="Sprite"]
 
 position = Vector2( 960, 540 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
 enemy_optimization_distance = 3000.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]

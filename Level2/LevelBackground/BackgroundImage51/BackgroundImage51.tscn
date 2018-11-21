@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage51/ForestLevel51.png" type="Texture" id=1]
 [ext_resource path="res://Level2/Enemies/ForestArcher/ForestArcher.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Level2/Enemies/ForestGiant/ForestGiant.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level2/EnvironmentObjects/Mist.tscn" type="PackedScene" id=4]
 
 [node name="BackgroundImage51" type="Sprite" index="0"]
 
@@ -82,5 +83,29 @@ position = Vector2( -368.317, 344.398 )
 [node name="ForestGiant2" parent="." index="11" instance=ExtResource( 3 )]
 
 position = Vector2( 358.75, 344.398 )
+
+[node name="Mist" parent="." index="12" instance=ExtResource( 4 )]
+
+position = Vector2( -431.958, 416.059 )
+
+[node name="Mist2" parent="." index="13" instance=ExtResource( 4 )]
+
+position = Vector2( 349.807, 378.953 )
+
+[node name="Mist3" parent="." index="14" instance=ExtResource( 4 )]
+
+position = Vector2( -17.8463, 486.32 )
+
+[node name="Mist4" parent="." index="15" instance=ExtResource( 4 )]
+
+position = Vector2( -300.907, 714.07 )
+
+[node name="Mist5" parent="." index="16" instance=ExtResource( 4 )]
+
+position = Vector2( 47.225, 772.633 )
+
+[node name="Mist6" parent="." index="17" instance=ExtResource( 4 )]
+
+position = Vector2( 411.624, 788.906 )
 
 

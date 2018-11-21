@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage10/ForestLevel10.png" type="Texture" id=1]
 [ext_resource path="res://Level2/Enemies/ForestArcher/ForestArcher.tscn" type="PackedScene" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://Level2/Enemies/WizardTroll/WizardTroll.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Level2/Enemies/Spider/Spider.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Level2/EnvironmentObjects/Flower.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Level2/EnvironmentObjects/Mist.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Level2/Enemies/Scorpion/Scorpion.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Level2/EnvironmentObjects/PileOfRocks2.tscn" type="PackedScene" id=9]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -37,15 +40,15 @@ shape = SubResource( 1 )
 
 [node name="ArcherHeavy" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 540.753, 302.186 )
+position = Vector2( 917.589, 370.016 )
 
 [node name="ArcherHeavy2" parent="." index="2" instance=ExtResource( 2 )]
 
-position = Vector2( 365.804, 336.267 )
+position = Vector2( 742.64, 404.097 )
 
 [node name="ArcherHeavy3" parent="." index="3" instance=ExtResource( 2 )]
 
-position = Vector2( 436.238, 170.405 )
+position = Vector2( 813.074, 238.235 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="." index="4"]
 
@@ -173,5 +176,22 @@ position = Vector2( 770.891, -108.059 )
 [node name="Flower19" parent="." index="27" instance=ExtResource( 6 )]
 
 position = Vector2( 755.454, 6.61719 )
+
+[node name="Mist" parent="." index="28" instance=ExtResource( 7 )]
+
+position = Vector2( -385.184, -67.9727 )
+
+[node name="Mist2" parent="." index="29" instance=ExtResource( 7 )]
+
+position = Vector2( 0, 65.458 )
+
+[node name="Scorpion" parent="." index="30" instance=ExtResource( 8 )]
+
+position = Vector2( 421.942, 288.699 )
+rotation = 3.90943
+
+[node name="PileOfRocks2" parent="." index="31" instance=ExtResource( 9 )]
+
+position = Vector2( 520.076, -66.6953 )
 
 

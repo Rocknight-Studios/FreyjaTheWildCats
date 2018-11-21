@@ -790,7 +790,7 @@ custom_solver_bias = 0.0
 radius = 70.4481
 height = 20.0
 
-[node name="WizardTroll" type="Node2D"]
+[node name="WizardTroll" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 total_health = 10
@@ -1107,13 +1107,13 @@ autostart = false
 
 [node name="DeathParticles" parent="." index="4" instance=ExtResource( 17 )]
 
-scale = Vector2( 10, 5 )
+position = Vector2( -6.51599, 116.476 )
+scale = Vector2( 7.5, 5 )
 
 [node name="DeathSoulParticles" parent="." index="5" instance=ExtResource( 18 )]
 
 [node name="EnemyCollider" type="StaticBody2D" parent="." index="6"]
 
-editor/display_folded = true
 position = Vector2( 2.16144, 17.2915 )
 input_pickable = false
 collision_layer = 32

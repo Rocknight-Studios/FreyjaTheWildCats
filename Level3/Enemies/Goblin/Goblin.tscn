@@ -1,0 +1,97 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Level3/Enemies/Goblin/Leg.png" type="Texture" id=1]
+[ext_resource path="res://Level3/Enemies/Goblin/Torso.png" type="Texture" id=2]
+[ext_resource path="res://Level3/Enemies/Goblin/ArmUpper.png" type="Texture" id=3]
+[ext_resource path="res://Level3/Enemies/Goblin/ArmLower.png" type="Texture" id=4]
+[ext_resource path="res://Level3/Enemies/Goblin/Head.png" type="Texture" id=5]
+
+[node name="Goblin" type="Node2D" index="0"]
+
+[node name="Leg" type="Sprite" parent="." index="0"]
+
+position = Vector2( 74.3876, 73.8841 )
+rotation = -0.242484
+texture = ExtResource( 1 )
+flip_v = true
+_sections_unfolded = [ "Offset" ]
+
+[node name="Leg2" type="Sprite" parent="." index="1"]
+
+position = Vector2( -66.015, 77.5595 )
+rotation = 0.143872
+texture = ExtResource( 1 )
+flip_h = true
+flip_v = true
+_sections_unfolded = [ "Offset" ]
+
+[node name="Torso" type="Sprite" parent="." index="2"]
+
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="UpperArmRight" type="Sprite" parent="Torso" index="0"]
+
+position = Vector2( -116, 17 )
+rotation = 0.107181
+texture = ExtResource( 3 )
+offset = Vector2( -33.3842, 50.0426 )
+flip_h = true
+flip_v = true
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="LoweArmRight" type="Sprite" parent="Torso/UpperArmRight" index="0"]
+
+position = Vector2( -64.5552, 115.346 )
+rotation = -0.154098
+texture = ExtResource( 4 )
+offset = Vector2( -5.17321, 71.3867 )
+flip_h = true
+flip_v = true
+_sections_unfolded = [ "Offset", "Visibility" ]
+
+[node name="Hand" type="Sprite" parent="Torso/UpperArmRight/LoweArmRight" index="0"]
+
+position = Vector2( 1.1187, 8.92381 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 4 )
+offset = Vector2( -6.29191, 62.4629 )
+flip_h = true
+flip_v = true
+_sections_unfolded = [ "Offset", "Visibility" ]
+
+[node name="UpperArmLeft" type="Sprite" parent="Torso" index="1"]
+
+show_behind_parent = true
+position = Vector2( 119.74, 4.58461 )
+rotation = -0.307702
+texture = ExtResource( 3 )
+offset = Vector2( 27.7266, 56.8833 )
+flip_v = true
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="LowerArmLeft" type="Sprite" parent="Torso/UpperArmLeft" index="0"]
+
+position = Vector2( 63.6068, 129.573 )
+rotation = 0.324053
+texture = ExtResource( 4 )
+offset = Vector2( -1.67511, 62.624 )
+flip_v = true
+_sections_unfolded = [ "Offset", "Visibility" ]
+
+[node name="Hand" type="Sprite" parent="Torso/UpperArmLeft/LowerArmLeft" index="0"]
+
+scale = Vector2( 1, 1 )
+texture = ExtResource( 4 )
+offset = Vector2( -1.67511, 62.624 )
+flip_v = true
+_sections_unfolded = [ "Offset", "Visibility" ]
+
+[node name="Head" type="Sprite" parent="." index="3"]
+
+position = Vector2( 1, 30 )
+texture = ExtResource( 5 )
+flip_v = true
+_sections_unfolded = [ "Offset" ]
+
+

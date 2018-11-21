@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Level2/EnvironmentObjects/Axe.png" type="Texture" id=1]
+
+[node name="Axe" type="Sprite"]
+
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+

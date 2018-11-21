@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage30/IceLevel30.png" type="Texture" id=1]
 [ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
@@ -7,8 +7,9 @@
 [ext_resource path="res://Level1/Enemies/Trolls/Shield/ShieldTroll.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Unsorted/Steam/Steam.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Level1/EnvironmentEffects/SnowStormSides.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Level2/EnvironmentObjects/CloudShadow.tscn" type="PackedScene" id=8]
 
-[node name="BackgroundImage30" type="Sprite" index="0"]
+[node name="BackgroundImage30" type="Sprite"]
 
 position = Vector2( 960, -31860 )
 texture = ExtResource( 1 )
@@ -96,5 +97,7 @@ position = Vector2( -795.648, -460.926 )
 [node name="Snow2" parent="." index="13" instance=ExtResource( 7 )]
 
 position = Vector2( 865.238, -54.2227 )
+
+[node name="CloudShadow" parent="." index="14" instance=ExtResource( 8 )]
 
 

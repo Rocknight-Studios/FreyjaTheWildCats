@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage21/ForestLevel21.png" type="Texture" id=1]
 [ext_resource path="res://Level2/Enemies/ForestGiant/ForestGiant.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Level2/Enemies/WizardTroll/WizardTroll.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Level2/EnvironmentObjects/Waves.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Level2/EnvironmentObjects/Flower.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Level2/EnvironmentObjects/Mist.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Level2/EnvironmentObjects/PileOfRocks2.tscn" type="PackedScene" id=8]
 
 [node name="BackgroundImage21" type="Sprite" index="0"]
 
@@ -122,5 +124,34 @@ position = Vector2( 190, 220 )
 [node name="Flower8" parent="." index="18" instance=ExtResource( 6 )]
 
 position = Vector2( 350, 200 )
+
+[node name="Mist" parent="." index="19" instance=ExtResource( 7 )]
+
+position = Vector2( 540, 310 )
+z_index = 1
+
+[node name="Mist2" parent="." index="20" instance=ExtResource( 7 )]
+
+position = Vector2( -450, 300 )
+z_index = 1
+
+[node name="Mist3" parent="." index="21" instance=ExtResource( 7 )]
+
+position = Vector2( 730, -70 )
+z_index = 1
+
+[node name="Mist4" parent="." index="22" instance=ExtResource( 7 )]
+
+position = Vector2( 420, -270 )
+z_index = 1
+
+[node name="Mist5" parent="." index="23" instance=ExtResource( 7 )]
+
+position = Vector2( -630, -280 )
+z_index = 1
+
+[node name="PileOfRocks2" parent="." index="24" instance=ExtResource( 8 )]
+
+position = Vector2( -620, 20 )
 
 
