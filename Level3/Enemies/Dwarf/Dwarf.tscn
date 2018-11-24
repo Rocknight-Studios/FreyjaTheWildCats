@@ -1,15 +1,18 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://Level3/Enemies/Dwarf/Torso.png" type="Texture" id=1]
-[ext_resource path="res://Level3/Enemies/Dwarf/Bag.png" type="Texture" id=2]
-[ext_resource path="res://Level3/Enemies/Dwarf/AxeDwarf.png" type="Texture" id=3]
-[ext_resource path="res://Level3/Enemies/Dwarf/DwarfShoulder.png" type="Texture" id=4]
-[ext_resource path="res://Level3/Enemies/Dwarf/Hand.png" type="Texture" id=5]
-[ext_resource path="res://Level3/Enemies/Dwarf/Hair1.png" type="Texture" id=6]
-[ext_resource path="res://Level3/Enemies/Dwarf/Head.png" type="Texture" id=7]
-[ext_resource path="res://Level3/Enemies/Dwarf/Beard2.png" type="Texture" id=8]
-[ext_resource path="res://Level3/Enemies/Dwarf/Beard3.png" type="Texture" id=9]
-[ext_resource path="res://Level3/Enemies/Dwarf/Beard1.png" type="Texture" id=10]
+[ext_resource path="res://Level1/Enemies/EnemyBehaviour.gd" type="Script" id=1]
+[ext_resource path="res://Level3/Enemies/Dwarf/Torso.png" type="Texture" id=2]
+[ext_resource path="res://Level3/Enemies/Dwarf/Bag.png" type="Texture" id=3]
+[ext_resource path="res://Level3/Enemies/Dwarf/AxeDwarf.png" type="Texture" id=4]
+[ext_resource path="res://Level3/Enemies/Dwarf/DwarfShoulder.png" type="Texture" id=5]
+[ext_resource path="res://Level3/Enemies/Dwarf/Hand.png" type="Texture" id=6]
+[ext_resource path="res://Level3/Enemies/Dwarf/Hair1.png" type="Texture" id=7]
+[ext_resource path="res://Level3/Enemies/Dwarf/Head.png" type="Texture" id=8]
+[ext_resource path="res://Level3/Enemies/Dwarf/Beard2.png" type="Texture" id=9]
+[ext_resource path="res://Level3/Enemies/Dwarf/Beard3.png" type="Texture" id=10]
+[ext_resource path="res://Level3/Enemies/Dwarf/Beard1.png" type="Texture" id=11]
+[ext_resource path="res://Level1/Enemies/DeathParticles.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Level1/Enemies/DeathSoulParticles.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Animation" id=1]
 
@@ -18,7 +21,7 @@ length = 6.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Torso:rotation_degrees")
+tracks/0/path = NodePath("Body/Torso:rotation_degrees")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -30,7 +33,7 @@ tracks/0/keys = {
 "values": [ 0.0, -50.0, 48.9086, 20.0, -33.2593 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Torso/ShoulderRight:rotation_degrees")
+tracks/1/path = NodePath("Body/Torso/ShoulderRight:rotation_degrees")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -42,7 +45,7 @@ tracks/1/keys = {
 "values": [ -33.4388, -74.1263, -16.1152, -17.3526, -60.7359 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Torso/ShoulderRight/Hand/Axe:position")
+tracks/2/path = NodePath("Body/Torso/ShoulderRight/Hand/Axe:position")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -54,7 +57,7 @@ tracks/2/keys = {
 "values": [ Vector2( 6.90985, 65.2087 ), Vector2( 6.90985, 65.2087 ), Vector2( 117.424, 271.6 ), Vector2( 117.424, 271.6 ), Vector2( 6.90985, 65.2087 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Torso/ShoulderRight/Hand:rotation_degrees")
+tracks/3/path = NodePath("Body/Torso/ShoulderRight/Hand:rotation_degrees")
 tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -66,7 +69,7 @@ tracks/3/keys = {
 "values": [ -1.85387, -1.85387, 15.2383, -10.623 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Torso/ShoulderLeft:rotation_degrees")
+tracks/4/path = NodePath("Body/Torso/ShoulderLeft:rotation_degrees")
 tracks/4/interp = 2
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -78,7 +81,7 @@ tracks/4/keys = {
 "values": [ 0.0, -61.5376, -57.4351, 60.439 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Torso/ShoulderLeft/Hand:rotation_degrees")
+tracks/5/path = NodePath("Body/Torso/ShoulderLeft/Hand:rotation_degrees")
 tracks/5/interp = 2
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -90,7 +93,7 @@ tracks/5/keys = {
 "values": [ -1.85387, -1.85387, 53.0702 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Torso/Head:rotation_degrees")
+tracks/6/path = NodePath("Body/Torso/Head:rotation_degrees")
 tracks/6/interp = 2
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -102,7 +105,7 @@ tracks/6/keys = {
 "values": [ 0.0, 33.42, 31.192, -6.83994, -38.9884, 0.0 ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Torso/Hair/Hair4:rotation_degrees")
+tracks/7/path = NodePath("Body/Torso/Hair/Hair4:rotation_degrees")
 tracks/7/interp = 2
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -114,7 +117,7 @@ tracks/7/keys = {
 "values": [ -56.611 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Torso/Hair:rotation_degrees")
+tracks/8/path = NodePath("Body/Torso/Hair:rotation_degrees")
 tracks/8/interp = 2
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -126,7 +129,7 @@ tracks/8/keys = {
 "values": [ -14.1626, -8.35936, -29.6125, -2.91773, -14.1626 ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Torso/Hair/Hair3:rotation_degrees")
+tracks/9/path = NodePath("Body/Torso/Hair/Hair3:rotation_degrees")
 tracks/9/interp = 2
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -138,7 +141,7 @@ tracks/9/keys = {
 "values": [ 27.5802, 37.5356, 27.4868, 36.2966, 29.7043, 40.7301, 40.4292 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Torso/Head/Beard7:rotation_degrees")
+tracks/10/path = NodePath("Body/Torso/Head/Beard7:rotation_degrees")
 tracks/10/interp = 2
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -150,7 +153,7 @@ tracks/10/keys = {
 "values": [ -170.253, -148.894, -201.115, -126.759 ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Torso/Head/Beard2:rotation_degrees")
+tracks/11/path = NodePath("Body/Torso/Head/Beard2:rotation_degrees")
 tracks/11/interp = 2
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -162,7 +165,7 @@ tracks/11/keys = {
 "values": [ 0.0, 0.0, -15.0604, -5.63112, 12.5533, 11.8351 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Torso/Bag:rotation_degrees")
+tracks/12/path = NodePath("Body/Torso/Bag:rotation_degrees")
 tracks/12/interp = 2
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -181,7 +184,7 @@ length = 6.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Torso:rotation_degrees")
+tracks/0/path = NodePath("Body/Torso:rotation_degrees")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -193,7 +196,7 @@ tracks/0/keys = {
 "values": [ 0.0, 14.5515, -9.8266 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Torso/ShoulderRight:rotation_degrees")
+tracks/1/path = NodePath("Body/Torso/ShoulderRight:rotation_degrees")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -205,7 +208,7 @@ tracks/1/keys = {
 "values": [ -33.4388, -60.2019, -57.354, -60.2019 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Torso/ShoulderRight/Hand/Axe:position")
+tracks/2/path = NodePath("Body/Torso/ShoulderRight/Hand/Axe:position")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -217,7 +220,7 @@ tracks/2/keys = {
 "values": [ Vector2( 6.90985, 65.2087 ), Vector2( 6.90985, 65.2087 ), Vector2( 38.3782, 124.164 ), Vector2( 6.90985, 65.2087 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Torso/ShoulderRight/Hand:rotation_degrees")
+tracks/3/path = NodePath("Body/Torso/ShoulderRight/Hand:rotation_degrees")
 tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -229,7 +232,7 @@ tracks/3/keys = {
 "values": [ -1.85387, -1.85387, -18.364 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Torso/ShoulderLeft:rotation_degrees")
+tracks/4/path = NodePath("Body/Torso/ShoulderLeft:rotation_degrees")
 tracks/4/interp = 2
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -241,7 +244,7 @@ tracks/4/keys = {
 "values": [ 0.0, 39.4113, 26.1038 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Torso/ShoulderLeft/Hand:rotation_degrees")
+tracks/5/path = NodePath("Body/Torso/ShoulderLeft/Hand:rotation_degrees")
 tracks/5/interp = 2
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -253,7 +256,7 @@ tracks/5/keys = {
 "values": [ -1.85387 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Torso/Head:rotation_degrees")
+tracks/6/path = NodePath("Body/Torso/Head:rotation_degrees")
 tracks/6/interp = 2
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -265,7 +268,7 @@ tracks/6/keys = {
 "values": [ 0.0, -13.74, 9.29064 ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Torso/Hair/Hair4:rotation_degrees")
+tracks/7/path = NodePath("Body/Torso/Hair/Hair4:rotation_degrees")
 tracks/7/interp = 2
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -277,7 +280,7 @@ tracks/7/keys = {
 "values": [ -56.611 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Torso/Hair:rotation_degrees")
+tracks/8/path = NodePath("Body/Torso/Hair:rotation_degrees")
 tracks/8/interp = 2
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -289,7 +292,7 @@ tracks/8/keys = {
 "values": [ -14.1626 ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Torso/Hair/Hair3:rotation_degrees")
+tracks/9/path = NodePath("Body/Torso/Hair/Hair3:rotation_degrees")
 tracks/9/interp = 2
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -301,7 +304,7 @@ tracks/9/keys = {
 "values": [ 27.5802 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Torso/Head/Beard7:rotation_degrees")
+tracks/10/path = NodePath("Body/Torso/Head/Beard7:rotation_degrees")
 tracks/10/interp = 2
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -313,7 +316,7 @@ tracks/10/keys = {
 "values": [ -170.253 ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Torso/Head/Beard2:rotation_degrees")
+tracks/11/path = NodePath("Body/Torso/Head/Beard2:rotation_degrees")
 tracks/11/interp = 2
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -325,7 +328,7 @@ tracks/11/keys = {
 "values": [ 0.0 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Torso/Bag:rotation_degrees")
+tracks/12/path = NodePath("Body/Torso/Bag:rotation_degrees")
 tracks/12/interp = 2
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -337,171 +340,195 @@ tracks/12/keys = {
 "values": [ 0.0 ]
 }
 
-[node name="Dwarf" type="Node2D" index="0"]
+[sub_resource type="CapsuleShape2D" id=3]
 
-[node name="Torso" type="Sprite" parent="." index="0"]
+custom_solver_bias = 0.0
+radius = 201.15
+height = 198.259
+
+[node name="Dwarf" type="Node2D"]
+
+script = ExtResource( 1 )
+total_health = 3
+fade_out_speed = 5.0
+projectile_template = null
+attack_animation_speed = 0.25
+idle_animation_speed = 1.0
+animation_blend_speed = 1.0
+projectile_type = "ice_giant_projectile_offsets"
+enemy_launches_projectiles = false
+archer_projectile_offsets = null
+
+[node name="Body" type="Node2D" parent="." index="0"]
+
+[node name="Torso" type="Sprite" parent="Body" index="0"]
 
 editor/display_folded = true
-texture = ExtResource( 1 )
+rotation = 0.200596
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Bag" type="Sprite" parent="Torso" index="0"]
+[node name="Bag" type="Sprite" parent="Body/Torso" index="0"]
 
 editor/display_folded = true
 position = Vector2( 0, -150 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
-[node name="AxeBag" type="Sprite" parent="Torso/Bag" index="0"]
+[node name="AxeBag" type="Sprite" parent="Body/Torso/Bag" index="0"]
 
 show_behind_parent = true
 position = Vector2( 0, -60 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 offset = Vector2( 30, 10 )
 flip_v = true
 _sections_unfolded = [ "Offset", "Visibility" ]
 
-[node name="ShoulderRight" type="Sprite" parent="Torso" index="1"]
+[node name="ShoulderRight" type="Sprite" parent="Body/Torso" index="1"]
 
+editor/display_folded = true
 show_behind_parent = true
 position = Vector2( -200, 50 )
-rotation = -0.583617
-texture = ExtResource( 4 )
+rotation = -1.0722
+texture = ExtResource( 5 )
 offset = Vector2( -30, 60 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Visibility" ]
 
-[node name="Hand" type="Sprite" parent="Torso/ShoulderRight" index="0"]
+[node name="Hand" type="Sprite" parent="Body/Torso/ShoulderRight" index="0"]
 
+editor/display_folded = true
 show_behind_parent = true
 position = Vector2( -110.862, 108.195 )
-rotation = -0.0323561
-texture = ExtResource( 5 )
+rotation = -0.0131894
+texture = ExtResource( 6 )
 offset = Vector2( 20, 60 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Visibility", "Z Index" ]
 
-[node name="Axe" type="Sprite" parent="Torso/ShoulderRight/Hand" index="0"]
+[node name="Axe" type="Sprite" parent="Body/Torso/ShoulderRight/Hand" index="0"]
 
 show_behind_parent = true
-position = Vector2( 6.90985, 65.2087 )
+position = Vector2( 14.2516, 78.9633 )
 rotation = 1.04167
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 offset = Vector2( -35.335, 20.7567 )
 _sections_unfolded = [ "Offset", "Visibility", "Z Index" ]
 
-[node name="ShoulderLeft" type="Sprite" parent="Torso" index="2"]
+[node name="ShoulderLeft" type="Sprite" parent="Body/Torso" index="2"]
 
 editor/display_folded = true
 position = Vector2( 180.983, 49.9699 )
-texture = ExtResource( 4 )
+rotation = 0.688021
+texture = ExtResource( 5 )
 offset = Vector2( 39.0169, 50.0302 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="Hand" type="Sprite" parent="Torso/ShoulderLeft" index="0"]
+[node name="Hand" type="Sprite" parent="Body/Torso/ShoulderLeft" index="0"]
 
 show_behind_parent = true
 position = Vector2( 74.5769, 98.2252 )
 rotation = -0.0323561
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 offset = Vector2( 20, 60 )
 _sections_unfolded = [ "Visibility", "Z Index" ]
 
-[node name="Hair" type="Sprite" parent="Torso" index="3"]
+[node name="Hair" type="Sprite" parent="Body/Torso" index="3"]
 
 editor/display_folded = true
 position = Vector2( 58.0404, -24.9612 )
-rotation = -0.247185
-texture = ExtResource( 6 )
+rotation = -0.247184
+texture = ExtResource( 7 )
 offset = Vector2( 110, -20 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="Hair3" type="Sprite" parent="Torso/Hair" index="0"]
+[node name="Hair3" type="Sprite" parent="Body/Torso/Hair" index="0"]
 
 position = Vector2( -6.72713, 45.1711 )
-rotation = 0.481366
-texture = ExtResource( 6 )
+rotation = 0.481365
+texture = ExtResource( 7 )
 offset = Vector2( 110, -20 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="Hair4" type="Sprite" parent="Torso/Hair" index="1"]
+[node name="Hair4" type="Sprite" parent="Body/Torso/Hair" index="1"]
 
 show_behind_parent = true
 position = Vector2( -2.28283, -12.9355 )
-rotation = -0.988049
+rotation = -0.988048
 scale = Vector2( 0.699919, 0.699919 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 offset = Vector2( 110, -20 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="Head" type="Sprite" parent="Torso" index="4"]
+[node name="Head" type="Sprite" parent="Body/Torso" index="4"]
 
 editor/display_folded = true
-texture = ExtResource( 7 )
+rotation = -0.172778
+texture = ExtResource( 8 )
 
-[node name="Beard7" type="Sprite" parent="Torso/Head" index="0"]
+[node name="Beard7" type="Sprite" parent="Body/Torso/Head" index="0"]
 
 position = Vector2( 0.0184479, -49.4289 )
-rotation = -2.97147
-texture = ExtResource( 8 )
+rotation = -2.97148
+texture = ExtResource( 9 )
 offset = Vector2( 40, 40 )
 _sections_unfolded = [ "Offset", "Visibility" ]
 
-[node name="Beard2" type="Sprite" parent="Torso/Head" index="1"]
+[node name="Beard2" type="Sprite" parent="Body/Torso/Head" index="1"]
 
 editor/display_folded = true
 show_behind_parent = true
 position = Vector2( -0.354213, 23.3771 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 offset = Vector2( 0.354202, 76.6229 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="Beard1" type="Sprite" parent="Torso/Head/Beard2" index="0"]
+[node name="Beard1" type="Sprite" parent="Body/Torso/Head/Beard2" index="0"]
 
 position = Vector2( -49.6458, 86.6229 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 offset = Vector2( 110, -20 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="Beard6" type="Sprite" parent="Torso/Head/Beard2" index="1"]
+[node name="Beard6" type="Sprite" parent="Body/Torso/Head/Beard2" index="1"]
 
 position = Vector2( -29.3293, 3.24539 )
 rotation = -0.509436
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 offset = Vector2( -41.9764, 22.2097 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Visibility" ]
 
-[node name="Beard3" type="Sprite" parent="Torso/Head/Beard2" index="2"]
+[node name="Beard3" type="Sprite" parent="Body/Torso/Head/Beard2" index="2"]
 
 position = Vector2( 28.1082, -1.78821 )
 rotation = 0.621637
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 offset = Vector2( 50, 20 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="Beard" type="Sprite" parent="Torso/Head/Beard2" index="3"]
+[node name="Beard" type="Sprite" parent="Body/Torso/Head/Beard2" index="3"]
 
 show_behind_parent = true
 position = Vector2( 25.3862, -6.37111 )
 rotation = -0.0563039
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 offset = Vector2( 40, 20 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="Beard4" type="Sprite" parent="Torso/Head/Beard2" index="4"]
+[node name="Beard4" type="Sprite" parent="Body/Torso/Head/Beard2" index="4"]
 
 position = Vector2( -169.646, 76.6229 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 offset = Vector2( 110, -20 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Visibility" ]
 
-[node name="Beard5" type="Sprite" parent="Torso/Head/Beard2" index="5"]
+[node name="Beard5" type="Sprite" parent="Body/Torso/Head/Beard2" index="5"]
 
 show_behind_parent = true
 position = Vector2( -33.4431, 0.0171986 )
 rotation = -0.0563039
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 offset = Vector2( -33.0181, 17.4432 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Visibility" ]
@@ -509,12 +536,82 @@ _sections_unfolded = [ "Offset", "Visibility" ]
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
 
 root_node = NodePath("..")
-autoplay = "Attack"
+autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/Attack = SubResource( 1 )
 anims/Idle = SubResource( 2 )
 blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
+
+[node name="EnemyCollider" type="StaticBody2D" parent="." index="2"]
+
+editor/display_folded = true
+visible = false
+input_pickable = false
+collision_layer = 32
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyCollider" index="0"]
+
+rotation = 1.5708
+shape = SubResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="DeathParticles" parent="." index="3" instance=ExtResource( 12 )]
+
+scale = Vector2( 15, 10 )
+
+[node name="DeathSoulParticles" parent="." index="4" instance=ExtResource( 13 )]
+
+[node name="DeathTimer" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="AnimationTreePlayer" type="AnimationTreePlayer" parent="." index="6"]
+
+playback_process_mode = 1
+master_player = NodePath("../AnimationPlayer")
+base_path = NodePath("..")
+active = true
+data = {
+"active": true,
+"connections": [ "blend2", "out", 0, "anim", "blend2", 0, "anim 2", "blend2", 1 ],
+"master": NodePath("../AnimationPlayer"),
+"nodes": [ {
+"filter": [  ],
+"from": "Idle",
+"id": "anim",
+"position": Vector2( 57, 139 ),
+"type": "animation"
+}, {
+"id": "out",
+"position": Vector2( 390, 222 ),
+"type": "output"
+}, {
+"filter": [  ],
+"from": "Attack",
+"id": "anim 2",
+"position": Vector2( 65, 283 ),
+"type": "animation"
+}, {
+"blend": 0.0,
+"filter": [  ],
+"id": "blend2",
+"position": Vector2( 238, 200 ),
+"type": "blend2"
+} ]
+}
+
+[connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
 
 

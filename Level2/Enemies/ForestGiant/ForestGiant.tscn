@@ -767,7 +767,7 @@ custom_solver_bias = 0.0
 radius = 126.562
 height = 20.0
 
-[node name="ForestGiant" type="Node2D" index="0"]
+[node name="ForestGiant" type="Node2D"]
 
 script = SubResource( 1 )
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -956,17 +956,17 @@ data = {
 "position": Vector2( 308, 92 ),
 "type": "output"
 }, {
-"blend": 0.0,
-"filter": [  ],
-"id": "blend2",
-"position": Vector2( 197, 81 ),
-"type": "blend2"
-}, {
 "filter": [  ],
 "from": "Attack",
 "id": "anim 2",
 "position": Vector2( 60, 172 ),
 "type": "animation"
+}, {
+"blend": 0.0,
+"filter": [  ],
+"id": "blend2",
+"position": Vector2( 197, 81 ),
+"type": "blend2"
 } ]
 }
 

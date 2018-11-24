@@ -15,7 +15,7 @@ length = 3.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("BowLeft:rotation_degrees")
+tracks/0/path = NodePath("Body/BowLeft:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -27,7 +27,7 @@ tracks/0/keys = {
 "values": [ 0.0, -12.5, -12.5, 0.0, 1.0, 0.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("BowRight:rotation_degrees")
+tracks/1/path = NodePath("Body/BowRight:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -39,7 +39,7 @@ tracks/1/keys = {
 "values": [ 0.0, 12.5, 12.5, 0.0, -1.0, 0.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("BowLeft/StringLeft:rotation_degrees")
+tracks/2/path = NodePath("Body/BowLeft/StringLeft:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -51,7 +51,7 @@ tracks/2/keys = {
 "values": [ 0.0, 30.0, 30.0, 0.0, -1.0, 0.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("BowRight/StringRight:rotation_degrees")
+tracks/3/path = NodePath("Body/BowRight/StringRight:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -63,7 +63,7 @@ tracks/3/keys = {
 "values": [ 0.0, -30.0, -30.0, 0.0, 1.0, 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("BowLeft/StringLeft:scale")
+tracks/4/path = NodePath("Body/BowLeft/StringLeft:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -75,7 +75,7 @@ tracks/4/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 0.8538, 1 ), Vector2( 0.8538, 1 ), Vector2( 1, 1 ), Vector2( 1.01264, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("BowRight/StringRight:scale")
+tracks/5/path = NodePath("Body/BowRight/StringRight:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -87,7 +87,7 @@ tracks/5/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 0.873938, 1 ), Vector2( 0.873938, 1 ), Vector2( 1, 1 ), Vector2( 1.01216, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Arrow:position")
+tracks/6/path = NodePath("Body/Arrow:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -99,7 +99,7 @@ tracks/6/keys = {
 "values": [ Vector2( 1.62387, -157.876 ), Vector2( 0, -30 ), Vector2( 0, -30 ), Vector2( 0, -160 ), Vector2( 0, -640 ), Vector2( 0, -640 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Arrow:self_modulate")
+tracks/7/path = NodePath("Body/Arrow:self_modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -118,7 +118,7 @@ length = 3.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("BowLeft:rotation_degrees")
+tracks/0/path = NodePath("Body/BowLeft:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -130,7 +130,7 @@ tracks/0/keys = {
 "values": [ 0.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("BowRight:rotation_degrees")
+tracks/1/path = NodePath("Body/BowRight:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -142,7 +142,7 @@ tracks/1/keys = {
 "values": [ 0.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("BowLeft/StringLeft:rotation_degrees")
+tracks/2/path = NodePath("Body/BowLeft/StringLeft:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -154,7 +154,7 @@ tracks/2/keys = {
 "values": [ 0.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("BowRight/StringRight:rotation_degrees")
+tracks/3/path = NodePath("Body/BowRight/StringRight:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -166,7 +166,7 @@ tracks/3/keys = {
 "values": [ 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("BowLeft/StringLeft:scale")
+tracks/4/path = NodePath("Body/BowLeft/StringLeft:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -178,7 +178,7 @@ tracks/4/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("BowRight/StringRight:scale")
+tracks/5/path = NodePath("Body/BowRight/StringRight:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -190,7 +190,7 @@ tracks/5/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Arrow:position")
+tracks/6/path = NodePath("Body/Arrow:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -202,7 +202,7 @@ tracks/6/keys = {
 "values": [ Vector2( 1.62387, -157.876 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Arrow:self_modulate")
+tracks/7/path = NodePath("Body/Arrow:self_modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -237,18 +237,20 @@ projectile_type = "ice_giant_projectile_offsets"
 enemy_launches_projectiles = false
 archer_projectile_offsets = null
 
-[node name="ScorpionBase" type="Sprite" parent="." index="0"]
+[node name="Body" type="Node2D" parent="." index="0"]
+
+[node name="ScorpionBase" type="Sprite" parent="Body" index="0"]
 
 texture = ExtResource( 2 )
 
-[node name="Arrow" type="Sprite" parent="." index="1"]
+[node name="Arrow" type="Sprite" parent="Body" index="1"]
 
 position = Vector2( 1.62387, -157.876 )
 texture = ExtResource( 3 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Visibility" ]
 
-[node name="BowRight" type="Sprite" parent="." index="2"]
+[node name="BowRight" type="Sprite" parent="Body" index="2"]
 
 editor/display_folded = true
 position = Vector2( 2.50531, -207.205 )
@@ -256,14 +258,14 @@ texture = ExtResource( 4 )
 offset = Vector2( 139.573, 100.05 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="StringRight" type="Sprite" parent="BowRight" index="0"]
+[node name="StringRight" type="Sprite" parent="Body/BowRight" index="0"]
 
 position = Vector2( 282.991, 204.914 )
 texture = ExtResource( 5 )
 offset = Vector2( -140.103, -1.16891 )
 _sections_unfolded = [ "Offset", "Transform" ]
 
-[node name="BowLeft" type="Sprite" parent="." index="3"]
+[node name="BowLeft" type="Sprite" parent="Body" index="3"]
 
 editor/display_folded = true
 position = Vector2( 3.16873, -206.541 )
@@ -272,7 +274,7 @@ offset = Vector2( -136.067, 99.3863 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform" ]
 
-[node name="StringLeft" type="Sprite" parent="BowLeft" index="0"]
+[node name="StringLeft" type="Sprite" parent="Body/BowLeft" index="0"]
 
 position = Vector2( -282.451, 203.678 )
 texture = ExtResource( 5 )
@@ -280,7 +282,7 @@ offset = Vector2( 141.718, -0.453735 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
 
 root_node = NodePath("..")
 autoplay = "Attack"
@@ -291,58 +293,23 @@ anims/Attack = SubResource( 1 )
 anims/Idle = SubResource( 2 )
 blend_times = [  ]
 
-[node name="AnimationTreePlayer" type="AnimationTreePlayer" parent="." index="5"]
-
-playback_process_mode = 1
-master_player = NodePath("../AnimationPlayer")
-base_path = NodePath("")
-active = false
-data = {
-"active": false,
-"connections": [ "blend2", "out", 0, "anim", "blend2", 0, "anim 2", "blend2", 1 ],
-"master": NodePath("../AnimationPlayer"),
-"nodes": [ {
-"filter": [  ],
-"from": "Idle",
-"id": "anim",
-"position": Vector2( 104, 37 ),
-"type": "animation"
-}, {
-"id": "out",
-"position": Vector2( 486, 124 ),
-"type": "output"
-}, {
-"filter": [  ],
-"from": "Attack",
-"id": "anim 2",
-"position": Vector2( 108, 174 ),
-"type": "animation"
-}, {
-"blend": 0.0,
-"filter": [  ],
-"id": "blend2",
-"position": Vector2( 301, 91 ),
-"type": "blend2"
-} ]
-}
-
-[node name="DeathTimer" type="Timer" parent="." index="6"]
+[node name="DeathTimer" type="Timer" parent="." index="2"]
 
 process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = false
 
-[node name="DeathSoulParticles" parent="." index="7" instance=ExtResource( 6 )]
+[node name="DeathSoulParticles" parent="." index="3" instance=ExtResource( 6 )]
 
-[node name="DeathParticles" parent="." index="8" instance=ExtResource( 7 )]
+[node name="DeathParticles" parent="." index="4" instance=ExtResource( 7 )]
 
 self_modulate = Color( 0.75, 0.698273, 0.418945, 1 )
 position = Vector2( 4.39332, -154.333 )
 rotation = 3.14159
 scale = Vector2( 10, 7.5 )
 
-[node name="EnemyCollider" type="StaticBody2D" parent="." index="9"]
+[node name="EnemyCollider" type="StaticBody2D" parent="." index="5"]
 
 editor/display_folded = true
 position = Vector2( -3.74655e-07, -64 )
@@ -359,5 +326,42 @@ _sections_unfolded = [ "Collision", "Transform" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyCollider" index="0"]
 
 shape = SubResource( 3 )
+
+[node name="AnimationTreePlayer" type="AnimationTreePlayer" parent="." index="6"]
+
+playback_process_mode = 1
+master_player = NodePath("../AnimationPlayer")
+base_path = NodePath("..")
+active = false
+data = {
+"active": false,
+"connections": [ "blend2", "out", 0, "anim", "blend2", 0, "anim 2", "blend2", 1 ],
+"master": NodePath("../AnimationPlayer"),
+"nodes": [ {
+"filter": [  ],
+"from": "Idle",
+"id": "anim",
+"position": Vector2( 60, 60 ),
+"type": "animation"
+}, {
+"id": "out",
+"position": Vector2( 337, 111 ),
+"type": "output"
+}, {
+"filter": [  ],
+"from": "Attack",
+"id": "anim 2",
+"position": Vector2( 66, 184 ),
+"type": "animation"
+}, {
+"blend": 0.0,
+"filter": [  ],
+"id": "blend2",
+"position": Vector2( 216, 110 ),
+"type": "blend2"
+} ]
+}
+
+[connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
 
 
