@@ -18,6 +18,7 @@ onready var transformation_mode = VD_Transformation_modes.MOVE # For speed and c
 onready var node_is_selected = false # To save resources and know, when some node is selected in the scene.
 var keyboard_movement_is_allowed = true # For the access from other behaviours.
 var forbid_selection_circle_management = false # To not manage selection circle, when transformation is active.
+var full_selected_path = "" # To have a convenient access from other scripts.
 
 func _ready():
 	set_gui_visibility(false)
@@ -90,6 +91,13 @@ func _on_disable_keyboard_movement():
 func _on_enable_keyboard_movement():
 	keyboard_movement_is_allowed = true
 
+onready var visual_debugger_background = $"VisualDebuggerBackground" # For speed and convenience.
+onready var original_visual_debugger_background_modulate = visual_debugger_background.modulate # To know, where to reset the value.
+const VISUAL_BACKGROUND_MODULATE_B_DELTA = .5 # To avoid having magic numbers.
+onready var mouse_over_visual_debugger_background_modulate = Color(original_visual_debugger_background_modulate.r + VISUAL_BACKGROUND_MODULATE_B_DELTA, original_visual_debugger_background_modulate.g + VISUAL_BACKGROUND_MODULATE_B_DELTA, original_visual_debugger_background_modulate.b + VISUAL_BACKGROUND_MODULATE_B_DELTA, original_visual_debugger_background_modulate.a + VISUAL_BACKGROUND_MODULATE_B_DELTA) # When mouse is over visual debugger change the background color.
+const BACKGROUND_COLOR_LERP_SPEED = 3.0 # How quickly to fade to the new state.
+var mouse_over_tint_lerp_progress = .0 # To have a tight control over lerping and save resources.
+
 func _process(delta):
 	if Input.is_action_just_pressed ("visual_debugger"):
 		if visual_debugger_is_active:
@@ -106,8 +114,25 @@ func _process(delta):
 			set_gui_visibility(true)
 			debugger_camera.make_current()
 
-	if visual_debugger_is_active && keyboard_movement_is_allowed:
-		manage_camera_movement(camera_movement_speed_slider.value)
+	if visual_debugger_is_active:
+		if mouse_is_over_visual_debugger_gui:
+			if mouse_over_tint_lerp_progress < 1.0 - Global.approximation_float:
+				mouse_over_tint_lerp_progress += delta * BACKGROUND_COLOR_LERP_SPEED
+				mouse_over_tint_lerp_progress = clamp(mouse_over_tint_lerp_progress, .0, 1.0)
+				var array_lerp_result = Global.user_params.global_functions.lerp_array([original_visual_debugger_background_modulate.r, original_visual_debugger_background_modulate.g, original_visual_debugger_background_modulate.b, original_visual_debugger_background_modulate.a], [mouse_over_visual_debugger_background_modulate.r, mouse_over_visual_debugger_background_modulate.g, mouse_over_visual_debugger_background_modulate.b, mouse_over_visual_debugger_background_modulate.a], mouse_over_tint_lerp_progress) # For speed and convenience.
+				visual_debugger_background.modulate = Color(array_lerp_result[0], array_lerp_result[1], array_lerp_result[2], array_lerp_result[3])
+				keyboard_movement_is_allowed = false
+				forbid_selection_circle_management = true
+		else:
+			if mouse_over_tint_lerp_progress > Global.approximation_float:
+				mouse_over_tint_lerp_progress -= delta * BACKGROUND_COLOR_LERP_SPEED
+				mouse_over_tint_lerp_progress = clamp(mouse_over_tint_lerp_progress, .0, 1.0)
+				var array_lerp_result = Global.user_params.global_functions.lerp_array([original_visual_debugger_background_modulate.r, original_visual_debugger_background_modulate.g, original_visual_debugger_background_modulate.b, original_visual_debugger_background_modulate.a], [mouse_over_visual_debugger_background_modulate.r, mouse_over_visual_debugger_background_modulate.g, mouse_over_visual_debugger_background_modulate.b, mouse_over_visual_debugger_background_modulate.a], mouse_over_tint_lerp_progress) # For speed and convenience.
+				visual_debugger_background.modulate = Color(array_lerp_result[0], array_lerp_result[1], array_lerp_result[2], array_lerp_result[3])
+				keyboard_movement_is_allowed = true
+				forbid_selection_circle_management = false
+		if keyboard_movement_is_allowed:
+			manage_camera_movement(camera_movement_speed_slider.value)
 
 		if is_moving_to_node:
 			move_to_the_node(delta)

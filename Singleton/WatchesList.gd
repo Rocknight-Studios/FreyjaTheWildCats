@@ -1,7 +1,7 @@
 extends ItemList
 
 onready var watch_name = get_parent().get_node("WatchName") # For speed and convenience.
-onready var outliner = get_parent().get_node("Outliner") # For speed and convenience.
+onready var outliner = get_parent().get_node("OutlinerContainer").get_node("Outliner") # For speed and convenience.
 onready var watch_value = get_parent().get_node("WatchValue") # For speed and convenience.
 onready var h_scroll_bar = get_parent().get_node("HScrollBar") # For speed and convenience. Is under parent to be visible outside this ItemList bounds.
 onready var node_check_box = get_parent().get_node("WatchFieldWrapper").get_node("NodeCheckBox") # For speed and convenience.
@@ -9,6 +9,7 @@ onready var name_check_box = get_parent().get_node("WatchFieldWrapper").get_node
 onready var value_check_box = get_parent().get_node("WatchFieldWrapper").get_node("ValueCheckBox") # For speed and convenience.
 onready var type_check_box = get_parent().get_node("WatchFieldWrapper").get_node("TypeCheckBox") # For speed and convenience.
 onready var raw_check_box = get_parent().get_node("WatchFieldWrapper").get_node("RawCheckBox") # For speed and convenience.
+onready var unique_check_box = get_parent().get_node("WatchFieldWrapper").get_node("UniqueCheckBox") # For speed and convenience.
 
 var h_scroll_value = 0 # To know, what substring of item text to form.
 var type_names = ["TYPE_NIL", "TYPE_BOOL", "TYPE_INT", "TYPE_REAL", "TYPE_STRING", "TYPE_VECTOR2", "TYPE_RECT2", "TYPE_VECTOR3", "TYPE_TRANSFORM2D", "TYPE_PLANE", "TYPE_QUAT", "TYPE_AABB", "TYPE_BASIS", "TYPE_TRANSFORM", "TYPE_COLOR", "TYPE_NODE_PATH", "TYPE_RID", "TYPE_OBJECT", "TYPE_DICTIONARY", "TYPE_ARRAY", "TYPE_RAW_ARRAY", "TYPE_INT_ARRAY", "TYPE_REAL_ARRAY", "TYPE_STRING_ARRAY", "TYPE_VECTOR2_ARRAY", "TYPE_VECTOR3_ARRAY", "TYPE_COLOR_ARRAY", "TYPE_MAX"]
@@ -28,6 +29,9 @@ func add_a_watch():
 			set_item_metadata(item_count - 1, [outliner.get_selected().get_metadata(0), watch_name.text, 0])
 			set_watch_value(item_count - 1)
 			select(item_count - 1, true)
+			if unique_check_box.pressed == true:
+				if current_watches_list != null:
+					current_watches_list.append([get_item_text(item_count - 1), get_item_metadata(item_count - 1)])
 		else:
 			print("No node is selected.")
 
@@ -246,6 +250,7 @@ func modify_watch_value():
 			for i in range(0, full_path.get_name_count() - 1):
 				full_parent_path += str("/", full_path.get_name(i))
 			var new_path = get_node(str(full_parent_path, "/", watch_value.text)).get_path() # For speed and convenience.
+			Global.visual_debugger.full_selected_path = str(new_path)
 			for i in range(0, item_count):
 				if get_item_metadata(i)[0] == full_path:
 					set_item_metadata(i, [new_path, get_item_metadata(i)[1]])
@@ -258,10 +263,44 @@ func modify_watch_value():
 	else:
 		set_watch_value(selected_item_index)
 
+var current_watches_list = null # To keep a backup of all the list items including non unique ones.
+
+func remove_duplicates():
+	for i in range(0, item_count):
+		for i2 in range(i, item_count):
+			if i != i2 && get_item_metadata(i) == get_item_metadata(i2):
+				remove_item(i2)
+				item_count -= 1
+				if i2 > item_count - 2:
+					return
+
 func update_watches():
 	if item_count > 0:
+		var selected_item_index = 0 # To know, where to reset
+		if get_selected_items().size() > 0:
+			selected_item_index = get_selected_items()[0]
+		if unique_check_box.pressed != true:
+			if current_watches_list == null || current_watches_list.size() < item_count:
+				current_watches_list = [] # This approach may leak memory. clear() may be safer to use. Have to check and compare.
+				for i in range(0, item_count):
+					current_watches_list.append([get_item_text(i), get_item_metadata(i)])
+			elif current_watches_list.size() > item_count:
+				clear()
+				for i in range(0, current_watches_list.size()):
+					add_item(current_watches_list[i][0])
+					set_item_metadata(i, current_watches_list[i][1])
+				item_count = current_watches_list.size()
+		else:
+			if item_count > 1:
+				remove_duplicates()
+
 		for i in range(0, item_count):
 			set_watch_value(i)
+
+		if selected_item_index < item_count:
+			select(selected_item_index)
+		else:
+			select(item_count - 1)
 
 func _process(delta):
 	update_watches()

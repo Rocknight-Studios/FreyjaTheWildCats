@@ -9,7 +9,6 @@ onready var absolute_mouse_position = Vector2(0.0, 0.0) # For speed and convenie
 onready var selection_info = get_parent().get_node("TabContainer/VisualSelect/SelectionInfo") # For speed and convenience.
 
 var full_paths = [] # To quickly access full path for each node.
-var full_node_path = "" # To make easier life for the player and Godot to find the node.
 export var reversed_node_path = [] # To have persistency through the recursion.
 
 func _input(event):
@@ -37,8 +36,7 @@ func manage_selection():
 		full_paths = []
 
 		if Global.camera:
-			var current_root = Global.camera.get_tree().get_root()
-			get_all_nodes(current_root)
+			get_all_nodes(Global.cached_root)
 
 		selection_info.text = selection_info.text.substr(1, selection_info.text.length() - 1)
 
@@ -51,7 +49,7 @@ func determine_whether_this_node_is_under_mouse(node):
 
 	if manage_this_node:
 		if (relative_mouse_position).distance_to(node.get_global_transform().origin) < selection_radius * Global.visual_debugger.debugger_camera.zoom_scale:
-			full_node_path = ""
+			var full_node_path = "" # To form the full node path.
 			reversed_node_path = []
 			selection_info.text += "\n" + node.name
 			get_reversed_node_path(node)
