@@ -1,6 +1,5 @@
 extends Node2D
 
-onready var show_node_info = get_parent().get_node("TabContainer/VisualSelect/SelectedNodeInfo/ShowNodeInfoButton") # For speed and convenience.
 const SELECTION_SIZE = Vector2(10.0, 10.0) # The relative size of the selection.
 var old_mouse_position = Vector2(.0, .0) # To detect and measure mouse position changes.
 var mouse_is_over_rotation_circle = false # For speed and convenience.
@@ -165,7 +164,6 @@ var character_thickenss = 3.0 # For convenience.
 func calculate_node_draw_center():
 	visual_debugger_camera = Global.visual_debugger.debugger_camera # For speed and convenience.
 	camera_zoom = visual_debugger_camera.zoom # For speed and convenience.
-	node = show_node_info.get_parent().get_node(show_node_info.full_selected_path)
 	if Global.visual_debugger.node_is_selected:
 		node_global_transform = node.get_global_transform() # For speed and convenience.
 		node_position = node_global_transform.origin # For convenience.
@@ -221,7 +219,7 @@ func draw_tips_and_axis_characters():
 		draw_rect(Rect2(y_arrow_tip_position - scale_tip_rectangle_size * .5, scale_tip_rectangle_size), y_arrow_color, true)
 
 func draw_local_axis_handles():
-	if show_node_info.full_selected_path != "":
+	if Global.visual_debugger.full_selected_path != "":
 		calculate_node_draw_center()
 		if Global.visual_debugger.node_is_selected:
 			var arrow_stem_selection_error = 20.0 # How close must the mouse cursor get to the arrow stem for it to be considered selected.
@@ -287,7 +285,8 @@ func draw_rotation_circle():
 		draw_circle(center_of_the_node_with_scale, MIN_DISTANCE_TO_ROTATION_CIRCLE_MIDDLE, Color(.0, .0, 1.0, .9))
 
 func _draw():
-	if show_node_info != null:
+	node = get_node(Global.visual_debugger.full_selected_path)
+	if node != null:
 		if Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.MOVE:
 			draw_local_axis_handles()
 		elif Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.ROTATE:
