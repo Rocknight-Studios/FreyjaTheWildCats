@@ -94,7 +94,6 @@ enemy_optimization_distance = 3000.0
 [node name="BackgroundImage8" parent="." index="8" instance=ExtResource( 10 )]
 
 _sections_unfolded = [ "Transform" ]
-enemy_optimization_distance = 3000.0
 
 [node name="BackgroundImage9" parent="." index="9" instance=ExtResource( 11 )]
 

@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage54/ForestLevel54.png" type="Texture" id=1]
+[ext_resource path="res://Level2/EnvironmentObjects/Mist.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Level2/Enemies/Scorpion/Scorpion.tscn" type="PackedScene" id=3]
 
 [node name="BackgroundImage54" type="Sprite"]
 
@@ -10,6 +12,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -25,6 +28,7 @@ polygon = PoolVector2Array( -710.227, 554.945, -719.036, 217.266, -413.658, -82.
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
 
+editor/display_folded = true
 position = Vector2( 599.012, 14.6836 )
 input_pickable = false
 collision_layer = 1
@@ -38,5 +42,39 @@ bounce = 0.0
 
 build_mode = 0
 polygon = PoolVector2Array( 132.5, 531.453, 161.864, 243.691, -152.324, -2.96094, -258.032, -554.992, 361.534, -554.992, 361.534, 534.391 )
+
+[node name="Mist" parent="." index="2" instance=ExtResource( 2 )]
+
+position = Vector2( -367.041, 484.496 )
+
+[node name="Mist2" parent="." index="3" instance=ExtResource( 2 )]
+
+position = Vector2( -270.142, 322.992 )
+
+[node name="Mist3" parent="." index="4" instance=ExtResource( 2 )]
+
+position = Vector2( 0.00012207, 496.242 )
+
+[node name="Mist4" parent="." index="5" instance=ExtResource( 2 )]
+
+position = Vector2( 99.8353, 193.801 )
+
+[node name="Mist5" parent="." index="6" instance=ExtResource( 2 )]
+
+position = Vector2( 305.379, 563.781 )
+
+[node name="Mist6" parent="." index="7" instance=ExtResource( 2 )]
+
+position = Vector2( 502.113, 340.617 )
+
+[node name="Scorpion" parent="." index="8" instance=ExtResource( 3 )]
+
+position = Vector2( -507.985, 246.645 )
+rotation = 2.74797
+
+[node name="Scorpion2" parent="." index="9" instance=ExtResource( 3 )]
+
+position = Vector2( 531.476, 246.652 )
+rotation = 3.51843
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage5/ForestLevel5.png" type="Texture" id=1]
 [ext_resource path="res://Level2/Enemies/ForestArcher/ForestArcher.tscn" type="PackedScene" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Level2/Enemies/ForestGiant/ForestGiant.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Level2/EnvironmentObjects/Needle.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Level2/EnvironmentObjects/Flower.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Level2/EnvironmentObjects/Mist.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Level2/EnvironmentObjects/PileOfRocks.tscn" type="PackedScene" id=10]
 
 [node name="BackgroundImage5" type="Sprite"]
 
@@ -106,5 +108,17 @@ position = Vector2( 448.828, 25.8076 )
 [node name="Flower6" parent="." index="14" instance=ExtResource( 8 )]
 
 position = Vector2( 430.908, 25.8076 )
+
+[node name="Mist" parent="." index="15" instance=ExtResource( 9 )]
+
+position = Vector2( -516.913, 87.1099 )
+
+[node name="Mist2" parent="." index="16" instance=ExtResource( 9 )]
+
+position = Vector2( 374.857, -45.707 )
+
+[node name="PileOfRocks" parent="." index="17" instance=ExtResource( 10 )]
+
+position = Vector2( 438.049, 458.189 )
 
 

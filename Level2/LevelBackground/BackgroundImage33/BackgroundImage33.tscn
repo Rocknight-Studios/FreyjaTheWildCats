@@ -4,9 +4,9 @@
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage33/Trees.png" type="Texture" id=2]
 [ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Level2/Enemies/WizardTroll/WizardTroll.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Level2/EnvironmentObjects/Leaf.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Level2/EnvironmentObjects/LeavesWithShadow.tscn" type="PackedScene" id=5]
 
-[node name="BackgroundImage33" type="Sprite" index="0"]
+[node name="BackgroundImage33" type="Sprite"]
 
 position = Vector2( 960, -35100 )
 texture = ExtResource( 1 )
@@ -52,8 +52,8 @@ position = Vector2( -659.724, -255.961 )
 
 position = Vector2( 670.539, -288.406 )
 
-[node name="Leaf" parent="." index="6" instance=ExtResource( 5 )]
+[node name="Node2D" parent="." index="6" instance=ExtResource( 5 )]
 
-position = Vector2( 36.469, -88.1953 )
+position = Vector2( -818.346, -562.387 )
 
 

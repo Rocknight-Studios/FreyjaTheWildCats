@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage19/ForestLevel19.png" type="Texture" id=1]
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage19/Trees.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Level2/EnvironmentObjects/Needle.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Level2/EnvironmentObjects/LeavesWithShadow.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Level2/EnvironmentObjects/Trap.tscn" type="PackedScene" id=7]
 
 [node name="BackgroundImage19" type="Sprite" index="0"]
 
@@ -77,5 +78,10 @@ position = Vector2( -883.125, 223.219 )
 [node name="Node2D" parent="." index="7" instance=ExtResource( 6 )]
 
 position = Vector2( -969.216, -537.691 )
+
+[node name="Trap" parent="." index="8" instance=ExtResource( 7 )]
+
+position = Vector2( 812.939, 566.164 )
+rotation = -0.237423
 
 

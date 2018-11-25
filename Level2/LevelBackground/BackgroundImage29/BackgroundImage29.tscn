@@ -5,7 +5,7 @@
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage29/Trees2.png" type="Texture" id=3]
 [ext_resource path="res://Level2/Enemies/ForestGiant/ForestGiant.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Level2/EnvironmentObjects/Leaf.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Level2/EnvironmentObjects/LeavesWithShadow.tscn" type="PackedScene" id=6]
 
 [node name="BackgroundImage29" type="Sprite" index="0"]
 
@@ -39,10 +39,10 @@ position = Vector2( -688.384, 10.2734 )
 
 [node name="Giant" parent="." index="4" instance=ExtResource( 5 )]
 
-position = Vector2( 4.65039, -184.578 )
+position = Vector2( -10.455, -96.4648 )
 
-[node name="Leaf" parent="." index="5" instance=ExtResource( 6 )]
+[node name="Node2D" parent="." index="5" instance=ExtResource( 6 )]
 
-position = Vector2( -164.465, -190.242 )
+position = Vector2( -1097.05, -606.963 )
 
 

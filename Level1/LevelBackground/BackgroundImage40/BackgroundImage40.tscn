@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage40/IceLevel40.png" type="Texture" id=1]
 [ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
 [ext_resource path="res://Level1/Enemies/Trolls/Archer/ArcherHeavy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Level1/Enemies/Trolls/Berserker/Berserker.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level2/EnvironmentObjects/CloudShadow.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -11,7 +12,7 @@ custom_solver_bias = 0.0
 radius = 110.965
 height = 20.0
 
-[node name="BackgroundImage40" type="Sprite" index="0"]
+[node name="BackgroundImage40" type="Sprite"]
 
 position = Vector2( 960, -42660 )
 texture = ExtResource( 1 )
@@ -89,5 +90,7 @@ position = Vector2( 209.353, -137.805 )
 [node name="Berserker5" parent="." index="8" instance=ExtResource( 4 )]
 
 position = Vector2( -177.552, -249.105 )
+
+[node name="CloudShadow" parent="." index="9" instance=ExtResource( 5 )]
 
 

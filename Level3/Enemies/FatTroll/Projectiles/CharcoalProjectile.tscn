@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Level1/Enemies/IceGiant/Projectiles/IceProjectile.gd" type="Script" id=1]
+[ext_resource path="res://Level3/Enemies/FatTroll/Projectiles/Charcoal.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 16.0354
+height = 4.29091
+
+[node name="CharcoalProjectile" type="KinematicBody2D" index="0"]
+
+z_index = 2
+input_pickable = false
+collision_layer = 128
+collision_mask = 262144
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Pickable", "Transform", "Z Index", "collision" ]
+projectile_speed = 0.5
+rotation_speed = 10.0
+rotate_projectile_constantly = true
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+rotation = 1.5708
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+

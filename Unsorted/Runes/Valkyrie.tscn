@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Unsorted/Runes/ValkyrieRune.png" type="Texture" id=1]
+
+[node name="Valkyrie" type="Sprite" index="0"]
+
+texture = ExtResource( 1 )
+
+

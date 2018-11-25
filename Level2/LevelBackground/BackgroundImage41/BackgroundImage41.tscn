@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage41/ForestLevel41.png" type="Texture" id=1]
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage41/Walls.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Level2/Enemies/Spider/Spider.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Level2/Enemies/ForestGiant/ForestGiant.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Level2/EnvironmentObjects/Leaf.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Level2/EnvironmentObjects/PileOfRocks2.tscn" type="PackedScene" id=9]
 
 [node name="BackgroundImage41" type="Sprite" index="0"]
 
@@ -97,10 +98,14 @@ rotation = -0.539402
 
 [node name="Giant2" parent="." index="11" instance=ExtResource( 4 )]
 
-position = Vector2( 181.167, -196.754 )
+position = Vector2( 195.517, -93.9141 )
 
 [node name="Needle" parent="." index="12" instance=ExtResource( 8 )]
 
 position = Vector2( 88.1372, -115.809 )
+
+[node name="PileOfRocks2" parent="." index="13" instance=ExtResource( 9 )]
+
+position = Vector2( -820.346, 38.2617 )
 
 

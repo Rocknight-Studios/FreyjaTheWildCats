@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Level3/LevelBackgrounds/BackgroundImage3/BackgroundImage3.png" type="Texture" id=1]
+[ext_resource path="res://Level1/LevelBackground/LevelBackground.gd" type="Script" id=2]
+[ext_resource path="res://Level3/Enemies/FatTroll/FatTroll.tscn" type="PackedScene" id=3]
+
+[node name="BackgroundImage3" type="Sprite"]
+
+position = Vector2( 960, -2700 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+block_optimization_distance = 2000.0
+
+[node name="FatTroll" parent="." index="0" instance=ExtResource( 3 )]
+
+

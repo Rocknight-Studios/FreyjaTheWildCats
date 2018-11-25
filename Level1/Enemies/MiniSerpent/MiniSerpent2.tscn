@@ -515,7 +515,7 @@ tracks/9/keys = {
 "values": [ 0.0 ]
 }
 
-[node name="Serpent" type="Node2D" index="0"]
+[node name="Serpent" type="Node2D"]
 
 rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
@@ -564,6 +564,7 @@ __meta__ = {
 
 [node name="Body3" type="Sprite" parent="Body/Body6/Body5/Body4" index="0"]
 
+editor/display_folded = true
 position = Vector2( -3.15762, -122.105 )
 texture = ExtResource( 1 )
 offset = Vector2( -0.264678, 54.2451 )
@@ -574,6 +575,7 @@ __meta__ = {
 
 [node name="Body2" type="Sprite" parent="Body/Body6/Body5/Body4/Body3" index="0"]
 
+editor/display_folded = true
 position = Vector2( 2.10571, -163.158 )
 texture = ExtResource( 1 )
 offset = Vector2( -2.3703, 99.8916 )
@@ -584,6 +586,7 @@ __meta__ = {
 
 [node name="Body1" type="Sprite" parent="Body/Body6/Body5/Body4/Body3/Body2" index="0"]
 
+editor/display_folded = true
 position = Vector2( -1.05231, -103.158 )
 texture = ExtResource( 1 )
 offset = Vector2( -1.31788, 120.318 )
@@ -594,6 +597,7 @@ __meta__ = {
 
 [node name="Head" type="Sprite" parent="Body/Body6/Body5/Body4/Body3/Body2/Body1" index="0"]
 
+editor/display_folded = true
 position = Vector2( -1.05246, -58.9473 )
 rotation = 3.14159
 scale = Vector2( 2, 2 )
@@ -607,6 +611,7 @@ __meta__ = {
 
 [node name="End" type="Position2D" parent="Body/Body6/Body5/Body4/Body3/Body2/Body1/Head" index="0"]
 
+editor/display_folded = true
 position = Vector2( 0.116936, 143.601 )
 scale = Vector2( 0.499999, 0.499999 )
 _sections_unfolded = [ "Transform" ]

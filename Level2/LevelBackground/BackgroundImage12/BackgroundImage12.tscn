@@ -106,7 +106,7 @@ _sections_unfolded = [ "Visibility", "Z Index" ]
 
 [node name="Giant" parent="." index="7" instance=ExtResource( 5 )]
 
-position = Vector2( 386.886, 23.8193 )
+position = Vector2( 289.987, 3.26562 )
 
 [node name="WizardTroll" parent="." index="8" instance=ExtResource( 6 )]
 

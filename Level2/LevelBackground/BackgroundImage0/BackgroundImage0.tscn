@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage0/ForestLevel0.png" type="Texture" id=1]
 [ext_resource path="res://Level2/Enemies/Giant/Giant.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Level2/Enemies/Scorpion/Scorpion.tscn" type="PackedScene" id=3]
 
 [node name="BackgroundImage0" type="Sprite" index="0"]
 
@@ -11,7 +12,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
 
-editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -25,24 +25,13 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( 975.193, 277.68, 446.511, -137.713, 348.327, -545.554, 957.57, -543.036 )
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
-
-editor/display_folded = true
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" index="0"]
-
-build_mode = 0
-polygon = PoolVector2Array( -960.791, -44.5645, -532.81, -286.248, -497.565, -543.036, -963.308, -538.001 )
-
-[node name="Giant" parent="." index="2" instance=ExtResource( 2 )]
+[node name="Giant" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( -18.5453, -123.635 )
+
+[node name="Scorpion" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 518.402, 194.219 )
+rotation = -1.9977
 
 

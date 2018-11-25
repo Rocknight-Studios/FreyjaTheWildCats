@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage7/ForestLevel7.png" type="Texture" id=1]
 [ext_resource path="res://Level2/Enemies/Spider/Spider.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Level2/LevelBackground/BackgroundImage7/Trees.png" type="Texture" id=4]
 [ext_resource path="res://Level2/EnvironmentObjects/Needle.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Level2/EnvironmentObjects/Flower.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Level2/EnvironmentObjects/CloudShadow.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Level2/EnvironmentObjects/Mist.tscn" type="PackedScene" id=8]
 
 [node name="BackgroundImage7" type="Sprite" index="0"]
 
@@ -78,5 +80,11 @@ position = Vector2( 233.101, -58.3496 )
 [node name="Flower2" parent="." index="8" instance=ExtResource( 6 )]
 
 position = Vector2( 247.507, 82.1494 )
+
+[node name="CloudShadow" parent="." index="9" instance=ExtResource( 7 )]
+
+[node name="Mist" parent="." index="10" instance=ExtResource( 8 )]
+
+position = Vector2( 15.4544, 513.084 )
 
 

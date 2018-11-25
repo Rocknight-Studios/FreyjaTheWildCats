@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Level1/LevelBackground/BackgroundImage13/IceLevel13.png" type="Texture" id=1]
 [ext_resource path="res://Level1/LevelBackground/LevelBlock.gd" type="Script" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Level1/Enemies/IceGiant/IceGiant.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Level1/Enemies/Trolls/Shield/ShieldTroll.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Level1/EnvironmentEffects/Snow.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Level2/EnvironmentObjects/CloudShadow.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Level1/EnvironmentEffects/Skull.tscn" type="PackedScene" id=9]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -25,6 +27,12 @@ height = 544.942
 custom_solver_bias = 0.0
 radius = 105.192
 height = 12.2871
+
+[sub_resource type="CapsuleShape2D" id=4]
+
+custom_solver_bias = 0.0
+radius = 71.6764
+height = 95.6843
 
 [node name="BackgroundImage13" type="Sprite" index="0"]
 
@@ -158,5 +166,28 @@ position = Vector2( -642.174, -36.0977 )
 [node name="Snow" parent="." index="16" instance=ExtResource( 7 )]
 
 position = Vector2( 65.4688, -4.24023 )
+
+[node name="CloudShadow" parent="." index="17" instance=ExtResource( 8 )]
+
+[node name="Skull" parent="." index="18" instance=ExtResource( 9 )]
+
+position = Vector2( 889.485, 42.417 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="19"]
+
+position = Vector2( 831.428, 115.113 )
+rotation = -0.684482
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+
+position = Vector2( 15.3401, 5.31543 )
+shape = SubResource( 4 )
 
 

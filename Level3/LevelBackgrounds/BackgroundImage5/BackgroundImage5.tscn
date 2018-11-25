@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Level3/LevelBackgrounds/BackgroundImage5/BackgroundImage5.png" type="Texture" id=1]
+[ext_resource path="res://Level1/LevelBackground/LevelBackground.gd" type="Script" id=2]
+
+[node name="BackgroundImage5" type="Sprite"]
+
+position = Vector2( 960, -4860 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+block_optimization_distance = 2000.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+position = Vector2( 707.661, -46.9824 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -48.7272, 587.168, 83.7393, 411.845, -379.893, 61.1982, -377.945, -236.852, -227.947, -495.94, 251.27, -493.992, 254.9, 590.118 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
+
+position = Vector2( -967.327, -51.2998 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 267.492, 592.371, 12.7898, 598.846, 10.6314, -491.191, 243.748, -491.191, 213.529, 251.329 )
+
+

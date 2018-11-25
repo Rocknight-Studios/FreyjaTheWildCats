@@ -564,6 +564,7 @@ archer_projectile_offsets = [ "Body/Torso/UpperArmRight/ArmRight/Node2D", "Body/
 
 [node name="Body" type="Node2D" parent="." index="0"]
 
+editor/display_folded = true
 rotation = -1.86265e-08
 _sections_unfolded = [ "Transform" ]
 
@@ -584,7 +585,7 @@ _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="FootLeft" type="Sprite" parent="Body" index="2"]
 
-position = Vector2( 112.568, 184.877 )
+position = Vector2( 113.416, 179.803 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Offset", "Transform" ]
@@ -592,7 +593,7 @@ _sections_unfolded = [ "Offset", "Transform" ]
 [node name="LegRight" type="Sprite" parent="Body" index="3"]
 
 position = Vector2( -81.0368, 86.1981 )
-rotation = 0.226347
+rotation = 0.298282
 scale = Vector2( 2, 2 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Offset", "Transform" ]
@@ -600,7 +601,7 @@ _sections_unfolded = [ "Offset", "Transform" ]
 [node name="LegLeft" type="Sprite" parent="Body" index="4"]
 
 position = Vector2( 76.0001, 88.0031 )
-rotation = 0.0474976
+rotation = 0.0281385
 scale = Vector2( 2, 2 )
 texture = ExtResource( 5 )
 flip_h = true
@@ -609,7 +610,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Skirt" type="Sprite" parent="Body" index="5"]
 
 position = Vector2( 9.47215, 59.4041 )
-rotation = 0.257841
+rotation = 0.169208
 scale = Vector2( 2, 2 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Material", "Offset", "Transform", "Visibility" ]
@@ -617,8 +618,8 @@ _sections_unfolded = [ "Material", "Offset", "Transform", "Visibility" ]
 [node name="Torso" type="Sprite" parent="Body" index="6"]
 
 editor/display_folded = true
-position = Vector2( -0.361375, -1.00274 )
-rotation = 0.308623
+position = Vector2( -4.09285, -9.52606 )
+rotation = 0.240632
 scale = Vector2( 2, 2 )
 texture = ExtResource( 7 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
@@ -636,7 +637,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 editor/display_folded = true
 show_behind_parent = true
 position = Vector2( -57.893, 8.35507 )
-rotation = 1.35924
+rotation = 1.7068
 texture = ExtResource( 9 )
 offset = Vector2( -29.2367, 19.3366 )
 flip_h = true
@@ -646,7 +647,7 @@ _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 show_behind_parent = true
 position = Vector2( -40.4452, 50.361 )
-rotation = 0.761432
+rotation = 1.03707
 texture = ExtResource( 10 )
 offset = Vector2( 40, 70 )
 flip_h = true
@@ -666,7 +667,7 @@ rotation = -1.89361
 
 show_behind_parent = true
 position = Vector2( 60.1403, 0.719908 )
-rotation = -0.291716
+rotation = -0.437177
 texture = ExtResource( 9 )
 offset = Vector2( 19.6807, 11.7514 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
@@ -675,7 +676,7 @@ _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 show_behind_parent = true
 position = Vector2( 36.8144, 37.3547 )
-rotation = -0.0332797
+rotation = -0.150288
 texture = ExtResource( 10 )
 offset = Vector2( -48.0672, 69.7605 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
@@ -732,7 +733,8 @@ scale = Vector2( 1.5, 1.5 )
 
 [node name="DeathParticles" parent="." index="4" instance=ExtResource( 14 )]
 
-position = Vector2( -2, 78 )
+position = Vector2( -3.80499, 164.641 )
+scale = Vector2( 20, 15 )
 
 [node name="DeathTimer" type="Timer" parent="." index="5"]
 
