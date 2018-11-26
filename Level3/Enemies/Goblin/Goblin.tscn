@@ -470,12 +470,12 @@ custom_solver_bias = 0.0
 radius = 139.507
 height = 20.0
 
-[node name="Goblin" type="Node2D" index="0"]
+[node name="Goblin" type="Node2D"]
 
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
-total_health = 10
+total_health = 3
 fade_out_speed = 5.0
 projectile_template = null
 attack_animation_speed = 0.25
@@ -596,7 +596,6 @@ editor/display_folded = true
 show_behind_parent = true
 position = Vector2( 32.1754, 45.8237 )
 rotation = 1.79356
-scale = Vector2( 1, 1 )
 texture = ExtResource( 10 )
 offset = Vector2( 3.49312, -199.866 )
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -653,7 +652,6 @@ _sections_unfolded = [ "Offset", "Visibility" ]
 
 position = Vector2( 49.0728, -0.24059 )
 rotation = 1.21122
-scale = Vector2( 1, 1 )
 texture = ExtResource( 13 )
 offset = Vector2( -16.4201, -70.0239 )
 flip_v = true
@@ -788,6 +786,8 @@ data = {
 
 [node name="DeathParticles" parent="." index="3" instance=ExtResource( 16 )]
 
+scale = Vector2( 15, 10 )
+
 [node name="DeathSoulParticles" parent="." index="4" instance=ExtResource( 17 )]
 
 [node name="DeathTimer" type="Timer" parent="." index="5"]
@@ -799,6 +799,7 @@ autostart = false
 
 [node name="EnemyCollider" type="StaticBody2D" parent="." index="6"]
 
+editor/display_folded = true
 position = Vector2( -5.40363, 31.3409 )
 rotation = 1.5708
 input_pickable = false
