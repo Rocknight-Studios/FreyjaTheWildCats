@@ -28,6 +28,7 @@ var wait_frames # To allow to show the loading screen up.
 var time_max = 100 # Max time allowed for poll.
 onready var visual_debugger_z_index_node2D = Node2D.new() # To be able to set the z_index.
 var z_index_over_menu = 6 # To avoid having magic numbers.
+onready var cached_root = get_tree().get_root() # For speed and convenience.
 
 func _ready():
 	# Connect all the global signals before loading any scene.
@@ -47,8 +48,7 @@ func _ready():
 	loading_screen.visible = false
 	# Get the current scene as soon as the scene tree is loaded.
 	# Current scene is going to be the last one because autoloads are always loaded first.
-	var root = get_tree().get_root()
-	current_scene = root.get_child(root.get_child_count() - 1)
+	current_scene = cached_root.get_child(cached_root.get_child_count() - 1)
 	# Do all the current_scene related initialization below.
 	connect("start_new_game", self, "on_new_game_start")
 
@@ -112,7 +112,7 @@ func _deferred_goto_scene(path):
 	current_scene.free()
 	var s = ResourceLoader.load(path)
 	current_scene = s.instance()
-	get_tree().get_root().add_child(current_scene)
+	cached_root.add_child(current_scene)
 	get_tree().set_current_scene(current_scene)
 
 	# Do any Global scene specific var initialization after the scene is loaded in it's children and it's _ready functions, it allows also to avoid get_node as self can be passed for references.
