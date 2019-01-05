@@ -5,7 +5,7 @@
 [ext_resource path="res://Level3/Enemies/FatTroll/FatTroll.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Level3/Enemies/Goblin/Goblin.tscn" type="PackedScene" id=4]
 
-[node name="BackgroundImage7" type="Sprite"]
+[node name="BackgroundImage7" type="Sprite" index="0"]
 
 position = Vector2( 960, -7020 )
 texture = ExtResource( 1 )

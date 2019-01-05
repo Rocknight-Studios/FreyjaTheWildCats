@@ -48,6 +48,10 @@ polygon = PoolVector2Array( 300, -180, 80, -250, -460, -220, -460, 180, 120, 230
 
 [node name="Goblin" parent="." index="2" instance=ExtResource( 3 )]
 
-position = Vector2( 70, 160 )
+position = Vector2( -90, 170 )
+
+[node name="Goblin2" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 160, 140 )
 
 
