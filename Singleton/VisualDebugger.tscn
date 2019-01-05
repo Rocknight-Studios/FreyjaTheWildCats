@@ -111,20 +111,12 @@ use_filter = false
 font_data = ExtResource( 6 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="StyleBoxEmpty" id=38]
+[sub_resource type="StyleBoxEmpty" id=12]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
-
-[sub_resource type="DynamicFont" id=12]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=13]
 
@@ -176,7 +168,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=19]
 
-size = 14
+size = 13
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 6 )
@@ -184,7 +176,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=20]
 
-size = 13
+size = 14
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 6 )
@@ -214,13 +206,6 @@ use_filter = false
 font_data = ExtResource( 6 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="StyleBoxEmpty" id=37]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-
 [sub_resource type="DynamicFont" id=24]
 
 size = 13
@@ -229,17 +214,20 @@ use_filter = false
 font_data = ExtResource( 6 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=25]
+[sub_resource type="StyleBoxEmpty" id=25]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+
+[sub_resource type="DynamicFont" id=26]
 
 size = 13
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 6 )
 _sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="Theme" id=26]
-
-default_font = SubResource( 25 )
 
 [sub_resource type="DynamicFont" id=27]
 
@@ -249,13 +237,9 @@ use_filter = false
 font_data = ExtResource( 6 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=28]
+[sub_resource type="Theme" id=28]
 
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
+default_font = SubResource( 27 )
 
 [sub_resource type="DynamicFont" id=29]
 
@@ -314,6 +298,22 @@ font_data = ExtResource( 6 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=36]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=37]
+
+size = 13
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=38]
 
 size = 13
 use_mipmaps = false
@@ -862,32 +862,54 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="OutlinerContainer" type="Container" parent="TabContainer/Watches" index="1"]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Watches" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 4.0
+margin_left = 8.0
 margin_top = 43.0
-margin_right = 362.0
-margin_bottom = 217.0
+margin_right = 364.0
+margin_bottom = 203.0
+rect_min_size = Vector2( 356, 160 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+scroll_horizontal_enabled = true
+scroll_horizontal = 0
+scroll_vertical_enabled = true
+scroll_vertical = 0
+scroll_deadzone = 0
+_sections_unfolded = [ "Rect", "Scroll" ]
 
-[node name="Outliner" type="Tree" parent="TabContainer/Watches/OutlinerContainer" index="0"]
+[node name="OutlinerContainer" type="Container" parent="TabContainer/Watches/ScrollContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -14.0
+rect_min_size = Vector2( 340, 160 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Outliner" type="Tree" parent="TabContainer/Watches/ScrollContainer/OutlinerContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 1.0
-margin_right = 750.0
-margin_bottom = 163.0
+anchor_bottom = 1.0
+margin_right = 780.0
+rect_min_size = Vector2( 780, 160 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 focus_mode = 2
@@ -895,9 +917,9 @@ mouse_filter = 0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/bg_focus = SubResource( 38 )
-custom_fonts/title_button_font = SubResource( 12 )
-custom_fonts/font = SubResource( 13 )
+custom_styles/bg_focus = SubResource( 12 )
+custom_fonts/title_button_font = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
 columns = 1
 allow_reselect = false
 allow_rmb_select = false
@@ -906,16 +928,18 @@ hide_root = false
 drop_mode_flags = 0
 select_mode = 2
 script = ExtResource( 11 )
+_sections_unfolded = [ "Rect" ]
 
-[node name="OutlinerHScrollBar" type="HScrollBar" parent="TabContainer/Watches/OutlinerContainer" index="1"]
+[node name="OutlinerHScrollBar" type="HScrollBar" parent="TabContainer/Watches" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 162.0
-margin_right = 356.0
-margin_bottom = 174.0
+margin_left = 8.0
+margin_top = 205.0
+margin_right = 364.0
+margin_bottom = 217.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -933,7 +957,7 @@ custom_step = -1.0
 script = ExtResource( 12 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="Refresh" type="Button" parent="TabContainer/Watches" index="2"]
+[node name="Refresh" type="Button" parent="TabContainer/Watches" index="3"]
 
 modulate = Color( 0, 0.648438, 1, 1 )
 anchor_left = 0.0
@@ -951,7 +975,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 15 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -961,7 +985,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
 
-[node name="RemoveNode" type="Button" parent="TabContainer/Watches" index="3"]
+[node name="RemoveNode" type="Button" parent="TabContainer/Watches" index="4"]
 
 modulate = Color( 1, 0, 0, 1 )
 anchor_left = 0.0
@@ -979,7 +1003,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 16 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -990,7 +1014,7 @@ align = 1
 script = ExtResource( 13 )
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="AddNode" type="Button" parent="TabContainer/Watches" index="4"]
+[node name="AddNode" type="Button" parent="TabContainer/Watches" index="5"]
 
 modulate = Color( 0.0078125, 1, 0, 1 )
 anchor_left = 0.0
@@ -1008,7 +1032,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 17 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1018,7 +1042,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Visibility", "custom_fonts" ]
 
-[node name="WatchesTitle" type="Label" parent="TabContainer/Watches" index="5"]
+[node name="WatchesTitle" type="Label" parent="TabContainer/Watches" index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1034,14 +1058,14 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 18 )
 text = "List of watches"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="WatchesList" type="ItemList" parent="TabContainer/Watches" index="6"]
+[node name="WatchesList" type="ItemList" parent="TabContainer/Watches" index="7"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1058,7 +1082,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 18 )
+custom_fonts/font = SubResource( 19 )
 items = [  ]
 select_mode = 0
 allow_reselect = false
@@ -1070,7 +1094,7 @@ fixed_icon_size = Vector2( 0, 0 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Columns", "Margin", "Rect", "custom_fonts" ]
 
-[node name="HScrollBar" type="HScrollBar" parent="TabContainer/Watches" index="7"]
+[node name="HScrollBar" type="HScrollBar" parent="TabContainer/Watches" index="8"]
 
 anchor_left = 0.0
 anchor_top = 1.0
@@ -1095,7 +1119,7 @@ exp_edit = false
 rounded = false
 custom_step = -1.0
 
-[node name="AddWatch" type="Button" parent="TabContainer/Watches" index="8"]
+[node name="AddWatch" type="Button" parent="TabContainer/Watches" index="9"]
 
 modulate = Color( 0, 1, 0.015625, 1 )
 anchor_left = 0.0
@@ -1113,7 +1137,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 19 )
+custom_fonts/font = SubResource( 20 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1123,7 +1147,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
 
-[node name="RemoveWatch" type="Button" parent="TabContainer/Watches" index="9"]
+[node name="RemoveWatch" type="Button" parent="TabContainer/Watches" index="10"]
 
 modulate = Color( 1, 0, 0, 1 )
 anchor_left = 0.0
@@ -1141,7 +1165,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 20 )
+custom_fonts/font = SubResource( 21 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1151,7 +1175,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
 
-[node name="WatchName" type="TextEdit" parent="TabContainer/Watches" index="10"]
+[node name="WatchName" type="TextEdit" parent="TabContainer/Watches" index="11"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1168,7 +1192,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 21 )
+custom_fonts/font = SubResource( 22 )
 text = "Type watch name"
 readonly = false
 highlight_current_line = false
@@ -1188,7 +1212,7 @@ caret_moving_by_right_click = true
 script = ExtResource( 15 )
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="WatchValue" type="TextEdit" parent="TabContainer/Watches" index="11"]
+[node name="WatchValue" type="TextEdit" parent="TabContainer/Watches" index="12"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1205,7 +1229,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 22 )
+custom_fonts/font = SubResource( 23 )
 text = "Type value here"
 readonly = false
 highlight_current_line = false
@@ -1224,7 +1248,7 @@ caret_blink_speed = 0.65
 caret_moving_by_right_click = true
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="SetValue" type="Button" parent="TabContainer/Watches" index="12"]
+[node name="SetValue" type="Button" parent="TabContainer/Watches" index="13"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1241,7 +1265,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 23 )
+custom_fonts/font = SubResource( 24 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1251,7 +1275,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="WatchFieldWrapper" type="Control" parent="TabContainer/Watches" index="13"]
+[node name="WatchFieldWrapper" type="Control" parent="TabContainer/Watches" index="14"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1283,8 +1307,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/focus = SubResource( 37 )
-custom_fonts/font = SubResource( 24 )
+custom_styles/focus = SubResource( 25 )
+custom_fonts/font = SubResource( 26 )
 toggle_mode = true
 pressed = true
 enabled_focus_mode = 2
@@ -1311,8 +1335,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/focus = SubResource( 37 )
-custom_fonts/font = SubResource( 24 )
+custom_styles/focus = SubResource( 25 )
+custom_fonts/font = SubResource( 26 )
 toggle_mode = true
 pressed = true
 enabled_focus_mode = 2
@@ -1338,8 +1362,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/focus = SubResource( 37 )
-custom_fonts/font = SubResource( 24 )
+custom_styles/focus = SubResource( 25 )
+custom_fonts/font = SubResource( 26 )
 toggle_mode = true
 pressed = true
 enabled_focus_mode = 2
@@ -1366,8 +1390,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/focus = SubResource( 37 )
-custom_fonts/font = SubResource( 24 )
+custom_styles/focus = SubResource( 25 )
+custom_fonts/font = SubResource( 26 )
 toggle_mode = true
 pressed = true
 enabled_focus_mode = 2
@@ -1394,8 +1418,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/focus = SubResource( 37 )
-custom_fonts/font = SubResource( 24 )
+custom_styles/focus = SubResource( 25 )
+custom_fonts/font = SubResource( 26 )
 toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
@@ -1421,8 +1445,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/focus = SubResource( 37 )
-custom_fonts/font = SubResource( 24 )
+custom_styles/focus = SubResource( 25 )
+custom_fonts/font = SubResource( 26 )
 toggle_mode = true
 pressed = true
 enabled_focus_mode = 2
@@ -1467,7 +1491,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = SubResource( 26 )
+theme = SubResource( 28 )
 toggle_mode = false
 action_mode = 0
 enabled_focus_mode = 0
@@ -1517,7 +1541,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 27 )
+custom_fonts/font = SubResource( 29 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1545,7 +1569,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 28 )
+custom_fonts/font = SubResource( 30 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1572,7 +1596,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 29 )
+custom_fonts/font = SubResource( 31 )
 text = "Movement speed"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1628,7 +1652,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 1
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 30 )
+custom_fonts/font = SubResource( 32 )
 text = "0"
 focus_mode = 2
 context_menu_enabled = true
@@ -1657,7 +1681,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 1
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 31 )
+custom_fonts/font = SubResource( 33 )
 text = "0"
 focus_mode = 2
 context_menu_enabled = true
@@ -1684,7 +1708,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 32 )
+custom_fonts/font = SubResource( 34 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1712,7 +1736,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 1
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 33 )
+custom_fonts/font = SubResource( 35 )
 focus_mode = 2
 context_menu_enabled = true
 placeholder_alpha = 0.6
@@ -1739,7 +1763,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 34 )
+custom_fonts/font = SubResource( 36 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1766,7 +1790,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 35 )
+custom_fonts/font = SubResource( 37 )
 toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
@@ -1794,7 +1818,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 36 )
+custom_fonts/font = SubResource( 38 )
 toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
@@ -1810,11 +1834,11 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [connection signal="pressed" from="TabContainer/VisualSelect/SelectedNodeInfo/JumpToSelectedNodeButton" to="TabContainer/VisualSelect/SelectedNodeInfo/JumpToSelectedNodeButton" method="_on_JumpToSelectedNodeButton_pressed"]
 
-[connection signal="cell_selected" from="TabContainer/Watches/OutlinerContainer/Outliner" to="TabContainer/Watches/OutlinerContainer/Outliner" method="_on_Outliner_cell_selected"]
+[connection signal="cell_selected" from="TabContainer/Watches/ScrollContainer/OutlinerContainer/Outliner" to="TabContainer/Watches/ScrollContainer/OutlinerContainer/Outliner" method="_on_Outliner_cell_selected"]
 
-[connection signal="item_collapsed" from="TabContainer/Watches/OutlinerContainer/Outliner" to="TabContainer/Watches/OutlinerContainer/Outliner" method="_on_Outliner_item_collapsed"]
+[connection signal="item_collapsed" from="TabContainer/Watches/ScrollContainer/OutlinerContainer/Outliner" to="TabContainer/Watches/ScrollContainer/OutlinerContainer/Outliner" method="_on_Outliner_item_collapsed"]
 
-[connection signal="button_down" from="TabContainer/Watches/Refresh" to="TabContainer/Watches/OutlinerContainer/Outliner" method="_on_form_the_outliner"]
+[connection signal="button_down" from="TabContainer/Watches/Refresh" to="TabContainer/Watches/ScrollContainer/OutlinerContainer/Outliner" method="_on_form_the_outliner"]
 
 [connection signal="pressed" from="TabContainer/Watches/RemoveNode" to="TabContainer/Watches/RemoveNode" method="_on_RemoveNode_pressed"]
 
