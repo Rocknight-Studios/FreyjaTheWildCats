@@ -116,21 +116,20 @@ func _process(delta):
 
 	if visual_debugger_is_active:
 		if mouse_is_over_visual_debugger_gui:
-			if mouse_over_tint_lerp_progress < 1.0 - Global.approximation_float:
-				mouse_over_tint_lerp_progress += delta * BACKGROUND_COLOR_LERP_SPEED
-				mouse_over_tint_lerp_progress = clamp(mouse_over_tint_lerp_progress, .0, 1.0)
+			if mouse_over_tint_lerp_progress < Global.NORMALIZED_UPPER_BOUND:
+				mouse_over_tint_lerp_progress = min(mouse_over_tint_lerp_progress + delta * BACKGROUND_COLOR_LERP_SPEED, 1.0)
 				var array_lerp_result = Global.user_params.global_functions.lerp_array([original_visual_debugger_background_modulate.r, original_visual_debugger_background_modulate.g, original_visual_debugger_background_modulate.b, original_visual_debugger_background_modulate.a], [mouse_over_visual_debugger_background_modulate.r, mouse_over_visual_debugger_background_modulate.g, mouse_over_visual_debugger_background_modulate.b, mouse_over_visual_debugger_background_modulate.a], mouse_over_tint_lerp_progress) # For speed and convenience.
 				visual_debugger_background.modulate = Color(array_lerp_result[0], array_lerp_result[1], array_lerp_result[2], array_lerp_result[3])
 				keyboard_movement_is_allowed = false
 				forbid_selection_circle_management = true
 		else:
 			if mouse_over_tint_lerp_progress > Global.approximation_float:
-				mouse_over_tint_lerp_progress -= delta * BACKGROUND_COLOR_LERP_SPEED
-				mouse_over_tint_lerp_progress = clamp(mouse_over_tint_lerp_progress, .0, 1.0)
+				mouse_over_tint_lerp_progress = max(mouse_over_tint_lerp_progress - delta * BACKGROUND_COLOR_LERP_SPEED, .0)
 				var array_lerp_result = Global.user_params.global_functions.lerp_array([original_visual_debugger_background_modulate.r, original_visual_debugger_background_modulate.g, original_visual_debugger_background_modulate.b, original_visual_debugger_background_modulate.a], [mouse_over_visual_debugger_background_modulate.r, mouse_over_visual_debugger_background_modulate.g, mouse_over_visual_debugger_background_modulate.b, mouse_over_visual_debugger_background_modulate.a], mouse_over_tint_lerp_progress) # For speed and convenience.
 				visual_debugger_background.modulate = Color(array_lerp_result[0], array_lerp_result[1], array_lerp_result[2], array_lerp_result[3])
 				keyboard_movement_is_allowed = true
 				forbid_selection_circle_management = false
+
 		if keyboard_movement_is_allowed:
 			manage_camera_movement(camera_movement_speed_slider.value)
 

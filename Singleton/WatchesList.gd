@@ -1,7 +1,7 @@
 extends ItemList
 
 onready var watch_name = get_parent().get_node("WatchName") # For speed and convenience.
-onready var outliner = get_parent().get_node("ScrollContainer").get_node("OutlinerContainer").get_node("Outliner") # For speed and convenience.
+onready var outliner = get_parent().get_node("OutlinerContainer").get_node("Outliner") # For speed and convenience.
 onready var watch_value = get_parent().get_node("WatchValue") # For speed and convenience.
 onready var h_scroll_bar = get_parent().get_node("HScrollBar") # For speed and convenience. Is under parent to be visible outside this ItemList bounds.
 onready var node_check_box = get_parent().get_node("WatchFieldWrapper").get_node("NodeCheckBox") # For speed and convenience.

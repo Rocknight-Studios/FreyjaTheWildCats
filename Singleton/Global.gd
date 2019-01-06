@@ -11,6 +11,7 @@ signal start_new_game # To know, when the new game button has been pressed.
 const full_circle_in_degrees = 360.0 # To avoid having magic numbers.
 const to_seconds_multiplier = 1000 # To avoid having magic numbers.
 const approximation_float = .000001 # To avoid having magic numbers.
+const NORMALIZED_UPPER_BOUND = 1.0 - approximation_float # For speed and convenience.
 const POSITIVEINFINITY = 3.402823e+38 # For convenience.
 const NEGATIVEINFINITY = -2.802597e-45 # For convenience.
 
