@@ -1,11 +1,11 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Singleton/VisualDebugger.gd" type="Script" id=1]
-[ext_resource path="res://Singleton/VisualDebuggerBackground.gd" type="Script" id=2]
-[ext_resource path="res://Singleton/SceneNodeSelector.gd" type="Script" id=3]
-[ext_resource path="res://Singleton/IndicatorDrawSurface.gd" type="Script" id=4]
-[ext_resource path="res://Singleton/VisualDebuggerCamera.gd" type="Script" id=5]
-[ext_resource path="res://Assets/Font/overpass-mono/overpass-mono-bold.otf" type="DynamicFontData" id=6]
+[ext_resource path="res://Singleton/VisualDebuggerTheme.theme" type="Theme" id=2]
+[ext_resource path="res://Singleton/VisualDebuggerBackground.gd" type="Script" id=3]
+[ext_resource path="res://Singleton/SceneNodeSelector.gd" type="Script" id=4]
+[ext_resource path="res://Singleton/IndicatorDrawSurface.gd" type="Script" id=5]
+[ext_resource path="res://Singleton/VisualDebuggerCamera.gd" type="Script" id=6]
 [ext_resource path="res://Singleton/WarningLine.gd" type="Script" id=7]
 [ext_resource path="res://Singleton/ShowNodeInfoButton.gd" type="Script" id=8]
 [ext_resource path="res://Singleton/JumpToSelectedNodeButton.gd" type="Script" id=9]
@@ -15,311 +15,33 @@
 [ext_resource path="res://Singleton/RemoveNode.gd" type="Script" id=13]
 [ext_resource path="res://Singleton/WatchesList.gd" type="Script" id=14]
 [ext_resource path="res://Singleton/WatchName.gd" type="Script" id=15]
-[ext_resource path="res://Singleton/TransformationModeButton.gd" type="Script" id=16]
-[ext_resource path="res://Singleton/StepButton.gd" type="Script" id=17]
-[ext_resource path="res://Singleton/RunButton.gd" type="Script" id=18]
-[ext_resource path="res://Singleton/CameraMovementSpeedSlider.gd" type="Script" id=19]
-[ext_resource path="res://Singleton/JumpToNodeButton.gd" type="Script" id=20]
-[ext_resource path="res://Singleton/JumpToNodePath.gd" type="Script" id=21]
-[ext_resource path="res://Singleton/EnablePersistentFollowButton.gd" type="Script" id=22]
+[ext_resource path="res://Assets/Font/overpass-mono/overpass-mono-bold.otf" type="DynamicFontData" id=16]
+[ext_resource path="res://Singleton/TransformationModeButton.gd" type="Script" id=17]
+[ext_resource path="res://Singleton/StepButton.gd" type="Script" id=18]
+[ext_resource path="res://Singleton/RunButton.gd" type="Script" id=19]
+[ext_resource path="res://Singleton/CameraMovementSpeedSlider.gd" type="Script" id=20]
+[ext_resource path="res://Singleton/JumpToNodeButton.gd" type="Script" id=21]
+[ext_resource path="res://Singleton/JumpToNodePath.gd" type="Script" id=22]
+[ext_resource path="res://Singleton/EnablePersistentFollowButton.gd" type="Script" id=23]
 
-[sub_resource type="DynamicFont" id=1]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=2]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=3]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=4]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=5]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=6]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=7]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=8]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=9]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=10]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Settings" ]
-
-[sub_resource type="DynamicFont" id=11]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="StyleBoxEmpty" id=12]
+[sub_resource type="StyleBoxEmpty" id=1213]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=1228]
 
 size = 13
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 6 )
+font_data = ExtResource( 16 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="Theme" id=1229]
 
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=15]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=16]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=17]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=18]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=19]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=20]
-
-size = 14
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=21]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=22]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=23]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=24]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="StyleBoxEmpty" id=25]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-
-[sub_resource type="DynamicFont" id=26]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=27]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="Theme" id=28]
-
-default_font = SubResource( 27 )
-
-[sub_resource type="DynamicFont" id=29]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=30]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=31]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=32]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=33]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=34]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=35]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=36]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=37]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=38]
-
-size = 13
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
+default_font = SubResource( 1228 )
 
 [node name="VisualDebugger" type="CanvasLayer" index="0"]
 
@@ -348,7 +70,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
+theme = ExtResource( 2 )
+_sections_unfolded = [ "Rect", "Theme" ]
 
 [node name="VisualDebuggerBackground" type="Panel" parent="." index="1"]
 
@@ -366,19 +89,20 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 2 )
-_sections_unfolded = [ "Rect", "Visibility" ]
+theme = ExtResource( 2 )
+script = ExtResource( 3 )
+_sections_unfolded = [ "Rect", "Theme", "Visibility" ]
 
 [node name="SceneNodeSelector" type="Node2D" parent="." index="2"]
 
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 node_types_to_detect = [ "Node2D", "StaticBody2D" ]
 selection_color = Color( 0, 0.1, 0, 0.1 )
 reversed_node_path = [  ]
 
 [node name="IndicatorDrawSurface" type="Node2D" parent="." index="3"]
 
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 
 [node name="DebuggerCamera2D" type="Camera2D" parent="." index="4"]
 
@@ -405,7 +129,7 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 _sections_unfolded = [ "Drag Margin", "Editor", "Offset", "Pause", "Smoothing", "Transform", "Z Index" ]
 
 [node name="ActivityLabel" type="Label" parent="." index="5"]
@@ -426,16 +150,15 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
+theme = ExtResource( 2 )
 text = "Visual debugger v. 1"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Margin", "Pause", "Rect", "Visibility", "custom_fonts" ]
+_sections_unfolded = [ "Margin", "Pause", "Rect", "Theme", "Visibility", "custom_fonts" ]
 
 [node name="InfoContainer" type="Container" parent="." index="6"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -450,6 +173,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 2 )
+_sections_unfolded = [ "Theme" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -470,10 +195,12 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+theme = ExtResource( 2 )
 text = "Debugger Warning"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "Theme" ]
 
 [node name="WarningLine" type="LineEdit" parent="InfoContainer" index="1"]
 
@@ -492,6 +219,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 1
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 2 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "Look for useful info here!"
 focus_mode = 2
@@ -501,7 +229,7 @@ caret_blink = false
 caret_blink_speed = 0.65
 caret_position = 0
 script = ExtResource( 7 )
-_sections_unfolded = [ "Visibility", "custom_colors" ]
+_sections_unfolded = [ "Theme", "Visibility" ]
 
 [node name="TabContainer" type="TabContainer" parent="." index="7"]
 
@@ -519,10 +247,10 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 2 )
+theme = ExtResource( 2 )
 tab_align = 1
 tabs_visible = true
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Theme", "custom_fonts" ]
 
 [node name="VisualSelect" type="Container" parent="TabContainer" index="0"]
 
@@ -530,16 +258,18 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 35.0
-margin_right = -4.0
-margin_bottom = -4.0
+margin_left = 5.0
+margin_top = 32.0
+margin_right = -5.0
+margin_bottom = -5.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 2 )
+_sections_unfolded = [ "Theme" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -559,8 +289,9 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 2 )
 color = Color( 0.114304, 0.116243, 0.128906, 0.165725 )
-_sections_unfolded = [ "Anchor", "Margin", "Visibility" ]
+_sections_unfolded = [ "Anchor", "Margin", "Theme", "Visibility" ]
 
 [node name="ListOfNodesTitle" type="Label" parent="TabContainer/VisualSelect" index="1"]
 
@@ -578,12 +309,12 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+theme = ExtResource( 2 )
 text = "List of currenly marked nodes"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Margin", "custom_fonts" ]
+_sections_unfolded = [ "Margin", "Theme", "custom_fonts" ]
 
 [node name="SelectionInfo" type="TextEdit" parent="TabContainer/VisualSelect" index="2"]
 
@@ -602,7 +333,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 4 )
+theme = ExtResource( 2 )
 text = ""
 readonly = true
 highlight_current_line = true
@@ -637,7 +368,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 5 )
+theme = ExtResource( 2 )
 text = "Show only nodes of these types."
 percent_visible = 1.0
 lines_skipped = 0
@@ -661,7 +392,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 6 )
+theme = ExtResource( 2 )
 text = ""
 readonly = true
 highlight_current_line = true
@@ -696,6 +427,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -718,7 +450,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 7 )
+theme = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -746,7 +478,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 8 )
+theme = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -773,7 +505,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 9 )
+theme = ExtResource( 2 )
 text = "Information about the selected node"
 percent_visible = 1.0
 lines_skipped = 0
@@ -797,7 +529,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 10 )
+theme = ExtResource( 2 )
 text = ""
 readonly = true
 highlight_current_line = false
@@ -834,7 +566,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
+theme = ExtResource( 2 )
+_sections_unfolded = [ "Rect", "Theme" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -855,16 +588,15 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 11 )
+theme = ExtResource( 2 )
 text = "Select Node/s to inspect"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Theme", "custom_fonts" ]
 
 [node name="OutlinerContainer" type="Container" parent="TabContainer/Watches" index="1"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -880,7 +612,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
+theme = ExtResource( 2 )
+_sections_unfolded = [ "Rect", "Theme" ]
 
 [node name="Outliner" type="Tree" parent="TabContainer/Watches/OutlinerContainer" index="0"]
 
@@ -898,9 +631,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/bg_focus = SubResource( 12 )
-custom_fonts/title_button_font = SubResource( 13 )
-custom_fonts/font = SubResource( 14 )
+theme = ExtResource( 2 )
+custom_styles/bg_focus = SubResource( 1213 )
 columns = 1
 allow_reselect = false
 allow_rmb_select = false
@@ -909,7 +641,7 @@ hide_root = false
 drop_mode_flags = 0
 select_mode = 2
 script = ExtResource( 11 )
-_sections_unfolded = [ "Rect", "Visibility" ]
+_sections_unfolded = [ "Rect", "Theme", "Visibility" ]
 
 [node name="OutlinerHScrollBar" type="HScrollBar" parent="TabContainer/Watches" index="2"]
 
@@ -927,6 +659,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 0
+theme = ExtResource( 2 )
 min_value = 0.0
 max_value = 1.0
 step = 1.0
@@ -956,7 +689,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 15 )
+theme = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -984,7 +717,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 16 )
+theme = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1013,7 +746,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 17 )
+theme = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1039,7 +772,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 18 )
+theme = ExtResource( 2 )
 text = "List of watches"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1063,7 +796,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 19 )
+theme = ExtResource( 2 )
 items = [  ]
 select_mode = 0
 allow_reselect = false
@@ -1091,6 +824,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 0
+theme = ExtResource( 2 )
 min_value = 0.0
 max_value = 2.0
 step = 1.0
@@ -1118,7 +852,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 20 )
+theme = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1146,7 +880,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 21 )
+theme = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1173,7 +907,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 22 )
+theme = ExtResource( 2 )
 text = "Type watch name"
 readonly = false
 highlight_current_line = false
@@ -1210,7 +944,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 23 )
+theme = ExtResource( 2 )
 text = "Type value here"
 readonly = false
 highlight_current_line = false
@@ -1246,7 +980,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 24 )
+theme = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1271,6 +1005,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 2 )
+_sections_unfolded = [ "Theme" ]
 
 [node name="NodeCheckBox" type="CheckBox" parent="TabContainer/Watches/WatchFieldWrapper" index="0"]
 
@@ -1288,8 +1024,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/focus = SubResource( 25 )
-custom_fonts/font = SubResource( 26 )
+theme = ExtResource( 2 )
 toggle_mode = true
 pressed = true
 enabled_focus_mode = 2
@@ -1316,8 +1051,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/focus = SubResource( 25 )
-custom_fonts/font = SubResource( 26 )
+theme = ExtResource( 2 )
 toggle_mode = true
 pressed = true
 enabled_focus_mode = 2
@@ -1343,8 +1077,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/focus = SubResource( 25 )
-custom_fonts/font = SubResource( 26 )
+theme = ExtResource( 2 )
 toggle_mode = true
 pressed = true
 enabled_focus_mode = 2
@@ -1371,8 +1104,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/focus = SubResource( 25 )
-custom_fonts/font = SubResource( 26 )
+theme = ExtResource( 2 )
 toggle_mode = true
 pressed = true
 enabled_focus_mode = 2
@@ -1399,8 +1131,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/focus = SubResource( 25 )
-custom_fonts/font = SubResource( 26 )
+theme = ExtResource( 2 )
 toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
@@ -1426,8 +1157,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/focus = SubResource( 25 )
-custom_fonts/font = SubResource( 26 )
+theme = ExtResource( 2 )
 toggle_mode = true
 pressed = true
 enabled_focus_mode = 2
@@ -1439,7 +1169,6 @@ align = 0
 
 [node name="Transform" type="Container" parent="TabContainer" index="2"]
 
-editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1455,6 +1184,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 2 )
+_sections_unfolded = [ "Theme" ]
 
 [node name="TransformationModeButton" type="MenuButton" parent="TabContainer/Transform" index="0"]
 
@@ -1472,7 +1203,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = SubResource( 28 )
+theme = SubResource( 1229 )
 toggle_mode = false
 action_mode = 0
 enabled_focus_mode = 0
@@ -1482,7 +1213,7 @@ text = "Transformation mode: MOVE"
 flat = false
 align = 1
 items = [ "MOVE", null, 0, false, false, -1, 0, null, "", false, "ROTATE", null, 0, false, false, -1, 0, null, "", false, "SCALE", null, 0, false, false, -1, 0, null, "", false ]
-script = ExtResource( 16 )
+script = ExtResource( 17 )
 _sections_unfolded = [ "Margin", "Theme", "custom_fonts" ]
 
 [node name="GeneralControlsContainer" type="Container" parent="." index="8"]
@@ -1501,6 +1232,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 2 )
+_sections_unfolded = [ "Theme" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -1522,7 +1255,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 29 )
+theme = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1530,7 +1263,7 @@ group = null
 text = "Step"
 flat = false
 align = 1
-script = ExtResource( 17 )
+script = ExtResource( 18 )
 _sections_unfolded = [ "Margin", "Pause", "custom_fonts" ]
 
 [node name="RunButton" type="Button" parent="GeneralControlsContainer" index="1"]
@@ -1550,7 +1283,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 30 )
+theme = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1558,7 +1291,7 @@ group = null
 text = "Run"
 flat = false
 align = 1
-script = ExtResource( 18 )
+script = ExtResource( 19 )
 _sections_unfolded = [ "Margin", "Pause", "custom_fonts" ]
 
 [node name="CameraMovementSpeedLabel" type="Label" parent="GeneralControlsContainer" index="2"]
@@ -1577,7 +1310,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 31 )
+theme = ExtResource( 2 )
 text = "Movement speed"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1601,6 +1334,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 0
+theme = ExtResource( 2 )
 min_value = 1.0
 max_value = 50.0
 step = 1.0
@@ -1612,7 +1346,7 @@ editable = true
 tick_count = 0
 ticks_on_borders = false
 focus_mode = 2
-script = ExtResource( 19 )
+script = ExtResource( 20 )
 
 [node name="CameraJumpPositionX" type="LineEdit" parent="GeneralControlsContainer" index="4"]
 
@@ -1633,7 +1367,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 1
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 32 )
+theme = ExtResource( 2 )
 text = "0"
 focus_mode = 2
 context_menu_enabled = true
@@ -1662,7 +1396,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 1
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 33 )
+theme = ExtResource( 2 )
 text = "0"
 focus_mode = 2
 context_menu_enabled = true
@@ -1689,7 +1423,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 34 )
+theme = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1697,7 +1431,7 @@ group = null
 text = "Jump To Node"
 flat = false
 align = 1
-script = ExtResource( 20 )
+script = ExtResource( 21 )
 _sections_unfolded = [ "custom_fonts" ]
 
 [node name="JumpToNodePath" type="LineEdit" parent="GeneralControlsContainer" index="7"]
@@ -1717,15 +1451,15 @@ mouse_filter = 0
 mouse_default_cursor_shape = 1
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 35 )
+theme = ExtResource( 2 )
 focus_mode = 2
 context_menu_enabled = true
 placeholder_alpha = 0.6
 caret_blink = false
 caret_blink_speed = 0.65
 caret_position = 0
-script = ExtResource( 21 )
-_sections_unfolded = [ "custom_fonts" ]
+script = ExtResource( 22 )
+_sections_unfolded = [ "Theme", "custom_fonts" ]
 
 [node name="CameraJumpPositionButton" type="Button" parent="GeneralControlsContainer" index="8"]
 
@@ -1744,7 +1478,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 36 )
+theme = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1771,7 +1505,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 37 )
+theme = ExtResource( 2 )
 toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
@@ -1779,7 +1513,7 @@ group = null
 text = "Follow node: "
 flat = false
 align = 0
-script = ExtResource( 22 )
+script = ExtResource( 23 )
 _sections_unfolded = [ "custom_fonts" ]
 
 [node name="EnableExactFollow" type="CheckButton" parent="GeneralControlsContainer" index="10"]
@@ -1799,7 +1533,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 38 )
+theme = ExtResource( 2 )
 toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
@@ -1845,13 +1579,13 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [connection signal="pressed" from="GeneralControlsContainer/JumpToNodeButton" to="GeneralControlsContainer/JumpToNodeButton" method="_on_JumpToNodeButton_pressed"]
 
-[connection signal="mouse_entered" from="GeneralControlsContainer/JumpToNodePath" to="GeneralControlsContainer/JumpToNodePath" method="_on_JumpToNodePath_mouse_entered"]
-
 [connection signal="mouse_entered" from="GeneralControlsContainer/JumpToNodePath" to="." method="_on_disable_keyboard_movement"]
 
-[connection signal="mouse_exited" from="GeneralControlsContainer/JumpToNodePath" to="GeneralControlsContainer/JumpToNodePath" method="_on_JumpToNodePath_mouse_exited"]
+[connection signal="mouse_entered" from="GeneralControlsContainer/JumpToNodePath" to="GeneralControlsContainer/JumpToNodePath" method="_on_JumpToNodePath_mouse_entered"]
 
 [connection signal="mouse_exited" from="GeneralControlsContainer/JumpToNodePath" to="." method="_on_enable_keyboard_movement"]
+
+[connection signal="mouse_exited" from="GeneralControlsContainer/JumpToNodePath" to="GeneralControlsContainer/JumpToNodePath" method="_on_JumpToNodePath_mouse_exited"]
 
 [connection signal="button_down" from="GeneralControlsContainer/CameraJumpPositionButton" to="." method="_on_JumpPositionButton_button_down"]
 

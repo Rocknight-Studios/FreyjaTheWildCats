@@ -93,7 +93,7 @@ func _on_enable_keyboard_movement():
 
 onready var visual_debugger_background = $"VisualDebuggerBackground" # For speed and convenience.
 onready var original_visual_debugger_background_modulate = visual_debugger_background.modulate # To know, where to reset the value.
-const VISUAL_BACKGROUND_MODULATE_B_DELTA = .5 # To avoid having magic numbers.
+const VISUAL_BACKGROUND_MODULATE_B_DELTA = .25 # To avoid having magic numbers.
 onready var mouse_over_visual_debugger_background_modulate = Color(original_visual_debugger_background_modulate.r + VISUAL_BACKGROUND_MODULATE_B_DELTA, original_visual_debugger_background_modulate.g + VISUAL_BACKGROUND_MODULATE_B_DELTA, original_visual_debugger_background_modulate.b + VISUAL_BACKGROUND_MODULATE_B_DELTA, original_visual_debugger_background_modulate.a + VISUAL_BACKGROUND_MODULATE_B_DELTA) # When mouse is over visual debugger change the background color.
 const BACKGROUND_COLOR_LERP_SPEED = 3.0 # How quickly to fade to the new state.
 var mouse_over_tint_lerp_progress = .0 # To have a tight control over lerping and save resources.
