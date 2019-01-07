@@ -18,7 +18,7 @@ func _physics_process(delta):
 	velocity = direction * speed * velocity_multiplier
 	move_and_slide(velocity)
 	if !rotate_projectile_constantly:
-		self.rotation = atan2(velocity.y, velocity.x) * (Global.full_circle_in_degrees * .5) / PI
+		self.rotation = atan2(velocity.y, velocity.x) * (Global.FULL_CIRCLE_IN_DEGREES * .5) / PI
 	position += velocity
 
 	if get_slide_count() > 0:
@@ -31,8 +31,8 @@ func _physics_process(delta):
 
 func _process(delta):
 	if rotate_projectile_constantly:
-		if self.rotation > Global.full_circle_in_degrees:
-			self.rotation -= Global.full_circle_in_degrees
+		if self.rotation > Global.FULL_CIRCLE_IN_DEGREES:
+			self.rotation -= Global.FULL_CIRCLE_IN_DEGREES
 		elif self.rotation < 0.0:
-			self.rotation += Global.full_circle_in_degrees
+			self.rotation += Global.FULL_CIRCLE_IN_DEGREES
 		self.rotation += rotation_speed * delta * constant_rotation_direction

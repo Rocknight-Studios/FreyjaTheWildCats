@@ -27,7 +27,7 @@ func _input(event):
 		if Input.is_action_just_pressed("mouse_left_click"):
 			if node != null:
 				scale_at_mouse_grab = node.scale
-				node_scale_ratio = clamp(abs(node.scale.y), Global.approximation_float, Global.POSITIVEINFINITY) / clamp(abs(node.scale.x), Global.approximation_float, Global.POSITIVEINFINITY)
+				node_scale_ratio = max(abs(node.scale.y), Global.APPROXIMATION_FLOAT) / max(abs(node.scale.x), Global.APPROXIMATION_FLOAT)
 				concurrent_scale_mask = Vector2(1.0 if node.scale.x > .0 else -1.0, 1.0 if node.scale.y > .0 else -1.0)
 			if !(mouse_is_over_arrow && Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.MOVE) && !(mouse_is_over_rotation_circle && Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.ROTATE) && !(mouse_is_over_arrow && Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.SCALE):
 				forbid_transformation_mouse_input = true

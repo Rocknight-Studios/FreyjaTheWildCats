@@ -49,7 +49,7 @@ func manage_shooting():
 	var direction = Vector2(0.0, 1.0) # The direction of the current movement step.
 	if Input.is_action_pressed ("ui_shoot"):
 		# This is how to spawn instances synced with animation speed, when animation tree player is not used.
-		if OS.get_ticks_msec() - projectile_shot_start_time > freyja_animator.current_animation_length * Global.to_seconds_multiplier / freyja_attack_animation_speed:
+		if OS.get_ticks_msec() - projectile_shot_start_time > freyja_animator.current_animation_length * Global.TO_SECONDS_MULTIPLIER / freyja_attack_animation_speed:
 			freyja_animator.seek(0.0, true)
 			freyja_animator.current_animation = "SpearThrowingFlipHair"
 			freyja_animator.play()
@@ -58,7 +58,7 @@ func manage_shooting():
 			projectile_timer.wait_time = freyja_animator.current_animation_length / freyja_attack_animation_speed * animation_offset_qoefficient
 			projectile_timer.start()
 	else:
-		if abs(abs(freyja_animator.playback_speed) - abs(freyja_idle_animation_speed)) > Global.approximation_float:
+		if abs(abs(freyja_animator.playback_speed) - abs(freyja_idle_animation_speed)) > Global.APPROXIMATION_FLOAT:
 			projectile_timer.stop() # Don't do a redundant throw.
 			freyja_animator.seek(2.0, true) # Set to the position, where there is no spear in the hand.
 			freyja_animator.current_animation = "Idle"

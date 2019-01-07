@@ -50,7 +50,7 @@ func receive_damage(damage_amount):
 	if current_health >= 0:
 		damage_particles.modulate.a = original_damage_particle_alpha
 		damage_particles.emitting = true
-		if OS.get_ticks_msec() - blood_splat_start_time > damage_particles.lifetime * Global.to_seconds_multiplier * blood_splat_start_coefficient:
+		if OS.get_ticks_msec() - blood_splat_start_time > damage_particles.lifetime * Global.TO_SECONDS_MULTIPLIER * blood_splat_start_coefficient:
 			damage_particles.restart()
 			blood_splat_start_time = OS.get_ticks_msec()
 		current_health -= damage_amount
@@ -80,15 +80,15 @@ onready var projectile_launch_start_distance = OS.window_size.y + OS.window_size
 
 func manage_projectile(delta):
 	if Global.player.get_global_transform().origin.distance_to(self.get_global_transform().origin) < projectile_launch_start_distance:
-		if abs(abs(enemy_animator.playback_speed) - abs(attack_animation_speed)) > Global.approximation_float:
+		if abs(abs(enemy_animator.playback_speed) - abs(attack_animation_speed)) > Global.APPROXIMATION_FLOAT:
 			enemy_animator.playback_speed = attack_animation_speed
 		animation_blend_value += animation_blend_speed * delta
 		animation_blend_value = clamp(animation_blend_value, 0.0, 1.0)
-		if animation_blend_value < 1.0 - Global.approximation_float:
+		if animation_blend_value < 1.0 - Global.APPROXIMATION_FLOAT:
 			enemy_animation_tree_player.blend2_node_set_amount("blend2", animation_blend_value)
 		if enemy_launches_projectiles:
 			var specific_animation_compensator = 1.0 / archer_projectile_offsets.size() # Each animation can have situation, where some events are be repeated multiple times during the animation.
-			if !enemy_must_fade_out && OS.get_ticks_msec() - projectile_launch_start_time > animation_offset + enemy_animator.get_animation("Attack").length * enemy_animator.playback_speed * Global.to_seconds_multiplier * specific_animation_compensator / attack_animation_speed:
+			if !enemy_must_fade_out && OS.get_ticks_msec() - projectile_launch_start_time > animation_offset + enemy_animator.get_animation("Attack").length * enemy_animator.playback_speed * Global.TO_SECONDS_MULTIPLIER * specific_animation_compensator / attack_animation_speed:
 				projectile_launch_start_time = OS.get_ticks_msec()
 				if current_projectile_offset_index > 0 && projectile_template:
 					var instanced_projectile = projectile_template.instance() # To manage the current projectile instance.
@@ -101,10 +101,10 @@ func manage_projectile(delta):
 					instanced_projectile.direction = (Global.player.get_global_transform().origin - self.get_global_transform().origin).normalized()
 				current_projectile_offset_index += 1
 	else:
-		if abs(abs(enemy_animator.playback_speed) - abs(idle_animation_speed)) > Global.approximation_float:
+		if abs(abs(enemy_animator.playback_speed) - abs(idle_animation_speed)) > Global.APPROXIMATION_FLOAT:
 			enemy_animator.playback_speed = idle_animation_speed
 			current_projectile_offset_index = -1
 		animation_blend_value -= animation_blend_speed * delta
 		animation_blend_value = clamp(animation_blend_value, 0.0, 1.0)
-		if animation_blend_value > Global.approximation_float:
+		if animation_blend_value > Global.APPROXIMATION_FLOAT:
 			enemy_animation_tree_player.blend2_node_set_amount("blend2", animation_blend_value)

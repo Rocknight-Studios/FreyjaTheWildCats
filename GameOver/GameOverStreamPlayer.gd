@@ -6,7 +6,7 @@ var stream_length = 0.0 # For speed and convenience.
 
 func _ready():
 	self.stream = game_over_music
-	stream_length = self.stream.get_length() * Global.to_seconds_multiplier
+	stream_length = self.stream.get_length() * Global.TO_SECONDS_MULTIPLIER
 	self.play()
 
 func _process(delta):

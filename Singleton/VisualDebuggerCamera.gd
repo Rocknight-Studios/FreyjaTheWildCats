@@ -34,7 +34,7 @@ func manage_mouse_state(direction):
 func manage_mouse_drag():
 	var current_mouse_drag_position = get_viewport().get_mouse_position() # For speed and convenience.
 	var distance_to_previous_mouse_position = current_mouse_drag_position.distance_to(previous_mouse_drag_position) # For speed and convenience.
-	if distance_to_previous_mouse_position > Global.approximation_float:
+	if distance_to_previous_mouse_position > Global.APPROXIMATION_FLOAT:
 		Global.visual_debugger.is_moving_to_node = false
 		position.x += previous_mouse_drag_position.x - current_mouse_drag_position.x
 		position.y += previous_mouse_drag_position.y - current_mouse_drag_position.y

@@ -19,12 +19,12 @@ func _process(delta):
 	if level_fade == LevelFades.level_complete:
 		fade_progress += delta * fade_duration
 		level_complete_fade_node.modulate.a = fade_progress
-		if fade_progress > 1.0 - Global.approximation_float:
+		if fade_progress > 1.0 - Global.APPROXIMATION_FLOAT:
 			Global.emit_signal("level_complete")
 	elif level_fade == LevelFades.game_over:
 		fade_progress += delta * fade_duration
 		game_over_fade_node.modulate.a = fade_progress
-		if fade_progress > 1.0 - Global.approximation_float:
+		if fade_progress > 1.0 - Global.APPROXIMATION_FLOAT:
 			Global.emit_signal("level_lost")
 
 

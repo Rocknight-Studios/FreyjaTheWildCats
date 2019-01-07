@@ -45,7 +45,7 @@ func deactivate_menu():
 		remove_child(visual_debugger_children[i])
 
 func slide_menu(goal_pos, delta):
-	if abs(abs(self.offset.x) - abs(goal_pos)) > Global.approximation_float:
+	if abs(abs(self.offset.x) - abs(goal_pos)) > Global.APPROXIMATION_FLOAT:
 		self.offset.x = lerp(self.offset.x, goal_pos, delta * slide_speed)
 	else:
 		slide_direction = VD_Slide_direction.NONE
@@ -63,7 +63,7 @@ func manage_camera_movement(speed):
 
 	debugger_camera.position += direction * speed
 
-	if direction.length() > Global.approximation_float:
+	if direction.length() > Global.APPROXIMATION_FLOAT:
 		is_moving_to_node = false
 
 onready var is_moving_to_node = false # To disable moving to node, when it is reached.
@@ -81,7 +81,7 @@ func move_to_the_node(delta):
 		debugger_camera.position = goal_position
 	else:
 		debugger_camera.position = Vector2(lerp(debugger_camera.position.x, goal_position.x, movement_speed), lerp(debugger_camera.position.y, goal_position.y, movement_speed))
-	if goal_position.distance_to(debugger_camera.position) < Global.approximation_float:
+	if goal_position.distance_to(debugger_camera.position) < Global.APPROXIMATION_FLOAT:
 		is_moving_to_node = false
 		debugger_camera.position = goal_position
 
@@ -123,7 +123,7 @@ func _process(delta):
 				keyboard_movement_is_allowed = false
 				forbid_selection_circle_management = true
 		else:
-			if mouse_over_tint_lerp_progress > Global.approximation_float:
+			if mouse_over_tint_lerp_progress > Global.APPROXIMATION_FLOAT:
 				mouse_over_tint_lerp_progress = max(mouse_over_tint_lerp_progress - delta * BACKGROUND_COLOR_LERP_SPEED, .0)
 				var array_lerp_result = Global.user_params.global_functions.lerp_array([original_visual_debugger_background_modulate.r, original_visual_debugger_background_modulate.g, original_visual_debugger_background_modulate.b, original_visual_debugger_background_modulate.a], [mouse_over_visual_debugger_background_modulate.r, mouse_over_visual_debugger_background_modulate.g, mouse_over_visual_debugger_background_modulate.b, mouse_over_visual_debugger_background_modulate.a], mouse_over_tint_lerp_progress) # For speed and convenience.
 				visual_debugger_background.modulate = Color(array_lerp_result[0], array_lerp_result[1], array_lerp_result[2], array_lerp_result[3])
