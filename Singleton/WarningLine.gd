@@ -1,21 +1,22 @@
 extends LineEdit
 
-onready var blink_time = 4000 # For how long to blink.
-onready var blink_speed = .006 # How quickly to blink.
-onready var blink_the_message = false # To know, when to perform the blinking.
-onready var start_time = 0 # To know, when to reset the time.
+var blink_the_message = false # To know, when to perform the blinking.
+var time_left = .0 # To know, when to reset the time.
+
+const BLINK_TIME = 4.0 # For how long to blink.
+const BLINK_SPEED = 2.0 # How quickly to blink.
 
 func _on_WarningLine_text_changed(new_text):
 	blink_the_message = true
-	start_time = OS.get_ticks_msec()
+	time_left = BLINK_TIME
 
 func reset():
 	blink_the_message = false
-	start_time = 0
+	time_left = BLINK_TIME
 
 func _process(delta):
 	if blink_the_message:
-		var current_time_span = OS.get_ticks_msec() - start_time # For speed and convenience.
-		self.self_modulate.a = 1.0 - clamp(sin((current_time_span) * blink_speed), 0, 1)
-		if current_time_span > blink_time:
+		time_left -= delta
+		self.self_modulate.a = 1.0 - max(sin((time_left) * PI * BLINK_SPEED), .0)
+		if time_left < .0:
 			reset()

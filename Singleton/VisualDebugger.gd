@@ -1,29 +1,41 @@
 extends CanvasLayer
 
-var visual_debugger_is_active = false # To switch between enabled and disabled.
 onready var debugger_camera = $"DebuggerCamera2D" # For speed and convenience.
 onready var camera_movement_speed_slider = $"GeneralControlsContainer/CameraMovementSpeedSlider" # For speed and convenience.
 onready var scene_node_selector = $"SceneNodeSelector" # For speed and convenience.
-onready var mouse_is_over_visual_debugger_gui = false # To know, when it is allowed to perform scene node detection.
-onready var menu_slide_pos_bounds = Vector2(-500.0, 0.0) # Where to slide menu on x.
-enum VD_Slide_direction {NONE, IN, OUT}
-onready var slide_direction = VD_Slide_direction.NONE # To know, when to slide in and out the menu.
-onready var slide_speed = 5.0 # How quickly to slide in and out.
 onready var enable_exact_follow = $"GeneralControlsContainer/EnableExactFollow" # For speed and convenience.
-onready var visual_debugger_children = [] # To not loose the access to the children.
-onready var menu_is_active = false # To avoid reactivating menu.
 onready var warning_line = $"InfoContainer/WarningLine" # For speed and convenience.
-enum VD_Transformation_modes {MOVE, ROTATE, SCALE}
-onready var transformation_mode = VD_Transformation_modes.MOVE # For speed and convenience.
-onready var node_is_selected = false # To save resources and know, when some node is selected in the scene.
+onready var is_moving_to_node = false # To disable moving to node, when it is reached.
+onready var camera_move_lerp_speed = 5.0 # How quickly to move the camera.
+onready var relative_position = Vector2(.0, .0) # To calculate correct position, where to move to each node.
+onready var visual_debugger_background = $"VisualDebuggerBackground" # For speed and convenience.
+onready var original_visual_debugger_background_modulate = visual_debugger_background.modulate # To know, where to reset the value.
+onready var mouse_over_visual_debugger_background_modulate = Color(original_visual_debugger_background_modulate.r + VISUAL_BACKGROUND_MODULATE_B_DELTA, original_visual_debugger_background_modulate.g + VISUAL_BACKGROUND_MODULATE_B_DELTA, original_visual_debugger_background_modulate.b + VISUAL_BACKGROUND_MODULATE_B_DELTA, original_visual_debugger_background_modulate.a + VISUAL_BACKGROUND_MODULATE_B_DELTA) # When mouse is over visual debugger change the background color.
+
+var mouse_over_tint_lerp_progress = .0 # To have a tight control over lerping and save resources.
+var menu_is_active = false # To avoid reactivating menu.
+var transformation_mode = VD_Transformation_modes.MOVE # For speed and convenience.
+var node_is_selected = false # To save resources and know, when some node is selected in the scene.
+var visual_debugger_children = [] # To not loose the access to the children.
+var visual_debugger_is_active = false # To switch between enabled and disabled.
+var mouse_is_over_visual_debugger_gui = false # To know, when it is allowed to perform scene node detection.
+var slide_direction = VD_Slide_direction.NONE # To know, when to slide in and out the menu.
 var keyboard_movement_is_allowed = true # For the access from other behaviours.
 var forbid_selection_circle_management = false # To not manage selection circle, when transformation is active.
 var full_selected_path = "" # To have a convenient access from other scripts.
 
+const BACKGROUND_COLOR_LERP_SPEED = 3.0 # How quickly to fade to the new state.
+const VISUAL_BACKGROUND_MODULATE_B_DELTA = .25 # To avoid having magic numbers.
+const MENU_SLIDE_POS_BOUNDS = Vector2(-500.0, 0.0) # Where to slide menu on x.
+const SLIDE_SPEED = 5.0 # How quickly to slide in and out.
+
+enum VD_Slide_direction {NONE, IN, OUT}
+enum VD_Transformation_modes {MOVE, ROTATE, SCALE}
+
 func _ready():
 	set_gui_visibility(false)
 	debugger_camera.anchor_mode = 0
-	self.offset.x = menu_slide_pos_bounds.x
+	self.offset.x = MENU_SLIDE_POS_BOUNDS.x
 	for i in range(1, self.get_child_count()):
 		visual_debugger_children.append(self.get_child(i))
 	deactivate_menu()
@@ -46,7 +58,7 @@ func deactivate_menu():
 
 func slide_menu(goal_pos, delta):
 	if abs(abs(self.offset.x) - abs(goal_pos)) > Global.APPROXIMATION_FLOAT:
-		self.offset.x = lerp(self.offset.x, goal_pos, delta * slide_speed)
+		self.offset.x = lerp(self.offset.x, goal_pos, delta * SLIDE_SPEED)
 	else:
 		slide_direction = VD_Slide_direction.NONE
 
@@ -65,10 +77,6 @@ func manage_camera_movement(speed):
 
 	if direction.length() > Global.APPROXIMATION_FLOAT:
 		is_moving_to_node = false
-
-onready var is_moving_to_node = false # To disable moving to node, when it is reached.
-onready var camera_move_lerp_speed = 5.0 # How quickly to move the camera.
-onready var relative_position = Vector2(.0, .0) # To calculate correct position, where to move to each node.
 
 func set_moving_to_node(state, relative_position):
 	is_moving_to_node = state
@@ -90,13 +98,6 @@ func _on_disable_keyboard_movement():
 
 func _on_enable_keyboard_movement():
 	keyboard_movement_is_allowed = true
-
-onready var visual_debugger_background = $"VisualDebuggerBackground" # For speed and convenience.
-onready var original_visual_debugger_background_modulate = visual_debugger_background.modulate # To know, where to reset the value.
-const VISUAL_BACKGROUND_MODULATE_B_DELTA = .25 # To avoid having magic numbers.
-onready var mouse_over_visual_debugger_background_modulate = Color(original_visual_debugger_background_modulate.r + VISUAL_BACKGROUND_MODULATE_B_DELTA, original_visual_debugger_background_modulate.g + VISUAL_BACKGROUND_MODULATE_B_DELTA, original_visual_debugger_background_modulate.b + VISUAL_BACKGROUND_MODULATE_B_DELTA, original_visual_debugger_background_modulate.a + VISUAL_BACKGROUND_MODULATE_B_DELTA) # When mouse is over visual debugger change the background color.
-const BACKGROUND_COLOR_LERP_SPEED = 3.0 # How quickly to fade to the new state.
-var mouse_over_tint_lerp_progress = .0 # To have a tight control over lerping and save resources.
 
 func _process(delta):
 	if Input.is_action_just_pressed ("visual_debugger"):
@@ -137,9 +138,9 @@ func _process(delta):
 			move_to_the_node(delta)
 
 	if slide_direction == VD_Slide_direction.IN:
-		slide_menu(menu_slide_pos_bounds.y, delta)
+		slide_menu(MENU_SLIDE_POS_BOUNDS.y, delta)
 	elif slide_direction == VD_Slide_direction.OUT:
-		slide_menu(menu_slide_pos_bounds.x, delta)
+		slide_menu(MENU_SLIDE_POS_BOUNDS.x, delta)
 
 func _on_JumpPositionButton_button_down():
 	debugger_camera.position.x = $"GeneralControlsContainer/CameraJumpPositionX".text.to_int()

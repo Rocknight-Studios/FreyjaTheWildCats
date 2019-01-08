@@ -1,8 +1,5 @@
 extends Button
 
-func _ready():
-	pass
-
 func _on_StepButton_button_down():
 	get_tree().paused = false
 	yield(get_tree(), "idle_frame")

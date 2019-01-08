@@ -2,14 +2,18 @@ extends Node2D
 
 export var node_types_to_detect = ["Node2D", "StaticBody2D"] # What type of nodes to detect.
 export var selection_color = Color(0, .1, 0, .1) # What color to use for selection precision area.
+export var reversed_node_path = [] # To have persistency through the recursion.
 
-onready var selection_radius = 50.0 # How precisely to detect the selectable node.
-onready var relative_mouse_position = Vector2(0.0, 0.0) # To detect object relative to the debugger camera position.
-onready var absolute_mouse_position = Vector2(0.0, 0.0) # For speed and convenience.
 onready var selection_info = get_parent().get_node("TabContainer/VisualSelect/SelectionInfo") # For speed and convenience.
 
+var selection_radius = 50.0 # How precisely to detect the selectable node.
+var relative_mouse_position = Vector2(0.0, 0.0) # To detect object relative to the debugger camera position.
+var absolute_mouse_position = Vector2(0.0, 0.0) # For speed and convenience.
 var full_paths = [] # To quickly access full path for each node.
-export var reversed_node_path = [] # To have persistency through the recursion.
+
+const MAX_SELECTION_RADIUS_SIZE = 2000.0 # To avoid having magic numbers.
+const MIN_SELECTION_RADIUS_SIZE = 5.0 # To avoid having magic numbers.
+const SELECTION_RADIUS_CHANGE_COEFFICIENT = .1 # To avoid having magic numbers.
 
 func _input(event):
 	if !Input.is_action_pressed("left_control_down"):
@@ -19,10 +23,9 @@ func _input(event):
 func manage_customization_params(event):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_WHEEL_UP:
-			selection_radius += selection_radius * .1
+			selection_radius = min(selection_radius + selection_radius * SELECTION_RADIUS_CHANGE_COEFFICIENT, MAX_SELECTION_RADIUS_SIZE)
 		elif event.button_index == BUTTON_WHEEL_DOWN:
-			selection_radius -= selection_radius * .1
-		selection_radius = clamp(selection_radius, 5.0, 2000.0)
+			selection_radius = max(selection_radius - selection_radius * SELECTION_RADIUS_CHANGE_COEFFICIENT, MIN_SELECTION_RADIUS_SIZE)
 
 func _process(delta):
 	absolute_mouse_position = get_viewport().get_mouse_position()
@@ -31,13 +34,10 @@ func _process(delta):
 
 func manage_selection():
 	if !Global.visual_debugger.forbid_selection_circle_management && !Global.visual_debugger.mouse_is_over_visual_debugger_gui && Input.is_action_just_pressed("mouse_left_click"):
-
 		selection_info.text = ""
 		full_paths = []
-
 		if Global.camera:
 			get_all_nodes(Global.cached_root)
-
 		selection_info.text = selection_info.text.substr(1, selection_info.text.length() - 1)
 
 func determine_whether_this_node_is_under_mouse(node):

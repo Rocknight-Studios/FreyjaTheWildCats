@@ -1,7 +1,5 @@
 extends Button
 
-onready var goal_position = Vector2(.0, .0) # For speed and convenience.
-
 func set_movement():
 	var node_path = get_parent().get_node("JumpToNodePath").text # For speed and convenience.
 
