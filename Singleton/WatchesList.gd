@@ -24,16 +24,16 @@ func remove_a_watch():
 func add_a_watch():
 	if watch_name.text != "Type watch name":
 		if outliner.get_selected():
-			add_item(watch_name.text, null, true)
-			item_count = get_item_count()
-			set_item_metadata(item_count - 1, [outliner.get_selected().get_metadata(0), watch_name.text, 0])
-			set_watch_value(item_count - 1)
-			select(item_count - 1, true)
-			if unique_check_box.pressed == true:
-				if current_watches_list != null:
-					current_watches_list.append([get_item_text(item_count - 1), get_item_metadata(item_count - 1)])
-		else:
-			print("No node is selected.")
+			print("No node is selected, applying operation on tree root.")
+			outliner.get_root()
+		add_item(watch_name.text, null, true)
+		item_count = get_item_count()
+		set_item_metadata(item_count - 1, [outliner.get_selected().get_metadata(0), watch_name.text, 0])
+		set_watch_value(item_count - 1)
+		select(item_count - 1, true)
+		if unique_check_box.pressed == true:
+			if current_watches_list != null:
+				current_watches_list.append([get_item_text(item_count - 1), get_item_metadata(item_count - 1)])
 
 func set_up_h_scroll_bar():
 	var longest_item_string_length = 0 # To limit the h scroll bar max value.

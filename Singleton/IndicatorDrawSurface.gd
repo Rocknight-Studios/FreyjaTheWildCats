@@ -179,8 +179,9 @@ func calculate_node_draw_center():
 		debugger_camera_position = visual_debugger_camera.get_global_transform().origin # For convenience.
 		camera_to_object_vector = node_position - debugger_camera_position # For convenience.
 		current_node_position = self.get_global_transform().origin # For convenience.
-		zoomed_size = SELECTION_SIZE / camera_zoom # For convenience.
-		center_of_the_node = camera_to_object_vector / camera_zoom - current_node_position # For speed and convenience.
+		var camera_zoom_coefficient = Vector2(1.0, 1.0) / camera_zoom # For speed and convenience.
+		zoomed_size = SELECTION_SIZE * camera_zoom_coefficient # For convenience.
+		center_of_the_node = camera_to_object_vector * camera_zoom_coefficient - current_node_position # For speed and convenience.
 		center_of_the_node_with_scale = center_of_the_node - zoomed_size * .5 # For speed and convenience.
 		rotation_transform_y = Transform2D(node_global_transform.get_rotation(), Vector2(.0, .0)) # For speed and convenience.
 		if node.scale.x < .0 && node.scale.y < .0:
