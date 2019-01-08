@@ -15,8 +15,8 @@ const NORMALIZED_UPPER_BOUND = 1.0 - APPROXIMATION_FLOAT # For speed and conveni
 const POSITIVEINFINITY = 3.402823e+38 # For convenience.
 const NEGATIVEINFINITY = -2.802597e-45 # For convenience.
 
-var player # For speed and convenience.
-var camera # For speed and convenience.
+var player = null # For speed and convenience.
+var camera = null # For speed and convenience.
 var current_scene = null # Currently active scene for speed and convenience.
 var user_params_scene = preload("res://Singleton/UserParams.tscn") # To let user set parameters in inspector. Do it during runtime in the UserParams scene or in Remote.
 var loading_screen_scene = preload("res://LoadingScreen/LoadingScreen.tscn") # Persistent loading screen.
@@ -27,8 +27,9 @@ var visual_debugger = null # Instanced visual debugger.
 var loader = null # This will get polled in process.
 var wait_frames # To allow to show the loading screen up.
 var time_max = 100 # Max time allowed for poll.
-onready var visual_debugger_z_index_node2D = Node2D.new() # To be able to set the z_index.
 var z_index_over_menu = 6 # To avoid having magic numbers.
+
+onready var visual_debugger_z_index_node2D = Node2D.new() # To be able to set the z_index.
 onready var cached_root = get_tree().get_root() # For speed and convenience.
 
 func _ready():

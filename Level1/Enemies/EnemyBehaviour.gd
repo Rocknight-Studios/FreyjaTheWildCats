@@ -82,8 +82,7 @@ func manage_projectile(delta):
 	if Global.player.get_global_transform().origin.distance_to(self.get_global_transform().origin) < projectile_launch_start_distance:
 		if abs(abs(enemy_animator.playback_speed) - abs(attack_animation_speed)) > Global.APPROXIMATION_FLOAT:
 			enemy_animator.playback_speed = attack_animation_speed
-		animation_blend_value += animation_blend_speed * delta
-		animation_blend_value = clamp(animation_blend_value, 0.0, 1.0)
+		animation_blend_value = min(animation_blend_value + animation_blend_speed * delta, 1.0)
 		if animation_blend_value < 1.0 - Global.APPROXIMATION_FLOAT:
 			enemy_animation_tree_player.blend2_node_set_amount("blend2", animation_blend_value)
 		if enemy_launches_projectiles:
@@ -104,7 +103,6 @@ func manage_projectile(delta):
 		if abs(abs(enemy_animator.playback_speed) - abs(idle_animation_speed)) > Global.APPROXIMATION_FLOAT:
 			enemy_animator.playback_speed = idle_animation_speed
 			current_projectile_offset_index = -1
-		animation_blend_value -= animation_blend_speed * delta
-		animation_blend_value = clamp(animation_blend_value, 0.0, 1.0)
+		animation_blend_value = max(animation_blend_value - animation_blend_speed * delta, .0)
 		if animation_blend_value > Global.APPROXIMATION_FLOAT:
 			enemy_animation_tree_player.blend2_node_set_amount("blend2", animation_blend_value)

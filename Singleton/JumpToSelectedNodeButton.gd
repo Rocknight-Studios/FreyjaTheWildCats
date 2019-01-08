@@ -1,7 +1,5 @@
 extends Button
 
-onready var goal_position = Vector2(.0, .0) # For speed and convenience.
-
 func _on_JumpToSelectedNodeButton_pressed():
 	if get_parent().get_node("ShowNodeInfoButton"):
 		if Global.visual_debugger.full_selected_path != "":

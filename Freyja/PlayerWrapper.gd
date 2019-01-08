@@ -9,13 +9,14 @@ onready var freyja_animator = get_node("Chariot").get_node("Freyja").get_node("F
 export var freyja_attack_animation_speed = 2.0 # How quickly to playback animation during attack.
 var freyja_idle_animation_speed = 1.0 # How quickly to playback animation during attack.
 var player_positioner = null # For speed and convenience.
-export var max_lerp_speed = 5.0 # How quickly to lerp to the goal position.
 export var lerp_speed_up_speed = 10.0 # How quickly to speed up to max speed.
 export var lerp_speed_drop_distance = 100.0 # How close to the goal position must visualization be, for lerp speed to drop down.
 var lerp_speed = 0.0 # Current speed at which to lerp to the new positioner position.
 onready var projectile_timer = $"ProjectileTimer" # For speed and convenience.
 var animation_offset_qoefficient = .5 # Projectile must be launched at certain time compared to the animation.
 export var bottom_offset = -100.0 # To put Freyja exactly at the bottom of the screen.
+
+const MAX_LERP_SPEED = 5.0 # How quickly to lerp to the goal position.
 
 func _ready():
 	Global.player = self
@@ -32,10 +33,9 @@ func lerp_position_2D(from, to, self_lerp_progress):
 
 func interpolate_to_player_positioner_state(delta):
 	if (self.get_global_transform().origin.distance_to(player_positioner.get_global_transform().origin) > lerp_speed_drop_distance):
-		lerp_speed += lerp_speed_up_speed * delta
+		lerp_speed = min(lerp_speed + lerp_speed_up_speed * delta, MAX_LERP_SPEED)
 	else:
-		lerp_speed -= lerp_speed_up_speed * delta
-	lerp_speed = clamp(lerp_speed, 0.0, max_lerp_speed)
+		lerp_speed = max(lerp_speed - lerp_speed_up_speed * delta, .0)
 	if self.get_global_transform().origin.y < Global.camera.position.y + OS.window_size.y + bottom_offset:
 		self.position = lerp_position_2D(self.position, player_positioner.position, lerp_speed * delta)
 	else:
