@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Level3/LevelBackgrounds/BackgroundImage37/BackgroundImage37.png" type="Texture" id=1]
+[ext_resource path="res://Level1/LevelBackground/LevelBackground.gd" type="Script" id=2]
+[ext_resource path="res://Level3/Enemies/FatTroll/FatTroll.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level3/EnivronmentEffects/Slave1/SlavePit1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level3/EnivronmentEffects/Slave2/SlavePit2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Level3/EnivronmentEffects/Slave3/SlavePit3.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Level3/Enemies/Goblin/Goblin.tscn" type="PackedScene" id=7]
+
+[node name="BackgroundImage37" type="Sprite" index="0"]
+
+position = Vector2( 960, -37260 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+block_optimization_distance = 2000.0
+
+[node name="FatTroll" parent="." index="0" instance=ExtResource( 3 )]
+
+[node name="SlavePit" parent="." index="1" instance=ExtResource( 4 )]
+
+position = Vector2( -680, -100 )
+
+[node name="SlavePit6" parent="." index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 810, -140 )
+
+[node name="SlavePit2" parent="." index="3" instance=ExtResource( 5 )]
+
+position = Vector2( -720, 100 )
+
+[node name="SlavePit5" parent="." index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 760, 250 )
+
+[node name="SlavePit3" parent="." index="5" instance=ExtResource( 6 )]
+
+position = Vector2( -780, -280 )
+
+[node name="SlavePit4" parent="." index="6" instance=ExtResource( 6 )]
+
+position = Vector2( 530, -370 )
+
+[node name="Goblin" parent="." index="7" instance=ExtResource( 7 )]
+
+position = Vector2( -250, 80 )
+
+[node name="Goblin2" parent="." index="8" instance=ExtResource( 7 )]
+
+position = Vector2( 290, 90 )
+
+

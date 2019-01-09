@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Level3/LevelBackgrounds/BackgroundImage19/BackgroundImage19.png" type="Texture" id=1]
+[ext_resource path="res://Level1/LevelBackground/LevelBackground.gd" type="Script" id=2]
+[ext_resource path="res://Level3/Enemies/Goblin/Goblin.tscn" type="PackedScene" id=3]
+
+[node name="BackgroundImage19" type="Sprite" index="0"]
+
+position = Vector2( 960, -12420 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+block_optimization_distance = 2000.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 550.274, 548.883, 262.395, 514.753, 248.759, -539.129, 959.249, -536.934, 964.032, 541.708 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -140.846, 542.025, -170.067, -537.181, -954.084, -539.325, -956.475, 534.533 )
+
+[node name="Goblin" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( -16.7417, 246.342 )
+
+[node name="Goblin2" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 143.5, -126.758 )
+
+[node name="Goblin3" parent="." index="4" instance=ExtResource( 3 )]
+
+position = Vector2( -57.4, -475.939 )
+
+

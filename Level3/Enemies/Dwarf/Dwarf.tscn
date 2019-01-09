@@ -1,18 +1,19 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Level1/Enemies/EnemyBehaviour.gd" type="Script" id=1]
-[ext_resource path="res://Level3/Enemies/Dwarf/Torso.png" type="Texture" id=2]
-[ext_resource path="res://Level3/Enemies/Dwarf/Bag.png" type="Texture" id=3]
-[ext_resource path="res://Level3/Enemies/Dwarf/AxeDwarf.png" type="Texture" id=4]
-[ext_resource path="res://Level3/Enemies/Dwarf/DwarfShoulder.png" type="Texture" id=5]
-[ext_resource path="res://Level3/Enemies/Dwarf/Hand.png" type="Texture" id=6]
-[ext_resource path="res://Level3/Enemies/Dwarf/Hair1.png" type="Texture" id=7]
-[ext_resource path="res://Level3/Enemies/Dwarf/Head.png" type="Texture" id=8]
-[ext_resource path="res://Level3/Enemies/Dwarf/Beard2.png" type="Texture" id=9]
-[ext_resource path="res://Level3/Enemies/Dwarf/Beard3.png" type="Texture" id=10]
-[ext_resource path="res://Level3/Enemies/Dwarf/Beard1.png" type="Texture" id=11]
-[ext_resource path="res://Level1/Enemies/DeathParticles.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Level1/Enemies/DeathSoulParticles.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Level2/EnvironmentObjects/Shadow.png" type="Texture" id=2]
+[ext_resource path="res://Level3/Enemies/Dwarf/Torso.png" type="Texture" id=3]
+[ext_resource path="res://Level3/Enemies/Dwarf/Bag.png" type="Texture" id=4]
+[ext_resource path="res://Level3/Enemies/Dwarf/AxeDwarf.png" type="Texture" id=5]
+[ext_resource path="res://Level3/Enemies/Dwarf/DwarfShoulder.png" type="Texture" id=6]
+[ext_resource path="res://Level3/Enemies/Dwarf/Hand.png" type="Texture" id=7]
+[ext_resource path="res://Level3/Enemies/Dwarf/Hair1.png" type="Texture" id=8]
+[ext_resource path="res://Level3/Enemies/Dwarf/Head.png" type="Texture" id=9]
+[ext_resource path="res://Level3/Enemies/Dwarf/Beard2.png" type="Texture" id=10]
+[ext_resource path="res://Level3/Enemies/Dwarf/Beard3.png" type="Texture" id=11]
+[ext_resource path="res://Level3/Enemies/Dwarf/Beard1.png" type="Texture" id=12]
+[ext_resource path="res://Level1/Enemies/DeathParticles.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Level1/Enemies/DeathSoulParticles.tscn" type="PackedScene" id=14]
 
 [sub_resource type="Animation" id=1]
 
@@ -346,7 +347,7 @@ custom_solver_bias = 0.0
 radius = 201.15
 height = 198.259
 
-[node name="Dwarf" type="Node2D"]
+[node name="Dwarf" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 total_health = 3
@@ -361,24 +362,32 @@ archer_projectile_offsets = null
 
 [node name="Body" type="Node2D" parent="." index="0"]
 
-[node name="Torso" type="Sprite" parent="Body" index="0"]
+[node name="Shadow" type="Sprite" parent="Body" index="0"]
+
+self_modulate = Color( 1, 1, 1, 0.627451 )
+position = Vector2( 40.0844, -20.0422 )
+scale = Vector2( 6.67672, 6.67672 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Torso" type="Sprite" parent="Body" index="1"]
 
 editor/display_folded = true
-rotation = 0.200596
-texture = ExtResource( 2 )
+rotation = 0.173375
+texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Bag" type="Sprite" parent="Body/Torso" index="0"]
 
 editor/display_folded = true
 position = Vector2( 0, -150 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="AxeBag" type="Sprite" parent="Body/Torso/Bag" index="0"]
 
 show_behind_parent = true
 position = Vector2( 0, -60 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 offset = Vector2( 30, 10 )
 flip_v = true
 _sections_unfolded = [ "Offset", "Visibility" ]
@@ -388,8 +397,8 @@ _sections_unfolded = [ "Offset", "Visibility" ]
 editor/display_folded = true
 show_behind_parent = true
 position = Vector2( -200, 50 )
-rotation = -1.0722
-texture = ExtResource( 5 )
+rotation = -1.06879
+texture = ExtResource( 6 )
 offset = Vector2( -30, 60 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Visibility" ]
@@ -399,8 +408,8 @@ _sections_unfolded = [ "Offset", "Visibility" ]
 editor/display_folded = true
 show_behind_parent = true
 position = Vector2( -110.862, 108.195 )
-rotation = -0.0131894
-texture = ExtResource( 6 )
+rotation = -0.0119362
+texture = ExtResource( 7 )
 offset = Vector2( 20, 60 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Visibility", "Z Index" ]
@@ -408,9 +417,9 @@ _sections_unfolded = [ "Offset", "Visibility", "Z Index" ]
 [node name="Axe" type="Sprite" parent="Body/Torso/ShoulderRight/Hand" index="0"]
 
 show_behind_parent = true
-position = Vector2( 14.2516, 78.9633 )
+position = Vector2( 17.3744, 84.8139 )
 rotation = 1.04167
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 offset = Vector2( -35.335, 20.7567 )
 _sections_unfolded = [ "Offset", "Visibility", "Z Index" ]
 
@@ -418,8 +427,8 @@ _sections_unfolded = [ "Offset", "Visibility", "Z Index" ]
 
 editor/display_folded = true
 position = Vector2( 180.983, 49.9699 )
-rotation = 0.688021
-texture = ExtResource( 5 )
+rotation = 0.670152
+texture = ExtResource( 6 )
 offset = Vector2( 39.0169, 50.0302 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -428,7 +437,7 @@ _sections_unfolded = [ "Visibility" ]
 show_behind_parent = true
 position = Vector2( 74.5769, 98.2252 )
 rotation = -0.0323561
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 offset = Vector2( 20, 60 )
 _sections_unfolded = [ "Visibility", "Z Index" ]
 
@@ -437,7 +446,7 @@ _sections_unfolded = [ "Visibility", "Z Index" ]
 editor/display_folded = true
 position = Vector2( 58.0404, -24.9612 )
 rotation = -0.247184
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 offset = Vector2( 110, -20 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -445,7 +454,7 @@ _sections_unfolded = [ "Visibility" ]
 
 position = Vector2( -6.72713, 45.1711 )
 rotation = 0.481365
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 offset = Vector2( 110, -20 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -455,21 +464,21 @@ show_behind_parent = true
 position = Vector2( -2.28283, -12.9355 )
 rotation = -0.988048
 scale = Vector2( 0.699919, 0.699919 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 offset = Vector2( 110, -20 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Head" type="Sprite" parent="Body/Torso" index="4"]
 
 editor/display_folded = true
-rotation = -0.172778
-texture = ExtResource( 8 )
+rotation = -0.13875
+texture = ExtResource( 9 )
 
 [node name="Beard7" type="Sprite" parent="Body/Torso/Head" index="0"]
 
 position = Vector2( 0.0184479, -49.4289 )
 rotation = -2.97148
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 offset = Vector2( 40, 40 )
 _sections_unfolded = [ "Offset", "Visibility" ]
 
@@ -478,14 +487,14 @@ _sections_unfolded = [ "Offset", "Visibility" ]
 editor/display_folded = true
 show_behind_parent = true
 position = Vector2( -0.354213, 23.3771 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 offset = Vector2( 0.354202, 76.6229 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Beard1" type="Sprite" parent="Body/Torso/Head/Beard2" index="0"]
 
 position = Vector2( -49.6458, 86.6229 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 offset = Vector2( 110, -20 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -493,7 +502,7 @@ _sections_unfolded = [ "Visibility" ]
 
 position = Vector2( -29.3293, 3.24539 )
 rotation = -0.509436
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 offset = Vector2( -41.9764, 22.2097 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Visibility" ]
@@ -502,7 +511,7 @@ _sections_unfolded = [ "Offset", "Visibility" ]
 
 position = Vector2( 28.1082, -1.78821 )
 rotation = 0.621637
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 offset = Vector2( 50, 20 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -511,14 +520,14 @@ _sections_unfolded = [ "Visibility" ]
 show_behind_parent = true
 position = Vector2( 25.3862, -6.37111 )
 rotation = -0.0563039
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 offset = Vector2( 40, 20 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Beard4" type="Sprite" parent="Body/Torso/Head/Beard2" index="4"]
 
 position = Vector2( -169.646, 76.6229 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 offset = Vector2( 110, -20 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Visibility" ]
@@ -528,7 +537,7 @@ _sections_unfolded = [ "Offset", "Visibility" ]
 show_behind_parent = true
 position = Vector2( -33.4431, 0.0171986 )
 rotation = -0.0563039
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 offset = Vector2( -33.0181, 17.4432 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Visibility" ]
@@ -564,11 +573,11 @@ rotation = 1.5708
 shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="DeathParticles" parent="." index="3" instance=ExtResource( 12 )]
+[node name="DeathParticles" parent="." index="3" instance=ExtResource( 13 )]
 
 scale = Vector2( 15, 10 )
 
-[node name="DeathSoulParticles" parent="." index="4" instance=ExtResource( 13 )]
+[node name="DeathSoulParticles" parent="." index="4" instance=ExtResource( 14 )]
 
 [node name="DeathTimer" type="Timer" parent="." index="5"]
 

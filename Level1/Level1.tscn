@@ -142,7 +142,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="LevelBackground" parent="." index="1" instance=ExtResource( 4 )]
 
-position = Vector2( 0, 0 )
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Player" parent="." index="2" instance=ExtResource( 5 )]
 

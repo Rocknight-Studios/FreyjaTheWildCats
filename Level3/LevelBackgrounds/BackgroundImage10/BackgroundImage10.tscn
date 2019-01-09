@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Level3/LevelBackgrounds/BackgroundImage10/BackgroundImage10.png" type="Texture" id=1]
+[ext_resource path="res://Level1/LevelBackground/LevelBackground.gd" type="Script" id=2]
+[ext_resource path="res://Level3/Enemies/FatTroll/FatTroll.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level3/Enemies/Goblin/Goblin.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level3/EnivronmentEffects/Rocks/Rock3.png" type="Texture" id=5]
+[ext_resource path="res://Level3/Enemies/Dwarf/Dwarf.tscn" type="PackedScene" id=6]
+
+[node name="BackgroundImage7" type="Sprite" index="0"]
+
+position = Vector2( 960, -10260 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+block_optimization_distance = 2000.0
+
+[node name="FatTroll" parent="." index="0" instance=ExtResource( 3 )]
+
+position = Vector2( -525.51, -261.807 )
+
+[node name="FatTroll2" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 534.574, -298.299 )
+
+[node name="Goblin" parent="." index="2" instance=ExtResource( 4 )]
+
+position = Vector2( -535.791, 67.332 )
+
+[node name="Goblin2" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 554.919, 14.5068 )
+
+[node name="Rock3" type="Sprite" parent="." index="4"]
+
+position = Vector2( 767.282, 219.714 )
+rotation = 1.67895
+scale = Vector2( 0.36903, 0.369029 )
+texture = ExtResource( 5 )
+
+[node name="Rock2" type="StaticBody2D" parent="." index="5"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rock2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -766.915, -542.038, -956.134, -545.064, -963.337, 545.838, -734.537, 541.521 )
+
+[node name="Rock8" type="StaticBody2D" parent="." index="6"]
+
+editor/display_folded = true
+position = Vector2( 1729.18, 0.000976562 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rock8" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -761.87, 48.5186, -766.187, -540.747, -956.134, -545.064, -953.975, 93.8467, -1042.23, 228.495, -939.345, 536.597, -764.99, 547.995 )
+
+[node name="Dwarf" parent="." index="7" instance=ExtResource( 6 )]
+
+position = Vector2( 16.7416, 0.000976562 )
+
+
