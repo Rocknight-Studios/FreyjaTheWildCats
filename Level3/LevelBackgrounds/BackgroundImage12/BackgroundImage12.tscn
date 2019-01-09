@@ -1,0 +1,90 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Level3/LevelBackgrounds/BackgroundImage12/BackgroundImage12.png" type="Texture" id=1]
+[ext_resource path="res://Level1/LevelBackground/LevelBackground.gd" type="Script" id=2]
+[ext_resource path="res://Level3/Enemies/FatTroll/FatTroll.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level3/Enemies/Goblin/Goblin.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level3/EnivronmentEffects/Slave2/SlavePit2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Level3/EnivronmentEffects/Slave3/SlavePit3.tscn" type="PackedScene" id=6]
+
+[node name="BackgroundImage12" type="Sprite" index="0"]
+
+position = Vector2( 960, -12420 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+block_optimization_distance = 2000.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -798.626, 541.358, -712.526, 74.9834, -73.9514, -111.566, -97.868, -245.499, -726.876, -157.008, -753.184, -542.065, -951.692, -546.85, -956.476, 529.4 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -348.993, 550.925, -322.685, 342.85, 437.865, 495.916, 435.473, 548.533 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." index="2"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 839.664, 538.967, 779.873, 24.7588, 291.973, -97.2158, 335.023, -276.591, 832.49, -157.008, 854.014, -539.674, 954.464, -539.674, 959.248, 541.358 )
+
+[node name="FatTroll" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 71.7501, 74.1406 )
+
+[node name="Goblin" parent="." index="4" instance=ExtResource( 4 )]
+
+position = Vector2( -530.95, 310.916 )
+
+[node name="Goblin2" parent="." index="5" instance=ExtResource( 4 )]
+
+position = Vector2( 605.092, 310.916 )
+
+[node name="Goblin3" parent="." index="6" instance=ExtResource( 4 )]
+
+position = Vector2( 83.7085, -420.933 )
+
+[node name="SlavePit" parent="." index="7" instance=ExtResource( 5 )]
+
+position = Vector2( -528.559, -370.707 )
+
+[node name="SlavePit2" parent="." index="8" instance=ExtResource( 6 )]
+
+position = Vector2( 640.967, -380.275 )
+
+

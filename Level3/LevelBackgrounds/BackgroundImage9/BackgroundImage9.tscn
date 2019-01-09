@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Level3/LevelBackgrounds/BackgroundImage9/BackgroundImage9.png" type="Texture" id=1]
+[ext_resource path="res://Level1/LevelBackground/LevelBackground.gd" type="Script" id=2]
+[ext_resource path="res://Level3/Enemies/Goblin/Goblin.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level3/EnivronmentEffects/Slave2/SlavePit2.tscn" type="PackedScene" id=4]
+
+[node name="BackgroundImage9" type="Sprite" index="0"]
+
+position = Vector2( 960, -9180 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+block_optimization_distance = 2000.0
+
+[node name="Goblin" parent="." index="0" instance=ExtResource( 3 )]
+
+position = Vector2( -539.695, -436.529 )
+
+[node name="Goblin2" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( -303.841, -436.529 )
+
+[node name="Goblin3" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( -78.5869, -436.529 )
+
+[node name="Goblin4" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 148.039, -433.878 )
+
+[node name="SlavePit2" parent="." index="4" instance=ExtResource( 4 )]
+
+position = Vector2( 666.083, -404.994 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="5"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 960.672, 547.45, 247.175, 541.673, 256.915, -233.642, 841.089, -299.199, 757.381, -545.54, 958.281, -543.148 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="6"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -156.067, 537.776, -171.651, -249.226, -658.484, -394.866, -730.234, -540.758, -957.442, -540.758, -959.833, 533.099 )
+
+

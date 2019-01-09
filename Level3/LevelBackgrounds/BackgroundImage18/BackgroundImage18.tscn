@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Level3/LevelBackgrounds/BackgroundImage18/BackgroundImage18.png" type="Texture" id=1]
+[ext_resource path="res://Level1/LevelBackground/LevelBackground.gd" type="Script" id=2]
+[ext_resource path="res://Level3/Enemies/FatTroll/FatTroll.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level3/Enemies/Dwarf/Dwarf.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level3/EnivronmentEffects/Slave1/SlavePit1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Level3/EnivronmentEffects/Slave3/SlavePit3.tscn" type="PackedScene" id=6]
+
+[node name="BackgroundImage18" type="Sprite" index="0"]
+
+position = Vector2( 960, -12420 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+block_optimization_distance = 2000.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 852.195, 543.289, 837.513, 461.072, 350.081, 408.218, 364.763, 252.592, 910.922, 355.364, 907.986, -93.8955, 261.991, -208.413, 300.164, -308.249, 899.177, -240.713, 910.922, -458.002, 617.288, -534.347, 954.967, -546.092, 960.84, 543.289 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -98.5359, 538.437, -174.083, 337.698, -806.517, 320.431, -792.154, -469.747, -489.711, -543.155, -965.398, -540.22, -956.589, 537.417 )
+
+[node name="FatTroll" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 62.1834, 229.6 )
+
+[node name="Dwarf" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( -346.792, -150.674 )
+
+[node name="SlavePit" parent="." index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 652.926, 95.668 )
+
+[node name="SlavePit2" parent="." index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 724.676, -380.277 )
+
+

@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Level3/LevelBackgrounds/BackgroundImage15/BackgroundImage15.png" type="Texture" id=1]
+[ext_resource path="res://Level1/LevelBackground/LevelBackground.gd" type="Script" id=2]
+[ext_resource path="res://Level3/Enemies/Goblin/Goblin.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level3/EnivronmentEffects/Slave3/SlavePit3.tscn" type="PackedScene" id=4]
+
+[node name="BackgroundImage15" type="Sprite" index="0"]
+
+position = Vector2( 960, -12420 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+block_optimization_distance = 2000.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 875.289, 547.823, 77.6272, 208.618, 93.5276, 102.616, 310.831, -109.387, 308.181, -546.643, 962.74, -538.693, 965.39, 537.223 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -767.735, 534.572, -598.133, -93.4863, -209.152, -192.09, -205.636, -540.192, -953.238, -536.043, -958.538, 531.923 )
+
+[node name="Goblin" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( -453.156, 299.143 )
+
+[node name="Goblin2" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( -161.652, 299.143 )
+
+[node name="Goblin3" parent="." index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 41.6389, -353.78 )
+
+[node name="SlavePit" parent="." index="5" instance=ExtResource( 4 )]
+
+position = Vector2( 588.308, 0 )
+
+

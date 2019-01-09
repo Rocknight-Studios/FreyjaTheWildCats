@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Level3/LevelBackgrounds/BackgroundImage16/BackgroundImage16.png" type="Texture" id=1]
+[ext_resource path="res://Level1/LevelBackground/LevelBackground.gd" type="Script" id=2]
+[ext_resource path="res://Level3/Enemies/Dwarf/Dwarf.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level3/EnivronmentEffects/Slave3/SlavePit3.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level3/EnivronmentEffects/Slave1/SlavePit1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Level3/EnivronmentEffects/Slave2/SlavePit2.tscn" type="PackedScene" id=6]
+
+[node name="BackgroundImage16" type="Sprite" index="0"]
+
+position = Vector2( 960, -12420 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+block_optimization_distance = 2000.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 320.877, 541.231, 326.151, 6.77148, 354.281, -186.618, 816.098, -284.88, 811.781, -543.896, 965.032, -543.896, 967.191, 539.658 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="1"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -211.825, 541.231, -208.309, -5.53516, -291.2, -246.027, -709.944, -315.098, -703.469, -543.896, -958.169, -543.896, -956.01, 537.5 )
+
+[node name="Dwarf" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 4.31702, -120.875 )
+
+[node name="SlavePit" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 643.226, 274.124 )
+
+[node name="SlavePit2" parent="." index="4" instance=ExtResource( 5 )]
+
+position = Vector2( -628.116, 107.924 )
+
+[node name="SlavePit3" parent="." index="5" instance=ExtResource( 6 )]
+
+position = Vector2( -464.072, 395.001 )
+
+

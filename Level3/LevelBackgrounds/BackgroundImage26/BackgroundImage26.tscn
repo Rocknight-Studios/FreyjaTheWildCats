@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Level3/LevelBackgrounds/BackgroundImage26/BackgroundImage26.png" type="Texture" id=1]
+[ext_resource path="res://Level1/LevelBackground/LevelBackground.gd" type="Script" id=2]
+[ext_resource path="res://Level3/Enemies/FatTroll/FatTroll.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level3/Enemies/Goblin/Goblin.tscn" type="PackedScene" id=4]
+
+[node name="BackgroundImage26" type="Sprite" index="0"]
+
+position = Vector2( 960, -27540 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+block_optimization_distance = 2000.0
+
+[node name="FatTroll" parent="." index="0" instance=ExtResource( 3 )]
+
+[node name="Goblin" parent="." index="1" instance=ExtResource( 4 )]
+
+position = Vector2( -250, 80 )
+
+[node name="Goblin2" parent="." index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 290, 90 )
+
+
