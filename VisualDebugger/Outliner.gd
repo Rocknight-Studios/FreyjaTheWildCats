@@ -4,10 +4,17 @@ onready var show_node_info_button = Global.visual_debugger.get_node("TabContaine
 
 var tree_item = null # To remember which tree item to manage under which.
 var widest_outliner_branch = 0 # To determine how wide should be the h scroll bar.
+var dont_find_the_widest_branch_while_building_the_tree = false # To avoid performing redundant (called by on_collapse signal) work and make management easier.
+var current_deepest_item = null # To widen the scope and make management easier.
+var deepest_level_index = 0 # To correctly calculate the column 0 width.
+
+const INDENT_WIDTH = 1 # How much deeper to push each indent. (Expand triangle character and icon)
+const ONE_CHARACTER_WIDTH = 10.0 # To calculate correctly the column 0 width.
 
 func add_a_tree_item(node, parent_item):
 	tree_item = create_item(parent_item)
 	tree_item.set_text(0, node.name)
+	tree_item.set_text(1, "Control")
 	tree_item.set_metadata(0, node.get_path())
 	tree_item.collapsed = false if parent_item == null else true
 
@@ -22,7 +29,10 @@ func get_all_outline_nodes(node, parent_item):
 
 func _on_form_the_outliner():
 	clear()
+	dont_find_the_widest_branch_while_building_the_tree = true
 	get_all_outline_nodes(Global.cached_root, null)
+	dont_find_the_widest_branch_while_building_the_tree = false
+	_on_Outliner_item_collapsed(null)
 
 func _on_Outliner_cell_selected():
 	var tmp_node_path_metadata = get_selected().get_metadata(0) # For speed and convenience.
@@ -33,6 +43,7 @@ func _on_Outliner_cell_selected():
 func find_widest_branch(current_branch_root_item):
 	while true:
 		if str(current_branch_root_item.get_metadata(0)).length() > widest_outliner_branch:
+			current_deepest_item = current_branch_root_item
 			widest_outliner_branch = str(current_branch_root_item.get_metadata(0)).length()
 			var current_widest_parent_item = current_branch_root_item.get_parent() # To find out whether the branch is collapsed.
 			while true:
@@ -48,6 +59,18 @@ func find_widest_branch(current_branch_root_item):
 		if current_branch_root_item == null:
 			break
 
+func calculate_deepest_indent_level(deepest_item):
+	if deepest_item != get_root():
+		deepest_level_index += INDENT_WIDTH
+		calculate_deepest_indent_level(deepest_item.get_parent())
+
 func _on_Outliner_item_collapsed(item):
-	widest_outliner_branch = 0
-	find_widest_branch(get_root())
+	if !dont_find_the_widest_branch_while_building_the_tree:
+		widest_outliner_branch = 0
+		find_widest_branch(get_root())
+		widest_outliner_branch += str(current_deepest_item.get_text(1)).length()
+		deepest_level_index = 0
+		calculate_deepest_indent_level(current_deepest_item)
+		set_column_min_width(0, ONE_CHARACTER_WIDTH * (current_deepest_item.get_text(0).length() + deepest_level_index))
+		set_column_expand(1, true)
+		set_column_expand(0, false)

@@ -4,7 +4,7 @@ onready var outliner_container = get_parent().get_node("OutlinerContainer") # Fo
 onready var outliner = outliner_container.get_node("Outliner") # For speed and convenience.
 onready var outliner_width = outliner.rect_size.x # For speed and convenience.
 
-const BRANCH_WIDTH_THRESHOLD = 100 # If the path to the tree item is wider than this show the horizontal scroll bar.
+const BRANCH_WIDTH_THRESHOLD = 80 # If the path to the tree item is wider than this show the horizontal scroll bar.
 const RIGHT_OFFSET_FOR_V_SCROLL_BAR = -12 # To avoid having magic numbers.
 
 func _process(delta):
