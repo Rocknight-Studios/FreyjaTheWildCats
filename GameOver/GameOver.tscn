@@ -1,10 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Level1/GameUI/Lost.png" type="Texture" id=1]
-[ext_resource path="res://RestartButton.gd" type="Script" id=2]
+[ext_resource path="res://GameOver/RestartButton.gd" type="Script" id=2]
 [ext_resource path="res://GameOver/GameOverStreamPlayer.gd" type="Script" id=3]
-
-
 
 [node name="GameOver" type="Control" index="0"]
 
@@ -66,6 +64,7 @@ script = ExtResource( 2 )
 
 stream = null
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
