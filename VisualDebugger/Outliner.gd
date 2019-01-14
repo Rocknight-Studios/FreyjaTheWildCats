@@ -9,12 +9,31 @@ var tree_item = null # To remember which tree item to manage under which.
 var deepest_branch_width = 0 # To determine how wide should be the h scroll bar.
 var dont_find_the_widest_branch_while_building_the_tree = false # To avoid performing redundant (called by on_collapse signal) work and make management easier.
 var current_deepest_item = null # To widen the scope and make management easier.
+var icon_dictionary = {} # All the icons for the classes should be assigned here.
+var absolute_widest_branch_width = 0 # Which is the widest branch regardless of indentation level and including node type. Width seperately for performance.
+var absolute_widest_branch = null # Which is the widest branch regardless of indentation level and including node type.
+var absolute_widest_type_text = "" # To correctly calculate the width of the whole branch.
 
 const SPACE_BETWEEN_COLUMNS = 5.0 # How many characters between columns.
 const FONT_ASPECT_RATIO = .5 # How much wider is font than it is high.
 
+func load_textures(var dir_path):
+	var dir = Directory.new()
+	dir.open(dir_path)
+	dir.list_dir_begin()
+	var file_name = dir.get_next()
+
+	while file_name != "":
+		if !dir.current_is_dir():
+			icon_dictionary[file_name.replace("icon_", "").replace(".svg", "").replace("_", "")] = load(dir_path + "/" + file_name)
+		file_name = dir.get_next()
+
+func _ready():
+	load_textures("res://VisualDebugger/icons/")
+
 func add_a_tree_item(node, parent_item):
 	tree_item = create_item(parent_item)
+	tree_item.set_icon(0, icon_dictionary[str(node.get_class()).to_lower()])
 	tree_item.set_text(0, node.name)
 	tree_item.set_text(1, str(node.get_class()))
 	tree_item.set_metadata(0, node.get_path())
@@ -41,11 +60,6 @@ func _on_Outliner_cell_selected():
 	Global.visual_debugger.full_selected_path = str(tmp_node_path_metadata)
 	Global.visual_debugger.node_is_selected = true
 	show_node_info_button.set_info_text(tmp_node_path_metadata.get_name(tmp_node_path_metadata.get_name_count() - 1))
-
-var absolute_widest_branch_width = 0 # Which is the widest branch regardless of indentation level and including node type. Width seperately for performance.
-var absolute_widest_branch = null # Which is the widest branch regardless of indentation level and including node type.
-
-var absolute_widest_type_text = "" # To correctly calculate the width of the whole branch.
 
 func find_widest_and_deepest_branches(current_branch_root_item):
 	while true:

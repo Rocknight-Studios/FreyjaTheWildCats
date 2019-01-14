@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon_texture_rect.svg-ea67b3bef83a3d0ae492b2c32f78c3d5.stex"
+path="res://.import/icon_texturerect.svg-46e2a15b66fbb36c1bd639e3b49899dc.stex"
 
 [deps]
 
-source_file="res://VisualDebugger/icons/icon_texture_rect.svg"
-dest_files=[ "res://.import/icon_texture_rect.svg-ea67b3bef83a3d0ae492b2c32f78c3d5.stex" ]
+source_file="res://VisualDebugger/icons/icon_texturerect.svg"
+dest_files=[ "res://.import/icon_texturerect.svg-46e2a15b66fbb36c1bd639e3b49899dc.stex" ]
 
 [params]
 
