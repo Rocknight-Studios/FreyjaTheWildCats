@@ -334,6 +334,7 @@ _sections_unfolded = [ "Theme", "custom_fonts" ]
 
 [node name="VisualSelect" type="Container" parent="TabContainer" index="0"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -612,7 +613,6 @@ _sections_unfolded = [ "Theme" ]
 
 [node name="Watches" type="Container" parent="TabContainer" index="1"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
