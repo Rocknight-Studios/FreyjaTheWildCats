@@ -9,10 +9,10 @@ const RIGHT_OFFSET_FOR_V_SCROLL_BAR = -12 # To avoid having magic numbers.
 
 func _process(delta):
 	outliner.get_node("@@34").rect_position.x = outliner_container.rect_size.x + RIGHT_OFFSET_FOR_V_SCROLL_BAR + value
-	if outliner.widest_outliner_branch > BRANCH_WIDTH_THRESHOLD:
+	if outliner.absolute_widest_branch_width > BRANCH_WIDTH_THRESHOLD:
 		visible = true
-		max_value = outliner.widest_outliner_branch
-		page = outliner.widest_outliner_branch - (outliner.widest_outliner_branch - BRANCH_WIDTH_THRESHOLD)
+		max_value = outliner.absolute_widest_branch_width
+		page = outliner.absolute_widest_branch_width - (outliner.absolute_widest_branch_width - BRANCH_WIDTH_THRESHOLD)
 		outliner.rect_position.x = -value
 	else:
 		visible = false
