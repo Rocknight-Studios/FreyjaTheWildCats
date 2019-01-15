@@ -48,7 +48,7 @@ func determine_whether_this_node_is_under_mouse(node):
 			break
 
 	if manage_this_node:
-		if (relative_mouse_position).distance_to(node.get_global_transform().origin) < selection_radius * Global.visual_debugger.debugger_camera.zoom.x:
+		if relative_mouse_position.distance_to(node.get_global_transform().origin) < selection_radius * Global.visual_debugger.debugger_camera.zoom.x:
 			var full_node_path = "" # To form the full node path.
 			reversed_node_path = []
 			selection_info.text += "\n" + node.name

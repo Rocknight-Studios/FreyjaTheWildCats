@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://VisualDebugger/VisualDebugger.gd" type="Script" id=1]
 [ext_resource path="res://VisualDebugger/VisualDebuggerTheme.theme" type="Theme" id=2]
@@ -17,12 +17,13 @@
 [ext_resource path="res://VisualDebugger/WatchesList.gd" type="Script" id=15]
 [ext_resource path="res://VisualDebugger/WatchName.gd" type="Script" id=16]
 [ext_resource path="res://VisualDebugger/TransformationModeButton.gd" type="Script" id=17]
-[ext_resource path="res://VisualDebugger/StepButton.gd" type="Script" id=18]
-[ext_resource path="res://VisualDebugger/RunButton.gd" type="Script" id=19]
-[ext_resource path="res://VisualDebugger/CameraMovementSpeedSlider.gd" type="Script" id=20]
-[ext_resource path="res://VisualDebugger/JumpToNodeButton.gd" type="Script" id=21]
-[ext_resource path="res://VisualDebugger/JumpToNodePath.gd" type="Script" id=22]
-[ext_resource path="res://VisualDebugger/EnablePersistentFollowButton.gd" type="Script" id=23]
+[ext_resource path="res://VisualDebugger/ZoomTo.gd" type="Script" id=18]
+[ext_resource path="res://VisualDebugger/StepButton.gd" type="Script" id=19]
+[ext_resource path="res://VisualDebugger/RunButton.gd" type="Script" id=20]
+[ext_resource path="res://VisualDebugger/CameraMovementSpeedSlider.gd" type="Script" id=21]
+[ext_resource path="res://VisualDebugger/JumpToNodeButton.gd" type="Script" id=22]
+[ext_resource path="res://VisualDebugger/JumpToNodePath.gd" type="Script" id=23]
+[ext_resource path="res://VisualDebugger/EnablePersistentFollowButton.gd" type="Script" id=24]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -334,6 +335,8 @@ _sections_unfolded = [ "Theme", "custom_fonts" ]
 
 [node name="VisualSelect" type="Container" parent="TabContainer" index="0"]
 
+editor/display_folded = true
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -612,6 +615,7 @@ _sections_unfolded = [ "Theme" ]
 
 [node name="Watches" type="Container" parent="TabContainer" index="1"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1281,6 +1285,280 @@ items = [ "MOVE", null, 0, false, false, -1, 0, null, "", false, "ROTATE", null,
 script = ExtResource( 17 )
 _sections_unfolded = [ "Rect", "Theme", "custom_styles" ]
 
+[node name="Camera" type="Container" parent="TabContainer" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 32.0
+margin_right = -5.0
+margin_bottom = -5.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="ZoomTo" type="Button" parent="TabContainer/Camera" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10.0
+margin_top = 20.0
+margin_right = 173.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 152, 25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Zoom To"
+flat = false
+align = 1
+script = ExtResource( 18 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="ZoomValue" type="Control" parent="TabContainer/Camera/ZoomTo" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -10.0
+margin_top = -20.0
+margin_right = 30.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="ValueX" type="LineEdit" parent="TabContainer/Camera/ZoomTo/ZoomValue" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 182.0
+margin_top = 56.0
+margin_right = 260.0
+margin_bottom = 81.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "1"
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+_sections_unfolded = [ "Theme" ]
+
+[node name="ValueY" type="LineEdit" parent="TabContainer/Camera/ZoomTo/ZoomValue" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 270.0
+margin_top = 56.0
+margin_right = 352.0
+margin_bottom = 81.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "1"
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+_sections_unfolded = [ "Theme" ]
+
+[node name="ValueLabel" type="Label" parent="TabContainer/Camera/ZoomTo/ZoomValue" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 30.0
+margin_top = 56.0
+margin_right = 182.0
+margin_bottom = 81.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Zoom Value (X, Y):"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ZoomPosition" type="Control" parent="TabContainer/Camera/ZoomTo" index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -10.0
+margin_top = 20.0
+margin_right = 30.0
+margin_bottom = 60.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="ValueX" type="LineEdit" parent="TabContainer/Camera/ZoomTo/ZoomPosition" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 182.0
+margin_top = 56.0
+margin_right = 259.0
+margin_bottom = 81.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "0"
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+_sections_unfolded = [ "Theme" ]
+
+[node name="ValueY" type="LineEdit" parent="TabContainer/Camera/ZoomTo/ZoomPosition" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 270.0
+margin_top = 56.0
+margin_right = 352.0
+margin_bottom = 81.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "0"
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+_sections_unfolded = [ "Theme" ]
+
+[node name="ValueLabel" type="Label" parent="TabContainer/Camera/ZoomTo/ZoomPosition" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 7.0
+margin_top = 56.0
+margin_right = 183.0
+margin_bottom = 81.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Zoom Position (X, Y):"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ZoomToLabel" type="Label" parent="TabContainer/Camera" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 7.0
+margin_top = 140.0
+margin_right = 359.0
+margin_bottom = 165.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Press Alt+M to zoom to a position (above)."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="CenterToLabel" type="Label" parent="TabContainer/Camera" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 7.0
+margin_top = 170.0
+margin_right = 359.0
+margin_bottom = 195.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Press Ctrl+M to center around mouse cursor."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 [node name="GeneralControlsContainer" type="Container" parent="." index="8"]
 
 anchor_left = 0.0
@@ -1328,7 +1606,7 @@ group = null
 text = "Step"
 flat = false
 align = 1
-script = ExtResource( 18 )
+script = ExtResource( 19 )
 _sections_unfolded = [ "Margin", "Pause", "custom_fonts" ]
 
 [node name="RunButton" type="Button" parent="GeneralControlsContainer" index="1"]
@@ -1356,7 +1634,7 @@ group = null
 text = "Run"
 flat = false
 align = 1
-script = ExtResource( 19 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Margin", "Pause", "custom_fonts" ]
 
 [node name="CameraMovementSpeedLabel" type="Label" parent="GeneralControlsContainer" index="2"]
@@ -1411,7 +1689,7 @@ editable = true
 tick_count = 0
 ticks_on_borders = false
 focus_mode = 2
-script = ExtResource( 20 )
+script = ExtResource( 21 )
 
 [node name="CameraJumpPositionX" type="LineEdit" parent="GeneralControlsContainer" index="4"]
 
@@ -1421,7 +1699,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 5.0
 margin_top = 114.0
-margin_right = 111.0
+margin_right = 113.0
 margin_bottom = 141.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1496,7 +1774,7 @@ group = null
 text = "Jump To Node"
 flat = false
 align = 1
-script = ExtResource( 21 )
+script = ExtResource( 22 )
 _sections_unfolded = [ "custom_fonts" ]
 
 [node name="JumpToNodePath" type="LineEdit" parent="GeneralControlsContainer" index="7"]
@@ -1523,7 +1801,7 @@ placeholder_alpha = 0.6
 caret_blink = false
 caret_blink_speed = 0.65
 caret_position = 0
-script = ExtResource( 22 )
+script = ExtResource( 23 )
 _sections_unfolded = [ "Theme", "custom_fonts" ]
 
 [node name="CameraJumpPositionButton" type="Button" parent="GeneralControlsContainer" index="8"]
@@ -1578,7 +1856,7 @@ group = null
 text = "Follow node: "
 flat = false
 align = 0
-script = ExtResource( 23 )
+script = ExtResource( 24 )
 _sections_unfolded = [ "custom_fonts" ]
 
 [node name="EnableExactFollow" type="CheckButton" parent="GeneralControlsContainer" index="10"]
@@ -1633,6 +1911,8 @@ _sections_unfolded = [ "custom_fonts" ]
 [connection signal="gui_input" from="TabContainer/Watches/WatchName" to="TabContainer/Watches/WatchName" method="_on_WatchName_gui_input"]
 
 [connection signal="button_down" from="TabContainer/Watches/SetValue" to="TabContainer/Watches/WatchesList" method="_on_SetValue_button_down"]
+
+[connection signal="pressed" from="TabContainer/Camera/ZoomTo" to="TabContainer/Camera/ZoomTo" method="_on_ZoomTo_pressed"]
 
 [connection signal="button_down" from="GeneralControlsContainer/StepButton" to="GeneralControlsContainer/StepButton" method="_on_StepButton_button_down"]
 
