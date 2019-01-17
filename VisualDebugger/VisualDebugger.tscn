@@ -1945,13 +1945,13 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [connection signal="pressed" from="GeneralControlsContainer/JumpToNodeButton" to="GeneralControlsContainer/JumpToNodeButton" method="_on_JumpToNodeButton_pressed"]
 
-[connection signal="mouse_entered" from="GeneralControlsContainer/JumpToNodePath" to="GeneralControlsContainer/JumpToNodePath" method="_on_JumpToNodePath_mouse_entered"]
-
 [connection signal="mouse_entered" from="GeneralControlsContainer/JumpToNodePath" to="." method="_on_disable_keyboard_movement"]
 
-[connection signal="mouse_exited" from="GeneralControlsContainer/JumpToNodePath" to="GeneralControlsContainer/JumpToNodePath" method="_on_JumpToNodePath_mouse_exited"]
+[connection signal="mouse_entered" from="GeneralControlsContainer/JumpToNodePath" to="GeneralControlsContainer/JumpToNodePath" method="_on_JumpToNodePath_mouse_entered"]
 
 [connection signal="mouse_exited" from="GeneralControlsContainer/JumpToNodePath" to="." method="_on_enable_keyboard_movement"]
+
+[connection signal="mouse_exited" from="GeneralControlsContainer/JumpToNodePath" to="GeneralControlsContainer/JumpToNodePath" method="_on_JumpToNodePath_mouse_exited"]
 
 [connection signal="button_down" from="GeneralControlsContainer/CameraJumpPositionButton" to="." method="_on_JumpPositionButton_button_down"]
 
