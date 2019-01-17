@@ -10,6 +10,7 @@ var new_zoom_position = Vector2(.0, .0) # For speed and convenience. Lerp to thi
 var zoom_lerp_progress = .0 # To ensure tight lerping and speed.
 var lerp_to_center_progress = .0 # To have a tight control over lerping.
 var current_mouse_center_position = Vector2(.0, .0) # Where to lerp, when screen has to be centered around the mouse.
+var has_lerped_to_center = false # To know, when to stop lerping and just follow.
 
 const LERP_TO_CENTER_SPEED = 2.0 # How quickly to lerp center around mouse cursor.
 const ZOOM_COEFFICIENT = .01 # How relatively quickly to zoom in and out.
@@ -26,9 +27,11 @@ func _input(event):
 		previous_mouse_drag_position = get_viewport().get_mouse_position()
 
 func manage_mouse_zoom_state(direction):
-	var zoom_step = (ZOOM_SHIFT_COEFFICIENT if Input.is_action_pressed("shift_down") else ZOOM_COEFFICIENT) * direction # For speed and convenience.
+	var zoom_step = (ZOOM_SHIFT_COEFFICIENT if Input.is_action_pressed("shift_down") else ZOOM_COEFFICIENT) \
+					* direction # For speed and convenience.
 	var previous_zoom = zoom # To calculate the relative zoom change.
-	zoom = Vector2(clamp(zoom.x + zoom_step * zoom.x, ZOOM_BOUNDS.x, ZOOM_BOUNDS.y), clamp(zoom.y + zoom_step * zoom.y, ZOOM_BOUNDS.x, ZOOM_BOUNDS.y))
+	zoom = Vector2(clamp(zoom.x + zoom_step * zoom.x, ZOOM_BOUNDS.x, ZOOM_BOUNDS.y), \
+				   clamp(zoom.y + zoom_step * zoom.y, ZOOM_BOUNDS.x, ZOOM_BOUNDS.y))
 	var half_viewport_size = get_viewport().size * .5 # For speed and convenience.
 	half_viewport_size = half_viewport_size + get_viewport().get_mouse_position() - half_viewport_size
 	position += Vector2(half_viewport_size.x * (previous_zoom.x - zoom.x), half_viewport_size.y * (previous_zoom.y - zoom.y))
@@ -67,8 +70,6 @@ func set_to_center_around_mouse_cursor():
 	Input.warp_mouse_position(half_viewport_size)
 	is_camera_being_centered_around_mouse_cursor = true
 
-var has_lerped_to_center = false # To know, when to stop lerping and just follow.
-
 func lerp_to_center_around_mouse_cursor(delta):
 	if lerp_to_center_progress > 1.0 - Global.APPROXIMATION_FLOAT:
 		position = current_mouse_center_position
@@ -76,13 +77,19 @@ func lerp_to_center_around_mouse_cursor(delta):
 		has_lerped_to_center = true
 		return
 	lerp_to_center_progress = min(lerp_to_center_progress + delta * LERP_TO_CENTER_SPEED, 1.0)
-	position = Vector2(lerp(position.x, current_mouse_center_position.x, lerp_to_center_progress), lerp(position.y, current_mouse_center_position.y, lerp_to_center_progress))
+	position = Vector2(lerp(position.x, current_mouse_center_position.x, lerp_to_center_progress), \
+					   lerp(position.y, current_mouse_center_position.y, lerp_to_center_progress))
 
 func lerp_zoom(delta):
 	zoom_lerp_progress += delta * ZOOM_LERP_SPEED
-	zoom = Vector2(lerp(zoom.x, new_zoom_value.x, zoom_lerp_progress), lerp(zoom.y, new_zoom_value.y, zoom_lerp_progress))
-	position = Vector2(lerp(position.x, new_zoom_position.x, zoom_lerp_progress), lerp(position.y, new_zoom_position.y, zoom_lerp_progress))
+	var previous_position = position # To calculate coefficient for synced zoom.
+	position = Vector2(lerp(position.x, new_zoom_position.x, zoom_lerp_progress), \
+					   lerp(position.y, new_zoom_position.y, zoom_lerp_progress))
+	zoom = Vector2(lerp(zoom.x, new_zoom_value.x, 1.0 - abs(position.x) / max(abs(previous_position.x), Global.APPROXIMATION_FLOAT)), \
+				   lerp(zoom.y, new_zoom_value.y, 1.0 - abs(position.y) / max(abs(previous_position.y), Global.APPROXIMATION_FLOAT)))
 	if zoom_lerp_progress > 1.0:
+		zoom = new_zoom_value
+		position = new_zoom_position
 		is_zoom_lerping = false
 
 func set_zoom_to():
@@ -91,5 +98,6 @@ func set_zoom_to():
 	var zoom_position = zoom_to.get_child(1) # For speed and convenience.
 	is_zoom_lerping = true
 	zoom_lerp_progress = .0
-	new_zoom_value = Vector2(Vector2(clamp(float(zoom_value.get_child(0).text), ZOOM_BOUNDS.x, ZOOM_BOUNDS.y), clamp(float(zoom_value.get_child(1).text), ZOOM_BOUNDS.x, ZOOM_BOUNDS.y)))
+	new_zoom_value = Vector2(Vector2(clamp(float(zoom_value.get_child(0).text), ZOOM_BOUNDS.x, ZOOM_BOUNDS.y), \
+									 clamp(float(zoom_value.get_child(1).text), ZOOM_BOUNDS.x, ZOOM_BOUNDS.y)))
 	new_zoom_position = Vector2(Vector2(float(zoom_position.get_child(0).text), float(zoom_position.get_child(1).text)))
