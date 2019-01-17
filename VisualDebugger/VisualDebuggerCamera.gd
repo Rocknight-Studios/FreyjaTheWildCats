@@ -11,15 +11,21 @@ var zoom_lerp_progress = .0 # To ensure tight lerping and speed.
 var lerp_to_center_progress = .0 # To have a tight control over lerping.
 var mouse_center_position = Vector2(.0, .0) # Where to lerp, when screen has to be centered around the mouse.
 var has_lerped_to_center = false # To know, when to stop lerping and just follow.
-var previous_mouse_center_position = Vector2(.0, .0) # To perform relative center movement.
+var just_from_process = false # To detect only the first input event. Basically sync _input with _process.
+var move_distance = Vector2(.0, .0) # To pass calculated mouse relative position change.
 
 const LERP_TO_CENTER_SPEED = 2.0 # How quickly to lerp center around mouse cursor.
 const ZOOM_COEFFICIENT = .01 # How relatively quickly to zoom in and out.
 const ZOOM_SHIFT_COEFFICIENT = .1 # If shift key is pressed zooming should happen much faster.
 const ZOOM_BOUNDS = Vector2(.00001, 1500.0) # Don't let the zoom to become larger or smaller than the bounds.
 const ZOOM_LERP_SPEED = 2.0 # To avoid magic numbers. How is the zoom lerping.
+const MOUSE_RELATIVE_STEP_SMOOTH_COEFFICIENT = .25 # How much to smooth out the mouse relative vector.
 
 func _input(event):
+	if just_from_process:
+		if event is InputEventMouseMotion:
+			move_distance = move_distance.linear_interpolate(event.relative, MOUSE_RELATIVE_STEP_SMOOTH_COEFFICIENT)
+		just_from_process = false
 	if Input.is_action_pressed("left_control_down"):
 		manage_scene_zoom(event)
 	if Input.is_action_pressed("middle_mouse_button"):
@@ -54,18 +60,17 @@ func manage_scene_zoom(event):
 			manage_mouse_zoom_state(1.0)
 
 func _process(delta):
+	just_from_process = true
 	if is_zoom_lerping:
 		lerp_zoom(delta)
 	elif is_camera_being_centered_around_mouse_cursor:
 		lerp_to_center_around_mouse_cursor(delta)
 		if Input.is_action_just_released("control_m"):
 			is_camera_being_centered_around_mouse_cursor = false
-			Input.warp_mouse_position(get_viewport().size * .5)
 	elif Input.is_action_pressed("control_m"):
 		set_to_center_around_mouse_cursor()
 	else:
 		has_lerped_to_center = false
-	previous_mouse_center_position = get_viewport().get_mouse_position()
 
 func set_to_center_around_mouse_cursor():
 	if !has_lerped_to_center:
@@ -77,12 +82,14 @@ func set_to_center_around_mouse_cursor():
 
 func lerp_to_center_around_mouse_cursor(delta):
 	if lerp_to_center_progress > 1.0 - Global.APPROXIMATION_FLOAT:
-		position += get_viewport().get_mouse_position() - previous_mouse_center_position
+		Input.warp_mouse_position(get_viewport().size * .5)
+		position += move_distance * zoom
 		has_lerped_to_center = true
-		return
-	lerp_to_center_progress = min(lerp_to_center_progress + delta * LERP_TO_CENTER_SPEED, 1.0)
-	position = Vector2(lerp(position.x, mouse_center_position.x, lerp_to_center_progress), \
-					   lerp(position.y, mouse_center_position.y, lerp_to_center_progress))
+	else:
+		lerp_to_center_progress = min(lerp_to_center_progress + delta * LERP_TO_CENTER_SPEED, 1.0)
+		position = Vector2(lerp(position.x, mouse_center_position.x, lerp_to_center_progress), \
+						   lerp(position.y, mouse_center_position.y, lerp_to_center_progress))
+		move_distance = Vector2(.0, .0)
 
 func lerp_zoom(delta):
 	zoom_lerp_progress += delta * ZOOM_LERP_SPEED
