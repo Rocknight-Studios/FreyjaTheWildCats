@@ -336,7 +336,6 @@ _sections_unfolded = [ "Theme", "custom_fonts" ]
 [node name="VisualSelect" type="Container" parent="TabContainer" index="0"]
 
 editor/display_folded = true
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -1287,6 +1286,7 @@ _sections_unfolded = [ "Rect", "Theme", "custom_styles" ]
 
 [node name="Camera" type="Container" parent="TabContainer" index="3"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -1945,13 +1945,13 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [connection signal="pressed" from="GeneralControlsContainer/JumpToNodeButton" to="GeneralControlsContainer/JumpToNodeButton" method="_on_JumpToNodeButton_pressed"]
 
-[connection signal="mouse_entered" from="GeneralControlsContainer/JumpToNodePath" to="." method="_on_disable_keyboard_movement"]
-
 [connection signal="mouse_entered" from="GeneralControlsContainer/JumpToNodePath" to="GeneralControlsContainer/JumpToNodePath" method="_on_JumpToNodePath_mouse_entered"]
 
-[connection signal="mouse_exited" from="GeneralControlsContainer/JumpToNodePath" to="." method="_on_enable_keyboard_movement"]
+[connection signal="mouse_entered" from="GeneralControlsContainer/JumpToNodePath" to="." method="_on_disable_keyboard_movement"]
 
 [connection signal="mouse_exited" from="GeneralControlsContainer/JumpToNodePath" to="GeneralControlsContainer/JumpToNodePath" method="_on_JumpToNodePath_mouse_exited"]
+
+[connection signal="mouse_exited" from="GeneralControlsContainer/JumpToNodePath" to="." method="_on_enable_keyboard_movement"]
 
 [connection signal="button_down" from="GeneralControlsContainer/CameraJumpPositionButton" to="." method="_on_JumpPositionButton_button_down"]
 
