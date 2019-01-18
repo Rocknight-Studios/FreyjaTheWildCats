@@ -336,6 +336,7 @@ _sections_unfolded = [ "Theme", "custom_fonts" ]
 [node name="VisualSelect" type="Container" parent="TabContainer" index="0"]
 
 editor/display_folded = true
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -1286,7 +1287,6 @@ _sections_unfolded = [ "Rect", "Theme", "custom_styles" ]
 
 [node name="Camera" type="Container" parent="TabContainer" index="3"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -1545,9 +1545,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 7.0
-margin_top = 170.0
+margin_top = 273.0
 margin_right = 359.0
-margin_bottom = 195.0
+margin_bottom = 298.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -1566,19 +1566,189 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 7.0
-margin_top = 201.0
+margin_top = 294.0
 margin_right = 359.0
-margin_bottom = 226.0
+margin_bottom = 319.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-text = "Hold Ctrl+M to center around mouse cursor."
+text = "Hold Ctrl+M to stay around mouse cursor."
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="ZoomIndicatorX" type="Control" parent="TabContainer/Camera" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -60.0
+margin_right = 40.0
+margin_bottom = -20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="LocalLabel" type="Label" parent="TabContainer/Camera/ZoomIndicatorX" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 12.0
+margin_top = 224.0
+margin_right = 172.0
+margin_bottom = 249.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Under/Over 1.0 X zoom:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ZoomValueX" type="Label" parent="TabContainer/Camera/ZoomIndicatorX" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 192.0
+margin_top = 224.0
+margin_right = 352.0
+margin_bottom = 249.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "1.0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ZoomProgressBarXL" type="ProgressBar" parent="TabContainer/Camera/ZoomIndicatorX" index="2"]
+
+modulate = Color( 0.3, 0.7, 1, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 11.0
+margin_top = 249.0
+margin_right = 353.0
+margin_bottom = 266.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+percent_visible = false
+_sections_unfolded = [ "Percent", "Visibility" ]
+
+[node name="ZoomIndicatorY" type="Control" parent="TabContainer/Camera" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -100.0
+margin_right = 40.0
+margin_bottom = -60.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="LocalLabel" type="Label" parent="TabContainer/Camera/ZoomIndicatorY" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 12.0
+margin_top = 319.0
+margin_right = 172.0
+margin_bottom = 344.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Under/Over 1.0 Y zoom:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ZoomValueY" type="Label" parent="TabContainer/Camera/ZoomIndicatorY" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 192.0
+margin_top = 319.0
+margin_right = 352.0
+margin_bottom = 344.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "1.0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ZoomProgressBarYL" type="ProgressBar" parent="TabContainer/Camera/ZoomIndicatorY" index="2"]
+
+modulate = Color( 0.298039, 0.698039, 1, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 11.0
+margin_top = 345.0
+margin_right = 353.0
+margin_bottom = 362.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+percent_visible = false
+_sections_unfolded = [ "Percent", "Visibility" ]
 
 [node name="GeneralControlsContainer" type="Container" parent="." index="8"]
 

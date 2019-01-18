@@ -1,7 +1,6 @@
 extends Button
 
 func _on_ZoomTo_pressed():
-	Global.visual_debugger.debugger_camera.camera_tab = self.get_parent()
 	Global.visual_debugger.debugger_camera.set_zoom_to()
 
 func _process(delta):
