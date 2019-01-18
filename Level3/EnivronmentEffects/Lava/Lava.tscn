@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Level3/EnivronmentEffects/Lava/Lava.tres" type="Material" id=1]
+[ext_resource path="res://Level3/EnivronmentEffects/Lava/Lava.png" type="Texture" id=2]
+
+[node name="Lava" type="Sprite"]
+
+material = ExtResource( 1 )
+position = Vector2( 1.35834, 0 )
+scale = Vector2( 1.00141, 1 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility" ]
+
+

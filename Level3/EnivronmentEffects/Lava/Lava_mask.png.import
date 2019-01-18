@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Lava.png-bec1dcb39df06f14d0b3d7dc7474e5c7.stex"
+path="res://.import/Lava_mask.png-88033f679e213f494ea9a602efdce880.stex"
 
 [deps]
 
-source_file="res://Level3/EnivronmentEffects/Lava/Lava.png"
-dest_files=[ "res://.import/Lava.png-bec1dcb39df06f14d0b3d7dc7474e5c7.stex" ]
+source_file="res://Level3/EnivronmentEffects/Lava/Lava_mask.png"
+dest_files=[ "res://.import/Lava_mask.png-88033f679e213f494ea9a602efdce880.stex" ]
 
 [params]
 
@@ -15,7 +15,7 @@ compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
