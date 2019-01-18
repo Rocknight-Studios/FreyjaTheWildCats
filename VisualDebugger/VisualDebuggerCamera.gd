@@ -2,9 +2,11 @@ extends Camera2D
 
 onready var is_zoom_lerping = false # Whether the zooming to the new zoom state should be performed.
 onready var is_camera_being_centered_around_mouse_cursor = false # To perform centering, only, when it is required.
+onready var camera_tab = get_parent().get_node("TabContainer/Camera") # For speed and convenience.
+onready var zoom_indicator_x = camera_tab.get_node("ZoomIndicatorX") # For speed and convenience.
+onready var zoom_indicator_y = camera_tab.get_node("ZoomIndicatorY") # For speed and convenience.
 
 var previous_mouse_drag_position = Vector2(.0, .0) # To calculate, where to move.
-var camera_tab = null # For speed and convenience.
 var new_zoom_value = Vector2(.0, .0) # For speed and convenience. Lerp to this zoom.
 var new_zoom_position = Vector2(.0, .0) # For speed and convenience. Lerp to this zoom.
 var zoom_lerp_progress = .0 # To ensure tight lerping and speed.
@@ -14,6 +16,9 @@ var has_lerped_to_center = false # To know, when to stop lerping and just follow
 var just_from_process = false # To detect only the first input event. Basically sync _input with _process.
 var move_distance = Vector2(.0, .0) # To pass calculated mouse relative position change.
 
+const ZOOM_OVER_ONE_COEFFICIENT = .08 # How smoothly to change zoom value, when zoom is over 1.0.
+const UNDER_ONE_ZOOM_BAR_COLOR = Color(.3, .7, 1.0, 1.0) # To avoid having magic numbers.
+const OVER_ONE_ZOOM_BAR_COLOR = Color(1.0, 1.0, .0, 1.0) # To avoid having magic numbers.
 const LERP_TO_CENTER_SPEED = 2.0 # How quickly to lerp center around mouse cursor.
 const ZOOM_COEFFICIENT = .01 # How relatively quickly to zoom in and out.
 const ZOOM_SHIFT_COEFFICIENT = .1 # If shift key is pressed zooming should happen much faster.
@@ -42,6 +47,7 @@ func manage_mouse_zoom_state(direction):
 	var half_viewport_size = get_viewport().size * .5 # For speed and convenience.
 	half_viewport_size = half_viewport_size + get_viewport().get_mouse_position() - half_viewport_size
 	position += Vector2(half_viewport_size.x * (previous_zoom.x - zoom.x), half_viewport_size.y * (previous_zoom.y - zoom.y))
+	manage_zoom_display()
 
 func manage_mouse_drag():
 	var mouse_drag_position = get_viewport().get_mouse_position() # For speed and convenience.
@@ -58,6 +64,36 @@ func manage_scene_zoom(event):
 			manage_mouse_zoom_state(-1.0)
 		elif event.button_index == BUTTON_WHEEL_DOWN:
 			manage_mouse_zoom_state(1.0)
+
+func _ready():
+	manage_zoom_display()
+
+func manage_zoom_display():
+	var zoom_range = ZOOM_BOUNDS.y - ZOOM_BOUNDS.x # For speed and convenience.
+
+	if zoom.x < 1.0:
+		zoom_indicator_x.get_child(2).max_value = 1.0
+		zoom_indicator_x.get_child(2).modulate = UNDER_ONE_ZOOM_BAR_COLOR
+		zoom_indicator_x.get_child(1).modulate = UNDER_ONE_ZOOM_BAR_COLOR
+	else:
+		zoom_indicator_x.get_child(2).max_value = (zoom_range - 1.0) * ZOOM_OVER_ONE_COEFFICIENT
+		zoom_indicator_x.get_child(2).modulate = OVER_ONE_ZOOM_BAR_COLOR
+		zoom_indicator_x.get_child(1).modulate = OVER_ONE_ZOOM_BAR_COLOR
+	zoom_indicator_x.get_child(2).step = 1
+	zoom_indicator_x.get_child(2).value = zoom.x
+	zoom_indicator_x.get_child(1).text = str(zoom.x)
+
+	if zoom.y < 1.0:
+		zoom_indicator_y.get_child(2).max_value = 1.0
+		zoom_indicator_y.get_child(2).modulate = UNDER_ONE_ZOOM_BAR_COLOR
+		zoom_indicator_y.get_child(1).modulate = UNDER_ONE_ZOOM_BAR_COLOR
+	else:
+		zoom_indicator_y.get_child(2).max_value = (zoom_range - 1.0) * ZOOM_OVER_ONE_COEFFICIENT
+		zoom_indicator_y.get_child(2).modulate = OVER_ONE_ZOOM_BAR_COLOR
+		zoom_indicator_y.get_child(1).modulate = OVER_ONE_ZOOM_BAR_COLOR
+	zoom_indicator_y.get_child(2).step = 1
+	zoom_indicator_y.get_child(2).value = zoom.y
+	zoom_indicator_y.get_child(1).text = str(zoom.y)
 
 func _process(delta):
 	just_from_process = true
@@ -96,12 +132,16 @@ func lerp_zoom(delta):
 	var previous_position = position # To calculate coefficient for synced zoom.
 	position = Vector2(lerp(position.x, new_zoom_position.x, zoom_lerp_progress), \
 					   lerp(position.y, new_zoom_position.y, zoom_lerp_progress))
-	zoom = Vector2(lerp(zoom.x, new_zoom_value.x, 1.0 - abs(position.x) / max(abs(previous_position.x), Global.APPROXIMATION_FLOAT)), \
-				   lerp(zoom.y, new_zoom_value.y, 1.0 - abs(position.y) / max(abs(previous_position.y), Global.APPROXIMATION_FLOAT)))
+	if (1.0 - abs(position.x) / max(abs(previous_position.x), Global.APPROXIMATION_FLOAT)) < 1.0 - Global.APPROXIMATION_FLOAT:
+		zoom = Vector2(lerp(zoom.x, new_zoom_value.x, 1.0 - abs(position.x) / max(abs(previous_position.x), Global.APPROXIMATION_FLOAT)), \
+					   lerp(zoom.y, new_zoom_value.y, 1.0 - abs(position.y) / max(abs(previous_position.y), Global.APPROXIMATION_FLOAT)))
+	else:
+		zoom = zoom.linear_interpolate(new_zoom_value, zoom_lerp_progress)
 	if zoom_lerp_progress > 1.0:
 		zoom = new_zoom_value
 		position = new_zoom_position
 		is_zoom_lerping = false
+	manage_zoom_display()
 
 func set_zoom_to():
 	var zoom_to = camera_tab.get_node("ZoomTo") # For speed and convenience.
