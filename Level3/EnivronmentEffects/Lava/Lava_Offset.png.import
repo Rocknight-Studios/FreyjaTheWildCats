@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Lava.png-bec1dcb39df06f14d0b3d7dc7474e5c7.stex"
+path="res://.import/Lava_Offset.png-79542b9eec80756cdeb3d66813eae533.stex"
 
 [deps]
 
-source_file="res://Level3/EnivronmentEffects/Lava/Lava.png"
-dest_files=[ "res://.import/Lava.png-bec1dcb39df06f14d0b3d7dc7474e5c7.stex" ]
+source_file="res://Level3/EnivronmentEffects/Lava/Lava_Offset.png"
+dest_files=[ "res://.import/Lava_Offset.png-79542b9eec80756cdeb3d66813eae533.stex" ]
 
 [params]
 
