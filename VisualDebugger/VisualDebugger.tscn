@@ -1545,9 +1545,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 7.0
-margin_top = 273.0
+margin_top = 373.0
 margin_right = 359.0
-margin_bottom = 298.0
+margin_bottom = 398.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -1566,9 +1566,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 7.0
-margin_top = 294.0
+margin_top = 394.0
 margin_right = 359.0
-margin_bottom = 319.0
+margin_bottom = 419.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -1596,7 +1596,23 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="LocalLabel" type="Label" parent="TabContainer/Camera/ZoomIndicatorX" index="0"]
+[node name="Total" type="Control" parent="TabContainer/Camera/ZoomIndicatorX" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="TotalLabel" type="Label" parent="TabContainer/Camera/ZoomIndicatorX/Total" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1604,8 +1620,70 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 12.0
 margin_top = 224.0
-margin_right = 172.0
+margin_right = 196.0
 margin_bottom = 249.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Total X zoom:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ZoomProgressBarXF" type="ProgressBar" parent="TabContainer/Camera/ZoomIndicatorX/Total" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 11.0
+margin_top = 249.0
+margin_right = 353.0
+margin_bottom = 266.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = true
+percent_visible = true
+_sections_unfolded = [ "Percent", "Visibility" ]
+
+[node name="Local" type="Control" parent="TabContainer/Camera/ZoomIndicatorX" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="LocalLabel" type="Label" parent="TabContainer/Camera/ZoomIndicatorX/Local" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 12.0
+margin_top = 274.0
+margin_right = 196.0
+margin_bottom = 299.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -1617,16 +1695,16 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="ZoomValueX" type="Label" parent="TabContainer/Camera/ZoomIndicatorX" index="1"]
+[node name="ZoomValueX" type="Label" parent="TabContainer/Camera/ZoomIndicatorX/Local" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 192.0
-margin_top = 224.0
+margin_top = 274.0
 margin_right = 352.0
-margin_bottom = 249.0
+margin_bottom = 299.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -1638,7 +1716,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="ZoomProgressBarXL" type="ProgressBar" parent="TabContainer/Camera/ZoomIndicatorX" index="2"]
+[node name="ZoomProgressBarXL" type="ProgressBar" parent="TabContainer/Camera/ZoomIndicatorX/Local" index="2"]
 
 modulate = Color( 0.3, 0.7, 1, 1 )
 anchor_left = 0.0
@@ -1646,9 +1724,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 11.0
-margin_top = 249.0
+margin_top = 299.0
 margin_right = 353.0
-margin_bottom = 266.0
+margin_bottom = 316.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -1671,9 +1749,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = -100.0
 margin_right = 40.0
-margin_bottom = -60.0
+margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -1681,7 +1758,85 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="LocalLabel" type="Label" parent="TabContainer/Camera/ZoomIndicatorY" index="0"]
+[node name="Total" type="Control" parent="TabContainer/Camera/ZoomIndicatorY" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="TotalLabel" type="Label" parent="TabContainer/Camera/ZoomIndicatorY/Total" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 12.0
+margin_top = 271.0
+margin_right = 196.0
+margin_bottom = 296.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Total Y zoom:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ZoomProgressBarYF" type="ProgressBar" parent="TabContainer/Camera/ZoomIndicatorY/Total" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 11.0
+margin_top = 298.0
+margin_right = 353.0
+margin_bottom = 315.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = true
+percent_visible = true
+_sections_unfolded = [ "Percent", "Visibility" ]
+
+[node name="Local" type="Control" parent="TabContainer/Camera/ZoomIndicatorY" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="LocalLabel" type="Label" parent="TabContainer/Camera/ZoomIndicatorY/Local" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1689,7 +1844,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 12.0
 margin_top = 319.0
-margin_right = 172.0
+margin_right = 196.0
 margin_bottom = 344.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1702,7 +1857,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="ZoomValueY" type="Label" parent="TabContainer/Camera/ZoomIndicatorY" index="1"]
+[node name="ZoomValueY" type="Label" parent="TabContainer/Camera/ZoomIndicatorY/Local" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1723,7 +1878,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="ZoomProgressBarYL" type="ProgressBar" parent="TabContainer/Camera/ZoomIndicatorY" index="2"]
+[node name="ZoomProgressBarYL" type="ProgressBar" parent="TabContainer/Camera/ZoomIndicatorY/Local" index="2"]
 
 modulate = Color( 0.298039, 0.698039, 1, 1 )
 anchor_left = 0.0
