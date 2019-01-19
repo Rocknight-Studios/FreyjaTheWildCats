@@ -71,29 +71,56 @@ func _ready():
 func manage_zoom_display():
 	var zoom_range = ZOOM_BOUNDS.y - ZOOM_BOUNDS.x # For speed and convenience.
 
+	var current_test_zoom = 1.0 # Tmp value to check, when the bound is reached for both max and current value.
+	var current_step = 0 # How many steps wide is the current and max value.
+
+	while current_test_zoom < zoom_range:
+		current_test_zoom = current_test_zoom + ZOOM_COEFFICIENT * current_test_zoom
+		current_step += 1
+	zoom_indicator_x.get_child(0).get_child(1).max_value = current_step
+	current_test_zoom = 1.0
+	current_step = 0
+	while current_test_zoom < zoom.x:
+		current_test_zoom = current_test_zoom + ZOOM_COEFFICIENT * current_test_zoom
+		current_step += 1
+	zoom_indicator_x.get_child(0).get_child(1).step = 1
+	zoom_indicator_x.get_child(0).get_child(1).value = current_step
+
+	while current_test_zoom < zoom_range:
+		current_test_zoom = current_test_zoom + ZOOM_COEFFICIENT * current_test_zoom
+		current_step += 1
+	zoom_indicator_y.get_child(0).get_child(1).max_value = current_step
+	current_test_zoom = 1.0
+	current_step = 0
+	while current_test_zoom < zoom.y:
+		current_test_zoom = current_test_zoom + ZOOM_COEFFICIENT * current_test_zoom
+		current_step += 1
+	zoom_indicator_y.get_child(0).get_child(1).step = 1
+	zoom_indicator_y.get_child(0).get_child(1).value = current_step
+
 	if zoom.x < 1.0:
-		zoom_indicator_x.get_child(2).max_value = 1.0
-		zoom_indicator_x.get_child(2).modulate = UNDER_ONE_ZOOM_BAR_COLOR
-		zoom_indicator_x.get_child(1).modulate = UNDER_ONE_ZOOM_BAR_COLOR
+		zoom_indicator_x.get_child(1).get_child(2).max_value = 1.0
+		zoom_indicator_x.get_child(1).get_child(2).modulate = UNDER_ONE_ZOOM_BAR_COLOR
+		zoom_indicator_x.get_child(1).get_child(1).modulate = UNDER_ONE_ZOOM_BAR_COLOR
 	else:
-		zoom_indicator_x.get_child(2).max_value = (zoom_range - 1.0) * ZOOM_OVER_ONE_COEFFICIENT
-		zoom_indicator_x.get_child(2).modulate = OVER_ONE_ZOOM_BAR_COLOR
-		zoom_indicator_x.get_child(1).modulate = OVER_ONE_ZOOM_BAR_COLOR
-	zoom_indicator_x.get_child(2).step = 1
-	zoom_indicator_x.get_child(2).value = zoom.x
-	zoom_indicator_x.get_child(1).text = str(zoom.x)
+		zoom_indicator_x.get_child(1).get_child(2).max_value = (zoom_range - 1.0) * ZOOM_OVER_ONE_COEFFICIENT
+		zoom_indicator_x.get_child(1).get_child(2).modulate = OVER_ONE_ZOOM_BAR_COLOR
+		zoom_indicator_x.get_child(1).get_child(1).modulate = OVER_ONE_ZOOM_BAR_COLOR
+	zoom_indicator_x.get_child(1).get_child(2).step = 1
+	zoom_indicator_x.get_child(1).get_child(2).value = zoom.x
+	zoom_indicator_x.get_child(1).get_child(1).text = str(zoom.x)
 
 	if zoom.y < 1.0:
-		zoom_indicator_y.get_child(2).max_value = 1.0
-		zoom_indicator_y.get_child(2).modulate = UNDER_ONE_ZOOM_BAR_COLOR
-		zoom_indicator_y.get_child(1).modulate = UNDER_ONE_ZOOM_BAR_COLOR
+		zoom_indicator_y.get_child(1).get_child(2).max_value = 1.0
+		zoom_indicator_y.get_child(1).get_child(2).modulate = UNDER_ONE_ZOOM_BAR_COLOR
+		zoom_indicator_y.get_child(1).get_child(1).modulate = UNDER_ONE_ZOOM_BAR_COLOR
 	else:
-		zoom_indicator_y.get_child(2).max_value = (zoom_range - 1.0) * ZOOM_OVER_ONE_COEFFICIENT
-		zoom_indicator_y.get_child(2).modulate = OVER_ONE_ZOOM_BAR_COLOR
-		zoom_indicator_y.get_child(1).modulate = OVER_ONE_ZOOM_BAR_COLOR
-	zoom_indicator_y.get_child(2).step = 1
-	zoom_indicator_y.get_child(2).value = zoom.y
-	zoom_indicator_y.get_child(1).text = str(zoom.y)
+		zoom_indicator_y.get_child(1).get_child(2).max_value = (zoom_range - 1.0) * ZOOM_OVER_ONE_COEFFICIENT
+		zoom_indicator_y.get_child(1).get_child(2).modulate = OVER_ONE_ZOOM_BAR_COLOR
+		zoom_indicator_y.get_child(1).get_child(1).modulate = OVER_ONE_ZOOM_BAR_COLOR
+	zoom_indicator_y.get_child(1).get_child(2).step = 1
+	zoom_indicator_y.get_child(1).get_child(2).value = zoom.y
+	zoom_indicator_y.get_child(1).get_child(1).text = str(zoom.y)
 
 func _process(delta):
 	just_from_process = true
