@@ -5,6 +5,7 @@ onready var is_camera_being_centered_around_mouse_cursor = false # To perform ce
 onready var camera_tab = get_parent().get_node("TabContainer/Camera") # For speed and convenience.
 onready var zoom_indicator_x = camera_tab.get_node("ZoomIndicatorX") # For speed and convenience.
 onready var zoom_indicator_y = camera_tab.get_node("ZoomIndicatorY") # For speed and convenience.
+onready var mouse_position_wrapper = camera_tab.get_node("MousePosition") # For speed and convenience.
 
 var previous_mouse_drag_position = Vector2(.0, .0) # To calculate, where to move.
 var new_zoom_value = Vector2(.0, .0) # For speed and convenience. Lerp to this zoom.
@@ -123,6 +124,11 @@ func manage_zoom_display():
 	zoom_indicator_y.get_child(1).get_child(1).text = str(zoom.y)
 
 func _process(delta):
+	var viewport_mouse_position = get_viewport().get_mouse_position() # For speed and convenience.
+	mouse_position_wrapper.get_child(0).get_child(0).text = str(viewport_mouse_position.x, ", ", viewport_mouse_position.y)
+	mouse_position_wrapper.get_child(1).get_child(0).text = str(position.x + viewport_mouse_position.x * zoom.x,\
+																", ", position.y + viewport_mouse_position.y * zoom.y)
+
 	just_from_process = true
 	if is_zoom_lerping:
 		lerp_zoom(delta)

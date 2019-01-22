@@ -30,14 +30,20 @@ func load_textures(var dir_path):
 
 func _ready():
 	load_textures("res://VisualDebugger/icons/")
+	Global.visual_debugger.outliner = self
+	_on_form_the_outliner()
 
 func add_a_tree_item(node, parent_item):
 	tree_item = create_item(parent_item)
-	tree_item.set_icon(0, icon_dictionary[str(node.get_class()).to_lower()])
+	var this_node_class = node.get_class() # For speed and convenience.
+	tree_item.set_icon(0, icon_dictionary[this_node_class.to_lower()])
 	tree_item.set_text(0, node.name)
-	tree_item.set_text(1, str(node.get_class()))
+	tree_item.set_text(1, this_node_class)
 	tree_item.set_metadata(0, node.get_path())
 	tree_item.collapsed = false if parent_item == null else true
+
+	if this_node_class == "Camera2D":
+		Global.visual_debugger.game_camera = node
 
 func get_all_outline_nodes(node, parent_item):
 	add_a_tree_item(node, parent_item)

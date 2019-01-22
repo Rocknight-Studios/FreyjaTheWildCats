@@ -23,6 +23,8 @@ var slide_direction = VD_Slide_direction.NONE # To know, when to slide in and ou
 var keyboard_movement_is_allowed = true # For the access from other behaviours.
 var forbid_selection_circle_management = false # To not manage selection circle, when transformation is active.
 var full_selected_path = "" # To have a convenient access from other scripts.
+var game_camera = null # To know, to which camera to reset back.
+var outliner = null # To detect and manage scene tree changes.
 
 const BACKGROUND_COLOR_LERP_SPEED = 3.0 # How quickly to fade to the new state.
 const VISUAL_BACKGROUND_MODULATE_B_DELTA = .25 # To avoid having magic numbers.
@@ -104,7 +106,9 @@ func _process(delta):
 		if visual_debugger_is_active:
 			visual_debugger_is_active = false
 			set_gui_visibility(false)
-			Global.camera.make_current()
+			if !(weakref(game_camera)).get_ref():
+				outliner._on_form_the_outliner()
+			game_camera.make_current()
 			get_tree().paused = false
 			deactivate_menu()
 		else:
