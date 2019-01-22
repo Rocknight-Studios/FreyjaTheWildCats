@@ -8,16 +8,16 @@
 [ext_resource path="res://VisualDebugger/VisualDebuggerCamera.gd" type="Script" id=6]
 [ext_resource path="res://VisualDebugger/Fonts/Nanum_Gothic_Coding/NanumGothicCoding-Regular.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://VisualDebugger/WarningLine.gd" type="Script" id=8]
-[ext_resource path="res://VisualDebugger/ShowNodeInfoButton.gd" type="Script" id=9]
-[ext_resource path="res://VisualDebugger/JumpToSelectedNodeButton.gd" type="Script" id=10]
-[ext_resource path="res://VisualDebugger/CurrentNodeInfo.gd" type="Script" id=11]
-[ext_resource path="res://VisualDebugger/Outliner.gd" type="Script" id=12]
-[ext_resource path="res://VisualDebugger/OutlinerHScrollBar.gd" type="Script" id=13]
-[ext_resource path="res://VisualDebugger/RemoveNode.gd" type="Script" id=14]
-[ext_resource path="res://VisualDebugger/WatchesList.gd" type="Script" id=15]
-[ext_resource path="res://VisualDebugger/WatchName.gd" type="Script" id=16]
-[ext_resource path="res://VisualDebugger/TransformationModeButton.gd" type="Script" id=17]
-[ext_resource path="res://VisualDebugger/ZoomTo.gd" type="Script" id=18]
+[ext_resource path="res://VisualDebugger/ZoomTo.gd" type="Script" id=9]
+[ext_resource path="res://VisualDebugger/ShowNodeInfoButton.gd" type="Script" id=10]
+[ext_resource path="res://VisualDebugger/JumpToSelectedNodeButton.gd" type="Script" id=11]
+[ext_resource path="res://VisualDebugger/CurrentNodeInfo.gd" type="Script" id=12]
+[ext_resource path="res://VisualDebugger/Outliner.gd" type="Script" id=13]
+[ext_resource path="res://VisualDebugger/OutlinerHScrollBar.gd" type="Script" id=14]
+[ext_resource path="res://VisualDebugger/RemoveNode.gd" type="Script" id=15]
+[ext_resource path="res://VisualDebugger/WatchesList.gd" type="Script" id=16]
+[ext_resource path="res://VisualDebugger/WatchName.gd" type="Script" id=17]
+[ext_resource path="res://VisualDebugger/TransformationModeButton.gd" type="Script" id=18]
 [ext_resource path="res://VisualDebugger/StepButton.gd" type="Script" id=19]
 [ext_resource path="res://VisualDebugger/RunButton.gd" type="Script" id=20]
 [ext_resource path="res://VisualDebugger/CameraMovementSpeedSlider.gd" type="Script" id=21]
@@ -333,959 +333,7 @@ tab_align = 1
 tabs_visible = true
 _sections_unfolded = [ "Theme", "custom_fonts" ]
 
-[node name="VisualSelect" type="Container" parent="TabContainer" index="0"]
-
-editor/display_folded = true
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 5.0
-margin_top = 32.0
-margin_right = -5.0
-margin_bottom = -5.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 2 )
-_sections_unfolded = [ "Theme" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="ListOfNodesTitle" type="Label" parent="TabContainer/VisualSelect" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 6.0
-margin_top = 6.0
-margin_right = 249.0
-margin_bottom = 23.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-theme = ExtResource( 2 )
-text = "List of currenly marked nodes"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Margin", "Theme", "custom_fonts" ]
-
-[node name="SelectionInfo" type="TextEdit" parent="TabContainer/VisualSelect" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 8.0
-margin_top = 30.0
-margin_right = 358.0
-margin_bottom = 209.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 2 )
-text = ""
-readonly = true
-highlight_current_line = true
-syntax_highlighting = false
-show_line_numbers = true
-highlight_all_occurrences = false
-override_selected_font_color = false
-context_menu_enabled = true
-smooth_scrolling = false
-v_scroll_speed = 80.0
-hiding_enabled = 0
-wrap_lines = false
-caret_block_mode = false
-caret_blink = false
-caret_blink_speed = 0.65
-caret_moving_by_right_click = true
-_sections_unfolded = [ "Theme" ]
-
-[node name="ListOfNodesTypesToDetectTitle" type="Label" parent="TabContainer/VisualSelect" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 7.0
-margin_top = 217.0
-margin_right = 306.0
-margin_bottom = 242.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-theme = ExtResource( 2 )
-text = "Show only nodes of these types."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
-
-[node name="SelectionInfo2" type="TextEdit" parent="TabContainer/VisualSelect" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 8.0
-margin_top = 243.0
-margin_right = 358.0
-margin_bottom = 409.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 2 )
-text = ""
-readonly = true
-highlight_current_line = true
-syntax_highlighting = false
-show_line_numbers = true
-highlight_all_occurrences = false
-override_selected_font_color = false
-context_menu_enabled = true
-smooth_scrolling = false
-v_scroll_speed = 80.0
-hiding_enabled = 0
-wrap_lines = false
-caret_block_mode = false
-caret_blink = false
-caret_blink_speed = 0.65
-caret_moving_by_right_click = true
-_sections_unfolded = [ "Theme" ]
-
-[node name="SelectedNodeInfo" type="Container" parent="TabContainer/VisualSelect" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 1.0
-margin_top = 418.0
-margin_right = -1.0
-margin_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="ShowNodeInfoButton" type="Button" parent="TabContainer/VisualSelect/SelectedNodeInfo" index="0"]
-
-self_modulate = Color( 0.496094, 1, 0.716553, 1 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 7.0
-margin_top = 6.0
-margin_right = 171.0
-margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 2 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Show Node Info"
-flat = false
-align = 1
-script = ExtResource( 9 )
-_sections_unfolded = [ "Visibility", "custom_fonts" ]
-
-[node name="JumpToSelectedNodeButton" type="Button" parent="TabContainer/VisualSelect/SelectedNodeInfo" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 181.0
-margin_top = 14.0
-margin_right = 361.0
-margin_bottom = 39.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 2 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Jump To Selected Node"
-flat = false
-align = 1
-script = ExtResource( 10 )
-_sections_unfolded = [ "custom_fonts" ]
-
-[node name="SelectedNodeTitle" type="Label" parent="TabContainer/VisualSelect/SelectedNodeInfo" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 4.0
-margin_top = 48.0
-margin_right = 299.0
-margin_bottom = 65.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-theme = ExtResource( 2 )
-text = "Information about the selected node"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
-
-[node name="CurrentNodeInfo" type="TextEdit" parent="TabContainer/VisualSelect/SelectedNodeInfo" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 7.0
-margin_top = 72.0
-margin_right = 357.0
-margin_bottom = 251.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 2 )
-text = ""
-readonly = true
-highlight_current_line = true
-syntax_highlighting = false
-show_line_numbers = true
-highlight_all_occurrences = false
-override_selected_font_color = false
-context_menu_enabled = true
-smooth_scrolling = false
-v_scroll_speed = 80.0
-hiding_enabled = 0
-wrap_lines = false
-caret_block_mode = false
-caret_blink = false
-caret_blink_speed = 0.65
-caret_moving_by_right_click = true
-script = ExtResource( 11 )
-_sections_unfolded = [ "Theme" ]
-
-[node name="Watches" type="Container" parent="TabContainer" index="1"]
-
-editor/display_folded = true
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 5.0
-margin_top = 32.0
-margin_right = -5.0
-margin_bottom = -5.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 2 )
-_sections_unfolded = [ "Rect", "Theme" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="OutlinerTitle" type="Label" parent="TabContainer/Watches" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 4.0
-margin_top = 14.0
-margin_right = 204.0
-margin_bottom = 39.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-theme = ExtResource( 2 )
-text = "Select Node/s to inspect"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Theme", "custom_fonts" ]
-
-[node name="OutlinerContainer" type="Container" parent="TabContainer/Watches" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 8.0
-margin_top = 43.0
-margin_right = 358.0
-margin_bottom = 217.0
-rect_min_size = Vector2( 350, 160 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 2 )
-_sections_unfolded = [ "Rect", "Theme" ]
-
-[node name="Outliner" type="Tree" parent="TabContainer/Watches/OutlinerContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 780.0
-margin_bottom = 174.0
-rect_min_size = Vector2( 780, 160 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 2
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 2 )
-custom_styles/bg_focus = SubResource( 2 )
-columns = 2
-allow_reselect = false
-allow_rmb_select = false
-hide_folding = false
-hide_root = false
-drop_mode_flags = 0
-select_mode = 2
-script = ExtResource( 12 )
-_sections_unfolded = [ "Material", "Pause", "Theme", "Visibility" ]
-
-[node name="OutlinerHScrollBar" type="HScrollBar" parent="TabContainer/Watches" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 8.0
-margin_top = 205.0
-margin_right = 358.0
-margin_bottom = 217.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 0
-theme = ExtResource( 2 )
-min_value = 0.0
-max_value = 1.0
-step = 1.0
-page = 1.0
-value = 0.0
-exp_edit = false
-rounded = false
-custom_step = -1.0
-script = ExtResource( 13 )
-_sections_unfolded = [ "Visibility" ]
-
-[node name="Refresh" type="Button" parent="TabContainer/Watches" index="3"]
-
-modulate = Color( 0, 0.648438, 1, 1 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 218.0
-margin_top = 4.0
-margin_right = 360.0
-margin_bottom = 34.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 2 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Refresh"
-flat = false
-align = 1
-_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
-
-[node name="RemoveNode" type="Button" parent="TabContainer/Watches" index="4"]
-
-modulate = Color( 1, 0, 0, 1 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 219.0
-margin_top = 225.0
-margin_right = 361.0
-margin_bottom = 248.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 2 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Remove Node"
-flat = false
-align = 1
-script = ExtResource( 14 )
-_sections_unfolded = [ "custom_fonts" ]
-
-[node name="AddNode" type="Button" parent="TabContainer/Watches" index="5"]
-
-modulate = Color( 0.0078125, 1, 0, 1 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 77.0
-margin_top = 225.0
-margin_right = 213.0
-margin_bottom = 248.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 2 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Add Node"
-flat = false
-align = 1
-_sections_unfolded = [ "Visibility", "custom_fonts" ]
-
-[node name="WatchesTitle" type="Label" parent="TabContainer/Watches" index="6"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 4.0
-margin_top = 260.0
-margin_right = 132.0
-margin_bottom = 285.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-theme = ExtResource( 2 )
-text = "List of watches"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_fonts" ]
-
-[node name="WatchesList" type="ItemList" parent="TabContainer/Watches" index="7"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 5.0
-margin_top = 286.0
-margin_right = 360.0
-margin_bottom = 500.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 2 )
-items = [  ]
-select_mode = 0
-allow_reselect = false
-max_columns = 0
-same_column_width = true
-fixed_column_width = 335
-icon_mode = 1
-fixed_icon_size = Vector2( 0, 0 )
-script = ExtResource( 15 )
-_sections_unfolded = [ "Columns", "Margin", "Rect", "custom_fonts" ]
-
-[node name="HScrollBar" type="HScrollBar" parent="TabContainer/Watches" index="8"]
-
-anchor_left = 0.0
-anchor_top = 1.0
-anchor_right = 0.0
-anchor_bottom = 1.0
-margin_left = 3.0
-margin_top = -184.0
-margin_right = 361.0
-margin_bottom = -171.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 0
-theme = ExtResource( 2 )
-min_value = 0.0
-max_value = 2.0
-step = 1.0
-page = 1.0
-value = 0.0
-exp_edit = false
-rounded = false
-custom_step = -1.0
-
-[node name="AddWatch" type="Button" parent="TabContainer/Watches" index="9"]
-
-modulate = Color( 0, 1, 0.015625, 1 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 131.0
-margin_top = 562.0
-margin_right = 242.0
-margin_bottom = 586.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 2 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Add Watch"
-flat = false
-align = 1
-_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
-
-[node name="RemoveWatch" type="Button" parent="TabContainer/Watches" index="10"]
-
-modulate = Color( 1, 0, 0, 1 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 248.0
-margin_top = 562.0
-margin_right = 360.0
-margin_bottom = 585.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 2 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Remove Watch"
-flat = false
-align = 1
-_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
-
-[node name="WatchName" type="TextEdit" parent="TabContainer/Watches" index="11"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 5.0
-margin_top = 522.0
-margin_right = 360.0
-margin_bottom = 552.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 2 )
-text = "Type watch name"
-readonly = false
-highlight_current_line = false
-syntax_highlighting = false
-show_line_numbers = false
-highlight_all_occurrences = false
-override_selected_font_color = false
-context_menu_enabled = true
-smooth_scrolling = false
-v_scroll_speed = 80.0
-hiding_enabled = 0
-wrap_lines = false
-caret_block_mode = false
-caret_blink = false
-caret_blink_speed = 0.65
-caret_moving_by_right_click = true
-script = ExtResource( 16 )
-_sections_unfolded = [ "Rect", "custom_fonts" ]
-
-[node name="WatchValue" type="TextEdit" parent="TabContainer/Watches" index="12"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 5.0
-margin_top = 640.0
-margin_right = 225.0
-margin_bottom = 670.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 2 )
-text = "Type value here"
-readonly = false
-highlight_current_line = false
-syntax_highlighting = false
-show_line_numbers = false
-highlight_all_occurrences = false
-override_selected_font_color = false
-context_menu_enabled = true
-smooth_scrolling = false
-v_scroll_speed = 80.0
-hiding_enabled = 0
-wrap_lines = false
-caret_block_mode = false
-caret_blink = false
-caret_blink_speed = 0.65
-caret_moving_by_right_click = true
-_sections_unfolded = [ "Rect", "custom_fonts" ]
-
-[node name="SetValue" type="Button" parent="TabContainer/Watches" index="13"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 237.0
-margin_top = 640.0
-margin_right = 360.0
-margin_bottom = 670.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 2 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Set Value"
-flat = false
-align = 1
-_sections_unfolded = [ "Rect", "custom_fonts" ]
-
-[node name="WatchFieldWrapper" type="Control" parent="TabContainer/Watches" index="14"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 595.0
-margin_right = 359.0
-margin_bottom = 628.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 2 )
-_sections_unfolded = [ "Theme" ]
-
-[node name="NodeCheckBox" type="CheckBox" parent="TabContainer/Watches/WatchFieldWrapper" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = -5.0
-margin_right = 99.0
-margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 2
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 2 )
-toggle_mode = true
-pressed = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Show Node"
-flat = false
-align = 0
-
-[node name="NameCheckBox" type="CheckBox" parent="TabContainer/Watches/WatchFieldWrapper" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 112.0
-margin_top = -5.0
-margin_right = 212.0
-margin_bottom = 20.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 2
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 2 )
-toggle_mode = true
-pressed = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Show Name"
-flat = false
-align = 0
-
-[node name="ValueCheckBox" type="CheckBox" parent="TabContainer/Watches/WatchFieldWrapper" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 12.0
-margin_right = 24.0
-margin_bottom = 36.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 2
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 2 )
-toggle_mode = true
-pressed = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Show Value"
-flat = false
-align = 0
-
-[node name="TypeCheckBox" type="CheckBox" parent="TabContainer/Watches/WatchFieldWrapper" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 112.0
-margin_top = 12.0
-margin_right = 212.0
-margin_bottom = 37.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 2
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 2 )
-toggle_mode = true
-pressed = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Show Type"
-flat = false
-align = 0
-
-[node name="RawCheckBox" type="CheckBox" parent="TabContainer/Watches/WatchFieldWrapper" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 258.0
-margin_top = -5.0
-margin_right = 358.0
-margin_bottom = 20.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 2
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 2 )
-toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Raw"
-flat = false
-align = 0
-
-[node name="UniqueCheckBox" type="CheckBox" parent="TabContainer/Watches/WatchFieldWrapper" index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 258.0
-margin_top = 12.0
-margin_right = 358.0
-margin_bottom = 37.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 2
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 2 )
-toggle_mode = true
-pressed = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Unique"
-flat = false
-align = 0
-
-[node name="Transform" type="Container" parent="TabContainer" index="2"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 5.0
-margin_top = 32.0
-margin_right = -5.0
-margin_bottom = -5.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 2 )
-_sections_unfolded = [ "Theme", "Visibility" ]
-
-[node name="TransformationModeButton" type="MenuButton" parent="TabContainer/Transform" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 8.0
-margin_top = 15.0
-margin_right = 247.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 239, 23 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 2 )
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
-toggle_mode = false
-action_mode = 0
-enabled_focus_mode = 0
-shortcut = null
-group = null
-text = "Transformation mode: MOVE"
-flat = false
-align = 1
-items = [ "MOVE", null, 0, false, false, -1, 0, null, "", false, "ROTATE", null, 0, false, false, -1, 0, null, "", false, "SCALE", null, 0, false, false, -1, 0, null, "", false ]
-script = ExtResource( 17 )
-_sections_unfolded = [ "Rect", "Theme", "custom_styles" ]
-
-[node name="Camera" type="Container" parent="TabContainer" index="3"]
+[node name="Camera" type="Container" parent="TabContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1328,7 +376,7 @@ group = null
 text = "Zoom To"
 flat = false
 align = 1
-script = ExtResource( 18 )
+script = ExtResource( 9 )
 _sections_unfolded = [ "Rect" ]
 
 [node name="ZoomValue" type="Control" parent="TabContainer/Camera/ZoomTo" index="0"]
@@ -1582,6 +630,7 @@ max_lines_visible = -1
 
 [node name="ZoomIndicatorX" type="Control" parent="TabContainer/Camera" index="4"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1745,6 +794,7 @@ _sections_unfolded = [ "Percent", "Visibility" ]
 
 [node name="ZoomIndicatorY" type="Control" parent="TabContainer/Camera" index="5"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1904,6 +954,1065 @@ exp_edit = false
 rounded = false
 percent_visible = false
 _sections_unfolded = [ "Percent", "Visibility" ]
+
+[node name="MousePosition" type="Label" parent="TabContainer/Camera" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 7.0
+margin_top = 588.0
+margin_right = 127.0
+margin_bottom = 613.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Mouse Position"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ViewportTitle" type="Label" parent="TabContainer/Camera/MousePosition" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 7.0
+margin_top = 28.0
+margin_right = 207.0
+margin_bottom = 53.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Viewport:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Value" type="Label" parent="TabContainer/Camera/MousePosition/ViewportTitle" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_right = 152.0
+margin_bottom = 25.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "0.0, 0.0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="WorldTitle" type="Label" parent="TabContainer/Camera/MousePosition" index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 7.0
+margin_top = 52.0
+margin_right = 207.0
+margin_bottom = 77.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "World:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Value" type="Label" parent="TabContainer/Camera/MousePosition/WorldTitle" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_right = 152.0
+margin_bottom = 25.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "0.0, 0.0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="VisualSelect" type="Container" parent="TabContainer" index="1"]
+
+editor/display_folded = true
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 32.0
+margin_right = -5.0
+margin_bottom = -5.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+_sections_unfolded = [ "Theme" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ListOfNodesTitle" type="Label" parent="TabContainer/VisualSelect" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 6.0
+margin_top = 6.0
+margin_right = 249.0
+margin_bottom = 23.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = ExtResource( 2 )
+text = "List of currenly marked nodes"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin", "Theme", "custom_fonts" ]
+
+[node name="SelectionInfo" type="TextEdit" parent="TabContainer/VisualSelect" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8.0
+margin_top = 30.0
+margin_right = 358.0
+margin_bottom = 209.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = ""
+readonly = true
+highlight_current_line = true
+syntax_highlighting = false
+show_line_numbers = true
+highlight_all_occurrences = false
+override_selected_font_color = false
+context_menu_enabled = true
+smooth_scrolling = false
+v_scroll_speed = 80.0
+hiding_enabled = 0
+wrap_lines = false
+caret_block_mode = false
+caret_blink = false
+caret_blink_speed = 0.65
+caret_moving_by_right_click = true
+_sections_unfolded = [ "Theme" ]
+
+[node name="ListOfNodesTypesToDetectTitle" type="Label" parent="TabContainer/VisualSelect" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 7.0
+margin_top = 217.0
+margin_right = 306.0
+margin_bottom = 242.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = ExtResource( 2 )
+text = "Show only nodes of these types."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="SelectionInfo2" type="TextEdit" parent="TabContainer/VisualSelect" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8.0
+margin_top = 243.0
+margin_right = 358.0
+margin_bottom = 409.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = ""
+readonly = true
+highlight_current_line = true
+syntax_highlighting = false
+show_line_numbers = true
+highlight_all_occurrences = false
+override_selected_font_color = false
+context_menu_enabled = true
+smooth_scrolling = false
+v_scroll_speed = 80.0
+hiding_enabled = 0
+wrap_lines = false
+caret_block_mode = false
+caret_blink = false
+caret_blink_speed = 0.65
+caret_moving_by_right_click = true
+_sections_unfolded = [ "Theme" ]
+
+[node name="SelectedNodeInfo" type="Container" parent="TabContainer/VisualSelect" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 418.0
+margin_right = -1.0
+margin_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ShowNodeInfoButton" type="Button" parent="TabContainer/VisualSelect/SelectedNodeInfo" index="0"]
+
+self_modulate = Color( 0.496094, 1, 0.716553, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 7.0
+margin_top = 6.0
+margin_right = 171.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Show Node Info"
+flat = false
+align = 1
+script = ExtResource( 10 )
+_sections_unfolded = [ "Visibility", "custom_fonts" ]
+
+[node name="JumpToSelectedNodeButton" type="Button" parent="TabContainer/VisualSelect/SelectedNodeInfo" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 181.0
+margin_top = 14.0
+margin_right = 361.0
+margin_bottom = 39.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Jump To Selected Node"
+flat = false
+align = 1
+script = ExtResource( 11 )
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="SelectedNodeTitle" type="Label" parent="TabContainer/VisualSelect/SelectedNodeInfo" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 4.0
+margin_top = 48.0
+margin_right = 299.0
+margin_bottom = 65.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = ExtResource( 2 )
+text = "Information about the selected node"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="CurrentNodeInfo" type="TextEdit" parent="TabContainer/VisualSelect/SelectedNodeInfo" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 7.0
+margin_top = 72.0
+margin_right = 357.0
+margin_bottom = 251.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = ""
+readonly = true
+highlight_current_line = true
+syntax_highlighting = false
+show_line_numbers = true
+highlight_all_occurrences = false
+override_selected_font_color = false
+context_menu_enabled = true
+smooth_scrolling = false
+v_scroll_speed = 80.0
+hiding_enabled = 0
+wrap_lines = false
+caret_block_mode = false
+caret_blink = false
+caret_blink_speed = 0.65
+caret_moving_by_right_click = true
+script = ExtResource( 12 )
+_sections_unfolded = [ "Theme" ]
+
+[node name="Watches" type="Container" parent="TabContainer" index="2"]
+
+editor/display_folded = true
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 32.0
+margin_right = -5.0
+margin_bottom = -5.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+_sections_unfolded = [ "Rect", "Theme" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="OutlinerTitle" type="Label" parent="TabContainer/Watches" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 4.0
+margin_top = 14.0
+margin_right = 204.0
+margin_bottom = 39.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = ExtResource( 2 )
+text = "Select Node/s to inspect"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_fonts" ]
+
+[node name="OutlinerContainer" type="Container" parent="TabContainer/Watches" index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8.0
+margin_top = 43.0
+margin_right = 358.0
+margin_bottom = 217.0
+rect_min_size = Vector2( 350, 160 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+_sections_unfolded = [ "Rect", "Theme" ]
+
+[node name="Outliner" type="Tree" parent="TabContainer/Watches/OutlinerContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 780.0
+margin_bottom = 174.0
+rect_min_size = Vector2( 780, 160 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+custom_styles/bg_focus = SubResource( 2 )
+columns = 2
+allow_reselect = false
+allow_rmb_select = false
+hide_folding = false
+hide_root = false
+drop_mode_flags = 0
+select_mode = 2
+script = ExtResource( 13 )
+_sections_unfolded = [ "Material", "Pause", "Theme", "Visibility" ]
+
+[node name="OutlinerHScrollBar" type="HScrollBar" parent="TabContainer/Watches" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8.0
+margin_top = 205.0
+margin_right = 358.0
+margin_bottom = 217.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+theme = ExtResource( 2 )
+min_value = 0.0
+max_value = 1.0
+step = 1.0
+page = 1.0
+value = 0.0
+exp_edit = false
+rounded = false
+custom_step = -1.0
+script = ExtResource( 14 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Refresh" type="Button" parent="TabContainer/Watches" index="3"]
+
+modulate = Color( 0, 0.648438, 1, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 218.0
+margin_top = 4.0
+margin_right = 360.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Refresh"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
+
+[node name="RemoveNode" type="Button" parent="TabContainer/Watches" index="4"]
+
+modulate = Color( 1, 0, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 219.0
+margin_top = 225.0
+margin_right = 361.0
+margin_bottom = 248.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Remove Node"
+flat = false
+align = 1
+script = ExtResource( 15 )
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="AddNode" type="Button" parent="TabContainer/Watches" index="5"]
+
+modulate = Color( 0.0078125, 1, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 77.0
+margin_top = 225.0
+margin_right = 213.0
+margin_bottom = 248.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Add Node"
+flat = false
+align = 1
+_sections_unfolded = [ "Visibility", "custom_fonts" ]
+
+[node name="WatchesTitle" type="Label" parent="TabContainer/Watches" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 4.0
+margin_top = 260.0
+margin_right = 132.0
+margin_bottom = 285.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = ExtResource( 2 )
+text = "List of watches"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="WatchesList" type="ItemList" parent="TabContainer/Watches" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 5.0
+margin_top = 286.0
+margin_right = 360.0
+margin_bottom = 500.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+items = [  ]
+select_mode = 0
+allow_reselect = false
+max_columns = 0
+same_column_width = true
+fixed_column_width = 335
+icon_mode = 1
+fixed_icon_size = Vector2( 0, 0 )
+script = ExtResource( 16 )
+_sections_unfolded = [ "Columns", "Margin", "Rect", "custom_fonts" ]
+
+[node name="HScrollBar" type="HScrollBar" parent="TabContainer/Watches" index="8"]
+
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+margin_left = 3.0
+margin_top = -184.0
+margin_right = 361.0
+margin_bottom = -171.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+theme = ExtResource( 2 )
+min_value = 0.0
+max_value = 2.0
+step = 1.0
+page = 1.0
+value = 0.0
+exp_edit = false
+rounded = false
+custom_step = -1.0
+
+[node name="AddWatch" type="Button" parent="TabContainer/Watches" index="9"]
+
+modulate = Color( 0, 1, 0.015625, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 131.0
+margin_top = 562.0
+margin_right = 242.0
+margin_bottom = 586.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Add Watch"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
+
+[node name="RemoveWatch" type="Button" parent="TabContainer/Watches" index="10"]
+
+modulate = Color( 1, 0, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 248.0
+margin_top = 562.0
+margin_right = 360.0
+margin_bottom = 585.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Remove Watch"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
+
+[node name="WatchName" type="TextEdit" parent="TabContainer/Watches" index="11"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 5.0
+margin_top = 522.0
+margin_right = 360.0
+margin_bottom = 552.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Type watch name"
+readonly = false
+highlight_current_line = false
+syntax_highlighting = false
+show_line_numbers = false
+highlight_all_occurrences = false
+override_selected_font_color = false
+context_menu_enabled = true
+smooth_scrolling = false
+v_scroll_speed = 80.0
+hiding_enabled = 0
+wrap_lines = false
+caret_block_mode = false
+caret_blink = false
+caret_blink_speed = 0.65
+caret_moving_by_right_click = true
+script = ExtResource( 17 )
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="WatchValue" type="TextEdit" parent="TabContainer/Watches" index="12"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 5.0
+margin_top = 640.0
+margin_right = 225.0
+margin_bottom = 670.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Type value here"
+readonly = false
+highlight_current_line = false
+syntax_highlighting = false
+show_line_numbers = false
+highlight_all_occurrences = false
+override_selected_font_color = false
+context_menu_enabled = true
+smooth_scrolling = false
+v_scroll_speed = 80.0
+hiding_enabled = 0
+wrap_lines = false
+caret_block_mode = false
+caret_blink = false
+caret_blink_speed = 0.65
+caret_moving_by_right_click = true
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="SetValue" type="Button" parent="TabContainer/Watches" index="13"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 237.0
+margin_top = 640.0
+margin_right = 360.0
+margin_bottom = 670.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Set Value"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="WatchFieldWrapper" type="Control" parent="TabContainer/Watches" index="14"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 595.0
+margin_right = 359.0
+margin_bottom = 628.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+_sections_unfolded = [ "Theme" ]
+
+[node name="NodeCheckBox" type="CheckBox" parent="TabContainer/Watches/WatchFieldWrapper" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -5.0
+margin_right = 99.0
+margin_bottom = 19.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+toggle_mode = true
+pressed = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Show Node"
+flat = false
+align = 0
+
+[node name="NameCheckBox" type="CheckBox" parent="TabContainer/Watches/WatchFieldWrapper" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 112.0
+margin_top = -5.0
+margin_right = 212.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+toggle_mode = true
+pressed = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Show Name"
+flat = false
+align = 0
+
+[node name="ValueCheckBox" type="CheckBox" parent="TabContainer/Watches/WatchFieldWrapper" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 12.0
+margin_right = 24.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+toggle_mode = true
+pressed = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Show Value"
+flat = false
+align = 0
+
+[node name="TypeCheckBox" type="CheckBox" parent="TabContainer/Watches/WatchFieldWrapper" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 112.0
+margin_top = 12.0
+margin_right = 212.0
+margin_bottom = 37.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+toggle_mode = true
+pressed = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Show Type"
+flat = false
+align = 0
+
+[node name="RawCheckBox" type="CheckBox" parent="TabContainer/Watches/WatchFieldWrapper" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 258.0
+margin_top = -5.0
+margin_right = 358.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Raw"
+flat = false
+align = 0
+
+[node name="UniqueCheckBox" type="CheckBox" parent="TabContainer/Watches/WatchFieldWrapper" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 258.0
+margin_top = 12.0
+margin_right = 358.0
+margin_bottom = 37.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+toggle_mode = true
+pressed = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Unique"
+flat = false
+align = 0
+
+[node name="Transform" type="Container" parent="TabContainer" index="3"]
+
+editor/display_folded = true
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 32.0
+margin_right = -5.0
+margin_bottom = -5.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+_sections_unfolded = [ "Theme", "Visibility" ]
+
+[node name="TransformationModeButton" type="MenuButton" parent="TabContainer/Transform" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8.0
+margin_top = 15.0
+margin_right = 247.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 239, 23 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+toggle_mode = false
+action_mode = 0
+enabled_focus_mode = 0
+shortcut = null
+group = null
+text = "Transformation mode: MOVE"
+flat = false
+align = 1
+items = [ "MOVE", null, 0, false, false, -1, 0, null, "", false, "ROTATE", null, 0, false, false, -1, 0, null, "", false, "SCALE", null, 0, false, false, -1, 0, null, "", false ]
+script = ExtResource( 18 )
+_sections_unfolded = [ "Rect", "Theme", "custom_styles" ]
 
 [node name="GeneralControlsContainer" type="Container" parent="." index="8"]
 
@@ -2234,6 +2343,8 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [connection signal="text_changed" from="InfoContainer/WarningLine" to="InfoContainer/WarningLine" method="_on_WarningLine_text_changed"]
 
+[connection signal="pressed" from="TabContainer/Camera/ZoomTo" to="TabContainer/Camera/ZoomTo" method="_on_ZoomTo_pressed"]
+
 [connection signal="pressed" from="TabContainer/VisualSelect/SelectedNodeInfo/ShowNodeInfoButton" to="TabContainer/VisualSelect/SelectedNodeInfo/ShowNodeInfoButton" method="_on_ShowNodeInfoButton_pressed"]
 
 [connection signal="pressed" from="TabContainer/VisualSelect/SelectedNodeInfo/JumpToSelectedNodeButton" to="TabContainer/VisualSelect/SelectedNodeInfo/JumpToSelectedNodeButton" method="_on_JumpToSelectedNodeButton_pressed"]
@@ -2257,8 +2368,6 @@ _sections_unfolded = [ "custom_fonts" ]
 [connection signal="gui_input" from="TabContainer/Watches/WatchName" to="TabContainer/Watches/WatchName" method="_on_WatchName_gui_input"]
 
 [connection signal="button_down" from="TabContainer/Watches/SetValue" to="TabContainer/Watches/WatchesList" method="_on_SetValue_button_down"]
-
-[connection signal="pressed" from="TabContainer/Camera/ZoomTo" to="TabContainer/Camera/ZoomTo" method="_on_ZoomTo_pressed"]
 
 [connection signal="button_down" from="GeneralControlsContainer/StepButton" to="GeneralControlsContainer/StepButton" method="_on_StepButton_button_down"]
 

@@ -36,7 +36,7 @@ func manage_selection():
 	if !Global.visual_debugger.forbid_selection_circle_management && !Global.visual_debugger.mouse_is_over_visual_debugger_gui && Input.is_action_just_pressed("mouse_left_click"):
 		selection_info.text = ""
 		full_paths = []
-		if Global.camera:
+		if Global.visual_debugger.game_camera:
 			get_all_nodes(Global.cached_root)
 		selection_info.text = selection_info.text.substr(1, selection_info.text.length() - 1)
 
