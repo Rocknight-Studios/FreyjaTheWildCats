@@ -66,9 +66,6 @@ func manage_scene_zoom(event):
 		elif event.button_index == BUTTON_WHEEL_DOWN:
 			manage_mouse_zoom_state(1.0)
 
-func _ready():
-	manage_zoom_display()
-
 func manage_zoom_display():
 	var zoom_range = ZOOM_BOUNDS.y - ZOOM_BOUNDS.x # For speed and convenience.
 
