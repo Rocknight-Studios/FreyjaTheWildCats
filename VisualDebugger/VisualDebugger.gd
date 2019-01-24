@@ -36,7 +36,6 @@ enum VD_Transformation_modes {MOVE, ROTATE, SCALE}
 
 func _ready():
 	set_gui_visibility(false)
-	debugger_camera.anchor_mode = 0
 	self.offset.x = MENU_SLIDE_POS_BOUNDS.x
 	for i in range(1, self.get_child_count()):
 		visual_debugger_children.append(self.get_child(i))
@@ -101,14 +100,28 @@ func _on_disable_keyboard_movement():
 func _on_enable_keyboard_movement():
 	keyboard_movement_is_allowed = true
 
+func set_debugger_camera():
+	if !(weakref(game_camera)).get_ref():
+		outliner.form_the_whole_outliner()
+	debugger_camera.make_current()
+	debugger_camera.position = game_camera.position
+	debugger_camera.zoom = game_camera.zoom
+	debugger_camera.anchor_mode = game_camera.anchor_mode
+	debugger_camera.manage_zoom_display()
+
+var is_game_camera = false # To have a consistent warning, that game camera has dissapeared.
+
+func set_game_camera():
+	if !(weakref(game_camera)).get_ref():
+		outliner.form_the_whole_outliner()
+	game_camera.make_current()
+
 func _process(delta):
 	if Input.is_action_just_pressed ("visual_debugger"):
 		if visual_debugger_is_active:
 			visual_debugger_is_active = false
 			set_gui_visibility(false)
-			if !(weakref(game_camera)).get_ref():
-				outliner._on_form_the_outliner()
-			game_camera.make_current()
+			set_game_camera()
 			get_tree().paused = false
 			deactivate_menu()
 		else:
@@ -117,29 +130,35 @@ func _process(delta):
 			get_tree().paused = true
 			visual_debugger_is_active = true
 			set_gui_visibility(true)
-			debugger_camera.make_current()
+			set_debugger_camera()
+			is_game_camera = true
+
+	if !(weakref(game_camera)).get_ref():
+		visual_debugger_background.modulate = Color(1.0, .0, .0, 1.0)
+		is_game_camera = false
 
 	if visual_debugger_is_active:
-		if mouse_is_over_visual_debugger_gui:
-			if mouse_over_tint_lerp_progress < Global.NORMALIZED_UPPER_BOUND:
-				mouse_over_tint_lerp_progress = min(mouse_over_tint_lerp_progress + delta * BACKGROUND_COLOR_LERP_SPEED, 1.0)
-				var array_lerp_result = Global.user_params.global_functions.lerp_array([original_visual_debugger_background_modulate.r, original_visual_debugger_background_modulate.g, original_visual_debugger_background_modulate.b, original_visual_debugger_background_modulate.a], [mouse_over_visual_debugger_background_modulate.r, mouse_over_visual_debugger_background_modulate.g, mouse_over_visual_debugger_background_modulate.b, mouse_over_visual_debugger_background_modulate.a], mouse_over_tint_lerp_progress) # For speed and convenience.
-				visual_debugger_background.modulate = Color(array_lerp_result[0], array_lerp_result[1], array_lerp_result[2], array_lerp_result[3])
-				keyboard_movement_is_allowed = false
-				forbid_selection_circle_management = true
-		else:
-			if mouse_over_tint_lerp_progress > Global.APPROXIMATION_FLOAT:
-				mouse_over_tint_lerp_progress = max(mouse_over_tint_lerp_progress - delta * BACKGROUND_COLOR_LERP_SPEED, .0)
-				var array_lerp_result = Global.user_params.global_functions.lerp_array([original_visual_debugger_background_modulate.r, original_visual_debugger_background_modulate.g, original_visual_debugger_background_modulate.b, original_visual_debugger_background_modulate.a], [mouse_over_visual_debugger_background_modulate.r, mouse_over_visual_debugger_background_modulate.g, mouse_over_visual_debugger_background_modulate.b, mouse_over_visual_debugger_background_modulate.a], mouse_over_tint_lerp_progress) # For speed and convenience.
-				visual_debugger_background.modulate = Color(array_lerp_result[0], array_lerp_result[1], array_lerp_result[2], array_lerp_result[3])
-				keyboard_movement_is_allowed = true
-				forbid_selection_circle_management = false
+		if is_game_camera:
+			if mouse_is_over_visual_debugger_gui:
+				if mouse_over_tint_lerp_progress < Global.NORMALIZED_UPPER_BOUND:
+					mouse_over_tint_lerp_progress = min(mouse_over_tint_lerp_progress + delta * BACKGROUND_COLOR_LERP_SPEED, 1.0)
+					var array_lerp_result = Global.user_params.global_functions.lerp_array([original_visual_debugger_background_modulate.r, original_visual_debugger_background_modulate.g, original_visual_debugger_background_modulate.b, original_visual_debugger_background_modulate.a], [mouse_over_visual_debugger_background_modulate.r, mouse_over_visual_debugger_background_modulate.g, mouse_over_visual_debugger_background_modulate.b, mouse_over_visual_debugger_background_modulate.a], mouse_over_tint_lerp_progress) # For speed and convenience.
+					visual_debugger_background.modulate = Color(array_lerp_result[0], array_lerp_result[1], array_lerp_result[2], array_lerp_result[3])
+					keyboard_movement_is_allowed = false
+					forbid_selection_circle_management = true
+			else:
+				if mouse_over_tint_lerp_progress > Global.APPROXIMATION_FLOAT:
+					mouse_over_tint_lerp_progress = max(mouse_over_tint_lerp_progress - delta * BACKGROUND_COLOR_LERP_SPEED, .0)
+					var array_lerp_result = Global.user_params.global_functions.lerp_array([original_visual_debugger_background_modulate.r, original_visual_debugger_background_modulate.g, original_visual_debugger_background_modulate.b, original_visual_debugger_background_modulate.a], [mouse_over_visual_debugger_background_modulate.r, mouse_over_visual_debugger_background_modulate.g, mouse_over_visual_debugger_background_modulate.b, mouse_over_visual_debugger_background_modulate.a], mouse_over_tint_lerp_progress) # For speed and convenience.
+					visual_debugger_background.modulate = Color(array_lerp_result[0], array_lerp_result[1], array_lerp_result[2], array_lerp_result[3])
+					keyboard_movement_is_allowed = true
+					forbid_selection_circle_management = false
 
-		if keyboard_movement_is_allowed:
-			manage_camera_movement(camera_movement_speed_slider.value)
+			if keyboard_movement_is_allowed:
+				manage_camera_movement(camera_movement_speed_slider.value)
 
-		if is_moving_to_node:
-			move_to_the_node(delta)
+			if is_moving_to_node:
+				move_to_the_node(delta)
 
 	if slide_direction == VD_Slide_direction.IN:
 		slide_menu(MENU_SLIDE_POS_BOUNDS.y, delta)

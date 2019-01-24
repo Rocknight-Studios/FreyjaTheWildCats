@@ -31,7 +31,7 @@ func load_textures(var dir_path):
 func _ready():
 	load_textures("res://VisualDebugger/icons/")
 	Global.visual_debugger.outliner = self
-	_on_form_the_outliner()
+	form_the_whole_outliner()
 
 func add_a_tree_item(node, parent_item):
 	tree_item = create_item(parent_item)
@@ -42,7 +42,7 @@ func add_a_tree_item(node, parent_item):
 	tree_item.set_metadata(0, node.get_path())
 	tree_item.collapsed = false if parent_item == null else true
 
-	if this_node_class == "Camera2D":
+	if this_node_class == "Camera2D" && node != Global.visual_debugger.debugger_camera:
 		Global.visual_debugger.game_camera = node
 
 func get_all_outline_nodes(node, parent_item):
@@ -55,6 +55,13 @@ func get_all_outline_nodes(node, parent_item):
 			add_a_tree_item(i, last_parent_tree_item)
 
 func _on_form_the_outliner():
+	form_the_whole_outliner()
+
+	if Global.visual_debugger.debugger_camera != null:
+		Global.visual_debugger.set_debugger_camera()
+		Global.visual_debugger.is_game_camera = true
+
+func form_the_whole_outliner():
 	clear()
 	dont_find_the_widest_branch_while_building_the_tree = true
 	get_all_outline_nodes(Global.cached_root, null)
