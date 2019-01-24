@@ -725,6 +725,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 14 )
 stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
 

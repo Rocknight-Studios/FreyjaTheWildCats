@@ -101,8 +101,7 @@ func _on_enable_keyboard_movement():
 	keyboard_movement_is_allowed = true
 
 func set_debugger_camera():
-	if !(weakref(game_camera)).get_ref():
-		outliner.form_the_whole_outliner()
+	outliner.form_the_whole_outliner()
 	debugger_camera.make_current()
 	debugger_camera.position = game_camera.position
 	debugger_camera.zoom = game_camera.zoom
@@ -112,8 +111,6 @@ func set_debugger_camera():
 var is_game_camera = false # To have a consistent warning, that game camera has dissapeared.
 
 func set_game_camera():
-	if !(weakref(game_camera)).get_ref():
-		outliner.form_the_whole_outliner()
 	game_camera.make_current()
 
 func _process(delta):
@@ -131,6 +128,7 @@ func _process(delta):
 			visual_debugger_is_active = true
 			set_gui_visibility(true)
 			set_debugger_camera()
+			visual_debugger_background.modulate = original_visual_debugger_background_modulate
 			is_game_camera = true
 
 	if !(weakref(game_camera)).get_ref():

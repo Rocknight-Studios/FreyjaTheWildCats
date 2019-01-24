@@ -71,9 +71,9 @@ func _input(event):
 
 		if Input.is_action_just_pressed("mouse_left_click"):
 			if node != null:
-				scale_at_mouse_grab = node.scale
-				node_scale_ratio = max(abs(node.scale.y), Global.APPROXIMATION_FLOAT) / max(abs(node.scale.x), Global.APPROXIMATION_FLOAT)
-				concurrent_scale_mask = Vector2(1.0 if node.scale.x > .0 else -1.0, 1.0 if node.scale.y > .0 else -1.0)
+				scale_at_mouse_grab = node.get(transform_getsetters[2])
+				node_scale_ratio = max(abs(node.get(transform_getsetters[2]).y), Global.APPROXIMATION_FLOAT) / max(abs(node.get(transform_getsetters[2]).x), Global.APPROXIMATION_FLOAT)
+				concurrent_scale_mask = Vector2(1.0 if node.get(transform_getsetters[2]).x > .0 else -1.0, 1.0 if node.get(transform_getsetters[2]).y > .0 else -1.0)
 			if !(mouse_is_over_arrow && Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.MOVE) &&\
 			   !(mouse_is_over_rotation_circle && Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.ROTATE)\
 			   && !(mouse_is_over_arrow && Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.SCALE):
@@ -105,62 +105,61 @@ func _input(event):
 
 func move_on_axis():
 	if mouse_is_over_arrow == VD_Mouse_is_over_arrow.X_ARROW:
-		node.global_position += arrow_direction_vector_x * arrow_direction_vector_x.normalized().dot((absolute_mouse_position - old_mouse_position))
+		node.set(transform_getsetters[0], node.get(transform_getsetters[0]) + arrow_direction_vector_x * arrow_direction_vector_x.normalized().dot((absolute_mouse_position - old_mouse_position)))
 	elif mouse_is_over_arrow == VD_Mouse_is_over_arrow.Y_ARROW:
-		node.global_position += arrow_direction_vector_y * arrow_direction_vector_y.normalized().dot((absolute_mouse_position - old_mouse_position))
+		node.set(transform_getsetters[0], node.get(transform_getsetters[0]) + arrow_direction_vector_y * arrow_direction_vector_y.normalized().dot((absolute_mouse_position - old_mouse_position)))
 	elif mouse_is_over_arrow == VD_Mouse_is_over_arrow.MIDDLE:
-		node.global_position.x += (absolute_mouse_position.x - old_mouse_position.x) * camera_zoom.x
-		node.global_position.y += (absolute_mouse_position.y - old_mouse_position.y) * camera_zoom.y
+		node.set(transform_getsetters[0], node.get(transform_getsetters[0]) + (absolute_mouse_position - old_mouse_position) * camera_zoom)
 
 func scale_on_axis():
 	if mouse_is_over_arrow == VD_Mouse_is_over_arrow.X_ARROW:
 		var scale_amount = arrow_direction_vector_x.normalized().dot((absolute_mouse_position - old_mouse_position)) * SCALE_MULTIPLIER # For speed and convenience.
 		if scale_at_mouse_grab.x > .0:
-			node.scale.x -= scale_amount
+			node.set(transform_getsetters[2], node.get(transform_getsetters[2]) - Vector2(scale_amount, .0))
 		else:
-			node.scale.x += scale_amount
+			node.set(transform_getsetters[2], node.get(transform_getsetters[2]) + Vector2(scale_amount, .0))
 		scale_arrow_stem_increase_amount_x -= scale_amount
 		x_arrow_stem_length = clamp(DEFAULT_ARROW_STEM_LENGTH + scale_arrow_stem_increase_amount_x * SCALE_STEM_MULTIPLIER, DEFAULT_ARROW_STEM_LENGTH\
 									- SCALE_HANDLE_INCREASE_DECREASE_BOUND, DEFAULT_ARROW_STEM_LENGTH + SCALE_HANDLE_INCREASE_DECREASE_BOUND)
 	elif mouse_is_over_arrow == VD_Mouse_is_over_arrow.Y_ARROW:
 		var scale_amount = arrow_direction_vector_y.normalized().dot((absolute_mouse_position - old_mouse_position)) * SCALE_MULTIPLIER # For speed and convenience.
 		if scale_at_mouse_grab.y > .0:
-			node.scale.y += scale_amount
+			node.set(transform_getsetters[2], node.get(transform_getsetters[2]) + Vector2(.0, scale_amount))
 		else:
-			node.scale.y -= scale_amount
+			node.set(transform_getsetters[2], node.get(transform_getsetters[2]) - Vector2(.0, scale_amount))
 		scale_arrow_stem_increase_amount_y += scale_amount
 		y_arrow_stem_length = clamp(DEFAULT_ARROW_STEM_LENGTH + scale_arrow_stem_increase_amount_y * SCALE_STEM_MULTIPLIER, \
 									DEFAULT_ARROW_STEM_LENGTH - SCALE_HANDLE_INCREASE_DECREASE_BOUND, DEFAULT_ARROW_STEM_LENGTH + SCALE_HANDLE_INCREASE_DECREASE_BOUND)
 	elif mouse_is_over_arrow == VD_Mouse_is_over_arrow.MIDDLE:
 		var scale_amount = ((absolute_mouse_position.x - old_mouse_position.x) + (old_mouse_position.y - absolute_mouse_position.y)) * SCALE_MULTIPLIER # For speed and convenience.
-		node.scale.x += scale_amount
-		node.scale.y = node.scale.x * node_scale_ratio * (1.0 if concurrent_scale_mask.y == concurrent_scale_mask.x else -1.0)
+		node.set(transform_getsetters[2], node.get(transform_getsetters[2]) + Vector2(scale_amount, .0))
+		node.set(transform_getsetters[2], Vector2(.0, node.scale.x * node_scale_ratio * (1.0 if concurrent_scale_mask.y == concurrent_scale_mask.x else -1.0)))
 
 func rotate_on_axis():
 	if rotate_on_axis_is_enabled && sqr_distance_to_mouse > min_sqr_distance_to_rotation_circle_middle:
-		var x_scale_coefficient = 1.0 if node.scale.x > .0 else -1.0 # To determine rotation direction.
-		var y_scale_coefficient = 1.0 if node.scale.y > .0 else -1.0 # To determine rotation direction.
+		var x_scale_coefficient = 1.0 if node.get(transform_getsetters[2]).x > .0 else -1.0 # To determine rotation direction.
+		var y_scale_coefficient = 1.0 if node.get(transform_getsetters[2]).y > .0 else -1.0 # To determine rotation direction.
 		if absolute_mouse_position.y > center_of_the_node_with_scale.y:
 			if absolute_mouse_position.x > old_mouse_position.x:
-				node.global_rotation += (absolute_mouse_position.x - old_mouse_position.x) * ROTATION_COEFFICIENT * x_scale_coefficient * y_scale_coefficient
+				node.set(transform_getsetters[1], node.get(transform_getsetters[1]) + (absolute_mouse_position.x - old_mouse_position.x) * ROTATION_COEFFICIENT * x_scale_coefficient * y_scale_coefficient)
 			else:
-				node.global_rotation -= (old_mouse_position.x - absolute_mouse_position.x) * ROTATION_COEFFICIENT * x_scale_coefficient * y_scale_coefficient
+				node.set(transform_getsetters[1], node.get(transform_getsetters[1]) - (old_mouse_position.x - absolute_mouse_position.x) * ROTATION_COEFFICIENT * x_scale_coefficient * y_scale_coefficient)
 		else:
 			if absolute_mouse_position.x > old_mouse_position.x:
-				node.global_rotation -= (absolute_mouse_position.x - old_mouse_position.x) * ROTATION_COEFFICIENT * x_scale_coefficient * y_scale_coefficient
+				node.set(transform_getsetters[1], node.get(transform_getsetters[1]) - (absolute_mouse_position.x - old_mouse_position.x) * ROTATION_COEFFICIENT * x_scale_coefficient * y_scale_coefficient)
 			else:
-				node.global_rotation += (old_mouse_position.x - absolute_mouse_position.x) * ROTATION_COEFFICIENT * x_scale_coefficient * y_scale_coefficient
+				node.set(transform_getsetters[1], node.get(transform_getsetters[1]) + (old_mouse_position.x - absolute_mouse_position.x) * ROTATION_COEFFICIENT * x_scale_coefficient * y_scale_coefficient)
 
 		if absolute_mouse_position.x < center_of_the_node_with_scale.x:
 			if absolute_mouse_position.y > old_mouse_position.y:
-				node.global_rotation += (absolute_mouse_position.y - old_mouse_position.y) * ROTATION_COEFFICIENT
+				node.set(transform_getsetters[1], node.get(transform_getsetters[1]) + (absolute_mouse_position.y - old_mouse_position.y) * ROTATION_COEFFICIENT)
 			else:
-				node.global_rotation -= (old_mouse_position.y - absolute_mouse_position.y) * ROTATION_COEFFICIENT
+				node.set(transform_getsetters[1], node.get(transform_getsetters[1]) - (old_mouse_position.y - absolute_mouse_position.y) * ROTATION_COEFFICIENT)
 		else:
 			if absolute_mouse_position.y > old_mouse_position.y:
-				node.global_rotation -= (absolute_mouse_position.y - old_mouse_position.y) * ROTATION_COEFFICIENT
+				node.set(transform_getsetters[1], node.get(transform_getsetters[1]) - (absolute_mouse_position.y - old_mouse_position.y) * ROTATION_COEFFICIENT)
 			else:
-				node.global_rotation += (old_mouse_position.y - absolute_mouse_position.y) * ROTATION_COEFFICIENT
+				node.set(transform_getsetters[1], node.get(transform_getsetters[1]) + (old_mouse_position.y - absolute_mouse_position.y) * ROTATION_COEFFICIENT)
 
 func draw_arrow_head(arrow_direction_vector, center_of_the_node, tip_of_the_arrow, line_color, arrow_length, thickness):
 	draw_line(tip_of_the_arrow, tip_of_the_arrow + Vector2(arrow_direction_vector.y, -arrow_direction_vector.x) * arrow_length, line_color, thickness, true)
@@ -184,17 +183,17 @@ func calculate_node_draw_center():
 		center_of_the_node = camera_to_object_vector * camera_zoom_coefficient - current_node_position
 		center_of_the_node_with_scale = center_of_the_node - zoomed_size * .5
 		rotation_transform_y = Transform2D(node_global_transform.get_rotation(), Vector2(.0, .0))
-		if node.scale.x < .0 && node.scale.y < .0:
+		if node.get(transform_getsetters[2]).x < .0 && node.get(transform_getsetters[2]).y < .0:
 			var tmpMatrix = rotation_transform_y
 			tmpMatrix.x = Vector2(-rotation_transform_y.x.x, -rotation_transform_y.x.y)
 			tmpMatrix.y = Vector2(-rotation_transform_y.y.x, -rotation_transform_y.y.y)
 			rotation_transform_y = tmpMatrix
-		elif node.scale.x < .0:
+		elif node.get(transform_getsetters[2]).x < .0:
 			var tmpMatrix = rotation_transform_y
 			tmpMatrix.x = Vector2(-rotation_transform_y.x.x, rotation_transform_y.x.y)
 			tmpMatrix.y = Vector2(rotation_transform_y.y.x, -rotation_transform_y.y.y)
 			rotation_transform_y = tmpMatrix
-		elif node.scale.y < .0:
+		elif node.get(transform_getsetters[2]).y < .0:
 			var tmpMatrix = rotation_transform_y
 			tmpMatrix.x = Vector2(rotation_transform_y.x.x, -rotation_transform_y.x.y)
 			tmpMatrix.y = Vector2(-rotation_transform_y.y.x, rotation_transform_y.y.y)
@@ -205,7 +204,7 @@ func calculate_node_draw_center():
 		x_arrow_tip_position = center_of_the_node_with_scale - arrow_direction_vector_x * x_arrow_stem_length
 
 func draw_tips_and_axis_characters():
-	if node.scale.x < .0:
+	if node.get(transform_getsetters[2]).x < .0:
 		draw_line(Vector2(x_arrow_tip_position.x + character_offset_x - character_width * 1.5, \
 						  x_arrow_tip_position.y + character_offset_y + character_height * .5), \
 				  Vector2(x_arrow_tip_position.x + character_offset_x - character_width * .5, \
@@ -217,7 +216,7 @@ func draw_tips_and_axis_characters():
 			  Vector2(x_arrow_tip_position.x + character_offset_x, x_arrow_tip_position.y + character_offset_y + character_height), \
 			  x_character_color, character_thickenss, true)
 
-	if node.scale.y < .0:
+	if node.get(transform_getsetters[2]).y < .0:
 		draw_line(Vector2(y_arrow_tip_position.x + character_offset_x - character_width * 1.5,\
 						  y_arrow_tip_position.y + character_offset_y + character_height * .5), \
 				  Vector2(y_arrow_tip_position.x + character_offset_x - character_width * .5, \
@@ -325,10 +324,28 @@ func draw_rotation_circle():
 
 		draw_circle(center_of_the_node_with_scale, MIN_DISTANCE_TO_ROTATION_CIRCLE_MIDDLE, Color(.0, .0, 1.0, .9))
 
+var transform_getsetters = ["", "", ""] # To use the appropriate transformation setters and getters.
+
+func check_for_transform_property(passed_properties):
+	var is_property_found = false # To return gracefully from the function.
+	for i in range(0, passed_properties.size()):
+		if passed_properties[i] in node:
+			is_property_found = true
+			if i == 0:
+				transform_getsetters[0] = "global_position"
+				transform_getsetters[1] = "rotation"
+				transform_getsetters[2] = "scale"
+			elif i == 1:
+				transform_getsetters[0] = "rect_position"
+				transform_getsetters[1] = "rect_rotation"
+				transform_getsetters[2] = "rect_scale"
+			break
+	return is_property_found
+
 func _draw():
 	node = get_node(Global.visual_debugger.full_selected_path)
 	if node != null:
-		if node.has_method("get_global_transform") && (true if "scale" in node else false):
+		if node.has_method("get_global_transform") && check_for_transform_property(["scale", "rect_scale"]):
 			manage_this_node = true
 		else:
 			manage_this_node = false
