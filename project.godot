@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://Singleton/Global.gd"
+VDGlobal="*res://VisualDebugger/VDGlobal.gd"
 
 [display]
 

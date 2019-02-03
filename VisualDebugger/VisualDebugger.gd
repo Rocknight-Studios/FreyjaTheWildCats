@@ -25,6 +25,7 @@ var forbid_selection_circle_management = false # To not manage selection circle,
 var full_selected_path = "" # To have a convenient access from other scripts.
 var game_camera = null # To know, to which camera to reset back.
 var outliner = null # To detect and manage scene tree changes.
+var is_game_camera = false # To have a consistent warning, that game camera has dissapeared.
 
 const BACKGROUND_COLOR_LERP_SPEED = 3.0 # How quickly to fade to the new state.
 const VISUAL_BACKGROUND_MODULATE_B_DELTA = .25 # To avoid having magic numbers.
@@ -58,25 +59,25 @@ func deactivate_menu():
 		remove_child(visual_debugger_children[i])
 
 func slide_menu(goal_pos, delta):
-	if abs(abs(self.offset.x) - abs(goal_pos)) > Global.APPROXIMATION_FLOAT:
+	if abs(abs(self.offset.x) - abs(goal_pos)) > VDGlobal.APPROXIMATION_FLOAT:
 		self.offset.x = lerp(self.offset.x, goal_pos, delta * SLIDE_SPEED)
 	else:
 		slide_direction = VD_Slide_direction.NONE
 
 func manage_camera_movement(speed):
 	var direction = Vector2(.0, .0) # The direction of the current movement step.
-	if Input.is_action_pressed ("ui_right"):
+	if Input.is_key_pressed (KEY_RIGHT):
 		direction.x += 1.0
-	if Input.is_action_pressed ("ui_left"):
+	if Input.is_key_pressed (KEY_LEFT):
 		direction.x -= 1.0
-	if Input.is_action_pressed ("ui_up"):
+	if Input.is_key_pressed (KEY_UP):
 		direction.y -= 1.0
-	if Input.is_action_pressed ("ui_down"):
+	if Input.is_key_pressed (KEY_DOWN):
 		direction.y += 1.0
 
 	debugger_camera.position += direction * speed
 
-	if direction.length() > Global.APPROXIMATION_FLOAT:
+	if direction.length() > VDGlobal.APPROXIMATION_FLOAT:
 		is_moving_to_node = false
 
 func set_moving_to_node(state, relative_position):
@@ -85,12 +86,12 @@ func set_moving_to_node(state, relative_position):
 
 func move_to_the_node(delta):
 	var movement_speed = delta * camera_move_lerp_speed # To save resources.
-	var goal_position = relative_position - OS.window_size * .5 * debugger_camera.zoom # For speed and convenience.
+	var goal_position = relative_position - (get_viewport().size * .5 * debugger_camera.zoom) * scale # For speed and convenience.
 	if enable_exact_follow.pressed:
 		debugger_camera.position = goal_position
 	else:
 		debugger_camera.position = Vector2(lerp(debugger_camera.position.x, goal_position.x, movement_speed), lerp(debugger_camera.position.y, goal_position.y, movement_speed))
-	if goal_position.distance_to(debugger_camera.position) < Global.APPROXIMATION_FLOAT:
+	if goal_position.distance_to(debugger_camera.position) < VDGlobal.APPROXIMATION_FLOAT:
 		is_moving_to_node = false
 		debugger_camera.position = goal_position
 
@@ -108,9 +109,9 @@ func set_debugger_camera():
 	debugger_camera.anchor_mode = game_camera.anchor_mode
 	debugger_camera.manage_zoom_display()
 
-var is_game_camera = false # To have a consistent warning, that game camera has dissapeared.
-
 func set_game_camera():
+	if game_camera == null || !(weakref(game_camera)).get_ref():
+		outliner._on_form_the_outliner()
 	game_camera.make_current()
 
 func _process(delta):
@@ -130,6 +131,7 @@ func _process(delta):
 			set_debugger_camera()
 			visual_debugger_background.modulate = original_visual_debugger_background_modulate
 			is_game_camera = true
+			Input.set_mouse_mode(0)
 
 	if !(weakref(game_camera)).get_ref():
 		visual_debugger_background.modulate = Color(1.0, .0, .0, 1.0)
@@ -138,16 +140,16 @@ func _process(delta):
 	if visual_debugger_is_active:
 		if is_game_camera:
 			if mouse_is_over_visual_debugger_gui:
-				if mouse_over_tint_lerp_progress < Global.NORMALIZED_UPPER_BOUND:
+				if mouse_over_tint_lerp_progress < VDGlobal.NORMALIZED_UPPER_BOUND:
 					mouse_over_tint_lerp_progress = min(mouse_over_tint_lerp_progress + delta * BACKGROUND_COLOR_LERP_SPEED, 1.0)
-					var array_lerp_result = Global.user_params.global_functions.lerp_array([original_visual_debugger_background_modulate.r, original_visual_debugger_background_modulate.g, original_visual_debugger_background_modulate.b, original_visual_debugger_background_modulate.a], [mouse_over_visual_debugger_background_modulate.r, mouse_over_visual_debugger_background_modulate.g, mouse_over_visual_debugger_background_modulate.b, mouse_over_visual_debugger_background_modulate.a], mouse_over_tint_lerp_progress) # For speed and convenience.
+					var array_lerp_result = VDGlobal.lerp_array([original_visual_debugger_background_modulate.r, original_visual_debugger_background_modulate.g, original_visual_debugger_background_modulate.b, original_visual_debugger_background_modulate.a], [mouse_over_visual_debugger_background_modulate.r, mouse_over_visual_debugger_background_modulate.g, mouse_over_visual_debugger_background_modulate.b, mouse_over_visual_debugger_background_modulate.a], mouse_over_tint_lerp_progress) # For speed and convenience.
 					visual_debugger_background.modulate = Color(array_lerp_result[0], array_lerp_result[1], array_lerp_result[2], array_lerp_result[3])
 					keyboard_movement_is_allowed = false
 					forbid_selection_circle_management = true
 			else:
-				if mouse_over_tint_lerp_progress > Global.APPROXIMATION_FLOAT:
+				if mouse_over_tint_lerp_progress > VDGlobal.APPROXIMATION_FLOAT:
 					mouse_over_tint_lerp_progress = max(mouse_over_tint_lerp_progress - delta * BACKGROUND_COLOR_LERP_SPEED, .0)
-					var array_lerp_result = Global.user_params.global_functions.lerp_array([original_visual_debugger_background_modulate.r, original_visual_debugger_background_modulate.g, original_visual_debugger_background_modulate.b, original_visual_debugger_background_modulate.a], [mouse_over_visual_debugger_background_modulate.r, mouse_over_visual_debugger_background_modulate.g, mouse_over_visual_debugger_background_modulate.b, mouse_over_visual_debugger_background_modulate.a], mouse_over_tint_lerp_progress) # For speed and convenience.
+					var array_lerp_result = VDGlobal.lerp_array([original_visual_debugger_background_modulate.r, original_visual_debugger_background_modulate.g, original_visual_debugger_background_modulate.b, original_visual_debugger_background_modulate.a], [mouse_over_visual_debugger_background_modulate.r, mouse_over_visual_debugger_background_modulate.g, mouse_over_visual_debugger_background_modulate.b, mouse_over_visual_debugger_background_modulate.a], mouse_over_tint_lerp_progress) # For speed and convenience.
 					visual_debugger_background.modulate = Color(array_lerp_result[0], array_lerp_result[1], array_lerp_result[2], array_lerp_result[3])
 					keyboard_movement_is_allowed = true
 					forbid_selection_circle_management = false
