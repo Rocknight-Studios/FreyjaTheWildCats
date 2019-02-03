@@ -61,40 +61,43 @@ func _process(delta):
 	update()
 
 func _input(event):
-	if !Global.visual_debugger.mouse_is_over_visual_debugger_gui:
-		absolute_mouse_position = Global.visual_debugger.scene_node_selector.absolute_mouse_position
-		sqr_distance_to_mouse = absolute_mouse_position.distance_squared_to(center_of_the_node)
+	if !VDGlobal.visual_debugger.mouse_is_over_visual_debugger_gui:
+		absolute_mouse_position = VDGlobal.visual_debugger.scene_node_selector.absolute_mouse_position
+		var absolute_mouse_position_with_scale = absolute_mouse_position / VDGlobal.visual_debugger.scale # For speed and convenience.
+		sqr_distance_to_mouse = absolute_mouse_position_with_scale.distance_squared_to(center_of_the_node)
 		if sqr_distance_to_mouse < circle_size * circle_size:
 			mouse_is_over_rotation_circle = true
 		else:
 			mouse_is_over_rotation_circle = false
 
-		if Input.is_action_just_pressed("mouse_left_click"):
+		if !mouse_left_click_is_active && Input.is_mouse_button_pressed(BUTTON_LEFT):
+			mouse_left_click_is_active = true
 			if node != null:
 				scale_at_mouse_grab = node.get(transform_getsetters[2])
-				node_scale_ratio = max(abs(node.get(transform_getsetters[2]).y), Global.APPROXIMATION_FLOAT) / max(abs(node.get(transform_getsetters[2]).x), Global.APPROXIMATION_FLOAT)
+				node_scale_ratio = max(abs(node.get(transform_getsetters[2]).y), VDGlobal.APPROXIMATION_FLOAT) / max(abs(node.get(transform_getsetters[2]).x), VDGlobal.APPROXIMATION_FLOAT)
 				concurrent_scale_mask = Vector2(1.0 if node.get(transform_getsetters[2]).x > .0 else -1.0, 1.0 if node.get(transform_getsetters[2]).y > .0 else -1.0)
-			if !(mouse_is_over_arrow && Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.MOVE) &&\
-			   !(mouse_is_over_rotation_circle && Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.ROTATE)\
-			   && !(mouse_is_over_arrow && Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.SCALE):
+			if !(mouse_is_over_arrow && VDGlobal.visual_debugger.transformation_mode == VDGlobal.visual_debugger.VD_Transformation_modes.MOVE) &&\
+			   !(mouse_is_over_rotation_circle && VDGlobal.visual_debugger.transformation_mode == VDGlobal.visual_debugger.VD_Transformation_modes.ROTATE)\
+			   && !(mouse_is_over_arrow && VDGlobal.visual_debugger.transformation_mode == VDGlobal.visual_debugger.VD_Transformation_modes.SCALE):
 				forbid_transformation_mouse_input = true
-		elif Input.is_action_just_released("mouse_left_click"):
+		elif mouse_left_click_is_active && !Input.is_mouse_button_pressed(BUTTON_LEFT):
+			mouse_left_click_is_active = false
 			forbid_transformation_mouse_input = false
 
-		if Input.is_action_pressed("mouse_left_click"):
+		if mouse_left_click_is_active:
 			if !forbid_transformation_mouse_input:
-				Global.visual_debugger.forbid_selection_circle_management = true
-				if Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.MOVE:
+				VDGlobal.visual_debugger.forbid_selection_circle_management = true
+				if VDGlobal.visual_debugger.transformation_mode == VDGlobal.visual_debugger.VD_Transformation_modes.MOVE:
 					move_on_axis()
-				elif Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.ROTATE:
+				elif VDGlobal.visual_debugger.transformation_mode == VDGlobal.visual_debugger.VD_Transformation_modes.ROTATE:
 					rotate_on_axis()
-				elif Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.SCALE:
+				elif VDGlobal.visual_debugger.transformation_mode == VDGlobal.visual_debugger.VD_Transformation_modes.SCALE:
 					scale_on_axis()
 
 				if mouse_is_over_rotation_circle:
 					rotate_on_axis_is_enabled = true
 		else:
-			Global.visual_debugger.forbid_selection_circle_management = false
+			VDGlobal.visual_debugger.forbid_selection_circle_management = false
 			mouse_is_over_arrow = VD_Mouse_is_over_arrow.NONE
 			rotate_on_axis_is_enabled = false
 			scale_arrow_stem_increase_amount_x = .0
@@ -102,6 +105,8 @@ func _input(event):
 			x_arrow_stem_length = DEFAULT_ARROW_STEM_LENGTH
 			y_arrow_stem_length = DEFAULT_ARROW_STEM_LENGTH
 		old_mouse_position = absolute_mouse_position
+
+var mouse_left_click_is_active = false # To detect just pressed "event".
 
 func move_on_axis():
 	if mouse_is_over_arrow == VD_Mouse_is_over_arrow.X_ARROW:
@@ -139,24 +144,25 @@ func rotate_on_axis():
 	if rotate_on_axis_is_enabled && sqr_distance_to_mouse > min_sqr_distance_to_rotation_circle_middle:
 		var x_scale_coefficient = 1.0 if node.get(transform_getsetters[2]).x > .0 else -1.0 # To determine rotation direction.
 		var y_scale_coefficient = 1.0 if node.get(transform_getsetters[2]).y > .0 else -1.0 # To determine rotation direction.
-		if absolute_mouse_position.y > center_of_the_node_with_scale.y:
-			if absolute_mouse_position.x > old_mouse_position.x:
+		var absolute_mouse_position_with_scale = absolute_mouse_position / VDGlobal.visual_debugger.scale # For speed and convenience.
+		if absolute_mouse_position_with_scale.y > center_of_the_node_with_scale.y:
+			if absolute_mouse_position_with_scale.x > old_mouse_position.x:
 				node.set(transform_getsetters[1], node.get(transform_getsetters[1]) + (absolute_mouse_position.x - old_mouse_position.x) * ROTATION_COEFFICIENT * x_scale_coefficient * y_scale_coefficient)
 			else:
 				node.set(transform_getsetters[1], node.get(transform_getsetters[1]) - (old_mouse_position.x - absolute_mouse_position.x) * ROTATION_COEFFICIENT * x_scale_coefficient * y_scale_coefficient)
 		else:
-			if absolute_mouse_position.x > old_mouse_position.x:
+			if absolute_mouse_position_with_scale.x > old_mouse_position.x:
 				node.set(transform_getsetters[1], node.get(transform_getsetters[1]) - (absolute_mouse_position.x - old_mouse_position.x) * ROTATION_COEFFICIENT * x_scale_coefficient * y_scale_coefficient)
 			else:
 				node.set(transform_getsetters[1], node.get(transform_getsetters[1]) + (old_mouse_position.x - absolute_mouse_position.x) * ROTATION_COEFFICIENT * x_scale_coefficient * y_scale_coefficient)
 
-		if absolute_mouse_position.x < center_of_the_node_with_scale.x:
+		if absolute_mouse_position_with_scale.x < center_of_the_node_with_scale.x:
 			if absolute_mouse_position.y > old_mouse_position.y:
 				node.set(transform_getsetters[1], node.get(transform_getsetters[1]) + (absolute_mouse_position.y - old_mouse_position.y) * ROTATION_COEFFICIENT)
 			else:
 				node.set(transform_getsetters[1], node.get(transform_getsetters[1]) - (old_mouse_position.y - absolute_mouse_position.y) * ROTATION_COEFFICIENT)
 		else:
-			if absolute_mouse_position.y > old_mouse_position.y:
+			if absolute_mouse_position_with_scale.y > old_mouse_position.y:
 				node.set(transform_getsetters[1], node.get(transform_getsetters[1]) - (absolute_mouse_position.y - old_mouse_position.y) * ROTATION_COEFFICIENT)
 			else:
 				node.set(transform_getsetters[1], node.get(transform_getsetters[1]) + (old_mouse_position.y - absolute_mouse_position.y) * ROTATION_COEFFICIENT)
@@ -170,9 +176,9 @@ func draw_arrow_head(arrow_direction_vector, center_of_the_node, tip_of_the_arro
 			  Vector2(arrow_direction_vector.y, -arrow_direction_vector.x) * arrow_length, line_color, thickness, true)
 
 func calculate_node_draw_center():
-	visual_debugger_camera = Global.visual_debugger.debugger_camera
+	visual_debugger_camera = VDGlobal.visual_debugger.debugger_camera
 	camera_zoom = visual_debugger_camera.zoom
-	if Global.visual_debugger.node_is_selected:
+	if VDGlobal.visual_debugger.node_is_selected:
 		node_global_transform = node.get_global_transform()
 		node_position = node_global_transform.origin
 		debugger_camera_position = visual_debugger_camera.get_global_transform().origin
@@ -180,7 +186,7 @@ func calculate_node_draw_center():
 		current_node_position = self.get_global_transform().origin
 		var camera_zoom_coefficient = Vector2(1.0, 1.0) / camera_zoom # For speed and convenience.
 		zoomed_size = SELECTION_SIZE * camera_zoom_coefficient
-		center_of_the_node = camera_to_object_vector * camera_zoom_coefficient - current_node_position
+		center_of_the_node = (camera_to_object_vector * camera_zoom_coefficient - current_node_position) / VDGlobal.visual_debugger.scale
 		center_of_the_node_with_scale = center_of_the_node - zoomed_size * .5
 		rotation_transform_y = Transform2D(node_global_transform.get_rotation(), Vector2(.0, .0))
 		if node.get(transform_getsetters[2]).x < .0 && node.get(transform_getsetters[2]).y < .0:
@@ -228,52 +234,53 @@ func draw_tips_and_axis_characters():
 			  Vector2(y_arrow_tip_position.x + character_offset_x, y_arrow_tip_position.y + character_offset_y + character_height), \
 			  y_character_color, character_thickenss, true)
 
-	if Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.MOVE || \
-	   Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.ROTATE:
+	if VDGlobal.visual_debugger.transformation_mode == VDGlobal.visual_debugger.VD_Transformation_modes.MOVE || \
+	   VDGlobal.visual_debugger.transformation_mode == VDGlobal.visual_debugger.VD_Transformation_modes.ROTATE:
 		draw_arrow_head(arrow_direction_vector_x, center_of_the_node, x_arrow_tip_position, x_arrow_color, -7.5, 2.0)
 		draw_arrow_head(arrow_direction_vector_y, center_of_the_node, y_arrow_tip_position, y_arrow_color, 7.5, 2.0)
 		draw_arrow_head(arrow_direction_vector_x, center_of_the_node, x_arrow_tip_position, x_arrow_color, -5.0, 2.0)
 		draw_arrow_head(arrow_direction_vector_y, center_of_the_node, y_arrow_tip_position, y_arrow_color, 5.0, 2.0)
 		draw_arrow_head(arrow_direction_vector_x, center_of_the_node, x_arrow_tip_position, x_arrow_color, -2.5, 2.0)
 		draw_arrow_head(arrow_direction_vector_y, center_of_the_node, y_arrow_tip_position, y_arrow_color, 2.5, 2.0)
-	elif Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.SCALE:
+	elif VDGlobal.visual_debugger.transformation_mode == VDGlobal.visual_debugger.VD_Transformation_modes.SCALE:
 		draw_rect(Rect2(x_arrow_tip_position - scale_tip_rectangle_size * .5, scale_tip_rectangle_size), x_arrow_color, true)
 		draw_rect(Rect2(y_arrow_tip_position - scale_tip_rectangle_size * .5, scale_tip_rectangle_size), y_arrow_color, true)
 
 func draw_local_axis_handles():
-	if Global.visual_debugger.full_selected_path != "":
+	if VDGlobal.visual_debugger.full_selected_path != "":
 		calculate_node_draw_center()
-		if Global.visual_debugger.node_is_selected:
+		if VDGlobal.visual_debugger.node_is_selected:
 			var arrow_stem_selection_error = 20.0 # How close must the mouse cursor get to the arrow stem for it to be considered selected.
+			var absolute_mouse_position_with_scale = absolute_mouse_position / VDGlobal.visual_debugger.scale # For speed and convenience.
 
 			if mouse_is_over_arrow == VD_Mouse_is_over_arrow.NONE:
-				if absolute_mouse_position.distance_to(current_node_position + center_of_the_node_with_scale) < move_rectangle_size.x:
+				if absolute_mouse_position_with_scale.distance_to(current_node_position + center_of_the_node_with_scale) < move_rectangle_size.x:
 					mouse_is_over_arrow = VD_Mouse_is_over_arrow.MIDDLE
 			if mouse_is_over_arrow == VD_Mouse_is_over_arrow.NONE:
-				if absolute_mouse_position.x - current_node_position.x > (center_of_the_node_with_scale.x\
+				if absolute_mouse_position_with_scale.x - current_node_position.x > (center_of_the_node_with_scale.x\
 																		  if center_of_the_node_with_scale.x < y_arrow_tip_position.x\
 																		  else y_arrow_tip_position.x) - arrow_stem_selection_error:
-					if absolute_mouse_position.y - current_node_position.y > (center_of_the_node_with_scale.y\
+					if absolute_mouse_position_with_scale.y - current_node_position.y > (center_of_the_node_with_scale.y\
 																			  if center_of_the_node_with_scale.y < y_arrow_tip_position.y\
 																			  else y_arrow_tip_position.y) - arrow_stem_selection_error:
-						if absolute_mouse_position.x - current_node_position.x < (center_of_the_node_with_scale.x\
+						if absolute_mouse_position_with_scale.x - current_node_position.x < (center_of_the_node_with_scale.x\
 																				  if center_of_the_node_with_scale.x > y_arrow_tip_position.x\
 																				  else y_arrow_tip_position.x) + arrow_stem_selection_error:
-							if absolute_mouse_position.y - current_node_position.y < (center_of_the_node_with_scale.y\
+							if absolute_mouse_position_with_scale.y - current_node_position.y < (center_of_the_node_with_scale.y\
 																					  if center_of_the_node_with_scale.y > y_arrow_tip_position.y\
 																					  else y_arrow_tip_position.y) + arrow_stem_selection_error:
 								mouse_is_over_arrow = VD_Mouse_is_over_arrow.Y_ARROW
 			if mouse_is_over_arrow == VD_Mouse_is_over_arrow.NONE:
-				if absolute_mouse_position.x - current_node_position.x > (center_of_the_node_with_scale.x\
+				if absolute_mouse_position_with_scale.x - current_node_position.x > (center_of_the_node_with_scale.x\
 																		  if center_of_the_node_with_scale.x < x_arrow_tip_position.x\
 																		  else x_arrow_tip_position.x) - arrow_stem_selection_error:
-					if absolute_mouse_position.y - current_node_position.y > (center_of_the_node_with_scale.y\
+					if absolute_mouse_position_with_scale.y - current_node_position.y > (center_of_the_node_with_scale.y\
 																			  if center_of_the_node_with_scale.y < x_arrow_tip_position.y\
 																			  else x_arrow_tip_position.y) - arrow_stem_selection_error:
-						if absolute_mouse_position.x - current_node_position.x < (center_of_the_node_with_scale.x\
+						if absolute_mouse_position_with_scale.x - current_node_position.x < (center_of_the_node_with_scale.x\
 																				  if center_of_the_node_with_scale.x > x_arrow_tip_position.x\
 																				  else x_arrow_tip_position.x) + arrow_stem_selection_error:
-							if absolute_mouse_position.y - current_node_position.y < (center_of_the_node_with_scale.y\
+							if absolute_mouse_position_with_scale.y - current_node_position.y < (center_of_the_node_with_scale.y\
 																					  if center_of_the_node_with_scale.y > x_arrow_tip_position.y\
 																					  else x_arrow_tip_position.y) + arrow_stem_selection_error:
 								mouse_is_over_arrow = VD_Mouse_is_over_arrow.X_ARROW
@@ -294,7 +301,7 @@ func draw_local_axis_handles():
 			else:
 				draw_rect(Rect2(center_of_the_node_with_scale - move_rectangle_size * .5, move_rectangle_size), Color(.1, .9, .1, .9), true)
 		else:
-			Global.visual_debugger.warning_line.text = "Node not found! Check Godot Debugger!"
+			VDGlobal.visual_debugger.warning_line.text = "Node not found! Check Godot Debugger!"
 
 func draw_circle_arc(center, radius, angle_from, angle_to, color, thickness, detail):
 	var points_arc = PoolVector2Array()
@@ -308,7 +315,7 @@ func draw_circle_arc(center, radius, angle_from, angle_to, color, thickness, det
 
 func draw_rotation_circle():
 	calculate_node_draw_center()
-	if Global.visual_debugger.node_is_selected:
+	if VDGlobal.visual_debugger.node_is_selected:
 		circle_size = center_of_the_node_with_scale.distance_to(y_arrow_tip_position)
 		draw_circle_arc(center_of_the_node_with_scale, circle_size, .0, 360.0, Color(1.0, .0, .0, .5), 3.0, 32)
 		draw_circle_arc(center_of_the_node_with_scale, circle_size - 3.0, .0, 360.0, Color(.0, 1.0, .0, .5), 3.0, 32)
@@ -343,16 +350,16 @@ func check_for_transform_property(passed_properties):
 	return is_property_found
 
 func _draw():
-	node = get_node(Global.visual_debugger.full_selected_path)
+	node = get_node(VDGlobal.visual_debugger.full_selected_path)
 	if node != null:
 		if node.has_method("get_global_transform") && check_for_transform_property(["scale", "rect_scale"]):
 			manage_this_node = true
 		else:
 			manage_this_node = false
 			return
-		if Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.MOVE:
+		if VDGlobal.visual_debugger.transformation_mode == VDGlobal.visual_debugger.VD_Transformation_modes.MOVE:
 			draw_local_axis_handles()
-		elif Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.ROTATE:
+		elif VDGlobal.visual_debugger.transformation_mode == VDGlobal.visual_debugger.VD_Transformation_modes.ROTATE:
 			draw_rotation_circle()
-		elif Global.visual_debugger.transformation_mode == Global.visual_debugger.VD_Transformation_modes.SCALE:
+		elif VDGlobal.visual_debugger.transformation_mode == VDGlobal.visual_debugger.VD_Transformation_modes.SCALE:
 			draw_local_axis_handles()
